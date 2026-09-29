@@ -3,4 +3,16 @@ const withNextra = require('nextra').default({
   themeConfig: './theme.config.jsx'
 })
 
-module.exports = withNextra()
+const isStaticExport =
+  process.env.STATIC_EXPORT === 'true' ||
+  process.env.NEXT_OUTPUT === 'export'
+
+/** @type {import('next').NextConfig} */
+const nextConfig = isStaticExport
+  ? {
+      output: 'export',
+      images: { unoptimized: true }
+    }
+  : {}
+
+module.exports = withNextra(nextConfig)

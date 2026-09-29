@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "STATIC_EXPORT=true next build"
   },
   "engines": {
     "node": ">=18"
