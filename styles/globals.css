@@ -1,0 +1,113 @@
+:root {
+  --pimo-bg: #f0ede8;
+  --pimo-surface: #f8f6f2;
+  --pimo-card: #ffffff;
+  --pimo-ink: #131518;
+  --pimo-muted: #2c2e30;
+  --pimo-border: #d8d4ce;
+  --pimo-primary: #1c4a7a;
+  --pimo-primary-soft: rgba(28, 74, 122, 0.08);
+  --pimo-radius: 6px;
+  --nextra-primary-hue: 210deg;
+  --nextra-primary-saturation: 62%;
+  --nextra-primary-lightness: 29%;
+}
+
+html,
+body {
+  background: var(--pimo-bg);
+  color: var(--pimo-ink);
+}
+
+/* Light industrial surfaces */
+.nextra-nav-container,
+.nextra-sidebar-container,
+aside.nextra-sidebar {
+  background: var(--pimo-surface) !important;
+}
+
+article,
+main {
+  color: var(--pimo-ink);
+}
+
+/* Compact icon-like marks */
+.pimo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  border: 1px solid var(--pimo-border);
+  border-radius: var(--pimo-radius);
+  background: var(--pimo-card);
+  color: var(--pimo-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.pimo-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--pimo-ink);
+}
+
+.pimo-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: var(--pimo-radius);
+  background: var(--pimo-primary);
+  color: #f8f6f2;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.pimo-lead {
+  color: var(--pimo-muted);
+  max-width: 42rem;
+}
+
+.pimo-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.pimo-nav-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--pimo-border);
+  border-radius: var(--pimo-radius);
+  background: var(--pimo-card);
+  text-decoration: none;
+  color: var(--pimo-ink);
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.pimo-nav-list a:hover {
+  background: var(--pimo-primary-soft);
+  border-color: var(--pimo-primary);
+}
+
+.pimo-nav-list span.label {
+  font-weight: 600;
+}
+
+.pimo-nav-list span.hint {
+  margin-left: auto;
+  color: var(--pimo-muted);
+  font-size: 0.85rem;
+}

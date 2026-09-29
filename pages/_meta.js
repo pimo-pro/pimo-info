@@ -1,6 +1,10 @@
 export default {
-  index: 'Overview',
-  'pimo-pro': 'pimo.pro',
-  'pimo-criativo': 'pimo-criativo',
-  'pimo-alfa': 'pimo-alfa'
+  index: 'Início',
+  docs: 'Docs',
+  ecosystem: 'Ecossistema',
+  roadmap: 'Roadmap',
+  'release-notes': 'Release notes',
+  ajuda: 'Ajuda',
+  about: 'About',
+  contact: 'Contact'
 }
