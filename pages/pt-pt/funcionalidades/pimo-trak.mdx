@@ -1,0 +1,48 @@
+---
+title: PIMO-TRAK
+description: Rastreio de peças por QR ao longo da produção.
+---
+
+import { ServiceHero, InfoAccordion } from "../../../components/PimoVisualSections"
+import { AnimatedHotspotImage, LazyYouTubeEmbed } from "../../../components/PimoMediaComponents"
+
+<ServiceHero
+  title="PIMO-TRAK"
+  subtitle="Rastreio por etiqueta QR por peça para acompanhar estado de produção em cada etapa."
+  image="/visual/readme/ecra-home-workspace.webp"
+  imageAlt="Interface do PIMO no contexto de operação de projeto"
+  pimoHref="https://pimo.pro"
+  guideHref="/pt-pt/guias-utilizador/pimo-trak/"
+/>
+
+## O que faz
+
+Liga cada peça física ao projeto digital através de QR único, permitindo atualização de estado ao longo do processo fabril.
+
+<section className="pimo-service-benefits">
+  <li><strong>Identificação por peça</strong><p>Cada etiqueta é única no contexto do projeto.</p></li>
+  <li><strong>Rastreio por etapa</strong><p>Atualizações em corte, furação, lacagem, montagem e outras fases.</p></li>
+  <li><strong>Leitura transversal</strong><p>Equipa com acesso acompanha progresso em tempo real.</p></li>
+</section>
+
+<AnimatedHotspotImage
+  src="/visual/readme/ecra-home-workspace.webp"
+  alt="Destaques de rastreio e operação por projeto"
+  hotspots={[
+    { x: 71, y: 12, label: "Exportar etiquetas", delay: 0 },
+    { x: 54, y: 53, label: "Peças do projeto", delay: 120 },
+    { x: 88, y: 93, label: "Acompanhamento de estado", delay: 250 },
+  ]}
+/>
+
+<LazyYouTubeEmbed
+  videoId="j4dJEYJnFH0"
+  title="PIMO em ação — rastreio PIMO-TRAK"
+/>
+
+<InfoAccordion
+  items={[
+    { title: "Que equipamento preciso para ler QR?", text: "QR standard: pode usar câmara de telemóvel ou scanner compatível." },
+    { title: "Quando colar as etiquetas?", text: "Boa prática: logo após corte, antes de mover peças, para reduzir trocas." },
+  ]}
+/>

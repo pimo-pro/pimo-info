@@ -1,0 +1,43 @@
+---
+title: Lista de Corte
+description: Cutlist industrial gerada a partir do projeto no PIMO.
+---
+
+import { ServiceHero, InfoAccordion } from "../../../components/PimoVisualSections"
+import { AnimatedHotspotImage } from "../../../components/PimoMediaComponents"
+
+<ServiceHero
+  title="Lista de Corte"
+  subtitle="Geração automática das peças em milímetros com material, espessura, custos e ferragens."
+  image="/visual/readme/ecra-documentacao.webp"
+  imageAlt="Vista documental/industrial do PIMO"
+  pimoHref="https://pimo.pro"
+  guideHref="/pt-pt/guias-utilizador/lista-de-corte/"
+/>
+
+## O que faz
+
+Após o cálculo 3D, o sistema apresenta todas as peças técnicas por módulo, prontas para validação de produção.
+
+<section className="pimo-service-benefits">
+  <li><strong>Dimensões em mm</strong><p>Formato técnico direto para operação e fabrico.</p></li>
+  <li><strong>Separação estrutural/frentes</strong><p>Carcaça e frentes são discriminadas de forma clara.</p></li>
+  <li><strong>Integração com ferragens</strong><p>Os itens associados ficam acessíveis no separador dedicado.</p></li>
+</section>
+
+<AnimatedHotspotImage
+  src="/visual/readme/ecra-documentacao.webp"
+  alt="Destaques visuais da área técnica"
+  hotspots={[
+    { x: 10, y: 14, label: "Navegação de secções", delay: 0 },
+    { x: 56, y: 35, label: "Área de tabela técnica", delay: 120 },
+    { x: 76, y: 84, label: "Ações de exportação", delay: 250 },
+  ]}
+/>
+
+<InfoAccordion
+  items={[
+    { title: "Quando a cutlist é atualizada?", text: "Sempre que recalcula o design 3D. Recomenda-se fechar primeiro as configurações do projeto." },
+    { title: "A lista já separa ferragens?", text: "Sim, o fluxo de ajuda oficial refere separador próprio para ferragens associadas ao módulo." },
+  ]}
+/>

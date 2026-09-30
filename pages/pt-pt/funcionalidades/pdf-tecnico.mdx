@@ -1,0 +1,43 @@
+---
+title: PDF técnico
+description: Geração de PDF técnico com dados de projeto e produção no PIMO.
+---
+
+import { ServiceHero, InfoAccordion } from "../../../components/PimoVisualSections"
+import { AnimatedHotspotImage } from "../../../components/PimoMediaComponents"
+
+<ServiceHero
+  title="PDF técnico"
+  subtitle="Documento consolidado do projeto para consulta, arquivo e comunicação com equipa/cliente."
+  image="/visual/readme/ecra-documentacao.webp"
+  imageAlt="Área documental no ecossistema PIMO"
+  pimoHref="https://pimo.pro"
+  guideHref="/pt-pt/guias-utilizador/exportacao/"
+/>
+
+## O que faz
+
+Compila o estado do projeto em documento técnico com informação útil de produção, materiais e resumo.
+
+<section className="pimo-service-benefits">
+  <li><strong>Formato de partilha</strong><p>Facilita comunicação interna e validação com cliente.</p></li>
+  <li><strong>Integração com o fluxo</strong><p>É gerado no mesmo menu de exportação usado para CNC e Drill.</p></li>
+  <li><strong>Consistência com cálculo</strong><p>Reflete o estado técnico gerado na aplicação principal.</p></li>
+</section>
+
+<AnimatedHotspotImage
+  src="/visual/readme/ecra-documentacao.webp"
+  alt="Destaques de zona documental para PDF técnico"
+  hotspots={[
+    { x: 17, y: 14, label: "Navegação documental", delay: 0 },
+    { x: 50, y: 31, label: "Conteúdo técnico", delay: 120 },
+    { x: 83, y: 89, label: "Gerar/descargar PDF", delay: 260 },
+  ]}
+/>
+
+<InfoAccordion
+  items={[
+    { title: "Substitui os ficheiros de máquina?", text: "Não. O PDF é complementar e não substitui CNC/TCN/Drill quando vai para fabrico." },
+    { title: "Onde consultar mais detalhe?", text: "No guia de exportação e na área de documentação técnica da aplicação." },
+  ]}
+/>

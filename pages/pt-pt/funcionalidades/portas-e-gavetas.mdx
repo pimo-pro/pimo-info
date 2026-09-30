@@ -1,0 +1,43 @@
+---
+title: Portas e Gavetas
+description: Configuração de frentes com regras automáticas industriais.
+---
+
+import { ServiceHero, InfoAccordion } from "../../../components/PimoVisualSections"
+import { AnimatedHotspotImage } from "../../../components/PimoMediaComponents"
+
+<ServiceHero
+  title="Portas e Gavetas"
+  subtitle="Configure frentes com regras automáticas de folgas, compatibilidade e ferragens."
+  image="/visual/readme/ecra-home-workspace.webp"
+  imageAlt="Ecrã do PIMO para configuração de módulos e frentes"
+  pimoHref="https://pimo.pro"
+  guideHref="/pt-pt/guias-utilizador/portas-e-gavetas/"
+/>
+
+## O que faz
+
+Controla tipo de porta e quantidade de gavetas por módulo, aplicando regras internas do sistema.
+
+<section className="pimo-service-benefits">
+  <li><strong>Regras automáticas</strong><p>Portas e gavetas são mutuamente exclusivas no mesmo módulo.</p></li>
+  <li><strong>Animação de abertura</strong><p>Permite validar interferências com módulos vizinhos antes de exportar.</p></li>
+  <li><strong>Ferragens derivadas</strong><p>Dobradiças/corrediças entram no cálculo conforme configuração ativa.</p></li>
+</section>
+
+<AnimatedHotspotImage
+  src="/visual/readme/ecra-ajuda.webp"
+  alt="Ajuda da app com foco no tópico portas e gavetas"
+  hotspots={[
+    { x: 18, y: 36, label: "Tipo de porta", delay: 0 },
+    { x: 18, y: 49, label: "Nº de gavetas", delay: 120 },
+    { x: 58, y: 54, label: "Visual da frente", delay: 240 },
+  ]}
+/>
+
+<InfoAccordion
+  items={[
+    { title: "Posso ter porta e gavetas ao mesmo tempo?", text: "Não na mesma caixa. O sistema remove a porta ao ativar gavetas, preservando as regras industriais definidas." },
+    { title: "Para que serve a animação de porta?", text: "Para verificar colisão/folga em contexto real de layout antes de gerar ficheiros técnicos." },
+  ]}
+/>

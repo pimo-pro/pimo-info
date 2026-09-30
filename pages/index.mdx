@@ -1,25 +1,50 @@
-# Centro de ajuda PIMO Criativo
+import { HoverFeatureCards, InteractiveFeatureTabs, LandingHero, WorkflowDiagramSvg, WorkflowMap } from "../components/PimoVisualSections"
+import { DemoLoopVideo, LazyYouTubeEmbed } from "../components/PimoMediaComponents"
+
+# Centro visual PIMO Info
+
+<LandingHero />
 
 <p className="pimo-lead">
-  O PIMO Criativo é um configurador paramétrico de mobiliário para desenho 3D, preparação técnica e produção.
+  O PIMO Info é o centro de ajuda oficial do PIMO Criativo, com foco no fluxo real de desenho e produção:
+  da caixa paramétrica ao ficheiro CNC e rastreio PIMO-TRAK.
 </p>
 
-Este centro de informação é público, independente da aplicação principal e focado em documentação prática para oficinas de carpintaria, designers e fábricas.
+<WorkflowMap />
 
-## Começar já
+<WorkflowDiagramSvg />
+
+<InteractiveFeatureTabs />
+
+## Veja o PIMO em ação
+
+<LazyYouTubeEmbed
+  videoId="j4dJEYJnFH0"
+  title="PIMO Criativo em ação — vídeo oficial do proprietário"
+/>
+
+<DemoLoopVideo title="Demonstração animada reutilizada do README técnico do pimo-criativo" />
+
+<section className="pimo-service-benefits">
+  <li>
+    <strong>Sem suposições</strong>
+    <p>Todo o conteúdo está alinhado com o comportamento implementado na app principal.</p>
+  </li>
+  <li>
+    <strong>Pronto para oficina e fábrica</strong>
+    <p>Inclui guias para cutlist, nesting, CNC/TCN, Drill XML, PDF e operação industrial.</p>
+  </li>
+  <li>
+    <strong>Estrutura escalável</strong>
+    <p>URL e navegação preparadas para manter pt-PT e adicionar novos idiomas no futuro.</p>
+  </li>
+</section>
+
+<HoverFeatureCards />
+
+## Entrar por objetivo
 
 - [Primeiros passos](/pt-pt/primeiros-passos/)
-- [Guias de utilizador](/pt-pt/guias-utilizador/criar-caixa/)
-- [Perguntas frequentes](/pt-pt/perguntas-frequentes/)
-- [Novidades](/pt-pt/novidades/)
-
-## O que encontra aqui
-
-- Fluxo completo: criação de caixas, posicionamento, materiais, portas/gavetas, cutlist, nesting e exportação.
-- Referência de produção: PDF técnico, CNC/TCN, Drill XML, pacote ZIP e etiquetas PIMO-TRAK.
-- Secção separada de [Documentação técnica](/pt-pt/documentacao-tecnica/) para administração e sistemas industriais.
-
-## Aplicação principal
-
-- Produção: [https://pimo.pro](https://pimo.pro)
-- Ajuda interna da app (`/ajuda`) mantém-se dentro do produto para apoio contextual.
+- [Funcionalidades visuais](/pt-pt/funcionalidades/)
+- [Guias de utilizador](/pt-pt/guias-utilizador/)
+- [Documentação técnica](/pt-pt/documentacao-tecnica/)

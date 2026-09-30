@@ -1,0 +1,43 @@
+---
+title: Orçamentos
+description: Centro de tarifas e regras de custo no ecossistema PIMO.
+---
+
+import { ServiceHero, InfoAccordion } from "../../../components/PimoVisualSections"
+import { AnimatedHotspotImage } from "../../../components/PimoMediaComponents"
+
+<ServiceHero
+  title="Orçamentos"
+  subtitle="Configuração de tarifas industriais e financeiras para suporte ao cálculo de custos."
+  image="/visual/readme/ecra-documentacao.webp"
+  imageAlt="Página documental usada como contexto visual da camada de orçamentos"
+  pimoHref="https://pimo.pro"
+  guideHref="/pt-pt/documentacao-tecnica/orcamentos-p39/"
+/>
+
+## O que faz
+
+Na documentação técnica oficial, Orçamentos P3.9 centraliza parâmetros de custo com flags e tarifas para diferentes motores do sistema.
+
+<section className="pimo-service-benefits">
+  <li><strong>Configuração centralizada</strong><p>Permite ativar/desativar módulos e ajustar impactos económicos.</p></li>
+  <li><strong>Separação clara</strong><p>Distingue regras de Orçamentos de outros blocos financeiros (ex.: portes).</p></li>
+  <li><strong>Integração no cálculo</strong><p>Os valores alimentam custos unificados e preço final por peça.</p></li>
+</section>
+
+<AnimatedHotspotImage
+  src="/visual/readme/ecra-documentacao.webp"
+  alt="Destaques de leitura para secção de orçamentos"
+  hotspots={[
+    { x: 9, y: 14, label: "Menu técnico", delay: 0 },
+    { x: 60, y: 43, label: "Parâmetros/tarifas", delay: 130 },
+    { x: 73, y: 70, label: "Validação operacional", delay: 260 },
+  ]}
+/>
+
+<InfoAccordion
+  items={[
+    { title: "É uma funcionalidade de utilizador final?", text: "É sobretudo uma camada técnica/admin de apoio ao cálculo e operação industrial." },
+    { title: "Onde está o detalhe completo?", text: "Na secção de documentação técnica de Orçamentos P3.9 neste site." },
+  ]}
+/>
