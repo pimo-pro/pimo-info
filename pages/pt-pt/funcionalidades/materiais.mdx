@@ -1,0 +1,43 @@
+---
+title: Materiais
+description: Gestão visual de materiais da carcaça e frentes no PIMO.
+---
+
+import { ServiceHero, InfoAccordion } from "../../../components/PimoVisualSections"
+import { AnimatedHotspotImage } from "../../../components/PimoMediaComponents"
+
+<ServiceHero
+  title="Materiais"
+  subtitle="Escolha materiais de carcaça e frentes com impacto direto no aspeto 3D e no cálculo de custos."
+  image="/visual/readme/ecra-apresentacao.webp"
+  imageAlt="Vista do PIMO com foco em configuração e apresentação"
+  pimoHref="https://pimo.pro"
+  guideHref="/pt-pt/guias-utilizador/materiais/"
+/>
+
+## O que faz
+
+No fluxo real da app, cada caixa pode ter material de estrutura e material de frente separados, com atualização visual e financeira.
+
+<section className="pimo-service-benefits">
+  <li><strong>Aplicação por módulo</strong><p>Define material da carcaça em cada caixa selecionada.</p></li>
+  <li><strong>Frentes independentes</strong><p>Portas e gavetas podem usar materiais próprios via menu de contexto.</p></li>
+  <li><strong>Cálculo de custo integrado</strong><p>Resumo financeiro acompanha área e custo por m² dos materiais ativos.</p></li>
+</section>
+
+<AnimatedHotspotImage
+  src="/visual/readme/ecra-home-workspace.webp"
+  alt="Destaques visuais para operação de materiais"
+  hotspots={[
+    { x: 11, y: 28, label: "Selecionar módulo", delay: 0 },
+    { x: 19, y: 45, label: "Área de propriedades", delay: 120 },
+    { x: 62, y: 52, label: "Pré-visualização do material", delay: 260 },
+  ]}
+/>
+
+<InfoAccordion
+  items={[
+    { title: "Quando aplicar materiais?", text: "Preferencialmente antes de gerar o design 3D para garantir consistência entre cálculo técnico e custo." },
+    { title: "Os materiais vêm de onde?", text: "Da biblioteca de materiais gerida na área administrativa da aplicação principal." },
+  ]}
+/>

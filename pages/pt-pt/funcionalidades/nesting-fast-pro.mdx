@@ -1,0 +1,45 @@
+---
+title: Nesting Fast/PRO
+description: Otimização de layout de corte em modo Fast e PRO no PIMO.
+---
+
+import { ServiceHero, InfoAccordion } from "../../../components/PimoVisualSections"
+import { AnimatedHotspotImage, DemoLoopVideo } from "../../../components/PimoMediaComponents"
+
+<ServiceHero
+  title="Nesting Fast/PRO"
+  subtitle="Distribuição de peças em chapa para estimativa rápida (Fast) e otimização de produção (PRO)."
+  image="/visual/readme/ecra-documentacao.webp"
+  imageAlt="Visão técnica do PIMO ligada a operações de produção"
+  pimoHref="https://pimo.pro"
+  guideHref="/pt-pt/guias-utilizador/nesting-layout-corte/"
+/>
+
+## O que faz
+
+Consolida as peças da cutlist e organiza o layout de corte, mostrando aproveitamento e desperdício por chapa.
+
+<section className="pimo-service-benefits">
+  <li><strong>Fast para orçamento</strong><p>Modo rápido para simulação e decisão comercial inicial.</p></li>
+  <li><strong>PRO para execução</strong><p>Melhor aproveitamento de chapa para cenário de produção real.</p></li>
+  <li><strong>Leitura operacional</strong><p>Visualização direta de peças, percentagem de uso e número de chapas.</p></li>
+</section>
+
+<AnimatedHotspotImage
+  src="/visual/readme/ecra-documentacao.webp"
+  alt="Destaques de leitura para nesting"
+  hotspots={[
+    { x: 20, y: 11, label: "Escolher contexto", delay: 0 },
+    { x: 58, y: 44, label: "Mapa de peças/chapas", delay: 120 },
+    { x: 77, y: 79, label: "Resumo de aproveitamento", delay: 250 },
+  ]}
+/>
+
+<DemoLoopVideo title="Loop visual de fluxo que culmina em layout de corte" />
+
+<InfoAccordion
+  items={[
+    { title: "Quando usar Fast?", text: "Nas fases iniciais de estimativa e comparação rápida de cenários." },
+    { title: "Quando usar PRO?", text: "Na preparação final de produção, com validação adicional da orientação de furação quando existir rotação." },
+  ]}
+/>

@@ -1,0 +1,45 @@
+---
+title: Módulo Industrial
+description: Camada industrial com painéis de estação, operador e supervisor.
+---
+
+import { ServiceHero, InfoAccordion } from "../../../components/PimoVisualSections"
+import { AnimatedHotspotImage, DemoLoopVideo } from "../../../components/PimoMediaComponents"
+
+<ServiceHero
+  title="Módulo Industrial"
+  subtitle="Consolida fluxos de operação industrial com leitura por estação, operador e supervisor."
+  image="/visual/readme/ecra-documentacao.webp"
+  imageAlt="Área documental/industrial do ecossistema PIMO"
+  pimoHref="https://pimo.pro"
+  guideHref="/pt-pt/documentacao-tecnica/sistema-industrial/"
+/>
+
+## O que faz
+
+Segundo a documentação do sistema, a camada industrial agrega leitura visual de runtime, produção, performance e integração sem alterar APIs base.
+
+<section className="pimo-service-benefits">
+  <li><strong>Visão por perfil</strong><p>Painéis dedicados para estação, operador e supervisor.</p></li>
+  <li><strong>Fases estruturadas</strong><p>Evolução organizada em fases visuais e industriais documentadas.</p></li>
+  <li><strong>Preparação para integração</strong><p>Base visual pronta para evoluções futuras sem reescrever toda a UI.</p></li>
+</section>
+
+<AnimatedHotspotImage
+  src="/visual/readme/ecra-documentacao.webp"
+  alt="Destaques da camada industrial documentada"
+  hotspots={[
+    { x: 12, y: 12, label: "Índice técnico", delay: 0 },
+    { x: 58, y: 39, label: "Motores/Fases", delay: 120 },
+    { x: 78, y: 66, label: "Garantias operacionais", delay: 260 },
+  ]}
+/>
+
+<DemoLoopVideo title="Loop de fluxo reutilizado como apoio visual da camada industrial" />
+
+<InfoAccordion
+  items={[
+    { title: "Isto altera o pipeline real de produção?", text: "A documentação refere foco visual/cosmético para leitura operacional, mantendo o core existente." },
+    { title: "Onde está o detalhe de fases?", text: "Na secção Sistema Industrial da documentação técnica do PIMO Info." },
+  ]}
+/>

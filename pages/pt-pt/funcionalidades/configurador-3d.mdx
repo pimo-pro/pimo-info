@@ -1,0 +1,51 @@
+---
+title: Configurador 3D
+description: Modelação paramétrica no workspace 3D com fluxo real do PIMO Criativo.
+---
+
+import { ServiceHero, InfoAccordion } from "../../../components/PimoVisualSections"
+import { AnimatedHotspotImage, DemoLoopVideo, LazyYouTubeEmbed } from "../../../components/PimoMediaComponents"
+
+<ServiceHero
+  title="Configurador 3D"
+  subtitle="Crie e posicione módulos no workspace 3D com regras paramétricas e preparação técnica para produção."
+  image="/visual/readme/ecra-home-workspace.webp"
+  imageAlt="Workspace 3D do PIMO Criativo"
+  pimoHref="https://pimo.pro"
+  guideHref="/pt-pt/guias-utilizador/criar-caixa/"
+/>
+
+## O que faz
+
+Permite selecionar módulos, configurar dimensões/opções e organizar o layout no viewport 3D antes de gerar o design técnico.
+
+<section className="pimo-service-benefits">
+  <li><strong>Fluxo orientado a produção</strong><p>Os módulos entram como placeholders e são calculados em bloco com «Gerar Design 3D».</p></li>
+  <li><strong>Movimento e rotação direta</strong><p>Ferramentas `S`, `M`, `R` e alinhamento por contexto para ajuste rápido.</p></li>
+  <li><strong>Visualização operacional</strong><p>Feedback de layout e composição antes de avançar para cutlist/nesting.</p></li>
+</section>
+
+<AnimatedHotspotImage
+  src="/visual/readme/ecra-home-workspace.webp"
+  alt="Workspace com pontos de destaque animados"
+  hotspots={[
+    { x: 15, y: 19, label: "Painel Móveis", delay: 0 },
+    { x: 53, y: 53, label: "Viewport 3D", delay: 120 },
+    { x: 74, y: 13, label: "Ações de projeto", delay: 240 },
+    { x: 57, y: 92, label: "Barra inferior técnica", delay: 360 },
+  ]}
+/>
+
+<LazyYouTubeEmbed
+  videoId="j4dJEYJnFH0"
+  title="PIMO em ação — configurador 3D"
+/>
+
+<DemoLoopVideo title="Demonstração animada do fluxo de modelação no PIMO" />
+
+<InfoAccordion
+  items={[
+    { title: "Quando devo gerar o design 3D?", text: "Depois de posicionar e configurar os módulos principais; o cálculo técnico usa o estado do projeto nesse instante." },
+    { title: "Posso ajustar manualmente o auto-layout?", text: "Sim. O auto-posicionamento acelera o arranque, mas pode mover/rodar caixas manualmente sem perder controlo." },
+  ]}
+/>
