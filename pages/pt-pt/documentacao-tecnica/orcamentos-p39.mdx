@@ -1,0 +1,41 @@
+---
+title: Orçamentos P3.9
+---
+
+# Orçamentos — Centro de Tarifas P3.9
+
+O módulo de Orçamentos centraliza tarifas industriais/financeiras com persistência em *system settings*.
+
+## Conceitos principais
+
+- Valores `0` mantêm impacto nulo no cálculo.
+- Flags ativam/desativam módulos de custo.
+- ADM, montagem, portes e IVA continuam com regras próprias no Financeiro.
+
+## Blocos de configuração
+
+## 1) Perfurações e CNC
+
+- Tarifa por furo (drill).
+- Tarifa por operação de nesting/CNC.
+
+## 2) Custos industriais
+
+- Desperdício e serragem por área.
+- Custos de chapas reais (modo específico, não default global).
+- Mão de obra e logística (logística não substitui portes P3.6).
+
+## 3) Operações avançadas
+
+- Foros tipados, cavilhas por tipo, grupos (ex.: dobradiça), rasgo/corte/quadrilha.
+
+## Integração no cálculo
+
+- Preço final de peça agrega quotas industriais.
+- Resumo unificado expõe `custosComputed` por motor.
+- Exportações industriais (CNC/TCN/drill/PDF) mantêm pipeline próprio.
+
+## Cuidados operacionais
+
+- Não alterar o default global para modo exclusivo de chapas reais diretamente em código.
+- Validar sempre materiais e modo de chapa em projeto de teste antes de ativar em produção.
