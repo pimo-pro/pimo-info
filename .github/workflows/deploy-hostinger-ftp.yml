@@ -5,8 +5,8 @@ on:
     branches: [main]
 
 concurrency:
-  group: hostinger-ftp-main
-  cancel-in-progress: true
+  group: deploy-ftp
+  cancel-in-progress: false
 
 jobs:
   export-and-deploy:
@@ -27,9 +27,8 @@ jobs:
       - name: Static export
         run: npm run export
 
-      # Exclusive public_html for pimo.info. Fresh state-name escapes a stale
-      # .ftp-deploy-sync-state.json that tried to delete missing _next/data paths
-      # (FTP 550). Clean-slate keeps remote in sync with each static export.
+      # Exclusive public_html for pimo.info. state-name v2 is already synced;
+      # incremental FTP upload avoids wiping the live site mid-deploy.
       - name: Upload /out via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -39,4 +38,3 @@ jobs:
           local-dir: ./out/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
           state-name: .ftp-deploy-sync-state-v2.json
-          dangerous-clean-slate: true
