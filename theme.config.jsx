@@ -1,5 +1,6 @@
 import { useRouter } from "next/router"
 import { useConfig } from "nextra-theme-docs"
+import { EcosystemFooterLinks } from "./components/PimoEcosystem"
 
 const siteUrl = "https://pimo.info"
 const defaultDescription =
@@ -68,26 +69,7 @@ export default {
     forcedTheme: "light",
   },
   footer: {
-    content: (
-      <span className="pimo-ecosystem-footer">
-        <span>© {new Date().getFullYear()} PIMO Criativo · Crafted by Khaled</span>
-        <span className="pimo-ecosystem-links">
-          <a href="https://pimo.pt" target="_blank" rel="noreferrer">pimo.pt</a>
-          <span>·</span>
-          <a href="https://pimo.pro" target="_blank" rel="noreferrer">pimo.pro</a>
-          <span>·</span>
-          <a href="https://pimo.info" target="_blank" rel="noreferrer">pimo.info</a>
-          <span>·</span>
-          <a href="https://pimo.es" target="_blank" rel="noreferrer">pimo.es</a>
-          <span>·</span>
-          <a href="https://pimo.casa" target="_blank" rel="noreferrer">pimo.casa</a>
-          <span>·</span>
-          <a href="https://pimo.design" target="_blank" rel="noreferrer">pimo.design</a>
-          <span>·</span>
-          <a href="https://pim0.com" target="_blank" rel="noreferrer">pim0.com</a>
-        </span>
-      </span>
-    ),
+    content: <EcosystemFooterLinks />,
   },
   head: () => {
     const { asPath } = useRouter()

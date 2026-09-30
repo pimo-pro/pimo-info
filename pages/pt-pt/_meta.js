@@ -8,6 +8,7 @@ export default {
   },
   "primeiros-passos": "Primeiros passos",
   funcionalidades: "Funcionalidades",
+  ecossistema: "Ecossistema",
   "guias-utilizador": "Guias de utilizador",
   "perguntas-frequentes": "Perguntas frequentes",
   contacto: "Contacto",

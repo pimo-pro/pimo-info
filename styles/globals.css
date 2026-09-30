@@ -506,7 +506,242 @@ main {
 .pimo-ecosystem-links {
   display: inline-flex;
   flex-wrap: wrap;
-  gap: 0.25rem;
+  gap: 0.25rem 0.45rem;
+  align-items: center;
+}
+
+.pimo-ecosystem-link-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+}
+
+.pimo-ecosystem-about {
+  font-size: 0.78rem;
+  color: var(--pimo-primary-dark);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--pimo-primary-light);
+}
+
+.pimo-ecosystem-about:hover {
+  border-bottom-color: var(--pimo-primary);
+}
+
+.pimo-ecosystem-home {
+  margin: 1.6rem 0 1.2rem;
+  padding: 1.1rem 1.15rem;
+  border: 1px solid var(--pimo-border);
+  border-radius: 14px;
+  background: linear-gradient(125deg, #ffffff 0%, #f3efe8 100%);
+}
+
+.pimo-ecosystem-home h2 {
+  margin: 0.45rem 0 0.55rem;
+  font-size: 1.35rem;
+}
+
+.pimo-ecosystem-home > p {
+  margin: 0;
+  color: var(--pimo-muted);
+}
+
+.pimo-ecosystem-home-actions {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.pimo-ecosystem-home-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.45rem;
+}
+
+.pimo-ecosystem-home-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--pimo-border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.pimo-ecosystem-home-list a {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--pimo-primary-dark);
+}
+
+.pimo-ecosystem-home-list span {
+  font-size: 0.82rem;
+  color: var(--pimo-muted);
+}
+
+.pimo-ecosystem-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.85rem;
+  margin: 1.25rem 0;
+}
+
+.pimo-ecosystem-card {
+  border: 1px solid var(--pimo-border);
+  border-radius: 12px;
+  background: #fff;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.pimo-ecosystem-card h2 {
+  margin: 0.35rem 0 0;
+  font-size: 1.15rem;
+}
+
+.pimo-ecosystem-card h2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.pimo-ecosystem-card-role {
+  margin: 0;
+  font-weight: 600;
+  color: var(--pimo-primary-dark);
+}
+
+.pimo-ecosystem-card > p {
+  margin: 0;
+  color: var(--pimo-muted);
+  font-size: 0.92rem;
+}
+
+.pimo-ecosystem-card-meta {
+  margin: 0.25rem 0 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.pimo-ecosystem-card-meta div {
+  margin: 0;
+}
+
+.pimo-ecosystem-card-meta dt {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pimo-muted);
+}
+
+.pimo-ecosystem-card-meta dd {
+  margin: 0.15rem 0 0;
+  font-size: 0.88rem;
+}
+
+.pimo-ecosystem-card-actions {
+  margin-top: auto;
+  padding-top: 0.55rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.pimo-ecosystem-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid var(--pimo-border);
+  background: #fff;
+  color: var(--pimo-muted);
+}
+
+.pimo-ecosystem-status.is-active {
+  border-color: var(--pimo-primary-light);
+  background: rgba(144, 184, 224, 0.18);
+  color: var(--pimo-primary-dark);
+}
+
+.pimo-ecosystem-status.is-redirect,
+.pimo-ecosystem-status.is-linked {
+  border-color: var(--pimo-sienna-light);
+  background: rgba(212, 168, 130, 0.2);
+  color: var(--pimo-sienna);
+}
+
+.pimo-ecosystem-table-wrap {
+  margin: 1.5rem 0;
+}
+
+.pimo-ecosystem-table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--pimo-border);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.pimo-ecosystem-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.pimo-ecosystem-table th,
+.pimo-ecosystem-table td {
+  padding: 0.7rem 0.8rem;
+  border-bottom: 1px solid var(--pimo-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.pimo-ecosystem-table th {
+  background: var(--pimo-surface);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--pimo-muted);
+}
+
+.pimo-ecosystem-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.pimo-ecosystem-diagram .pimo-diagram-sub {
+  font-size: 11px;
+  font-weight: 500;
+  fill: #2c2e30;
+}
+
+.pimo-ecosystem-diagram figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.84rem;
+  color: var(--pimo-muted);
+}
+
+.pimo-ecosystem-site-hero {
+  margin: 0.4rem 0 1.2rem;
+  padding: 1.1rem 1.15rem;
+  border: 1px solid var(--pimo-border);
+  border-radius: 14px;
+  background: linear-gradient(125deg, #ffffff 0%, #f3efe8 100%);
+}
+
+.pimo-ecosystem-site-hero h1 {
+  margin: 0.45rem 0 0.65rem;
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+}
+
+.pimo-ecosystem-site-cta {
+  margin-top: 1.4rem;
 }
 
 @keyframes pimo-rise {

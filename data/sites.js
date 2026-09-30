@@ -1,0 +1,209 @@
+/**
+ * Fonte única do ecossistema de sites PIMO.
+ * Expandir aqui quando um domínio ganhar conteúdo próprio.
+ */
+
+/** @typedef {'active' | 'redirect' | 'linked' | 'planned'} SiteStatus */
+
+/**
+ * @typedef {Object} PimoSite
+ * @property {string} id
+ * @property {string} domain
+ * @property {string} url
+ * @property {string} name
+ * @property {string} shortRole
+ * @property {string} statusLabel
+ * @property {SiteStatus} status
+ * @property {string} currentRouting
+ * @property {string} future
+ * @property {string} summary
+ * @property {string} whatIs
+ * @property {string} ecosystemRole
+ * @property {string} currentState
+ * @property {string} futurePlans
+ * @property {string[]} relatedIds
+ * @property {string} visitLabel
+ */
+
+/** @type {PimoSite[]} */
+export const pimoSites = [
+  {
+    id: "pimo-pt",
+    domain: "pimo.pt",
+    url: "https://pimo.pt",
+    name: "PIMO · Loja e marca",
+    shortRole: "Loja online principal e site da marca",
+    statusLabel: "Ativo",
+    status: "active",
+    currentRouting: "Site próprio em produção",
+    future: "Continuar como loja e face pública da marca, com ligação ao fluxo de configuração em pimo.pro",
+    summary:
+      "A loja online principal e o site principal do projeto e da marca PIMO — o ponto de entrada comercial para móveis planeados à medida.",
+    whatIs:
+      "O pimo.pt é a loja online principal e o site principal do projeto e da marca PIMO. Apresenta a oferta de móveis planeados à medida, o processo de projeto e a face comercial da marca em Portugal.",
+    ecosystemRole:
+      "É a face pública comercial do ecossistema: comunica a marca, acolhe o interesse do cliente final e liga a narrativa de «projetar online → produzir» ao resto da plataforma. Complementa a aplicação técnica em pimo.pro e o centro de ajuda em pimo.info.",
+    currentState:
+      "O domínio está ativo com site próprio. A página pública apresenta móveis planeados com configurador 3D, o fluxo do projeto à entrega e contactos oficiais da marca (incluindo info@pimo.pt).",
+    futurePlans:
+      "Manter-se como loja e site principal da marca, aprofundando a integração com a plataforma de configuração e com os restantes domínios do ecossistema à medida que cada um ganhar conteúdo próprio.",
+    relatedIds: ["pimo-pro", "pimo-info", "pimo-es", "pim0-com"],
+    visitLabel: "Visitar pimo.pt",
+  },
+  {
+    id: "pimo-pro",
+    domain: "pimo.pro",
+    url: "https://pimo.pro",
+    name: "PIMO Criativo · Aplicação",
+    shortRole: "Aplicação / plataforma PIMO Criativo",
+    statusLabel: "Ativo",
+    status: "active",
+    currentRouting: "Aplicação em produção",
+    future: "Continuar como plataforma oficial de configuração e fluxo técnico de produção",
+    summary:
+      "O site oficial da aplicação e plataforma PIMO (PIMO Criativo) — configurador paramétrico de mobiliário orientado à produção.",
+    whatIs:
+      "O pimo.pro é o site oficial da aplicação e plataforma PIMO, conhecida como PIMO Criativo: um configurador paramétrico de mobiliário que liga o desenho em 3D aos ficheiros técnicos de produção.",
+    ecosystemRole:
+      "É o núcleo operacional do produto. É aqui que se configura o mobiliário e se prepara o fluxo técnico (lista de corte, nesting, exportação industrial e rastreio). Os restantes sites do ecossistema apontam para este papel — loja, ajuda, designs futuros e plano de negócio.",
+    currentState:
+      "Aplicação em produção. A página pública identifica o PIMO Criativo como configurador paramétrico de mobiliário com apoio a CNC, lista de corte e ficheiros industriais.",
+    futurePlans:
+      "Continuar como plataforma oficial da aplicação, com evolução dos módulos da plataforma e ligação crescente aos domínios dedicados (como pimo.casa e pimo.design) quando estes tiverem conteúdo próprio.",
+    relatedIds: ["pimo-info", "pimo-pt", "pimo-casa", "pimo-design", "pim0-com"],
+    visitLabel: "Abrir PIMO Criativo",
+  },
+  {
+    id: "pimo-info",
+    domain: "pimo.info",
+    url: "https://pimo.info",
+    name: "PIMO Info · Ajuda",
+    shortRole: "Centro de informação e ajuda",
+    statusLabel: "Ativo",
+    status: "active",
+    currentRouting: "Centro de ajuda em produção (este site)",
+    future: "Expandir documentação e páginas por domínio do ecossistema",
+    summary:
+      "O centro de informação e ajuda do PIMO — guias, funcionalidades, documentação e mapa do ecossistema de sites.",
+    whatIs:
+      "O pimo.info é o centro de informação e ajuda do PIMO. Reúne documentação em português europeu para quem usa a plataforma no dia a dia: primeiros passos, funcionalidades, guias e documentação técnica.",
+    ecosystemRole:
+      "É a camada de conhecimento do ecossistema. Explica o produto (pimo.pro), contextualiza a marca (pimo.pt) e documenta o papel de cada domínio, sem substituir a loja nem a aplicação.",
+    currentState:
+      "Site ativo e em evolução contínua. Inclui o centro de ajuda pt-PT, páginas de funcionalidades, guias de utilizador, documentação técnica e esta secção do ecossistema de sites.",
+    futurePlans:
+      "Manter e expandir o conteúdo de ajuda, com páginas dedicadas e atualizáveis por domínio à medida que cada site do ecossistema ganhar identidade e conteúdo próprios.",
+    relatedIds: ["pimo-pro", "pimo-pt", "pim0-com"],
+    visitLabel: "Ficar em pimo.info",
+  },
+  {
+    id: "pimo-es",
+    domain: "pimo.es",
+    url: "https://pimo.es",
+    name: "PIMO ES · Loja em espanhol",
+    shortRole: "Loja oficial em espanhol",
+    statusLabel: "Redirecionamento",
+    status: "redirect",
+    currentRouting: "Redireciona para pimo.pt",
+    future: "Loja oficial em espanhol com conteúdo próprio",
+    summary:
+      "A loja oficial em espanhol do projeto PIMO. Por agora redireciona para pimo.pt; no futuro terá conteúdo próprio para o mercado hispanófono.",
+    whatIs:
+      "O pimo.es é a loja oficial em espanhol do ecossistema PIMO — o domínio reservado para a presença comercial e de marca em espanhol.",
+    ecosystemRole:
+      "Estende a face comercial da marca (hoje centrada em pimo.pt) ao público em espanhol, mantendo o mesmo ecossistema de produto (aplicação em pimo.pro e ajuda em pimo.info).",
+    currentState:
+      "O domínio está reservado no ecossistema e, segundo a definição oficial do projeto, redireciona presentemente para pimo.pt enquanto a loja em espanhol não tiver site próprio.",
+    futurePlans:
+      "Tornar-se a loja oficial em espanhol com conteúdo próprio, alinhada com a marca em pimo.pt e com a plataforma em pimo.pro.",
+    relatedIds: ["pimo-pt", "pimo-pro", "pimo-info"],
+    visitLabel: "Visitar pimo.es",
+  },
+  {
+    id: "pimo-casa",
+    domain: "pimo.casa",
+    url: "https://pimo.casa",
+    name: "PIMO Casa · Designs e projetos",
+    shortRole: "Designs e projetos prontos (futuro)",
+    statusLabel: "Ligado a pimo.pro",
+    status: "linked",
+    currentRouting: "Ligado a pimo.pro",
+    future: "Site oficial para mostrar designs e projetos prontos",
+    summary:
+      "Futuro site oficial para mostrar designs e projetos prontos. Atualmente está ligado a pimo.pro.",
+    whatIs:
+      "O pimo.casa será o site oficial para apresentar designs e projetos prontos do universo PIMO — uma montra de soluções e composições, distinta da loja e da aplicação de configuração.",
+    ecosystemRole:
+      "No ecossistema, ocupa o espaço entre inspiração e produto: mostrar projetos e designs prontos, remetendo depois para configuração (pimo.pro) ou para a loja (pimo.pt), conforme o percurso do visitante.",
+    currentState:
+      "O domínio faz parte do ecossistema oficial e, nesta fase, está ligado a pimo.pro enquanto o site dedicado de designs e projetos prontos não estiver publicado.",
+    futurePlans:
+      "Passar a ser o site oficial de designs e projetos prontos, com conteúdo próprio e ligações claras à aplicação e à loja.",
+    relatedIds: ["pimo-pro", "pimo-pt", "pimo-design"],
+    visitLabel: "Visitar pimo.casa",
+  },
+  {
+    id: "pimo-design",
+    domain: "pimo.design",
+    url: "https://pimo.design",
+    name: "PIMO Design · Aplicação de design",
+    shortRole: "Aplicação de design completo (futuro)",
+    statusLabel: "Ligado a pimo.pro",
+    status: "linked",
+    currentRouting: "Ligado a pimo.pro",
+    future: "Site oficial da aplicação de design completo",
+    summary:
+      "Futuro site oficial da aplicação de design completo. Atualmente está ligado a pimo.pro.",
+    whatIs:
+      "O pimo.design será o site oficial da aplicação de design completo no ecossistema PIMO — um destino dedicado à experiência de design, separado da loja e do centro de ajuda.",
+    ecosystemRole:
+      "Complementa o pimo.pro ao reservar um domínio próprio para a aplicação de design completo. Liga-se ao restante ecossistema pela mesma marca e pelo fluxo de produto documentado em pimo.info.",
+    currentState:
+      "O domínio está reservado e, nesta fase, está ligado a pimo.pro enquanto a aplicação de design completo não tiver presença própria neste endereço.",
+    futurePlans:
+      "Tornar-se o site oficial da aplicação de design completo, com identidade e conteúdo próprios, mantendo a coerência com pimo.pro e com o resto do ecossistema.",
+    relatedIds: ["pimo-pro", "pimo-casa", "pimo-info"],
+    visitLabel: "Visitar pimo.design",
+  },
+  {
+    id: "pim0-com",
+    domain: "pim0.com",
+    url: "https://pim0.com",
+    name: "pim0.com · Plano de negócio",
+    shortRole: "Plano de negócio do projeto",
+    statusLabel: "Ativo",
+    status: "active",
+    currentRouting: "Site próprio do plano de negócio",
+    future: "Manter-se como documento vivo do plano de negócio do projeto",
+    summary:
+      "O site (com zero) que apresenta o plano de negócio do projeto PIMO — visão, modelo e estrutura do ecossistema.",
+    whatIs:
+      "O pim0.com (escrito com zero) é o site que apresenta o plano de negócio do projeto PIMO. Documenta a visão da plataforma, o modelo e o mapa dos domínios do ecossistema.",
+    ecosystemRole:
+      "É a referência estratégica e institucional: explica o que é o PIMO como plataforma (Plataforma Inteligente de Mobiliário Otimizado) e enquadra os sete domínios, sem substituir a loja, a aplicação ou o centro de ajuda.",
+    currentState:
+      "Site ativo com o plano de negócio do projeto. A página pública identifica o PIMO como plataforma paramétrica industrial e lista os sete domínios do ecossistema (pimo.pt, pimo.pro, pimo.info, pimo.es, pimo.casa, pimo.design e pim0.com).",
+    futurePlans:
+      "Continuar a apresentar e atualizar o plano de negócio do projeto, acompanhando a evolução dos módulos e dos sites do ecossistema.",
+    relatedIds: ["pimo-pt", "pimo-pro", "pimo-info"],
+    visitLabel: "Visitar pim0.com",
+  },
+]
+
+/** @param {string} id */
+export function getSiteById(id) {
+  return pimoSites.find((site) => site.id === id) || null
+}
+
+/** @param {string} id */
+export function getRelatedSites(id) {
+  const site = getSiteById(id)
+  if (!site) return []
+  return site.relatedIds.map(getSiteById).filter(Boolean)
+}
+
+export const ecosystemIntro = {
+  title: "Ecossistema de sites PIMO",
+  lead:
+    "O PIMO organiza a marca, a aplicação, a ajuda e o plano de negócio em sete domínios. Cada um tem um papel próprio; alguns já estão ativos, outros estão reservados e ligados aos sites principais até terem conteúdo dedicado.",
+}
