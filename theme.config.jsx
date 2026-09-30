@@ -8,9 +8,16 @@ const defaultDescription =
 function resolveCanonical(asPath) {
   const cleanPath = asPath.split(/[?#]/)[0]
   if (cleanPath === "/") {
-    return siteUrl
+    return `${siteUrl}/`
   }
-  return `${siteUrl}${cleanPath.replace(/\/$/, "")}`
+
+  if (/\.[a-z0-9]+$/i.test(cleanPath)) {
+    return `${siteUrl}${cleanPath}`
+  }
+
+  return cleanPath.endsWith("/")
+    ? `${siteUrl}${cleanPath}`
+    : `${siteUrl}${cleanPath}/`
 }
 
 export default {
@@ -20,7 +27,7 @@ export default {
       <span>PIMO Info</span>
     </span>
   ),
-  logoLink: "/pt-pt",
+  logoLink: "/",
   project: {
     link: "https://github.com/pimo-pro/pimo-info",
   },
@@ -63,10 +70,11 @@ export default {
   footer: {
     content: (
       <span>
-        PIMO Info · Centro de ajuda oficial ·{" "}
+        © {new Date().getFullYear()} PIMO Criativo · Crafted by Khaled ·{" "}
         <a href="https://pimo.pro" target="_blank" rel="noreferrer">
           pimo.pro
-        </a>
+        </a>{" "}
+        · <a href="https://pim0.com" target="_blank" rel="noreferrer">pim0.com</a>
       </span>
     ),
   },
@@ -92,7 +100,7 @@ export default {
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
         <link rel="canonical" href={canonical} />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" href="https://pimo.pro/logo-pi.png" />
       </>
     )
   },

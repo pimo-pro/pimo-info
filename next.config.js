@@ -11,6 +11,7 @@ const isStaticExport =
 const nextConfig = isStaticExport
   ? {
       output: 'export',
+      trailingSlash: true,
       images: { unoptimized: true }
     }
   : {}

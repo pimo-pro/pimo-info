@@ -1,0 +1,22 @@
+Options -MultiViews
+DirectoryIndex index.html default.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Normaliza URLs index.html para a forma canónica com slash final
+  RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L,NE]
+
+  # Se o recurso físico existe, servir diretamente
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Resolver URLs limpas para diretórios exportados (ex.: /pt-pt/primeiros-passos/)
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.+?)/?$ /$1/ [R=301,L]
+</IfModule>
+
+ErrorDocument 404 /404.html
