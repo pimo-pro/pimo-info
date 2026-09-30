@@ -1,6 +1,7 @@
 export default {
   index: {
     title: "Idioma",
+    display: "hidden",
     theme: {
       sidebar: true,
       toc: false,
