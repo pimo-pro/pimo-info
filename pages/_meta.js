@@ -2,7 +2,7 @@ export default {
   index: {
     title: "Idioma",
     theme: {
-      sidebar: false,
+      sidebar: true,
       toc: false,
       pagination: false,
     },

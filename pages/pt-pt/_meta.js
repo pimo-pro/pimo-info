@@ -2,6 +2,7 @@ export default {
   index: {
     title: "Início",
     theme: {
+      sidebar: true,
       toc: false,
     },
   },

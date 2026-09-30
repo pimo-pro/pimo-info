@@ -23,6 +23,35 @@ body {
   color: var(--pimo-ink);
 }
 
+/* Full-width layout: lift Nextra container / article max-width caps */
+._max-w-\[90rem\] {
+  max-width: none !important;
+}
+
+article.nextra-content > main._max-w-6xl,
+article.nextra-content > main {
+  max-width: none !important;
+  width: 100%;
+}
+
+/* Keep readable side padding on very wide viewports */
+.nextra-nav-container nav {
+  padding-left: max(env(safe-area-inset-left), 1.5rem);
+  padding-right: max(env(safe-area-inset-right), 1.5rem);
+}
+
+footer > div._mx-auto {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+@media (max-width: 767px) {
+  article.nextra-content > main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 .nextra-nav-container-blur {
   background: rgba(248, 246, 242, 0.9) !important;
   border-bottom: 1px solid var(--pimo-border) !important;

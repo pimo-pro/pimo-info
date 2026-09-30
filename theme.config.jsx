@@ -53,6 +53,10 @@ export default {
     emptyResult: "Sem resultados para esta pesquisa.",
     error: "Erro ao carregar pesquisa.",
   },
+  sidebar: {
+    defaultMenuCollapseLevel: 1,
+    toggleButton: true,
+  },
   editLink: {
     content: null,
   },
