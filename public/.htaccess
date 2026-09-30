@@ -8,6 +8,9 @@ DirectoryIndex index.html default.php
   # Normaliza URLs index.html para a forma canónica com slash final
   RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L,NE]
 
+  # Redirect canónico: slug antigo de exportação → TCN/Drill XML
+  RewriteRule ^pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/?$ /pt-pt/funcionalidades/exportacao-tcn-drill-xml/ [R=301,L]
+
   # Se o recurso físico existe, servir diretamente
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d

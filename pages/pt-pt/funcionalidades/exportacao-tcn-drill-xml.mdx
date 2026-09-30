@@ -1,0 +1,48 @@
+---
+title: Exportação TCN/Drill XML
+description: Exportação de ficheiros industriais TCN e Drill XML para máquinas CNC de carpintaria.
+---
+
+import { ServiceHero, InfoAccordion } from "../../../components/PimoVisualSections"
+import { AnimatedHotspotImage, LazyYouTubeEmbed } from "../../../components/PimoMediaComponents"
+
+<ServiceHero
+  title="Exportação TCN/Drill XML"
+  subtitle="Saída técnica em formatos industriais reais para máquinas CNC e software de produção, integrada no fluxo do projeto."
+  image="/visual/readme/ecra-ajuda.webp"
+  imageAlt="Ajuda do PIMO com tópico de exportação"
+  pimoHref="https://pimo.pro"
+  guideHref="/pt-pt/guias-utilizador/exportacao/"
+/>
+
+## O que faz
+
+Gera ficheiros **TCN** (`.tcn`) e **Drill XML** (`.xml`) por módulo, com informação de furação e execução para chão de fábrica e máquinas CNC.
+
+<section className="pimo-service-benefits">
+  <li><strong>Formatos industriais</strong><p>TCN e Drill XML (Furação XML) integrados no menu de exportação da app.</p></li>
+  <li><strong>Fluxo consolidado</strong><p>Pode ser combinado com PDF técnico e ZIP completo no mesmo projeto.</p></li>
+  <li><strong>Saída por módulo</strong><p>Organização orientada para operacionalização na produção.</p></li>
+</section>
+
+<AnimatedHotspotImage
+  src="/visual/readme/ecra-ajuda.webp"
+  alt="Pontos de atenção na exportação técnica"
+  hotspots={[
+    { x: 18, y: 66, label: "Secção Exportação", delay: 0 },
+    { x: 55, y: 53, label: "Tipos de ficheiro", delay: 120 },
+    { x: 73, y: 88, label: "Ações finais", delay: 240 },
+  ]}
+/>
+
+<LazyYouTubeEmbed
+  videoId="j4dJEYJnFH0"
+  title="PIMO em ação — exportação técnica"
+/>
+
+<InfoAccordion
+  items={[
+    { title: "Qual formato devo usar?", text: "Depende da máquina CNC e do software da fábrica. O fluxo oficial disponibiliza TCN e Drill XML para cenários distintos." },
+    { title: "Posso exportar tudo de uma vez?", text: "Sim, através do arquivo completo (ZIP), que agrega os principais artefactos de produção." },
+  ]}
+/>

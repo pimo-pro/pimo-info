@@ -8,7 +8,11 @@ export default {
   "portas-e-gavetas": "Portas e Gavetas",
   "lista-de-corte": "Lista de Corte",
   "nesting-fast-pro": "Nesting Fast/PRO",
-  "exportacao-cnc-tcn-drill-xml": "Exportação CNC/TCN/Drill XML",
+  "exportacao-tcn-drill-xml": "Exportação TCN/Drill XML",
+  "exportacao-cnc-tcn-drill-xml": {
+    title: "Exportação TCN/Drill XML (antigo)",
+    display: "hidden",
+  },
   "pdf-tecnico": "PDF técnico",
   orcamentos: "Orçamentos",
   "pimo-trak": "PIMO-TRAK",

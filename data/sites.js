@@ -67,7 +67,7 @@ export const pimoSites = [
     ecosystemRole:
       "É o núcleo operacional do produto. É aqui que se configura o mobiliário e se prepara o fluxo técnico (lista de corte, nesting, exportação industrial e rastreio). Os restantes sites do ecossistema apontam para este papel — loja, ajuda, designs futuros e plano de negócio.",
     currentState:
-      "Aplicação em produção. A página pública identifica o PIMO Criativo como configurador paramétrico de mobiliário com apoio a CNC, lista de corte e ficheiros industriais.",
+      "Aplicação em produção. A página pública identifica o PIMO Criativo como configurador paramétrico de mobiliário com apoio a máquinas CNC, lista de corte e ficheiros industriais (TCN e Drill XML).",
     futurePlans:
       "Continuar como plataforma oficial da aplicação, com evolução dos módulos da plataforma e ligação crescente aos domínios dedicados (como pimo.casa e pimo.design) quando estes tiverem conteúdo próprio.",
     relatedIds: ["pimo-info", "pimo-pt", "pimo-casa", "pimo-design", "pim0-com"],
