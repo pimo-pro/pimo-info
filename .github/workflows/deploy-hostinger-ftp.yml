@@ -27,8 +27,9 @@ jobs:
       - name: Static export
         run: npm run export
 
-      # Exclusive public_html for pimo.info. state-name v2 is already synced;
-      # incremental FTP upload avoids wiping the live site mid-deploy.
+      # Exclusive public_html for pimo.info. Fresh state-name escapes stale
+      # sync entries that tried to delete missing _next/data paths (FTP 550).
+      # No clean-slate: keep the live site available during upload.
       - name: Upload /out via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -37,4 +38,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          state-name: .ftp-deploy-sync-state-v2.json
+          state-name: .ftp-deploy-sync-state-v3.json
