@@ -1,10 +1,11 @@
 export default {
-  index: 'Início',
-  docs: 'Docs',
-  ecosystem: 'Ecossistema',
-  roadmap: 'Roadmap',
-  'release-notes': 'Release notes',
-  ajuda: 'Ajuda',
-  about: 'About',
-  contact: 'Contact'
+  index: {
+    title: "Idioma",
+    theme: {
+      sidebar: false,
+      toc: false,
+      pagination: false,
+    },
+  },
+  "pt-pt": "Centro de Ajuda (pt-PT)",
 }

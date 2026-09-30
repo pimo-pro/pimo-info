@@ -6,6 +6,10 @@
   --pimo-muted: #2c2e30;
   --pimo-border: #d8d4ce;
   --pimo-primary: #1c4a7a;
+  --pimo-primary-light: #90b8e0;
+  --pimo-primary-dark: #0f2d50;
+  --pimo-sienna: #8b4a1c;
+  --pimo-sienna-light: #d4a882;
   --pimo-primary-soft: rgba(28, 74, 122, 0.08);
   --pimo-radius: 6px;
   --nextra-primary-hue: 210deg;
@@ -17,6 +21,11 @@ html,
 body {
   background: var(--pimo-bg);
   color: var(--pimo-ink);
+}
+
+.nextra-nav-container-blur {
+  background: rgba(248, 246, 242, 0.9) !important;
+  border-bottom: 1px solid var(--pimo-border) !important;
 }
 
 /* Light industrial surfaces */
@@ -58,17 +67,10 @@ main {
   color: var(--pimo-ink);
 }
 
-.pimo-logo-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.pimo-logo img {
   width: 1.75rem;
   height: 1.75rem;
-  border-radius: var(--pimo-radius);
-  background: var(--pimo-primary);
-  color: #f8f6f2;
-  font-size: 0.7rem;
-  font-weight: 700;
+  border-radius: 4px;
 }
 
 .pimo-lead {
@@ -110,4 +112,102 @@ main {
   margin-left: auto;
   color: var(--pimo-muted);
   font-size: 0.85rem;
+}
+
+.pimo-open-app-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: var(--pimo-radius);
+  border: 1px solid var(--pimo-primary-dark);
+  background: var(--pimo-primary);
+  color: #fff !important;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.pimo-open-app-button:hover {
+  background: var(--pimo-primary-dark);
+}
+
+.pimo-language-card {
+  margin-top: 1.5rem;
+  max-width: 42rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--pimo-border);
+  border-radius: 10px;
+  background: var(--pimo-card);
+}
+
+.pimo-language-card h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.pimo-language-card p {
+  margin: 0.45rem 0 1rem;
+  color: var(--pimo-muted);
+}
+
+.pimo-primary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff !important;
+  background: var(--pimo-primary);
+  border: 1px solid var(--pimo-primary-dark);
+  border-radius: var(--pimo-radius);
+  padding: 0.55rem 0.9rem;
+}
+
+.pimo-primary-link:hover {
+  background: var(--pimo-primary-dark);
+}
+
+.pimo-warning-box {
+  border: 1px solid var(--pimo-sienna);
+  background: rgba(212, 168, 130, 0.23);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+}
+
+.pimo-warning-box p {
+  margin: 0.4rem 0 0;
+  color: var(--pimo-muted);
+}
+
+.pimo-news-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.pimo-news-list li {
+  background: var(--pimo-card);
+  border: 1px solid var(--pimo-border);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+}
+
+.pimo-news-list h2 {
+  margin: 0.45rem 0 0.35rem;
+  font-size: 1rem;
+}
+
+.pimo-news-list p {
+  margin: 0;
+}
+
+.pimo-news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: var(--pimo-muted);
+  font-size: 0.82rem;
 }
