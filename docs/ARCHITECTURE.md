@@ -118,6 +118,9 @@ GitHub Actions (`.github/workflows/deploy-hostinger-ftp.yml`):
 2. `npm run check`
 3. `npm run export` (includes `kb:generate` via `preexport`)
 4. FTP upload to Hostinger (`concurrency: deploy-ftp`, no clean-slate)
+5. IndexNow ping (`node scripts/indexnow-ping.cjs`, `continue-on-error`) — POSTs all sitemap URLs to `api.indexnow.org`; key file at `public/<key>.txt`
+
+Sitemap URLs include `<lastmod>` (frontmatter `lastUpdated` when present, else generation date).
 
 ## Terminology quick rules
 

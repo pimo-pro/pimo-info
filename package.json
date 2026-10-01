@@ -12,7 +12,8 @@
     "precheck": "npm run kb:generate",
     "check": "node scripts/check-kb.cjs",
     "preexport": "npm run kb:generate",
-    "export": "STATIC_EXPORT=true next build"
+    "export": "STATIC_EXPORT=true next build",
+    "indexnow": "node scripts/indexnow-ping.cjs"
   },
   "engines": {
     "node": ">=18"

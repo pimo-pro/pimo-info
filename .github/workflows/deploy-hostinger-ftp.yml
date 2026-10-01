@@ -42,3 +42,8 @@ jobs:
           local-dir: ./out/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
           state-name: .ftp-deploy-sync-state-v6.json
+
+      # Notify search engines via IndexNow. Never fail the deploy on ping errors.
+      - name: IndexNow ping
+        continue-on-error: true
+        run: node scripts/indexnow-ping.cjs

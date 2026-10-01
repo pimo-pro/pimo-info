@@ -231,6 +231,8 @@ function main() {
   fs.writeFileSync(path.join(PUBLIC, "llms-full.txt"), fullParts.join("\n"), "utf8")
 
   // sitemap
+  const today = new Date().toISOString().slice(0, 10)
+  const pageByPath = new Map(pages.map((p) => [p.path, p]))
   const urls = pages
     .filter((p) => p.category !== "redirect" && p.category !== "legacy")
     .map((p) => p.path)
@@ -238,7 +240,20 @@ function main() {
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    ...unique.map((u) => `  <url><loc>${site.url}${u === "/" ? "/" : u}</loc></url>`),
+    ...unique.map((u) => {
+      const loc = `${site.url}${u === "/" ? "/" : u}`
+      const page = pageByPath.get(u)
+      const lastmod =
+        page?.lastUpdated && /^\d{4}-\d{2}-\d{2}$/.test(page.lastUpdated)
+          ? page.lastUpdated
+          : today
+      return [
+        "  <url>",
+        `    <loc>${loc}</loc>`,
+        `    <lastmod>${lastmod}</lastmod>`,
+        "  </url>",
+      ].join("\n")
+    }),
     "</urlset>",
     "",
   ].join("\n")
