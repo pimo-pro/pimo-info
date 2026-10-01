@@ -7,13 +7,16 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "kb:generate": "node scripts/generate-kb-artifacts.cjs",
+    "kb:generate": "node scripts/generate-kb-artifacts.cjs && node scripts/generate-blog-rss.cjs && node scripts/generate-coverage.cjs && node scripts/generate-mini-sites.cjs",
     "kb:normalize": "node scripts/normalize-frontmatter.cjs",
     "precheck": "npm run kb:generate",
     "check": "node scripts/check-kb.cjs",
     "preexport": "npm run kb:generate",
     "export": "STATIC_EXPORT=true next build",
-    "indexnow": "node scripts/indexnow-ping.cjs"
+    "indexnow": "node scripts/indexnow-ping.cjs",
+    "blog:rss": "node scripts/generate-blog-rss.cjs",
+    "coverage": "node scripts/generate-coverage.cjs",
+    "minisites": "node scripts/generate-mini-sites.cjs"
   },
   "engines": {
     "node": ">=18"

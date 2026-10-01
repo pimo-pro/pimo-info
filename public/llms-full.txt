@@ -1,5 +1,5 @@
 # PIMO Info — full knowledge dump
-Generated: 2026-10-01T01:16:44.665Z
+Generated: 2026-10-01T01:44:53.470Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -114,6 +114,8 @@ Locale: pt-PT
 ## Page index
 - Centro visual PIMO Info: https://pimo.info/
 - Centro de ajuda PIMO Criativo: https://pimo.info/pt-pt/
+- Blog: https://pimo.info/pt-pt/blog/
+- Bem-vindo ao blog PIMO: https://pimo.info/pt-pt/blog/posts/bem-vindo/
 - Como funciona: https://pimo.info/pt-pt/como-funciona/
 - Contacto: https://pimo.info/pt-pt/contacto/
 - Documentação técnica: https://pimo.info/pt-pt/documentacao-tecnica/
@@ -129,17 +131,26 @@ Locale: pt-PT
 - pimo.pro: https://pimo.info/pt-pt/ecossistema/pimo-pro/
 - pimo.pt: https://pimo.info/pt-pt/ecossistema/pimo-pt/
 - Funcionalidades PIMO: https://pimo.info/pt-pt/funcionalidades/
+- Análise de projetos: https://pimo.info/pt-pt/funcionalidades/analise-projetos/
 - Configurador 3D: https://pimo.info/pt-pt/funcionalidades/configurador-3d/
+- Conta e acesso: https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/
+- Definições: https://pimo.info/pt-pt/funcionalidades/definicoes/
+- Estações industriais: https://pimo.info/pt-pt/funcionalidades/estacoes-industriais/
 - Redirecionamento — Exportação TCN/Drill XML: https://pimo.info/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/
 - Exportação TCN/Drill XML: https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/
+- Ferragens: https://pimo.info/pt-pt/funcionalidades/ferragens/
 - Lista de Corte: https://pimo.info/pt-pt/funcionalidades/lista-de-corte/
 - Materiais: https://pimo.info/pt-pt/funcionalidades/materiais/
+- Modo foto: https://pimo.info/pt-pt/funcionalidades/modo-foto/
 - Módulo Industrial: https://pimo.info/pt-pt/funcionalidades/modulo-industrial/
 - Nesting Fast/PRO: https://pimo.info/pt-pt/funcionalidades/nesting-fast-pro/
 - Orçamentos: https://pimo.info/pt-pt/funcionalidades/orcamentos/
 - PDF técnico: https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/
 - PIMO-TRAK: https://pimo.info/pt-pt/funcionalidades/pimo-trak/
 - Portas e Gavetas: https://pimo.info/pt-pt/funcionalidades/portas-e-gavetas/
+- Relatório final: https://pimo.info/pt-pt/funcionalidades/relatorio-final/
+- Remates e acabamentos: https://pimo.info/pt-pt/funcionalidades/remates/
+- Sala e ambiente: https://pimo.info/pt-pt/funcionalidades/sala-e-ambiente/
 - Glossário técnico: https://pimo.info/pt-pt/glossario/
 - Guias de utilizador: https://pimo.info/pt-pt/guias-utilizador/
 - Atalhos de Teclado: https://pimo.info/pt-pt/guias-utilizador/atalhos-teclado/
@@ -3666,6 +3677,26 @@ Centro de ajuda PIMO Criativo — documentação PIMO Info (pt-PT).
 
 ---
 
+## Blog
+URL: https://pimo.info/pt-pt/blog/
+Artigos e novidades do ecossistema PIMO — guias, produto e produção.
+
+# Blog PIMO
+
+---
+
+## Bem-vindo ao blog PIMO
+URL: https://pimo.info/pt-pt/blog/posts/bem-vindo/
+Infraestrutura do blog do centro de ajuda PIMO Info — formato, RSS e fontes.
+
+O blog do **pimo.info** documenta o ecossistema PIMO com artigos verificáveis: guias de utilização, evolução de produto e produção industrial.
+
+Os autores (agentes ou editores) adicionam apenas ficheiros em `pages/pt-pt/blog/posts/` e imagens em `public/blog/images/`, conforme [docs/BLOG.md](https://github.com/pimo-pro/pimo-info/blob/main/docs/BLOG.md).
+
+Cada artigo inclui data, autor, categoria, tags, capa com crédito e secção **Fontes** com ligações ao help center ou à aplicação.
+
+---
+
 ## Como funciona
 URL: https://pimo.info/pt-pt/como-funciona/
 Arquitetura e fluxo do PIMO Criativo: projeto → módulos/caixas → peças → materiais → lista de corte → nesting → exportações → orçamento → PIMO-TRAK.
@@ -3960,6 +3991,25 @@ Páginas de apresentação visual das funcionalidades principais do PIMO Criativ
 
 ---
 
+## Análise de projetos
+URL: https://pimo.info/pt-pt/funcionalidades/analise-projetos/
+Análise documental em PIMO PROJETOS (/PROJETOS/:project/analise).
+
+# Análise de projetos
+
+Em **PIMO PROJETOS**, as rotas `/PROJETOS/:project/analise` e `/PROJETOS/:project/analise/:docId` cobrem documentos de análise associados ao projeto.
+
+## Estado
+
+**Disponível** no código da app (`ProjetosAnaliseIndexPage`, `ProjetosAnaliseDocPage`).
+
+## Relacionado
+
+- [PIMO PROJETOS](/pt-pt/sistemas-pimo/pimo-projetos/)
+- [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/)
+
+---
+
 ## Configurador 3D
 URL: https://pimo.info/pt-pt/funcionalidades/configurador-3d/
 Modelação paramétrica no workspace 3D com fluxo real do PIMO Criativo.
@@ -3972,6 +4022,95 @@ Permite selecionar módulos, configurar dimensões/opções e organizar o layout
     Fluxo orientado a produção  Os módulos entram como placeholders e são calculados em bloco com «Gerar Design 3D».  
     Movimento e rotação direta  Ferramentas `S`, `M`, `R` e alinhamento por contexto para ajuste rápido.  
     Visualização operacional  Feedback de layout e composição antes de avançar para cutlist/nesting.
+
+---
+
+## Conta e acesso
+URL: https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/
+Login, registo, verificação de email, recuperação de password e perfil no PIMO Criativo.
+
+# Conta e acesso
+
+Rotas verificadas em `App.tsx`: `/login`, `/register`, `/register/check-email`, `/verify-email`, `/forgot-password`, `/me`.
+
+## Fluxos
+
+1. **Registo** → verificação de email → login
+2. **Login** → dashboard / projetos
+3. **Recuperar password** → email de reset
+4. **Perfil (`/me`)** → dados da conta
+
+## Estado
+
+**Disponível** na aplicação [pimo.pro](https://pimo.pro/login).
+
+## Relacionado
+
+- [Definições](/pt-pt/funcionalidades/definicoes/)
+- [Primeiros passos](/pt-pt/primeiros-passos/)
+
+---
+
+## Definições
+URL: https://pimo.info/pt-pt/funcionalidades/definicoes/
+Definições do utilizador, do projeto e administrativas no PIMO Criativo (rota /definicoes e admin).
+
+# Definições
+
+A rota `/definicoes` e as áreas de administração (`/admin/global-settings`, roles, permissões, room settings, industrial) concentram preferências e configuração do sistema.
+
+## Níveis
+
+| Nível | Onde | Conteúdo típico |
+|---|---|---|
+| Utilizador | `/definicoes`, `/me` | Preferências pessoais |
+| Projeto | contexto do projeto | Unidades, materiais default |
+| Global | `/admin/global-settings` | Defaults da instalação |
+| Sala | `/admin/room-settings` | Ambiente / sala 3D |
+| Industrial | `/admin/settings/industrial` | Alertas e parâmetros TRAK |
+
+## Estado
+
+**Disponível** (parcial na documentação de cada ecrã admin). A gestão avançada de roles/permissões está coberta de forma overview; detalhes de cada flag seguem o código da app.
+
+## Relacionado
+
+- [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/)
+- [Sala e ambiente](/pt-pt/funcionalidades/sala-e-ambiente/)
+- [Sistema industrial](/pt-pt/documentacao-tecnica/sistema-industrial/)
+
+---
+
+## Estações industriais
+URL: https://pimo.info/pt-pt/funcionalidades/estacoes-industriais/
+Estações PIMO TRAK — armazém, nesting, furação, orlar, montagem, embalagem, supervisor e operador.
+
+# Estações industriais
+
+As **estações** do fluxo industrial (verificadas em `App.tsx`) operam ordens de fabrico por posto:
+
+| Estação | Rota (app) |
+|---|---|
+| Armazém | `/industrial/work-orders/warehouse` |
+| Nesting | `/industrial/work-orders/nesting` |
+| Furação | `/industrial/work-orders/drill` |
+| Orlar | `/industrial/work-orders/orlar` |
+| Montagem | `/industrial/work-orders/montagem` |
+| Embalagem | `/industrial/work-orders/embalagem` |
+| Supervisor | `/industrial/supervisor` |
+| Operador | `/industrial/operador` |
+
+Há ainda vistas de qualidade, retrabalho, time-tracking e tracking de peças sob `/industrial/*`.
+
+## Estado
+
+**Parcial** — ecrãs existem na app; a documentação de cada posto resume o papel no TRAK. App: [pimo.pro/industrial](https://pimo.pro/industrial).
+
+## Relacionado
+
+- [PIMO TRAK](/pt-pt/sistemas-pimo/pimo-trak/)
+- [PIMO INDUSTRIAL](/pt-pt/sistemas-pimo/pimo-industrial/)
+- [PIMO DRILL](/pt-pt/sistemas-pimo/pimo-drill/)
 
 ---
 
@@ -3997,6 +4136,36 @@ Gera ficheiros **TCN** (`.tcn`) e **Drill XML** (`.xml`) a partir do fluxo **Arq
     Formatos industriais  TCN e Drill XML (Furação XML) no menu de exportação da app.  
     Fluxo consolidado  Combinável com PDF técnico, cutlist, etiquetas e ZIP completo.  
     Organização por espessura  No arquivo completo, TCN/etiquetas/layouts agrupam-se por espessura de chapa.
+
+---
+
+## Ferragens
+URL: https://pimo.info/pt-pt/funcionalidades/ferragens/
+Ferragens no PIMO Criativo — dobradiças, corrediças, conectores e listagens de exportação.
+
+# Ferragens
+
+As **ferragens** no PIMO Criativo descrevem os componentes mecânicos associados a caixas e frentes: dobradiças, corrediças, conectores e acessórios necessários à montagem.
+
+## Para que serve
+
+- Quantificar ferragens a partir da configuração 3D
+- Incluir listagens em PDF/XLSX no arquivo industrial
+- Ligar portas/gavetas às regras de ferragem disponíveis no catálogo da app
+
+## Como funciona (verificado no código)
+
+Na aplicação ([pimo.pro](https://pimo.pro)), as ferragens entram no fluxo de projeto após definir caixas, portas ou gavetas. As exportações industriais incluem secções de ferragens no ZIP completo e nos PDFs técnicos.
+
+## Estado
+
+**Disponível** na app — catálogo e exportação. Detalhes de regras por fabricante podem evoluir; consultar a app para o catálogo atual.
+
+## Relacionado
+
+- [Materiais](/pt-pt/funcionalidades/materiais/)
+- [Portas e gavetas](/pt-pt/funcionalidades/portas-e-gavetas/)
+- [Exportação](/pt-pt/guias-utilizador/exportacao/)
 
 ---
 
@@ -4027,6 +4196,25 @@ No fluxo real da app, cada caixa pode ter material de estrutura e material de fr
     Aplicação por módulo  Define material da carcaça em cada caixa selecionada.  
     Frentes independentes  Portas e gavetas podem usar materiais próprios via menu de contexto.  
     Cálculo de custo integrado  Resumo financeiro acompanha área e custo por m² dos materiais ativos.
+
+---
+
+## Modo foto
+URL: https://pimo.info/pt-pt/funcionalidades/modo-foto/
+Modo foto no PIMO Criativo — capturas e composição visual do projeto em 3D.
+
+# Modo foto
+
+O **modo foto** permite capturar e apresentar o projeto no viewport 3D com composição orientada a imagem (iluminação/ambiente da sala).
+
+## Estado
+
+**Disponível / parcial** — a capacidade existe na app; a documentação detalhada de controlos segue o catálogo de [botões](/pt-pt/referencia/botoes/) e a UI ao vivo em [pimo.pro](https://pimo.pro).
+
+## Relacionado
+
+- [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/)
+- [Sala e ambiente](/pt-pt/funcionalidades/sala-e-ambiente/)
 
 ---
 
@@ -4120,6 +4308,65 @@ Controla tipo de porta e quantidade de gavetas por módulo, aplicando regras int
     Regras automáticas  Portas e gavetas são mutuamente exclusivas no mesmo módulo.  
     Animação de abertura  Permite validar interferências com módulos vizinhos antes de exportar.  
     Ferragens derivadas  Dobradiças/corrediças entram no cálculo conforme configuração ativa.
+
+---
+
+## Relatório final
+URL: https://pimo.info/pt-pt/funcionalidades/relatorio-final/
+Relatório final consolidado do projeto no PIMO Criativo (rota /relatorio-final/:project).
+
+# Relatório final
+
+A rota `/relatorio-final/:project` gera uma vista consolidada do projeto para revisão e entrega.
+
+## Estado
+
+**Disponível** na app autenticada.
+
+## Relacionado
+
+- [Exportação](/pt-pt/guias-utilizador/exportacao/)
+- [PDF técnico](/pt-pt/funcionalidades/pdf-tecnico/)
+- [Orçamentos](/pt-pt/funcionalidades/orcamentos/)
+
+---
+
+## Remates e acabamentos
+URL: https://pimo.info/pt-pt/funcionalidades/remates/
+Remates, rodapés e acabamentos de caixa no PIMO Criativo.
+
+# Remates e acabamentos
+
+**Remates** (incluindo rodapés e frisos) completam a caixa para fabrico e apresentação. São configurados no fluxo de caixa/peça do configurador.
+
+## Estado
+
+**Disponível / parcial** — presente no modelo de projeto; documentar regras por tipo à medida que o catálogo estabiliza.
+
+## Relacionado
+
+- [Criar caixa](/pt-pt/guias-utilizador/criar-caixa/)
+- [Materiais](/pt-pt/funcionalidades/materiais/)
+
+---
+
+## Sala e ambiente
+URL: https://pimo.info/pt-pt/funcionalidades/sala-e-ambiente/
+Sala 3D, ambiente e room settings no PIMO Criativo.
+
+# Sala e ambiente
+
+O ambiente de **sala** contextualiza o mobiliário no viewport (paredes, luz, HDR). As definições administrativas estão em `/admin/room-settings`.
+
+## Estado
+
+**Disponível** na app. Ajuste fino de room settings é administrativo.
+
+## Relacionado
+
+- [Modo foto](/pt-pt/funcionalidades/modo-foto/)
+- [Definições](/pt-pt/funcionalidades/definicoes/)
+- [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/)
 
 ---
 

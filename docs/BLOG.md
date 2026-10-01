@@ -48,8 +48,9 @@ lastUpdated: 2026-10-01
 | `coverImage` | path | recomendado | Relativo ao site, sob `/blog/images/` |
 | `coverCredit` | string | se houver capa | Texto de crédito |
 | `sources` | `{title,url}[]` | recomendado | Renderiza secção Fontes |
+| `related` | string[] | recomendado* | Links internos pimo.info (`/pt-pt/...`). *Obrigatório no CI do repo (`check-kb`). |
 | `draft` | boolean | não | Default `false` |
-| `lastUpdated` | `YYYY-MM-DD` | recomendado | |
+| `lastUpdated` | `YYYY-MM-DD` | recomendado* | *Obrigatório no CI. |
 
 ### Categorias canónicas
 

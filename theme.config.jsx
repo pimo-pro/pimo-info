@@ -88,6 +88,16 @@ export default {
     const description = frontMatter?.description || defaultDescription
     const isFaq = asPath.includes("/perguntas-frequentes")
     const isHome = asPath === "/" || asPath.startsWith("/?")
+    const isBlogPost = asPath.includes("/blog/posts/")
+    const ogImage = frontMatter?.coverImage
+      ? frontMatter.coverImage.startsWith("http")
+        ? frontMatter.coverImage
+        : `${siteUrl}${frontMatter.coverImage}`
+      : frontMatter?.image
+        ? frontMatter.image.startsWith("http")
+          ? frontMatter.image
+          : `${siteUrl}${frontMatter.image}`
+        : "https://pimo.pro/logo-pi.png"
 
     const organization = {
       "@context": "https://schema.org",
@@ -164,17 +174,26 @@ export default {
         <meta name="theme-color" content="#F0EDE8" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description} />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content={isBlogPost ? "article" : "website"} />
         <meta property="og:url" content={canonical} />
-        <meta property="og:image" content="https://pimo.pro/logo-pi.png" />
-        <meta name="twitter:card" content="summary" />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:locale" content="pt_PT" />
+        <meta property="og:site_name" content="PIMO Info" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
         <link rel="canonical" href={canonical} />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="PIMO Info Blog"
+          href={`${siteUrl}/blog/rss.xml`}
+        />
         <link rel="icon" type="image/png" href="https://pimo.pro/logo-pi.png" />
         <JsonLd data={organization} />
         <JsonLd data={website} />
-        {techArticle ? <JsonLd data={techArticle} /> : null}
+        {techArticle && !isBlogPost ? <JsonLd data={techArticle} /> : null}
         {faqPage ? <JsonLd data={faqPage} /> : null}
       </>
     )

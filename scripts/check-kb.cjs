@@ -27,6 +27,10 @@ const ALLOWED_CATEGORIES = new Set([
   "referencia",
   "arquitetura",
   "sistemas",
+  "noticias",
+  "blog",
+  "produto",
+  "producao",
 ])
 
 function parseFrontmatter(raw) {

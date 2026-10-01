@@ -111,6 +111,8 @@ Locale: pt-PT
 ## Page index
 - Centro visual PIMO Info: https://pimo.info/
 - Centro de ajuda PIMO Criativo: https://pimo.info/pt-pt/
+- Blog: https://pimo.info/pt-pt/blog/
+- Bem-vindo ao blog PIMO: https://pimo.info/pt-pt/blog/posts/bem-vindo/
 - Como funciona: https://pimo.info/pt-pt/como-funciona/
 - Contacto: https://pimo.info/pt-pt/contacto/
 - Documentação técnica: https://pimo.info/pt-pt/documentacao-tecnica/
@@ -126,17 +128,26 @@ Locale: pt-PT
 - pimo.pro: https://pimo.info/pt-pt/ecossistema/pimo-pro/
 - pimo.pt: https://pimo.info/pt-pt/ecossistema/pimo-pt/
 - Funcionalidades PIMO: https://pimo.info/pt-pt/funcionalidades/
+- Análise de projetos: https://pimo.info/pt-pt/funcionalidades/analise-projetos/
 - Configurador 3D: https://pimo.info/pt-pt/funcionalidades/configurador-3d/
+- Conta e acesso: https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/
+- Definições: https://pimo.info/pt-pt/funcionalidades/definicoes/
+- Estações industriais: https://pimo.info/pt-pt/funcionalidades/estacoes-industriais/
 - Redirecionamento — Exportação TCN/Drill XML: https://pimo.info/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/
 - Exportação TCN/Drill XML: https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/
+- Ferragens: https://pimo.info/pt-pt/funcionalidades/ferragens/
 - Lista de Corte: https://pimo.info/pt-pt/funcionalidades/lista-de-corte/
 - Materiais: https://pimo.info/pt-pt/funcionalidades/materiais/
+- Modo foto: https://pimo.info/pt-pt/funcionalidades/modo-foto/
 - Módulo Industrial: https://pimo.info/pt-pt/funcionalidades/modulo-industrial/
 - Nesting Fast/PRO: https://pimo.info/pt-pt/funcionalidades/nesting-fast-pro/
 - Orçamentos: https://pimo.info/pt-pt/funcionalidades/orcamentos/
 - PDF técnico: https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/
 - PIMO-TRAK: https://pimo.info/pt-pt/funcionalidades/pimo-trak/
 - Portas e Gavetas: https://pimo.info/pt-pt/funcionalidades/portas-e-gavetas/
+- Relatório final: https://pimo.info/pt-pt/funcionalidades/relatorio-final/
+- Remates e acabamentos: https://pimo.info/pt-pt/funcionalidades/remates/
+- Sala e ambiente: https://pimo.info/pt-pt/funcionalidades/sala-e-ambiente/
 - Glossário técnico: https://pimo.info/pt-pt/glossario/
 - Guias de utilizador: https://pimo.info/pt-pt/guias-utilizador/
 - Atalhos de Teclado: https://pimo.info/pt-pt/guias-utilizador/atalhos-teclado/

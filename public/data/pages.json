@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T01:16:44.663Z",
+  "generatedAt": "2026-10-01T01:44:53.469Z",
   "items": [
     {
       "path": "/",
@@ -109,6 +109,40 @@
       "related": [],
       "lastUpdated": "2026-10-01",
       "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/blog/",
+      "file": "pages/pt-pt/blog/index.mdx",
+      "title": "Blog",
+      "description": "Artigos e novidades do ecossistema PIMO — guias, produto e produção.",
+      "category": "blog",
+      "tags": [
+        "blog",
+        "noticias"
+      ],
+      "related": [
+        "/pt-pt/",
+        "/pt-pt/novidades/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": ""
+    },
+    {
+      "path": "/pt-pt/blog/posts/bem-vindo/",
+      "file": "pages/pt-pt/blog/posts/bem-vindo.mdx",
+      "title": "Bem-vindo ao blog PIMO",
+      "description": "Infraestrutura do blog do centro de ajuda PIMO Info — formato, RSS e fontes.",
+      "category": "noticias",
+      "tags": [
+        "blog",
+        "pimo-info"
+      ],
+      "related": [
+        "/pt-pt/blog/",
+        "/pt-pt/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": ""
     },
     {
       "path": "/pt-pt/como-funciona/",
@@ -348,6 +382,24 @@
       "status": "implemented"
     },
     {
+      "path": "/pt-pt/funcionalidades/analise-projetos/",
+      "file": "pages/pt-pt/funcionalidades/analise-projetos.mdx",
+      "title": "Análise de projetos",
+      "description": "Análise documental em PIMO PROJETOS (/PROJETOS/:project/analise).",
+      "category": "funcionalidade",
+      "tags": [
+        "analise",
+        "projetos",
+        "documentos"
+      ],
+      "related": [
+        "/pt-pt/sistemas-pimo/pimo-projetos/",
+        "/pt-pt/guias-utilizador/gerir-projetos/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": ""
+    },
+    {
       "path": "/pt-pt/funcionalidades/configurador-3d/",
       "file": "pages/pt-pt/funcionalidades/configurador-3d.mdx",
       "title": "Configurador 3D",
@@ -362,6 +414,63 @@
       ],
       "lastUpdated": "2026-10-01",
       "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/funcionalidades/conta-e-acesso/",
+      "file": "pages/pt-pt/funcionalidades/conta-e-acesso.mdx",
+      "title": "Conta e acesso",
+      "description": "Login, registo, verificação de email, recuperação de password e perfil no PIMO Criativo.",
+      "category": "funcionalidade",
+      "tags": [
+        "conta",
+        "login",
+        "autenticacao"
+      ],
+      "related": [
+        "/pt-pt/funcionalidades/definicoes/",
+        "/pt-pt/primeiros-passos/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": ""
+    },
+    {
+      "path": "/pt-pt/funcionalidades/definicoes/",
+      "file": "pages/pt-pt/funcionalidades/definicoes.mdx",
+      "title": "Definições",
+      "description": "Definições do utilizador, do projeto e administrativas no PIMO Criativo (rota /definicoes e admin).",
+      "category": "funcionalidade",
+      "tags": [
+        "definicoes",
+        "admin",
+        "preferencias"
+      ],
+      "related": [
+        "/pt-pt/funcionalidades/conta-e-acesso/",
+        "/pt-pt/funcionalidades/sala-e-ambiente/",
+        "/pt-pt/primeiros-passos/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": ""
+    },
+    {
+      "path": "/pt-pt/funcionalidades/estacoes-industriais/",
+      "file": "pages/pt-pt/funcionalidades/estacoes-industriais.mdx",
+      "title": "Estações industriais",
+      "description": "Estações PIMO TRAK — armazém, nesting, furação, orlar, montagem, embalagem, supervisor e operador.",
+      "category": "funcionalidade",
+      "tags": [
+        "industrial",
+        "estacoes",
+        "pimo-trak"
+      ],
+      "related": [
+        "/pt-pt/sistemas-pimo/pimo-trak/",
+        "/pt-pt/sistemas-pimo/pimo-industrial/",
+        "/pt-pt/sistemas-pimo/pimo-drill/",
+        "/pt-pt/funcionalidades/modulo-industrial/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": ""
     },
     {
       "path": "/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/",
@@ -397,6 +506,25 @@
       "status": "implemented"
     },
     {
+      "path": "/pt-pt/funcionalidades/ferragens/",
+      "file": "pages/pt-pt/funcionalidades/ferragens.mdx",
+      "title": "Ferragens",
+      "description": "Ferragens no PIMO Criativo — dobradiças, corrediças, conectores e listagens de exportação.",
+      "category": "funcionalidade",
+      "tags": [
+        "ferragens",
+        "hardware",
+        "exportacao"
+      ],
+      "related": [
+        "/pt-pt/funcionalidades/materiais/",
+        "/pt-pt/funcionalidades/portas-e-gavetas/",
+        "/pt-pt/guias-utilizador/exportacao/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": ""
+    },
+    {
       "path": "/pt-pt/funcionalidades/lista-de-corte/",
       "file": "pages/pt-pt/funcionalidades/lista-de-corte.mdx",
       "title": "Lista de Corte",
@@ -429,6 +557,24 @@
       ],
       "lastUpdated": "2026-10-01",
       "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/funcionalidades/modo-foto/",
+      "file": "pages/pt-pt/funcionalidades/modo-foto.mdx",
+      "title": "Modo foto",
+      "description": "Modo foto no PIMO Criativo — capturas e composição visual do projeto em 3D.",
+      "category": "funcionalidade",
+      "tags": [
+        "foto",
+        "render",
+        "viewport"
+      ],
+      "related": [
+        "/pt-pt/funcionalidades/configurador-3d/",
+        "/pt-pt/funcionalidades/sala-e-ambiente/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": ""
     },
     {
       "path": "/pt-pt/funcionalidades/modulo-industrial/",
@@ -529,6 +675,63 @@
       ],
       "lastUpdated": "2026-10-01",
       "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/funcionalidades/relatorio-final/",
+      "file": "pages/pt-pt/funcionalidades/relatorio-final.mdx",
+      "title": "Relatório final",
+      "description": "Relatório final consolidado do projeto no PIMO Criativo (rota /relatorio-final/:project).",
+      "category": "funcionalidade",
+      "tags": [
+        "relatorio",
+        "exportacao",
+        "projeto"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/exportacao/",
+        "/pt-pt/funcionalidades/pdf-tecnico/",
+        "/pt-pt/funcionalidades/orcamentos/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": ""
+    },
+    {
+      "path": "/pt-pt/funcionalidades/remates/",
+      "file": "pages/pt-pt/funcionalidades/remates.mdx",
+      "title": "Remates e acabamentos",
+      "description": "Remates, rodapés e acabamentos de caixa no PIMO Criativo.",
+      "category": "funcionalidade",
+      "tags": [
+        "remates",
+        "rodape",
+        "acabamentos"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/criar-caixa/",
+        "/pt-pt/funcionalidades/materiais/",
+        "/pt-pt/funcionalidades/configurador-3d/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": ""
+    },
+    {
+      "path": "/pt-pt/funcionalidades/sala-e-ambiente/",
+      "file": "pages/pt-pt/funcionalidades/sala-e-ambiente.mdx",
+      "title": "Sala e ambiente",
+      "description": "Sala 3D, ambiente e room settings no PIMO Criativo.",
+      "category": "funcionalidade",
+      "tags": [
+        "sala",
+        "ambiente",
+        "room"
+      ],
+      "related": [
+        "/pt-pt/funcionalidades/modo-foto/",
+        "/pt-pt/funcionalidades/definicoes/",
+        "/pt-pt/funcionalidades/configurador-3d/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": ""
     },
     {
       "path": "/pt-pt/glossario/",

@@ -17,4 +17,13 @@ export default {
   orcamentos: "Orçamentos",
   "pimo-trak": "PIMO-TRAK",
   "modulo-industrial": "Módulo Industrial",
+  ferragens: "Ferragens",
+  definicoes: "Definições",
+  "conta-e-acesso": "Conta e acesso",
+  "modo-foto": "Modo foto",
+  "sala-e-ambiente": "Sala e ambiente",
+  remates: "Remates",
+  "relatorio-final": "Relatório final",
+  "analise-projetos": "Análise de projetos",
+  "estacoes-industriais": "Estações industriais",
 }

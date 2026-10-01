@@ -5,6 +5,22 @@ DirectoryIndex index.html default.php
   RewriteEngine On
   RewriteBase /
 
+  # —— Mini-sites por subdomínio (document root partilhado = public_html) ——
+  # Assets /_next e ficheiros estáticos partilhados continuam na raiz.
+  RewriteCond %{HTTP_HOST} ^(pt|pro|es|casa|design)\.pimo\.info$ [NC]
+  RewriteCond %{REQUEST_URI} !^/_next/ [NC]
+  RewriteCond %{REQUEST_URI} !^/sub/ [NC]
+  RewriteCond %{REQUEST_URI} !^/blog/ [NC]
+  RewriteCond %{REQUEST_URI} !^/data/ [NC]
+  RewriteCond %{REQUEST_URI} !^/icons/ [NC]
+  RewriteCond %{REQUEST_URI} !^/visual/ [NC]
+  RewriteCond %{REQUEST_URI} !^/104c4da0b7e8ee57576280ba6dba4feb\.txt$ [NC]
+  RewriteCond %{REQUEST_URI} !^/robots\.txt$ [NC]
+  RewriteCond %{REQUEST_URI} !^/sitemap\.xml$ [NC]
+  RewriteCond %{REQUEST_URI} !^/llms [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ /sub/%1/$1 [L]
+
   # Normaliza URLs index.html para a forma canónica com slash final
   RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L,NE]
 

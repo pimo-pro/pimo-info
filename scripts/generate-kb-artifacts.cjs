@@ -350,6 +350,26 @@ function main() {
   ].join("\n")
   fs.writeFileSync(path.join(PUBLIC, "sitemap.xml"), sitemap, "utf8")
 
+  // Extra URLs: mini-sites + RSS (não são páginas MDX)
+  const extraLocs = [
+    "/sub/pt/",
+    "/sub/pro/",
+    "/sub/es/",
+    "/sub/casa/",
+    "/sub/design/",
+    "/blog/rss.xml",
+  ]
+  let sitemapRaw = fs.readFileSync(path.join(PUBLIC, "sitemap.xml"), "utf8")
+  for (const loc of extraLocs) {
+    if (!sitemapRaw.includes(`${site.url}${loc}`)) {
+      sitemapRaw = sitemapRaw.replace(
+        "</urlset>",
+        `  <url>\n    <loc>${site.url}${loc}</loc>\n    <lastmod>${today}</lastmod>\n  </url>\n</urlset>`
+      )
+    }
+  }
+  fs.writeFileSync(path.join(PUBLIC, "sitemap.xml"), sitemapRaw, "utf8")
+
   console.log(
     `KB artifacts: ${pages.length} pages, ${buttons.length} buttons, ${appModules.length} modules, ${exportFormats.length} formats, ${glossaryTerms.length} glossary terms`
   )

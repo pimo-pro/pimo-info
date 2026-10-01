@@ -13,6 +13,14 @@
     <lastmod>2026-10-01</lastmod>
   </url>
   <url>
+    <loc>https://pimo.info/pt-pt/blog/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://pimo.info/pt-pt/blog/posts/bem-vindo/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
     <loc>https://pimo.info/pt-pt/como-funciona/</loc>
     <lastmod>2026-10-01</lastmod>
   </url>
@@ -73,11 +81,31 @@
     <lastmod>2026-10-01</lastmod>
   </url>
   <url>
+    <loc>https://pimo.info/pt-pt/funcionalidades/analise-projetos/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
     <loc>https://pimo.info/pt-pt/funcionalidades/configurador-3d/</loc>
     <lastmod>2026-10-01</lastmod>
   </url>
   <url>
+    <loc>https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://pimo.info/pt-pt/funcionalidades/definicoes/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://pimo.info/pt-pt/funcionalidades/estacoes-industriais/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
     <loc>https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://pimo.info/pt-pt/funcionalidades/ferragens/</loc>
     <lastmod>2026-10-01</lastmod>
   </url>
   <url>
@@ -86,6 +114,10 @@
   </url>
   <url>
     <loc>https://pimo.info/pt-pt/funcionalidades/materiais/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://pimo.info/pt-pt/funcionalidades/modo-foto/</loc>
     <lastmod>2026-10-01</lastmod>
   </url>
   <url>
@@ -110,6 +142,18 @@
   </url>
   <url>
     <loc>https://pimo.info/pt-pt/funcionalidades/portas-e-gavetas/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://pimo.info/pt-pt/funcionalidades/relatorio-final/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://pimo.info/pt-pt/funcionalidades/remates/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://pimo.info/pt-pt/funcionalidades/sala-e-ambiente/</loc>
     <lastmod>2026-10-01</lastmod>
   </url>
   <url>
@@ -202,6 +246,30 @@
   </url>
   <url>
     <loc>https://pimo.info/pt-pt/sistemas-pimo/pimo-trak/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://pimo.info/sub/pt/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://pimo.info/sub/pro/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://pimo.info/sub/es/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://pimo.info/sub/casa/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://pimo.info/sub/design/</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://pimo.info/blog/rss.xml</loc>
     <lastmod>2026-10-01</lastmod>
   </url>
 </urlset>

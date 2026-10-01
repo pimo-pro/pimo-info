@@ -14,6 +14,7 @@ export default {
   ecossistema: "Ecossistema",
   "guias-utilizador": "Guias de utilizador",
   glossario: "Glossário",
+  blog: "Blog",
   "perguntas-frequentes": "Perguntas frequentes",
   contacto: "Contacto",
   "documentacao-tecnica": "Documentação técnica",
