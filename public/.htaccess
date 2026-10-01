@@ -27,6 +27,9 @@ DirectoryIndex index.html default.php
   # Redirect canónico: slug antigo de exportação → TCN/Drill XML
   RewriteRule ^pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/?$ /pt-pt/funcionalidades/exportacao-tcn-drill-xml/ [R=301,L]
 
+  # Post interno removido do blog público
+  RewriteRule ^pt-pt/blog/posts/bem-vindo/?$ /pt-pt/blog/ [R=301,L]
+
   # Se o recurso físico existe, servir diretamente
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
