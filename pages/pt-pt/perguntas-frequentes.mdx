@@ -51,7 +51,7 @@ Use **Exportar Projeto (JSON)** para guardar ficheiros fora do navegador e poder
 
 ## O que inclui o Arquivo completo (ZIP)?
 
-Verificado no gerador da app: cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts de corte, ficheiros TCN, Drill XML e manifesto industrial. Não assumir CSV como conteúdo obrigatório do ZIP.
+Verificado no gerador da app: cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts PRO por espessura, `Layout_de_Corte_manual.pdf`, ficheiros TCN, Drill XML e manifesto industrial. O ZIP usa nesting **PRO**. Não assumir CSV como conteúdo obrigatório do ZIP.
 
 ## O que é o PIMO-TRAK?
 
@@ -59,4 +59,4 @@ Sistema de rastreio por etiquetas QR por peça. A **geração de etiquetas (UEE 
 
 ## A análise online do arquivo completo está sempre disponível?
 
-Não necessariamente. Depende da flag `industrialOnlineAnalysis` (pode estar desligada em produção). Enquanto estiver off por defeito, trate-a como **planeada** para uso geral — o ZIP continua a ser o entregável de produção.
+No código SSOT actual a flag `industrialOnlineAnalysis` está **activa**. Continua a ser uma edição documental em PROJETOS — **não substitui** o ZIP. Se uma instalação concreta tiver a flag desligada, a análise online fica indisponível nessa instância.

@@ -33,7 +33,7 @@ Locale: pt-PT
 - Secções industriais (PDFs) (.pdf): Conjunto de PDFs industriais: resumo financeiro, peças totais, ferragens totais e totais do projeto.
 - TCN (.tcn): Ficheiro industrial `.tcn` para centros CNC de carpintaria (furação/coordenadas por painel). O menu chama-se «Arquivos CNC»; o formato do ficheiro é TCN.
 - Drill XML (.xml): Plano de furação em XML estruturado (também referido como Furação XML), gerado no fluxo de Arquivos CNC.
-- Arquivo completo (ZIP) (.zip): Pacote com cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts de corte, ficheiros TCN, Drill XML e manifesto industrial.
+- Arquivo completo (ZIP) (.zip): Pacote com cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts PRO por material/espessura, Layout_de_Corte_manual.pdf, ficheiros TCN, Drill XML e manifesto industrial.
 
 ## Glossary terms
 - Módulo / Caixa: Unidade paramétrica de mobiliário no projeto (ex.: base de cozinha, roupeiro). No código e na UI usa-se «caixa»/«box» como entidade; «módulo» é a linguagem de produto para o mesmo conceito.
@@ -49,7 +49,7 @@ Locale: pt-PT
 - PDF Técnico: Exportação PDF com documentação do projeto (3D, cutlist, materiais, ferragens, preço). Não substitui TCN nem Drill XML para máquina.
 - PIMO-TRAK: Sistema de rastreio por etiquetas QR por peça. A geração de etiquetas (UEE v5) está implementada na exportação; o acompanhamento por posto faz parte da camada industrial PIMO-TRAK.
 - Arquivo completo (ZIP): ZIP com os principais artefactos de produção (PDFs, XLSX de ferragens, TCN, Drill XML, etiquetas, layouts). Conteúdo exacto definido pelo gerador na app — ver formatos de exportação.
-- Análise arquivo completo (online): Edição documental online de PDFs industriais em PROJETOS. Controlada pela flag `industrialOnlineAnalysis` (pode estar desligada em produção). Não substitui o ZIP.
+- Análise arquivo completo (online): Edição documental online de PDFs industriais em PROJETOS (/analise). No código SSOT (`industrialFeatureFlags`) a flag `industrialOnlineAnalysis` está activa (`true`). Não substitui o ZIP de produção.
 - Orçamentos P3.9: Camada técnica/admin de tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.
 
 ## Features

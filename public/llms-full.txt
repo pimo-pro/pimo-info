@@ -1,5 +1,5 @@
 # PIMO Info — full knowledge dump
-Generated: 2026-10-01T00:27:39.742Z
+Generated: 2026-10-01T00:35:49.152Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -36,7 +36,7 @@ Locale: pt-PT
 - Secções industriais (PDFs) (.pdf): Conjunto de PDFs industriais: resumo financeiro, peças totais, ferragens totais e totais do projeto.
 - TCN (.tcn): Ficheiro industrial `.tcn` para centros CNC de carpintaria (furação/coordenadas por painel). O menu chama-se «Arquivos CNC»; o formato do ficheiro é TCN.
 - Drill XML (.xml): Plano de furação em XML estruturado (também referido como Furação XML), gerado no fluxo de Arquivos CNC.
-- Arquivo completo (ZIP) (.zip): Pacote com cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts de corte, ficheiros TCN, Drill XML e manifesto industrial.
+- Arquivo completo (ZIP) (.zip): Pacote com cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts PRO por material/espessura, Layout_de_Corte_manual.pdf, ficheiros TCN, Drill XML e manifesto industrial.
 
 ## Glossary terms
 - Módulo / Caixa: Unidade paramétrica de mobiliário no projeto (ex.: base de cozinha, roupeiro). No código e na UI usa-se «caixa»/«box» como entidade; «módulo» é a linguagem de produto para o mesmo conceito.
@@ -52,7 +52,7 @@ Locale: pt-PT
 - PDF Técnico: Exportação PDF com documentação do projeto (3D, cutlist, materiais, ferragens, preço). Não substitui TCN nem Drill XML para máquina.
 - PIMO-TRAK: Sistema de rastreio por etiquetas QR por peça. A geração de etiquetas (UEE v5) está implementada na exportação; o acompanhamento por posto faz parte da camada industrial PIMO-TRAK.
 - Arquivo completo (ZIP): ZIP com os principais artefactos de produção (PDFs, XLSX de ferragens, TCN, Drill XML, etiquetas, layouts). Conteúdo exacto definido pelo gerador na app — ver formatos de exportação.
-- Análise arquivo completo (online): Edição documental online de PDFs industriais em PROJETOS. Controlada pela flag `industrialOnlineAnalysis` (pode estar desligada em produção). Não substitui o ZIP.
+- Análise arquivo completo (online): Edição documental online de PDFs industriais em PROJETOS (/analise). No código SSOT (`industrialFeatureFlags`) a flag `industrialOnlineAnalysis` está activa (`true`). Não substitui o ZIP de produção.
 - Orçamentos P3.9: Camada técnica/admin de tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.
 
 ## Features
@@ -626,7 +626,7 @@ Liga cada peça física ao projeto digital através de QR único.
     Boa prática de fábrica  Colar etiquetas logo após o corte, antes de mover peças.  
  
 
-> **Estado misto:** a geração de etiquetas está implementada no menu de exportação. Fluxos avançados de digitalização por posto dependem da camada industrial — não inventar capacidades que a instalação concreta não tenha activas.
+> **Estado misto:** a geração de etiquetas está implementada no menu de exportação. Work-orders com leitura QR existem na camada industrial; páginas agregadas de Tracking/Quality na UI industrial ainda podem ser placeholders — validar a build instalada.
 
 ---
 
@@ -804,18 +804,21 @@ Conteúdo gerado pelo código (não inventar CSV obrigatório):
 - Cutlist PDF, PDF técnico, PDF unificado
 - Ferragens PDF + XLSX
 - PDFs de secções industriais + armazém
-- Etiquetas UEE e layouts de corte (por espessura)
+- Etiquetas UEE e layouts de corte PRO (por material/espessura)
+- `Layout_de_Corte_manual.pdf` (raiz do ZIP)
 - Ficheiros **TCN** e **Drill XML**
 - `manifest-industrial.json`
 
+O nesting do ZIP completo usa o modo **PRO** (não Fast). A ordem de fábrica (`industrial_order.json`) **não** vai no ZIP — é enviada via API quando aplicável.
+
 Fluxo: **Exportar → Gerar arquivo completo**.
 
-## Análise arquivo completo (online) — planeado / flag
+## Análise arquivo completo (online)
 
 - Edição documental online em PROJETOS (`/analise`).
-- Controlada pela flag `industrialOnlineAnalysis` (pode estar desligada em produção).
+- No SSOT da app (`industrialFeatureFlags.industrialOnlineAnalysis`) a flag está **activa** (`true`).
 - **Não substitui** o ZIP de produção.
-- Estado: **planeado** para uso geral enquanto a flag estiver off por defeito.
+- Estado: **implementado** (sujeito à versão/build da app instalada).
 
 ## Nota técnica
 
@@ -1117,7 +1120,7 @@ Use **Exportar Projeto (JSON)** para guardar ficheiros fora do navegador e poder
 
 ## O que inclui o Arquivo completo (ZIP)?
 
-Verificado no gerador da app: cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts de corte, ficheiros TCN, Drill XML e manifesto industrial. Não assumir CSV como conteúdo obrigatório do ZIP.
+Verificado no gerador da app: cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts PRO por espessura, `Layout_de_Corte_manual.pdf`, ficheiros TCN, Drill XML e manifesto industrial. O ZIP usa nesting **PRO**. Não assumir CSV como conteúdo obrigatório do ZIP.
 
 ## O que é o PIMO-TRAK?
 
@@ -1125,7 +1128,7 @@ Sistema de rastreio por etiquetas QR por peça. A **geração de etiquetas (UEE 
 
 ## A análise online do arquivo completo está sempre disponível?
 
-Não necessariamente. Depende da flag `industrialOnlineAnalysis` (pode estar desligada em produção). Enquanto estiver off por defeito, trate-a como **planeada** para uso geral — o ZIP continua a ser o entregável de produção.
+No código SSOT actual a flag `industrialOnlineAnalysis` está **activa**. Continua a ser uma edição documental em PROJETOS — **não substitui** o ZIP. Se uma instalação concreta tiver a flag desligada, a análise online fica indisponível nessa instância.
 
 ---
 

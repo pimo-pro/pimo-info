@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T00:27:39.741Z",
+  "generatedAt": "2026-10-01T00:35:49.151Z",
   "items": [
     {
       "id": "pdf-tecnico",
@@ -118,9 +118,9 @@
       "extensions": [
         ".zip"
       ],
-      "description": "Pacote com cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts de corte, ficheiros TCN, Drill XML e manifesto industrial.",
+      "description": "Pacote com cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts PRO por material/espessura, Layout_de_Corte_manual.pdf, ficheiros TCN, Drill XML e manifesto industrial.",
       "status": "implemented",
-      "notes": "Não inventar CSV como conteúdo obrigatório do ZIP: o código gera cutlist em PDF (não CSV) no arquivo completo.",
+      "notes": "ZIP usa nesting PRO. Cutlist no arquivo é PDF (não CSV). Ordem de fábrica vai por API, não como industrial_order.json no ZIP.",
       "relatedPaths": [
         "/pt-pt/guias-utilizador/exportacao/"
       ]

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T00:27:39.742Z",
+  "generatedAt": "2026-10-01T00:35:49.151Z",
   "items": [
     {
       "id": "modulo-caixa",
@@ -193,8 +193,8 @@
         "industrialOnlineAnalysis",
         "análise documental"
       ],
-      "definition": "Edição documental online de PDFs industriais em PROJETOS. Controlada pela flag `industrialOnlineAnalysis` (pode estar desligada em produção). Não substitui o ZIP.",
-      "status": "planned",
+      "definition": "Edição documental online de PDFs industriais em PROJETOS (/analise). No código SSOT (`industrialFeatureFlags`) a flag `industrialOnlineAnalysis` está activa (`true`). Não substitui o ZIP de produção.",
+      "status": "implemented",
       "relatedPaths": [
         "/pt-pt/guias-utilizador/exportacao/"
       ]

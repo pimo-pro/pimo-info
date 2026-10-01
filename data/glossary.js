@@ -154,8 +154,8 @@ export const glossaryTerms = [
     term: "Análise arquivo completo (online)",
     aliases: ["industrialOnlineAnalysis", "análise documental"],
     definition:
-      "Edição documental online de PDFs industriais em PROJETOS. Controlada pela flag `industrialOnlineAnalysis` (pode estar desligada em produção). Não substitui o ZIP.",
-    status: "planned",
+      "Edição documental online de PDFs industriais em PROJETOS (/analise). No código SSOT (`industrialFeatureFlags`) a flag `industrialOnlineAnalysis` está activa (`true`). Não substitui o ZIP de produção.",
+    status: "implemented",
     relatedPaths: ["/pt-pt/guias-utilizador/exportacao/"],
   },
   {
