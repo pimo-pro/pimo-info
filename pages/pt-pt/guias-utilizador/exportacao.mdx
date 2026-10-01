@@ -1,36 +1,79 @@
 ---
-title: Exportação
+title: "Exportação"
+description: "Guia de exportação do PIMO Criativo: PDF técnico, cutlist, etiquetas UEE, TCN, Drill XML, XLSX de ferragens e arquivo ZIP completo."
+category: guia
+tags:
+  - guia
+  - exportacao
+  - tcn
+  - drill-xml
+related:
+  - /pt-pt/funcionalidades/exportacao-tcn-drill-xml/
+  - /pt-pt/funcionalidades/pdf-tecnico/
+  - /pt-pt/glossario/
+lastUpdated: 2026-10-01
+status: implemented
 ---
 
 # Exportar ficheiros de produção
 
-O menu de exportação reúne os artefactos técnicos necessários para fabrico e acompanhamento.
+O menu de exportação (bolha **Salvar e Gerar Design**) reúne os artefactos técnicos necessários para fabrico e acompanhamento. Os nomes abaixo são os da UI; as extensões são as reais dos ficheiros.
 
 ## PDF Técnico
 
 - Inclui 3D do projeto, lista de corte, materiais, ferragens e resumo de preço.
 - Fluxo: **Exportar → PDF Técnico**.
+- Extensão: `.pdf`.
 
-## TCN
+## Cutlist (PDF)
 
-- Formato industrial `.tcn` para centros CNC de carpintaria, com coordenadas e parâmetros de furação por painel.
-- Fluxo: **Exportar → Arquivos CNC** (gera TCN; o formato do ficheiro é TCN).
+- Lista de corte em **milímetros**.
+- Fluxo: **Exportar → Cutlist**.
+- Extensão: `.pdf`.
 
-## Drill XML
+## Etiquetas (UEE v5)
 
-- Representação XML estruturada (`.xml`) do plano de furação (também referida como Furação XML).
-- Fluxo: **Exportar → Arquivos CNC** / Drill XML.
+- Etiquetas com QR por peça (motor UEE v5); tipicamente um PDF por espessura.
+- Fluxo: **Exportar → Etiquetas (UEE v5)**.
+- Base física do **PIMO-TRAK**.
 
-## Pacote Completo (ZIP)
+## Ferragens XLSX
 
-- Junta PDF técnico, cutlist (PDF), ficheiros TCN, Drill XML e etiquetas.
-- Fluxo: **Exportar → Gerar arquivo completo**.
+- Folha Excel com ferragens industriais.
+- Fluxo: **Exportar → Ferragens XLSX**.
+- Extensão: `.xlsx`.
 
-## Análise arquivo completo (online)
+## Secções industriais (4 PDFs)
 
-- Consulta/edição documental dos PDFs industriais em páginas de projetos.
-- Não substitui o pacote completo de produção.
+- Resumo financeiro, peças totais, ferragens totais e totais do projeto.
+- Fluxo: **Exportar → Secções Industriais (4 PDFs)**.
+
+## TCN e Drill XML (Arquivos CNC)
+
+- O menu chama-se **Arquivos CNC**.
+- Formatos gerados: **TCN** (`.tcn`) e **Drill XML** (`.xml`).
+- CNC não é um formato de ficheiro — é o destino/menu.
+
+## Arquivo completo (ZIP)
+
+Conteúdo gerado pelo código (não inventar CSV obrigatório):
+
+- Cutlist PDF, PDF técnico, PDF unificado
+- Ferragens PDF + XLSX
+- PDFs de secções industriais + armazém
+- Etiquetas UEE e layouts de corte (por espessura)
+- Ficheiros **TCN** e **Drill XML**
+- `manifest-industrial.json`
+
+Fluxo: **Exportar → Gerar arquivo completo**.
+
+## Análise arquivo completo (online) — planeado / flag
+
+- Edição documental online em PROJETOS (`/analise`).
+- Controlada pela flag `industrialOnlineAnalysis` (pode estar desligada em produção).
+- **Não substitui** o ZIP de produção.
+- Estado: **planeado** para uso geral enquanto a flag estiver off por defeito.
 
 ## Nota técnica
 
-O sistema pode aplicar validações em campos editáveis (ex.: quantidade e material) antes de guardar alterações na análise online.
+Validações em campos editáveis (ex.: quantidade e material) aplicam-se na análise online quando ativa. Edições documentais na cutlist podem refletir-se em PDFs/etiquetas; **TCN/Drill XML não mudam** por essas edições.

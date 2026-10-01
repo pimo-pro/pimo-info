@@ -1,6 +1,17 @@
 ---
-title: PIMO-TRAK
-description: Rastreio de peças por QR ao longo da produção.
+title: "PIMO-TRAK"
+description: "Rastreio por etiqueta QR: geração UEE v5 implementada; acompanhamento industrial por posto na camada PIMO-TRAK."
+category: funcionalidade
+tags:
+  - funcionalidade
+  - pimo-trak
+  - etiquetas
+related:
+  - /pt-pt/guias-utilizador/pimo-trak/
+  - /pt-pt/guias-utilizador/exportacao/
+  - /pt-pt/glossario/
+lastUpdated: 2026-10-01
+status: mixed
 ---
 
 import { ServiceHero, InfoAccordion } from "../../../components/PimoVisualSections"
@@ -8,7 +19,7 @@ import { AnimatedHotspotImage, LazyYouTubeEmbed } from "../../../components/Pimo
 
 <ServiceHero
   title="PIMO-TRAK"
-  subtitle="Rastreio por etiqueta QR por peça para acompanhar estado de produção em cada etapa."
+  subtitle="Etiquetas QR por peça (implementado) e camada industrial de acompanhamento de produção."
   image="/visual/readme/ecra-home-workspace.webp"
   imageAlt="Interface do PIMO no contexto de operação de projeto"
   pimoHref="https://pimo.pro"
@@ -17,13 +28,15 @@ import { AnimatedHotspotImage, LazyYouTubeEmbed } from "../../../components/Pimo
 
 ## O que faz
 
-Liga cada peça física ao projeto digital através de QR único, permitindo atualização de estado ao longo do processo fabril.
+Liga cada peça física ao projeto digital através de QR único.
 
 <section className="pimo-service-benefits">
-  <li><strong>Identificação por peça</strong><p>Cada etiqueta é única no contexto do projeto.</p></li>
-  <li><strong>Rastreio por etapa</strong><p>Atualizações em corte, furação, lacagem, montagem e outras fases.</p></li>
-  <li><strong>Leitura transversal</strong><p>Equipa com acesso acompanha progresso em tempo real.</p></li>
+  <li><strong>Etiquetas UEE v5 (implementado)</strong><p>Exportação de PDFs de etiquetas com QR por peça, tipicamente por espessura.</p></li>
+  <li><strong>Camada industrial</strong><p>Work-orders e tracking PIMO-TRAK na app para acompanhamento por estação.</p></li>
+  <li><strong>Boa prática de fábrica</strong><p>Colar etiquetas logo após o corte, antes de mover peças.</p></li>
 </section>
+
+> **Estado misto:** a geração de etiquetas está implementada no menu de exportação. Fluxos avançados de digitalização por posto dependem da camada industrial — não inventar capacidades que a instalação concreta não tenha activas.
 
 <AnimatedHotspotImage
   src="/visual/readme/ecra-home-workspace.webp"
@@ -42,7 +55,8 @@ Liga cada peça física ao projeto digital através de QR único, permitindo atu
 
 <InfoAccordion
   items={[
-    { title: "Que equipamento preciso para ler QR?", text: "QR standard: pode usar câmara de telemóvel ou scanner compatível." },
+    { title: "Que equipamento preciso para ler QR?", text: "QR standard: câmara de telemóvel ou scanner compatível." },
     { title: "Quando colar as etiquetas?", text: "Boa prática: logo após corte, antes de mover peças, para reduzir trocas." },
+    { title: "Onde gerar as etiquetas?", text: "Exportar → Etiquetas (UEE v5), ou incluídas no arquivo ZIP completo." },
   ]}
 />

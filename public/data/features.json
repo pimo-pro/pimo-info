@@ -1,0 +1,124 @@
+{
+  "generatedAt": "2026-10-01T00:27:39.742Z",
+  "items": [
+    {
+      "id": "configurador-3d",
+      "name": "Configurador 3D",
+      "summary": "Modelação paramétrica de módulos no workspace 3D.",
+      "status": "implemented",
+      "canonicalPath": "/pt-pt/funcionalidades/configurador-3d/",
+      "guidePath": "/pt-pt/guias-utilizador/criar-caixa/",
+      "tags": [
+        "modelacao",
+        "modulos"
+      ]
+    },
+    {
+      "id": "materiais",
+      "name": "Materiais",
+      "summary": "Materiais de carcaça e frentes, com espessura e custo.",
+      "status": "implemented",
+      "canonicalPath": "/pt-pt/funcionalidades/materiais/",
+      "guidePath": "/pt-pt/guias-utilizador/materiais/",
+      "tags": [
+        "materiais",
+        "espessura"
+      ]
+    },
+    {
+      "id": "portas-e-gavetas",
+      "name": "Portas e Gavetas",
+      "summary": "Frentes com regras industriais. Portas e gavetas são mutuamente exclusivas na mesma caixa.",
+      "status": "implemented",
+      "canonicalPath": "/pt-pt/funcionalidades/portas-e-gavetas/",
+      "guidePath": "/pt-pt/guias-utilizador/portas-e-gavetas/",
+      "tags": [
+        "frentes",
+        "regras"
+      ]
+    },
+    {
+      "id": "lista-de-corte",
+      "name": "Lista de Corte",
+      "summary": "Cutlist em mm gerada a partir do design 3D.",
+      "status": "implemented",
+      "canonicalPath": "/pt-pt/funcionalidades/lista-de-corte/",
+      "guidePath": "/pt-pt/guias-utilizador/lista-de-corte/",
+      "tags": [
+        "cutlist",
+        "producao"
+      ]
+    },
+    {
+      "id": "nesting-fast-pro",
+      "name": "Nesting Fast/PRO",
+      "summary": "Layout de corte em chapa: Fast (estimativa) e PRO (otimização).",
+      "status": "implemented",
+      "canonicalPath": "/pt-pt/funcionalidades/nesting-fast-pro/",
+      "guidePath": "/pt-pt/guias-utilizador/nesting-layout-corte/",
+      "tags": [
+        "nesting",
+        "producao"
+      ]
+    },
+    {
+      "id": "exportacao-tcn-drill-xml",
+      "name": "Exportação TCN / Drill XML",
+      "summary": "Ficheiros industriais `.tcn` e Drill XML via menu Arquivos CNC.",
+      "status": "implemented",
+      "canonicalPath": "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/",
+      "guidePath": "/pt-pt/guias-utilizador/exportacao/",
+      "tags": [
+        "exportacao",
+        "cnc"
+      ]
+    },
+    {
+      "id": "pdf-tecnico",
+      "name": "PDF Técnico",
+      "summary": "Documentação PDF do projeto para cliente/arquivo.",
+      "status": "implemented",
+      "canonicalPath": "/pt-pt/funcionalidades/pdf-tecnico/",
+      "guidePath": "/pt-pt/guias-utilizador/exportacao/",
+      "tags": [
+        "exportacao",
+        "pdf"
+      ]
+    },
+    {
+      "id": "pimo-trak",
+      "name": "PIMO-TRAK",
+      "summary": "Etiquetas QR (implementado) e rastreio industrial por peça (camada industrial).",
+      "status": "mixed",
+      "canonicalPath": "/pt-pt/funcionalidades/pimo-trak/",
+      "guidePath": "/pt-pt/guias-utilizador/pimo-trak/",
+      "tags": [
+        "rastreio",
+        "etiquetas"
+      ]
+    },
+    {
+      "id": "orcamentos",
+      "name": "Orçamentos",
+      "summary": "Tarifas e regras de custo (camada técnica/admin P3.9).",
+      "status": "implemented",
+      "canonicalPath": "/pt-pt/funcionalidades/orcamentos/",
+      "guidePath": "/pt-pt/documentacao-tecnica/orcamentos-p39/",
+      "tags": [
+        "custos",
+        "admin"
+      ]
+    },
+    {
+      "id": "modulo-industrial",
+      "name": "Módulo Industrial",
+      "summary": "Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.",
+      "status": "mixed",
+      "canonicalPath": "/pt-pt/funcionalidades/modulo-industrial/",
+      "guidePath": "/pt-pt/documentacao-tecnica/sistema-industrial/",
+      "tags": [
+        "industrial"
+      ]
+    }
+  ]
+}

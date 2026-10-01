@@ -1,0 +1,109 @@
+# PIMO Info
+> Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.
+
+Site: https://pimo.info
+App: https://pimo.pro
+Locale: pt-PT
+
+## Machine-readable data
+- https://pimo.info/llms.txt
+- https://pimo.info/llms-full.txt
+- https://pimo.info/data/site.json
+- https://pimo.info/data/pages.json
+- https://pimo.info/data/features.json
+- https://pimo.info/data/export-formats.json
+- https://pimo.info/data/glossary.json
+- https://pimo.info/data/sites.json
+
+## Primary sections
+- Hub: https://pimo.info/
+- Centro de ajuda pt-PT: https://pimo.info/pt-pt/
+- Glossário: https://pimo.info/pt-pt/glossario/
+- Funcionalidades: https://pimo.info/pt-pt/funcionalidades/
+- Guias: https://pimo.info/pt-pt/guias-utilizador/
+- Ecossistema: https://pimo.info/pt-pt/ecossistema/
+- FAQ: https://pimo.info/pt-pt/perguntas-frequentes/
+
+## Export formats (implemented)
+- PDF Técnico (.pdf): Relatório do projeto com vista 3D, lista de corte, materiais, ferragens e resumo de preço.
+- Cutlist (PDF) (.pdf): Lista de corte industrial em milímetros: peças, espessuras, materiais e quantidades.
+- PDF Unificado (.pdf): Documento único que combina informação técnica e cutlist para entrega documental.
+- Etiquetas (UEE v5) (.pdf): PDF de etiquetas com QR por peça (motor UEE v5), tipicamente um ficheiro por espessura.
+- Ferragens XLSX (.xlsx): Folha Excel com ferragens industriais do projeto.
+- Secções industriais (PDFs) (.pdf): Conjunto de PDFs industriais: resumo financeiro, peças totais, ferragens totais e totais do projeto.
+- TCN (.tcn): Ficheiro industrial `.tcn` para centros CNC de carpintaria (furação/coordenadas por painel). O menu chama-se «Arquivos CNC»; o formato do ficheiro é TCN.
+- Drill XML (.xml): Plano de furação em XML estruturado (também referido como Furação XML), gerado no fluxo de Arquivos CNC.
+- Arquivo completo (ZIP) (.zip): Pacote com cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts de corte, ficheiros TCN, Drill XML e manifesto industrial.
+
+## Glossary terms
+- Módulo / Caixa: Unidade paramétrica de mobiliário no projeto (ex.: base de cozinha, roupeiro). No código e na UI usa-se «caixa»/«box» como entidade; «módulo» é a linguagem de produto para o mesmo conceito.
+- Peça: Painel ou elemento fabricável derivado do módulo (lateral, cima, fundo, frente, etc.), com dimensões em milímetros na lista de corte.
+- Material: Material de painel aplicado à carcaça e/ou frentes. Inclui espessura e custo; frentes (portas/gavetas) podem ter material diferente da carcaça.
+- Espessura: Espessura do painel em milímetros. Valores comuns industriais no fluxo incluem 16 mm e 19 mm; a cutlist e o nesting agrupam por espessura.
+- Orla: Rebordo/fita de orla aplicada a arestas de painéis. O projeto guarda presets e peças com orla; entra no cálculo industrial e documental.
+- Dimensões (L×A×P): Dimensões do módulo: largura, altura e profundidade. Na UI de cotas (tecla D) aparecem em centímetros; a lista de corte e o fabrico usam milímetros.
+- Lista de corte (cutlist): Lista de peças fabricáveis gerada após «Gerar Design 3D», com dimensões em mm, material, espessura e quantidades.
+- Nesting / Layout de Corte: Distribuição das peças nas chapas. Modo Fast: estimativa rápida. Modo PRO: otimização com rotação quando aplicável (pode afetar orientação de furação — validar TCN/Drill XML).
+- TCN: Formato de ficheiro industrial `.tcn` para centros CNC. No menu de exportação aparece como «Arquivos CNC»; o ficheiro gerado é TCN.
+- Drill XML: Representação XML do plano de furação por painel (posição, diâmetro, profundidade), gerada no fluxo de Arquivos CNC.
+- PDF Técnico: Exportação PDF com documentação do projeto (3D, cutlist, materiais, ferragens, preço). Não substitui TCN nem Drill XML para máquina.
+- PIMO-TRAK: Sistema de rastreio por etiquetas QR por peça. A geração de etiquetas (UEE v5) está implementada na exportação; o acompanhamento por posto faz parte da camada industrial PIMO-TRAK.
+- Arquivo completo (ZIP): ZIP com os principais artefactos de produção (PDFs, XLSX de ferragens, TCN, Drill XML, etiquetas, layouts). Conteúdo exacto definido pelo gerador na app — ver formatos de exportação.
+- Análise arquivo completo (online): Edição documental online de PDFs industriais em PROJETOS. Controlada pela flag `industrialOnlineAnalysis` (pode estar desligada em produção). Não substitui o ZIP.
+- Orçamentos P3.9: Camada técnica/admin de tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.
+
+## Features
+- Configurador 3D [implemented] https://pimo.info/pt-pt/funcionalidades/configurador-3d/ — Modelação paramétrica de módulos no workspace 3D.
+- Materiais [implemented] https://pimo.info/pt-pt/funcionalidades/materiais/ — Materiais de carcaça e frentes, com espessura e custo.
+- Portas e Gavetas [implemented] https://pimo.info/pt-pt/funcionalidades/portas-e-gavetas/ — Frentes com regras industriais. Portas e gavetas são mutuamente exclusivas na mesma caixa.
+- Lista de Corte [implemented] https://pimo.info/pt-pt/funcionalidades/lista-de-corte/ — Cutlist em mm gerada a partir do design 3D.
+- Nesting Fast/PRO [implemented] https://pimo.info/pt-pt/funcionalidades/nesting-fast-pro/ — Layout de corte em chapa: Fast (estimativa) e PRO (otimização).
+- Exportação TCN / Drill XML [implemented] https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/ — Ficheiros industriais `.tcn` e Drill XML via menu Arquivos CNC.
+- PDF Técnico [implemented] https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/ — Documentação PDF do projeto para cliente/arquivo.
+- PIMO-TRAK [mixed] https://pimo.info/pt-pt/funcionalidades/pimo-trak/ — Etiquetas QR (implementado) e rastreio industrial por peça (camada industrial).
+- Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/ — Tarifas e regras de custo (camada técnica/admin P3.9).
+- Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/ — Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.
+
+## Page index
+- Centro visual PIMO Info: https://pimo.info/
+- Centro de ajuda PIMO Criativo: https://pimo.info/pt-pt/
+- Contacto: https://pimo.info/pt-pt/contacto/
+- Documentação técnica: https://pimo.info/pt-pt/documentacao-tecnica/
+- System docs: https://pimo.info/pt-pt/documentacao-tecnica/docs-do-sistema/
+- Orçamentos P3.9: https://pimo.info/pt-pt/documentacao-tecnica/orcamentos-p39/
+- Sistema Industrial: https://pimo.info/pt-pt/documentacao-tecnica/sistema-industrial/
+- Ecossistema de sites PIMO: https://pimo.info/pt-pt/ecossistema/
+- pim0.com: https://pimo.info/pt-pt/ecossistema/pim0-com/
+- pimo.casa: https://pimo.info/pt-pt/ecossistema/pimo-casa/
+- pimo.design: https://pimo.info/pt-pt/ecossistema/pimo-design/
+- pimo.es: https://pimo.info/pt-pt/ecossistema/pimo-es/
+- pimo.info: https://pimo.info/pt-pt/ecossistema/pimo-info/
+- pimo.pro: https://pimo.info/pt-pt/ecossistema/pimo-pro/
+- pimo.pt: https://pimo.info/pt-pt/ecossistema/pimo-pt/
+- Funcionalidades PIMO: https://pimo.info/pt-pt/funcionalidades/
+- Configurador 3D: https://pimo.info/pt-pt/funcionalidades/configurador-3d/
+- Redirecionamento — Exportação TCN/Drill XML: https://pimo.info/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/
+- Exportação TCN/Drill XML: https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/
+- Lista de Corte: https://pimo.info/pt-pt/funcionalidades/lista-de-corte/
+- Materiais: https://pimo.info/pt-pt/funcionalidades/materiais/
+- Módulo Industrial: https://pimo.info/pt-pt/funcionalidades/modulo-industrial/
+- Nesting Fast/PRO: https://pimo.info/pt-pt/funcionalidades/nesting-fast-pro/
+- Orçamentos: https://pimo.info/pt-pt/funcionalidades/orcamentos/
+- PDF técnico: https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/
+- PIMO-TRAK: https://pimo.info/pt-pt/funcionalidades/pimo-trak/
+- Portas e Gavetas: https://pimo.info/pt-pt/funcionalidades/portas-e-gavetas/
+- Glossário técnico: https://pimo.info/pt-pt/glossario/
+- Guias de utilizador: https://pimo.info/pt-pt/guias-utilizador/
+- Atalhos de Teclado: https://pimo.info/pt-pt/guias-utilizador/atalhos-teclado/
+- Criar Caixa: https://pimo.info/pt-pt/guias-utilizador/criar-caixa/
+- Exportação: https://pimo.info/pt-pt/guias-utilizador/exportacao/
+- Gerir Projetos: https://pimo.info/pt-pt/guias-utilizador/gerir-projetos/
+- Lista de Corte: https://pimo.info/pt-pt/guias-utilizador/lista-de-corte/
+- Materiais: https://pimo.info/pt-pt/guias-utilizador/materiais/
+- Medições e Cotas: https://pimo.info/pt-pt/guias-utilizador/medicoes-e-cotas/
+- Mover e Posicionar: https://pimo.info/pt-pt/guias-utilizador/mover-e-posicionar/
+- Nesting / Layout de Corte: https://pimo.info/pt-pt/guias-utilizador/nesting-layout-corte/
+- PIMO-TRAK: https://pimo.info/pt-pt/guias-utilizador/pimo-trak/
+- Portas e Gavetas: https://pimo.info/pt-pt/guias-utilizador/portas-e-gavetas/
+- Perguntas frequentes: https://pimo.info/pt-pt/perguntas-frequentes/
+- Primeiros passos: https://pimo.info/pt-pt/primeiros-passos/

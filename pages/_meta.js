@@ -10,4 +10,11 @@ export default {
     },
   },
   "pt-pt": "Centro de Ajuda (pt-PT)",
+  about: { title: "About", display: "hidden" },
+  ajuda: { title: "Ajuda", display: "hidden" },
+  contact: { title: "Contact", display: "hidden" },
+  docs: { title: "Docs", display: "hidden" },
+  ecosystem: { title: "Ecosystem", display: "hidden" },
+  "release-notes": { title: "Release Notes", display: "hidden" },
+  roadmap: { title: "Roadmap", display: "hidden" },
 }

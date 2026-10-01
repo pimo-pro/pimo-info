@@ -1,15 +1,27 @@
 ---
-title: PIMO-TRAK
+title: "PIMO-TRAK"
+description: "Como gerar e aplicar etiquetas QR (UEE v5) e o que está implementado versus planeado no rastreio."
+category: guia
+tags:
+  - guia
+  - pimo-trak
+  - etiquetas
+related:
+  - /pt-pt/funcionalidades/pimo-trak/
+  - /pt-pt/guias-utilizador/exportacao/
+  - /pt-pt/glossario/
+lastUpdated: 2026-10-01
+status: mixed
 ---
 
 # Rastreio de peças com PIMO-TRAK
 
-O PIMO-TRAK usa QR por peça para seguimento do estado ao longo da produção.
+O PIMO-TRAK associa QR por peça ao projeto. A **geração de etiquetas** está implementada; o acompanhamento por posto usa a camada industrial.
 
-## Passo a passo
+## Passo a passo (etiquetas — implementado)
 
 1. **Gerar etiquetas**  
-   Exportar → Etiquetas PDF.
+   Exportar → **Etiquetas (UEE v5)** (ou arquivo ZIP completo).
 
 2. **Imprimir**  
    Em A4 ou folhas de etiquetas.
@@ -17,11 +29,11 @@ O PIMO-TRAK usa QR por peça para seguimento do estado ao longo da produção.
 3. **Aplicar na peça**  
    Colar após corte para ligação física ao projeto digital.
 
-4. **Registar estados por posto**  
-   Digitalizar em corte, furação, lacagem, montagem, etc.
+## Acompanhamento por posto
 
-5. **Consultar progresso**  
-   Ver estado de cada peça e estado agregado do projeto.
+Digitalizar QR em postos de trabalho (corte, furação, lacagem, montagem, etc.) e consultar progresso na camada industrial PIMO-TRAK, quando essa instalação estiver activa.
+
+> Se a instalação não expuser o fluxo de digitalização, trate o acompanhamento em tempo real como **planeado** nessa instância — as etiquetas continuam válidas para identificação física.
 
 ## Boa prática
 

@@ -4,7 +4,7 @@ import { EcosystemFooterLinks } from "./components/PimoEcosystem"
 
 const siteUrl = "https://pimo.info"
 const defaultDescription =
-  "Centro de ajuda e informação do PIMO Criativo: guias de utilização, exportação técnica, novidades e documentação industrial."
+  "Centro de ajuda e base de conhecimento do PIMO Criativo: guias, exportação técnica, glossário e documentação industrial."
 
 function resolveCanonical(asPath) {
   const cleanPath = asPath.split(/[?#]/)[0]
@@ -19,6 +19,15 @@ function resolveCanonical(asPath) {
   return cleanPath.endsWith("/")
     ? `${siteUrl}${cleanPath}`
     : `${siteUrl}${cleanPath}/`
+}
+
+function JsonLd({ data }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
 }
 
 export default {
@@ -77,6 +86,75 @@ export default {
     const canonical = resolveCanonical(asPath)
     const pageTitle = title ? `${title} | PIMO Info` : "PIMO Info"
     const description = frontMatter?.description || defaultDescription
+    const isFaq = asPath.includes("/perguntas-frequentes")
+    const isHome = asPath === "/" || asPath.startsWith("/?")
+
+    const organization = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "PIMO",
+      url: "https://pimo.pt",
+      logo: "https://pimo.pro/logo-pi.png",
+      sameAs: ["https://pimo.pro", "https://pimo.info", "https://pim0.com"],
+    }
+
+    const website = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "PIMO Info",
+      url: siteUrl,
+      description: defaultDescription,
+      inLanguage: "pt-PT",
+      publisher: { "@type": "Organization", name: "PIMO" },
+    }
+
+    const techArticle =
+      !isHome && frontMatter?.title
+        ? {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            headline: frontMatter.title,
+            description,
+            url: canonical,
+            inLanguage: "pt-PT",
+            dateModified: frontMatter.lastUpdated || undefined,
+            author: { "@type": "Organization", name: "PIMO" },
+          }
+        : null
+
+    const faqPage = isFaq
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          url: canonical,
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Posso misturar portas e gavetas no mesmo módulo?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Não. Na mesma caixa, portas e gavetas são mutuamente exclusivas.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "O que inclui o Arquivo completo (ZIP)?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts, TCN, Drill XML e manifesto industrial.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Em que unidades trabalha o PIMO?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Cotas no viewport em centímetros; lista de corte e fabrico em milímetros.",
+              },
+            },
+          ],
+        }
+      : null
 
     return (
       <>
@@ -94,6 +172,10 @@ export default {
         <meta name="twitter:description" content={description} />
         <link rel="canonical" href={canonical} />
         <link rel="icon" type="image/png" href="https://pimo.pro/logo-pi.png" />
+        <JsonLd data={organization} />
+        <JsonLd data={website} />
+        {techArticle ? <JsonLd data={techArticle} /> : null}
+        {faqPage ? <JsonLd data={faqPage} /> : null}
       </>
     )
   },

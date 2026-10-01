@@ -1,5 +1,16 @@
 ---
-title: Perguntas frequentes
+title: "Perguntas frequentes"
+description: "FAQ do PIMO Criativo: módulos, nesting, unidades, exportação ZIP, TCN/Drill XML e PIMO-TRAK."
+category: faq
+tags:
+  - faq
+  - ajuda
+related:
+  - /pt-pt/primeiros-passos/
+  - /pt-pt/guias-utilizador/exportacao/
+  - /pt-pt/glossario/
+lastUpdated: 2026-10-01
+status: implemented
 ---
 
 # Perguntas frequentes
@@ -25,22 +36,27 @@ Sim. A lista de ferragens e os dados de furação são gerados automaticamente a
 
 Pode afetar a orientação dos furos nas máquinas CNC. Antes de maquinar, valide sempre o plano de furação (TCN / Drill XML).
 
+## Em que unidades trabalha o PIMO?
+
+- Cotas no viewport (tecla **D**): **centímetros**.
+- Lista de corte e ficheiros de fabrico: **milímetros** (incluindo espessura).
+
 ## Onde ficam guardados os projetos?
 
-No `localStorage` do navegador por predefinição. Se limpar os dados do browser, os projetos locais podem desaparecer.
+No `localStorage` do navegador por predefinição. Se limpar os dados do browser, os projetos locais podem desaparecer. Também existe fluxo de projetos na app (guardar/abrir).
 
 ## Como fazer backup de projetos?
 
 Use **Exportar Projeto (JSON)** para guardar ficheiros fora do navegador e poder importar mais tarde.
 
-## A lista de corte sai em milímetros?
+## O que inclui o Arquivo completo (ZIP)?
 
-Sim. A cutlist apresenta dimensões técnicas em mm, incluindo espessura e material.
-
-## O que inclui o Pacote Completo (ZIP)?
-
-Inclui PDF técnico, cutlist (PDF), ficheiros TCN, Drill XML e etiquetas de rastreio.
+Verificado no gerador da app: cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts de corte, ficheiros TCN, Drill XML e manifesto industrial. Não assumir CSV como conteúdo obrigatório do ZIP.
 
 ## O que é o PIMO-TRAK?
 
-É o sistema de rastreio por etiquetas QR por peça, para acompanhamento do estado ao longo das etapas de produção.
+Sistema de rastreio por etiquetas QR por peça. A **geração de etiquetas (UEE v5)** está implementada na exportação. O acompanhamento por posto faz parte da camada industrial PIMO-TRAK.
+
+## A análise online do arquivo completo está sempre disponível?
+
+Não necessariamente. Depende da flag `industrialOnlineAnalysis` (pode estar desligada em produção). Enquanto estiver off por defeito, trate-a como **planeada** para uso geral — o ZIP continua a ser o entregável de produção.

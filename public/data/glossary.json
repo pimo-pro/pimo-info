@@ -1,0 +1,217 @@
+{
+  "generatedAt": "2026-10-01T00:27:39.742Z",
+  "items": [
+    {
+      "id": "modulo-caixa",
+      "term": "Módulo / Caixa",
+      "aliases": [
+        "módulo",
+        "caixa",
+        "box"
+      ],
+      "definition": "Unidade paramétrica de mobiliário no projeto (ex.: base de cozinha, roupeiro). No código e na UI usa-se «caixa»/«box» como entidade; «módulo» é a linguagem de produto para o mesmo conceito.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/guias-utilizador/criar-caixa/"
+      ]
+    },
+    {
+      "id": "peca",
+      "term": "Peça",
+      "aliases": [
+        "peça",
+        "painel",
+        "piece",
+        "cutlist item"
+      ],
+      "definition": "Painel ou elemento fabricável derivado do módulo (lateral, cima, fundo, frente, etc.), com dimensões em milímetros na lista de corte.",
+      "unit": "mm",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/lista-de-corte/"
+      ]
+    },
+    {
+      "id": "material",
+      "term": "Material",
+      "aliases": [
+        "chapa",
+        "materialId"
+      ],
+      "definition": "Material de painel aplicado à carcaça e/ou frentes. Inclui espessura e custo; frentes (portas/gavetas) podem ter material diferente da carcaça.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/materiais/",
+        "/pt-pt/guias-utilizador/materiais/"
+      ]
+    },
+    {
+      "id": "espessura",
+      "term": "Espessura",
+      "aliases": [
+        "thickness",
+        "espessura_mm"
+      ],
+      "definition": "Espessura do painel em milímetros. Valores comuns industriais no fluxo incluem 16 mm e 19 mm; a cutlist e o nesting agrupam por espessura.",
+      "unit": "mm",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/lista-de-corte/"
+      ]
+    },
+    {
+      "id": "orla",
+      "term": "Orla",
+      "aliases": [
+        "edge banding",
+        "ferragemOrla",
+        "orlaPresets"
+      ],
+      "definition": "Rebordo/fita de orla aplicada a arestas de painéis. O projeto guarda presets e peças com orla; entra no cálculo industrial e documental.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/guias-utilizador/materiais/"
+      ]
+    },
+    {
+      "id": "dimensoes",
+      "term": "Dimensões (L×A×P)",
+      "aliases": [
+        "largura",
+        "altura",
+        "profundidade"
+      ],
+      "definition": "Dimensões do módulo: largura, altura e profundidade. Na UI de cotas (tecla D) aparecem em centímetros; a lista de corte e o fabrico usam milímetros.",
+      "unit": "cm (viewport) / mm (cutlist)",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/guias-utilizador/medicoes-e-cotas/"
+      ]
+    },
+    {
+      "id": "lista-de-corte",
+      "term": "Lista de corte (cutlist)",
+      "aliases": [
+        "cutlist",
+        "lista de corte"
+      ],
+      "definition": "Lista de peças fabricáveis gerada após «Gerar Design 3D», com dimensões em mm, material, espessura e quantidades.",
+      "unit": "mm",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/lista-de-corte/",
+        "/pt-pt/guias-utilizador/lista-de-corte/"
+      ]
+    },
+    {
+      "id": "nesting",
+      "term": "Nesting / Layout de Corte",
+      "aliases": [
+        "nesting",
+        "layout de corte",
+        "Fast",
+        "PRO"
+      ],
+      "definition": "Distribuição das peças nas chapas. Modo Fast: estimativa rápida. Modo PRO: otimização com rotação quando aplicável (pode afetar orientação de furação — validar TCN/Drill XML).",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/nesting-fast-pro/",
+        "/pt-pt/guias-utilizador/nesting-layout-corte/"
+      ]
+    },
+    {
+      "id": "tcn",
+      "term": "TCN",
+      "aliases": [
+        ".tcn",
+        "Arquivos CNC",
+        "CNC/TCN"
+      ],
+      "definition": "Formato de ficheiro industrial `.tcn` para centros CNC. No menu de exportação aparece como «Arquivos CNC»; o ficheiro gerado é TCN.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/"
+      ]
+    },
+    {
+      "id": "drill-xml",
+      "term": "Drill XML",
+      "aliases": [
+        "Furação XML",
+        ".xml"
+      ],
+      "definition": "Representação XML do plano de furação por painel (posição, diâmetro, profundidade), gerada no fluxo de Arquivos CNC.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/"
+      ]
+    },
+    {
+      "id": "pdf-tecnico",
+      "term": "PDF Técnico",
+      "aliases": [
+        "pdf técnico"
+      ],
+      "definition": "Exportação PDF com documentação do projeto (3D, cutlist, materiais, ferragens, preço). Não substitui TCN nem Drill XML para máquina.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/pdf-tecnico/"
+      ]
+    },
+    {
+      "id": "pimo-trak",
+      "term": "PIMO-TRAK",
+      "aliases": [
+        "etiquetas QR",
+        "UEE v5",
+        "rastreio"
+      ],
+      "definition": "Sistema de rastreio por etiquetas QR por peça. A geração de etiquetas (UEE v5) está implementada na exportação; o acompanhamento por posto faz parte da camada industrial PIMO-TRAK.",
+      "status": "mixed",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/pimo-trak/",
+        "/pt-pt/guias-utilizador/pimo-trak/"
+      ]
+    },
+    {
+      "id": "arquivo-completo",
+      "term": "Arquivo completo (ZIP)",
+      "aliases": [
+        "pacote completo",
+        "ZIP"
+      ],
+      "definition": "ZIP com os principais artefactos de produção (PDFs, XLSX de ferragens, TCN, Drill XML, etiquetas, layouts). Conteúdo exacto definido pelo gerador na app — ver formatos de exportação.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/guias-utilizador/exportacao/"
+      ]
+    },
+    {
+      "id": "analise-online",
+      "term": "Análise arquivo completo (online)",
+      "aliases": [
+        "industrialOnlineAnalysis",
+        "análise documental"
+      ],
+      "definition": "Edição documental online de PDFs industriais em PROJETOS. Controlada pela flag `industrialOnlineAnalysis` (pode estar desligada em produção). Não substitui o ZIP.",
+      "status": "planned",
+      "relatedPaths": [
+        "/pt-pt/guias-utilizador/exportacao/"
+      ]
+    },
+    {
+      "id": "orcamentos",
+      "term": "Orçamentos P3.9",
+      "aliases": [
+        "tarifas",
+        "custos"
+      ],
+      "definition": "Camada técnica/admin de tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/orcamentos/",
+        "/pt-pt/documentacao-tecnica/orcamentos-p39/"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-10-01T00:27:39.742Z",
+  "name": "PIMO Info",
+  "url": "https://pimo.info",
+  "appUrl": "https://pimo.pro",
+  "locale": "pt-PT",
+  "description": "Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.",
+  "organization": {
+    "name": "PIMO",
+    "url": "https://pimo.pt",
+    "logo": "https://pimo.pro/logo-pi.png"
+  }
+}

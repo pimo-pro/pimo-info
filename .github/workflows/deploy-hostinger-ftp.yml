@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Knowledge-base quality checks
+        run: npm run check
+
       - name: Static export
         run: npm run export
 

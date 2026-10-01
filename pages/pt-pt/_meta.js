@@ -10,6 +10,7 @@ export default {
   funcionalidades: "Funcionalidades",
   ecossistema: "Ecossistema",
   "guias-utilizador": "Guias de utilizador",
+  glossario: "Glossário",
   "perguntas-frequentes": "Perguntas frequentes",
   contacto: "Contacto",
   "documentacao-tecnica": "Documentação técnica",

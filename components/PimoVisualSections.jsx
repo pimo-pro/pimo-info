@@ -28,8 +28,8 @@ const workflowSteps = [
   {
     key: "export",
     icon: "⇩",
-    title: "Exportação TCN/PDF",
-    text: "Ficheiros técnicos: TCN, Drill XML, PDF técnico e ZIP completo.",
+    title: "Exportação industrial",
+    text: "TCN, Drill XML, PDF técnico, cutlist, etiquetas e ZIP completo.",
   },
   {
     key: "trak",
@@ -58,7 +58,7 @@ const tabItems = [
     points: [
       "Cutlist em milímetros por peça e por módulo.",
       "Nesting Fast para estimativa e PRO para produção final.",
-      "Exportação TCN, Drill XML, PDF e ZIP técnico.",
+      "Exportação TCN, Drill XML, PDF, cutlist, etiquetas e ZIP.",
     ],
     guideHref: "/pt-pt/guias-utilizador/exportacao/",
   },
@@ -128,7 +128,7 @@ export function WorkflowDiagramSvg() {
     "Materiais",
     "Lista de corte",
     "Nesting",
-    "Exportação TCN/PDF",
+    "Exportação industrial",
     "PIMO-TRAK",
   ]
 

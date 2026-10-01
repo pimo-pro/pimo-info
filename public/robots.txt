@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://pimo.info/sitemap.xml
+# LLM / agent knowledge entrypoints
+# https://pimo.info/llms.txt
+# https://pimo.info/llms-full.txt
+# https://pimo.info/data/

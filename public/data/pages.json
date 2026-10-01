@@ -1,0 +1,800 @@
+{
+  "generatedAt": "2026-10-01T00:27:39.742Z",
+  "items": [
+    {
+      "path": "/",
+      "file": "pages/index.mdx",
+      "title": "Centro visual PIMO Info",
+      "description": "Centro visual de ajuda e base de conhecimento do PIMO Criativo.",
+      "category": "hub",
+      "tags": [
+        "hub",
+        "pt-pt",
+        "ajuda"
+      ],
+      "related": [
+        "/pt-pt/",
+        "/pt-pt/primeiros-passos/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/about/",
+      "file": "pages/about.mdx",
+      "title": "About",
+      "description": "Página legada em inglês; o conteúdo canónico está em /pt-pt/.",
+      "category": "legacy",
+      "tags": [
+        "legacy",
+        "en"
+      ],
+      "related": [
+        "/pt-pt/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/ajuda/",
+      "file": "pages/ajuda.mdx",
+      "title": "Ajuda",
+      "description": "Página legada em inglês; o conteúdo canónico está em /pt-pt/.",
+      "category": "legacy",
+      "tags": [
+        "legacy",
+        "en"
+      ],
+      "related": [
+        "/pt-pt/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/contact/",
+      "file": "pages/contact.mdx",
+      "title": "Contact",
+      "description": "Contact — documentação PIMO Info (pt-PT).",
+      "category": "contacto",
+      "tags": [
+        "contacto"
+      ],
+      "related": [],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/docs/",
+      "file": "pages/docs.mdx",
+      "title": "Docs",
+      "description": "Página legada em inglês; o conteúdo canónico está em /pt-pt/.",
+      "category": "legacy",
+      "tags": [
+        "legacy",
+        "en"
+      ],
+      "related": [
+        "/pt-pt/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/ecosystem/",
+      "file": "pages/ecosystem.mdx",
+      "title": "Ecosystem",
+      "description": "Página legada em inglês; o conteúdo canónico está em /pt-pt/.",
+      "category": "legacy",
+      "tags": [
+        "legacy",
+        "en"
+      ],
+      "related": [
+        "/pt-pt/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/",
+      "file": "pages/pt-pt/index.mdx",
+      "title": "Centro de ajuda PIMO Criativo",
+      "description": "Centro de ajuda PIMO Criativo — documentação PIMO Info (pt-PT).",
+      "category": "hub",
+      "tags": [
+        "ajuda"
+      ],
+      "related": [],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/contacto/",
+      "file": "pages/pt-pt/contacto.mdx",
+      "title": "Contacto",
+      "description": "Contacto — documentação PIMO Info (pt-PT).",
+      "category": "contacto",
+      "tags": [
+        "contacto"
+      ],
+      "related": [],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/documentacao-tecnica/",
+      "file": "pages/pt-pt/documentacao-tecnica/index.mdx",
+      "title": "Documentação técnica",
+      "description": "Documentação técnica — documentação PIMO Info (pt-PT).",
+      "category": "tecnico",
+      "tags": [
+        "tecnico"
+      ],
+      "related": [
+        "/pt-pt/documentacao-tecnica/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/documentacao-tecnica/docs-do-sistema/",
+      "file": "pages/pt-pt/documentacao-tecnica/docs-do-sistema.mdx",
+      "title": "System docs",
+      "description": "System docs — documentação PIMO Info (pt-PT).",
+      "category": "tecnico",
+      "tags": [
+        "tecnico"
+      ],
+      "related": [
+        "/pt-pt/documentacao-tecnica/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/documentacao-tecnica/orcamentos-p39/",
+      "file": "pages/pt-pt/documentacao-tecnica/orcamentos-p39.mdx",
+      "title": "Orçamentos P3.9",
+      "description": "Orçamentos P3.9 — documentação PIMO Info (pt-PT).",
+      "category": "tecnico",
+      "tags": [
+        "tecnico"
+      ],
+      "related": [
+        "/pt-pt/documentacao-tecnica/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/documentacao-tecnica/sistema-industrial/",
+      "file": "pages/pt-pt/documentacao-tecnica/sistema-industrial.mdx",
+      "title": "Sistema Industrial",
+      "description": "Sistema Industrial — documentação PIMO Info (pt-PT).",
+      "category": "tecnico",
+      "tags": [
+        "tecnico"
+      ],
+      "related": [
+        "/pt-pt/documentacao-tecnica/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/ecossistema/",
+      "file": "pages/pt-pt/ecossistema/index.mdx",
+      "title": "Ecossistema de sites PIMO",
+      "description": "Visão do ecossistema de sete domínios PIMO — loja, aplicação, ajuda, mercados futuros e plano de negócio.",
+      "category": "ecossistema",
+      "tags": [
+        "ecossistema",
+        "dominios"
+      ],
+      "related": [
+        "/pt-pt/ecossistema/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/ecossistema/pim0-com/",
+      "file": "pages/pt-pt/ecossistema/pim0-com.mdx",
+      "title": "pim0.com",
+      "description": "Site do plano de negócio do projeto PIMO (domínio com zero).",
+      "category": "ecossistema",
+      "tags": [
+        "ecossistema",
+        "dominios"
+      ],
+      "related": [
+        "/pt-pt/ecossistema/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/ecossistema/pimo-casa/",
+      "file": "pages/pt-pt/ecossistema/pimo-casa.mdx",
+      "title": "pimo.casa",
+      "description": "Futuro site oficial para designs e projetos prontos PIMO.",
+      "category": "ecossistema",
+      "tags": [
+        "ecossistema",
+        "dominios"
+      ],
+      "related": [
+        "/pt-pt/ecossistema/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/ecossistema/pimo-design/",
+      "file": "pages/pt-pt/ecossistema/pimo-design.mdx",
+      "title": "pimo.design",
+      "description": "Futuro site oficial da aplicação de design completo PIMO.",
+      "category": "ecossistema",
+      "tags": [
+        "ecossistema",
+        "dominios"
+      ],
+      "related": [
+        "/pt-pt/ecossistema/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/ecossistema/pimo-es/",
+      "file": "pages/pt-pt/ecossistema/pimo-es.mdx",
+      "title": "pimo.es",
+      "description": "Loja oficial PIMO em espanhol — atualmente redireciona para pimo.pt.",
+      "category": "ecossistema",
+      "tags": [
+        "ecossistema",
+        "dominios"
+      ],
+      "related": [
+        "/pt-pt/ecossistema/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/ecossistema/pimo-info/",
+      "file": "pages/pt-pt/ecossistema/pimo-info.mdx",
+      "title": "pimo.info",
+      "description": "Centro de informação e ajuda do PIMO.",
+      "category": "ecossistema",
+      "tags": [
+        "ecossistema",
+        "dominios"
+      ],
+      "related": [
+        "/pt-pt/ecossistema/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/ecossistema/pimo-pro/",
+      "file": "pages/pt-pt/ecossistema/pimo-pro.mdx",
+      "title": "pimo.pro",
+      "description": "Site oficial da aplicação e plataforma PIMO Criativo.",
+      "category": "ecossistema",
+      "tags": [
+        "ecossistema",
+        "dominios"
+      ],
+      "related": [
+        "/pt-pt/ecossistema/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/ecossistema/pimo-pt/",
+      "file": "pages/pt-pt/ecossistema/pimo-pt.mdx",
+      "title": "pimo.pt",
+      "description": "Loja online principal e site principal da marca PIMO.",
+      "category": "ecossistema",
+      "tags": [
+        "ecossistema",
+        "dominios"
+      ],
+      "related": [
+        "/pt-pt/ecossistema/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/funcionalidades/",
+      "file": "pages/pt-pt/funcionalidades/index.mdx",
+      "title": "Funcionalidades PIMO",
+      "description": "Páginas de apresentação visual das funcionalidades principais do PIMO Criativo.",
+      "category": "funcionalidade",
+      "tags": [
+        "funcionalidade"
+      ],
+      "related": [
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/funcionalidades/configurador-3d/",
+      "file": "pages/pt-pt/funcionalidades/configurador-3d.mdx",
+      "title": "Configurador 3D",
+      "description": "Modelação paramétrica no workspace 3D com fluxo real do PIMO Criativo.",
+      "category": "funcionalidade",
+      "tags": [
+        "funcionalidade"
+      ],
+      "related": [
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/",
+      "file": "pages/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml.mdx",
+      "title": "Redirecionamento — Exportação TCN/Drill XML",
+      "description": "Esta página moveu-se para Exportação TCN/Drill XML.",
+      "category": "redirect",
+      "tags": [
+        "funcionalidade"
+      ],
+      "related": [],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/",
+      "file": "pages/pt-pt/funcionalidades/exportacao-tcn-drill-xml.mdx",
+      "title": "Exportação TCN/Drill XML",
+      "description": "Exportação de ficheiros industriais TCN (.tcn) e Drill XML (.xml) via menu Arquivos CNC.",
+      "category": "funcionalidade",
+      "tags": [
+        "funcionalidade",
+        "tcn",
+        "drill-xml",
+        "exportacao"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/exportacao/",
+        "/pt-pt/funcionalidades/pdf-tecnico/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/funcionalidades/lista-de-corte/",
+      "file": "pages/pt-pt/funcionalidades/lista-de-corte.mdx",
+      "title": "Lista de Corte",
+      "description": "Cutlist industrial gerada a partir do projeto no PIMO.",
+      "category": "funcionalidade",
+      "tags": [
+        "funcionalidade"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/lista-de-corte/",
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/funcionalidades/materiais/",
+      "file": "pages/pt-pt/funcionalidades/materiais.mdx",
+      "title": "Materiais",
+      "description": "Gestão visual de materiais da carcaça e frentes no PIMO.",
+      "category": "funcionalidade",
+      "tags": [
+        "funcionalidade"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/materiais/",
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/funcionalidades/modulo-industrial/",
+      "file": "pages/pt-pt/funcionalidades/modulo-industrial.mdx",
+      "title": "Módulo Industrial",
+      "description": "Camada industrial com painéis de estação, operador e supervisor.",
+      "category": "funcionalidade",
+      "tags": [
+        "funcionalidade"
+      ],
+      "related": [
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/funcionalidades/nesting-fast-pro/",
+      "file": "pages/pt-pt/funcionalidades/nesting-fast-pro.mdx",
+      "title": "Nesting Fast/PRO",
+      "description": "Otimização de layout de corte em modo Fast e PRO no PIMO.",
+      "category": "funcionalidade",
+      "tags": [
+        "funcionalidade"
+      ],
+      "related": [
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/funcionalidades/orcamentos/",
+      "file": "pages/pt-pt/funcionalidades/orcamentos.mdx",
+      "title": "Orçamentos",
+      "description": "Centro de tarifas e regras de custo no ecossistema PIMO.",
+      "category": "funcionalidade",
+      "tags": [
+        "funcionalidade"
+      ],
+      "related": [
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/funcionalidades/pdf-tecnico/",
+      "file": "pages/pt-pt/funcionalidades/pdf-tecnico.mdx",
+      "title": "PDF técnico",
+      "description": "Geração de PDF técnico com dados de projeto e produção no PIMO.",
+      "category": "funcionalidade",
+      "tags": [
+        "funcionalidade"
+      ],
+      "related": [
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/funcionalidades/pimo-trak/",
+      "file": "pages/pt-pt/funcionalidades/pimo-trak.mdx",
+      "title": "PIMO-TRAK",
+      "description": "Rastreio por etiqueta QR: geração UEE v5 implementada; acompanhamento industrial por posto na camada PIMO-TRAK.",
+      "category": "funcionalidade",
+      "tags": [
+        "funcionalidade",
+        "pimo-trak",
+        "etiquetas"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/pimo-trak/",
+        "/pt-pt/guias-utilizador/exportacao/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "mixed"
+    },
+    {
+      "path": "/pt-pt/funcionalidades/portas-e-gavetas/",
+      "file": "pages/pt-pt/funcionalidades/portas-e-gavetas.mdx",
+      "title": "Portas e Gavetas",
+      "description": "Configuração de frentes com regras automáticas industriais.",
+      "category": "funcionalidade",
+      "tags": [
+        "funcionalidade"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/portas-e-gavetas/",
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/glossario/",
+      "file": "pages/pt-pt/glossario.mdx",
+      "title": "Glossário técnico",
+      "description": "Terminologia canónica do PIMO Criativo: módulo/caixa, peça, material, espessura, orla, cutlist, nesting, TCN, Drill XML, PIMO-TRAK e formatos de exportação.",
+      "category": "glossario",
+      "tags": [
+        "glossario",
+        "terminologia",
+        "kb"
+      ],
+      "related": [
+        "/pt-pt/",
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/guias-utilizador/exportacao/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/guias-utilizador/",
+      "file": "pages/pt-pt/guias-utilizador/index.mdx",
+      "title": "Guias de utilizador",
+      "description": "Guias de utilizador — documentação PIMO Info (pt-PT).",
+      "category": "guia",
+      "tags": [
+        "guia"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/guias-utilizador/atalhos-teclado/",
+      "file": "pages/pt-pt/guias-utilizador/atalhos-teclado.mdx",
+      "title": "Atalhos de Teclado",
+      "description": "Atalhos de Teclado — documentação PIMO Info (pt-PT).",
+      "category": "guia",
+      "tags": [
+        "guia"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/guias-utilizador/criar-caixa/",
+      "file": "pages/pt-pt/guias-utilizador/criar-caixa.mdx",
+      "title": "Criar Caixa",
+      "description": "Criar Caixa — documentação PIMO Info (pt-PT).",
+      "category": "guia",
+      "tags": [
+        "guia"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/guias-utilizador/exportacao/",
+      "file": "pages/pt-pt/guias-utilizador/exportacao.mdx",
+      "title": "Exportação",
+      "description": "Guia de exportação do PIMO Criativo: PDF técnico, cutlist, etiquetas UEE, TCN, Drill XML, XLSX de ferragens e arquivo ZIP completo.",
+      "category": "guia",
+      "tags": [
+        "guia",
+        "exportacao",
+        "tcn",
+        "drill-xml"
+      ],
+      "related": [
+        "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/",
+        "/pt-pt/funcionalidades/pdf-tecnico/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/guias-utilizador/gerir-projetos/",
+      "file": "pages/pt-pt/guias-utilizador/gerir-projetos.mdx",
+      "title": "Gerir Projetos",
+      "description": "Gerir Projetos — documentação PIMO Info (pt-PT).",
+      "category": "guia",
+      "tags": [
+        "guia"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/guias-utilizador/lista-de-corte/",
+      "file": "pages/pt-pt/guias-utilizador/lista-de-corte.mdx",
+      "title": "Lista de Corte",
+      "description": "Lista de Corte — documentação PIMO Info (pt-PT).",
+      "category": "guia",
+      "tags": [
+        "guia"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/guias-utilizador/materiais/",
+      "file": "pages/pt-pt/guias-utilizador/materiais.mdx",
+      "title": "Materiais",
+      "description": "Materiais — documentação PIMO Info (pt-PT).",
+      "category": "guia",
+      "tags": [
+        "guia"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/guias-utilizador/medicoes-e-cotas/",
+      "file": "pages/pt-pt/guias-utilizador/medicoes-e-cotas.mdx",
+      "title": "Medições e Cotas",
+      "description": "Medições e Cotas — documentação PIMO Info (pt-PT).",
+      "category": "guia",
+      "tags": [
+        "guia"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/guias-utilizador/mover-e-posicionar/",
+      "file": "pages/pt-pt/guias-utilizador/mover-e-posicionar.mdx",
+      "title": "Mover e Posicionar",
+      "description": "Mover e Posicionar — documentação PIMO Info (pt-PT).",
+      "category": "guia",
+      "tags": [
+        "guia"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/guias-utilizador/nesting-layout-corte/",
+      "file": "pages/pt-pt/guias-utilizador/nesting-layout-corte.mdx",
+      "title": "Nesting / Layout de Corte",
+      "description": "Nesting / Layout de Corte — documentação PIMO Info (pt-PT).",
+      "category": "guia",
+      "tags": [
+        "guia"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/guias-utilizador/pimo-trak/",
+      "file": "pages/pt-pt/guias-utilizador/pimo-trak.mdx",
+      "title": "PIMO-TRAK",
+      "description": "Como gerar e aplicar etiquetas QR (UEE v5) e o que está implementado versus planeado no rastreio.",
+      "category": "guia",
+      "tags": [
+        "guia",
+        "pimo-trak",
+        "etiquetas"
+      ],
+      "related": [
+        "/pt-pt/funcionalidades/pimo-trak/",
+        "/pt-pt/guias-utilizador/exportacao/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "mixed"
+    },
+    {
+      "path": "/pt-pt/guias-utilizador/portas-e-gavetas/",
+      "file": "pages/pt-pt/guias-utilizador/portas-e-gavetas.mdx",
+      "title": "Portas e Gavetas",
+      "description": "Portas e Gavetas — documentação PIMO Info (pt-PT).",
+      "category": "guia",
+      "tags": [
+        "guia"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/perguntas-frequentes/",
+      "file": "pages/pt-pt/perguntas-frequentes.mdx",
+      "title": "Perguntas frequentes",
+      "description": "FAQ do PIMO Criativo: módulos, nesting, unidades, exportação ZIP, TCN/Drill XML e PIMO-TRAK.",
+      "category": "faq",
+      "tags": [
+        "faq",
+        "ajuda"
+      ],
+      "related": [
+        "/pt-pt/primeiros-passos/",
+        "/pt-pt/guias-utilizador/exportacao/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/primeiros-passos/",
+      "file": "pages/pt-pt/primeiros-passos.mdx",
+      "title": "Primeiros passos",
+      "description": "Guia rápido do PIMO Criativo: da primeira caixa ao pacote de produção (cutlist, nesting, TCN/Drill XML, ZIP).",
+      "category": "hub",
+      "tags": [
+        "guia",
+        "onboarding"
+      ],
+      "related": [
+        "/pt-pt/guias-utilizador/",
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/release-notes/",
+      "file": "pages/release-notes.mdx",
+      "title": "Release Notes",
+      "description": "Página legada em inglês; o conteúdo canónico está em /pt-pt/.",
+      "category": "legacy",
+      "tags": [
+        "legacy",
+        "en"
+      ],
+      "related": [
+        "/pt-pt/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/roadmap/",
+      "file": "pages/roadmap.mdx",
+      "title": "Roadmap",
+      "description": "Página legada em inglês; o conteúdo canónico está em /pt-pt/.",
+      "category": "legacy",
+      "tags": [
+        "legacy",
+        "en"
+      ],
+      "related": [
+        "/pt-pt/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    }
+  ]
+}

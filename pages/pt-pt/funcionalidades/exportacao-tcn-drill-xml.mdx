@@ -1,6 +1,18 @@
 ---
-title: Exportação TCN/Drill XML
-description: Exportação de ficheiros industriais TCN e Drill XML para máquinas CNC de carpintaria.
+title: "Exportação TCN/Drill XML"
+description: "Exportação de ficheiros industriais TCN (.tcn) e Drill XML (.xml) via menu Arquivos CNC."
+category: funcionalidade
+tags:
+  - funcionalidade
+  - tcn
+  - drill-xml
+  - exportacao
+related:
+  - /pt-pt/guias-utilizador/exportacao/
+  - /pt-pt/funcionalidades/pdf-tecnico/
+  - /pt-pt/glossario/
+lastUpdated: 2026-10-01
+status: implemented
 ---
 
 import { ServiceHero, InfoAccordion } from "../../../components/PimoVisualSections"
@@ -8,7 +20,7 @@ import { AnimatedHotspotImage, LazyYouTubeEmbed } from "../../../components/Pimo
 
 <ServiceHero
   title="Exportação TCN/Drill XML"
-  subtitle="Saída técnica em formatos industriais reais para máquinas CNC e software de produção, integrada no fluxo do projeto."
+  subtitle="Saída técnica em formatos industriais reais para máquinas CNC e software de produção."
   image="/visual/readme/ecra-ajuda.webp"
   imageAlt="Ajuda do PIMO com tópico de exportação"
   pimoHref="https://pimo.pro"
@@ -17,12 +29,12 @@ import { AnimatedHotspotImage, LazyYouTubeEmbed } from "../../../components/Pimo
 
 ## O que faz
 
-Gera ficheiros **TCN** (`.tcn`) e **Drill XML** (`.xml`) por módulo, com informação de furação e execução para chão de fábrica e máquinas CNC.
+Gera ficheiros **TCN** (`.tcn`) e **Drill XML** (`.xml`) a partir do fluxo **Arquivos CNC**. CNC é o menu/destino; não é a extensão do ficheiro.
 
 <section className="pimo-service-benefits">
-  <li><strong>Formatos industriais</strong><p>TCN e Drill XML (Furação XML) integrados no menu de exportação da app.</p></li>
-  <li><strong>Fluxo consolidado</strong><p>Pode ser combinado com PDF técnico e ZIP completo no mesmo projeto.</p></li>
-  <li><strong>Saída por módulo</strong><p>Organização orientada para operacionalização na produção.</p></li>
+  <li><strong>Formatos industriais</strong><p>TCN e Drill XML (Furação XML) no menu de exportação da app.</p></li>
+  <li><strong>Fluxo consolidado</strong><p>Combinável com PDF técnico, cutlist, etiquetas e ZIP completo.</p></li>
+  <li><strong>Organização por espessura</strong><p>No arquivo completo, TCN/etiquetas/layouts agrupam-se por espessura de chapa.</p></li>
 </section>
 
 <AnimatedHotspotImage
@@ -42,7 +54,8 @@ Gera ficheiros **TCN** (`.tcn`) e **Drill XML** (`.xml`) por módulo, com inform
 
 <InfoAccordion
   items={[
-    { title: "Qual formato devo usar?", text: "Depende da máquina CNC e do software da fábrica. O fluxo oficial disponibiliza TCN e Drill XML para cenários distintos." },
+    { title: "Qual formato devo usar?", text: "Depende da máquina CNC e do software da fábrica. O fluxo oficial disponibiliza TCN e Drill XML." },
     { title: "Posso exportar tudo de uma vez?", text: "Sim, através do arquivo completo (ZIP), que agrega os principais artefactos de produção." },
+    { title: "Onde está o glossário?", text: "Em /pt-pt/glossario/ — termos e formatos canónicos para IA e documentação." },
   ]}
 />

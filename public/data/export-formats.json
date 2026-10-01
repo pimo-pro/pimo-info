@@ -1,0 +1,129 @@
+{
+  "generatedAt": "2026-10-01T00:27:39.741Z",
+  "items": [
+    {
+      "id": "pdf-tecnico",
+      "name": "PDF Técnico",
+      "menuLabel": "PDF Técnico",
+      "extensions": [
+        ".pdf"
+      ],
+      "description": "Relatório do projeto com vista 3D, lista de corte, materiais, ferragens e resumo de preço.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/pdf-tecnico/",
+        "/pt-pt/guias-utilizador/exportacao/"
+      ]
+    },
+    {
+      "id": "cutlist-pdf",
+      "name": "Cutlist (PDF)",
+      "menuLabel": "Cutlist",
+      "extensions": [
+        ".pdf"
+      ],
+      "description": "Lista de corte industrial em milímetros: peças, espessuras, materiais e quantidades.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/lista-de-corte/",
+        "/pt-pt/guias-utilizador/lista-de-corte/"
+      ]
+    },
+    {
+      "id": "pdf-unificado",
+      "name": "PDF Unificado",
+      "menuLabel": "Cutlist + PDF + Unificado",
+      "extensions": [
+        ".pdf"
+      ],
+      "description": "Documento único que combina informação técnica e cutlist para entrega documental.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/guias-utilizador/exportacao/"
+      ]
+    },
+    {
+      "id": "etiquetas-uee",
+      "name": "Etiquetas (UEE v5)",
+      "menuLabel": "Etiquetas (UEE v5)",
+      "extensions": [
+        ".pdf"
+      ],
+      "description": "PDF de etiquetas com QR por peça (motor UEE v5), tipicamente um ficheiro por espessura.",
+      "status": "implemented",
+      "notes": "Base do rastreio PIMO-TRAK na peça física.",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/pimo-trak/",
+        "/pt-pt/guias-utilizador/pimo-trak/"
+      ]
+    },
+    {
+      "id": "ferragens-xlsx",
+      "name": "Ferragens XLSX",
+      "menuLabel": "Ferragens XLSX",
+      "extensions": [
+        ".xlsx"
+      ],
+      "description": "Folha Excel com ferragens industriais do projeto.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/guias-utilizador/exportacao/"
+      ]
+    },
+    {
+      "id": "secoes-industriais-pdf",
+      "name": "Secções industriais (PDFs)",
+      "menuLabel": "Secções Industriais (4 PDFs)",
+      "extensions": [
+        ".pdf"
+      ],
+      "description": "Conjunto de PDFs industriais: resumo financeiro, peças totais, ferragens totais e totais do projeto.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/guias-utilizador/exportacao/"
+      ]
+    },
+    {
+      "id": "tcn",
+      "name": "TCN",
+      "menuLabel": "Arquivos CNC",
+      "extensions": [
+        ".tcn"
+      ],
+      "description": "Ficheiro industrial `.tcn` para centros CNC de carpintaria (furação/coordenadas por painel). O menu chama-se «Arquivos CNC»; o formato do ficheiro é TCN.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/",
+        "/pt-pt/guias-utilizador/exportacao/"
+      ]
+    },
+    {
+      "id": "drill-xml",
+      "name": "Drill XML",
+      "menuLabel": "Arquivos CNC",
+      "extensions": [
+        ".xml"
+      ],
+      "description": "Plano de furação em XML estruturado (também referido como Furação XML), gerado no fluxo de Arquivos CNC.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/",
+        "/pt-pt/guias-utilizador/exportacao/"
+      ]
+    },
+    {
+      "id": "arquivo-completo-zip",
+      "name": "Arquivo completo (ZIP)",
+      "menuLabel": "Gerar arquivo completo",
+      "extensions": [
+        ".zip"
+      ],
+      "description": "Pacote com cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts de corte, ficheiros TCN, Drill XML e manifesto industrial.",
+      "status": "implemented",
+      "notes": "Não inventar CSV como conteúdo obrigatório do ZIP: o código gera cutlist em PDF (não CSV) no arquivo completo.",
+      "relatedPaths": [
+        "/pt-pt/guias-utilizador/exportacao/"
+      ]
+    }
+  ]
+}
