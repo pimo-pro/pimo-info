@@ -1367,3 +1367,177 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
+/* Nav extra links + contact / social / legal */
+.pimo-nav-extra {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.pimo-nav-text-link {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--pimo-ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.pimo-nav-text-link:hover {
+  border-bottom-color: var(--pimo-primary);
+  color: var(--pimo-primary-dark);
+}
+
+.pimo-ecosystem-footer {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.pimo-footer-brand,
+.pimo-footer-contact,
+.pimo-footer-legal {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  align-items: center;
+  font-size: 0.86rem;
+}
+
+.pimo-footer-contact a,
+.pimo-footer-legal a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--pimo-border);
+}
+
+.pimo-footer-contact a:hover,
+.pimo-footer-legal a:hover {
+  border-bottom-color: var(--pimo-primary);
+}
+
+.pimo-social-icons {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pimo-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 6px;
+  border: 1px solid var(--pimo-border);
+  background: #fff;
+  color: var(--pimo-ink);
+}
+
+.pimo-social-icon.is-disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.pimo-social-icon.is-active:hover {
+  border-color: var(--pimo-primary);
+  color: var(--pimo-primary-dark);
+}
+
+.pimo-contact-details dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem 1rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.pimo-contact-details dt {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--pimo-muted);
+  margin: 0 0 0.2rem;
+}
+
+.pimo-contact-details dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.pimo-about-site-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.pimo-about-site-list > li {
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--pimo-border);
+}
+
+.pimo-about-site-list h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+}
+
+.pimo-about-site-role {
+  margin: 0 0 0.35rem;
+  color: var(--pimo-muted);
+  font-size: 0.92rem;
+}
+
+.pimo-about-site-meta {
+  margin: 0.4rem 0 0;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-size: 0.86rem;
+  color: var(--pimo-muted);
+}
+
+.pimo-legal-ecosystem {
+  margin-top: 1.5rem;
+}
+
+.pimo-legal-ecosystem-table-wrap {
+  overflow-x: auto;
+  margin-top: 0.75rem;
+}
+
+.pimo-legal-ecosystem-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.pimo-legal-ecosystem-table th,
+.pimo-legal-ecosystem-table td {
+  border-bottom: 1px solid var(--pimo-border);
+  text-align: left;
+  vertical-align: top;
+  padding: 0.65rem 0.5rem;
+}
+
+.pimo-legal-note {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  color: var(--pimo-muted);
+  font-weight: 400;
+}
+
+@media (max-width: 767px) {
+  .pimo-nav-extra {
+    gap: 0.4rem;
+  }
+
+  .pimo-nav-text-link {
+    font-size: 0.78rem;
+  }
+}

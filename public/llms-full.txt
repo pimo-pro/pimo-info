@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-10-01T03:03:20.553Z
+Generated: 2026-10-01T03:08:53.414Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -7,6 +7,17 @@ Generated: 2026-10-01T03:03:20.553Z
 Site: https://pimo.info
 App: https://pimo.pro
 Locale: pt-PT
+
+## Contact
+- Support email: info@pimo.pro
+- Phone: +351 913 822 833
+- Address: Macedo de Cavaleiros, Portugal
+- Legal name: [A PREENCHER: razão social]
+- Tax ID (NIF/NIPC): [A PREENCHER: NIF/NIPC]
+- Legal hub: https://pimo.info/pt-pt/legal/
+- Privacy: https://pimo.info/pt-pt/legal/privacidade/
+- Terms: https://pimo.info/pt-pt/legal/termos/
+- Cookies: https://pimo.info/pt-pt/legal/cookies/
 
 ## Machine-readable data
 - https://pimo.info/llms.txt
@@ -24,6 +35,9 @@ Locale: pt-PT
 ## Primary sections
 - Hub: https://pimo.info/
 - Centro de ajuda pt-PT: https://pimo.info/pt-pt/
+- Sobre: https://pimo.info/about/
+- Contacto: https://pimo.info/pt-pt/contacto/
+- Políticas e Termos: https://pimo.info/pt-pt/legal/
 - Como funciona: https://pimo.info/pt-pt/como-funciona/
 - Sistemas PIMO: https://pimo.info/pt-pt/sistemas-pimo/
 - Referência de botões: https://pimo.info/pt-pt/referencia/botoes/
@@ -184,6 +198,10 @@ Locale: pt-PT
 - Nesting / Layout de Corte: https://pimo.info/pt-pt/guias-utilizador/nesting-layout-corte/
 - PIMO-TRAK: https://pimo.info/pt-pt/guias-utilizador/pimo-trak/
 - Portas e Gavetas: https://pimo.info/pt-pt/guias-utilizador/portas-e-gavetas/
+- Políticas e Termos: https://pimo.info/pt-pt/legal/
+- Política de Cookies: https://pimo.info/pt-pt/legal/cookies/
+- Política de Privacidade: https://pimo.info/pt-pt/legal/privacidade/
+- Termos e Condições: https://pimo.info/pt-pt/legal/termos/
 - Perguntas frequentes: https://pimo.info/pt-pt/perguntas-frequentes/
 - Primeiros passos: https://pimo.info/pt-pt/primeiros-passos/
 - Referência: https://pimo.info/pt-pt/referencia/
@@ -5079,38 +5097,26 @@ Fluxo ponta a ponta do PIMO Criativo, documentado a partir do código (estado do
 
 ## Contacto
 URL: https://pimo.info/pt-pt/contacto/
-Contacto.
+Contactos oficiais PIMO: email, telefone e morada.
 
 # Contacto
 
  
-  Precisa de apoio comercial, técnico ou de implementação? Use os canais oficiais da equipa PIMO.
+  Apoio comercial, técnico ou de implementação: use os canais oficiais abaixo.
  
 
-## Informação pública encontrada no projeto principal
+ 
 
-- **Nome/Marca pública:** PIMO Criativo
-- **Website principal em produção:** [https://pimo.pro](https://pimo.pro)
-- **Domínio também referenciado no projeto principal:** `pim0.com`
-- **Assinatura pública na landing da app:** `Crafted by Khaled`
+## Outros canais
 
-## Canais (dados não encontrados publicamente no repositório público)
+- Aplicação: [pimo.pro](https://pimo.pro)
+- Loja online: [pimo.pt](https://pimo.pt)
+- Centro de ajuda: [pimo.info](https://pimo.info)
+- Plano de negócio: [pim0.com](https://pim0.com)
+- [Políticas e Termos](/pt-pt/legal/)
+- [Livro de Reclamações online](https://www.livroreclamacoes.pt/Inicio/)
 
-- **Email de suporte:** `[NÃO ENCONTRADO, PREENCHER]`
-- **Telefone/WhatsApp comercial:** `[NÃO ENCONTRADO, PREENCHER]`
-- **Morada:** `[NÃO ENCONTRADO, PREENCHER]`
-- **Canal técnico (ex.: Discord/Slack/portal):** `[NÃO ENCONTRADO, PREENCHER]`
-- **Links oficiais de redes sociais:** `[NÃO ENCONTRADO, PREENCHER]`
-- **Links legais (Privacidade/Termos):** `[NÃO ENCONTRADO, PREENCHER]`
-- **Horário de atendimento:** `[NÃO ENCONTRADO, PREENCHER]`
-
-## Referências públicas
-
-- Aplicação: [https://pimo.pro](https://pimo.pro)
-- Centro de ajuda: [https://pimo.info](https://pimo.info)
-- Domínio referido na landing principal: `pim0.com`
-
-> Nota: este site é público e não requer login.
+> Este site é público e não requer login.
 
 ---
 
@@ -6172,6 +6178,296 @@ O sistema aplica regras automáticas de folgas, ferragens e compatibilidade.
 
 - Portas e gavetas são mutuamente exclusivas no mesmo módulo.
 - Verifique aberturas antes de exportar para produção.
+
+---
+
+## Políticas e Termos
+URL: https://pimo.info/pt-pt/legal/
+Hub legal do ecossistema PIMO: privacidade, termos e cookies (Portugal/UE).
+
+# Políticas e Termos
+
+ 
+  Página central de regras do ecossistema PIMO. Serve o pimo.info e, na ausência de
+  página própria noutros domínios, o restante mapa de sites.
+ 
+
+## Documentos neste hub
+
+- [Política de Privacidade](/pt-pt/legal/privacidade/)
+- [Termos e Condições](/pt-pt/legal/termos/)
+- [Política de Cookies](/pt-pt/legal/cookies/)
+
+## Responsável e contacto
+
+O responsável pelo tratamento dos dados neste hub e pelo contacto institucional do
+ecossistema, para efeitos destas páginas, é identificado sob a marca **PIMO**.
+
+A razão social formal e o NIF/NIPC serão publicados aqui quando estiverem confirmados
+nos registos oficiais. Até lá, ficam marcados como dados a preencher (não inventamos
+estes campos).
+
+ 
+
+## Direitos e reclamações (Portugal / UE)
+
+- Pode exercer direitos RGPD (acesso, retificação, apagamento, limitação, oposição,
+  portabilidade, quando aplicável) através de [info@pimo.pro](mailto:info@pimo.pro).
+- Tem o direito de apresentar reclamação à autoridade de controlo portuguesa
+  ([CNPD](https://www.cnpd.pt/)).
+- [Livro de Reclamações online](https://www.livroreclamacoes.pt/Inicio/)
+- Informação sobre resolução alternativa de litígios de consumo (RAL):
+  [consumidor.gov.pt](https://www.consumidor.gov.pt/)
+
+---
+
+## Política de Cookies
+URL: https://pimo.info/pt-pt/legal/cookies/
+Política de cookies do PIMO Info (Portugal/UE).
+
+# Política de Cookies
+
+Última atualização: 1 de outubro de 2026.
+
+Esta política explica o uso de cookies e tecnologias semelhantes no
+[pimo.info](https://pimo.info).
+
+## 1. O que são cookies
+
+Cookies são pequenos ficheiros guardados no seu dispositivo quando visita um site.
+Servem para o site funcionar, lembrar preferências ou, com consentimento, medir audiência.
+
+## 2. Quem é responsável
+
+Marca **PIMO**. Contacto: [info@pimo.pro](mailto:info@pimo.pro). Morada: Macedo de
+Cavaleiros, Portugal. Razão social e NIF/NIPC: a preencher quando confirmados
+([ver privacidade](/pt-pt/legal/privacidade/)).
+
+ 
+
+## 3. Tipos de cookies que podemos usar
+
+| Tipo | Finalidade | Base |
+|---|---|---|
+| Estritamente necessários | Segurança, equilíbrio de carga, preferências essenciais de interface | Interesse legítimo / necessidade técnica |
+| Preferências | Lembrar idioma ou estado da interface, quando aplicável | Consentimento ou necessidade técnica |
+| Analíticos | Compreender uso agregado das páginas (se ativados) | Consentimento |
+| Marketing | Não usamos cookies de publicidade de terceiros neste hub, salvo aviso futuro | Consentimento, se forem introduzidos |
+
+A lista concreta de cookies pode evoluir com o alojamento e ferramentas usadas. Quando
+existir banner de consentimento, poderá gerir categorias não essenciais aí.
+
+## 4. Gestão no browser
+
+Pode bloquear ou apagar cookies nas definições do browser. Bloquear cookies necessários
+pode degradar a navegação (por exemplo, pesquisa ou preferências de layout).
+
+## 5. Cookies de outros sites PIMO
+
+A loja [pimo.pt](https://pimo.pt) tem [política de cookies própria](https://pimo.pt/politica-de-cookies/).
+A aplicação [pimo.pro](https://pimo.pro) pode usar cookies/sessões próprios da plataforma;
+não foram encontradas páginas legais públicas dedicadas nesse domínio na verificação
+de 2026-10-01. Ver o [hub legal](/pt-pt/legal/).
+
+## 6. Mais informação
+
+- [Política de Privacidade](/pt-pt/legal/privacidade/)
+- [Termos e Condições](/pt-pt/legal/termos/)
+- Contacto: [info@pimo.pro](mailto:info@pimo.pro)
+
+---
+
+## Política de Privacidade
+URL: https://pimo.info/pt-pt/legal/privacidade/
+Política de privacidade do hub legal PIMO Info (RGPD, Portugal/UE).
+
+# Política de Privacidade
+
+Última atualização: 1 de outubro de 2026.
+
+Esta política explica como a marca **PIMO** trata dados pessoais no âmbito do
+[pimo.info](https://pimo.info) (centro de informação e ajuda) e, na falta de política
+própria noutro domínio do ecossistema, como referência geral até cada site publicar
+a sua versão.
+
+## 1. Responsável pelo tratamento
+
+- **Marca:** PIMO
+- **Razão social:** [A PREENCHER: razão social]
+- **NIF / NIPC:** [A PREENCHER: NIF/NIPC]
+- **Contacto RGPD / suporte:** [info@pimo.pro](mailto:info@pimo.pro)
+- **Telefone:** [+351 913 822 833](tel:+351913822833)
+- **Morada:** Macedo de Cavaleiros, Portugal
+
+ 
+
+## 2. Âmbito
+
+Aplica-se à navegação e contacto através de pimo.info (incluindo formulários futuros,
+email e telefone). Sites com política própria (por exemplo a loja em pimo.pt) prevalecem
+nas respetivas páginas. Ver o [hub legal](/pt-pt/legal/) para a lista por domínio.
+
+## 3. Que dados podemos tratar
+
+Consoante a interação:
+
+- dados de contacto que nos envie (nome, email, telefone, mensagem);
+- dados técnicos de navegação (endereço IP, tipo de dispositivo, páginas visitadas,
+  registos de servidor), na medida necessária ao funcionamento e segurança do site;
+- cookies e tecnologias semelhantes, descritos na [Política de Cookies](/pt-pt/legal/cookies/).
+
+Não pedimos categorias especiais de dados (saúde, origem racial, etc.) neste site.
+Se nos enviar esse tipo de informação por iniciativa própria, pedimos que o evite.
+
+## 4. Finalidades e bases legais (RGPD)
+
+Tratamos dados para:
+
+- responder a pedidos de contacto e suporte (interesse legítimo e/ou execução de
+  diligências pré-contratuais, art. 6.º, n.º 1, alíneas b) e f) do RGPD);
+- garantir segurança, disponibilidade e melhoria do site (interesse legítimo);
+- cumprir obrigações legais, quando existam (art. 6.º, n.º 1, alínea c));
+- cookies não essenciais: apenas com consentimento, quando aplicável
+  (art. 6.º, n.º 1, alínea a)).
+
+## 5. Conservação
+
+Conservamos os dados só pelo tempo necessário às finalidades (por exemplo, o tempo
+de resolução de um pedido de suporte) ou pelos prazos legais aplicáveis. Registos
+técnicos seguem prazos curtos de segurança e diagnóstico, salvo obrigação legal em contrário.
+
+## 6. Destinatários e subprocessadores
+
+Podemos recorrer a prestadores de alojamento, email e analytics, sob contrato e com
+instruções adequadas. Não vendemos dados pessoais. Transferências para fora do EEE,
+se existirem, só com salvaguardas previstas no RGPD (por exemplo cláusulas-tipo).
+
+## 7. Os seus direitos
+
+Pode solicitar acesso, retificação, apagamento, limitação, oposição e, quando aplicável,
+portabilidade, bem como retirar o consentimento (sem afetar a licitude do tratamento
+anterior). Contacte [info@pimo.pro](mailto:info@pimo.pro).
+
+Tem o direito de apresentar reclamação à [CNPD](https://www.cnpd.pt/).
+
+## 8. Segurança
+
+Aplicamos medidas técnicas e organizativas razoáveis (HTTPS, controlo de acesso a
+sistemas, minimização). Nenhum sistema é 100 % seguro; se tomar conhecimento de um
+incidente que o afete, contacte-nos de imediato.
+
+## 9. Menores
+
+Este site destina-se a profissionais e adultos. Não recolhemos conscientemente dados
+de menores de 16 anos. Se for o caso, contacte-nos para remoção.
+
+## 10. Alterações
+
+Podemos atualizar esta política. A data no topo indica a versão vigente. Alterações
+relevantes serão destacadas no [hub legal](/pt-pt/legal/).
+
+## 11. Reclamações e RAL
+
+- [Livro de Reclamações online](https://www.livroreclamacoes.pt/Inicio/)
+- Resolução alternativa de litígios: informação em
+  [consumidor.gov.pt](https://www.consumidor.gov.pt/)
+
+## Documentos relacionados
+
+- [Termos e Condições](/pt-pt/legal/termos/)
+- [Política de Cookies](/pt-pt/legal/cookies/)
+- [Políticas por site](/pt-pt/legal/)
+
+---
+
+## Termos e Condições
+URL: https://pimo.info/pt-pt/legal/termos/
+Termos de utilização do hub legal e do centro de informação PIMO Info.
+
+# Termos e Condições
+
+Última atualização: 1 de outubro de 2026.
+
+Estes termos regulam o uso do site [pimo.info](https://pimo.info) (centro de informação
+e ajuda do PIMO). A loja online, a aplicação e outros produtos podem ter condições
+próprias; quando existirem, prevalecem nas respetivas experiências.
+
+## 1. Identificação
+
+- **Marca:** PIMO
+- **Razão social:** [A PREENCHER: razão social]
+- **NIF / NIPC:** [A PREENCHER: NIF/NIPC]
+- **Contacto:** [info@pimo.pro](mailto:info@pimo.pro)
+- **Telefone:** [+351 913 822 833](tel:+351913822833)
+- **Morada:** Macedo de Cavaleiros, Portugal
+
+ 
+
+## 2. Objeto do site
+
+O pimo.info disponibiliza documentação, guias, glossário, blog e informação sobre o
+ecossistema PIMO. O conteúdo é informativo. Não substitui formação profissional,
+consultoria jurídica ou a interface oficial da aplicação em [pimo.pro](https://pimo.pro).
+
+## 3. Aceitação
+
+Ao utilizar este site, aceita estes termos e a
+[Política de Privacidade](/pt-pt/legal/privacidade/). Se não concordar, deixe de usar o site.
+
+## 4. Contas e serviços de terceiros
+
+O acesso à aplicação PIMO Criativo, compras na loja ou outros serviços externos regem-se
+pelas condições desses serviços. Links para pimo.pt, pimo.pro e outros domínios não
+transferem responsabilidade pelo conteúdo externo.
+
+## 5. Propriedade intelectual
+
+Textos, marcas, logótipos e materiais deste site pertencem ao PIMO ou aos respetivos
+titulares. Pode consultar e partilhar ligações para páginas públicas. Não é permitido
+copiar documentação em volume para produtos concorrentes sem autorização escrita.
+
+## 6. Exactidão do conteúdo
+
+Esforçamo-nos por manter a documentação alinhada com o produto. Funções marcadas como
+planeadas, parciais ou em desenvolvimento podem mudar. Em caso de dúvida sobre
+comportamento da aplicação, prevalece o comportamento real da versão instalada / em produção.
+
+## 7. Utilização aceitável
+
+É proibido usar o site para:
+
+- atacar, sobrecarregar ou contornar segurança;
+- enviar spam ou conteúdo ilícito;
+- copiar dados pessoais de terceiros sem base legal;
+- induzir em erro quanto à afiliação com o PIMO.
+
+## 8. Limitação de responsabilidade
+
+Na máxima medida permitida pela lei portuguesa e da UE, o PIMO não responde por danos
+indiretos, lucros cessantes ou falhas de produção decorrentes do uso exclusivo da
+documentação. Nada nestes termos exclui responsabilidade que a lei não permita excluir
+(por exemplo, dolo ou culpa grave, ou direitos imperativos do consumidor quando aplicáveis).
+
+## 9. Direito aplicável e foro
+
+Salvo norma imperativa em contrário, aplica-se a lei portuguesa. Litígios submetem-se
+aos tribunais competentes em Portugal, sem prejuízo de direitos imperativos de consumidores
+e dos mecanismos de RAL.
+
+## 10. Reclamações e RAL
+
+- [Livro de Reclamações online](https://www.livroreclamacoes.pt/Inicio/)
+- Informação RAL: [consumidor.gov.pt](https://www.consumidor.gov.pt/)
+
+## 11. Alterações
+
+Podemos atualizar estes termos. A data no topo indica a versão vigente.
+
+## Documentos relacionados
+
+- [Política de Privacidade](/pt-pt/legal/privacidade/)
+- [Política de Cookies](/pt-pt/legal/cookies/)
+- [Hub legal](/pt-pt/legal/)
 
 ---
 

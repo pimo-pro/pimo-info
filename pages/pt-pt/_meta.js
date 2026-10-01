@@ -17,5 +17,6 @@ export default {
   blog: "Blog",
   "perguntas-frequentes": "Perguntas frequentes",
   contacto: "Contacto",
+  legal: "Políticas e Termos",
   "documentacao-tecnica": "Documentação técnica",
 }

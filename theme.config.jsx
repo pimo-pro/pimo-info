@@ -1,6 +1,7 @@
 import { useRouter } from "next/router"
 import { useConfig } from "nextra-theme-docs"
 import { EcosystemFooterLinks } from "./components/PimoEcosystem"
+import { site as siteMeta } from "./data/site"
 
 const siteUrl = "https://pimo.info"
 const defaultDescription =
@@ -47,14 +48,25 @@ export default {
   ],
   navbar: {
     extraContent: (
-      <a
-        className="pimo-open-app-button"
-        href="https://pimo.pro"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Abrir PIMO
-      </a>
+      <span className="pimo-nav-extra">
+        <a className="pimo-nav-text-link" href="/pt-pt/legal/">
+          Políticas
+        </a>
+        <a className="pimo-nav-text-link" href="/pt-pt/contacto/">
+          Contacto
+        </a>
+        <a className="pimo-nav-text-link" href="/about/">
+          Sobre
+        </a>
+        <a
+          className="pimo-open-app-button"
+          href="https://pimo.pro"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Abrir PIMO
+        </a>
+      </span>
     ),
   },
   search: {
@@ -99,13 +111,37 @@ export default {
           : `${siteUrl}${frontMatter.image}`
         : "https://pimo.pro/logo-pi.png"
 
+    const org = siteMeta.organization
     const organization = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: "PIMO",
-      url: "https://pimo.pt",
-      logo: "https://pimo.pro/logo-pi.png",
-      sameAs: ["https://pimo.pro", "https://pimo.info", "https://pim0.com"],
+      name: org.name,
+      url: org.url,
+      logo: org.logo,
+      email: org.email,
+      telephone: org.telephone,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: org.address.addressLocality,
+        addressRegion: org.address.addressRegion,
+        addressCountry: org.address.addressCountry,
+      },
+      sameAs: [
+        "https://pimo.pro",
+        "https://pimo.info",
+        "https://pim0.com",
+        "https://pimo.pt",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: siteMeta.contact.supportEmail,
+          telephone: siteMeta.contact.phone,
+          areaServed: "PT",
+          availableLanguage: ["pt-PT", "pt"],
+        },
+      ],
     }
 
     const website = {

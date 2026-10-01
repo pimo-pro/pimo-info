@@ -5,6 +5,17 @@ Site: https://pimo.info
 App: https://pimo.pro
 Locale: pt-PT
 
+## Contact
+- Support email: info@pimo.pro
+- Phone: +351 913 822 833
+- Address: Macedo de Cavaleiros, Portugal
+- Legal name: [A PREENCHER: razão social]
+- Tax ID (NIF/NIPC): [A PREENCHER: NIF/NIPC]
+- Legal hub: https://pimo.info/pt-pt/legal/
+- Privacy: https://pimo.info/pt-pt/legal/privacidade/
+- Terms: https://pimo.info/pt-pt/legal/termos/
+- Cookies: https://pimo.info/pt-pt/legal/cookies/
+
 ## Machine-readable data
 - https://pimo.info/llms.txt
 - https://pimo.info/llms-full.txt
@@ -21,6 +32,9 @@ Locale: pt-PT
 ## Primary sections
 - Hub: https://pimo.info/
 - Centro de ajuda pt-PT: https://pimo.info/pt-pt/
+- Sobre: https://pimo.info/about/
+- Contacto: https://pimo.info/pt-pt/contacto/
+- Políticas e Termos: https://pimo.info/pt-pt/legal/
 - Como funciona: https://pimo.info/pt-pt/como-funciona/
 - Sistemas PIMO: https://pimo.info/pt-pt/sistemas-pimo/
 - Referência de botões: https://pimo.info/pt-pt/referencia/botoes/
@@ -181,6 +195,10 @@ Locale: pt-PT
 - Nesting / Layout de Corte: https://pimo.info/pt-pt/guias-utilizador/nesting-layout-corte/
 - PIMO-TRAK: https://pimo.info/pt-pt/guias-utilizador/pimo-trak/
 - Portas e Gavetas: https://pimo.info/pt-pt/guias-utilizador/portas-e-gavetas/
+- Políticas e Termos: https://pimo.info/pt-pt/legal/
+- Política de Cookies: https://pimo.info/pt-pt/legal/cookies/
+- Política de Privacidade: https://pimo.info/pt-pt/legal/privacidade/
+- Termos e Condições: https://pimo.info/pt-pt/legal/termos/
 - Perguntas frequentes: https://pimo.info/pt-pt/perguntas-frequentes/
 - Primeiros passos: https://pimo.info/pt-pt/primeiros-passos/
 - Referência: https://pimo.info/pt-pt/referencia/

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T03:03:20.552Z",
+  "generatedAt": "2026-10-01T03:08:53.413Z",
   "items": [
     {
       "path": "/",
@@ -24,16 +24,19 @@
     {
       "path": "/about/",
       "file": "pages/about.mdx",
-      "title": "About",
-      "description": "Página legada em inglês; o conteúdo canónico está em /pt-pt/.",
+      "title": "Sobre",
+      "description": "Os sites do ecossistema PIMO e informação institucional.",
       "author": "",
       "category": "legacy",
       "tags": [
-        "legacy",
-        "en"
+        "sobre",
+        "ecossistema"
       ],
       "related": [
-        "/pt-pt/"
+        "/pt-pt/",
+        "/pt-pt/ecossistema/",
+        "/pt-pt/contacto/",
+        "/pt-pt/legal/"
       ],
       "lastUpdated": "2026-10-01",
       "status": "implemented"
@@ -600,13 +603,16 @@
       "path": "/pt-pt/contacto/",
       "file": "pages/pt-pt/contacto.mdx",
       "title": "Contacto",
-      "description": "Contacto.",
+      "description": "Contactos oficiais PIMO: email, telefone e morada.",
       "author": "",
       "category": "contacto",
       "tags": [
         "contacto"
       ],
-      "related": [],
+      "related": [
+        "/pt-pt/legal/",
+        "/about/"
+      ],
       "lastUpdated": "2026-10-01",
       "status": "implemented"
     },
@@ -1426,6 +1432,88 @@
       "related": [
         "/pt-pt/guias-utilizador/",
         "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/legal/",
+      "file": "pages/pt-pt/legal/index.mdx",
+      "title": "Políticas e Termos",
+      "description": "Hub legal do ecossistema PIMO: privacidade, termos e cookies (Portugal/UE).",
+      "author": "",
+      "category": "legal",
+      "tags": [
+        "legal",
+        "privacidade",
+        "termos",
+        "cookies"
+      ],
+      "related": [
+        "/pt-pt/legal/privacidade/",
+        "/pt-pt/legal/termos/",
+        "/pt-pt/legal/cookies/",
+        "/pt-pt/contacto/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/legal/cookies/",
+      "file": "pages/pt-pt/legal/cookies.mdx",
+      "title": "Política de Cookies",
+      "description": "Política de cookies do PIMO Info (Portugal/UE).",
+      "author": "",
+      "category": "legal",
+      "tags": [
+        "legal",
+        "cookies"
+      ],
+      "related": [
+        "/pt-pt/legal/",
+        "/pt-pt/legal/privacidade/",
+        "/pt-pt/legal/termos/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/legal/privacidade/",
+      "file": "pages/pt-pt/legal/privacidade.mdx",
+      "title": "Política de Privacidade",
+      "description": "Política de privacidade do hub legal PIMO Info (RGPD, Portugal/UE).",
+      "author": "",
+      "category": "legal",
+      "tags": [
+        "legal",
+        "privacidade",
+        "rgpd"
+      ],
+      "related": [
+        "/pt-pt/legal/",
+        "/pt-pt/legal/termos/",
+        "/pt-pt/legal/cookies/",
+        "/pt-pt/contacto/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/legal/termos/",
+      "file": "pages/pt-pt/legal/termos.mdx",
+      "title": "Termos e Condições",
+      "description": "Termos de utilização do hub legal e do centro de informação PIMO Info.",
+      "author": "",
+      "category": "legal",
+      "tags": [
+        "legal",
+        "termos"
+      ],
+      "related": [
+        "/pt-pt/legal/",
+        "/pt-pt/legal/privacidade/",
+        "/pt-pt/legal/cookies/",
+        "/pt-pt/contacto/"
       ],
       "lastUpdated": "2026-10-01",
       "status": "implemented"

@@ -10,7 +10,7 @@ export default {
     },
   },
   "pt-pt": "Centro de Ajuda",
-  about: { title: "About", display: "hidden" },
+  about: "Sobre",
   ajuda: { title: "Ajuda", display: "hidden" },
   contact: { title: "Contact", display: "hidden" },
   docs: { title: "Docs", display: "hidden" },

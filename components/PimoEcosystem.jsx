@@ -1,4 +1,6 @@
 import { ecosystemIntro, getRelatedSites, getSiteById, pimoSites } from "../data/sites"
+import { site } from "../data/site"
+import { SocialIcons } from "./SiteInfo"
 
 function statusClass(status) {
   if (status === "active") return "is-active"
@@ -268,15 +270,38 @@ export function EcosystemSitePage({ slug }) {
 export function EcosystemFooterLinks() {
   return (
     <span className="pimo-ecosystem-footer">
-      <span>© {new Date().getFullYear()} PIMO Criativo · Crafted by Khaled</span>
+      <span className="pimo-footer-brand">
+        © {new Date().getFullYear()} PIMO · Crafted by Khaled
+      </span>
+      <span className="pimo-footer-contact">
+        <a href={`mailto:${site.contact.supportEmail}`}>{site.contact.supportEmail}</a>
+        <span aria-hidden="true">·</span>
+        <a href={site.contact.phoneHref}>{site.contact.phone}</a>
+        <span aria-hidden="true">·</span>
+        <span>{site.contact.addressDisplay}</span>
+      </span>
+      <SocialIcons className="pimo-footer-social" />
+      <span className="pimo-footer-legal">
+        <a href="/pt-pt/legal/">Políticas e Termos</a>
+        <span aria-hidden="true">·</span>
+        <a href="/pt-pt/legal/privacidade/">Privacidade</a>
+        <span aria-hidden="true">·</span>
+        <a href="/pt-pt/legal/termos/">Termos</a>
+        <span aria-hidden="true">·</span>
+        <a href="/pt-pt/legal/cookies/">Cookies</a>
+        <span aria-hidden="true">·</span>
+        <a href="/pt-pt/contacto/">Contacto</a>
+        <span aria-hidden="true">·</span>
+        <a href="/about/">Sobre</a>
+      </span>
       <span className="pimo-ecosystem-links">
-        {pimoSites.map((site, index) => (
-          <span key={site.id} className="pimo-ecosystem-link-item">
+        {pimoSites.map((item, index) => (
+          <span key={item.id} className="pimo-ecosystem-link-item">
             {index > 0 ? <span aria-hidden="true">·</span> : null}
-            <a href={site.url} target="_blank" rel="noreferrer">
-              {site.domain}
+            <a href={item.url} target="_blank" rel="noreferrer">
+              {item.domain}
             </a>
-            <a className="pimo-ecosystem-about" href={`/pt-pt/ecossistema/${site.id}/`}>
+            <a className="pimo-ecosystem-about" href={`/pt-pt/ecossistema/${item.id}/`}>
               Sobre
             </a>
           </span>
