@@ -130,14 +130,60 @@ export const glossaryTerms = [
   },
   {
     id: "pimo-trak",
-    term: "PIMO-TRAK",
-    aliases: ["etiquetas QR", "UEE v5", "rastreio"],
+    term: "PIMO TRAK",
+    aliases: ["PIMO-TRAK", "etiquetas QR", "UEE v5", "rastreio", "work orders"],
     definition:
-      "Sistema de rastreio por etiquetas QR por peça. A geração de etiquetas (UEE v5) está implementada na exportação; o acompanhamento por posto faz parte da camada industrial PIMO-TRAK.",
+      "Sistema de ordens de trabalho e rastreamento da produção, incluindo etiquetas QR UEE v5. Estado parcial no código: work orders e etiquetas existem; algumas páginas agregadas ainda podem estar incompletas.",
     status: "mixed",
     relatedPaths: [
+      "/pt-pt/sistemas-pimo/pimo-trak/",
       "/pt-pt/funcionalidades/pimo-trak/",
       "/pt-pt/guias-utilizador/pimo-trak/",
+    ],
+  },
+  {
+    id: "pimo-projetos",
+    term: "PIMO PROJETOS",
+    aliases: ["PROJETOS", "/PROJETOS"],
+    definition:
+      "Área da app para listar e abrir projetos industriais guardados no servidor, com showroom e análise online.",
+    status: "implemented",
+    relatedPaths: ["/pt-pt/sistemas-pimo/pimo-projetos/"],
+  },
+  {
+    id: "pimo-nesting-sistema",
+    term: "PIMO NESTING",
+    aliases: ["Nesting V3", "/nesting_v3"],
+    definition:
+      "Sistema próprio de nesting (Nesting V3): layout manual/automático de peças em chapas com exportação PDF, TCN e etiquetas. Distinto do nesting Fast/PRO do pipeline de exportação do configurador.",
+    status: "implemented",
+    relatedPaths: [
+      "/pt-pt/sistemas-pimo/pimo-nesting/",
+      "/pt-pt/funcionalidades/nesting-fast-pro/",
+    ],
+  },
+  {
+    id: "pimo-industrial-sistema",
+    term: "PIMO INDUSTRIAL",
+    aliases: ["PIMO Industrial", "/industrial"],
+    definition:
+      "Camada industrial da app: hub de estações, operações de fábrica e UI partilhada. Estado parcial — rotas reais com canvas de demonstração na home.",
+    status: "mixed",
+    relatedPaths: [
+      "/pt-pt/sistemas-pimo/pimo-industrial/",
+      "/pt-pt/funcionalidades/modulo-industrial/",
+    ],
+  },
+  {
+    id: "pimo-drill-sistema",
+    term: "PIMO DRILL",
+    aliases: ["Drill", "/industrial/pimo-drill"],
+    definition:
+      "Sistema dedicado de furação (UI 2D/3D). No código actual o simulador ainda não é operativo (planeado); a exportação Drill XML pelo configurador («Arquivos CNC») está disponível à parte.",
+    status: "planned",
+    relatedPaths: [
+      "/pt-pt/sistemas-pimo/pimo-drill/",
+      "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/",
     ],
   },
   {
@@ -156,7 +202,7 @@ export const glossaryTerms = [
     definition:
       "Edição documental online de PDFs industriais em PROJETOS (/analise). No código SSOT (`industrialFeatureFlags`) a flag `industrialOnlineAnalysis` está activa (`true`). Não substitui o ZIP de produção.",
     status: "implemented",
-    relatedPaths: ["/pt-pt/guias-utilizador/exportacao/"],
+    relatedPaths: ["/pt-pt/guias-utilizador/exportacao/", "/pt-pt/sistemas-pimo/pimo-projetos/"],
   },
   {
     id: "orcamentos",

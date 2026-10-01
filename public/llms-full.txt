@@ -1,5 +1,5 @@
 # PIMO Info — full knowledge dump
-Generated: 2026-10-01T00:54:09.398Z
+Generated: 2026-10-01T00:57:20.964Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -16,6 +16,7 @@ Locale: pt-PT
 - https://pimo.info/data/features.json
 - https://pimo.info/data/buttons.json
 - https://pimo.info/data/modules.json
+- https://pimo.info/data/systems.json
 - https://pimo.info/data/export-formats.json
 - https://pimo.info/data/glossary.json
 - https://pimo.info/data/sites.json
@@ -24,6 +25,7 @@ Locale: pt-PT
 - Hub: https://pimo.info/
 - Centro de ajuda pt-PT: https://pimo.info/pt-pt/
 - Como funciona: https://pimo.info/pt-pt/como-funciona/
+- Sistemas PIMO: https://pimo.info/pt-pt/sistemas-pimo/
 - Referência de botões: https://pimo.info/pt-pt/referencia/botoes/
 - Glossário: https://pimo.info/pt-pt/glossario/
 - Funcionalidades: https://pimo.info/pt-pt/funcionalidades/
@@ -54,7 +56,11 @@ Locale: pt-PT
 - TCN: Formato de ficheiro industrial `.tcn` para centros CNC. No menu de exportação aparece como «Arquivos CNC»; o ficheiro gerado é TCN.
 - Drill XML: Representação XML do plano de furação por painel (posição, diâmetro, profundidade), gerada no fluxo de Arquivos CNC.
 - PDF Técnico: Exportação PDF com documentação do projeto (3D, cutlist, materiais, ferragens, preço). Não substitui TCN nem Drill XML para máquina.
-- PIMO-TRAK: Sistema de rastreio por etiquetas QR por peça. A geração de etiquetas (UEE v5) está implementada na exportação; o acompanhamento por posto faz parte da camada industrial PIMO-TRAK.
+- PIMO TRAK: Sistema de ordens de trabalho e rastreamento da produção, incluindo etiquetas QR UEE v5. Estado parcial no código: work orders e etiquetas existem; algumas páginas agregadas ainda podem estar incompletas.
+- PIMO PROJETOS: Área da app para listar e abrir projetos industriais guardados no servidor, com showroom e análise online.
+- PIMO NESTING: Sistema próprio de nesting (Nesting V3): layout manual/automático de peças em chapas com exportação PDF, TCN e etiquetas. Distinto do nesting Fast/PRO do pipeline de exportação do configurador.
+- PIMO INDUSTRIAL: Camada industrial da app: hub de estações, operações de fábrica e UI partilhada. Estado parcial — rotas reais com canvas de demonstração na home.
+- PIMO DRILL: Sistema dedicado de furação (UI 2D/3D). No código actual o simulador ainda não é operativo (planeado); a exportação Drill XML pelo configurador («Arquivos CNC») está disponível à parte.
 - Arquivo completo (ZIP): ZIP com os principais artefactos de produção (PDFs, XLSX de ferragens, TCN, Drill XML, etiquetas, layouts). Conteúdo exacto definido pelo gerador na app — ver formatos de exportação.
 - Análise arquivo completo (online): Edição documental online de PDFs industriais em PROJETOS (/analise). No código SSOT (`industrialFeatureFlags`) a flag `industrialOnlineAnalysis` está activa (`true`). Não substitui o ZIP de produção.
 - Orçamentos P3.9: Camada técnica/admin de tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.
@@ -70,6 +76,13 @@ Locale: pt-PT
 - PIMO-TRAK [mixed] https://pimo.info/pt-pt/funcionalidades/pimo-trak/ — Etiquetas QR (implementado) e rastreio industrial por peça (camada industrial).
 - Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/ — Tarifas e regras de custo (camada técnica/admin P3.9).
 - Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/ — Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.
+
+## PIMO systems
+- PIMO TRAK [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-trak/ — Sistema de ordens de trabalho e rastreamento da produção na fábrica, incluindo etiquetas QR por peça (UEE v5).
+- PIMO PROJETOS [disponivel] https://pimo.info/pt-pt/sistemas-pimo/pimo-projetos/ — Área de gestão e visualização de projetos PIMO guardados no servidor (páginas/projeto com snapshot industrial).
+- PIMO NESTING [disponivel] https://pimo.info/pt-pt/sistemas-pimo/pimo-nesting/ — Motor e UI próprios de otimização da distribuição das peças nas chapas (Nesting V3), com redução de desperdício via auto-layout e colocação manual.
+- PIMO INDUSTRIAL [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/ — Camada industrial completa da app: hub de estações, operações (CNC, nesting, drill, orlar, montagem, embalagem), operador/supervisor e integrações de fabrico.
+- PIMO DRILL [planeado] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/ — Motor/sistema próprio de furação (UI 2D/3D) para desenhar e validar furos; no ecossistema liga-se ao fluxo TCN / Drill XML.
 
 ## UI buttons (296)
 - Header: 14 controlos
@@ -144,6 +157,12 @@ Locale: pt-PT
 - Primeiros passos: https://pimo.info/pt-pt/primeiros-passos/
 - Referência: https://pimo.info/pt-pt/referencia/
 - Botões e controlos: https://pimo.info/pt-pt/referencia/botoes/
+- Sistemas PIMO: https://pimo.info/pt-pt/sistemas-pimo/
+- PIMO DRILL: https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/
+- PIMO INDUSTRIAL: https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/
+- PIMO NESTING: https://pimo.info/pt-pt/sistemas-pimo/pimo-nesting/
+- PIMO PROJETOS: https://pimo.info/pt-pt/sistemas-pimo/pimo-projetos/
+- PIMO TRAK: https://pimo.info/pt-pt/sistemas-pimo/pimo-trak/
 
 
 # UI buttons catalog
@@ -3480,6 +3499,79 @@ dependsOn: exportacoes, projeto
 sourceFiles: src/components/layout/header/HeaderIndustrialMenu.tsx, src/core/industrial/onlineAnalysis/industrialLiveProjectStore.ts, src/industrial/config/featureFlags.ts
 
 
+# PIMO systems
+
+## System: PIMO TRAK
+id: pimo-trak
+status: parcial
+route: /industrial/work-orders
+definition: Sistema de ordens de trabalho e rastreamento da produção na fábrica, incluindo etiquetas QR por peça (UEE v5).
+purpose: Ligar cada peça física ao projeto digital: gerar etiquetas, criar/executar work orders por estação e acompanhar o progresso (operador, tracking, supervisor).
+howItWorks: A partir do projeto industrial (cutlist + artefactos), o fluxo cria ordens por estação (CNC, nesting, drill, orlar, montagem, embalagem). O operador lê QR (câmara/USB); as etiquetas UEE v5 saem do menu «Salvar e Gerar Design». O menu header «PIMO TRAK» aponta para `/industrial/work-orders` e rotas industriais associadas.
+features: Work orders por estação (`/industrial/work-orders`) | Etiquetas QR UEE v5 (exportação no configurador) | Operador com leitura QR (câmara / USB) | Menu industrial: Tracking, Supervisor, Quality, Rework, Time Tracking, Operations | Envio de ordem para fábrica (hub Industriais)
+inputs: ProjectState / cutlist com números de etiqueta | Artefactos industriais (ZIP / arquivo completo) | Leitura QR na estação
+outputs: Work orders por estação | PDFs de etiquetas UEE v5 | Estados de tarefa (iniciar / concluir / rejeitar) | POST /api/industrial/orders (envio fábrica)
+relatedSystems: pimo-industrial, pimo-nesting, pimo-drill, pimo-projetos
+statusNotes: Work orders, etiquetas UEE v5 e rotas de operador/estações existem no código. Páginas agregadas de Tracking/Quality/Rework podem estar incompletas na build — estado «parcial».
+sourceFiles: src/components/layout/header/HeaderProjectsSwitcher.tsx, src/components/layout/header/HeaderIndustrialMenu.tsx, src/app/industrial/work-orders/index.tsx, src/industrial/labels/, src/industrial/tracking/, src/core/fabrication/enviarParaFabrica.ts
+
+## System: PIMO PROJETOS
+id: pimo-projetos
+status: disponivel
+route: /PROJETOS
+definition: Área de gestão e visualização de projetos PIMO guardados no servidor (páginas/projeto com snapshot industrial).
+purpose: Listar, abrir e apresentar projetos industriais guardados — incluindo showroom e análise online quando aplicável — separados do workspace de edição do configurador.
+howItWorks: A rota `/PROJETOS` lista projetos com página PROJETOS no servidor (`{nome}.json`). Requer login (`ProjetosLoginGate`). Cartões abrem o projeto; há painel de showroom e análise industrial online ligada ao snapshot.
+features: Índice de projetos industriais guardados | Login gate para acesso | Cartões de projeto com navegação | Showroom de projetos | Análise industrial online (quando flag ativa)
+inputs: Projetos persistidos no servidor / API | Snapshots (projectState + viewer + room) | Sessão autenticada
+outputs: Lista e abertura de projetos | Vista showroom | Entrada para análise industrial
+relatedSystems: pimo-trak, pimo-industrial, pimo-nesting
+statusNotes: UI e fluxo de listagem/abertura verificados em `src/app/PROJETOS/`. Estado «disponível».
+sourceFiles: src/app/PROJETOS/page.tsx, src/app/PROJETOS/ProjetosLoginGate.tsx, src/app/PROJETOS/ProjetosShowroomPanel.tsx, src/app/PROJETOS/projetosPagesClient.ts, src/components/layout/header/HeaderProjectsSwitcher.tsx
+
+## System: PIMO NESTING
+id: pimo-nesting
+status: disponivel
+route: /nesting_v3
+definition: Motor e UI próprios de otimização da distribuição das peças nas chapas (Nesting V3), com redução de desperdício via auto-layout e colocação manual.
+purpose: Permitir layout de corte interativo (drag/drop, rotação, multi-folha) e exportar PDF, TCN e etiquetas a partir do nesting — sem substituir o pipeline industrial automático Fast/PRO do configurador.
+howItWorks: Peças vêm da cutlist do projeto (`convertProjectToV3Pieces`) ou de entrada manual. O motor `nestingV3Engine` calcula utilização; Auto Layout faz shelf-packing. Exporta PDF técnico, TCN e etiquetas oficiais UEE. Acessível por `/nesting_v3` ou «Nesting V3 (Manual)» na bolha de exportação. Comentário no código: «NÃO toca no motor industrial» (pipeline Fast/PRO à parte).
+features: Canvas SVG 2D com zoom/pan | Drag & drop e rotação 0/90/180/270° | Auto Layout (shelf-packing) | Multi-folha | Export PDF + TCN + etiquetas UEE | Atalhos: R, Delete, +/- , 0, Escape
+inputs: Peças da cutlist do projeto | Peças manuais | Definições de chapa / settings V3
+outputs: Layout de folhas com utilização | PDF de layout | Ficheiros TCN | Etiquetas oficiais
+relatedSystems: pimo-trak, pimo-industrial, pimo-drill
+statusNotes: Nesting V3 está implementado como sistema próprio. Distinto do nesting Fast/PRO embutido no pipeline de exportação do configurador. Estado «disponível».
+sourceFiles: src/nesting-v3/NestingV3Page.tsx, src/nesting-v3/nestingV3Engine.ts, src/nesting-v3/nestingV3Export.ts, src/app/nesting-v3/NestingV3RoutePage.tsx, src/components/export/UnifiedExportBubble.tsx
+
+## System: PIMO INDUSTRIAL
+id: pimo-industrial
+status: parcial
+route: /industrial
+definition: Camada industrial completa da app: hub de estações, operações (CNC, nesting, drill, orlar, montagem, embalagem), operador/supervisor e integrações de fabrico.
+purpose: Concentrar a visão de fábrica — da entrada do projeto exportado até às estações de produção — com UI industrial partilhada (layout de 3 colunas, station toolbar, ferragens 3D).
+howItWorks: A home `/industrial` apresenta um rail de estações (IND, SUP, NES, DRI, ORL, MON, EMB) e canvas de peças. As operações vivem sob `/industrial/operations/*`. Integra com PIMO TRAK (work orders), Nesting e Drill. O hub usa peças de demonstração (`FAKE_PIECES`) no canvas visual; a lógica de work orders e operações é real noutros módulos.
+features: Hub industrial `/industrial` | Operações por estação (CNC, Nesting, Drill, Orlar, Montagem, Embalagem) | Station toolbar (Mover, Rodar, Snap, Histórico) | Ferragens 3D overlay | Perfis operador / supervisor / quality | Bridge SGPI / arquivo completo
+inputs: Projeto / cutlist exportados | Work orders e estados de operação | Flags industriais (`industrialFeatureFlags`)
+outputs: Vista de estações e operações | Conclusão de operações | Integração com TRAK e exportações
+relatedSystems: pimo-trak, pimo-nesting, pimo-drill, pimo-projetos
+statusNotes: Rotas e UI industriais existem; o canvas da home usa peças fake de demonstração. Pacote `industrial/` documenta fases de migração. Estado «parcial».
+sourceFiles: src/app/industrial/index.tsx, src/app/industrial/operations/, src/industrial/ui/, src/industrial/README.md, src/industrial/sgpi/industrialExportBridge.ts
+
+## System: PIMO DRILL
+id: pimo-drill
+status: planeado
+route: /industrial/pimo-drill
+definition: Motor/sistema próprio de furação (UI 2D/3D) para desenhar e validar furos; no ecossistema liga-se ao fluxo TCN / Drill XML.
+purpose: Oferecer um workspace dedicado de furação (buraco, entalhe, rect, círculo, arco, caminho) separado do configurador 3D — complementar à exportação Drill XML do menu Arquivos CNC.
+howItWorks: A página `/industrial/pimo-drill` monta toolbar, painel esquerdo e viewers 2D/3D. Há bridge mínimo com Design Industrial e import KDT XML. **Nota no próprio código:** simulador incompleto — ainda não é funcional para inserir furos de forma operativa nem validar o fluxo completo (shell M0–M1). A geração de Drill XML a partir do configurador (`onArquivosCnc`) é outro caminho e está implementada.
+features: Shell UI com vistas 2D/3D (parcial) | Toolbar de ferramentas de furação (UI) | Bridge Design Industrial mínimo | Import KDT XML (código presente) | Exportação Drill XML via configurador (sistema à parte — disponível)
+inputs: Modelo de peça (PieceModel) | Import KDT XML (quando operacional) | Cutlist / furos do projeto (via exportação CNC do configurador)
+outputs: Plano de furação (quando o simulador estiver operativo) | Drill XML / TCN via fluxo «Arquivos CNC» do configurador (já disponível)
+relatedSystems: pimo-industrial, pimo-trak, pimo-nesting
+statusNotes: O sistema dedicado PIMO DRILL está marcado «planeado»: o ficheiro `PimoDrillPage.tsx` declara explicitamente que o simulador ainda não é operativo. A exportação Drill XML do configurador continua disponível.
+sourceFiles: src/app/industrial/pimo-drill/PimoDrillPage.tsx, src/app/industrial/pimo-drill/PimoDrillToolbar.tsx, src/app/industrial/pimo-drill/import/kdtXmlParser.ts, src/hooks/useGerarArquivoHandlers.ts, src/core/drill/drillExport.ts
+
+
 # Full page content
 
 ## Centro visual PIMO Info
@@ -3580,7 +3672,7 @@ Arquitetura e fluxo do PIMO Criativo: projeto → módulos/caixas → peças →
 
 # Como funciona
 
-Fluxo ponta a ponta do PIMO Criativo, documentado a partir do código (estado do projeto, cutlist, nesting, exportações e PIMO-TRAK). Sem inventar passos: cada módulo lista entradas, saídas, dependências e ficheiros-fonte.
+Fluxo ponta a ponta do PIMO Criativo, documentado a partir do código (estado do projeto, cutlist, nesting, exportações e PIMO-TRAK). Sem inventar passos: cada módulo lista entradas, saídas, dependências e ficheiros-fonte. Os sistemas de produto (TRAK, PROJETOS, NESTING, INDUSTRIAL, DRILL) estão em [Sistemas PIMO](/pt-pt/sistemas-pimo/).
 
  
 
@@ -4053,6 +4145,7 @@ Fonte única de terminologia do PIMO Info. Use estes termos de forma consistente
 - [`/data/glossary.json`](/data/glossary.json)
 - [`/data/export-formats.json`](/data/export-formats.json)
 - [`/data/features.json`](/data/features.json)
+- [`/data/systems.json`](/data/systems.json)
 - [`/data/pages.json`](/data/pages.json)
 - [`/data/sites.json`](/data/sites.json)
 
@@ -4606,5 +4699,63 @@ Referência de interface do PIMO Criativo. Cada entrada inclui o ícone real (SV
 
 - [`/data/buttons.json`](/data/buttons.json)
 - [`/llms-full.txt`](/llms-full.txt)
+
+---
+
+## Sistemas PIMO
+URL: https://pimo.info/pt-pt/sistemas-pimo/
+Sistemas de produto na app PIMO: TRAK, PROJETOS, NESTING, INDUSTRIAL e DRILL — definição, estado real e ligações.
+
+# Sistemas PIMO
+
+Catálogo dos sistemas acessíveis no menu **Projetos PIMO** do header da aplicação (`pimo.pro`). Cada página documenta definição, propósito, funcionamento, entradas/saídas, ligações e estado real verificado no código.
+
+ 
+
+## Dados
+
+- [`/data/systems.json`](/data/systems.json)
+- [`/data/buttons.json`](/data/buttons.json)
+- [`/pt-pt/como-funciona/`](/pt-pt/como-funciona/)
+
+---
+
+## PIMO DRILL
+URL: https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/
+Sistema próprio de furação (UI); estado planeado no código.
+
+# PIMO DRILL
+
+---
+
+## PIMO INDUSTRIAL
+URL: https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/
+Camada industrial completa: hub, estações e operações.
+
+# PIMO INDUSTRIAL
+
+---
+
+## PIMO NESTING
+URL: https://pimo.info/pt-pt/sistemas-pimo/pimo-nesting/
+Motor próprio de nesting e otimização de chapas (Nesting V3).
+
+# PIMO NESTING
+
+---
+
+## PIMO PROJETOS
+URL: https://pimo.info/pt-pt/sistemas-pimo/pimo-projetos/
+Gestão e visualização de projetos PIMO guardados.
+
+# PIMO PROJETOS
+
+---
+
+## PIMO TRAK
+URL: https://pimo.info/pt-pt/sistemas-pimo/pimo-trak/
+Ordens de trabalho, etiquetas QR e rastreamento de produção.
+
+# PIMO TRAK
 
 ---

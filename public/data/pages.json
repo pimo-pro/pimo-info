@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T00:54:09.397Z",
+  "generatedAt": "2026-10-01T00:57:20.964Z",
   "items": [
     {
       "path": "/",
@@ -122,6 +122,7 @@
         "kb"
       ],
       "related": [
+        "/pt-pt/sistemas-pimo/",
         "/pt-pt/referencia/botoes/",
         "/pt-pt/funcionalidades/",
         "/pt-pt/glossario/"
@@ -817,6 +818,120 @@
         "/pt-pt/referencia/",
         "/pt-pt/como-funciona/",
         "/pt-pt/funcionalidades/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/sistemas-pimo/",
+      "file": "pages/pt-pt/sistemas-pimo/index.mdx",
+      "title": "Sistemas PIMO",
+      "description": "Sistemas de produto na app PIMO: TRAK, PROJETOS, NESTING, INDUSTRIAL e DRILL — definição, estado real e ligações.",
+      "category": "sistemas",
+      "tags": [
+        "sistemas",
+        "kb"
+      ],
+      "related": [
+        "/pt-pt/como-funciona/",
+        "/pt-pt/referencia/botoes/",
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/sistemas-pimo/pimo-drill/",
+      "file": "pages/pt-pt/sistemas-pimo/pimo-drill.mdx",
+      "title": "PIMO DRILL",
+      "description": "Sistema próprio de furação (UI); estado planeado no código.",
+      "category": "sistemas",
+      "tags": [
+        "sistemas",
+        "pimo-drill"
+      ],
+      "related": [
+        "/pt-pt/sistemas-pimo/",
+        "/pt-pt/como-funciona/",
+        "/pt-pt/referencia/botoes/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/sistemas-pimo/pimo-industrial/",
+      "file": "pages/pt-pt/sistemas-pimo/pimo-industrial.mdx",
+      "title": "PIMO INDUSTRIAL",
+      "description": "Camada industrial completa: hub, estações e operações.",
+      "category": "sistemas",
+      "tags": [
+        "sistemas",
+        "pimo-industrial"
+      ],
+      "related": [
+        "/pt-pt/sistemas-pimo/",
+        "/pt-pt/como-funciona/",
+        "/pt-pt/referencia/botoes/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/sistemas-pimo/pimo-nesting/",
+      "file": "pages/pt-pt/sistemas-pimo/pimo-nesting.mdx",
+      "title": "PIMO NESTING",
+      "description": "Motor próprio de nesting e otimização de chapas (Nesting V3).",
+      "category": "sistemas",
+      "tags": [
+        "sistemas",
+        "pimo-nesting"
+      ],
+      "related": [
+        "/pt-pt/sistemas-pimo/",
+        "/pt-pt/como-funciona/",
+        "/pt-pt/referencia/botoes/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/sistemas-pimo/pimo-projetos/",
+      "file": "pages/pt-pt/sistemas-pimo/pimo-projetos.mdx",
+      "title": "PIMO PROJETOS",
+      "description": "Gestão e visualização de projetos PIMO guardados.",
+      "category": "sistemas",
+      "tags": [
+        "sistemas",
+        "pimo-projetos"
+      ],
+      "related": [
+        "/pt-pt/sistemas-pimo/",
+        "/pt-pt/como-funciona/",
+        "/pt-pt/referencia/botoes/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/sistemas-pimo/pimo-trak/",
+      "file": "pages/pt-pt/sistemas-pimo/pimo-trak.mdx",
+      "title": "PIMO TRAK",
+      "description": "Ordens de trabalho, etiquetas QR e rastreamento de produção.",
+      "category": "sistemas",
+      "tags": [
+        "sistemas",
+        "pimo-trak"
+      ],
+      "related": [
+        "/pt-pt/sistemas-pimo/",
+        "/pt-pt/como-funciona/",
+        "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",

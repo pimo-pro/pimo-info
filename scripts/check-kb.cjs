@@ -26,6 +26,7 @@ const ALLOWED_CATEGORIES = new Set([
   "legacy",
   "referencia",
   "arquitetura",
+  "sistemas",
 ])
 
 function parseFrontmatter(raw) {

@@ -124,6 +124,7 @@ function main() {
   const { site } = loadDataModule("data/site.js")
   const { buttons, buttonAreas } = loadDataModule("data/buttons.js")
   const { appModules, flowOrder } = loadDataModule("data/modules.js")
+  const { pimoSystems } = loadDataModule("data/systems.js")
 
   const mdxFiles = walkMdx(PAGES)
   const pages = []
@@ -168,6 +169,11 @@ function main() {
     flowOrder,
     items: appModules,
   })
+  writeJson("systems.json", {
+    generatedAt: new Date().toISOString(),
+    count: pimoSystems.length,
+    items: pimoSystems,
+  })
   writeJson("pages.json", {
     generatedAt: new Date().toISOString(),
     items: pages.map(({ text, ...meta }) => meta),
@@ -190,6 +196,7 @@ function main() {
     `- ${site.url}/data/features.json`,
     `- ${site.url}/data/buttons.json`,
     `- ${site.url}/data/modules.json`,
+    `- ${site.url}/data/systems.json`,
     `- ${site.url}/data/export-formats.json`,
     `- ${site.url}/data/glossary.json`,
     `- ${site.url}/data/sites.json`,
@@ -198,6 +205,7 @@ function main() {
     `- Hub: ${site.url}/`,
     `- Centro de ajuda pt-PT: ${site.url}/pt-pt/`,
     `- Como funciona: ${site.url}/pt-pt/como-funciona/`,
+    `- Sistemas PIMO: ${site.url}/pt-pt/sistemas-pimo/`,
     `- Referência de botões: ${site.url}/pt-pt/referencia/botoes/`,
     `- Glossário: ${site.url}/pt-pt/glossario/`,
     `- Funcionalidades: ${site.url}/pt-pt/funcionalidades/`,
@@ -216,6 +224,12 @@ function main() {
     "## Features",
     ...features.map(
       (f) => `- ${f.name} [${f.status}] ${site.url}${f.canonicalPath} — ${f.summary}`
+    ),
+    "",
+    "## PIMO systems",
+    ...pimoSystems.map(
+      (s) =>
+        `- ${s.name} [${s.status}] ${site.url}${s.canonicalPath} — ${s.definition}`
     ),
     "",
     `## UI buttons (${buttons.length})`,
@@ -271,6 +285,25 @@ function main() {
         `outputs: ${m.outputs.join(" | ")}\n` +
         `dependsOn: ${m.dependsOn.join(", ") || "—"}\n` +
         `sourceFiles: ${m.sourceFiles.join(", ")}\n`
+    ),
+    "",
+    "# PIMO systems",
+    "",
+    ...pimoSystems.map(
+      (s) =>
+        `## System: ${s.name}\n` +
+        `id: ${s.id}\n` +
+        `status: ${s.status}\n` +
+        `route: ${s.route}\n` +
+        `definition: ${s.definition}\n` +
+        `purpose: ${s.purpose}\n` +
+        `howItWorks: ${s.howItWorks}\n` +
+        `features: ${s.features.join(" | ")}\n` +
+        `inputs: ${s.inputs.join(" | ")}\n` +
+        `outputs: ${s.outputs.join(" | ")}\n` +
+        `relatedSystems: ${s.relatedSystemIds.join(", ")}\n` +
+        `statusNotes: ${s.statusNotes}\n` +
+        `sourceFiles: ${s.sourceFiles.join(", ")}\n`
     ),
     "",
     "# Full page content",

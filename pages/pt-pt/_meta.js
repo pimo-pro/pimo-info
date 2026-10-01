@@ -8,6 +8,7 @@ export default {
   },
   "primeiros-passos": "Primeiros passos",
   "como-funciona": "Como funciona",
+  "sistemas-pimo": "Sistemas PIMO",
   funcionalidades: "Funcionalidades",
   referencia: "Referência",
   ecossistema: "Ecossistema",

@@ -184,6 +184,31 @@ export function ModuleFlowSections() {
           </li>
         ))}
       </ul>
+
+      <h2>Sistemas PIMO (produto)</h2>
+      <p>
+        Os sistemas do menu «Projetos PIMO» ligam-se a este fluxo. Detalhe em{" "}
+        <a href="/pt-pt/sistemas-pimo/">Sistemas PIMO</a>.
+      </p>
+      <ul>
+        <li>
+          <a href="/pt-pt/sistemas-pimo/pimo-projetos/">PIMO PROJETOS</a> — gestão de projetos
+          guardados
+        </li>
+        <li>
+          <a href="/pt-pt/sistemas-pimo/pimo-nesting/">PIMO NESTING</a> — Nesting V3 (layout de
+          chapas)
+        </li>
+        <li>
+          <a href="/pt-pt/sistemas-pimo/pimo-industrial/">PIMO INDUSTRIAL</a> — hub e estações
+        </li>
+        <li>
+          <a href="/pt-pt/sistemas-pimo/pimo-trak/">PIMO TRAK</a> — work orders e etiquetas
+        </li>
+        <li>
+          <a href="/pt-pt/sistemas-pimo/pimo-drill/">PIMO DRILL</a> — furação dedicada (planeado)
+        </li>
+      </ul>
     </div>
   )
 }
