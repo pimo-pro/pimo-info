@@ -41,7 +41,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          state-name: .ftp-deploy-sync-state-v8.json
+          state-name: .ftp-deploy-sync-state-v9.json
 
       # Notify search engines via IndexNow. Never fail the deploy on ping errors.
       - name: IndexNow ping
