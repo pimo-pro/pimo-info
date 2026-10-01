@@ -42,7 +42,7 @@ export default {
   i18n: [
     {
       locale: "pt-PT",
-      name: "Português (pt-PT)",
+      name: "Português",
     },
   ],
   navbar: {

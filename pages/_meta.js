@@ -9,7 +9,7 @@ export default {
       breadcrumb: false,
     },
   },
-  "pt-pt": "Centro de Ajuda (pt-PT)",
+  "pt-pt": "Centro de Ajuda",
   about: { title: "About", display: "hidden" },
   ajuda: { title: "Ajuda", display: "hidden" },
   contact: { title: "Contact", display: "hidden" },

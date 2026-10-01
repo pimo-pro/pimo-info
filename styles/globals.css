@@ -64,6 +64,43 @@ aside.nextra-sidebar {
   background: var(--pimo-surface) !important;
 }
 
+/* Sidebar controls (idioma + recolher) no TOPO */
+.nextra-sidebar-container {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.nextra-sidebar-container > .nextra-scrollbar,
+.nextra-sidebar-container > div._overflow-y-auto {
+  order: 2;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.nextra-sidebar-footer {
+  order: -1 !important;
+  position: sticky !important;
+  top: 0 !important;
+  bottom: auto !important;
+  z-index: 5 !important;
+  margin: 0 !important;
+  padding: 0.65rem 0.75rem !important;
+  border-bottom: 1px solid var(--pimo-border);
+  border-top: none !important;
+  background: var(--pimo-surface) !important;
+  justify-content: flex-end !important;
+  gap: 0.35rem;
+}
+
+/* Mobile: keep the same top placement inside the drawer */
+@media (max-width: 767px) {
+  .nextra-sidebar-footer {
+    order: -1 !important;
+    position: sticky !important;
+    top: 0 !important;
+  }
+}
+
 article,
 main {
   color: var(--pimo-ink);

@@ -1,5 +1,5 @@
-import { appModules, flowOrder } from "../data/modules"
-import { features } from "../data/features"
+import { appModules, flowOrder } from "./data/modules"
+import { features } from "./data/features"
 
 function featureLinks(ids = []) {
   return ids
@@ -154,7 +154,7 @@ export function ModuleFlowSections() {
                     ? m.dependsOn
                         .map((id) => appModules.find((x) => x.id === id)?.name || id)
                         .join(", ")
-                    : "—"}
+                    : ", "}
                 </td>
                 <td>
                   {featureLinks(m.featureIds).map((f, i) => (
@@ -192,21 +192,21 @@ export function ModuleFlowSections() {
       </p>
       <ul>
         <li>
-          <a href="/pt-pt/sistemas-pimo/pimo-projetos/">PIMO PROJETOS</a> — gestão de projetos
+          <a href="/pt-pt/sistemas-pimo/pimo-projetos/">PIMO PROJETOS</a>, gestão de projetos
           guardados
         </li>
         <li>
-          <a href="/pt-pt/sistemas-pimo/pimo-nesting/">PIMO NESTING</a> — Nesting V3 (layout de
+          <a href="/pt-pt/sistemas-pimo/pimo-nesting/">PIMO NESTING</a>, Nesting V3 (layout de
           chapas)
         </li>
         <li>
-          <a href="/pt-pt/sistemas-pimo/pimo-industrial/">PIMO INDUSTRIAL</a> — hub e estações
+          <a href="/pt-pt/sistemas-pimo/pimo-industrial/">PIMO INDUSTRIAL</a>, hub e estações
         </li>
         <li>
-          <a href="/pt-pt/sistemas-pimo/pimo-trak/">PIMO TRAK</a> — work orders e etiquetas
+          <a href="/pt-pt/sistemas-pimo/pimo-trak/">PIMO TRAK</a>, work orders e etiquetas
         </li>
         <li>
-          <a href="/pt-pt/sistemas-pimo/pimo-drill/">PIMO DRILL</a> — furação dedicada (em
+          <a href="/pt-pt/sistemas-pimo/pimo-drill/">PIMO DRILL</a>, furação dedicada (em
           desenvolvimento;{" "}
           <a href="https://pimo.pro/industrial/pimo-drill">abrir na app</a>)
         </li>

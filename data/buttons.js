@@ -1,6 +1,6 @@
 /**
  * Catálogo de botões/controlos do PIMO Criativo (verificado no código, só leitura).
- * Gerado por scripts/build-buttons-catalog.cjs — não inventar labels.
+ * Gerado por scripts/build-buttons-catalog.cjs, não inventar labels.
  * iconName mapeia para /icons/criativo/<iconName>.svg (SVGs extraídos do iconRegistry).
  */
 
@@ -397,7 +397,7 @@ export const buttons = [
     "area": "barra-inferior",
     "id": "hub-enviar-fabrica-btn",
     "label": "Enviar ordem para fábrica",
-    "location": "Hub Industriais — Enviar para Fábrica",
+    "location": "Hub Industriais, Enviar para Fábrica",
     "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx"
   },
   {
@@ -641,7 +641,7 @@ export const buttons = [
     "effects": "Adiciona π/2 à rotação Y da caixa ou remate selecionado.",
     "action": "Adiciona π/2 à rotação Y da caixa ou remate selecionado.",
     "area": "barra-superior",
-    "location": "Barra superior unificada — opções de visualização / rotação",
+    "location": "Barra superior unificada, opções de visualização / rotação",
     "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
     "id": "utt-rotate-90",
     "label": "90° direita"
@@ -748,7 +748,7 @@ export const buttons = [
     "effects": "Alterna `viewerSettings.hideAllPanels` + `viewerApi.setAllPanelsHidden`.",
     "action": "Alterna `viewerSettings.hideAllPanels` + `viewerApi.setAllPanelsHidden`.",
     "area": "barra-superior",
-    "location": "Barra superior unificada — opções de visualização / rotação",
+    "location": "Barra superior unificada, opções de visualização / rotação",
     "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
     "id": "utt-hide-all-panels",
     "label": "Esconder todos os painéis"
@@ -823,7 +823,7 @@ export const buttons = [
     "effects": "Alterna `viewerSettings.showPanelEdges` + `viewerApi.setPanelEdgesVisible`.",
     "action": "Alterna `viewerSettings.showPanelEdges` + `viewerApi.setPanelEdgesVisible`.",
     "area": "barra-superior",
-    "location": "Barra superior unificada — opções de visualização / rotação",
+    "location": "Barra superior unificada, opções de visualização / rotação",
     "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
     "id": "utt-show-panel-edges",
     "label": "Mostrar arestas dos painéis"
@@ -962,7 +962,7 @@ export const buttons = [
     "effects": "Alterna `viewerSettings.enableReflections` + `viewerApi.setReflectionsEnabled`.",
     "action": "Alterna `viewerSettings.enableReflections` + `viewerApi.setReflectionsEnabled`.",
     "area": "barra-superior",
-    "location": "Barra superior unificada — opções de visualização / rotação",
+    "location": "Barra superior unificada, opções de visualização / rotação",
     "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
     "id": "utt-reflections",
     "label": "Reflexos dinâmicos (probe)"
@@ -989,12 +989,12 @@ export const buttons = [
     "featureIds": [
       "configurador-3d"
     ],
-    "effects": "Reset Camera – Vista frontal centralizada",
+    "effects": "Reset Camera, Vista frontal centralizada",
     "action": "Repõe a câmara na vista frontal centralizada.",
     "area": "barra-superior",
     "id": "toolbar-reset-camera",
     "label": "RESET",
-    "tooltip": "Reset Camera – Vista frontal centralizada",
+    "tooltip": "Reset Camera, Vista frontal centralizada",
     "location": "Barra superior / header (ações de projeto)",
     "sourceFile": "src/constants/toolbarConfig.ts"
   },
@@ -1011,7 +1011,7 @@ export const buttons = [
     "location": "Barra superior unificada do workspace",
     "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
     "id": "utt-room",
-    "label": "Salão — configurar sala"
+    "label": "Salão, configurar sala"
   },
   {
     "icon": null,
@@ -1056,7 +1056,7 @@ export const buttons = [
     "effects": "Alterna `viewerSettings.panelRenderingEnabled`.",
     "action": "Alterna `viewerSettings.panelRenderingEnabled`.",
     "area": "barra-superior",
-    "location": "Barra superior unificada — opções de visualização / rotação",
+    "location": "Barra superior unificada, opções de visualização / rotação",
     "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
     "id": "utt-ver-pecas",
     "label": "Ver Peças / Ocultar peças individuais"
@@ -1514,7 +1514,7 @@ export const buttons = [
     "area": "ferramentas-3d",
     "id": "tool-3d-scale",
     "label": "Escalar",
-    "location": "Barra superior unificada — ferramentas 3D",
+    "location": "Barra superior unificada, ferramentas 3D",
     "sourceFile": "src/constants/toolbarConfig.ts"
   },
   {
@@ -1529,7 +1529,7 @@ export const buttons = [
     "area": "ferramentas-3d",
     "id": "tool-3d-move",
     "label": "Mover",
-    "location": "Barra superior unificada — ferramentas 3D",
+    "location": "Barra superior unificada, ferramentas 3D",
     "sourceFile": "src/constants/toolbarConfig.ts"
   },
   {
@@ -1544,7 +1544,7 @@ export const buttons = [
     "area": "ferramentas-3d",
     "id": "tool-3d-rotate",
     "label": "Rodar",
-    "location": "Barra superior unificada — ferramentas 3D",
+    "location": "Barra superior unificada, ferramentas 3D",
     "sourceFile": "src/constants/toolbarConfig.ts"
   },
   {
@@ -1559,7 +1559,7 @@ export const buttons = [
     "area": "ferramentas-3d",
     "id": "tool-3d-select",
     "label": "Selecionar",
-    "location": "Barra superior unificada — ferramentas 3D",
+    "location": "Barra superior unificada, ferramentas 3D",
     "sourceFile": "src/constants/toolbarConfig.ts"
   },
   {
@@ -2226,7 +2226,7 @@ export const buttons = [
     "area": "menu-contexto",
     "id": "ctx-multi-changeDimensionsAdditive",
     "label": "Alterar medidas (aditivo)",
-    "location": "Menu de contexto — Alterar medidas",
+    "location": "Menu de contexto, Alterar medidas",
     "sourceFile": "src/components/layout/workspace/ContextMenu.tsx"
   },
   {
@@ -2241,7 +2241,7 @@ export const buttons = [
     "area": "menu-contexto",
     "id": "ctx-multi-changeDimensionsRatio",
     "label": "Alterar medidas (proporcional)",
-    "location": "Menu de contexto — Alterar medidas",
+    "location": "Menu de contexto, Alterar medidas",
     "sourceFile": "src/components/layout/workspace/ContextMenu.tsx"
   },
   {
@@ -2841,7 +2841,7 @@ export const buttons = [
     "area": "menu-contexto",
     "id": "mouse-preset-cad",
     "label": "Mouse CAD",
-    "location": "Menu de contexto — Modo do mouse",
+    "location": "Menu de contexto, Modo do mouse",
     "sourceFile": "src/components/layout/workspace/ContextMenu.tsx"
   },
   {
@@ -2856,7 +2856,7 @@ export const buttons = [
     "area": "menu-contexto",
     "id": "mouse-preset-classic",
     "label": "Mouse Classic",
-    "location": "Menu de contexto — Modo do mouse",
+    "location": "Menu de contexto, Modo do mouse",
     "sourceFile": "src/components/layout/workspace/ContextMenu.tsx"
   },
   {
@@ -2871,7 +2871,7 @@ export const buttons = [
     "area": "menu-contexto",
     "id": "mouse-preset-mouseCentric",
     "label": "Mouse-Centric",
-    "location": "Menu de contexto — Modo do mouse",
+    "location": "Menu de contexto, Modo do mouse",
     "sourceFile": "src/components/layout/workspace/ContextMenu.tsx"
   },
   {
@@ -2916,7 +2916,7 @@ export const buttons = [
     "area": "menu-contexto",
     "id": "mouse-preset-orbitFriendly",
     "label": "Orbit-Friendly",
-    "location": "Menu de contexto — Modo do mouse",
+    "location": "Menu de contexto, Modo do mouse",
     "sourceFile": "src/components/layout/workspace/ContextMenu.tsx"
   },
   {
@@ -3520,7 +3520,7 @@ export const buttons = [
     "area": "paineis-laterais",
     "id": "designer-styleClassic",
     "label": "Clássico",
-    "location": "Painel Designer Inteligente — Conversação",
+    "location": "Painel Designer Inteligente, Conversação",
     "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
   },
   {
@@ -3685,7 +3685,7 @@ export const buttons = [
     "area": "paineis-laterais",
     "id": "designer-styleIndustrial",
     "label": "Industrial",
-    "location": "Painel Designer Inteligente — Conversação",
+    "location": "Painel Designer Inteligente, Conversação",
     "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
   },
   {
@@ -3715,7 +3715,7 @@ export const buttons = [
     "area": "paineis-laterais",
     "id": "designer-styleJapandi",
     "label": "Japandi",
-    "location": "Painel Designer Inteligente — Conversação",
+    "location": "Painel Designer Inteligente, Conversação",
     "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
   },
   {
@@ -3730,7 +3730,7 @@ export const buttons = [
     "area": "paineis-laterais",
     "id": "designer-styleLuxury",
     "label": "Luxo",
-    "location": "Painel Designer Inteligente — Conversação",
+    "location": "Painel Designer Inteligente, Conversação",
     "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
   },
   {
@@ -3745,7 +3745,7 @@ export const buttons = [
     "area": "paineis-laterais",
     "id": "designer-moreSpace",
     "label": "Mais espaço",
-    "location": "Painel Designer Inteligente — Conversação",
+    "location": "Painel Designer Inteligente, Conversação",
     "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
   },
   {
@@ -3760,7 +3760,7 @@ export const buttons = [
     "area": "paineis-laterais",
     "id": "designer-moreSymmetry",
     "label": "Mais simetria",
-    "location": "Painel Designer Inteligente — Conversação",
+    "location": "Painel Designer Inteligente, Conversação",
     "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
   },
   {
@@ -3790,7 +3790,7 @@ export const buttons = [
     "area": "paineis-laterais",
     "id": "designer-minimal",
     "label": "Minimalista",
-    "location": "Painel Designer Inteligente — Conversação",
+    "location": "Painel Designer Inteligente, Conversação",
     "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
   },
   {
@@ -3805,7 +3805,7 @@ export const buttons = [
     "area": "paineis-laterais",
     "id": "designer-styleModern",
     "label": "Moderno",
-    "location": "Painel Designer Inteligente — Conversação",
+    "location": "Painel Designer Inteligente, Conversação",
     "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
   },
   {
@@ -3835,7 +3835,7 @@ export const buttons = [
     "area": "paineis-laterais",
     "id": "designer-styleNordic",
     "label": "Nórdico",
-    "location": "Painel Designer Inteligente — Conversação",
+    "location": "Painel Designer Inteligente, Conversação",
     "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
   },
   {
@@ -3850,7 +3850,7 @@ export const buttons = [
     "area": "paineis-laterais",
     "id": "designer-optimizeWall",
     "label": "Otimizar parede",
-    "location": "Painel Designer Inteligente — Conversação",
+    "location": "Painel Designer Inteligente, Conversação",
     "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
   },
   {
@@ -3985,7 +3985,7 @@ export const buttons = [
     "area": "paineis-laterais",
     "id": "designer-variations",
     "label": "Variações",
-    "location": "Painel Designer Inteligente — Conversação",
+    "location": "Painel Designer Inteligente, Conversação",
     "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
   },
   {
@@ -4001,7 +4001,7 @@ export const buttons = [
     "area": "pimo-drill",
     "id": "drill-arco",
     "label": "Arco",
-    "location": "PIMO DRILL — toolbar",
+    "location": "PIMO DRILL, toolbar",
     "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
   },
   {
@@ -4017,7 +4017,7 @@ export const buttons = [
     "area": "pimo-drill",
     "id": "drill-buraco",
     "label": "Buraco",
-    "location": "PIMO DRILL — toolbar",
+    "location": "PIMO DRILL, toolbar",
     "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
   },
   {
@@ -4033,7 +4033,7 @@ export const buttons = [
     "area": "pimo-drill",
     "id": "drill-caminho",
     "label": "Caminho",
-    "location": "PIMO DRILL — toolbar",
+    "location": "PIMO DRILL, toolbar",
     "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
   },
   {
@@ -4049,7 +4049,7 @@ export const buttons = [
     "area": "pimo-drill",
     "id": "drill-circulo",
     "label": "Círculo",
-    "location": "PIMO DRILL — toolbar",
+    "location": "PIMO DRILL, toolbar",
     "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
   },
   {
@@ -4065,7 +4065,7 @@ export const buttons = [
     "area": "pimo-drill",
     "id": "drill-entalhe",
     "label": "Entalhe",
-    "location": "PIMO DRILL — toolbar",
+    "location": "PIMO DRILL, toolbar",
     "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
   },
   {
@@ -4081,7 +4081,7 @@ export const buttons = [
     "area": "pimo-drill",
     "id": "drill-rect",
     "label": "Rect",
-    "location": "PIMO DRILL — toolbar",
+    "location": "PIMO DRILL, toolbar",
     "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
   },
   {
@@ -4097,7 +4097,7 @@ export const buttons = [
     "area": "pimo-drill",
     "id": "drill-vista-2d",
     "label": "Vista 2D",
-    "location": "PIMO DRILL — toolbar",
+    "location": "PIMO DRILL, toolbar",
     "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
   },
   {
@@ -4113,7 +4113,7 @@ export const buttons = [
     "area": "pimo-drill",
     "id": "drill-vista-3d",
     "label": "Vista 3D",
-    "location": "PIMO DRILL — toolbar",
+    "location": "PIMO DRILL, toolbar",
     "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
   },
   {

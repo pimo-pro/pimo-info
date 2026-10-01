@@ -70,7 +70,7 @@ export const pimoSystems = [
       "src/core/fabrication/enviarParaFabrica.ts",
     ],
     statusNotes:
-      "Work orders, etiquetas UEE v5 e rotas de operador/estações existem no código. Páginas agregadas de Tracking/Quality/Rework podem estar incompletas na build — estado «parcial».",
+      "Work orders, etiquetas UEE v5 e rotas de operador/estações existem no código. Páginas agregadas de Tracking/Quality/Rework podem estar incompletas na build, estado «parcial».",
     canonicalPath: "/pt-pt/sistemas-pimo/pimo-trak/",
   },
   {
@@ -82,7 +82,7 @@ export const pimoSystems = [
     definition:
       "Área de gestão e visualização de projetos PIMO guardados no servidor (páginas/projeto com snapshot industrial).",
     purpose:
-      "Listar, abrir e apresentar projetos industriais guardados — incluindo showroom e análise online quando aplicável — separados do workspace de edição do configurador.",
+      "Listar, abrir e apresentar projetos industriais guardados, incluindo showroom e análise online quando aplicável, separados do workspace de edição do configurador.",
     howItWorks:
       "A rota `/PROJETOS` lista projetos com página PROJETOS no servidor (`{nome}.json`). Requer login (`ProjetosLoginGate`). Cartões abrem o projeto; há painel de showroom e análise industrial online ligada ao snapshot.",
     features: [
@@ -125,7 +125,7 @@ export const pimoSystems = [
     definition:
       "Motor e UI próprios de otimização da distribuição das peças nas chapas (Nesting V3), com redução de desperdício via auto-layout e colocação manual.",
     purpose:
-      "Permitir layout de corte interativo (drag/drop, rotação, multi-folha) e exportar PDF, TCN e etiquetas a partir do nesting — sem substituir o pipeline industrial automático Fast/PRO do configurador.",
+      "Permitir layout de corte interativo (drag/drop, rotação, multi-folha) e exportar PDF, TCN e etiquetas a partir do nesting, sem substituir o pipeline industrial automático Fast/PRO do configurador.",
     howItWorks:
       "Peças vêm da cutlist do projeto (`convertProjectToV3Pieces`) ou de entrada manual. O motor `nestingV3Engine` calcula utilização; Auto Layout faz shelf-packing. Exporta PDF técnico, TCN e etiquetas oficiais UEE. Acessível por `/nesting_v3` ou «Nesting V3 (Manual)» na bolha de exportação. Comentário no código: «NÃO toca no motor industrial» (pipeline Fast/PRO à parte).",
     features: [
@@ -134,7 +134,7 @@ export const pimoSystems = [
       "Auto Layout (shelf-packing)",
       "Multi-folha",
       "Export PDF + TCN + etiquetas UEE",
-      "Atalhos: R, Delete, +/- , 0, Escape",
+      "Atalhos: R, Delete, +/-, 0, Escape",
     ],
     inputs: [
       "Peças da cutlist do projeto",
@@ -170,7 +170,7 @@ export const pimoSystems = [
     definition:
       "Camada industrial completa da app: hub de estações, operações (CNC, nesting, drill, orlar, montagem, embalagem), operador/supervisor e integrações de fabrico.",
     purpose:
-      "Concentrar a visão de fábrica — da entrada do projeto exportado até às estações de produção — com UI industrial partilhada (layout de 3 colunas, station toolbar, ferragens 3D).",
+      "Concentrar a visão de fábrica, da entrada do projeto exportado até às estações de produção, com UI industrial partilhada (layout de 3 colunas, station toolbar, ferragens 3D).",
     howItWorks:
       "A home `/industrial` apresenta um rail de estações (IND, SUP, NES, DRI, ORL, MON, EMB) e canvas de peças. As operações vivem sob `/industrial/operations/*`. Integra com PIMO TRAK (work orders), Nesting e Drill. O hub usa peças de demonstração (`FAKE_PIECES`) no canvas visual; a lógica de work orders e operações é real noutros módulos.",
     features: [
@@ -215,7 +215,7 @@ export const pimoSystems = [
     definition:
       "Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.",
     purpose:
-      "Oferecer um workspace dedicado de furação (buraco, entalhe, rect, círculo, arco, caminho) separado do configurador 3D — complementar à exportação Drill XML do menu Arquivos CNC.",
+      "Oferecer um workspace dedicado de furação (buraco, entalhe, rect, círculo, arco, caminho) separado do configurador 3D, complementar à exportação Drill XML do menu Arquivos CNC.",
     howItWorks:
       "A página `/industrial/pimo-drill` (aberta em https://pimo.pro/industrial/pimo-drill) monta toolbar, painel esquerdo e viewers 2D/3D, com bridge mínimo ao Design Industrial e import KDT XML. O sistema está acessível e em desenvolvimento ativo: a UI e a rota existem; o fluxo operativo completo de inserção/validação de furos continua a evoluir. A geração de Drill XML a partir do configurador (`onArquivosCnc`) é um caminho paralelo já disponível.",
     features: [
@@ -223,7 +223,7 @@ export const pimoSystems = [
       "Vistas 2D/3D e toolbar de ferramentas de furação",
       "Bridge Design Industrial mínimo",
       "Import KDT XML (código presente)",
-      "Exportação Drill XML via configurador (sistema à parte — disponível)",
+      "Exportação Drill XML via configurador (sistema à parte, disponível)",
     ],
     inputs: [
       "Modelo de peça (PieceModel)",

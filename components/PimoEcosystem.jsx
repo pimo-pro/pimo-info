@@ -1,4 +1,4 @@
-import { ecosystemIntro, getRelatedSites, getSiteById, pimoSites } from "../data/sites"
+import { ecosystemIntro, getRelatedSites, getSiteById, pimoSites } from "./data/sites"
 
 function statusClass(status) {
   if (status === "active") return "is-active"
@@ -13,8 +13,8 @@ export function EcosystemHomeBlock() {
       <p className="pimo-badge">Ecossistema</p>
       <h2>{ecosystemIntro.title}</h2>
       <p>
-        Sete domínios oficiais — loja, aplicação, ajuda, mercados futuros e plano de
-        negócio — com páginas dedicadas neste centro de informação.
+        Sete domínios oficiais, loja, aplicação, ajuda, mercados futuros e plano de
+        negócio, com páginas dedicadas neste centro de informação.
       </p>
       <div className="pimo-ecosystem-home-actions">
         <a className="pimo-primary-link" href="/pt-pt/ecossistema/">

@@ -1,6 +1,6 @@
 # Matriz de cobertura PIMO Criativo → pimo.info
 
-Gerado: 2026-10-01T02:30:55.402Z
+Gerado: 2026-10-01T02:58:13.483Z
 
 Total de itens: **67**
 

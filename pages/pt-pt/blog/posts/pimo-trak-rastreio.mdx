@@ -1,6 +1,6 @@
 ---
 title: "PIMO TRAK: rastrear peças da exportação à montagem"
-description: "Etiquetas QR UEE v5, identificação por peça e acompanhamento industrial — o que já pode usar hoje na fábrica."
+description: "Etiquetas QR UEE v5, identificação por peça e acompanhamento industrial, o que já pode usar hoje na fábrica."
 date: 2026-09-07
 author: Equipa PIMO
 category: producao
@@ -23,17 +23,17 @@ sources:
     url: https://pimo.info/pt-pt/sistemas-pimo/pimo-trak/
   - title: Funcionalidade PIMO-TRAK
     url: https://pimo.info/pt-pt/funcionalidades/pimo-trak/
-  - title: Guia — rastreio de peças
+  - title: Guia, rastreio de peças
     url: https://pimo.info/pt-pt/guias-utilizador/pimo-trak/
 draft: false
 lastUpdated: 2026-09-07
 ---
 
-import { BlogPostHeader, BlogPostSources } from "../../../../components/BlogSections"
+import { BlogPostHeader, BlogPostSources } from "././././components/BlogSections"
 
 <BlogPostHeader slug="pimo-trak-rastreio" />
 
-Numa cozinha ou roupeiro com dezenas de painéis, **trocar duas peças** ou **perder o estado de furação** custa horas e margem. O **PIMO TRAK** liga cada peça física ao projecto digital através de **códigos QR únicos**, começando pela exportação de **etiquetas UEE v5** — já implementada — e estendendo-se, consoante a instalação, à **camada industrial** de ordens de trabalho e leitura em posto.
+Numa cozinha ou roupeiro com dezenas de painéis, **trocar duas peças** ou **perder o estado de furação** custa horas e margem. O **PIMO TRAK** liga cada peça física ao projecto digital através de **códigos QR únicos**, começando pela exportação de **etiquetas UEE v5**, já implementada, e estendendo-se, consoante a instalação, à **camada industrial** de ordens de trabalho e leitura em posto.
 
 Este artigo resume o fluxo recomendado, alinhado com [sistemas PIMO TRAK](/pt-pt/sistemas-pimo/pimo-trak/), a [funcionalidade na app](/pt-pt/funcionalidades/pimo-trak/) e o [guia de utilizador](/pt-pt/guias-utilizador/pimo-trak/).
 
@@ -55,25 +55,25 @@ Passos práticos:
 
 1. **Gerar** o PDF de etiquetas após congelar o projecto.
 2. **Imprimir** em A4 ou folhas pré-cortadas compatíveis com a vossa impressora.
-3. **Colar** cada etiqueta na peça correspondente **logo após o corte**, antes de a mover — boa prática oficial documentada no guia.
+3. **Colar** cada etiqueta na peça correspondente **logo após o corte**, antes de a mover, boa prática oficial documentada no guia.
 
 Cada QR liga a peça ao identificador no modelo digital; não substitui a lista de corte, complementa-a no chão de fábrica.
 
 ## Camada industrial e acompanhamento por posto
 
-Além das etiquetas, o ecossistema prevê **work-orders** e tracking na app industrial PIMO-TRAK: leitura de QR em postos como corte, furação, lacagem ou montagem, com progresso consultável na instalação activa. O estado exacto de ecrãs agregados (Tracking, Quality) pode variar consoante a **build instalada** — a documentação marca alguns elementos como mistos ou planeados.
+Além das etiquetas, o ecossistema prevê **work-orders** e tracking na app industrial PIMO-TRAK: leitura de QR em postos como corte, furação, lacagem ou montagem, com progresso consultável na instalação activa. O estado exacto de ecrãs agregados (Tracking, Quality) pode variar consoante a **build instalada**, a documentação marca alguns elementos como mistos ou planeados.
 
 Se a vossa fábrica ainda não expõe digitalização em todos os postos, **as etiquetas continuam válidas** para identificação física e conferência manual; trate o acompanhamento em tempo real como evolução, não como pré-requisito para começar a etiquetar.
 
 ## Equipamento de leitura
 
-QR standard lê-se com **câmara de telemóvel** ou scanner USB/Bluetooth compatível. Não é necessário hardware proprietário para beneficiar da identificação por peça; a camada industrial pode exigir dispositivos fixos em postos específicos — valide com o administrador da vossa instalação PIMO.
+QR standard lê-se com **câmara de telemóvel** ou scanner USB/Bluetooth compatível. Não é necessário hardware proprietário para beneficiar da identificação por peça; a camada industrial pode exigir dispositivos fixos em postos específicos, valide com o administrador da vossa instalação PIMO.
 
 ## Integração com CNC e nesting
 
 Rastreio eficaz assume **ficheiros CNC alinhados** com etiquetas: mesma versão de exportação, mesma ordem de nesting. Se reoptimizar layouts após gerar etiquetas, **reexporte** etiquetas e TCN juntos. Consulte o [guia de exportação](/pt-pt/guias-utilizador/exportacao/) e as páginas [exportação TCN/Drill XML](/pt-pt/funcionalidades/exportacao-tcn-drill-xml/) para manter pacotes coerentes.
 
-Após nesting por espessura ([guia de layout](/pt-pt/guias-utilizador/nesting-layout-corte/)), aplique etiquetas antes de separar pilhas para furação — reduz ambiguidade quando várias encomendas correm em paralelo.
+Após nesting por espessura ([guia de layout](/pt-pt/guias-utilizador/nesting-layout-corte/)), aplique etiquetas antes de separar pilhas para furação, reduz ambiguidade quando várias encomendas correm em paralelo.
 
 ## Organização na fábrica
 
@@ -87,13 +87,13 @@ O [módulo industrial](/pt-pt/funcionalidades/modulo-industrial/) e [estações 
 
 ## Limites e expectativas
 
-PIMO TRAK **não substitui** formação de operadores nem manutenção de máquinas. Também não corrige projectos mal dimensionados — detecta e identifica peças, não reinventa folgas. Para erros de desenho, use [análise de projetos](/pt-pt/funcionalidades/analise-projetos/) antes de cortar.
+PIMO TRAK **não substitui** formação de operadores nem manutenção de máquinas. Também não corrige projectos mal dimensionados, detecta e identifica peças, não reinventa folgas. Para erros de desenho, use [análise de projetos](/pt-pt/funcionalidades/analise-projetos/) antes de cortar.
 
 Se apenas parte da equipa adoptar etiquetas, o sistema torna-se inconsistente. Compromisso mínimo: **100% das peças que saem da serra** com etiqueta legível.
 
 ## Perguntas frequentes em produção
 
-**Posso reimprimir uma etiqueta perdida?** Sim — regenere a exportação do projecto (ou a folha da espessura afectada) para obter QR coerente com o modelo; evite duplicar IDs à mão.
+**Posso reimprimir uma etiqueta perdida?** Sim, regenere a exportação do projecto (ou a folha da espessura afectada) para obter QR coerente com o modelo; evite duplicar IDs à mão.
 
 **Etiqueta danificada na lacagem?** Substitua antes da embalagem; peças sem QR no contentor final atrasam montagem in situ.
 
@@ -101,6 +101,6 @@ Se apenas parte da equipa adoptar etiquetas, o sistema torna-se inconsistente. C
 
 ## Conclusão
 
-PIMO TRAK transforma exportação digital em **rastreabilidade física**: comece pelas **etiquetas UEE v5**, aplique-as no momento certo e evolua para leitura por posto quando a camada industrial estiver disponível na vossa instalação. Detalhe operacional em [PIMO TRAK — sistemas](/pt-pt/sistemas-pimo/pimo-trak/), [funcionalidade](/pt-pt/funcionalidades/pimo-trak/) e [guia passo a passo](/pt-pt/guias-utilizador/pimo-trak/).
+PIMO TRAK transforma exportação digital em **rastreabilidade física**: comece pelas **etiquetas UEE v5**, aplique-as no momento certo e evolua para leitura por posto quando a camada industrial estiver disponível na vossa instalação. Detalhe operacional em [PIMO TRAK, sistemas](/pt-pt/sistemas-pimo/pimo-trak/), [funcionalidade](/pt-pt/funcionalidades/pimo-trak/) e [guia passo a passo](/pt-pt/guias-utilizador/pimo-trak/).
 
 <BlogPostSources slug="pimo-trak-rastreio" />

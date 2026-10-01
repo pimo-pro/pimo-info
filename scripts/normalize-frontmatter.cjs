@@ -127,7 +127,7 @@ function inferMeta(file, data) {
   }
 
   if (!description) {
-    description = `${title} — documentação PIMO Info (pt-PT).`
+    description = `${title}, documentação PIMO Info.`
   }
 
   // Heuristic related

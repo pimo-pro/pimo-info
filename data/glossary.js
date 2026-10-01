@@ -94,7 +94,7 @@ export const glossaryTerms = [
     term: "Nesting / Layout de Corte",
     aliases: ["nesting", "layout de corte", "Fast", "PRO"],
     definition:
-      "Distribuição das peças nas chapas. Modo Fast: estimativa rápida. Modo PRO: otimização com rotação quando aplicável (pode afetar orientação de furação — validar TCN/Drill XML).",
+      "Distribuição das peças nas chapas. Modo Fast: estimativa rápida. Modo PRO: otimização com rotação quando aplicável (pode afetar orientação de furação, validar TCN/Drill XML).",
     status: "implemented",
     relatedPaths: [
       "/pt-pt/funcionalidades/nesting-fast-pro/",
@@ -167,7 +167,7 @@ export const glossaryTerms = [
     term: "PIMO INDUSTRIAL",
     aliases: ["PIMO Industrial", "/industrial"],
     definition:
-      "Camada industrial da app: hub de estações, operações de fábrica e UI partilhada. Estado parcial — rotas reais com canvas de demonstração na home.",
+      "Camada industrial da app: hub de estações, operações de fábrica e UI partilhada. Estado parcial, rotas reais com canvas de demonstração na home.",
     status: "mixed",
     relatedPaths: [
       "/pt-pt/sistemas-pimo/pimo-industrial/",
@@ -191,7 +191,7 @@ export const glossaryTerms = [
     term: "Arquivo completo (ZIP)",
     aliases: ["pacote completo", "ZIP"],
     definition:
-      "ZIP com os principais artefactos de produção (PDFs, XLSX de ferragens, TCN, Drill XML, etiquetas, layouts). Conteúdo exacto definido pelo gerador na app — ver formatos de exportação.",
+      "ZIP com os principais artefactos de produção (PDFs, XLSX de ferragens, TCN, Drill XML, etiquetas, layouts). Conteúdo exacto definido pelo gerador na app, ver formatos de exportação.",
     status: "implemented",
     relatedPaths: ["/pt-pt/guias-utilizador/exportacao/"],
   },

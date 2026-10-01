@@ -1,7 +1,7 @@
-import { pimoSystems } from "../data/systems"
-import { features } from "../data/features"
-import { buttons } from "../data/buttons"
-import { appModules } from "../data/modules"
+import { pimoSystems } from "./data/systems"
+import { features } from "./data/features"
+import { buttons } from "./data/buttons"
+import { appModules } from "./data/modules"
 
 function statusLabel(status) {
   if (status === "disponivel") return "Disponível"
@@ -129,7 +129,7 @@ export function SystemDetail({ systemId }) {
       <ul>
         {relatedSystems.map((o) => (
           <li key={o.id}>
-            <a href={o.canonicalPath}>{o.name}</a> — {o.definition}
+            <a href={o.canonicalPath}>{o.name}</a>, {o.definition}
           </li>
         ))}
       </ul>
@@ -140,7 +140,7 @@ export function SystemDetail({ systemId }) {
           <ul>
             {relatedFeats.map((f) => (
               <li key={f.id}>
-                <a href={f.canonicalPath}>{f.name}</a> — {f.summary}
+                <a href={f.canonicalPath}>{f.name}</a>, {f.summary}
               </li>
             ))}
           </ul>
@@ -169,7 +169,7 @@ export function SystemDetail({ systemId }) {
         {relatedBtns.slice(0, 20).map((b) => (
           <li key={b.id}>
             <a href={`/pt-pt/referencia/botoes/#${b.id}`}>{b.label}</a>
-            <span> — {b.location}</span>
+            <span>, {b.location}</span>
           </li>
         ))}
       </ul>

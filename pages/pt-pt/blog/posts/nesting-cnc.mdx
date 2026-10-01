@@ -19,7 +19,7 @@ related:
   - /pt-pt/blog/posts/exportacao-cnc-ficheiros/
   - /pt-pt/blog/posts/lista-corte-residuos/
 sources:
-  - title: Lista de corte — PIMO
+  - title: Lista de corte, PIMO
     url: https://pimo.info/pt-pt/funcionalidades/lista-de-corte/
   - title: Exportação CNC
     url: https://pimo.info/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/
@@ -29,20 +29,20 @@ draft: false
 lastUpdated: 2026-04-06
 ---
 
-import { BlogPostHeader, BlogPostSources } from "../../../../components/BlogSections"
+import { BlogPostHeader, BlogPostSources } from "././././components/BlogSections"
 
 <BlogPostHeader slug="nesting-cnc" />
 
-Nesting é o arranjo inteligente de peças 2D numa chapa antes do corte CNC — o mesmo princípio do «quebra-cabeças», mas com euros por metro quadrado em jogo. Uma optimização medíocre deixa retalhos grandes no chão; uma boa combina peças de vários módulos, respeita veio decorativo e margens da máquina. Para oficinas que fabricam cozinhas e roupeiros a partir de projectos digitais, o nesting é o ponto onde **desenho e produção** se encontram ou se desencontram. Este artigo explica conceitos práticos e como alimentar o processo a partir do PIMO.
+Nesting é o arranjo inteligente de peças 2D numa chapa antes do corte CNC, o mesmo princípio do «quebra-cabeças», mas com euros por metro quadrado em jogo. Uma optimização medíocre deixa retalhos grandes no chão; uma boa combina peças de vários módulos, respeita veio decorativo e margens da máquina. Para oficinas que fabricam cozinhas e roupeiros a partir de projectos digitais, o nesting é o ponto onde **desenho e produção** se encontram ou se desencontram. Este artigo explica conceitos práticos e como alimentar o processo a partir do PIMO.
 
 ## O que o software de nesting precisa receber
 
 Cada peça deve chegar com:
 
 - **Comprimento e largura** (ou contorno, se houver formas irregulares).
-- **Espessura** da chapa — misturar 16 mm e 19 mm na mesma corrida é erro grave.
+- **Espessura** da chapa, misturar 16 mm e 19 mm na mesma corrida é erro grave.
 - **Quantidade** e identificação legível para etiquetas pós-corte.
-- **Restrições de rotação** — melaminas com veio muitas vezes só rodam 0° ou 180°.
+- **Restrições de rotação**, melaminas com veio muitas vezes só rodam 0° ou 180°.
 - **Margem entre peças** (kerf + folga) definida pela fresa e pelo fabricante da máquina.
 
 A [lista de corte](/pt-pt/funcionalidades/lista-de-corte/) do PIMO consolida dimensões do modelo paramétrico; a exportação para TCN ou outros formatos está descrita nas páginas de [exportação CNC](/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/) e no [guia de exportação](/pt-pt/guias-utilizador/exportacao/). Dados desactualizados após uma alteração de porta no escritório propagam-se como desperdício na serra.
@@ -51,11 +51,11 @@ A [lista de corte](/pt-pt/funcionalidades/lista-de-corte/) do PIMO consolida dim
 
 Algoritmos de nesting tentam minimizar área usada ou número de chapas, respeitando prioridades: peças grandes primeiro («âncoras»), peças pequenas nos interstícios, retalhos reutilizáveis numa fila de «stock virtual». Em produção mista, agrupar por cor e espessura evita trocas de disco e de referência de chapa.
 
-O ganho não é só material: menos ciclos de carga na mesa, menos refilas manuais e menos risco de confundir peças de projectos diferentes. Muitas empresas reservam a última hora do dia para corridas só de retalho — gavetas pequenas, fundos, reforços.
+O ganho é de material e de tempo: menos ciclos de carga na mesa, menos refilas manuais e menos risco de confundir peças de projectos diferentes. Muitas empresas reservam a última hora do dia para corridas só de retalho, gavetas pequenas, fundos, reforços.
 
 ## Margens, refila e qualidade de borda
 
-A fresa remove largura (kerf); se o nesting ignorar esse valor, peças ficam curtas. A **refila perimetral** da chapa remove bordos danificados do transporte — o layout deve incluir faixa de trim. Faces melamínicas pedem entrada suave da ferramenta; ordem de corte pode começar por contornos internos (rasgos) antes de separar a peça da chapa, conforme post-processor.
+A fresa remove largura (kerf); se o nesting ignorar esse valor, peças ficam curtas. A **refila perimetral** da chapa remove bordos danificados do transporte, o layout deve incluir faixa de trim. Faces melamínicas pedem entrada suave da ferramenta; ordem de corte pode começar por contornos internos (rasgos) antes de separar a peça da chapa, conforme post-processor.
 
 Para furação vertical no mesmo centro, confirme se o nesting e o drilling partilham coordenadas de referência; desvios de zero origin são causa clássica de furos fora de sítio.
 
@@ -80,16 +80,16 @@ Para aprofundar gestão de sobras, leia [lista de corte e resíduos](/pt-pt/blog
 
 ## Integração com orlagem e secções seguintes
 
-O nesting define o contorno; a orladora define a durabilidade da borda. Planeie sequência de produção para que peças com o mesmo código de fita saiam agrupadas — trocar rolo de orla a cada dez peças consome mais tempo do que uma corrida mal optimizada de chapa. Cantos internos agudos podem exigir raio mínimo na fresa; se o desenho paramétrico permitir, arredondar 2 mm no software evita micro-lascas que a orladora não cobre.
+O nesting define o contorno; a orladora define a durabilidade da borda. Planeie sequência de produção para que peças com o mesmo código de fita saiam agrupadas, trocar rolo de orla a cada dez peças consome mais tempo do que uma corrida mal optimizada de chapa. Cantos internos agudos podem exigir raio mínimo na fresa; se o desenho paramétrico permitir, arredondar 2 mm no software evita micro-lascas que a orladora não cobre.
 
-Quando o centro de maquinação fura na vertical após o nesting, confirme que a etiqueta da peça sobrevive ao pó e à aspiração. Muitas oficinas imprimem código após corte com base no ficheiro de nesting, não no desenho original — desde que a referência seja única por peça, a rastreabilidade mantém-se.
+Quando o centro de maquinação fura na vertical após o nesting, confirme que a etiqueta da peça sobrevive ao pó e à aspiração. Muitas oficinas imprimem código após corte com base no ficheiro de nesting, não no desenho original, desde que a referência seja única por peça, a rastreabilidade mantém-se.
 
 ## Segurança e organização pós-corte
 
-Peças pequenas voam com vácuo mal ajustado; redes e limitadores existem por razão. Após corte, pilhas etiquetadas por módulo ou por cliente evitam mistura na orladora. O nesting bem feito inclui sequência que minimiza revirar a chapa — cada viragem é tempo e risco de risco na face.
+Peças pequenas voam com vácuo mal ajustado; redes e limitadores existem por razão. Após corte, pilhas etiquetadas por módulo ou por cliente evitam mistura na orladora. O nesting bem feito inclui sequência que minimiza revirar a chapa, cada viragem é tempo e risco de risco na face.
 
 ## Conclusão
 
-Nesting CNC não é luxo de grandes fábricas: é disciplina de quem compra painéis ao metro quadrado e vende ao módulo. Com projecto fiável no PIMO e regras claras na máquina, a optimização de chapas deixa de ser talento isolado de um operador e passa a métrica repetível — menos desperdício, mais margem e prazos mais curtos entre encomenda e montagem.
+Nesting CNC não é luxo de grandes fábricas: é disciplina de quem compra painéis ao metro quadrado e vende ao módulo. Com projecto fiável no PIMO e regras claras na máquina, a optimização de chapas deixa de ser talento isolado de um operador e passa a métrica repetível, menos desperdício, mais margem e prazos mais curtos entre encomenda e montagem.
 
 <BlogPostSources slug="nesting-cnc" />

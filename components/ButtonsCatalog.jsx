@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react"
-import { buttons, buttonAreas } from "../data/buttons"
-import { features } from "../data/features"
+import { buttons, buttonAreas } from "./data/buttons"
+import { features } from "./data/features"
 
 function IconThumb({ button }) {
   if (button.iconName) {
@@ -18,7 +18,7 @@ function IconThumb({ button }) {
   if (button.icon) {
     return <span className="pimo-btn-icon-fallback" aria-hidden>{button.icon}</span>
   }
-  return <span className="pimo-btn-icon-fallback" aria-hidden>—</span>
+  return <span className="pimo-btn-icon-fallback" aria-hidden>, </span>
 }
 
 function featureName(id) {
@@ -44,7 +44,7 @@ export function ButtonsCatalog({ featureFilter = "" } = {}) {
         b.effects,
         b.shortcut || "",
         b.sourceFile,
-        ...(b.featureIds || []),
+        ..(b.featureIds || []),
       ]
         .join(" ")
         .toLowerCase()
@@ -66,7 +66,7 @@ export function ButtonsCatalog({ featureFilter = "" } = {}) {
     <div className="pimo-buttons-catalog">
       <p className="pimo-lead">
         {buttons.length} controlos catalogados a partir do código do PIMO Criativo (só leitura).
-        Labels e atalhos são os do código-fonte — sem invenções.
+        Labels e atalhos são os do código-fonte, sem invenções.
       </p>
 
       <div className="pimo-buttons-filters" role="search">
@@ -184,7 +184,7 @@ export function FeatureButtons({ featureId }) {
         {list.slice(0, 24).map((b) => (
           <li key={b.id}>
             <a href={`/pt-pt/referencia/botoes/#${b.id}`}>{b.label}</a>
-            <span> — {b.location}</span>
+            <span>, {b.location}</span>
             {b.shortcut ? (
               <>
                 {" "}

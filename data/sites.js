@@ -38,7 +38,7 @@ export const pimoSites = [
     currentRouting: "Site próprio em produção",
     future: "Continuar como loja e face pública da marca, com ligação ao fluxo de configuração em pimo.pro",
     summary:
-      "A loja online principal e o site principal do projeto e da marca PIMO — o ponto de entrada comercial para móveis planeados à medida.",
+      "A loja online principal e o site principal do projeto e da marca PIMO, o ponto de entrada comercial para móveis planeados à medida.",
     whatIs:
       "O pimo.pt é a loja online principal e o site principal do projeto e da marca PIMO. Apresenta a oferta de móveis planeados à medida, o processo de projeto e a face comercial da marca em Portugal.",
     ecosystemRole:
@@ -61,11 +61,11 @@ export const pimoSites = [
     currentRouting: "Aplicação em produção",
     future: "Continuar como plataforma oficial de configuração e fluxo técnico de produção",
     summary:
-      "O site oficial da aplicação e plataforma PIMO (PIMO Criativo) — configurador paramétrico de mobiliário orientado à produção.",
+      "O site oficial da aplicação e plataforma PIMO (PIMO Criativo), configurador paramétrico de mobiliário orientado à produção.",
     whatIs:
       "O pimo.pro é o site oficial da aplicação e plataforma PIMO, conhecida como PIMO Criativo: um configurador paramétrico de mobiliário que liga o desenho em 3D aos ficheiros técnicos de produção.",
     ecosystemRole:
-      "É o núcleo operacional do produto. É aqui que se configura o mobiliário e se prepara o fluxo técnico (lista de corte, nesting, exportação industrial e rastreio). Os restantes sites do ecossistema apontam para este papel — loja, ajuda, designs futuros e plano de negócio.",
+      "É o núcleo operacional do produto. É aqui que se configura o mobiliário e se prepara o fluxo técnico (lista de corte, nesting, exportação industrial e rastreio). Os restantes sites do ecossistema apontam para este papel, loja, ajuda, designs futuros e plano de negócio.",
     currentState:
       "Aplicação em produção. A página pública identifica o PIMO Criativo como configurador paramétrico de mobiliário com apoio a máquinas CNC, lista de corte e ficheiros industriais (TCN e Drill XML).",
     futurePlans:
@@ -84,7 +84,7 @@ export const pimoSites = [
     currentRouting: "Centro de ajuda em produção (este site)",
     future: "Expandir documentação e páginas por domínio do ecossistema",
     summary:
-      "O centro de informação e ajuda do PIMO — guias, funcionalidades, documentação e mapa do ecossistema de sites.",
+      "O centro de informação e ajuda do PIMO, guias, funcionalidades, documentação e mapa do ecossistema de sites.",
     whatIs:
       "O pimo.info é o centro de informação e ajuda do PIMO. Reúne documentação em português europeu para quem usa a plataforma no dia a dia: primeiros passos, funcionalidades, guias e documentação técnica.",
     ecosystemRole:
@@ -109,7 +109,7 @@ export const pimoSites = [
     summary:
       "A loja oficial em espanhol do projeto PIMO. Por agora redireciona para pimo.pt; no futuro terá conteúdo próprio para o mercado hispanófono.",
     whatIs:
-      "O pimo.es é a loja oficial em espanhol do ecossistema PIMO — o domínio reservado para a presença comercial e de marca em espanhol.",
+      "O pimo.es é a loja oficial em espanhol do ecossistema PIMO, o domínio reservado para a presença comercial e de marca em espanhol.",
     ecosystemRole:
       "Estende a face comercial da marca (hoje centrada em pimo.pt) ao público em espanhol, mantendo o mesmo ecossistema de produto (aplicação em pimo.pro e ajuda em pimo.info).",
     currentState:
@@ -132,7 +132,7 @@ export const pimoSites = [
     summary:
       "Futuro site oficial para mostrar designs e projetos prontos. Atualmente está ligado a pimo.pro.",
     whatIs:
-      "O pimo.casa será o site oficial para apresentar designs e projetos prontos do universo PIMO — uma montra de soluções e composições, distinta da loja e da aplicação de configuração.",
+      "O pimo.casa será o site oficial para apresentar designs e projetos prontos do universo PIMO, uma montra de soluções e composições, distinta da loja e da aplicação de configuração.",
     ecosystemRole:
       "No ecossistema, ocupa o espaço entre inspiração e produto: mostrar projetos e designs prontos, remetendo depois para configuração (pimo.pro) ou para a loja (pimo.pt), conforme o percurso do visitante.",
     currentState:
@@ -155,7 +155,7 @@ export const pimoSites = [
     summary:
       "Futuro site oficial da aplicação de design completo. Atualmente está ligado a pimo.pro.",
     whatIs:
-      "O pimo.design será o site oficial da aplicação de design completo no ecossistema PIMO — um destino dedicado à experiência de design, separado da loja e do centro de ajuda.",
+      "O pimo.design será o site oficial da aplicação de design completo no ecossistema PIMO, um destino dedicado à experiência de design, separado da loja e do centro de ajuda.",
     ecosystemRole:
       "Complementa o pimo.pro ao reservar um domínio próprio para a aplicação de design completo. Liga-se ao restante ecossistema pela mesma marca e pelo fluxo de produto documentado em pimo.info.",
     currentState:
@@ -176,7 +176,7 @@ export const pimoSites = [
     currentRouting: "Site próprio do plano de negócio",
     future: "Manter-se como documento vivo do plano de negócio do projeto",
     summary:
-      "O site (com zero) que apresenta o plano de negócio do projeto PIMO — visão, modelo e estrutura do ecossistema.",
+      "O site (com zero) que apresenta o plano de negócio do projeto PIMO, visão, modelo e estrutura do ecossistema.",
     whatIs:
       "O pim0.com (escrito com zero) é o site que apresenta o plano de negócio do projeto PIMO. Documenta a visão da plataforma, o modelo e o mapa dos domínios do ecossistema.",
     ecosystemRole:

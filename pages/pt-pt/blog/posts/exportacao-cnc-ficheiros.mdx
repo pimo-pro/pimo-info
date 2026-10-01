@@ -19,21 +19,21 @@ related:
   - /pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/
   - /pt-pt/guias-utilizador/exportacao/
 sources:
-  - title: Exportação TCN/Drill XML — funcionalidade
+  - title: Exportação TCN/Drill XML, funcionalidade
     url: https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/
-  - title: Guia de exportação — PIMO Info
+  - title: Guia de exportação, PIMO Info
     url: https://pimo.info/pt-pt/guias-utilizador/exportacao/
-  - title: Glossário — formatos e termos
+  - title: Glossário, formatos e termos
     url: https://pimo.info/pt-pt/glossario/
 draft: false
 lastUpdated: 2026-08-24
 ---
 
-import { BlogPostHeader, BlogPostSources } from "../../../../components/BlogSections"
+import { BlogPostHeader, BlogPostSources } from "././././components/BlogSections"
 
 <BlogPostHeader slug="exportacao-cnc-ficheiros" />
 
-Passar do projeto digital ao chão de fábrica exige **ficheiros que a máquina compreenda**. No PIMO, a saída industrial concentra-se em **TCN** (`.tcn`) e **Drill XML** (`.xml`) a partir do menu **Arquivos CNC** — «CNC» designa o destino do fluxo, não a extensão do ficheiro. Este artigo explica como encaixar essa exportação no vosso processo, alinhado com a [documentação de exportação TCN/Drill XML](/pt-pt/funcionalidades/exportacao-tcn-drill-xml/) e o [guia de utilizador](/pt-pt/guias-utilizador/exportacao/).
+Passar do projeto digital ao chão de fábrica exige **ficheiros que a máquina compreenda**. No PIMO, a saída industrial concentra-se em **TCN** (`.tcn`) e **Drill XML** (`.xml`) a partir do menu **Arquivos CNC**, «CNC» designa o destino do fluxo, não a extensão do ficheiro. Este artigo explica como encaixar essa exportação no vosso processo, alinhado com a [documentação de exportação TCN/Drill XML](/pt-pt/funcionalidades/exportacao-tcn-drill-xml/) e o [guia de utilizador](/pt-pt/guias-utilizador/exportacao/).
 
 ## Dois formatos, dois papéis
 
@@ -44,7 +44,7 @@ A escolha não é «qual é melhor», mas **qual a vossa cadeia instalada**:
 - Se só a serra optimizada lê TCN, exporte TCN para painéis e mantenha furação noutro passo ou noutro ficheiro, conforme acordado com o integrador.
 - Se a linha de furação importa XML nativamente, o Drill XML reduz reintrodução manual de coordenadas.
 
-Quando existir dúvida, consulte o manual do posto e o [glossário](/pt-pt/glossario/) — os termos canónicos evitam confusão entre equipas e fornecedores.
+Quando existir dúvida, consulte o manual do posto e o [glossário](/pt-pt/glossario/), os termos canónicos evitam confusão entre equipas e fornecedores.
 
 ## Fluxo Arquivos CNC na aplicação
 
@@ -53,7 +53,7 @@ O caminho oficial passa por **Exportar → Arquivos CNC**, onde se seleccionam T
 Antes de exportar:
 
 1. Congele alterações de geometria (módulos, frentes, usinagens especiais).
-2. Verifique materiais e espessuras — impactam agrupamento e nomes de ficheiros.
+2. Verifique materiais e espessuras, impactam agrupamento e nomes de ficheiros.
 3. Execute [análise de projetos](/pt-pt/funcionalidades/analise-projetos/) se disponível, para detectar inconsistências.
 
 ## Organização por espessura
@@ -63,18 +63,18 @@ No **arquivo completo (ZIP)**, TCN, etiquetas e layouts agrupam-se frequentement
 Sugestões de fábrica:
 
 - Nomeie pastas no servidor interno com o **número de encomenda** e data de exportação.
-- Não reutilize TCN de um projeto sobre peças de outro — mesmo com dimensões iguais, furos e IDs de peça diferem.
+- Não reutilize TCN de um projeto sobre peças de outro, mesmo com dimensões iguais, furos e IDs de peça diferem.
 - Arquive o ZIP junto do PDF técnico assinado pelo desenhador.
 
 ## Erros comuns (e como evitar)
 
-**Versão desactualizada do ficheiro** — o operador corta com o TCN da segunda-feira enquanto o desenhador alterou frentes na quarta. Política clara: só produzir com exportação datada após última revisão.
+**Versão desactualizada do ficheiro**, o operador corta com o TCN da segunda-feira enquanto o desenhador alterou frentes na quarta. Política clara: só produzir com exportação datada após última revisão.
 
-**Confundir menu CNC com extensão** — procurar um ficheiro `.cnc` quando a saída correcta é `.tcn` ou `.xml`. Formação curta para novos operadores poupa horas de helpdesk.
+**Confundir menu CNC com extensão**, procurar um ficheiro `.cnc` quando a saída correcta é `.tcn` ou `.xml`. Formação curta para novos operadores poupa horas de helpdesk.
 
-**Pós-processamento agressivo** — editar TCN à mão para «ganhar tempo» quebra a ligação com etiquetas QR e listas de corte. Correções estruturais devem voltar ao projeto PIMO e reexportar.
+**Pós-processamento agressivo**, editar TCN à mão para «ganhar tempo» quebra a ligação com etiquetas QR e listas de corte. Correções estruturais devem voltar ao projeto PIMO e reexportar.
 
-**Máquina não actualizada** — templates de importação desactualizados no posto de furação rejeitam XML válido. Mantenha integrador e software PIMO alinhados quando actualizarem versões.
+**Máquina não actualizada**, templates de importação desactualizados no posto de furação rejeitam XML válido. Mantenha integrador e software PIMO alinhados quando actualizarem versões.
 
 ## Integração com nesting e etiquetas
 
@@ -90,7 +90,7 @@ Ordem típica:
 
 ## Segurança e rastreabilidade
 
-Guarde exports em local com **backup** e permissões restritas — contêm dimensões de clientes e layouts de cozinhas completas. Para auditorias, o PDF técnico ([funcionalidade dedicada](/pt-pt/funcionalidades/pdf-tecnico/)) complementa os ficheiros de máquina com vistas legíveis por humanos.
+Guarde exports em local com **backup** e permissões restritas, contêm dimensões de clientes e layouts de cozinhas completas. Para auditorias, o PDF técnico ([funcionalidade dedicada](/pt-pt/funcionalidades/pdf-tecnico/)) complementa os ficheiros de máquina com vistas legíveis por humanos.
 
 ## Quando pedir ajuda ao integrador
 

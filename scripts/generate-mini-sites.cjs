@@ -45,7 +45,7 @@ function renderLanding(sub, site, related) {
   const relatedHtml = related
     .map(
       (r) =>
-        `<li><a href="${escapeHtml(r.url)}">${escapeHtml(r.domain)}</a> — ${escapeHtml(r.shortRole)}</li>`
+        `<li><a href="${escapeHtml(r.url)}">${escapeHtml(r.domain)}</a>, ${escapeHtml(r.shortRole)}</li>`
     )
     .join("\n          ")
 

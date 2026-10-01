@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-01T02:30:55.383Z",
+  "generatedAt": "2026-10-01T02:58:13.460Z",
   "posts": [
     {
       "slug": "fabrico-digital-2026",
       "href": "/pt-pt/blog/posts/fabrico-digital-2026/",
       "title": "Fabrico digital em 2026: tendências qualitativas para a madeira",
-      "description": "Parametrização, rastreio, exportação CNC e leitura de mercado — como preparar a fábrica sem hype estatístico.",
+      "description": "Parametrização, rastreio, exportação CNC e leitura de mercado, como preparar a fábrica sem hype estatístico.",
       "date": "2026-10-01",
       "author": "Equipa PIMO",
       "category": "noticias",
@@ -20,15 +20,15 @@
       "imageAlt": "Engenheiro ou técnico num posto de trabalho com equipamento digital",
       "sources": [
         {
-          "title": "CSIL / World Furniture Online — outlook comércio 2026",
+          "title": "CSIL / World Furniture Online, outlook comércio 2026",
           "url": "https://www.worldfurnitureonline.com/trends/furniture-market-dynamics-in-2025-evolving-trade-patterns-and-the-rise-of-megatrends/"
         },
         {
-          "title": "Sistema industrial — documentação PIMO",
+          "title": "Sistema industrial, documentação PIMO",
           "url": "https://pimo.info/pt-pt/documentacao-tecnica/sistema-industrial/"
         },
         {
-          "title": "PIMO Industrial — sistemas",
+          "title": "PIMO Industrial, sistemas",
           "url": "https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/"
         }
       ],
@@ -38,7 +38,7 @@
       "slug": "materiais-cozinhas",
       "href": "/pt-pt/blog/posts/materiais-cozinhas/",
       "title": "Materiais de cozinha: durabilidade na carcaça e nas frentes",
-      "description": "Melaminas, lacados, compactos e madeiras — como escolher combinações que resistem ao uso diário e ao ambiente húmido.",
+      "description": "Melaminas, lacados, compactos e madeiras, como escolher combinações que resistem ao uso diário e ao ambiente húmido.",
       "date": "2026-09-28",
       "author": "Equipa PIMO",
       "category": "produto",
@@ -53,15 +53,15 @@
       "imageAlt": "Ilha de cozinha moderna com tampo claro",
       "sources": [
         {
-          "title": "Materiais — funcionalidade PIMO",
+          "title": "Materiais, funcionalidade PIMO",
           "url": "https://pimo.info/pt-pt/funcionalidades/materiais/"
         },
         {
-          "title": "Guia — materiais no projecto",
+          "title": "Guia, materiais no projecto",
           "url": "https://pimo.info/pt-pt/guias-utilizador/materiais/"
         },
         {
-          "title": "Portas e gavetas — frentes independentes",
+          "title": "Portas e gavetas, frentes independentes",
           "url": "https://pimo.info/pt-pt/funcionalidades/portas-e-gavetas/"
         }
       ],
@@ -71,7 +71,7 @@
       "slug": "comercio-mundial-moveis",
       "href": "/pt-pt/blog/posts/comercio-mundial-moveis/",
       "title": "Comércio mundial de mobiliário: crescimento moderado e novos equilíbrios",
-      "description": "Síntese dos dados CSIL sobre produção, exportações e consumo global em 2024–2026 — o que importa para fábricas e exportadores.",
+      "description": "Síntese dos dados CSIL sobre produção, exportações e consumo global em 2024-2026, o que importa para fábricas e exportadores.",
       "date": "2026-09-21",
       "author": "Equipa PIMO",
       "category": "noticias",
@@ -86,15 +86,15 @@
       "imageAlt": "Navio de carga no mar, sob céu azul",
       "sources": [
         {
-          "title": "CSIL — Global furniture industry",
+          "title": "CSIL, Global furniture industry",
           "url": "https://www.csilmilano.com/global-furniture-industry/"
         },
         {
-          "title": "World Furniture Online — An intense year for the furniture industry",
+          "title": "World Furniture Online, An intense year for the furniture industry",
           "url": "https://www.worldfurnitureonline.com/news/an-intense-year-for-the-furniture-industry/"
         },
         {
-          "title": "World Furniture Online — Furniture market dynamics in 2025",
+          "title": "World Furniture Online, Furniture market dynamics in 2025",
           "url": "https://www.worldfurnitureonline.com/trends/furniture-market-dynamics-in-2025-evolving-trade-patterns-and-the-rise-of-megatrends/"
         }
       ],
@@ -104,7 +104,7 @@
       "slug": "pimo-trak-rastreio",
       "href": "/pt-pt/blog/posts/pimo-trak-rastreio/",
       "title": "PIMO TRAK: rastrear peças da exportação à montagem",
-      "description": "Etiquetas QR UEE v5, identificação por peça e acompanhamento industrial — o que já pode usar hoje na fábrica.",
+      "description": "Etiquetas QR UEE v5, identificação por peça e acompanhamento industrial, o que já pode usar hoje na fábrica.",
       "date": "2026-09-07",
       "author": "Equipa PIMO",
       "category": "producao",
@@ -127,7 +127,7 @@
           "url": "https://pimo.info/pt-pt/funcionalidades/pimo-trak/"
         },
         {
-          "title": "Guia — rastreio de peças",
+          "title": "Guia, rastreio de peças",
           "url": "https://pimo.info/pt-pt/guias-utilizador/pimo-trak/"
         }
       ],
@@ -152,15 +152,15 @@
       "imageAlt": "Portátil numa mesa de trabalho, evocando preparação de ficheiros técnicos",
       "sources": [
         {
-          "title": "Exportação TCN/Drill XML — funcionalidade",
+          "title": "Exportação TCN/Drill XML, funcionalidade",
           "url": "https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/"
         },
         {
-          "title": "Guia de exportação — PIMO Info",
+          "title": "Guia de exportação, PIMO Info",
           "url": "https://pimo.info/pt-pt/guias-utilizador/exportacao/"
         },
         {
-          "title": "Glossário — formatos e termos",
+          "title": "Glossário, formatos e termos",
           "url": "https://pimo.info/pt-pt/glossario/"
         }
       ],
@@ -170,7 +170,7 @@
       "slug": "portas-gavetas-fabrico",
       "href": "/pt-pt/blog/posts/portas-gavetas-fabrico/",
       "title": "Regras de fabrico para portas e gavetas",
-      "description": "Folgas, exclusividade, ferragens e validação antes da exportação — o que a fábrica precisa de respeitar em frentes de mobiliário.",
+      "description": "Folgas, exclusividade, ferragens e validação antes da exportação, o que a fábrica precisa de respeitar em frentes de mobiliário.",
       "date": "2026-08-10",
       "author": "Equipa PIMO",
       "category": "guias",
@@ -185,15 +185,15 @@
       "imageAlt": "Armário de cozinha com portas e gavetas em madeira clara",
       "sources": [
         {
-          "title": "Portas e Gavetas — funcionalidade",
+          "title": "Portas e Gavetas, funcionalidade",
           "url": "https://pimo.info/pt-pt/funcionalidades/portas-e-gavetas/"
         },
         {
-          "title": "Guia — configurar portas e gavetas",
+          "title": "Guia, configurar portas e gavetas",
           "url": "https://pimo.info/pt-pt/guias-utilizador/portas-e-gavetas/"
         },
         {
-          "title": "Ferragens — PIMO Info",
+          "title": "Ferragens, PIMO Info",
           "url": "https://pimo.info/pt-pt/funcionalidades/ferragens/"
         }
       ],
@@ -203,7 +203,7 @@
       "slug": "ia-carpintaria",
       "href": "/pt-pt/blog/posts/ia-carpintaria/",
       "title": "Inteligência artificial na carpintaria e no desenho de mobiliário",
-      "description": "Como a IA pode apoiar marceneiros e equipas de projeto — da ideação à produção — sem substituir o critério técnico.",
+      "description": "Como a IA pode apoiar marceneiros e equipas de projeto, da ideação à produção, sem substituir o critério técnico.",
       "date": "2026-07-27",
       "author": "Equipa PIMO",
       "category": "tecnico",
@@ -218,11 +218,11 @@
       "imageAlt": "Formas abstractas em azul e roxo que evocam fluxos digitais",
       "sources": [
         {
-          "title": "Configurador 3D — PIMO Info",
+          "title": "Configurador 3D, PIMO Info",
           "url": "https://pimo.info/pt-pt/funcionalidades/configurador-3d/"
         },
         {
-          "title": "Análise de projetos — PIMO Info",
+          "title": "Análise de projetos, PIMO Info",
           "url": "https://pimo.info/pt-pt/funcionalidades/analise-projetos/"
         },
         {
@@ -251,11 +251,11 @@
       "imageAlt": "Ferramentas e peças de madeira em bancada",
       "sources": [
         {
-          "title": "Lista de corte — funcionalidade PIMO",
+          "title": "Lista de corte, funcionalidade PIMO",
           "url": "https://pimo.info/pt-pt/funcionalidades/lista-de-corte/"
         },
         {
-          "title": "Guia de utilizador — Materiais",
+          "title": "Guia de utilizador, Materiais",
           "url": "https://pimo.info/pt-pt/guias-utilizador/materiais/"
         },
         {
@@ -281,14 +281,14 @@
       ],
       "coverImage": "/blog/images/sustentabilidade-madeira/cover.webp",
       "coverCredit": "Unsplash / Sebastian Unrau · Unsplash License · https://unsplash.com/photos/green-leafed-trees-sp97ZkmHcao",
-      "imageAlt": "Floresta — gestão sustentável de madeira",
+      "imageAlt": "Floresta, gestão sustentável de madeira",
       "sources": [
         {
           "title": "Forest Stewardship Council (FSC)",
           "url": "https://fsc.org/en"
         },
         {
-          "title": "Materiais — PIMO",
+          "title": "Materiais, PIMO",
           "url": "https://pimo.info/pt-pt/funcionalidades/materiais/"
         },
         {
@@ -302,7 +302,7 @@
       "slug": "automacao-fabrico",
       "href": "/pt-pt/blog/posts/automacao-fabrico/",
       "title": "Automação no fabrico de mobiliário: do projeto à linha de produção",
-      "description": "Como a automação reduz erros e tempos mortos na marcenaria industrial — e que papel têm PIMO Industrial, PIMO-TRAK e o módulo industrial.",
+      "description": "Como a automação reduz erros e tempos mortos na marcenaria industrial, e que papel têm PIMO Industrial, PIMO-TRAK e o módulo industrial.",
       "date": "2026-06-15",
       "author": "Equipa PIMO",
       "category": "producao",
@@ -335,7 +335,7 @@
       "slug": "software-design-3d",
       "href": "/pt-pt/blog/posts/software-design-3d/",
       "title": "Software de design 3D para marcenaria: o que procurar e como o PIMO se encaixa",
-      "description": "Critérios para escolher ferramentas de modelação 3D no mobiliário por medida — e relação com o configurador 3D do PIMO Criativo.",
+      "description": "Critérios para escolher ferramentas de modelação 3D no mobiliário por medida, e relação com o configurador 3D do PIMO Criativo.",
       "date": "2026-06-01",
       "author": "Equipa PIMO",
       "category": "tecnico",
@@ -350,7 +350,7 @@
       "imageAlt": "Pessoa a trabalhar num computador portátil em ambiente técnico",
       "sources": [
         {
-          "title": "Configurador 3D — PIMO Criativo",
+          "title": "Configurador 3D, PIMO Criativo",
           "url": "https://pimo.info/pt-pt/funcionalidades/configurador-3d/"
         },
         {
@@ -368,7 +368,7 @@
       "slug": "ferragens-hettich",
       "href": "/pt-pt/blog/posts/ferragens-hettich/",
       "title": "Ferragens Hettich no projeto de mobiliário: sistemas que o PIMO ajuda a especificar",
-      "description": "Como as ferragens Hettich — gavetas, dobradiças e sistemas de portas — se integram no desenho e na produção quando o projeto vive no PIMO Criativo.",
+      "description": "Como as ferragens Hettich, gavetas, dobradiças e sistemas de portas, se integram no desenho e na produção quando o projeto vive no PIMO Criativo.",
       "date": "2026-05-18",
       "author": "Equipa PIMO",
       "category": "produto",
@@ -383,7 +383,7 @@
       "imageAlt": "Armário de cozinha em madeira clara com lava-loiça",
       "sources": [
         {
-          "title": "Hettich — site oficial Portugal",
+          "title": "Hettich, site oficial Portugal",
           "url": "https://www.hettich.com/pt-pt/"
         },
         {
@@ -401,7 +401,7 @@
       "slug": "orlagem-bordos",
       "href": "/pt-pt/blog/posts/orlagem-bordos/",
       "title": "Orlagem de bordos: acabamento, precisão e ligação ao projeto digital",
-      "description": "Porque a orlagem importa na durabilidade e no aspeto dos móveis — e como alinhar materiais, lista de corte e produção no PIMO.",
+      "description": "Porque a orlagem importa na durabilidade e no aspeto dos móveis, e como alinhar materiais, lista de corte e produção no PIMO.",
       "date": "2026-05-04",
       "author": "Equipa PIMO",
       "category": "producao",
@@ -434,7 +434,7 @@
       "slug": "furacao-industrial",
       "href": "/pt-pt/blog/posts/furacao-industrial/",
       "title": "Furação industrial no mobiliário: da peça ao ficheiro para a máquina",
-      "description": "Como a furação industrial liga o projeto ao chão de fábrica — sistemas CNC, Drill XML e o papel do PIMO DRILL no ecossistema PIMO.",
+      "description": "Como a furação industrial liga o projeto ao chão de fábrica, sistemas CNC, Drill XML e o papel do PIMO DRILL no ecossistema PIMO.",
       "date": "2026-04-20",
       "author": "Equipa PIMO",
       "category": "producao",
@@ -449,7 +449,7 @@
       "imageAlt": "Operador a segurar uma ferramenta elétrica industrial num ambiente de produção",
       "sources": [
         {
-          "title": "PIMO DRILL — sistema de furação",
+          "title": "PIMO DRILL, sistema de furação",
           "url": "https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/"
         },
         {
@@ -482,7 +482,7 @@
       "imageAlt": "Máquina CNC em operação",
       "sources": [
         {
-          "title": "Lista de corte — PIMO",
+          "title": "Lista de corte, PIMO",
           "url": "https://pimo.info/pt-pt/funcionalidades/lista-de-corte/"
         },
         {
@@ -515,7 +515,7 @@
       "imageAlt": "Cozinha planeada moderna",
       "sources": [
         {
-          "title": "Materiais — PIMO",
+          "title": "Materiais, PIMO",
           "url": "https://pimo.info/pt-pt/funcionalidades/materiais/"
         },
         {
@@ -577,7 +577,7 @@
       "imageAlt": "Tábuas de madeira maciça",
       "sources": [
         {
-          "title": "Materiais — PIMO",
+          "title": "Materiais, PIMO",
           "url": "https://pimo.info/pt-pt/funcionalidades/materiais/"
         },
         {
@@ -585,7 +585,7 @@
           "url": "https://pimo.info/pt-pt/glossario/"
         },
         {
-          "title": "Wood — general properties (reference)",
+          "title": "Wood, general properties (reference)",
           "url": "https://en.wikipedia.org/wiki/Wood"
         }
       ],
@@ -618,7 +618,7 @@
           "url": "https://pimo.info/pt-pt/funcionalidades/lista-de-corte/"
         },
         {
-          "title": "Guia de utilizador — Materiais",
+          "title": "Guia de utilizador, Materiais",
           "url": "https://pimo.info/pt-pt/guias-utilizador/materiais/"
         }
       ],
@@ -647,11 +647,11 @@
           "url": "https://pimo.info/pt-pt/funcionalidades/materiais/"
         },
         {
-          "title": "Plywood (contraplacado — definição geral)",
+          "title": "Plywood (contraplacado, definição geral)",
           "url": "https://en.wikipedia.org/wiki/Plywood"
         },
         {
-          "title": "Particle board (aglomerado — definição geral)",
+          "title": "Particle board (aglomerado, definição geral)",
           "url": "https://en.wikipedia.org/wiki/Particle_board"
         }
       ],
@@ -680,7 +680,7 @@
           "url": "https://pimo.info/pt-pt/funcionalidades/materiais/"
         },
         {
-          "title": "Guia de utilizador — Materiais",
+          "title": "Guia de utilizador, Materiais",
           "url": "https://pimo.info/pt-pt/guias-utilizador/materiais/"
         },
         {

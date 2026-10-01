@@ -19,9 +19,9 @@ related:
   - /pt-pt/blog/posts/nesting-cnc/
   - /pt-pt/blog/posts/sustentabilidade-madeira/
 sources:
-  - title: Lista de corte — funcionalidade PIMO
+  - title: Lista de corte, funcionalidade PIMO
     url: https://pimo.info/pt-pt/funcionalidades/lista-de-corte/
-  - title: Guia de utilizador — Materiais
+  - title: Guia de utilizador, Materiais
     url: https://pimo.info/pt-pt/guias-utilizador/materiais/
   - title: Materiais no configurador
     url: https://pimo.info/pt-pt/funcionalidades/materiais/
@@ -29,11 +29,11 @@ draft: false
 lastUpdated: 2026-07-13
 ---
 
-import { BlogPostHeader, BlogPostSources } from "../../../../components/BlogSections"
+import { BlogPostHeader, BlogPostSources } from "././././components/BlogSections"
 
 <BlogPostHeader slug="lista-corte-residuos" />
 
-A lista de corte é o documento que transforma um conjunto de módulos 3D em rectângulos numerados para a serra — e, quando está errada ou incompleta, transforma-se em **chapas extra**, telefonemas em obra e retalhos que ninguém reaproveita. Em marcenarias que trabalham com painéis melamínicos e MDF, a diferença entre 78 % e 92 % de utilização de chapa pesa directamente na margem do projecto. Este artigo explica como gerar listas fiéis no PIMO, alimentar nesting CNC e tratar resíduos como recurso, não só como lixo.
+A lista de corte é o documento que transforma um conjunto de módulos 3D em rectângulos numerados para a serra, e, quando está errada ou incompleta, transforma-se em **chapas extra**, telefonemas em obra e retalhos que ninguém reaproveita. Em marcenarias que trabalham com painéis melamínicos e MDF, a diferença entre 78 % e 92 % de utilização de chapa pesa directamente na margem do projecto. Este artigo explica como gerar listas fiéis no PIMO, alimentar nesting CNC e tratar resíduos como recurso, não só como lixo.
 
 ## O que uma lista de corte deve conter
 
@@ -44,7 +44,7 @@ Cada linha útil inclui, no mínimo:
 - **Espessura** e **material** (código alinhado ao stock).
 - **Quantidade** e, idealmente, **módulo ou cliente** de origem.
 
-Opcional mas valioso: sentido de veio, bordos a orlar, observações de furação se não vierem noutro ficheiro. A [funcionalidade Lista de corte](/pt-pt/funcionalidades/lista-de-corte/) do PIMO deriva estas dimensões do modelo paramétrico — por isso alterações de porta, gaveta ou prateleira no configurador devem ser seguidas de nova geração antes de enviar à oficina.
+Opcional mas valioso: sentido de veio, bordos a orlar, observações de furação se não vierem noutro ficheiro. A [funcionalidade Lista de corte](/pt-pt/funcionalidades/lista-de-corte/) do PIMO deriva estas dimensões do modelo paramétrico, por isso alterações de porta, gaveta ou prateleira no configurador devem ser seguidas de nova geração antes de enviar à oficina.
 
 ## Da lista ao plano de chapa
 
@@ -81,13 +81,13 @@ Registe por semana e por operador de nesting. Quedas súbitas costumam indicar l
 
 Um canto de armazém com prateleiras por cor e espessura paga-se rápido. Etiquetas com código de barras ou QR ligado ao ERP evitam «retalho branco 18 mm» impossível de distinguir. Ao iniciar novo projecto, o projetista consulta stock virtual antes de pedir chapa nova.
 
-Retalhos demasiado pequenos para mobiliário ainda podem ir para calços, gabaritos ou formação — melhor que aterro, mas com limite de espaço.
+Retalhos demasiado pequenos para mobiliário ainda podem ir para calços, gabaritos ou formação, melhor que aterro, mas com limite de espaço.
 
 ## Resíduos, sustentabilidade e custo
 
 Menos chapa comprada significa menos transporte e menos serragem. Alinhe destino de resíduos com fornecedores locais de reciclagem de painéis, conforme enquadramento legal. A dimensão ambiental liga-se ao artigo sobre [sustentabilidade da madeira](/pt-pt/blog/posts/sustentabilidade-madeira/).
 
-Internamente, inclua uma linha de «perda estimada» nos custos de fabrico — percentagem histórica realista evita surpresas no fecho do mês.
+Internamente, inclua uma linha de «perda estimada» nos custos de fabrico, percentagem histórica realista evita surpresas no fecho do mês.
 
 ## Fluxo recomendado no PIMO
 
@@ -101,6 +101,6 @@ Comunicação entre escritório e serra em uma única ferramenta reduz versões 
 
 ## Conclusão
 
-Lista de corte e gestão de resíduos são duas faces da mesma moeda: precisão no projeto e disciplina na chapa. O PIMO fornece a primeira metade — dimensões coerentes com o 3D; a oficina completa com nesting inteligente e retalhos organizados. Juntos, convertem desperdício invisível em margem recuperada e em argumento concreto de eficiência perante clientes exigentes.
+Lista de corte e gestão de resíduos são duas faces da mesma moeda: precisão no projeto e disciplina na chapa. O PIMO fornece a primeira metade, dimensões coerentes com o 3D; a oficina completa com nesting inteligente e retalhos organizados. Juntos, convertem desperdício invisível em margem recuperada e em argumento concreto de eficiência perante clientes exigentes.
 
 <BlogPostSources slug="lista-corte-residuos" />

@@ -119,7 +119,7 @@ function add(entry) {
       id: "toolbar-reset-camera",
       label: "RESET",
       iconName: "resetCamera",
-      tooltip: "Reset Camera – Vista frontal centralizada",
+      tooltip: "Reset Camera, Vista frontal centralizada",
       action: "Repõe a câmara na vista frontal centralizada.",
       featureIds: ["configurador-3d"],
     },
@@ -159,7 +159,7 @@ function add(entry) {
       id: `tool-3d-${t.id}`,
       label: t.label,
       iconName: t.iconName,
-      location: "Barra superior unificada — ferramentas 3D",
+      location: "Barra superior unificada, ferramentas 3D",
       area: "ferramentas-3d",
       action: `Ativa a ferramenta 3D «${t.label}» (evento \`${t.eventKey}\`).`,
       effects: t.note || `Define a ferramenta ativa do viewer para ${t.id}.`,
@@ -216,7 +216,7 @@ function add(entry) {
   },
   {
     id: "utt-room",
-    label: "Salão — configurar sala",
+    label: "Salão, configurar sala",
     iconName: "room",
     action: "Abre/fecha o painel de configuração da sala.",
   },
@@ -734,7 +734,7 @@ exportBtns.forEach((e) => {
     id: `designer-${id}`,
     label,
     iconName: "adminLab",
-    location: "Painel Designer Inteligente — Conversação",
+    location: "Painel Designer Inteligente, Conversação",
     area: "paineis-laterais",
     action: `Dispara a ação de designer «${label}» (\`${id}\`).`,
     effects: "Ajusta/refina o layout via designer conversacional.",
@@ -779,7 +779,7 @@ add({
     id: `mouse-preset-${id}`,
     label,
     iconName: "mouse",
-    location: "Menu de contexto — Modo do mouse",
+    location: "Menu de contexto, Modo do mouse",
     area: "menu-contexto",
     action: `Define o preset de rato do viewer para «${id}».`,
     effects: "Altera `viewerSettings.mousePreset`.",
@@ -797,7 +797,7 @@ add({
     id: `ctx-${id.replace(/\./g, "-")}`,
     label,
     iconName: "adminRuler",
-    location: "Menu de contexto — Alterar medidas",
+    location: "Menu de contexto, Alterar medidas",
     area: "menu-contexto",
     action: `Executa \`${id}\` no menu de contexto (scaling preview).`,
     effects: "Redimensiona objetos selecionados após preview.",
@@ -928,7 +928,7 @@ add({
 ].forEach((e) => {
   add({
     iconName: e.iconName || "displayCheck",
-    location: "Barra superior unificada — opções de visualização / rotação",
+    location: "Barra superior unificada, opções de visualização / rotação",
     area: "barra-superior",
     effects: e.action,
     sourceFile: "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
@@ -1201,7 +1201,7 @@ add({
   id: "hub-enviar-fabrica-btn",
   label: "Enviar ordem para fábrica",
   iconName: "send",
-  location: "Hub Industriais — Enviar para Fábrica",
+  location: "Hub Industriais, Enviar para Fábrica",
   area: "barra-inferior",
   action: "Envia a ordem industrial para a fábrica (`enviar()`).",
   effects: "Depende de artefactos industriais válidos / PIMO-TRAK.",
@@ -1224,7 +1224,7 @@ add({
     id,
     label,
     iconName: "adminTools",
-    location: "PIMO DRILL — toolbar",
+    location: "PIMO DRILL, toolbar",
     area: "pimo-drill",
     action,
     effects: action,
@@ -1344,7 +1344,7 @@ const areas = [
 
 const header = `/**
  * Catálogo de botões/controlos do PIMO Criativo (verificado no código, só leitura).
- * Gerado por scripts/build-buttons-catalog.cjs — não inventar labels.
+ * Gerado por scripts/build-buttons-catalog.cjs, não inventar labels.
  * iconName mapeia para /icons/criativo/<iconName>.svg (SVGs extraídos do iconRegistry).
  */
 

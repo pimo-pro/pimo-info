@@ -14,7 +14,7 @@ const OUT_MD = path.join(ROOT, "docs", "COVERAGE.md")
 
 /** @type {CoverageItem[]} */
 const items = [
-  // —— Rotas principais ——
+  // --- Rotas principais ---
   { id: "route-login", kind: "route", codeRef: "App.tsx:/login", name: "Login", purpose: "Autenticação de utilizador", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
   { id: "route-register", kind: "route", codeRef: "App.tsx:/register", name: "Registo", purpose: "Criação de conta", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
   { id: "route-forgot", kind: "route", codeRef: "App.tsx:/forgot-password", name: "Recuperar password", purpose: "Reset de palavra-passe", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
@@ -32,7 +32,7 @@ const items = [
   { id: "route-ajuda", kind: "route", codeRef: "ajudaRoutes:/ajuda", name: "Ajuda in-app", purpose: "Help embutido na app", page: "/pt-pt/", status: "parcial", notes: "Conteúdo espelhado no help center" },
   { id: "route-whats-new", kind: "route", codeRef: "ajudaRoutes:/ajuda/whats-new", name: "Novidades in-app", purpose: "Changelog na app", page: "/pt-pt/novidades/", status: "coberto" },
 
-  // —— Industrial / TRAK ——
+  // --- Industrial / TRAK ---
   { id: "route-industrial", kind: "route", codeRef: "App.tsx:/industrial", name: "Industrial home", purpose: "Hub industrial", page: "/pt-pt/sistemas-pimo/pimo-industrial/", status: "coberto" },
   { id: "route-work-orders", kind: "route", codeRef: "App.tsx:/industrial/work-orders", name: "Ordens de fabrico", purpose: "PIMO TRAK work orders", page: "/pt-pt/sistemas-pimo/pimo-trak/", status: "coberto" },
   { id: "route-supervisor", kind: "route", codeRef: "App.tsx:/industrial/supervisor", name: "Supervisor", purpose: "Dashboard supervisor", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto" },
@@ -51,14 +51,14 @@ const items = [
   { id: "route-pimo-drill", kind: "route", codeRef: "App.tsx:/industrial/pimo-drill", name: "PIMO DRILL", purpose: "Sistema de furação", page: "/pt-pt/sistemas-pimo/pimo-drill/", status: "em-desenvolvimento" },
   { id: "route-ops-cnc", kind: "route", codeRef: "App.tsx:/industrial/operations/cnc", name: "Operações CNC", purpose: "Vista CNC", page: "/pt-pt/funcionalidades/modulo-industrial/", status: "parcial" },
 
-  // —— Admin ——
+  // --- Admin ---
   { id: "route-admin-users", kind: "route", codeRef: "App.tsx:/admin/users", name: "Admin utilizadores", purpose: "Gestão de users", page: "/pt-pt/funcionalidades/definicoes/", status: "parcial" },
   { id: "route-admin-roles", kind: "route", codeRef: "App.tsx:/admin/roles", name: "Admin roles", purpose: "Papéis e permissões", page: "/pt-pt/funcionalidades/definicoes/", status: "parcial" },
   { id: "route-admin-global", kind: "route", codeRef: "App.tsx:/admin/global-settings", name: "Global settings", purpose: "Definições globais", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
   { id: "route-admin-room", kind: "route", codeRef: "App.tsx:/admin/room-settings", name: "Room settings", purpose: "Definições de sala", page: "/pt-pt/funcionalidades/sala-e-ambiente/", status: "coberto" },
   { id: "route-admin-industrial", kind: "route", codeRef: "App.tsx:/admin/settings/industrial", name: "Admin industrial", purpose: "Settings industriais", page: "/pt-pt/documentacao-tecnica/sistema-industrial/", status: "parcial" },
 
-  // —— Domínios funcionais ——
+  // --- Domínios funcionais ---
   { id: "domain-boxes", kind: "domain", codeRef: "LegacyApp / boxes", name: "Caixas / módulos", purpose: "Criar e editar caixas", page: "/pt-pt/guias-utilizador/criar-caixa/", status: "coberto" },
   { id: "domain-pieces", kind: "domain", codeRef: "piece models", name: "Peças", purpose: "Peças e cotas", page: "/pt-pt/guias-utilizador/medicoes-e-cotas/", status: "coberto" },
   { id: "domain-materials", kind: "domain", codeRef: "materials catalog", name: "Materiais", purpose: "Painéis, bordos, texturas", page: "/pt-pt/funcionalidades/materiais/", status: "coberto" },
@@ -78,14 +78,14 @@ const items = [
   { id: "domain-buttons", kind: "domain", codeRef: "UI buttons catalog", name: "Botões / controlos UI", purpose: "Catálogo de ações", page: "/pt-pt/referencia/botoes/", status: "coberto" },
   { id: "domain-architecture", kind: "domain", codeRef: "modules.js flow", name: "Arquitetura / fluxo", purpose: "Fluxo de módulos", page: "/pt-pt/como-funciona/", status: "coberto" },
 
-  // —— Sistemas ——
+  // --- Sistemas ---
   { id: "sys-trak", kind: "system", codeRef: "data/systems.js:pimo-trak", name: "PIMO TRAK", purpose: "Ordens e tracking", page: "/pt-pt/sistemas-pimo/pimo-trak/", status: "parcial" },
   { id: "sys-projetos", kind: "system", codeRef: "data/systems.js:pimo-projetos", name: "PIMO PROJETOS", purpose: "Hierarquia de projeto", page: "/pt-pt/sistemas-pimo/pimo-projetos/", status: "coberto" },
   { id: "sys-nesting", kind: "system", codeRef: "data/systems.js:pimo-nesting", name: "PIMO NESTING", purpose: "Nesting dedicado", page: "/pt-pt/sistemas-pimo/pimo-nesting/", status: "coberto" },
   { id: "sys-industrial", kind: "system", codeRef: "data/systems.js:pimo-industrial", name: "PIMO INDUSTRIAL", purpose: "Módulo industrial", page: "/pt-pt/sistemas-pimo/pimo-industrial/", status: "parcial" },
   { id: "sys-drill", kind: "system", codeRef: "data/systems.js:pimo-drill", name: "PIMO DRILL", purpose: "Furação", page: "/pt-pt/sistemas-pimo/pimo-drill/", status: "em-desenvolvimento" },
 
-  // —— Ecossistema / mini-sites ——
+  // --- Ecossistema / mini-sites ---
   { id: "eco-pt", kind: "ecosystem", codeRef: "data/sites.js:pimo-pt", name: "pt.pimo.info / pimo.pt", purpose: "Landing loja", page: "/sub/pt/", status: "coberto" },
   { id: "eco-pro", kind: "ecosystem", codeRef: "data/sites.js:pimo-pro", purpose: "Landing app", name: "pro.pimo.info / pimo.pro", page: "/sub/pro/", status: "coberto" },
   { id: "eco-es", kind: "ecosystem", codeRef: "data/sites.js:pimo-es", name: "es.pimo.info / pimo.es", purpose: "Landing ES (redirect pimo.pt)", page: "/sub/es/", status: "coberto" },

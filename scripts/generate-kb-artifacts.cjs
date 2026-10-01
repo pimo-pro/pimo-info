@@ -223,13 +223,13 @@ function main() {
     "",
     "## Features",
     ...features.map(
-      (f) => `- ${f.name} [${f.status}] ${site.url}${f.canonicalPath} — ${f.summary}`
+      (f) => `- ${f.name} [${f.status}] ${site.url}${f.canonicalPath}, ${f.summary}`
     ),
     "",
     "## PIMO systems",
     ...pimoSystems.map(
       (s) =>
-        `- ${s.name} [${s.status}] ${site.url}${s.canonicalPath} — ${s.definition}`
+        `- ${s.name} [${s.status}] ${site.url}${s.canonicalPath}, ${s.definition}`
     ),
     "",
     `## UI buttons (${buttons.length})`,
@@ -241,7 +241,7 @@ function main() {
     "## Architecture modules",
     ...appModules.map(
       (m) =>
-        `- ${m.name}: in=[${m.inputs.join("; ")}] out=[${m.outputs.join("; ")}] depends=[${m.dependsOn.join(", ") || "—"}]`
+        `- ${m.name}: in=[${m.inputs.join("; ")}] out=[${m.outputs.join("; ")}] depends=[${m.dependsOn.join(", ") || "-"}]`
     ),
     "",
     "## Page index",
@@ -253,7 +253,7 @@ function main() {
   fs.writeFileSync(path.join(PUBLIC, "llms.txt"), llmsLines.join("\n"), "utf8")
 
   const fullParts = [
-    `# ${site.name} — full knowledge dump`,
+    `# ${site.name}, full knowledge dump`,
     `Generated: ${new Date().toISOString()}`,
     "",
     llmsLines.join("\n"),
@@ -268,10 +268,10 @@ function main() {
         `location: ${b.location}\n` +
         `action: ${b.action}\n` +
         `effects: ${b.effects}\n` +
-        `shortcut: ${b.shortcut || "—"}\n` +
-        `iconName: ${b.iconName || b.icon || "—"}\n` +
+        `shortcut: ${b.shortcut || "-"}\n` +
+        `iconName: ${b.iconName || b.icon || "-"}\n` +
         `sourceFile: ${b.sourceFile}\n` +
-        `featureIds: ${(b.featureIds || []).join(", ") || "—"}\n`
+        `featureIds: ${(b.featureIds || []).join(", ") || "-"}\n`
     ),
     "",
     "# Architecture modules",
@@ -283,7 +283,7 @@ function main() {
         `${m.summary}\n` +
         `inputs: ${m.inputs.join(" | ")}\n` +
         `outputs: ${m.outputs.join(" | ")}\n` +
-        `dependsOn: ${m.dependsOn.join(", ") || "—"}\n` +
+        `dependsOn: ${m.dependsOn.join(", ") || "-"}\n` +
         `sourceFiles: ${m.sourceFiles.join(", ")}\n`
     ),
     "",
