@@ -26,7 +26,7 @@ export function BlogIndex() {
                 <a href={p.href} className="pimo-blog-cover">
                   <img
                     src={p.coverImage}
-                    alt=""
+                    alt={p.imageAlt || p.title}
                     loading="lazy"
                     decoding="async"
                     width={640}
@@ -77,7 +77,7 @@ export function BlogPostHeader({ slug }) {
         <figure className="pimo-blog-cover-figure">
           <img
             src={post.coverImage}
-            alt={post.title}
+            alt={post.imageAlt || post.title}
             loading="eager"
             decoding="async"
             width={960}

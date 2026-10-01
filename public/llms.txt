@@ -112,7 +112,28 @@ Locale: pt-PT
 - Centro visual PIMO Info: https://pimo.info/
 - Centro de ajuda PIMO Criativo: https://pimo.info/pt-pt/
 - Blog: https://pimo.info/pt-pt/blog/
+- Automação no fabrico de mobiliário: do projeto à linha de produção: https://pimo.info/pt-pt/blog/posts/automacao-fabrico/
 - Bem-vindo ao blog PIMO: https://pimo.info/pt-pt/blog/posts/bem-vindo/
+- Comércio mundial de mobiliário: crescimento moderado e novos equilíbrios: https://pimo.info/pt-pt/blog/posts/comercio-mundial-moveis/
+- Contraplacado e aglomerado: como escolher o painel certo: https://pimo.info/pt-pt/blog/posts/contraplacado-aglomerado/
+- Cozinhas planeadas: do levantamento à montagem com projeto coerente: https://pimo.info/pt-pt/blog/posts/cozinhas-planeadas/
+- Exportação CNC: TCN e Drill XML na prática: https://pimo.info/pt-pt/blog/posts/exportacao-cnc-ficheiros/
+- Fabrico digital em 2026: tendências qualitativas para a madeira: https://pimo.info/pt-pt/blog/posts/fabrico-digital-2026/
+- Ferragens Hettich no projeto de mobiliário: sistemas que o PIMO ajuda a especificar: https://pimo.info/pt-pt/blog/posts/ferragens-hettich/
+- Furação industrial no mobiliário: da peça ao ficheiro para a máquina: https://pimo.info/pt-pt/blog/posts/furacao-industrial/
+- Inteligência artificial na carpintaria e no desenho de mobiliário: https://pimo.info/pt-pt/blog/posts/ia-carpintaria/
+- Lista de corte e gestão de resíduos: do projeto à chapa com menos desperdício: https://pimo.info/pt-pt/blog/posts/lista-corte-residuos/
+- Madeiras maciças no mobiliário: espécies, estabilidade e projeto digital: https://pimo.info/pt-pt/blog/posts/madeiras-macicas/
+- Materiais de cozinha: durabilidade na carcaça e nas frentes: https://pimo.info/pt-pt/blog/posts/materiais-cozinhas/
+- MDF: guia prático para carpintaria e mobiliário: https://pimo.info/pt-pt/blog/posts/mdf-guia-pratico/
+- Melamina e painéis decorativos: escolher, cortar e orçamentar com rigor: https://pimo.info/pt-pt/blog/posts/melamina-paineis/
+- Nesting CNC: optimizar chapas, reduzir desperdício e ligar ao projeto: https://pimo.info/pt-pt/blog/posts/nesting-cnc/
+- Orlagem de bordos: acabamento, precisão e ligação ao projeto digital: https://pimo.info/pt-pt/blog/posts/orlagem-bordos/
+- PIMO TRAK: rastrear peças da exportação à montagem: https://pimo.info/pt-pt/blog/posts/pimo-trak-rastreio/
+- Regras de fabrico para portas e gavetas: https://pimo.info/pt-pt/blog/posts/portas-gavetas-fabrico/
+- A profissão de carpinteiro em 2026: oficina, digital e mobiliário sob medida: https://pimo.info/pt-pt/blog/posts/profissao-carpinteiro/
+- Software de design 3D para marcenaria: o que procurar e como o PIMO se encaixa: https://pimo.info/pt-pt/blog/posts/software-design-3d/
+- Sustentabilidade na madeira e no mobiliário: certificação, resíduos e escolhas de projeto: https://pimo.info/pt-pt/blog/posts/sustentabilidade-madeira/
 - Como funciona: https://pimo.info/pt-pt/como-funciona/
 - Contacto: https://pimo.info/pt-pt/contacto/
 - Documentação técnica: https://pimo.info/pt-pt/documentacao-tecnica/

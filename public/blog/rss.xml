@@ -12,7 +12,175 @@
       <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/bem-vindo/</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
       <description>Infraestrutura do blog do centro de ajuda PIMO Info — formato, RSS e fontes.</description>
-      <author>PIMO Info</author>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Fabrico digital em 2026: tendências qualitativas para a madeira</title>
+      <link>https://pimo.info/pt-pt/blog/posts/fabrico-digital-2026/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/fabrico-digital-2026/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Parametrização, rastreio, exportação CNC e leitura de mercado — como preparar a fábrica sem hype estatístico.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Materiais de cozinha: durabilidade na carcaça e nas frentes</title>
+      <link>https://pimo.info/pt-pt/blog/posts/materiais-cozinhas/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/materiais-cozinhas/</guid>
+      <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Melaminas, lacados, compactos e madeiras — como escolher combinações que resistem ao uso diário e ao ambiente húmido.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Comércio mundial de mobiliário: crescimento moderado e novos equilíbrios</title>
+      <link>https://pimo.info/pt-pt/blog/posts/comercio-mundial-moveis/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/comercio-mundial-moveis/</guid>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Síntese dos dados CSIL sobre produção, exportações e consumo global em 2024–2026 — o que importa para fábricas e exportadores.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>PIMO TRAK: rastrear peças da exportação à montagem</title>
+      <link>https://pimo.info/pt-pt/blog/posts/pimo-trak-rastreio/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/pimo-trak-rastreio/</guid>
+      <pubDate>Mon, 07 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Etiquetas QR UEE v5, identificação por peça e acompanhamento industrial — o que já pode usar hoje na fábrica.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Exportação CNC: TCN e Drill XML na prática</title>
+      <link>https://pimo.info/pt-pt/blog/posts/exportacao-cnc-ficheiros/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/exportacao-cnc-ficheiros/</guid>
+      <pubDate>Mon, 24 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Como escolher formatos industriais, organizar ficheiros por espessura e evitar erros entre desenho PIMO e máquina.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Regras de fabrico para portas e gavetas</title>
+      <link>https://pimo.info/pt-pt/blog/posts/portas-gavetas-fabrico/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/portas-gavetas-fabrico/</guid>
+      <pubDate>Mon, 10 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Folgas, exclusividade, ferragens e validação antes da exportação — o que a fábrica precisa de respeitar em frentes de mobiliário.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Inteligência artificial na carpintaria e no desenho de mobiliário</title>
+      <link>https://pimo.info/pt-pt/blog/posts/ia-carpintaria/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/ia-carpintaria/</guid>
+      <pubDate>Mon, 27 Jul 2026 12:00:00 GMT</pubDate>
+      <description>Como a IA pode apoiar marceneiros e equipas de projeto — da ideação à produção — sem substituir o critério técnico.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Lista de corte e gestão de resíduos: do projeto à chapa com menos desperdício</title>
+      <link>https://pimo.info/pt-pt/blog/posts/lista-corte-residuos/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/lista-corte-residuos/</guid>
+      <pubDate>Mon, 13 Jul 2026 12:00:00 GMT</pubDate>
+      <description>Como consolidar peças no PIMO, optimizar utilização de painéis e organizar retalhos para nesting e custos reais.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Sustentabilidade na madeira e no mobiliário: certificação, resíduos e escolhas de projeto</title>
+      <link>https://pimo.info/pt-pt/blog/posts/sustentabilidade-madeira/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/sustentabilidade-madeira/</guid>
+      <pubDate>Mon, 29 Jun 2026 12:00:00 GMT</pubDate>
+      <description>Como a gestão florestal certificada, o desperdício de corte e os materiais no PIMO se ligam a decisões mais sustentáveis na marcenaria.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Automação no fabrico de mobiliário: do projeto à linha de produção</title>
+      <link>https://pimo.info/pt-pt/blog/posts/automacao-fabrico/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/automacao-fabrico/</guid>
+      <pubDate>Mon, 15 Jun 2026 12:00:00 GMT</pubDate>
+      <description>Como a automação reduz erros e tempos mortos na marcenaria industrial — e que papel têm PIMO Industrial, PIMO-TRAK e o módulo industrial.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Software de design 3D para marcenaria: o que procurar e como o PIMO se encaixa</title>
+      <link>https://pimo.info/pt-pt/blog/posts/software-design-3d/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/software-design-3d/</guid>
+      <pubDate>Mon, 01 Jun 2026 12:00:00 GMT</pubDate>
+      <description>Critérios para escolher ferramentas de modelação 3D no mobiliário por medida — e relação com o configurador 3D do PIMO Criativo.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Ferragens Hettich no projeto de mobiliário: sistemas que o PIMO ajuda a especificar</title>
+      <link>https://pimo.info/pt-pt/blog/posts/ferragens-hettich/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/ferragens-hettich/</guid>
+      <pubDate>Mon, 18 May 2026 12:00:00 GMT</pubDate>
+      <description>Como as ferragens Hettich — gavetas, dobradiças e sistemas de portas — se integram no desenho e na produção quando o projeto vive no PIMO Criativo.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Orlagem de bordos: acabamento, precisão e ligação ao projeto digital</title>
+      <link>https://pimo.info/pt-pt/blog/posts/orlagem-bordos/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/orlagem-bordos/</guid>
+      <pubDate>Mon, 04 May 2026 12:00:00 GMT</pubDate>
+      <description>Porque a orlagem importa na durabilidade e no aspeto dos móveis — e como alinhar materiais, lista de corte e produção no PIMO.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Furação industrial no mobiliário: da peça ao ficheiro para a máquina</title>
+      <link>https://pimo.info/pt-pt/blog/posts/furacao-industrial/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/furacao-industrial/</guid>
+      <pubDate>Mon, 20 Apr 2026 12:00:00 GMT</pubDate>
+      <description>Como a furação industrial liga o projeto ao chão de fábrica — sistemas CNC, Drill XML e o papel do PIMO DRILL no ecossistema PIMO.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Nesting CNC: optimizar chapas, reduzir desperdício e ligar ao projeto</title>
+      <link>https://pimo.info/pt-pt/blog/posts/nesting-cnc/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/nesting-cnc/</guid>
+      <pubDate>Mon, 06 Apr 2026 12:00:00 GMT</pubDate>
+      <description>Princípios de nesting em painéis, margens de segurança, ordem de corte e integração com listas exportadas do PIMO.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Cozinhas planeadas: do levantamento à montagem com projeto coerente</title>
+      <link>https://pimo.info/pt-pt/blog/posts/cozinhas-planeadas/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/cozinhas-planeadas/</guid>
+      <pubDate>Mon, 23 Mar 2026 12:00:00 GMT</pubDate>
+      <description>Etapas para desenhar cozinhas sob medida, escolher materiais e ferragens, e evitar erros entre loja, oficina e obra.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>A profissão de carpinteiro em 2026: oficina, digital e mobiliário sob medida</title>
+      <link>https://pimo.info/pt-pt/blog/posts/profissao-carpinteiro/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/profissao-carpinteiro/</guid>
+      <pubDate>Mon, 09 Mar 2026 12:00:00 GMT</pubDate>
+      <description>Competências que o mercado pede a marceneiros e carpinteiros em Portugal, da bancada ao projeto 3D e à produção CNC.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Madeiras maciças no mobiliário: espécies, estabilidade e projeto digital</title>
+      <link>https://pimo.info/pt-pt/blog/posts/madeiras-macicas/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/madeiras-macicas/</guid>
+      <pubDate>Mon, 23 Feb 2026 12:00:00 GMT</pubDate>
+      <description>Quando escolher madeira maciça, como gerir humidade e junções, e como documentar espécies e desperdício no fluxo PIMO.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Melamina e painéis decorativos: escolher, cortar e orçamentar com rigor</title>
+      <link>https://pimo.info/pt-pt/blog/posts/melamina-paineis/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/melamina-paineis/</guid>
+      <pubDate>Mon, 09 Feb 2026 12:00:00 GMT</pubDate>
+      <description>Como funcionam os painéis melamínicos, que acabamentos pedem cozinhas e roupeiros, e como manter materiais e lista de corte alinhados no PIMO.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>Contraplacado e aglomerado: como escolher o painel certo</title>
+      <link>https://pimo.info/pt-pt/blog/posts/contraplacado-aglomerado/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/contraplacado-aglomerado/</guid>
+      <pubDate>Mon, 26 Jan 2026 12:00:00 GMT</pubDate>
+      <description>Diferenças entre contraplacado e aglomerado em estrutura, humidade e custo, e como reflectir a escolha no PIMO.</description>
+      <author>Equipa PIMO</author>
+    </item>
+    <item>
+      <title>MDF: guia prático para carpintaria e mobiliário</title>
+      <link>https://pimo.info/pt-pt/blog/posts/mdf-guia-pratico/</link>
+      <guid isPermaLink="true">https://pimo.info/pt-pt/blog/posts/mdf-guia-pratico/</guid>
+      <pubDate>Mon, 12 Jan 2026 12:00:00 GMT</pubDate>
+      <description>O que é o MDF, onde usar em carcaças e frentes, limitações em humidade e como registar o material no fluxo de projeto PIMO.</description>
+      <author>Equipa PIMO</author>
     </item>
   </channel>
 </rss>

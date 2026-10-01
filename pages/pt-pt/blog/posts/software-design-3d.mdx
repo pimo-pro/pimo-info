@@ -1,0 +1,104 @@
+---
+title: "Software de design 3D para marcenaria: o que procurar e como o PIMO se encaixa"
+description: "Critérios para escolher ferramentas de modelação 3D no mobiliário por medida — e relação com o configurador 3D do PIMO Criativo."
+date: 2026-06-01
+author: Equipa PIMO
+category: tecnico
+tags:
+  - design-3d
+  - marcenaria
+  - configurador
+  - software
+image: /blog/images/software-design-3d/cover.webp
+imageAlt: "Pessoa a trabalhar num computador portátil em ambiente técnico"
+imageCredit: "Unsplash / ThisisEngineering RAEng · Unsplash License · https://unsplash.com/photos/person-using-laptop-computer-Q4g0Q-eVWOg"
+coverImage: /blog/images/software-design-3d/cover.webp
+coverCredit: "Unsplash / ThisisEngineering RAEng · Unsplash License · https://unsplash.com/photos/person-using-laptop-computer-Q4g0Q-eVWOg"
+related:
+  - /pt-pt/funcionalidades/configurador-3d/
+  - /pt-pt/como-funciona/
+  - /pt-pt/primeiros-passos/
+sources:
+  - title: Configurador 3D — PIMO Criativo
+    url: https://pimo.info/pt-pt/funcionalidades/configurador-3d/
+  - title: Como funciona o ecossistema PIMO
+    url: https://pimo.info/pt-pt/como-funciona/
+  - title: Primeiros passos no help center
+    url: https://pimo.info/pt-pt/primeiros-passos/
+draft: false
+lastUpdated: 2026-06-01
+---
+
+import { BlogPostHeader, BlogPostSources } from "../../../../components/BlogSections"
+
+<BlogPostHeader slug="software-design-3d" />
+
+Desenhar móveis em 2D no CAD genérico ainda funciona para algumas oficinas — mas clientes, retalhistas e fábricas pedem cada vez mais **visualização 3D**, listas de peças automáticas e ligação ao orçamento. O mercado oferece desde modeladores livres até suites industriais; para marcenaria e mobiliário por medida, o critério não é «o software mais bonito», mas o que reduz retrabalho entre venda, engenharia e produção.
+
+Este artigo resume o que avaliar ao escolher software de design 3D para carpintaria e mobiliário, e como o [configurador 3D](/pt-pt/funcionalidades/configurador-3d/) do PIMO Criativo se insere num fluxo documentado em [Como funciona](/pt-pt/como-funciona/) e nos [Primeiros passos](/pt-pt/primeiros-passos/).
+
+## Modelação livre versus configurador paramétrico
+
+Ferramentas de modelação 3D de propósito geral (Blender, SketchUp, soluções de CAD mecânico) permitem formas arbitrárias. São excelentes para conceito arquitetónico ou peças únicas, mas raramente geram sozinhas:
+
+- Lista de corte com espessuras de chapa reais.
+- Regras de ferragem e furação repetíveis.
+- Nesting e exportação para CNC no formato da fábrica.
+
+Um **configurador paramétrico** parte de módulos, caixas e bibliotecas de materiais. O projetista altera larguras e alturas dentro de regras; o sistema recalcula peças, frentes e custos. É o modelo que a maioria das cozinhas e roupeiros embutidos exige — não escultura manual de cada painel.
+
+O [configurador 3D](/pt-pt/funcionalidades/configurador-3d/) do PIMO pertence a esta segunda família: workspace orientado ao mobiliário, integrado com materiais, portas, gavetas e saídas de produção.
+
+## Critérios de escolha para uma empresa de mobiliário
+
+### Ligação ao fluxo de produção
+
+O desenho 3D deve alimentar a [lista de corte](/pt-pt/funcionalidades/lista-de-corte/), o [nesting](/pt-pt/funcionalidades/nesting-fast-pro/) e as exportações técnicas (PDF, TCN, Drill XML, etiquetas). Software que só exporta imagens bonitas para o cliente deixa a engenharia a refazer tudo noutro sistema.
+
+### Biblioteca de materiais e custos
+
+[Materiais](/pt-pt/funcionalidades/materiais/) no PIMO impactam o aspeto 3D e o resumo financeiro. Ao comparar ferramentas, verifique se a biblioteca é editável pela empresa e se reflete preços por metro quadrado ou por chapa — não apenas texturas.
+
+### Ferragens e portas
+
+Sistemas de gaveta e dobradiça impõem geometria. A área [Portas e gavetas](/pt-pt/funcionalidades/portas-e-gavetas/) e [Ferragens](/pt-pt/funcionalidades/ferragens/) devem estar no mesmo produto que o 3D, não numa folha Excel paralela.
+
+### Colaboração e revisões
+
+Projetos evoluem após medição em obra. Importa histórico de alterações, partilha com cliente e exportação consolidada (ZIP de produção nos guias de exportação).
+
+### Curva de aprendizagem
+
+Equipas mistas — vendas, desenho, fábrica — precisam de [primeiros passos](/pt-pt/primeiros-passos/) claros e documentação em português. Complexidade excessiva no modelador livre atrasa a adoção.
+
+## Onde o CAD tradicional ainda faz sentido
+
+Peças de autor, marcenaria artística ou integração com maquinaria não padronizada podem exigir CAD 2D/3D externo. Estratégias híbridas passam por definir o grosso do projeto no PIMO e exportar DXF ou PDF para operações pontuais — sempre com cuidado para não divergir versões.
+
+O help center descreve a arquitetura global: projeto → módulos → peças → materiais → lista de corte → nesting → exportações → orçamento → acompanhamento industrial. O 3D é o centro visível desse pipeline, não um fim em si.
+
+## Visualização para o cliente
+
+Modo foto, salas e ambientes (funcionalidades documentadas no help center) ajudam a fechar vendas. Mas a promessa ao cliente deve ser executável: o mesmo modelo que aparece na reunião é o que gera a chapa na serra. Desalinhamento entre «render de venda» e «ficheiro de fábrica» destrói confiança.
+
+## Performance e hardware
+
+Modelação 3D em navegador ou aplicação desktop exige máquinas razoáveis e ligação estável quando o trabalho é na nuvem. Para equipas em crescimento, padronizar postos de projeto evita que um portátil antigo bloqueie a adoção do configurador.
+
+## Segurança e dados do projeto
+
+Orçamentos e desenhos são ativos comerciais. Contas, acesso e definições de projeto (ver funcionalidades de conta e definições) devem fazer parte da avaliação — especialmente se vários utilizadores editam o mesmo cliente.
+
+## Implementação na prática
+
+1. Mapear o fluxo atual desde a medição até à montagem.
+2. Escolher um projeto piloto real (cozinha ou roupeiro médio).
+3. Percorrer [Primeiros passos](/pt-pt/primeiros-passos/) e gerar lista de corte e PDF técnico.
+4. Validar na fábrica antes de mudar todos os clientes.
+5. Formar vendas para não prometer geometrias fora das regras do configurador.
+
+## Conclusão
+
+Software de design 3D para marcenaria não é sinónimo de «qualquer modelador 3D». É a peça que une cliente, custo e CNC. O [configurador 3D](/pt-pt/funcionalidades/configurador-3d/) do PIMO foi pensado para esse encaixe, dentro de um ecossistema descrito em [Como funciona](/pt-pt/como-funciona/). Avaliar alternativas com os mesmos critérios — produção, materiais, ferragens e exportação — mantém a decisão honesta e orientada ao chão de fábrica.
+
+<BlogPostSources slug="software-design-3d" />

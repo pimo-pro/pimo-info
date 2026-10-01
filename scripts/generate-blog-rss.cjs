@@ -99,6 +99,15 @@ function main() {
       description: data.description || "",
       date: data.date || "1970-01-01",
       author: data.author || "PIMO Info",
+      category: data.category || "",
+      tags: Array.isArray(data.tags) ? data.tags : [],
+      coverImage: data.coverImage || data.image || "",
+      coverCredit: data.coverCredit || data.imageCredit || "",
+      imageAlt: data.imageAlt || data.title || slug,
+      sources: Array.isArray(data.sources) ? data.sources : [],
+      draft: data.draft === true,
+      lastUpdated: data.lastUpdated || data.date || "",
+      href: `/pt-pt/blog/posts/${slug}/`,
     })
   }
   posts.sort((a, b) => b.date.localeCompare(a.date))
@@ -136,8 +145,19 @@ ${items}
       {
         generatedAt: new Date().toISOString(),
         posts: posts.map((p) => ({
-          ...p,
-          href: `/pt-pt/blog/posts/${p.slug}/`,
+          slug: p.slug,
+          href: p.href,
+          title: p.title,
+          description: p.description,
+          date: p.date,
+          author: p.author,
+          category: p.category,
+          tags: p.tags,
+          coverImage: p.coverImage,
+          coverCredit: p.coverCredit,
+          imageAlt: p.imageAlt,
+          sources: p.sources,
+          lastUpdated: p.lastUpdated,
         })),
       },
       null,

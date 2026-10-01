@@ -1,0 +1,93 @@
+---
+title: "Regras de fabrico para portas e gavetas"
+description: "Folgas, exclusividade, ferragens e validação antes da exportação — o que a fábrica precisa de respeitar em frentes de mobiliário."
+date: 2026-08-10
+author: Equipa PIMO
+category: guias
+tags:
+  - portas
+  - gavetas
+  - fabrico
+  - ferragens
+image: /blog/images/portas-gavetas-fabrico/cover.webp
+imageAlt: "Armário de cozinha com portas e gavetas em madeira clara"
+imageCredit: "Unsplash / Sidekix Media · Unsplash License · https://unsplash.com/photos/white-and-brown-wooden-kitchen-cabinet-2ez9xmIyaMc"
+coverImage: /blog/images/portas-gavetas-fabrico/cover.webp
+coverCredit: "Unsplash / Sidekix Media · Unsplash License · https://unsplash.com/photos/white-and-brown-wooden-kitchen-cabinet-2ez9xmIyaMc"
+related:
+  - /pt-pt/funcionalidades/portas-e-gavetas/
+  - /pt-pt/guias-utilizador/portas-e-gavetas/
+  - /pt-pt/funcionalidades/ferragens/
+sources:
+  - title: Portas e Gavetas — funcionalidade
+    url: https://pimo.info/pt-pt/funcionalidades/portas-e-gavetas/
+  - title: Guia — configurar portas e gavetas
+    url: https://pimo.info/pt-pt/guias-utilizador/portas-e-gavetas/
+  - title: Ferragens — PIMO Info
+    url: https://pimo.info/pt-pt/funcionalidades/ferragens/
+draft: false
+lastUpdated: 2026-08-10
+---
+
+import { BlogPostHeader, BlogPostSources } from "../../../../components/BlogSections"
+
+<BlogPostHeader slug="portas-gavetas-fabrico" />
+
+Portas e gavetas são a face visível do mobiliário — e também onde **folgas erradas**, **ferragens incompatíveis** ou **interferências com módulos vizinhos** se manifestam primeiro. Num fluxo digital como o PIMO, muitas regras são aplicadas automaticamente no desenho; na fábrica, o desafio é garantir que **o que foi exportado** corresponde ao **critério industrial** da empresa e ao **manual do fornecedor de ferragens**.
+
+Este guia resume práticas de fabrico alinhadas com a documentação do centro de ajuda, para equipas de corte, furação, lacagem e montagem.
+
+## Exclusividade no mesmo módulo
+
+No PIMO, **portas e gavetas são mutuamente exclusivas** numa mesma caixa: ao activar gavetas, as portas desse módulo são removidas automaticamente, e vice-versa. Isto reflecte a realidade construtiva — não se fabrica uma porta basculante e três gavetas na mesma abertura sem soluções especiais.
+
+Para a fábrica, a implicação é simples: **cada módulo na lista de peças** deve bater certo com o tipo de frente do projeto. Se alguém alterar manualmente uma peça «à mão» no CAD ou na CNC, pode criar um conjunto impossível de montar. Antes de iniciar produção, confirme no relatório ou na pré-visualização 3D o tipo de frente por módulo, seguindo o [guia de portas e gavetas](/pt-pt/guias-utilizador/portas-e-gavetas/).
+
+## Folgas e dimensões de frente
+
+Folgas entre porta e carcaça, entre gavetas adjacentes, ou entre frente e tampo, não são estética arbitrária: compensam **variações de lacagem**, **ajuste de dobradiças** e **expansão da madeira**. O sistema calcula folgas segundo regras internas quando configura [portas e gavetas](/pt-pt/funcionalidades/portas-e-gavetas/); alterar espessuras de frente ou materiais sem recalcular o projeto arrisca portas que «mordem» ou gavetas que falham o alinhamento.
+
+Na produção:
+
+- Respeite a **espessura de frente** definida no projeto (melamina, MDF lacado, maciço).
+- Após lacagem ou folheação, **não assuma** que a folga nominal se mantém — faça amostras quando mudar fornecedor de acabamento.
+- Registe desvios sistemáticos para retroalimentar o desenho na próxima encomenda.
+
+## Ferragens derivadas do desenho
+
+Dobradiças, corrediças, calços e fixações entram no cálculo conforme a configuração activa, como descrito na página de [ferragens](/pt-pt/funcionalidades/ferragens/). A fábrica deve tratar a **lista de ferragens exportada** como parte do BOM: trocar uma corrediça por outra de curso ou fixação diferente exige validação mecânica, não apenas «cabem na caixa».
+
+Boas práticas:
+
+- Separar kits de ferragem **por módulo** ou por ambiente, conforme o vosso método de embalagem.
+- Conferir **lateralidade** (portas direita/esquerda) antes de furação.
+- Guardar folhas de furação do fabricante alinhadas com o ficheiro Drill XML ou TCN gerado na [exportação](/pt-pt/guias-utilizador/exportacao/).
+
+## Gavetas: distribuição de alturas
+
+Quando se definem entre uma e quatro gavetas por módulo, o PIMO **distribui alturas** segundo regras internas. Operadores não devem serrar frentes «a olho» com base num desenho antigo se a quantidade de gavetas mudou no software — cada alteração reordena peças e furos.
+
+Se a vossa linha usa corrediças com **altura mínima de gaveta**, valide no configurador antes de exportar; corrigir só na montagem gera furos deslocados e retrabalho caro.
+
+## Portas duplas e aberturas
+
+Portas simples versus duplas afectam larguras de peças, número de dobradiças e possíveis encontros ao centro. Use a **animação de abertura** no desenho para detectar colisões com colunas, eletrodomésticos ou módulos altos adjacentes, como recomendado no guia de utilizador.
+
+Na fábrica, marque peças **pares de portas** que devem ser montadas em simultâneo para garantir simetria de folgas; pequenas diferenças de corte amplificam-se visivelmente em frentes altas.
+
+## Sequência recomendada antes do CNC
+
+1. Revisar tipo de frente por módulo (porta / gavetas / sem frente).
+2. Validar materiais de frente versus carcaça na [gestão de materiais](/pt-pt/guias-utilizador/materiais/).
+3. Exportar lista de corte, furação e PDF técnico num único fluxo.
+4. Aplicar [etiquetas PIMO-TRAK](/pt-pt/guias-utilizador/pimo-trak/) após corte, se usarem rastreio por peça.
+
+## Montagem e pós-venda
+
+Na montagem, a ordem importa: **carcaça nivelada**, depois ferragens fixas à caixa, por fim frentes reguladas. Documente folgas finais aceites pela empresa (por exemplo, uniformidade entre gavetas de um mesmo bloco). Fotografias de referência por projeto ajudam equipas externas a replicar o padrão de qualidade.
+
+## Conclusão
+
+Regras de fabrico para portas e gavetas são a ponte entre **automação no desenho** e **execução manual na oficina**. Aproveitar a exclusividade automática, ferragens derivadas e validação de abertura no PIMO reduz erros; a fábrica completa o ciclo com disciplina na lacagem, na furação e na conferência de kits. Para detalhe passo a passo no software, consulte [portas e gavetas](/pt-pt/funcionalidades/portas-e-gavetas/) e o [guia de utilizador](/pt-pt/guias-utilizador/portas-e-gavetas/).
+
+<BlogPostSources slug="portas-gavetas-fabrico" />

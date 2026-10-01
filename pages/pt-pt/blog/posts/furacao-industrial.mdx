@@ -1,0 +1,92 @@
+---
+title: "Furação industrial no mobiliário: da peça ao ficheiro para a máquina"
+description: "Como a furação industrial liga o projeto ao chão de fábrica — sistemas CNC, Drill XML e o papel do PIMO DRILL no ecossistema PIMO."
+date: 2026-04-20
+author: Equipa PIMO
+category: producao
+tags:
+  - furacao
+  - cnc
+  - pimo-drill
+  - producao
+image: /blog/images/furacao-industrial/cover.webp
+imageAlt: "Operador a segurar uma ferramenta elétrica industrial num ambiente de produção"
+imageCredit: "Unsplash / Monty Parker · Unsplash License · https://unsplash.com/photos/person-holding-black-power-tool-V-Qd6Voi7SM"
+coverImage: /blog/images/furacao-industrial/cover.webp
+coverCredit: "Unsplash / Monty Parker · Unsplash License · https://unsplash.com/photos/person-holding-black-power-tool-V-Qd6Voi7SM"
+related:
+  - /pt-pt/sistemas-pimo/pimo-drill/
+  - /pt-pt/funcionalidades/exportacao-tcn-drill-xml/
+  - /pt-pt/funcionalidades/estacoes-industriais/
+sources:
+  - title: PIMO DRILL — sistema de furação
+    url: https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/
+  - title: Exportação TCN e Drill XML
+    url: https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/
+  - title: Estações industriais no PIMO Criativo
+    url: https://pimo.info/pt-pt/funcionalidades/estacoes-industriais/
+draft: false
+lastUpdated: 2026-04-20
+---
+
+import { BlogPostHeader, BlogPostSources } from "../../../../components/BlogSections"
+
+<BlogPostHeader slug="furacao-industrial" />
+
+Na marcenaria e no mobiliário por medida, a furação deixa de ser um detalhe de montagem quando entra em escala industrial. Cada furo para dobradiça, minifix, pino ou sistema de gaveta tem de coincidir com o desenho, com a espessura real da chapa e com o programa que a centradeira ou a CNC vai executar. Um milímetro de desvio acumula-se em portas desalinhadas, frentes que raspam ou lotes inteiros rejeitados no controlo de qualidade.
+
+Este artigo explica o que significa furação industrial no contexto do mobiliário, como o projeto digital se transforma em instruções para a máquina e onde o ecossistema PIMO — em particular o [PIMO DRILL](/pt-pt/sistemas-pimo/pimo-drill/) e as [exportações TCN/Drill XML](/pt-pt/funcionalidades/exportacao-tcn-drill-xml/) — se posiciona nesse fluxo.
+
+## O que distingue a furação industrial
+
+Em obra ou em oficina artesanal, é comum marcar e furar à mão ou com gabaritos. Na produção seriada ou em fábricas que processam dezenas de módulos por dia, a furação é um processo repetível: coordenadas fixas, ferramentas calibradas e ficheiros que descrevem cada operação.
+
+A furação industrial abrange sobretudo:
+
+- **Furos de ferragem** — dobradiças embutidas, corrediças, suportes de prateleira e sistemas de fixação entre painéis.
+- **Usinagens combinadas** — furação associada a fresagens, rasgos ou operações em bordo, quando a máquina executa vários passos na mesma peça.
+- **Rastreabilidade** — saber qual projeto, qual versão da lista de corte e qual lote de chapa originou cada furo.
+
+O objetivo não é apenas «furar certo», mas **eliminar reinterpretação manual** entre o escritório de projeto e o operador da máquina.
+
+## Do modelo 3D à lista de operações
+
+No PIMO Criativo, o caminho habitual começa no configurador e nas regras de ferragens e portas. Quando o módulo está definido, as peças passam para a [lista de corte](/pt-pt/funcionalidades/lista-de-corte/) com dimensões em milímetros. A furação não é um desenho à parte: deriva das mesmas entidades que alimentam o orçamento e o PDF técnico.
+
+Para o chão de fábrica, interessa um **formato que a máquina ou o software da fábrica consiga ler**. No help center documenta-se a exportação de ficheiros **TCN** (`.tcn`) e **Drill XML** (`.xml`) a partir do menu **Arquivos CNC** — ver a página de [exportação TCN/Drill XML](/pt-pt/funcionalidades/exportacao-tcn-drill-xml/). Esses formatos fazem parte do vocabulário industrial real; a escolha entre um e outro depende do equipamento e do pós-processador instalado na empresa.
+
+Boas práticas antes de exportar:
+
+1. Confirmar espessuras e materiais ativos no projeto — a furação depende da geometria da peça.
+2. Rever ferragens e sistemas de gaveta no modelo, para que os furos gerados correspondam ao catálogo montado na fábrica.
+3. Agrupar exportações por espessura quando se usa o arquivo completo, alinhado com a organização por chapa no nesting.
+
+## Estações industriais e contexto de fábrica
+
+As [estações industriais](/pt-pt/funcionalidades/estacoes-industriais/) no PIMO permitem alinhar o projeto com o layout e os recursos da produção: que máquinas existem, que fluxos são esperados e como o escritório comunica com cada posto. A furação encaixa tipicamente após o corte (ou em linhas combinadas de corte e usinagem) e antes da orlagem ou da montagem.
+
+Quando várias encomendas partilham a mesma chapa otimizada no nesting, a furação tem de respeitar a orientação da peça na máquina — outro motivo para não tratar o ficheiro de furação como um anexo opcional do DXF de corte.
+
+## PIMO DRILL: furação com interface dedicada
+
+O [PIMO DRILL](/pt-pt/sistemas-pimo/pimo-drill/) é o sistema próprio de furação do ecossistema industrial PIMO, com interface em 2D e 3D, em evolução no produto industrial em [pimo.pro](https://pimo.pro/industrial/pimo-drill). A ideia é concentrar a experiência de preparar, visualizar e validar operações de furação no mesmo universo que o projeto de mobiliário, em vez de duplicar trabalho em softwares desconectados.
+
+Para equipas que já exportam Drill XML a partir do PIMO Criativo, o DRILL representa o passo seguinte: um ambiente onde a lógica de furação é primeira classe, não apenas um ficheiro gerado no fim do fluxo. A documentação no help center será atualizada à medida que o sistema atinge marcos de implementação; consulte sempre a página oficial do sistema para o estado atual.
+
+## Erros frequentes e como evitá-los
+
+**Versão de projeto desatualizada.** Exportar furação de um ZIP guardado na semana passada enquanto o cliente alterou frentes ontem é uma das causas mais comuns de retrabalho. Trabalhe sempre a partir da revisão acordada e registe a data no relatório final.
+
+**Ferragem trocada sem atualizar o modelo.** Substituir uma dobradiça por outra com padrão de furação diferente, apenas na montagem, invalida o ficheiro CNC. A correção pertence ao projeto, não ao operador.
+
+**Ignorar o sentido de veio ou face.** Em melaminas e folheados, a face de referência para furação deve ser consistente com a lista de corte e com as etiquetas de produção.
+
+**Misturar unidades ou origens de coordenadas.** Manter o projeto inteiro em milímetros e seguir o glossário PIMO para termos de exportação reduz fricção com fornecedores externos.
+
+## Integração com o resto do fluxo PIMO
+
+A furação industrial não vive isolada. Liga-se ao [como funciona](/pt-pt/como-funciona/) o fluxo global — projeto, peças, materiais, lista de corte, nesting, exportações e acompanhamento em sistemas como o PIMO-TRAK. Um ficheiro de furação correto poupa tempo no corte, na orlagem e na montagem; um ficheiro errado custa caro precisamente porque a máquina executa rápido.
+
+Se a sua oficina está a dar o salto de gabaritos manuais para CNC de furação, comece por documentar qual formato a máquina aceita, alinhe isso com a [exportação TCN/Drill XML](/pt-pt/funcionalidades/exportacao-tcn-drill-xml/) e use o projeto PIMO como fonte única de verdade. A furação deixa de ser arte e passa a ser engenharia repetível — que é o que a produção industrial exige.
+
+<BlogPostSources slug="furacao-industrial" />

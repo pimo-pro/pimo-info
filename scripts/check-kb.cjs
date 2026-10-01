@@ -16,6 +16,7 @@ const REQUIRED = ["title", "description", "category", "tags", "related", "lastUp
 const ALLOWED_CATEGORIES = new Set([
   "hub",
   "guia",
+  "guias",
   "funcionalidade",
   "ecossistema",
   "tecnico",
