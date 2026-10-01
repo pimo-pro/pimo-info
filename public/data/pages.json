@@ -1,11 +1,12 @@
 {
-  "generatedAt": "2026-10-01T03:00:09.252Z",
+  "generatedAt": "2026-10-01T03:03:20.552Z",
   "items": [
     {
       "path": "/",
       "file": "pages/index.mdx",
       "title": "Centro visual PIMO Info",
       "description": "Centro visual de ajuda e base de conhecimento do PIMO Criativo.",
+      "author": "",
       "category": "hub",
       "tags": [
         "hub",
@@ -25,6 +26,7 @@
       "file": "pages/about.mdx",
       "title": "About",
       "description": "Página legada em inglês; o conteúdo canónico está em /pt-pt/.",
+      "author": "",
       "category": "legacy",
       "tags": [
         "legacy",
@@ -41,6 +43,7 @@
       "file": "pages/ajuda.mdx",
       "title": "Ajuda",
       "description": "Página legada em inglês; o conteúdo canónico está em /pt-pt/.",
+      "author": "",
       "category": "legacy",
       "tags": [
         "legacy",
@@ -57,6 +60,7 @@
       "file": "pages/contact.mdx",
       "title": "Contact",
       "description": "Contact.",
+      "author": "",
       "category": "contacto",
       "tags": [
         "contacto"
@@ -70,6 +74,7 @@
       "file": "pages/docs.mdx",
       "title": "Docs",
       "description": "Página legada em inglês; o conteúdo canónico está em /pt-pt/.",
+      "author": "",
       "category": "legacy",
       "tags": [
         "legacy",
@@ -86,6 +91,7 @@
       "file": "pages/ecosystem.mdx",
       "title": "Ecosystem",
       "description": "Página legada em inglês; o conteúdo canónico está em /pt-pt/.",
+      "author": "",
       "category": "legacy",
       "tags": [
         "legacy",
@@ -102,6 +108,7 @@
       "file": "pages/pt-pt/index.mdx",
       "title": "Centro de ajuda PIMO Criativo",
       "description": "Centro de ajuda PIMO Criativo.",
+      "author": "",
       "category": "hub",
       "tags": [
         "ajuda"
@@ -115,6 +122,7 @@
       "file": "pages/pt-pt/blog/index.mdx",
       "title": "Blog",
       "description": "Artigos e novidades do ecossistema PIMO, guias, produto e produção.",
+      "author": "",
       "category": "blog",
       "tags": [
         "blog",
@@ -132,6 +140,7 @@
       "file": "pages/pt-pt/blog/posts/automacao-fabrico.mdx",
       "title": "Automação no fabrico de mobiliário: do projeto à linha de produção",
       "description": "Como a automação reduz erros e tempos mortos na marcenaria industrial, e que papel têm PIMO Industrial, PIMO-TRAK e o módulo industrial.",
+      "author": "Khaled",
       "category": "producao",
       "tags": [
         "automacao",
@@ -152,6 +161,7 @@
       "file": "pages/pt-pt/blog/posts/comercio-mundial-moveis.mdx",
       "title": "Comércio mundial de mobiliário: crescimento moderado e novos equilíbrios",
       "description": "Síntese dos dados CSIL sobre produção, exportações e consumo global em 2024-2026, o que importa para fábricas e exportadores.",
+      "author": "Khaled",
       "category": "noticias",
       "tags": [
         "comercio-internacional",
@@ -172,6 +182,7 @@
       "file": "pages/pt-pt/blog/posts/contraplacado-aglomerado.mdx",
       "title": "Contraplacado e aglomerado: como escolher o painel certo",
       "description": "Diferenças entre contraplacado e aglomerado em estrutura, humidade e custo, e como reflectir a escolha no PIMO.",
+      "author": "Khaled",
       "category": "guias",
       "tags": [
         "contraplacado",
@@ -192,6 +203,7 @@
       "file": "pages/pt-pt/blog/posts/cozinhas-planeadas.mdx",
       "title": "Cozinhas planeadas: do levantamento à montagem com projeto coerente",
       "description": "Etapas para desenhar cozinhas sob medida, escolher materiais e ferragens, e evitar erros entre loja, oficina e obra.",
+      "author": "Khaled",
       "category": "guias",
       "tags": [
         "cozinhas",
@@ -212,6 +224,7 @@
       "file": "pages/pt-pt/blog/posts/exportacao-cnc-ficheiros.mdx",
       "title": "Exportação CNC: TCN e Drill XML na prática",
       "description": "Como escolher formatos industriais, organizar ficheiros por espessura e evitar erros entre desenho PIMO e máquina.",
+      "author": "Khaled",
       "category": "tecnico",
       "tags": [
         "cnc",
@@ -232,6 +245,7 @@
       "file": "pages/pt-pt/blog/posts/fabrico-digital-2026.mdx",
       "title": "Fabrico digital em 2026: tendências qualitativas para a madeira",
       "description": "Parametrização, rastreio, exportação CNC e leitura de mercado, como preparar a fábrica sem hype estatístico.",
+      "author": "Khaled",
       "category": "noticias",
       "tags": [
         "fabrico-digital",
@@ -252,6 +266,7 @@
       "file": "pages/pt-pt/blog/posts/ferragens-hettich.mdx",
       "title": "Ferragens Hettich no projeto de mobiliário: sistemas que o PIMO ajuda a especificar",
       "description": "Como as ferragens Hettich, gavetas, dobradiças e sistemas de portas, se integram no desenho e na produção quando o projeto vive no PIMO Criativo.",
+      "author": "Khaled",
       "category": "produto",
       "tags": [
         "ferragens",
@@ -271,6 +286,7 @@
       "file": "pages/pt-pt/blog/posts/furacao-industrial.mdx",
       "title": "Furação industrial no mobiliário: da peça ao ficheiro para a máquina",
       "description": "Como a furação industrial liga o projeto ao chão de fábrica, sistemas CNC, Drill XML e o papel do PIMO DRILL no ecossistema PIMO.",
+      "author": "Khaled",
       "category": "producao",
       "tags": [
         "furacao",
@@ -291,6 +307,7 @@
       "file": "pages/pt-pt/blog/posts/ia-carpintaria.mdx",
       "title": "Inteligência artificial na carpintaria e no desenho de mobiliário",
       "description": "Como a IA pode apoiar marceneiros e equipas de projeto, da ideação à produção, sem substituir o critério técnico.",
+      "author": "Khaled",
       "category": "tecnico",
       "tags": [
         "inteligencia-artificial",
@@ -311,6 +328,7 @@
       "file": "pages/pt-pt/blog/posts/lista-corte-residuos.mdx",
       "title": "Lista de corte e gestão de resíduos: do projeto à chapa com menos desperdício",
       "description": "Como consolidar peças no PIMO, optimizar utilização de painéis e organizar retalhos para nesting e custos reais.",
+      "author": "Khaled",
       "category": "tecnico",
       "tags": [
         "lista de corte",
@@ -331,6 +349,7 @@
       "file": "pages/pt-pt/blog/posts/madeiras-macicas.mdx",
       "title": "Madeiras maciças no mobiliário: espécies, estabilidade e projeto digital",
       "description": "Quando escolher madeira maciça, como gerir humidade e junções, e como documentar espécies e desperdício no fluxo PIMO.",
+      "author": "Khaled",
       "category": "guias",
       "tags": [
         "madeira",
@@ -351,6 +370,7 @@
       "file": "pages/pt-pt/blog/posts/materiais-cozinhas.mdx",
       "title": "Materiais de cozinha: durabilidade na carcaça e nas frentes",
       "description": "Melaminas, lacados, compactos e madeiras, como escolher combinações que resistem ao uso diário e ao ambiente húmido.",
+      "author": "Khaled",
       "category": "produto",
       "tags": [
         "cozinha",
@@ -371,6 +391,7 @@
       "file": "pages/pt-pt/blog/posts/mdf-guia-pratico.mdx",
       "title": "MDF: guia prático para carpintaria e mobiliário",
       "description": "O que é o MDF, onde usar em carcaças e frentes, limitações em humidade e como registar o material no fluxo de projeto PIMO.",
+      "author": "Khaled",
       "category": "guias",
       "tags": [
         "mdf",
@@ -391,6 +412,7 @@
       "file": "pages/pt-pt/blog/posts/melamina-paineis.mdx",
       "title": "Melamina e painéis decorativos: escolher, cortar e orçamentar com rigor",
       "description": "Como funcionam os painéis melamínicos, que acabamentos pedem cozinhas e roupeiros, e como manter materiais e lista de corte alinhados no PIMO.",
+      "author": "Khaled",
       "category": "guias",
       "tags": [
         "melamina",
@@ -411,6 +433,7 @@
       "file": "pages/pt-pt/blog/posts/nesting-cnc.mdx",
       "title": "Nesting CNC: optimizar chapas, reduzir desperdício e ligar ao projeto",
       "description": "Princípios de nesting em painéis, margens de segurança, ordem de corte e integração com listas exportadas do PIMO.",
+      "author": "Khaled",
       "category": "tecnico",
       "tags": [
         "nesting",
@@ -431,6 +454,7 @@
       "file": "pages/pt-pt/blog/posts/orlagem-bordos.mdx",
       "title": "Orlagem de bordos: acabamento, precisão e ligação ao projeto digital",
       "description": "Porque a orlagem importa na durabilidade e no aspeto dos móveis, e como alinhar materiais, lista de corte e produção no PIMO.",
+      "author": "Khaled",
       "category": "producao",
       "tags": [
         "orlagem",
@@ -451,6 +475,7 @@
       "file": "pages/pt-pt/blog/posts/pimo-trak-rastreio.mdx",
       "title": "PIMO TRAK: rastrear peças da exportação à montagem",
       "description": "Etiquetas QR UEE v5, identificação por peça e acompanhamento industrial, o que já pode usar hoje na fábrica.",
+      "author": "Khaled",
       "category": "producao",
       "tags": [
         "pimo-trak",
@@ -471,6 +496,7 @@
       "file": "pages/pt-pt/blog/posts/portas-gavetas-fabrico.mdx",
       "title": "Regras de fabrico para portas e gavetas",
       "description": "Folgas, exclusividade, ferragens e validação antes da exportação, o que a fábrica precisa de respeitar em frentes de mobiliário.",
+      "author": "Khaled",
       "category": "guias",
       "tags": [
         "portas",
@@ -491,6 +517,7 @@
       "file": "pages/pt-pt/blog/posts/profissao-carpinteiro.mdx",
       "title": "A profissão de carpinteiro em 2026: oficina, digital e mobiliário sob medida",
       "description": "Competências que o mercado pede a marceneiros e carpinteiros em Portugal, da bancada ao projeto 3D e à produção CNC.",
+      "author": "Khaled",
       "category": "noticias",
       "tags": [
         "carpintaria",
@@ -511,6 +538,7 @@
       "file": "pages/pt-pt/blog/posts/software-design-3d.mdx",
       "title": "Software de design 3D para marcenaria: o que procurar e como o PIMO se encaixa",
       "description": "Critérios para escolher ferramentas de modelação 3D no mobiliário por medida, e relação com o configurador 3D do PIMO Criativo.",
+      "author": "Khaled",
       "category": "tecnico",
       "tags": [
         "design-3d",
@@ -531,6 +559,7 @@
       "file": "pages/pt-pt/blog/posts/sustentabilidade-madeira.mdx",
       "title": "Sustentabilidade na madeira e no mobiliário: certificação, resíduos e escolhas de projeto",
       "description": "Como a gestão florestal certificada, o desperdício de corte e os materiais no PIMO se ligam a decisões mais sustentáveis na marcenaria.",
+      "author": "Khaled",
       "category": "ecossistema",
       "tags": [
         "sustentabilidade",
@@ -551,6 +580,7 @@
       "file": "pages/pt-pt/como-funciona.mdx",
       "title": "Como funciona",
       "description": "Arquitetura e fluxo do PIMO Criativo: projeto → módulos/caixas → peças → materiais → lista de corte → nesting → exportações → orçamento → PIMO-TRAK.",
+      "author": "",
       "category": "arquitetura",
       "tags": [
         "arquitetura",
@@ -571,6 +601,7 @@
       "file": "pages/pt-pt/contacto.mdx",
       "title": "Contacto",
       "description": "Contacto.",
+      "author": "",
       "category": "contacto",
       "tags": [
         "contacto"
@@ -584,6 +615,7 @@
       "file": "pages/pt-pt/documentacao-tecnica/index.mdx",
       "title": "Documentação técnica",
       "description": "Documentação técnica.",
+      "author": "",
       "category": "tecnico",
       "tags": [
         "tecnico"
@@ -599,6 +631,7 @@
       "file": "pages/pt-pt/documentacao-tecnica/docs-do-sistema.mdx",
       "title": "System docs",
       "description": "System docs.",
+      "author": "",
       "category": "tecnico",
       "tags": [
         "tecnico"
@@ -614,6 +647,7 @@
       "file": "pages/pt-pt/documentacao-tecnica/orcamentos-p39.mdx",
       "title": "Orçamentos P3.9",
       "description": "Orçamentos P3.9.",
+      "author": "",
       "category": "tecnico",
       "tags": [
         "tecnico"
@@ -629,6 +663,7 @@
       "file": "pages/pt-pt/documentacao-tecnica/sistema-industrial.mdx",
       "title": "Sistema Industrial",
       "description": "Sistema Industrial.",
+      "author": "",
       "category": "tecnico",
       "tags": [
         "tecnico"
@@ -644,6 +679,7 @@
       "file": "pages/pt-pt/ecossistema/index.mdx",
       "title": "Ecossistema de sites PIMO",
       "description": "Visão do ecossistema de sete domínios PIMO, loja, aplicação, ajuda, mercados futuros e plano de negócio.",
+      "author": "",
       "category": "ecossistema",
       "tags": [
         "ecossistema",
@@ -660,6 +696,7 @@
       "file": "pages/pt-pt/ecossistema/pim0-com.mdx",
       "title": "pim0.com",
       "description": "Site do plano de negócio do projeto PIMO (domínio com zero).",
+      "author": "",
       "category": "ecossistema",
       "tags": [
         "ecossistema",
@@ -676,6 +713,7 @@
       "file": "pages/pt-pt/ecossistema/pimo-casa.mdx",
       "title": "pimo.casa",
       "description": "Futuro site oficial para designs e projetos prontos PIMO.",
+      "author": "",
       "category": "ecossistema",
       "tags": [
         "ecossistema",
@@ -692,6 +730,7 @@
       "file": "pages/pt-pt/ecossistema/pimo-design.mdx",
       "title": "pimo.design",
       "description": "Futuro site oficial da aplicação de design completo PIMO.",
+      "author": "",
       "category": "ecossistema",
       "tags": [
         "ecossistema",
@@ -708,6 +747,7 @@
       "file": "pages/pt-pt/ecossistema/pimo-es.mdx",
       "title": "pimo.es",
       "description": "Loja oficial PIMO em espanhol, atualmente redireciona para pimo.pt.",
+      "author": "",
       "category": "ecossistema",
       "tags": [
         "ecossistema",
@@ -724,6 +764,7 @@
       "file": "pages/pt-pt/ecossistema/pimo-info.mdx",
       "title": "pimo.info",
       "description": "Centro de informação e ajuda do PIMO.",
+      "author": "",
       "category": "ecossistema",
       "tags": [
         "ecossistema",
@@ -740,6 +781,7 @@
       "file": "pages/pt-pt/ecossistema/pimo-pro.mdx",
       "title": "pimo.pro",
       "description": "Site oficial da aplicação e plataforma PIMO Criativo.",
+      "author": "",
       "category": "ecossistema",
       "tags": [
         "ecossistema",
@@ -756,6 +798,7 @@
       "file": "pages/pt-pt/ecossistema/pimo-pt.mdx",
       "title": "pimo.pt",
       "description": "Loja online principal e site principal da marca PIMO.",
+      "author": "",
       "category": "ecossistema",
       "tags": [
         "ecossistema",
@@ -772,6 +815,7 @@
       "file": "pages/pt-pt/funcionalidades/index.mdx",
       "title": "Funcionalidades PIMO",
       "description": "Páginas de apresentação visual das funcionalidades principais do PIMO Criativo.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "funcionalidade"
@@ -788,6 +832,7 @@
       "file": "pages/pt-pt/funcionalidades/analise-projetos.mdx",
       "title": "Análise de projetos",
       "description": "Análise documental em PIMO PROJETOS (/PROJETOS/:project/analise).",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "analise",
@@ -806,6 +851,7 @@
       "file": "pages/pt-pt/funcionalidades/configurador-3d.mdx",
       "title": "Configurador 3D",
       "description": "Modelação paramétrica no workspace 3D com fluxo real do PIMO Criativo.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "funcionalidade"
@@ -822,6 +868,7 @@
       "file": "pages/pt-pt/funcionalidades/conta-e-acesso.mdx",
       "title": "Conta e acesso",
       "description": "Login, registo, verificação de email, recuperação de password e perfil no PIMO Criativo.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "conta",
@@ -840,6 +887,7 @@
       "file": "pages/pt-pt/funcionalidades/definicoes.mdx",
       "title": "Definições",
       "description": "Definições do utilizador, do projeto e administrativas no PIMO Criativo (rota /definicoes e admin).",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "definicoes",
@@ -859,6 +907,7 @@
       "file": "pages/pt-pt/funcionalidades/estacoes-industriais.mdx",
       "title": "Estações industriais",
       "description": "Estações PIMO TRAK, armazém, nesting, furação, orlar, montagem, embalagem, supervisor e operador.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "industrial",
@@ -879,6 +928,7 @@
       "file": "pages/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml.mdx",
       "title": "Redirecionamento, Exportação TCN/Drill XML",
       "description": "Esta página moveu-se para Exportação TCN/Drill XML.",
+      "author": "",
       "category": "redirect",
       "tags": [
         "funcionalidade"
@@ -892,6 +942,7 @@
       "file": "pages/pt-pt/funcionalidades/exportacao-tcn-drill-xml.mdx",
       "title": "Exportação TCN/Drill XML",
       "description": "Exportação de ficheiros industriais TCN (.tcn) e Drill XML (.xml) via menu Arquivos CNC.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "funcionalidade",
@@ -912,6 +963,7 @@
       "file": "pages/pt-pt/funcionalidades/ferragens.mdx",
       "title": "Ferragens",
       "description": "Ferragens no PIMO Criativo, dobradiças, corrediças, conectores e listagens de exportação.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "ferragens",
@@ -931,6 +983,7 @@
       "file": "pages/pt-pt/funcionalidades/lista-de-corte.mdx",
       "title": "Lista de Corte",
       "description": "Cutlist industrial gerada a partir do projeto no PIMO.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "funcionalidade"
@@ -948,6 +1001,7 @@
       "file": "pages/pt-pt/funcionalidades/materiais.mdx",
       "title": "Materiais",
       "description": "Gestão visual de materiais da carcaça e frentes no PIMO.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "funcionalidade"
@@ -965,6 +1019,7 @@
       "file": "pages/pt-pt/funcionalidades/modo-foto.mdx",
       "title": "Modo foto",
       "description": "Modo foto no PIMO Criativo, capturas e composição visual do projeto em 3D.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "foto",
@@ -983,6 +1038,7 @@
       "file": "pages/pt-pt/funcionalidades/modulo-industrial.mdx",
       "title": "Módulo Industrial",
       "description": "Camada industrial com painéis de estação, operador e supervisor.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "funcionalidade"
@@ -999,6 +1055,7 @@
       "file": "pages/pt-pt/funcionalidades/nesting-fast-pro.mdx",
       "title": "Nesting Fast/PRO",
       "description": "Otimização de layout de corte em modo Fast e PRO no PIMO.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "funcionalidade"
@@ -1015,6 +1072,7 @@
       "file": "pages/pt-pt/funcionalidades/orcamentos.mdx",
       "title": "Orçamentos",
       "description": "Centro de tarifas e regras de custo no ecossistema PIMO.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "funcionalidade"
@@ -1031,6 +1089,7 @@
       "file": "pages/pt-pt/funcionalidades/pdf-tecnico.mdx",
       "title": "PDF técnico",
       "description": "Geração de PDF técnico com dados de projeto e produção no PIMO.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "funcionalidade"
@@ -1047,6 +1106,7 @@
       "file": "pages/pt-pt/funcionalidades/pimo-trak.mdx",
       "title": "PIMO-TRAK",
       "description": "Rastreio por etiqueta QR: geração UEE v5 implementada; acompanhamento industrial por posto na camada PIMO-TRAK.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "funcionalidade",
@@ -1066,6 +1126,7 @@
       "file": "pages/pt-pt/funcionalidades/portas-e-gavetas.mdx",
       "title": "Portas e Gavetas",
       "description": "Configuração de frentes com regras automáticas industriais.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "funcionalidade"
@@ -1083,6 +1144,7 @@
       "file": "pages/pt-pt/funcionalidades/relatorio-final.mdx",
       "title": "Relatório final",
       "description": "Relatório final consolidado do projeto no PIMO Criativo (rota /relatorio-final/:project).",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "relatorio",
@@ -1102,6 +1164,7 @@
       "file": "pages/pt-pt/funcionalidades/remates.mdx",
       "title": "Remates e acabamentos",
       "description": "Remates, rodapés e acabamentos de caixa no PIMO Criativo.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "remates",
@@ -1121,6 +1184,7 @@
       "file": "pages/pt-pt/funcionalidades/sala-e-ambiente.mdx",
       "title": "Sala e ambiente",
       "description": "Sala 3D, ambiente e room settings no PIMO Criativo.",
+      "author": "",
       "category": "funcionalidade",
       "tags": [
         "sala",
@@ -1140,6 +1204,7 @@
       "file": "pages/pt-pt/glossario.mdx",
       "title": "Glossário técnico",
       "description": "Terminologia canónica do PIMO Criativo: módulo/caixa, peça, material, espessura, orla, cutlist, nesting, TCN, Drill XML, PIMO-TRAK e formatos de exportação.",
+      "author": "",
       "category": "glossario",
       "tags": [
         "glossario",
@@ -1159,6 +1224,7 @@
       "file": "pages/pt-pt/guias-utilizador/index.mdx",
       "title": "Guias de utilizador",
       "description": "Guias de utilizador.",
+      "author": "",
       "category": "guia",
       "tags": [
         "guia"
@@ -1175,6 +1241,7 @@
       "file": "pages/pt-pt/guias-utilizador/atalhos-teclado.mdx",
       "title": "Atalhos de Teclado",
       "description": "Atalhos de Teclado.",
+      "author": "",
       "category": "guia",
       "tags": [
         "guia"
@@ -1191,6 +1258,7 @@
       "file": "pages/pt-pt/guias-utilizador/criar-caixa.mdx",
       "title": "Criar Caixa",
       "description": "Criar Caixa.",
+      "author": "",
       "category": "guia",
       "tags": [
         "guia"
@@ -1207,6 +1275,7 @@
       "file": "pages/pt-pt/guias-utilizador/exportacao.mdx",
       "title": "Exportação",
       "description": "Guia de exportação do PIMO Criativo: PDF técnico, cutlist, etiquetas UEE, TCN, Drill XML, XLSX de ferragens e arquivo ZIP completo.",
+      "author": "",
       "category": "guia",
       "tags": [
         "guia",
@@ -1227,6 +1296,7 @@
       "file": "pages/pt-pt/guias-utilizador/gerir-projetos.mdx",
       "title": "Gerir Projetos",
       "description": "Gerir Projetos.",
+      "author": "",
       "category": "guia",
       "tags": [
         "guia"
@@ -1243,6 +1313,7 @@
       "file": "pages/pt-pt/guias-utilizador/lista-de-corte.mdx",
       "title": "Lista de Corte",
       "description": "Lista de Corte.",
+      "author": "",
       "category": "guia",
       "tags": [
         "guia"
@@ -1259,6 +1330,7 @@
       "file": "pages/pt-pt/guias-utilizador/materiais.mdx",
       "title": "Materiais",
       "description": "Materiais.",
+      "author": "",
       "category": "guia",
       "tags": [
         "guia"
@@ -1275,6 +1347,7 @@
       "file": "pages/pt-pt/guias-utilizador/medicoes-e-cotas.mdx",
       "title": "Medições e Cotas",
       "description": "Medições e Cotas.",
+      "author": "",
       "category": "guia",
       "tags": [
         "guia"
@@ -1291,6 +1364,7 @@
       "file": "pages/pt-pt/guias-utilizador/mover-e-posicionar.mdx",
       "title": "Mover e Posicionar",
       "description": "Mover e Posicionar.",
+      "author": "",
       "category": "guia",
       "tags": [
         "guia"
@@ -1307,6 +1381,7 @@
       "file": "pages/pt-pt/guias-utilizador/nesting-layout-corte.mdx",
       "title": "Nesting / Layout de Corte",
       "description": "Nesting / Layout de Corte.",
+      "author": "",
       "category": "guia",
       "tags": [
         "guia"
@@ -1323,6 +1398,7 @@
       "file": "pages/pt-pt/guias-utilizador/pimo-trak.mdx",
       "title": "PIMO-TRAK",
       "description": "Como gerar e aplicar etiquetas QR (UEE v5) e o que está implementado versus planeado no rastreio.",
+      "author": "",
       "category": "guia",
       "tags": [
         "guia",
@@ -1342,6 +1418,7 @@
       "file": "pages/pt-pt/guias-utilizador/portas-e-gavetas.mdx",
       "title": "Portas e Gavetas",
       "description": "Portas e Gavetas.",
+      "author": "",
       "category": "guia",
       "tags": [
         "guia"
@@ -1358,6 +1435,7 @@
       "file": "pages/pt-pt/perguntas-frequentes.mdx",
       "title": "Perguntas frequentes",
       "description": "FAQ do PIMO Criativo: módulos, nesting, unidades, exportação ZIP, TCN/Drill XML e PIMO-TRAK.",
+      "author": "",
       "category": "faq",
       "tags": [
         "faq",
@@ -1376,6 +1454,7 @@
       "file": "pages/pt-pt/primeiros-passos.mdx",
       "title": "Primeiros passos",
       "description": "Guia rápido do PIMO Criativo: da primeira caixa ao pacote de produção (cutlist, nesting, TCN/Drill XML, ZIP).",
+      "author": "",
       "category": "hub",
       "tags": [
         "guia",
@@ -1394,6 +1473,7 @@
       "file": "pages/pt-pt/referencia/index.mdx",
       "title": "Referência",
       "description": "Referência técnica do PIMO Criativo: botões, controlos e ligações às funcionalidades.",
+      "author": "",
       "category": "referencia",
       "tags": [
         "referencia",
@@ -1412,6 +1492,7 @@
       "file": "pages/pt-pt/referencia/botoes.mdx",
       "title": "Botões e controlos",
       "description": "Catálogo completo de botões e ações da interface do PIMO Criativo: ícone, rótulo, localização, ação, efeitos e atalho, verificado no código.",
+      "author": "",
       "category": "referencia",
       "tags": [
         "referencia",
@@ -1433,6 +1514,7 @@
       "file": "pages/pt-pt/sistemas-pimo/index.mdx",
       "title": "Sistemas PIMO",
       "description": "Sistemas de produto na app PIMO: TRAK, PROJETOS, NESTING, INDUSTRIAL e DRILL, definição, estado real e ligações.",
+      "author": "",
       "category": "sistemas",
       "tags": [
         "sistemas",
@@ -1452,6 +1534,7 @@
       "file": "pages/pt-pt/sistemas-pimo/pimo-drill.mdx",
       "title": "PIMO DRILL",
       "description": "Sistema próprio de furação (UI 2D/3D) em https://pimo.pro/industrial/pimo-drill, estado em desenvolvimento.",
+      "author": "",
       "category": "sistemas",
       "tags": [
         "sistemas",
@@ -1471,6 +1554,7 @@
       "file": "pages/pt-pt/sistemas-pimo/pimo-industrial.mdx",
       "title": "PIMO INDUSTRIAL",
       "description": "Camada industrial completa: hub, estações e operações.",
+      "author": "",
       "category": "sistemas",
       "tags": [
         "sistemas",
@@ -1490,6 +1574,7 @@
       "file": "pages/pt-pt/sistemas-pimo/pimo-nesting.mdx",
       "title": "PIMO NESTING",
       "description": "Motor próprio de nesting e otimização de chapas (Nesting V3).",
+      "author": "",
       "category": "sistemas",
       "tags": [
         "sistemas",
@@ -1509,6 +1594,7 @@
       "file": "pages/pt-pt/sistemas-pimo/pimo-projetos.mdx",
       "title": "PIMO PROJETOS",
       "description": "Gestão e visualização de projetos PIMO guardados.",
+      "author": "",
       "category": "sistemas",
       "tags": [
         "sistemas",
@@ -1528,6 +1614,7 @@
       "file": "pages/pt-pt/sistemas-pimo/pimo-trak.mdx",
       "title": "PIMO TRAK",
       "description": "Ordens de trabalho, etiquetas QR e rastreamento de produção.",
+      "author": "",
       "category": "sistemas",
       "tags": [
         "sistemas",
@@ -1547,6 +1634,7 @@
       "file": "pages/release-notes.mdx",
       "title": "Release Notes",
       "description": "Página legada em inglês; o conteúdo canónico está em /pt-pt/.",
+      "author": "",
       "category": "legacy",
       "tags": [
         "legacy",
@@ -1563,6 +1651,7 @@
       "file": "pages/roadmap.mdx",
       "title": "Roadmap",
       "description": "Página legada em inglês; o conteúdo canónico está em /pt-pt/.",
+      "author": "",
       "category": "legacy",
       "tags": [
         "legacy",

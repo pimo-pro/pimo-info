@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-10-01T03:00:09.254Z
+Generated: 2026-10-01T03:03:20.553Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -3707,6 +3707,7 @@ Artigos e novidades do ecossistema PIMO, guias, produto e produção.
 
 ## Automação no fabrico de mobiliário: do projeto à linha de produção
 URL: https://pimo.info/pt-pt/blog/posts/automacao-fabrico/
+Author: Khaled
 Como a automação reduz erros e tempos mortos na marcenaria industrial, e que papel têm PIMO Industrial, PIMO-TRAK e o módulo industrial.
 
 A automação no fabrico de mobiliário raramente significa «robôs a substituir marceneiros». Na prática, significa **menos reintrodução manual de dados**: o mesmo projeto alimenta corte, furação, orlagem, etiquetagem e acompanhamento do estado da encomenda. Fábricas que crescem sem automatizar este fluxo acumulam gargalos no escritório, PDFs reescritos, listas de corte duplicadas e perguntas constantes «qual é a versão certa?».
@@ -3782,6 +3783,7 @@ A automação no fabrico de mobiliário é, sobretudo, **continuidade de dados**
 
 ## Comércio mundial de mobiliário: crescimento moderado e novos equilíbrios
 URL: https://pimo.info/pt-pt/blog/posts/comercio-mundial-moveis/
+Author: Khaled
 Síntese dos dados CSIL sobre produção, exportações e consumo global em 2024-2026, o que importa para fábricas e exportadores.
 
 O **comércio internacional de mobiliário** atravessou mais um ano de crescimento contido, dentro de um contexto macroeconómico estável mas não exuberante. Para fabricantes ibéricos, muitos orientados ao mercado interno europeu mas atentos a componentes e máquinas importados, estes números ajudam a calibrar **capacidade instalada**, **apostas de exportação** e **investimento em digitalização de fábrica**.
@@ -3834,6 +3836,7 @@ Em 2024, o comércio mundial de mobiliário **cresceu ~2%** para **~USD 174 mil 
 
 ## Contraplacado e aglomerado: como escolher o painel certo
 URL: https://pimo.info/pt-pt/blog/posts/contraplacado-aglomerado/
+Author: Khaled
 Diferenças entre contraplacado e aglomerado em estrutura, humidade e custo, e como reflectir a escolha no PIMO.
 
 Na loja de madeiras, **contraplacado** e **aglomerado** aparecem lado a lado com preços e nomes comerciais que mudam de fornecedor para fornecedor. Ambos são painéis derivados da madeira, mas a estrutura interna, folhas coladas versus partículas prensadas, altera rigidez, comportamento em humidade e o tipo de aplicação em que cada um brilha. Saber distinguir os dois poupa retrabalho na oficina e evita orçamentos com o material errado no [configurador de materiais](/pt-pt/funcionalidades/materiais/).
@@ -3900,6 +3903,7 @@ Contraplacado e aglomerado não competem no mesmo terreno: um privilegia resist�
 
 ## Cozinhas planeadas: do levantamento à montagem com projeto coerente
 URL: https://pimo.info/pt-pt/blog/posts/cozinhas-planeadas/
+Author: Khaled
 Etapas para desenhar cozinhas sob medida, escolher materiais e ferragens, e evitar erros entre loja, oficina e obra.
 
 Uma cozinha planeada é um puzzle tridimensional: eletrodomésticos com folgas normativas, tubagens que não se movem, luz natural que define onde o cliente quer trabalhar e um orçamento que raramente absorve todos os desejos à primeira. Para lojas e marcenarias em Portugal, o desafio é fazer bem e repetir o processo com margem, prazo e montagem sem surpresas. Um projeto digital alinhado à produção, como o fluxo do PIMO Criativo, liga medição, 3D, materiais e lista de corte; este guia percorre as fases que mais costumam falhar quando essa ligação falta.
@@ -3960,6 +3964,7 @@ Cozinhas planeadas são o produto de referência de muitas empresas PIMO: alto v
 
 ## Exportação CNC: TCN e Drill XML na prática
 URL: https://pimo.info/pt-pt/blog/posts/exportacao-cnc-ficheiros/
+Author: Khaled
 Como escolher formatos industriais, organizar ficheiros por espessura e evitar erros entre desenho PIMO e máquina.
 
 Passar do projeto digital ao chão de fábrica exige **ficheiros que a máquina compreenda**. No PIMO, a saída industrial concentra-se em **TCN** (`.tcn`) e **Drill XML** (`.xml`) a partir do menu **Arquivos CNC**, «CNC» designa o destino do fluxo, não a extensão do ficheiro. Este artigo explica como encaixar essa exportação no vosso processo, alinhado com a [documentação de exportação TCN/Drill XML](/pt-pt/funcionalidades/exportacao-tcn-drill-xml/) e o [guia de utilizador](/pt-pt/guias-utilizador/exportacao/).
@@ -4033,6 +4038,7 @@ A exportação CNC TCN e Drill XML é o **contrato digital** entre o PIMO e a vo
 
 ## Fabrico digital em 2026: tendências qualitativas para a madeira
 URL: https://pimo.info/pt-pt/blog/posts/fabrico-digital-2026/
+Author: Khaled
 Parametrização, rastreio, exportação CNC e leitura de mercado, como preparar a fábrica sem hype estatístico.
 
 Entramos em **2026** com fábricas de mobiliário mais digitais do que há uma década, não porque a indústria tenha «virado software», mas porque **projecto paramétrico**, **CNC**, **nesting** e **etiquetas** se tornaram baseline mesmo em PME. O fabrico digital deixa de ser etiqueta de feira e passa a ser **condição de margem**: menos erros, mais variedade, resposta rápida a cozinhas sob medida.
@@ -4094,6 +4100,7 @@ Fabrico digital em 2026 significa **disciplina de dados** da venda ao CNC, **ras
 
 ## Ferragens Hettich no projeto de mobiliário: sistemas que o PIMO ajuda a especificar
 URL: https://pimo.info/pt-pt/blog/posts/ferragens-hettich/
+Author: Khaled
 Como as ferragens Hettich, gavetas, dobradiças e sistemas de portas, se integram no desenho e na produção quando o projeto vive no PIMO Criativo.
 
 Um módulo de cozinha ou um roupeiro embutido pode ter carcaças impecáveis e frentes de melamina de primeira, mas são as ferragens que determinam se a gaveta abre suavemente, se a porta de correr não salta do trilho e se o conjunto aguenta anos de uso diário. A [Hettich](https://www.hettich.com/pt-pt/) posiciona-se como líder no fabrico de acessórios para móveis e desenvolve, na sua sede em Kirchlengern, Alemanha, soluções que vão dos sistemas de gavetas às dobradiças, passando por portas de correr e portas de fole.
@@ -4155,6 +4162,7 @@ Ferragens Hettich representam décadas de engenharia aplicada ao mobiliário. No
 
 ## Furação industrial no mobiliário: da peça ao ficheiro para a máquina
 URL: https://pimo.info/pt-pt/blog/posts/furacao-industrial/
+Author: Khaled
 Como a furação industrial liga o projeto ao chão de fábrica, sistemas CNC, Drill XML e o papel do PIMO DRILL no ecossistema PIMO.
 
 Na marcenaria e no mobiliário por medida, a furação deixa de ser um detalhe de montagem quando entra em escala industrial. Cada furo para dobradiça, minifix, pino ou sistema de gaveta tem de coincidir com o desenho, com a espessura real da chapa e com o programa que a centradeira ou a CNC vai executar. Um milímetro de desvio acumula-se em portas desalinhadas, frentes que raspam ou lotes inteiros rejeitados no controlo de qualidade.
@@ -4217,6 +4225,7 @@ Se a sua oficina está a dar o salto de gabaritos manuais para CNC de furação,
 
 ## Inteligência artificial na carpintaria e no desenho de mobiliário
 URL: https://pimo.info/pt-pt/blog/posts/ia-carpintaria/
+Author: Khaled
 Como a IA pode apoiar marceneiros e equipas de projeto, da ideação à produção, sem substituir o critério técnico.
 
 A conversa em torno da **inteligência artificial** chegou às oficinas, às salas de exposição e aos escritórios de desenho de mobiliário. Para muitos marceneiros e projetistas, a pergunta não é se a IA «vai substituir o ofício», mas **onde ela poupa tempo**, **onde introduz risco** e **como manter o controlo sobre dimensões, ferragens e regras de fabrico**.
@@ -4267,6 +4276,7 @@ A inteligência artificial na carpintaria e no desenho de mobiliário é, sobret
 
 ## Lista de corte e gestão de resíduos: do projeto à chapa com menos desperdício
 URL: https://pimo.info/pt-pt/blog/posts/lista-corte-residuos/
+Author: Khaled
 Como consolidar peças no PIMO, optimizar utilização de painéis e organizar retalhos para nesting e custos reais.
 
 A lista de corte é o documento que transforma um conjunto de módulos 3D em rectângulos numerados para a serra, e, quando está errada ou incompleta, transforma-se em **chapas extra**, telefonemas em obra e retalhos que ninguém reaproveita. Em marcenarias que trabalham com painéis melamínicos e MDF, a diferença entre 78 % e 92 % de utilização de chapa pesa directamente na margem do projecto. Este artigo explica como gerar listas fiéis no PIMO, alimentar nesting CNC e tratar resíduos como recurso, não só como lixo.
@@ -4343,6 +4353,7 @@ Lista de corte e gestão de resíduos são duas faces da mesma moeda: precisão 
 
 ## Madeiras maciças no mobiliário: espécies, estabilidade e projeto digital
 URL: https://pimo.info/pt-pt/blog/posts/madeiras-macicas/
+Author: Khaled
 Quando escolher madeira maciça, como gerir humidade e junções, e como documentar espécies e desperdício no fluxo PIMO.
 
 Há clientes que pedem «madeira de verdade», e há oficinas que sabem que isso pode significar carvalho europeu numa mesa de jantar, pinho nórdico num roupeiro rústico ou freijó numa frente de gaveta. A **madeira maciça** (peças talhadas ou laminadas a partir de toros, sem aglomerar partículas como no MDF) traz estética, reparabilidade e peso próprio. Também traz movimento dimensional, variação de cor e um custo de matéria-prima que o painel industrial raramente iguala. Este guia ajuda a decidir onde a maciça compensa e como não perder esse valor entre o desenho e a serra.
@@ -4396,6 +4407,7 @@ Madeira maciça continua a ser referência quando o cliente valoriza tacto, long
 
 ## Materiais de cozinha: durabilidade na carcaça e nas frentes
 URL: https://pimo.info/pt-pt/blog/posts/materiais-cozinhas/
+Author: Khaled
 Melaminas, lacados, compactos e madeiras, como escolher combinações que resistem ao uso diário e ao ambiente húmido.
 
 Uma cozinha é, durante anos, **ambiente húmido**, **superfície de corte indirecto**, **calor próximo do forno** e **milhares de ciclos de abertura de gavetas**. A durabilidade não depende só da «marca» escolhida na loja: depende da **combinação carcaça + frente + orla + ferragem**, da **qualidade de lacagem ou prensagem** e de **como o projecto traduz materiais** no software antes de ir para a serra.
@@ -4469,6 +4481,7 @@ Materiais de cozinha duráveis combinam **escolha técnica informada**, **projec
 
 ## MDF: guia prático para carpintaria e mobiliário
 URL: https://pimo.info/pt-pt/blog/posts/mdf-guia-pratico/
+Author: Khaled
 O que é o MDF, onde usar em carcaças e frentes, limitações em humidade e como registar o material no fluxo de projeto PIMO.
 
 O **MDF** (medium-density fibreboard, ou fibra de média densidade) é um dos painéis mais presentes em cozinhas, roupeiros e mobiliário sob medida em Portugal. A superfície homogénea, a boa comportação em usinagem e o preço previsível explicam essa popularidade, mas o material só rende quando se escolhe a espessura certa, se protegem os bordos e se evitam ambientes críticos. Este guia resume o que importa na bancada e no escritório, alinhado com a forma como o [PIMO](https://pimo.pro/) trata materiais no projeto.
@@ -4531,6 +4544,7 @@ O MDF é uma ferramenta versátil no fabrico de mobiliário: estável, económic
 
 ## Melamina e painéis decorativos: escolher, cortar e orçamentar com rigor
 URL: https://pimo.info/pt-pt/blog/posts/melamina-paineis/
+Author: Khaled
 Como funcionam os painéis melamínicos, que acabamentos pedem cozinhas e roupeiros, e como manter materiais e lista de corte alinhados no PIMO.
 
 Na loja de mobiliário ou na oficina de marcenaria, «melamina» é muitas vezes a palavra que o cliente usa quando quer frentes brancas, madeiras claras ou texturas de pedra, sem distinguir se o substrato é aglomerado, MDF ou contraplacado. Para quem projeta e corta, a distinção importa: a melamina é o **revestimento** (papel impregnado com resinas melamínicas, prensado a alta temperatura), não o painel inteiro. Este artigo resume o que precisa de saber para especificar, orçamentar e produzir com painéis melamínicos, em linha com o fluxo de [materiais](/pt-pt/funcionalidades/materiais/) e [lista de corte](/pt-pt/funcionalidades/lista-de-corte/) no PIMO.
@@ -4579,6 +4593,7 @@ Painéis melamínicos são o alicerce do mobiliário residencial moderno em Port
 
 ## Nesting CNC: optimizar chapas, reduzir desperdício e ligar ao projeto
 URL: https://pimo.info/pt-pt/blog/posts/nesting-cnc/
+Author: Khaled
 Princípios de nesting em painéis, margens de segurança, ordem de corte e integração com listas exportadas do PIMO.
 
 Nesting é o arranjo inteligente de peças 2D numa chapa antes do corte CNC, o mesmo princípio do «quebra-cabeças», mas com euros por metro quadrado em jogo. Uma optimização medíocre deixa retalhos grandes no chão; uma boa combina peças de vários módulos, respeita veio decorativo e margens da máquina. Para oficinas que fabricam cozinhas e roupeiros a partir de projectos digitais, o nesting é o ponto onde **desenho e produção** se encontram ou se desencontram. Este artigo explica conceitos práticos e como alimentar o processo a partir do PIMO.
@@ -4644,6 +4659,7 @@ Nesting CNC não é luxo de grandes fábricas: é disciplina de quem compra pain
 
 ## Orlagem de bordos: acabamento, precisão e ligação ao projeto digital
 URL: https://pimo.info/pt-pt/blog/posts/orlagem-bordos/
+Author: Khaled
 Porque a orlagem importa na durabilidade e no aspeto dos móveis, e como alinhar materiais, lista de corte e produção no PIMO.
 
 Quem entra numa cozinha ou num roupeiro de qualidade raramente repara nos bordos das prateleiras, até falhar um. A orlagem (aplicação de fita de bordo ou acabamento equivalente) protege o núcleo da chapa, esconde o corte e prolonga a vida do móvel em ambientes húmidos ou de uso intenso. Na produção, porém, a orlagem é um processo crítico: exige sequência correta em relação ao corte, escolha de fita compatível com o decor e registo claro de quais arestas são visíveis.
@@ -4719,6 +4735,7 @@ A orlagem de bordos é o acabamento que o utilizador toca todos os dias. No PIMO
 
 ## PIMO TRAK: rastrear peças da exportação à montagem
 URL: https://pimo.info/pt-pt/blog/posts/pimo-trak-rastreio/
+Author: Khaled
 Etiquetas QR UEE v5, identificação por peça e acompanhamento industrial, o que já pode usar hoje na fábrica.
 
 Numa cozinha ou roupeiro com dezenas de painéis, **trocar duas peças** ou **perder o estado de furação** custa horas e margem. O **PIMO TRAK** liga cada peça física ao projecto digital através de **códigos QR únicos**, começando pela exportação de **etiquetas UEE v5**, já implementada, e estendendo-se, consoante a instalação, à **camada industrial** de ordens de trabalho e leitura em posto.
@@ -4795,6 +4812,7 @@ PIMO TRAK transforma exportação digital em **rastreabilidade física**: comece
 
 ## Regras de fabrico para portas e gavetas
 URL: https://pimo.info/pt-pt/blog/posts/portas-gavetas-fabrico/
+Author: Khaled
 Folgas, exclusividade, ferragens e validação antes da exportação, o que a fábrica precisa de respeitar em frentes de mobiliário.
 
 Portas e gavetas são a face visível do mobiliário, e também onde **folgas erradas**, **ferragens incompatíveis** ou **interferências com módulos vizinhos** se manifestam primeiro. Num fluxo digital como o PIMO, muitas regras são aplicadas automaticamente no desenho; na fábrica, o desafio é garantir que **o que foi exportado** corresponde ao **critério industrial** da empresa e ao **manual do fornecedor de ferragens**.
@@ -4858,6 +4876,7 @@ Regras de fabrico para portas e gavetas são a ponte entre **automação no dese
 
 ## A profissão de carpinteiro em 2026: oficina, digital e mobiliário sob medida
 URL: https://pimo.info/pt-pt/blog/posts/profissao-carpinteiro/
+Author: Khaled
 Competências que o mercado pede a marceneiros e carpinteiros em Portugal, da bancada ao projeto 3D e à produção CNC.
 
 Carpinteiro, marceneiro, montador de mobiliário, operador CNC, na rua e na oficina, os títulos misturam-se, mas o trabalho continua a juntar **material, precisão e contacto com o cliente**. Em 2026, quem fabrica cozinhas e roupeiros em Portugal encontra moradias mais compactas, exigência de prazo curto e concorrência de grandes marcas com catálogo fechado. A resposta de muitas empresas não é abandonar o ofício: é combinar bancada tradicional com software de projeto, listas de corte optimizadas e rastreio de encomendas. Este artigo descreve o perfil profissional que esse modelo pede, sem romantizar nem reduzir a profissão a «cliques num ecrã».
@@ -4910,6 +4929,7 @@ A profissão de carpinteiro no mobiliário contemporâneo é híbrida: mãos na 
 
 ## Software de design 3D para marcenaria: o que procurar e como o PIMO se encaixa
 URL: https://pimo.info/pt-pt/blog/posts/software-design-3d/
+Author: Khaled
 Critérios para escolher ferramentas de modelação 3D no mobiliário por medida, e relação com o configurador 3D do PIMO Criativo.
 
 Desenhar móveis em 2D no CAD genérico ainda funciona para algumas oficinas, mas clientes, retalhistas e fábricas pedem cada vez mais **visualização 3D**, listas de peças automáticas e ligação ao orçamento. O mercado oferece desde modeladores livres até suites industriais; para marcenaria e mobiliário por medida, o critério não é «o software mais bonito», mas o que reduz retrabalho entre venda, engenharia e produção.
@@ -4984,6 +5004,7 @@ Software de design 3D para marcenaria não é sinónimo de «qualquer modelador 
 
 ## Sustentabilidade na madeira e no mobiliário: certificação, resíduos e escolhas de projeto
 URL: https://pimo.info/pt-pt/blog/posts/sustentabilidade-madeira/
+Author: Khaled
 Como a gestão florestal certificada, o desperdício de corte e os materiais no PIMO se ligam a decisões mais sustentáveis na marcenaria.
 
 Sustentabilidade no mobiliário deixou de ser só marketing verde: grandes obras públicas, cadeias de retalho e clientes finais perguntam pela origem da madeira, pela emissão de compostos orgânicos voláteis e pelo destino dos retalhos de chapa. Para marcenarias em Portugal, integradas num mercado europeu exigente, a resposta passa por **compras certificadas**, **eficiência de corte** e **durabilidade do produto**. Este artigo liga esses pilares ao trabalho diário de projeto e produção, incluindo o papel da lista de materiais e de corte no PIMO.

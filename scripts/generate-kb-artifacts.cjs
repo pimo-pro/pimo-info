@@ -137,6 +137,7 @@ function main() {
       file: path.relative(ROOT, file).replace(/\\/g, "/"),
       title: data.title || path.basename(file, path.extname(file)),
       description: data.description || "",
+      author: data.author || "",
       category: data.category || "",
       tags: Array.isArray(data.tags) ? data.tags : [],
       related: Array.isArray(data.related) ? data.related : [],
@@ -312,6 +313,7 @@ function main() {
   for (const p of pages.filter((x) => x.path.startsWith("/pt-pt/") || x.path === "/")) {
     fullParts.push(`## ${p.title}`)
     fullParts.push(`URL: ${site.url}${p.path}`)
+    if (p.author) fullParts.push(`Author: ${p.author}`)
     if (p.description) fullParts.push(p.description)
     fullParts.push("")
     fullParts.push(p.text)

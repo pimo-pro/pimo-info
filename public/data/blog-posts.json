@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T03:00:09.281Z",
+  "generatedAt": "2026-10-01T03:03:20.578Z",
   "posts": [
     {
       "slug": "fabrico-digital-2026",
@@ -7,7 +7,7 @@
       "title": "Fabrico digital em 2026: tendências qualitativas para a madeira",
       "description": "Parametrização, rastreio, exportação CNC e leitura de mercado, como preparar a fábrica sem hype estatístico.",
       "date": "2026-10-01",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "noticias",
       "tags": [
         "fabrico-digital",
@@ -40,7 +40,7 @@
       "title": "Materiais de cozinha: durabilidade na carcaça e nas frentes",
       "description": "Melaminas, lacados, compactos e madeiras, como escolher combinações que resistem ao uso diário e ao ambiente húmido.",
       "date": "2026-09-28",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "produto",
       "tags": [
         "cozinha",
@@ -73,7 +73,7 @@
       "title": "Comércio mundial de mobiliário: crescimento moderado e novos equilíbrios",
       "description": "Síntese dos dados CSIL sobre produção, exportações e consumo global em 2024-2026, o que importa para fábricas e exportadores.",
       "date": "2026-09-21",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "noticias",
       "tags": [
         "comercio-internacional",
@@ -106,7 +106,7 @@
       "title": "PIMO TRAK: rastrear peças da exportação à montagem",
       "description": "Etiquetas QR UEE v5, identificação por peça e acompanhamento industrial, o que já pode usar hoje na fábrica.",
       "date": "2026-09-07",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "producao",
       "tags": [
         "pimo-trak",
@@ -139,7 +139,7 @@
       "title": "Exportação CNC: TCN e Drill XML na prática",
       "description": "Como escolher formatos industriais, organizar ficheiros por espessura e evitar erros entre desenho PIMO e máquina.",
       "date": "2026-08-24",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "tecnico",
       "tags": [
         "cnc",
@@ -172,7 +172,7 @@
       "title": "Regras de fabrico para portas e gavetas",
       "description": "Folgas, exclusividade, ferragens e validação antes da exportação, o que a fábrica precisa de respeitar em frentes de mobiliário.",
       "date": "2026-08-10",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "guias",
       "tags": [
         "portas",
@@ -205,7 +205,7 @@
       "title": "Inteligência artificial na carpintaria e no desenho de mobiliário",
       "description": "Como a IA pode apoiar marceneiros e equipas de projeto, da ideação à produção, sem substituir o critério técnico.",
       "date": "2026-07-27",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "tecnico",
       "tags": [
         "inteligencia-artificial",
@@ -238,7 +238,7 @@
       "title": "Lista de corte e gestão de resíduos: do projeto à chapa com menos desperdício",
       "description": "Como consolidar peças no PIMO, optimizar utilização de painéis e organizar retalhos para nesting e custos reais.",
       "date": "2026-07-13",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "tecnico",
       "tags": [
         "lista de corte",
@@ -271,7 +271,7 @@
       "title": "Sustentabilidade na madeira e no mobiliário: certificação, resíduos e escolhas de projeto",
       "description": "Como a gestão florestal certificada, o desperdício de corte e os materiais no PIMO se ligam a decisões mais sustentáveis na marcenaria.",
       "date": "2026-06-29",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "ecossistema",
       "tags": [
         "sustentabilidade",
@@ -304,7 +304,7 @@
       "title": "Automação no fabrico de mobiliário: do projeto à linha de produção",
       "description": "Como a automação reduz erros e tempos mortos na marcenaria industrial, e que papel têm PIMO Industrial, PIMO-TRAK e o módulo industrial.",
       "date": "2026-06-15",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "producao",
       "tags": [
         "automacao",
@@ -337,7 +337,7 @@
       "title": "Software de design 3D para marcenaria: o que procurar e como o PIMO se encaixa",
       "description": "Critérios para escolher ferramentas de modelação 3D no mobiliário por medida, e relação com o configurador 3D do PIMO Criativo.",
       "date": "2026-06-01",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "tecnico",
       "tags": [
         "design-3d",
@@ -370,7 +370,7 @@
       "title": "Ferragens Hettich no projeto de mobiliário: sistemas que o PIMO ajuda a especificar",
       "description": "Como as ferragens Hettich, gavetas, dobradiças e sistemas de portas, se integram no desenho e na produção quando o projeto vive no PIMO Criativo.",
       "date": "2026-05-18",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "produto",
       "tags": [
         "ferragens",
@@ -403,7 +403,7 @@
       "title": "Orlagem de bordos: acabamento, precisão e ligação ao projeto digital",
       "description": "Porque a orlagem importa na durabilidade e no aspeto dos móveis, e como alinhar materiais, lista de corte e produção no PIMO.",
       "date": "2026-05-04",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "producao",
       "tags": [
         "orlagem",
@@ -436,7 +436,7 @@
       "title": "Furação industrial no mobiliário: da peça ao ficheiro para a máquina",
       "description": "Como a furação industrial liga o projeto ao chão de fábrica, sistemas CNC, Drill XML e o papel do PIMO DRILL no ecossistema PIMO.",
       "date": "2026-04-20",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "producao",
       "tags": [
         "furacao",
@@ -469,7 +469,7 @@
       "title": "Nesting CNC: optimizar chapas, reduzir desperdício e ligar ao projeto",
       "description": "Princípios de nesting em painéis, margens de segurança, ordem de corte e integração com listas exportadas do PIMO.",
       "date": "2026-04-06",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "tecnico",
       "tags": [
         "nesting",
@@ -502,7 +502,7 @@
       "title": "Cozinhas planeadas: do levantamento à montagem com projeto coerente",
       "description": "Etapas para desenhar cozinhas sob medida, escolher materiais e ferragens, e evitar erros entre loja, oficina e obra.",
       "date": "2026-03-23",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "guias",
       "tags": [
         "cozinhas",
@@ -535,7 +535,7 @@
       "title": "A profissão de carpinteiro em 2026: oficina, digital e mobiliário sob medida",
       "description": "Competências que o mercado pede a marceneiros e carpinteiros em Portugal, da bancada ao projeto 3D e à produção CNC.",
       "date": "2026-03-09",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "noticias",
       "tags": [
         "carpintaria",
@@ -564,7 +564,7 @@
       "title": "Madeiras maciças no mobiliário: espécies, estabilidade e projeto digital",
       "description": "Quando escolher madeira maciça, como gerir humidade e junções, e como documentar espécies e desperdício no fluxo PIMO.",
       "date": "2026-02-23",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "guias",
       "tags": [
         "madeira",
@@ -597,7 +597,7 @@
       "title": "Melamina e painéis decorativos: escolher, cortar e orçamentar com rigor",
       "description": "Como funcionam os painéis melamínicos, que acabamentos pedem cozinhas e roupeiros, e como manter materiais e lista de corte alinhados no PIMO.",
       "date": "2026-02-09",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "guias",
       "tags": [
         "melamina",
@@ -630,7 +630,7 @@
       "title": "Contraplacado e aglomerado: como escolher o painel certo",
       "description": "Diferenças entre contraplacado e aglomerado em estrutura, humidade e custo, e como reflectir a escolha no PIMO.",
       "date": "2026-01-26",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "guias",
       "tags": [
         "contraplacado",
@@ -663,7 +663,7 @@
       "title": "MDF: guia prático para carpintaria e mobiliário",
       "description": "O que é o MDF, onde usar em carcaças e frentes, limitações em humidade e como registar o material no fluxo de projeto PIMO.",
       "date": "2026-01-12",
-      "author": "Equipa PIMO",
+      "author": "Khaled",
       "category": "guias",
       "tags": [
         "mdf",

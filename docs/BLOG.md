@@ -11,12 +11,14 @@ Contrato de ficheiros para artigos em `pages/pt-pt/blog/posts/`.
 
 ## Frontmatter obrigatório
 
+Autor padrão dos artigos: **Khaled** (Person no JSON-LD / RSS). Não usar «Equipa PIMO».
+
 ```yaml
 ---
 title: "Título do artigo"
 description: "Resumo curto (1–2 frases) para SEO e listagens."
 date: 2026-10-01
-author: "Equipa PIMO"
+author: "Khaled"
 category: "guias"          # guias | produto | producao | noticias | ecossistema | tecnico
 tags:
   - nesting

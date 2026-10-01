@@ -98,7 +98,7 @@ function main() {
       title: data.title || slug,
       description: data.description || "",
       date: data.date || "1970-01-01",
-      author: data.author || "PIMO Info",
+      author: data.author || "Khaled",
       category: data.category || "",
       tags: Array.isArray(data.tags) ? data.tags : [],
       coverImage: data.coverImage || data.image || "",
