@@ -1,7 +1,7 @@
 /**
  * Sistemas PIMO (módulos de produto na app pimo.pro).
- * Estado verificado no código de pimo-criativo (só leitura).
- * status: 'disponivel' | 'parcial' | 'planeado'
+ * Estado verificado no código de pimo-criativo (só leitura) + confirmação do dono.
+ * status: 'disponivel' | 'parcial' | 'em-desenvolvimento' | 'planeado'
  */
 
 /**
@@ -10,7 +10,8 @@
  * @property {string} name
  * @property {string} menuLabel
  * @property {string} route
- * @property {'disponivel' | 'parcial' | 'planeado'} status
+ * @property {string} [appUrl]
+ * @property {'disponivel' | 'parcial' | 'em-desenvolvimento' | 'planeado'} status
  * @property {string} definition
  * @property {string} purpose
  * @property {string} howItWorks
@@ -209,27 +210,28 @@ export const pimoSystems = [
     name: "PIMO DRILL",
     menuLabel: "PIMO DRILL",
     route: "/industrial/pimo-drill",
-    status: "planeado",
+    appUrl: "https://pimo.pro/industrial/pimo-drill",
+    status: "em-desenvolvimento",
     definition:
-      "Motor/sistema próprio de furação (UI 2D/3D) para desenhar e validar furos; no ecossistema liga-se ao fluxo TCN / Drill XML.",
+      "Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.",
     purpose:
       "Oferecer um workspace dedicado de furação (buraco, entalhe, rect, círculo, arco, caminho) separado do configurador 3D — complementar à exportação Drill XML do menu Arquivos CNC.",
     howItWorks:
-      "A página `/industrial/pimo-drill` monta toolbar, painel esquerdo e viewers 2D/3D. Há bridge mínimo com Design Industrial e import KDT XML. **Nota no próprio código:** simulador incompleto — ainda não é funcional para inserir furos de forma operativa nem validar o fluxo completo (shell M0–M1). A geração de Drill XML a partir do configurador (`onArquivosCnc`) é outro caminho e está implementada.",
+      "A página `/industrial/pimo-drill` (aberta em https://pimo.pro/industrial/pimo-drill) monta toolbar, painel esquerdo e viewers 2D/3D, com bridge mínimo ao Design Industrial e import KDT XML. O sistema está acessível e em desenvolvimento ativo: a UI e a rota existem; o fluxo operativo completo de inserção/validação de furos continua a evoluir. A geração de Drill XML a partir do configurador (`onArquivosCnc`) é um caminho paralelo já disponível.",
     features: [
-      "Shell UI com vistas 2D/3D (parcial)",
-      "Toolbar de ferramentas de furação (UI)",
+      "Rota e UI acessíveis em pimo.pro",
+      "Vistas 2D/3D e toolbar de ferramentas de furação",
       "Bridge Design Industrial mínimo",
       "Import KDT XML (código presente)",
       "Exportação Drill XML via configurador (sistema à parte — disponível)",
     ],
     inputs: [
       "Modelo de peça (PieceModel)",
-      "Import KDT XML (quando operacional)",
+      "Import KDT XML",
       "Cutlist / furos do projeto (via exportação CNC do configurador)",
     ],
     outputs: [
-      "Plano de furação (quando o simulador estiver operativo)",
+      "Plano de furação no workspace DRILL (em evolução)",
       "Drill XML / TCN via fluxo «Arquivos CNC» do configurador (já disponível)",
     ],
     relatedSystemIds: ["pimo-industrial", "pimo-trak", "pimo-nesting"],
@@ -243,7 +245,7 @@ export const pimoSystems = [
       "src/core/drill/drillExport.ts",
     ],
     statusNotes:
-      "O sistema dedicado PIMO DRILL está marcado «planeado»: o ficheiro `PimoDrillPage.tsx` declara explicitamente que o simulador ainda não é operativo. A exportação Drill XML do configurador continua disponível.",
+      "Acessível em https://pimo.pro/industrial/pimo-drill. Estado «em desenvolvimento»: a app e a rota existem; o simulador/fluxo operativo completo ainda evolui. A exportação Drill XML do configurador continua disponível.",
     canonicalPath: "/pt-pt/sistemas-pimo/pimo-drill/",
   },
 ]

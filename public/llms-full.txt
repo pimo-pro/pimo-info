@@ -1,5 +1,5 @@
 # PIMO Info — full knowledge dump
-Generated: 2026-10-01T00:57:20.964Z
+Generated: 2026-10-01T01:16:44.665Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -60,7 +60,7 @@ Locale: pt-PT
 - PIMO PROJETOS: Área da app para listar e abrir projetos industriais guardados no servidor, com showroom e análise online.
 - PIMO NESTING: Sistema próprio de nesting (Nesting V3): layout manual/automático de peças em chapas com exportação PDF, TCN e etiquetas. Distinto do nesting Fast/PRO do pipeline de exportação do configurador.
 - PIMO INDUSTRIAL: Camada industrial da app: hub de estações, operações de fábrica e UI partilhada. Estado parcial — rotas reais com canvas de demonstração na home.
-- PIMO DRILL: Sistema dedicado de furação (UI 2D/3D). No código actual o simulador ainda não é operativo (planeado); a exportação Drill XML pelo configurador («Arquivos CNC») está disponível à parte.
+- PIMO DRILL: Sistema dedicado de furação (UI 2D/3D), acessível em https://pimo.pro/industrial/pimo-drill. Estado: em desenvolvimento. A exportação Drill XML pelo configurador («Arquivos CNC») está disponível à parte.
 - Arquivo completo (ZIP): ZIP com os principais artefactos de produção (PDFs, XLSX de ferragens, TCN, Drill XML, etiquetas, layouts). Conteúdo exacto definido pelo gerador na app — ver formatos de exportação.
 - Análise arquivo completo (online): Edição documental online de PDFs industriais em PROJETOS (/analise). No código SSOT (`industrialFeatureFlags`) a flag `industrialOnlineAnalysis` está activa (`true`). Não substitui o ZIP de produção.
 - Orçamentos P3.9: Camada técnica/admin de tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.
@@ -82,7 +82,7 @@ Locale: pt-PT
 - PIMO PROJETOS [disponivel] https://pimo.info/pt-pt/sistemas-pimo/pimo-projetos/ — Área de gestão e visualização de projetos PIMO guardados no servidor (páginas/projeto com snapshot industrial).
 - PIMO NESTING [disponivel] https://pimo.info/pt-pt/sistemas-pimo/pimo-nesting/ — Motor e UI próprios de otimização da distribuição das peças nas chapas (Nesting V3), com redução de desperdício via auto-layout e colocação manual.
 - PIMO INDUSTRIAL [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/ — Camada industrial completa da app: hub de estações, operações (CNC, nesting, drill, orlar, montagem, embalagem), operador/supervisor e integrações de fabrico.
-- PIMO DRILL [planeado] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/ — Motor/sistema próprio de furação (UI 2D/3D) para desenhar e validar furos; no ecossistema liga-se ao fluxo TCN / Drill XML.
+- PIMO DRILL [em-desenvolvimento] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/ — Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.
 
 ## UI buttons (296)
 - Header: 14 controlos
@@ -3559,16 +3559,16 @@ sourceFiles: src/app/industrial/index.tsx, src/app/industrial/operations/, src/i
 
 ## System: PIMO DRILL
 id: pimo-drill
-status: planeado
+status: em-desenvolvimento
 route: /industrial/pimo-drill
-definition: Motor/sistema próprio de furação (UI 2D/3D) para desenhar e validar furos; no ecossistema liga-se ao fluxo TCN / Drill XML.
+definition: Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.
 purpose: Oferecer um workspace dedicado de furação (buraco, entalhe, rect, círculo, arco, caminho) separado do configurador 3D — complementar à exportação Drill XML do menu Arquivos CNC.
-howItWorks: A página `/industrial/pimo-drill` monta toolbar, painel esquerdo e viewers 2D/3D. Há bridge mínimo com Design Industrial e import KDT XML. **Nota no próprio código:** simulador incompleto — ainda não é funcional para inserir furos de forma operativa nem validar o fluxo completo (shell M0–M1). A geração de Drill XML a partir do configurador (`onArquivosCnc`) é outro caminho e está implementada.
-features: Shell UI com vistas 2D/3D (parcial) | Toolbar de ferramentas de furação (UI) | Bridge Design Industrial mínimo | Import KDT XML (código presente) | Exportação Drill XML via configurador (sistema à parte — disponível)
-inputs: Modelo de peça (PieceModel) | Import KDT XML (quando operacional) | Cutlist / furos do projeto (via exportação CNC do configurador)
-outputs: Plano de furação (quando o simulador estiver operativo) | Drill XML / TCN via fluxo «Arquivos CNC» do configurador (já disponível)
+howItWorks: A página `/industrial/pimo-drill` (aberta em https://pimo.pro/industrial/pimo-drill) monta toolbar, painel esquerdo e viewers 2D/3D, com bridge mínimo ao Design Industrial e import KDT XML. O sistema está acessível e em desenvolvimento ativo: a UI e a rota existem; o fluxo operativo completo de inserção/validação de furos continua a evoluir. A geração de Drill XML a partir do configurador (`onArquivosCnc`) é um caminho paralelo já disponível.
+features: Rota e UI acessíveis em pimo.pro | Vistas 2D/3D e toolbar de ferramentas de furação | Bridge Design Industrial mínimo | Import KDT XML (código presente) | Exportação Drill XML via configurador (sistema à parte — disponível)
+inputs: Modelo de peça (PieceModel) | Import KDT XML | Cutlist / furos do projeto (via exportação CNC do configurador)
+outputs: Plano de furação no workspace DRILL (em evolução) | Drill XML / TCN via fluxo «Arquivos CNC» do configurador (já disponível)
 relatedSystems: pimo-industrial, pimo-trak, pimo-nesting
-statusNotes: O sistema dedicado PIMO DRILL está marcado «planeado»: o ficheiro `PimoDrillPage.tsx` declara explicitamente que o simulador ainda não é operativo. A exportação Drill XML do configurador continua disponível.
+statusNotes: Acessível em https://pimo.pro/industrial/pimo-drill. Estado «em desenvolvimento»: a app e a rota existem; o simulador/fluxo operativo completo ainda evolui. A exportação Drill XML do configurador continua disponível.
 sourceFiles: src/app/industrial/pimo-drill/PimoDrillPage.tsx, src/app/industrial/pimo-drill/PimoDrillToolbar.tsx, src/app/industrial/pimo-drill/import/kdtXmlParser.ts, src/hooks/useGerarArquivoHandlers.ts, src/core/drill/drillExport.ts
 
 
@@ -4722,7 +4722,7 @@ Catálogo dos sistemas acessíveis no menu **Projetos PIMO** do header da aplica
 
 ## PIMO DRILL
 URL: https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/
-Sistema próprio de furação (UI); estado planeado no código.
+Sistema próprio de furação (UI 2D/3D) em https://pimo.pro/industrial/pimo-drill — estado em desenvolvimento.
 
 # PIMO DRILL
 

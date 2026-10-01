@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T00:57:20.962Z",
+  "generatedAt": "2026-10-01T01:16:44.660Z",
   "items": [
     {
       "id": "modulo-caixa",
@@ -224,8 +224,8 @@
         "Drill",
         "/industrial/pimo-drill"
       ],
-      "definition": "Sistema dedicado de furação (UI 2D/3D). No código actual o simulador ainda não é operativo (planeado); a exportação Drill XML pelo configurador («Arquivos CNC») está disponível à parte.",
-      "status": "planned",
+      "definition": "Sistema dedicado de furação (UI 2D/3D), acessível em https://pimo.pro/industrial/pimo-drill. Estado: em desenvolvimento. A exportação Drill XML pelo configurador («Arquivos CNC») está disponível à parte.",
+      "status": "mixed",
       "relatedPaths": [
         "/pt-pt/sistemas-pimo/pimo-drill/",
         "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/"

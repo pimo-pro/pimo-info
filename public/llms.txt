@@ -57,7 +57,7 @@ Locale: pt-PT
 - PIMO PROJETOS: Área da app para listar e abrir projetos industriais guardados no servidor, com showroom e análise online.
 - PIMO NESTING: Sistema próprio de nesting (Nesting V3): layout manual/automático de peças em chapas com exportação PDF, TCN e etiquetas. Distinto do nesting Fast/PRO do pipeline de exportação do configurador.
 - PIMO INDUSTRIAL: Camada industrial da app: hub de estações, operações de fábrica e UI partilhada. Estado parcial — rotas reais com canvas de demonstração na home.
-- PIMO DRILL: Sistema dedicado de furação (UI 2D/3D). No código actual o simulador ainda não é operativo (planeado); a exportação Drill XML pelo configurador («Arquivos CNC») está disponível à parte.
+- PIMO DRILL: Sistema dedicado de furação (UI 2D/3D), acessível em https://pimo.pro/industrial/pimo-drill. Estado: em desenvolvimento. A exportação Drill XML pelo configurador («Arquivos CNC») está disponível à parte.
 - Arquivo completo (ZIP): ZIP com os principais artefactos de produção (PDFs, XLSX de ferragens, TCN, Drill XML, etiquetas, layouts). Conteúdo exacto definido pelo gerador na app — ver formatos de exportação.
 - Análise arquivo completo (online): Edição documental online de PDFs industriais em PROJETOS (/analise). No código SSOT (`industrialFeatureFlags`) a flag `industrialOnlineAnalysis` está activa (`true`). Não substitui o ZIP de produção.
 - Orçamentos P3.9: Camada técnica/admin de tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.
@@ -79,7 +79,7 @@ Locale: pt-PT
 - PIMO PROJETOS [disponivel] https://pimo.info/pt-pt/sistemas-pimo/pimo-projetos/ — Área de gestão e visualização de projetos PIMO guardados no servidor (páginas/projeto com snapshot industrial).
 - PIMO NESTING [disponivel] https://pimo.info/pt-pt/sistemas-pimo/pimo-nesting/ — Motor e UI próprios de otimização da distribuição das peças nas chapas (Nesting V3), com redução de desperdício via auto-layout e colocação manual.
 - PIMO INDUSTRIAL [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/ — Camada industrial completa da app: hub de estações, operações (CNC, nesting, drill, orlar, montagem, embalagem), operador/supervisor e integrações de fabrico.
-- PIMO DRILL [planeado] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/ — Motor/sistema próprio de furação (UI 2D/3D) para desenhar e validar furos; no ecossistema liga-se ao fluxo TCN / Drill XML.
+- PIMO DRILL [em-desenvolvimento] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/ — Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.
 
 ## UI buttons (296)
 - Header: 14 controlos

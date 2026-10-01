@@ -179,8 +179,8 @@ export const glossaryTerms = [
     term: "PIMO DRILL",
     aliases: ["Drill", "/industrial/pimo-drill"],
     definition:
-      "Sistema dedicado de furação (UI 2D/3D). No código actual o simulador ainda não é operativo (planeado); a exportação Drill XML pelo configurador («Arquivos CNC») está disponível à parte.",
-    status: "planned",
+      "Sistema dedicado de furação (UI 2D/3D), acessível em https://pimo.pro/industrial/pimo-drill. Estado: em desenvolvimento. A exportação Drill XML pelo configurador («Arquivos CNC») está disponível à parte.",
+    status: "mixed",
     relatedPaths: [
       "/pt-pt/sistemas-pimo/pimo-drill/",
       "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/",

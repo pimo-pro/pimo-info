@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T00:57:20.964Z",
+  "generatedAt": "2026-10-01T01:16:44.663Z",
   "items": [
     {
       "path": "/",
@@ -846,7 +846,7 @@
       "path": "/pt-pt/sistemas-pimo/pimo-drill/",
       "file": "pages/pt-pt/sistemas-pimo/pimo-drill.mdx",
       "title": "PIMO DRILL",
-      "description": "Sistema próprio de furação (UI); estado planeado no código.",
+      "description": "Sistema próprio de furação (UI 2D/3D) em https://pimo.pro/industrial/pimo-drill — estado em desenvolvimento.",
       "category": "sistemas",
       "tags": [
         "sistemas",

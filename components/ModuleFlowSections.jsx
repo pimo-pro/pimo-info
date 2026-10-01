@@ -206,7 +206,9 @@ export function ModuleFlowSections() {
           <a href="/pt-pt/sistemas-pimo/pimo-trak/">PIMO TRAK</a> — work orders e etiquetas
         </li>
         <li>
-          <a href="/pt-pt/sistemas-pimo/pimo-drill/">PIMO DRILL</a> — furação dedicada (planeado)
+          <a href="/pt-pt/sistemas-pimo/pimo-drill/">PIMO DRILL</a> — furação dedicada (em
+          desenvolvimento;{" "}
+          <a href="https://pimo.pro/industrial/pimo-drill">abrir na app</a>)
         </li>
       </ul>
     </div>

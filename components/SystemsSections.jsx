@@ -6,12 +6,14 @@ import { appModules } from "../data/modules"
 function statusLabel(status) {
   if (status === "disponivel") return "Disponível"
   if (status === "parcial") return "Parcial (disponível com lacunas)"
+  if (status === "em-desenvolvimento") return "Em desenvolvimento"
   return "Planeado"
 }
 
 function statusClass(status) {
   if (status === "disponivel") return "pimo-sys-status--ok"
   if (status === "parcial") return "pimo-sys-status--mixed"
+  if (status === "em-desenvolvimento") return "pimo-sys-status--dev"
   return "pimo-sys-status--planned"
 }
 
@@ -36,6 +38,12 @@ export function SystemsIndex() {
             <p>{s.definition}</p>
             <p>
               <strong>Rota:</strong> <code>{s.route}</code>
+              {s.appUrl ? (
+                <>
+                  {" "}
+                  · <a href={s.appUrl}>Abrir na app</a>
+                </>
+              ) : null}
             </p>
             <p>
               <a href={s.canonicalPath}>Ver página completa →</a>
@@ -73,6 +81,12 @@ export function SystemDetail({ systemId }) {
           {statusLabel(s.status)}
         </span>{" "}
         · Menu: <strong>{s.menuLabel}</strong> · Rota: <code>{s.route}</code>
+        {s.appUrl ? (
+          <>
+            {" "}
+            · <a href={s.appUrl}>Abrir na app</a>
+          </>
+        ) : null}
       </p>
 
       <h2>Definição</h2>
