@@ -1,0 +1,3408 @@
+/**
+ * Catálogo de botões/controlos do PIMO Criativo (verificado no código, só leitura).
+ * Gerado por scripts/build-buttons-catalog.cjs — não inventar labels.
+ * iconName mapeia para /icons/criativo/<iconName>.svg (SVGs extraídos do iconRegistry).
+ */
+
+/**
+ * @typedef {Object} UiButton
+ * @property {string} id
+ * @property {string} label
+ * @property {string|null} [iconName]
+ * @property {string|null} [icon]
+ * @property {string} location
+ * @property {string} area
+ * @property {string} action
+ * @property {string} effects
+ * @property {string|null} [shortcut]
+ * @property {string} sourceFile
+ * @property {string[]} featureIds
+ */
+
+/** @type {{ id: string, name: string }[]} */
+export const buttonAreas = [
+  {
+    "id": "header",
+    "name": "Header"
+  },
+  {
+    "id": "navegacao-lateral",
+    "name": "Navegação lateral"
+  },
+  {
+    "id": "barra-superior",
+    "name": "Barra superior unificada"
+  },
+  {
+    "id": "ferramentas-3d",
+    "name": "Ferramentas 3D"
+  },
+  {
+    "id": "paineis-laterais",
+    "name": "Painéis laterais"
+  },
+  {
+    "id": "menu-contexto",
+    "name": "Menu de contexto"
+  },
+  {
+    "id": "exportacao",
+    "name": "Exportação / Salvar e Gerar"
+  },
+  {
+    "id": "barra-inferior",
+    "name": "Barra inferior"
+  },
+  {
+    "id": "design-industrial",
+    "name": "Design Industrial"
+  },
+  {
+    "id": "pimo-trak",
+    "name": "PIMO-TRAK"
+  },
+  {
+    "id": "atalhos",
+    "name": "Atalhos de teclado"
+  }
+]
+
+/** @type {UiButton[]} */
+export const buttons = [
+  {
+    "icon": "⌨",
+    "iconName": null,
+    "shortcut": "Ctrl+Click",
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Alterna inclusão do objeto na multi-seleção.",
+    "action": "Alterna inclusão do objeto na multi-seleção.",
+    "area": "atalhos",
+    "location": "Atalhos de teclado (Workspace)",
+    "sourceFile": "src/components/layout/workspace/Workspace.tsx",
+    "id": "kbd-multi-select",
+    "label": "Adicionar/remover da seleção"
+  },
+  {
+    "icon": "⌨",
+    "iconName": null,
+    "shortcut": "Ctrl+Z",
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Desfaz (`actions.undo`).",
+    "action": "Desfaz (`actions.undo`).",
+    "area": "atalhos",
+    "location": "Atalhos de teclado (Workspace)",
+    "sourceFile": "src/components/layout/workspace/Workspace.tsx",
+    "id": "kbd-undo",
+    "label": "Desfazer"
+  },
+  {
+    "icon": "⌨",
+    "iconName": null,
+    "shortcut": "Delete / Backspace",
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Remove caixas/remates selecionados.",
+    "action": "Remove caixas/remates selecionados.",
+    "area": "atalhos",
+    "location": "Atalhos de teclado (Workspace)",
+    "sourceFile": "src/components/layout/workspace/Workspace.tsx",
+    "id": "kbd-delete",
+    "label": "Excluir seleção"
+  },
+  {
+    "icon": "⌨",
+    "iconName": null,
+    "shortcut": "Alt",
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Alterna o overlay «Atalhos do teclado».",
+    "action": "Alterna o overlay «Atalhos do teclado».",
+    "area": "atalhos",
+    "location": "Atalhos de teclado (Workspace)",
+    "sourceFile": "src/components/layout/workspace/Workspace.tsx",
+    "id": "kbd-alt-help",
+    "label": "Mostrar/ocultar ajuda de atalhos"
+  },
+  {
+    "icon": "⌨",
+    "iconName": null,
+    "shortcut": "Setas",
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Move a caixa selecionada no plano (passo em mm).",
+    "action": "Move a caixa selecionada no plano (passo em mm).",
+    "area": "atalhos",
+    "location": "Atalhos de teclado (Workspace)",
+    "sourceFile": "src/components/layout/workspace/Workspace.tsx",
+    "id": "kbd-arrows",
+    "label": "Mover caixa selecionada"
+  },
+  {
+    "icon": "⌨",
+    "iconName": null,
+    "shortcut": "Ctrl+Y",
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Refaz (`actions.redo`).",
+    "action": "Refaz (`actions.redo`).",
+    "area": "atalhos",
+    "location": "Atalhos de teclado (Workspace)",
+    "sourceFile": "src/components/layout/workspace/Workspace.tsx",
+    "id": "kbd-redo-y",
+    "label": "Refazer"
+  },
+  {
+    "icon": "⌨",
+    "iconName": null,
+    "shortcut": "Ctrl+Shift+Z",
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Refaz (`actions.redo`).",
+    "action": "Refaz (`actions.redo`).",
+    "area": "atalhos",
+    "location": "Atalhos de teclado (Workspace)",
+    "sourceFile": "src/components/layout/workspace/Workspace.tsx",
+    "id": "kbd-redo-shift-z",
+    "label": "Refazer"
+  },
+  {
+    "icon": null,
+    "iconName": "undo",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Filtra entradas do histórico de alterações.",
+    "action": "Filtra o histórico para «Adições».",
+    "area": "barra-inferior",
+    "id": "history-filter-add",
+    "label": "Adições",
+    "location": "Painel Histórico (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "undo",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Filtra entradas do histórico de alterações.",
+    "action": "Filtra o histórico para «Alterações de altura».",
+    "area": "barra-inferior",
+    "id": "history-filter-height",
+    "label": "Alterações de altura",
+    "location": "Painel Histórico (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminChecklist",
+    "shortcut": null,
+    "featureIds": [
+      "lista-de-corte",
+      "modulo-industrial"
+    ],
+    "effects": "Altera o conteúdo do painel industrial inferior.",
+    "action": "Mostra o separador «Chapas Real» no hub Industriais.",
+    "area": "barra-inferior",
+    "id": "hub-industriais-chapasReal",
+    "label": "Chapas Real",
+    "location": "Hub Industriais (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "grid",
+    "shortcut": null,
+    "featureIds": [
+      "lista-de-corte",
+      "configurador-3d"
+    ],
+    "effects": "Abre o menu de componentes (peças e painéis).",
+    "action": "Abre o menu de componentes (peças e painéis).",
+    "area": "barra-inferior",
+    "location": "Barra inferior de informação",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx",
+    "id": "bottom-componentes",
+    "label": "componentes"
+  },
+  {
+    "icon": null,
+    "iconName": "adminChecklist",
+    "shortcut": null,
+    "featureIds": [
+      "lista-de-corte",
+      "modulo-industrial"
+    ],
+    "effects": "Altera o conteúdo do painel industrial inferior.",
+    "action": "Mostra o separador «Consumo Materiais» no hub Industriais.",
+    "area": "barra-inferior",
+    "id": "hub-industriais-consumoMateriais",
+    "label": "Consumo Materiais",
+    "location": "Hub Industriais (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminChart",
+    "shortcut": null,
+    "featureIds": [
+      "orcamentos"
+    ],
+    "effects": "Visível apenas para admin.",
+    "action": "Mostra o separador «Editar» no hub Financeiro.",
+    "area": "barra-inferior",
+    "id": "hub-financeiro-editar",
+    "label": "Editar",
+    "location": "Hub Financeiro (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/FinanceiroHub.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminChecklist",
+    "shortcut": null,
+    "featureIds": [
+      "lista-de-corte",
+      "modulo-industrial"
+    ],
+    "effects": "Altera o conteúdo do painel industrial inferior.",
+    "action": "Mostra o separador «Enviar para Fábrica» no hub Industriais.",
+    "area": "barra-inferior",
+    "id": "hub-industriais-enviarFabrica",
+    "label": "Enviar para Fábrica",
+    "location": "Hub Industriais (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminChecklist",
+    "shortcut": null,
+    "featureIds": [
+      "lista-de-corte",
+      "modulo-industrial"
+    ],
+    "effects": "Altera o conteúdo do painel industrial inferior.",
+    "action": "Mostra o separador «Ferragens Totais» no hub Industriais.",
+    "area": "barra-inferior",
+    "id": "hub-industriais-ferragensTotais",
+    "label": "Ferragens Totais",
+    "location": "Hub Industriais (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx"
+  },
+  {
+    "icon": "finance",
+    "iconName": null,
+    "shortcut": null,
+    "featureIds": [
+      "orcamentos"
+    ],
+    "effects": "Abre/fecha o hub Financeiro (orçamento/peças).",
+    "action": "Abre/fecha o hub Financeiro (orçamento/peças).",
+    "area": "barra-inferior",
+    "location": "Barra inferior de informação",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx",
+    "id": "bottom-financeiro",
+    "label": "Financeiro"
+  },
+  {
+    "icon": null,
+    "iconName": "adminChart",
+    "shortcut": null,
+    "featureIds": [
+      "orcamentos"
+    ],
+    "effects": "Altera o painel financeiro.",
+    "action": "Mostra o separador «Financeiro peças» no hub Financeiro.",
+    "area": "barra-inferior",
+    "id": "hub-financeiro-pecas",
+    "label": "Financeiro peças",
+    "location": "Hub Financeiro (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/FinanceiroHub.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "undo",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Abre o painel de histórico de alterações.",
+    "action": "Abre o painel de histórico de alterações.",
+    "area": "barra-inferior",
+    "location": "Barra inferior de informação",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx",
+    "id": "bottom-historico",
+    "label": "Histórico"
+  },
+  {
+    "icon": "industrial",
+    "iconName": null,
+    "shortcut": null,
+    "featureIds": [
+      "lista-de-corte",
+      "modulo-industrial"
+    ],
+    "effects": "Abre/fecha o hub Industriais (peças, chapas, envio fábrica).",
+    "action": "Abre/fecha o hub Industriais (peças, chapas, envio fábrica).",
+    "area": "barra-inferior",
+    "location": "Barra inferior de informação",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx",
+    "id": "bottom-industriais",
+    "label": "Industriais"
+  },
+  {
+    "icon": null,
+    "iconName": "undo",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Filtra entradas do histórico de alterações.",
+    "action": "Filtra o histórico para «Movimentações».",
+    "area": "barra-inferior",
+    "id": "history-filter-move",
+    "label": "Movimentações",
+    "location": "Painel Histórico (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminChecklist",
+    "shortcut": null,
+    "featureIds": [
+      "lista-de-corte",
+      "modulo-industrial"
+    ],
+    "effects": "Altera o conteúdo do painel industrial inferior.",
+    "action": "Mostra o separador «Observações Industriais» no hub Industriais.",
+    "area": "barra-inferior",
+    "id": "hub-industriais-resumoIndustriais",
+    "label": "Observações Industriais",
+    "location": "Hub Industriais (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx"
+  },
+  {
+    "icon": "operations",
+    "iconName": null,
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre/fecha o hub Operações industriais.",
+    "action": "Abre/fecha o hub Operações industriais.",
+    "area": "barra-inferior",
+    "location": "Barra inferior de informação",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx",
+    "id": "bottom-operacoes",
+    "label": "Operações"
+  },
+  {
+    "icon": null,
+    "iconName": "undo",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Filtra entradas do histórico de alterações.",
+    "action": "Filtra o histórico para «Outras ações».",
+    "area": "barra-inferior",
+    "id": "history-filter-other",
+    "label": "Outras ações",
+    "location": "Painel Histórico (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminChart",
+    "shortcut": null,
+    "featureIds": [
+      "orcamentos"
+    ],
+    "effects": "Altera o painel financeiro.",
+    "action": "Mostra o separador «Painel Unificado» no hub Financeiro.",
+    "area": "barra-inferior",
+    "id": "hub-financeiro-unificado",
+    "label": "Painel Unificado",
+    "location": "Hub Financeiro (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/FinanceiroHub.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminChecklist",
+    "shortcut": null,
+    "featureIds": [
+      "lista-de-corte",
+      "modulo-industrial"
+    ],
+    "effects": "Altera o conteúdo do painel industrial inferior.",
+    "action": "Mostra o separador «Peças Totais» no hub Industriais.",
+    "area": "barra-inferior",
+    "id": "hub-industriais-pecasTotais",
+    "label": "Peças Totais",
+    "location": "Hub Industriais (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "undo",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Filtra entradas do histórico de alterações.",
+    "action": "Filtra o histórico para «Redimensionamentos».",
+    "area": "barra-inferior",
+    "id": "history-filter-resize",
+    "label": "Redimensionamentos",
+    "location": "Painel Histórico (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "undo",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Filtra entradas do histórico de alterações.",
+    "action": "Filtra o histórico para «Remoções».",
+    "area": "barra-inferior",
+    "id": "history-filter-remove",
+    "label": "Remoções",
+    "location": "Painel Histórico (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "undo",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Filtra entradas do histórico de alterações.",
+    "action": "Filtra o histórico para «Todas as ações».",
+    "area": "barra-inferior",
+    "id": "history-filter-all",
+    "label": "Todas as ações",
+    "location": "Painel Histórico (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "lock3D",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Alterna o bloqueio de colisão (impedir ou permitir sobreposição entre caixas, paredes e chão).",
+    "action": "Alterna o bloqueio de colisão (impedir ou permitir sobreposição entre caixas, paredes e chão).",
+    "area": "barra-superior",
+    "location": "Barra superior unificada do workspace",
+    "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
+    "id": "utt-lock-collision",
+    "label": "Bloquear / Desbloquear colisão"
+  },
+  {
+    "icon": null,
+    "iconName": "displayMenu",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Abre presets de qualidade (Baixa / Média / Alta).",
+    "action": "Abre presets de qualidade (Baixa / Média / Alta).",
+    "area": "barra-superior",
+    "location": "Barra superior unificada do workspace",
+    "sourceFile": "src/components/layout/topbar/DisplayMenuButton.tsx",
+    "id": "utt-display-quality",
+    "label": "Configurações de Qualidade de Exibição"
+  },
+  {
+    "icon": null,
+    "iconName": "undo",
+    "shortcut": "Ctrl+Z",
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Desfazer (Ctrl+Z)",
+    "action": "Desfaz a última alteração do projeto (`actions.undo`).",
+    "area": "barra-superior",
+    "id": "toolbar-desfazer",
+    "label": "DESFAZER",
+    "tooltip": "Desfazer (Ctrl+Z)",
+    "location": "Barra superior / header (ações de projeto)",
+    "sourceFile": "src/constants/toolbarConfig.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "industrialDesign",
+    "shortcut": null,
+    "featureIds": [
+      "modulo-industrial"
+    ],
+    "effects": "Ativa/desativa o workspace de Design Industrial e o painel associado.",
+    "action": "Ativa/desativa o workspace de Design Industrial e o painel associado.",
+    "area": "barra-superior",
+    "location": "Barra superior unificada do workspace",
+    "sourceFile": "src/components/layout/workspace/WorkspaceToolbar.tsx",
+    "id": "utt-industrial-design",
+    "label": "Design Industrial"
+  },
+  {
+    "icon": null,
+    "iconName": "send",
+    "shortcut": null,
+    "featureIds": [
+      "pdf-tecnico"
+    ],
+    "effects": "Enviar pacote",
+    "action": "Abre o fluxo de envio de pacote do projeto.",
+    "area": "barra-superior",
+    "id": "toolbar-enviar",
+    "label": "ENVIAR",
+    "tooltip": "Enviar pacote",
+    "location": "Barra superior / header (ações de projeto)",
+    "sourceFile": "src/constants/toolbarConfig.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "exploded",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Abre controlos de vista explodida (ativar + intensidade).",
+    "action": "Abre controlos de vista explodida (ativar + intensidade).",
+    "area": "barra-superior",
+    "location": "Barra superior unificada do workspace",
+    "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
+    "id": "utt-exploded",
+    "label": "Exploded View"
+  },
+  {
+    "icon": null,
+    "iconName": "highlight",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Alterna highlight de seleção no viewer (`toggleHighlight`).",
+    "action": "Alterna highlight de seleção no viewer (`toggleHighlight`).",
+    "area": "barra-superior",
+    "location": "Barra superior unificada do workspace",
+    "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
+    "id": "utt-highlight",
+    "label": "Highlight"
+  },
+  {
+    "icon": null,
+    "iconName": "dimensions",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Alterna o overlay de medidas do conjunto (`toggleDimensionsOverlay`).",
+    "action": "Alterna o overlay de medidas do conjunto (`toggleDimensionsOverlay`).",
+    "area": "barra-superior",
+    "location": "Barra superior unificada do workspace",
+    "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
+    "id": "utt-dimensions",
+    "label": "Medidas do Conjunto"
+  },
+  {
+    "icon": null,
+    "iconName": "adminDocs",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Limpar dados locais e iniciar sessão nova",
+    "action": "Confirma e limpa o projeto local para iniciar sessão nova.",
+    "area": "barra-superior",
+    "id": "toolbar-novo",
+    "label": "NOVO",
+    "tooltip": "Limpar dados locais e iniciar sessão nova",
+    "location": "Barra superior / header (ações de projeto)",
+    "sourceFile": "src/constants/toolbarConfig.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "pieces",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Abre o menu de opções de visualização de peças/painéis.",
+    "action": "Abre o menu de opções de visualização de peças/painéis.",
+    "area": "barra-superior",
+    "location": "Barra superior unificada do workspace",
+    "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
+    "id": "utt-pieces-visibility",
+    "label": "Peças / painéis (visibilidade)"
+  },
+  {
+    "icon": null,
+    "iconName": "photoMode",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Photo Mode",
+    "action": "Alterna o painel Photo Mode e `viewerSettings.photoModeEnabled`.",
+    "area": "barra-superior",
+    "id": "toolbar-photo",
+    "label": "PHOTO",
+    "tooltip": "Photo Mode",
+    "location": "Barra superior / header (ações de projeto)",
+    "sourceFile": "src/constants/toolbarConfig.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "projects",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Projetos salvos",
+    "action": "Abre a lista/modal de projetos salvos.",
+    "area": "barra-superior",
+    "id": "toolbar-projeto",
+    "label": "PROJETO",
+    "tooltip": "Projetos salvos",
+    "location": "Barra superior / header (ações de projeto)",
+    "sourceFile": "src/constants/toolbarConfig.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "displayCheck",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Bloom e reflexos moderados",
+    "action": "Aplica o preset de qualidade «Alta» (Bloom e reflexos moderados).",
+    "area": "barra-superior",
+    "id": "display-quality-alta",
+    "label": "Qualidade: Alta",
+    "location": "Menu Qualidade de Exibição",
+    "sourceFile": "src/components/layout/topbar/DisplayMenuButton.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "displayCheck",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Luz simples, sem efeitos",
+    "action": "Aplica o preset de qualidade «Baixa» (Luz simples, sem efeitos).",
+    "area": "barra-superior",
+    "id": "display-quality-baixa",
+    "label": "Qualidade: Baixa",
+    "location": "Menu Qualidade de Exibição",
+    "sourceFile": "src/components/layout/topbar/DisplayMenuButton.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "displayCheck",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Bloom leve",
+    "action": "Aplica o preset de qualidade «Média» (Bloom leve).",
+    "area": "barra-superior",
+    "id": "display-quality-media",
+    "label": "Qualidade: Média",
+    "location": "Menu Qualidade de Exibição",
+    "sourceFile": "src/components/layout/topbar/DisplayMenuButton.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "redo",
+    "shortcut": "Ctrl+Shift+Z / Ctrl+Y",
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Refazer (Ctrl+Shift+Z)",
+    "action": "Refaz a alteração desfeita (`actions.redo`).",
+    "area": "barra-superior",
+    "id": "toolbar-refazer",
+    "label": "REFAZER",
+    "tooltip": "Refazer (Ctrl+Shift+Z)",
+    "location": "Barra superior / header (ações de projeto)",
+    "sourceFile": "src/constants/toolbarConfig.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "ruler",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Alterna a régua no viewer (`toggleRuler`).",
+    "action": "Alterna a régua no viewer (`toggleRuler`).",
+    "area": "barra-superior",
+    "location": "Barra superior unificada do workspace",
+    "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
+    "id": "utt-ruler",
+    "label": "Régua"
+  },
+  {
+    "icon": null,
+    "iconName": "resetCamera",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Reset Camera – Vista frontal centralizada",
+    "action": "Repõe a câmara na vista frontal centralizada.",
+    "area": "barra-superior",
+    "id": "toolbar-reset-camera",
+    "label": "RESET",
+    "tooltip": "Reset Camera – Vista frontal centralizada",
+    "location": "Barra superior / header (ações de projeto)",
+    "sourceFile": "src/constants/toolbarConfig.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "room",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Abre/fecha o painel de configuração da sala.",
+    "action": "Abre/fecha o painel de configuração da sala.",
+    "area": "barra-superior",
+    "location": "Barra superior unificada do workspace",
+    "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
+    "id": "utt-room",
+    "label": "Salão — configurar sala"
+  },
+  {
+    "icon": null,
+    "iconName": "send",
+    "shortcut": null,
+    "featureIds": [
+      "exportacao-tcn-drill-xml",
+      "pdf-tecnico",
+      "lista-de-corte",
+      "nesting-fast-pro"
+    ],
+    "effects": "Persiste o projeto e abre a bolha unificada de exportação/envio (`UnifiedExportBubble`).",
+    "action": "Persiste o projeto e abre a bolha unificada de exportação/envio (`UnifiedExportBubble`).",
+    "area": "barra-superior",
+    "location": "Barra superior unificada do workspace",
+    "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
+    "id": "utt-salvar-gerar",
+    "label": "Salvar e Gerar Design"
+  },
+  {
+    "icon": null,
+    "iconName": "camera",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Abre o menu de vistas da câmara (Top/Bottom/Front/Back/Left/Right/Isometric).",
+    "action": "Abre o menu de vistas da câmara (Top/Bottom/Front/Back/Left/Right/Isometric).",
+    "area": "barra-superior",
+    "location": "Barra superior unificada do workspace",
+    "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
+    "id": "utt-camera-views",
+    "label": "Selecionar vista da câmera"
+  },
+  {
+    "icon": null,
+    "iconName": "camera",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Altera a orientação da câmara no viewer 3D.",
+    "action": "Define a vista da câmara para «front» via `viewerApi.setCameraView`.",
+    "area": "barra-superior",
+    "id": "camera-view-front",
+    "label": "Vista Frontal (Front)",
+    "location": "Menu vistas da câmara (barra superior)",
+    "sourceFile": "src/components/layout/viewer-toolbar/CameraViewMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "camera",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Altera a orientação da câmara no viewer 3D.",
+    "action": "Define a vista da câmara para «bottom» via `viewerApi.setCameraView`.",
+    "area": "barra-superior",
+    "id": "camera-view-bottom",
+    "label": "Vista Inferior (Bottom)",
+    "location": "Menu vistas da câmara (barra superior)",
+    "sourceFile": "src/components/layout/viewer-toolbar/CameraViewMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "camera",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Altera a orientação da câmara no viewer 3D.",
+    "action": "Define a vista da câmara para «isometric» via `viewerApi.setCameraView`.",
+    "area": "barra-superior",
+    "id": "camera-view-isometric",
+    "label": "Vista Isométrica (Isometric)",
+    "location": "Menu vistas da câmara (barra superior)",
+    "sourceFile": "src/components/layout/viewer-toolbar/CameraViewMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "camera",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Altera a orientação da câmara no viewer 3D.",
+    "action": "Define a vista da câmara para «right» via `viewerApi.setCameraView`.",
+    "area": "barra-superior",
+    "id": "camera-view-right",
+    "label": "Vista Lateral Direita (Right)",
+    "location": "Menu vistas da câmara (barra superior)",
+    "sourceFile": "src/components/layout/viewer-toolbar/CameraViewMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "camera",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Altera a orientação da câmara no viewer 3D.",
+    "action": "Define a vista da câmara para «left» via `viewerApi.setCameraView`.",
+    "area": "barra-superior",
+    "id": "camera-view-left",
+    "label": "Vista Lateral Esquerda (Left)",
+    "location": "Menu vistas da câmara (barra superior)",
+    "sourceFile": "src/components/layout/viewer-toolbar/CameraViewMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "camera",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Altera a orientação da câmara no viewer 3D.",
+    "action": "Define a vista da câmara para «top» via `viewerApi.setCameraView`.",
+    "area": "barra-superior",
+    "id": "camera-view-top",
+    "label": "Vista Superior (Top)",
+    "location": "Menu vistas da câmara (barra superior)",
+    "sourceFile": "src/components/layout/viewer-toolbar/CameraViewMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "camera",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Altera a orientação da câmara no viewer 3D.",
+    "action": "Define a vista da câmara para «back» via `viewerApi.setCameraView`.",
+    "area": "barra-superior",
+    "id": "camera-view-back",
+    "label": "Vista Traseira (Back)",
+    "location": "Menu vistas da câmara (barra superior)",
+    "sourceFile": "src/components/layout/viewer-toolbar/CameraViewMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminScrew",
+    "shortcut": null,
+    "featureIds": [
+      "modulo-industrial",
+      "exportacao-tcn-drill-xml"
+    ],
+    "effects": "Adiciona operação de cavilha no design industrial.",
+    "action": "Cria furação de cavilha Ø10×30 na espessura e Ø10×13 na peça oposta (tooltip verificado no código).",
+    "area": "design-industrial",
+    "id": "industrial-cavilha-10x40",
+    "label": "Cavilha 10×40",
+    "location": "Painel Design Industrial",
+    "sourceFile": "src/components/layout/workspace/IndustrialDesignPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "close",
+    "shortcut": null,
+    "featureIds": [
+      "modulo-industrial"
+    ],
+    "effects": "Define `industrialDesignPanelOpen` a false.",
+    "action": "Fecha o painel Workspace Industrial de Design.",
+    "area": "design-industrial",
+    "id": "industrial-design-close",
+    "label": "Fechar",
+    "location": "Painel Design Industrial",
+    "sourceFile": "src/components/layout/workspace/IndustrialDesignPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminFolder",
+    "shortcut": null,
+    "featureIds": [
+      "exportacao-tcn-drill-xml",
+      "pdf-tecnico"
+    ],
+    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Gera o arquivo unificado (`onUnificado`).",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-unificado",
+    "label": "Arquivo Unificado"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "exportacao-tcn-drill-xml"
+    ],
+    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Gera ficheiros CNC `.tcn` e Drill XML (`onArquivosCnc`).",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-arquivos-cnc",
+    "label": "Arquivos CNC"
+  },
+  {
+    "icon": null,
+    "iconName": "adminChecklist",
+    "shortcut": null,
+    "featureIds": [
+      "lista-de-corte"
+    ],
+    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Gera a lista de corte / cutlist (`onCutlist`).",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-cutlist",
+    "label": "Cutlist"
+  },
+  {
+    "icon": null,
+    "iconName": "adminArchive",
+    "shortcut": null,
+    "featureIds": [
+      "lista-de-corte",
+      "pdf-tecnico"
+    ],
+    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Gera cutlist, PDF técnico e arquivo unificado (`onAmbos`).",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-ambos",
+    "label": "Cutlist + PDF + Unificado"
+  },
+  {
+    "icon": null,
+    "iconName": "adminSave",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Descarrega o pacote/projeto em JSON localmente.",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-download-json",
+    "label": "Download local (JSON)"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTag",
+    "shortcut": null,
+    "featureIds": [
+      "lista-de-corte"
+    ],
+    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Gera etiquetas UEE v5 (`onEtiquetas`).",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-etiquetas",
+    "label": "Etiquetas (UEE v5)"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "lista-de-corte"
+    ],
+    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Gera relatório de ferragens industriais (`onFerragensIndustriais`).",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-ferragens",
+    "label": "Ferragens Industriais"
+  },
+  {
+    "icon": null,
+    "iconName": "adminChecklist",
+    "shortcut": null,
+    "featureIds": [
+      "lista-de-corte"
+    ],
+    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Exporta ferragens em XLSX (`onFerragensIndustriaisXlsx`).",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-ferragens-xlsx",
+    "label": "Ferragens XLSX"
+  },
+  {
+    "icon": null,
+    "iconName": "adminFolder",
+    "shortcut": null,
+    "featureIds": [
+      "exportacao-tcn-drill-xml",
+      "pdf-tecnico",
+      "lista-de-corte"
+    ],
+    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Gera o arquivo completo com bridge SGPI (`onArquivoCompletoWithSgpi`).",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-arquivo-completo",
+    "label": "Gerar arquivo completo"
+  },
+  {
+    "icon": null,
+    "iconName": "grid",
+    "shortcut": null,
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Gera layout de corte manual (`onLayoutCorteManual`).",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-layout-manual",
+    "label": "Layout de Corte manual"
+  },
+  {
+    "icon": null,
+    "iconName": "blueprint",
+    "shortcut": null,
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Gera layout de corte PRO (`onLayoutCortePro`).",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-layout-pro",
+    "label": "Layout de Corte PRO"
+  },
+  {
+    "icon": null,
+    "iconName": "grid",
+    "shortcut": null,
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Fecha a bolha e abre Nesting V3 manual (`onOpenNestingV3`).",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-nesting-v3",
+    "label": "Nesting V3 (Manual)"
+  },
+  {
+    "icon": null,
+    "iconName": "adminDocs",
+    "shortcut": null,
+    "featureIds": [
+      "pdf-tecnico"
+    ],
+    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Gera o PDF técnico do projeto (`onPdfTecnico`).",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-pdf-tecnico",
+    "label": "PDF Técnico"
+  },
+  {
+    "icon": null,
+    "iconName": "send",
+    "shortcut": null,
+    "featureIds": [
+      "orcamentos"
+    ],
+    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Abre o modal de pedido de orçamento após guardar.",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-pedir-orcamento",
+    "label": "Salvar e pedir orçamento"
+  },
+  {
+    "icon": null,
+    "iconName": "adminChecklist",
+    "shortcut": null,
+    "featureIds": [
+      "modulo-industrial",
+      "pdf-tecnico"
+    ],
+    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Gera os 4 PDFs das secções industriais (`onSecoesIndustriaisPdfs`).",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-secoes-pdfs",
+    "label": "Secções Industriais (4 PDFs)"
+  },
+  {
+    "icon": null,
+    "iconName": "scale",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Disponível para modelos GLB/externos não industriais e não bloqueados.",
+    "action": "Ativa a ferramenta 3D «Escalar» (evento `tool:scale`).",
+    "area": "ferramentas-3d",
+    "id": "tool-3d-scale",
+    "label": "Escalar",
+    "location": "Barra superior unificada — ferramentas 3D",
+    "sourceFile": "src/constants/toolbarConfig.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "move",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Define a ferramenta ativa do viewer para move.",
+    "action": "Ativa a ferramenta 3D «Mover» (evento `tool:move`).",
+    "area": "ferramentas-3d",
+    "id": "tool-3d-move",
+    "label": "Mover",
+    "location": "Barra superior unificada — ferramentas 3D",
+    "sourceFile": "src/constants/toolbarConfig.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "rotate",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Define a ferramenta ativa do viewer para rotate.",
+    "action": "Ativa a ferramenta 3D «Rodar» (evento `tool:rotate`).",
+    "area": "ferramentas-3d",
+    "id": "tool-3d-rotate",
+    "label": "Rodar",
+    "location": "Barra superior unificada — ferramentas 3D",
+    "sourceFile": "src/constants/toolbarConfig.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "select",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Define a ferramenta ativa do viewer para select.",
+    "action": "Ativa a ferramenta 3D «Selecionar» (evento `tool:select`).",
+    "area": "ferramentas-3d",
+    "id": "tool-3d-select",
+    "label": "Selecionar",
+    "location": "Barra superior unificada — ferramentas 3D",
+    "sourceFile": "src/constants/toolbarConfig.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "settings",
+    "shortcut": null,
+    "featureIds": [],
+    "effects": "Navega para `/definicoes`.",
+    "action": "Navega para `/definicoes`.",
+    "area": "header",
+    "location": "Header (barra do topo da app)",
+    "sourceFile": "src/components/layout/header/Header.tsx",
+    "id": "header-definicoes",
+    "label": "Abrir definições"
+  },
+  {
+    "icon": null,
+    "iconName": "projects",
+    "shortcut": null,
+    "featureIds": [],
+    "effects": "Navega para `/meus-projetos`.",
+    "action": "Navega para `/meus-projetos`.",
+    "area": "header",
+    "location": "Header (barra do topo da app)",
+    "sourceFile": "src/components/layout/header/Header.tsx",
+    "id": "header-meus-projetos",
+    "label": "Abrir meus projetos"
+  },
+  {
+    "icon": null,
+    "iconName": "user",
+    "shortcut": null,
+    "featureIds": [],
+    "effects": "Navega para `/login`.",
+    "action": "Navega para `/login`.",
+    "area": "header",
+    "location": "Header (barra do topo da app)",
+    "sourceFile": "src/components/layout/header/Header.tsx",
+    "id": "header-login",
+    "label": "Abrir página de login"
+  },
+  {
+    "icon": null,
+    "iconName": "themeSun",
+    "shortcut": null,
+    "featureIds": [],
+    "effects": "Alterna tema claro/escuro (`toggleTheme`).",
+    "action": "Alterna tema claro/escuro (`toggleTheme`).",
+    "area": "header",
+    "location": "Header (barra do topo da app)",
+    "sourceFile": "src/components/layout/header/Header.tsx",
+    "id": "header-theme",
+    "label": "Alternar tema claro/escuro"
+  },
+  {
+    "icon": "🌐",
+    "iconName": null,
+    "shortcut": null,
+    "featureIds": [],
+    "effects": "Controlo de idioma (atualmente fixo em PT; troca marcada como @PIMO-SOON).",
+    "action": "Controlo de idioma (atualmente fixo em PT; troca marcada como @PIMO-SOON).",
+    "area": "header",
+    "location": "Header (barra do topo da app)",
+    "sourceFile": "src/components/layout/header/Header.tsx",
+    "id": "header-lang",
+    "label": "Idioma atual: PT"
+  },
+  {
+    "icon": null,
+    "iconName": "projects",
+    "shortcut": null,
+    "featureIds": [
+      "exportacao-tcn-drill-xml",
+      "modulo-industrial"
+    ],
+    "effects": "Muda a área da aplicação para PIMO DRILL.",
+    "action": "Navega para `/industrial/pimo-drill`.",
+    "area": "header",
+    "id": "nav-app-drill",
+    "label": "PIMO DRILL",
+    "location": "Menu Projetos PIMO (header)",
+    "sourceFile": "src/components/layout/header/HeaderProjectsSwitcher.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "projects",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak"
+    ],
+    "effects": "Muda a área da aplicação para PIMO Industrial.",
+    "action": "Navega para `/industrial`.",
+    "area": "header",
+    "id": "nav-app-industrial",
+    "label": "PIMO Industrial",
+    "location": "Menu Projetos PIMO (header)",
+    "sourceFile": "src/components/layout/header/HeaderProjectsSwitcher.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "projects",
+    "shortcut": null,
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Muda a área da aplicação para PIMO NESTING.",
+    "action": "Navega para `/nesting_v3`.",
+    "area": "header",
+    "id": "nav-app-nesting",
+    "label": "PIMO NESTING",
+    "location": "Menu Projetos PIMO (header)",
+    "sourceFile": "src/components/layout/header/HeaderProjectsSwitcher.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "projects",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Muda a área da aplicação para PIMO PRO.",
+    "action": "Navega para `/`.",
+    "area": "header",
+    "id": "nav-app-pro",
+    "label": "PIMO PRO",
+    "location": "Menu Projetos PIMO (header)",
+    "sourceFile": "src/components/layout/header/HeaderProjectsSwitcher.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "projects",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Muda a área da aplicação para PIMO PROJETOS.",
+    "action": "Navega para `/PROJETOS`.",
+    "area": "header",
+    "id": "nav-app-projetos",
+    "label": "PIMO PROJETOS",
+    "location": "Menu Projetos PIMO (header)",
+    "sourceFile": "src/components/layout/header/HeaderProjectsSwitcher.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "projects",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak"
+    ],
+    "effects": "Muda a área da aplicação para PIMO TRAK.",
+    "action": "Navega para `/industrial/work-orders`.",
+    "area": "header",
+    "id": "nav-app-trak",
+    "label": "PIMO TRAK",
+    "location": "Menu Projetos PIMO (header)",
+    "sourceFile": "src/components/layout/header/HeaderProjectsSwitcher.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre o menu industrial (Operador, Tracking, Work Orders, Operations, etc.).",
+    "action": "Abre o menu industrial (Operador, Tracking, Work Orders, Operations, etc.).",
+    "area": "header",
+    "location": "Header (barra do topo da app)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx",
+    "id": "header-industrial-menu",
+    "label": "PIMO-TRAK Industrial"
+  },
+  {
+    "icon": null,
+    "iconName": "projects",
+    "shortcut": null,
+    "featureIds": [],
+    "effects": "Abre o menu de troca entre PIMO PRO / TRAK / PROJETOS / NESTING / Industrial / DRILL.",
+    "action": "Abre o menu de troca entre PIMO PRO / TRAK / PROJETOS / NESTING / Industrial / DRILL.",
+    "area": "header",
+    "location": "Header (barra do topo da app)",
+    "sourceFile": "src/components/layout/header/HeaderProjectsSwitcher.tsx",
+    "id": "header-projects-switcher",
+    "label": "Projetos PIMO"
+  },
+  {
+    "icon": null,
+    "iconName": "upload",
+    "shortcut": null,
+    "featureIds": [],
+    "effects": "Importa projeto PIMO a partir de ficheiro JSON/ZIP (Shift+clique: pasta).",
+    "action": "Importa projeto PIMO a partir de ficheiro JSON/ZIP (Shift+clique: pasta).",
+    "area": "header",
+    "location": "Header (barra do topo da app)",
+    "sourceFile": "src/components/layout/header/Header.tsx",
+    "id": "header-upload",
+    "label": "Selecionar ficheiro de projeto"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "lista-de-corte"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `cutlist.open` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-cutlist-open",
+    "label": "Abrir / consultar cutlist",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartLayout.applyPredictive` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartLayout-applyPredictive",
+    "label": "Aceitar layout sugerido",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `multi.addAnchor` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-multi-addAnchor",
+    "label": "Adicionar Âncora",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `alignment` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-alignment",
+    "label": "Alinhamento",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap",
+    "label": "Alinhamento e Encaixe Inteligente (Smart Align & Snap)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `alignment.right` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-alignment-right",
+    "label": "Alinhar à Direita",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `alignment.left` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-alignment-left",
+    "label": "Alinhar à Esquerda",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `remate.snapFrente` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-remate-snapFrente",
+    "label": "Alinhar à Frente",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `alignment.front` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-alignment-front",
+    "label": "Alinhar à Frente",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `alignment.bottom` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-alignment-bottom",
+    "label": "Alinhar Abaixo",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `alignment.top` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-alignment-top",
+    "label": "Alinhar Acima",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `alignment.back` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-alignment-back",
+    "label": "Alinhar Atrás",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `box.alignBottom` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-box-alignBottom",
+    "label": "Alinhar baixo",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.alignDrawer` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-alignDrawer",
+    "label": "Alinhar com Gaveta",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.alignDoor` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-alignDoor",
+    "label": "Alinhar com Porta",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.right` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-right",
+    "label": "Alinhar pela Direita (Right Align)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.left` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-left",
+    "label": "Alinhar pela Esquerda (Left Align)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `box.alignFront` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-box-alignFront",
+    "label": "Alinhar pela frente",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.front` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-front",
+    "label": "Alinhar pela Frente (Front Align)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `remate.snapFundo` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-remate-snapFundo",
+    "label": "Alinhar por Baixo",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.bottom` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-bottom",
+    "label": "Alinhar por Baixo (Bottom Align)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `remate.snapCima` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-remate-snapCima",
+    "label": "Alinhar por Cima",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.top` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-top",
+    "label": "Alinhar por Cima (Top Align)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.back` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-back",
+    "label": "Alinhar por Trás (Back Align)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "materiais",
+      "portas-e-gavetas"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `porta.material` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-porta-material",
+    "label": "Alterar material",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "materiais",
+      "portas-e-gavetas"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `peca.material` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-peca-material",
+    "label": "Alterar material",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "materiais",
+      "portas-e-gavetas"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `remate.material` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-remate-material",
+    "label": "Alterar material",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `multi.changeMaterial` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-multi-changeMaterial",
+    "label": "Alterar Material",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "materiais",
+      "portas-e-gavetas"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `gaveta.material` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-gaveta-material",
+    "label": "Alterar material da frente",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `multi.changeDimensions` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-multi-changeDimensions",
+    "label": "Alterar Medidas",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "adminRuler",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Redimensiona objetos selecionados após preview.",
+    "action": "Executa `multi.changeDimensionsAdditive` no menu de contexto (scaling preview).",
+    "area": "menu-contexto",
+    "id": "ctx-multi-changeDimensionsAdditive",
+    "label": "Alterar medidas (aditivo)",
+    "location": "Menu de contexto — Alterar medidas",
+    "sourceFile": "src/components/layout/workspace/ContextMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminRuler",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Redimensiona objetos selecionados após preview.",
+    "action": "Executa `multi.changeDimensionsRatio` no menu de contexto (scaling preview).",
+    "area": "menu-contexto",
+    "id": "ctx-multi-changeDimensionsRatio",
+    "label": "Alterar medidas (proporcional)",
+    "location": "Menu de contexto — Alterar medidas",
+    "sourceFile": "src/components/layout/workspace/ContextMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `multi.delete` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-multi-delete",
+    "label": "Apagar",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `intelligentDesigner.applyA` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-intelligentDesigner-applyA",
+    "label": "Aplicar Design A",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `intelligentDesigner.applyB` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-intelligentDesigner-applyB",
+    "label": "Aplicar Design B",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `intelligentDesigner.applyC` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-intelligentDesigner-applyC",
+    "label": "Aplicar Design C",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `intelligentDesigner.learnPreferences` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-intelligentDesigner-learnPreferences",
+    "label": "Aprender Preferências",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.toggle` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-toggle",
+    "label": "Ativar Smart Align & Snap",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.auto` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-auto",
+    "label": "Auto Balance (automático)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartLayout.autoStackShelves` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartLayout-autoStackShelves",
+    "label": "Auto-Stack Shelves",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `box.lockToggle` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-box-lockToggle",
+    "label": "Bloquear / desbloquear",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `box` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-box",
+    "label": "Box",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `designerStyles.classic` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-designerStyles-classic",
+    "label": "Clássico",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.continueLine` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-continueLine",
+    "label": "Continuar Linha (Remate ↔ Rodapé)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `multi.copy` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-multi-copy",
+    "label": "Copiar",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `multi.createGroup` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-multi-createGroup",
+    "label": "Criar Grupo",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `alignment.ctrlClickHint` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-alignment-ctrlClickHint",
+    "label": "Ctrl+Click para selecionar múltiplas caixas",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "lista-de-corte"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `cutlist` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-cutlist",
+    "label": "Cutlist",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `intelligentDesigner` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-intelligentDesigner",
+    "label": "Designer Inteligente (AI Layout Generator)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartLayout.autoDistribute` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartLayout-autoDistribute",
+    "label": "Distribuição Inteligente",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `box.duplicate` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-box-duplicate",
+    "label": "Duplicar",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `designerStyles.scandinavian` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-designerStyles-scandinavian",
+    "label": "Escandinavo",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `designerStyles` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-designerStyles",
+    "label": "Estilos (Designer Inteligente)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `box.delete` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-box-delete",
+    "label": "Excluir",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `ferramentas` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-ferramentas",
+    "label": "Ferramentas",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.flushFront` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-flushFront",
+    "label": "Flush Frontal",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.flushRight` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-flushRight",
+    "label": "Flush Lateral (Direita)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.flushLeft` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-flushLeft",
+    "label": "Flush Lateral (Esquerda)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.flushBack` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-flushBack",
+    "label": "Flush Traseiro",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `intelligentDesigner.generateABC` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-intelligentDesigner-generateABC",
+    "label": "Gerar Layouts (A/B/C)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `intelligentDesigner.generateVariations` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-intelligentDesigner-generateVariations",
+    "label": "Gerar Variações",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `designerStyles.industrial` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-designerStyles-industrial",
+    "label": "Industrial",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.inverse` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-inverse",
+    "label": "Inverter alinhamento",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `designerStyles.japandi` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-designerStyles-japandi",
+    "label": "Japandi",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `designerStyles.luxury` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-designerStyles-luxury",
+    "label": "Luxo",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `materiais` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-materiais",
+    "label": "Materiais",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `designerStyles.minimalist` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-designerStyles-minimalist",
+    "label": "Minimalista",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `designerStyles.modern` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-designerStyles-modern",
+    "label": "Moderno",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `materiais.mousePreset` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-materiais-mousePreset",
+    "label": "Modo do mouse",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `ferramentas.snapModeToggle` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-ferramentas-snapModeToggle",
+    "label": "Modo snapping",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `multi.showMcDimensions` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-multi-showMcDimensions",
+    "label": "Mostrar Medidas MC",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Altera `viewerSettings.mousePreset`.",
+    "action": "Define o preset de rato do viewer para «cad».",
+    "area": "menu-contexto",
+    "id": "mouse-preset-cad",
+    "label": "Mouse CAD",
+    "location": "Menu de contexto — Modo do mouse",
+    "sourceFile": "src/components/layout/workspace/ContextMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Altera `viewerSettings.mousePreset`.",
+    "action": "Define o preset de rato do viewer para «classic».",
+    "area": "menu-contexto",
+    "id": "mouse-preset-classic",
+    "label": "Mouse Classic",
+    "location": "Menu de contexto — Modo do mouse",
+    "sourceFile": "src/components/layout/workspace/ContextMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Altera `viewerSettings.mousePreset`.",
+    "action": "Define o preset de rato do viewer para «mouseCentric».",
+    "area": "menu-contexto",
+    "id": "mouse-preset-mouseCentric",
+    "label": "Mouse-Centric",
+    "location": "Menu de contexto — Modo do mouse",
+    "sourceFile": "src/components/layout/workspace/ContextMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `multi.move` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-multi-move",
+    "label": "Mover",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `designerStyles.nordic` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-designerStyles-nordic",
+    "label": "Nórdico",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Altera `viewerSettings.mousePreset`.",
+    "action": "Define o preset de rato do viewer para «orbitFriendly».",
+    "area": "menu-contexto",
+    "id": "mouse-preset-orbitFriendly",
+    "label": "Orbit-Friendly",
+    "location": "Menu de contexto — Modo do mouse",
+    "sourceFile": "src/components/layout/workspace/ContextMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `peca` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-peca",
+    "label": "Peça",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `porta` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-porta",
+    "label": "Porta",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartLayout.autoWallFill` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartLayout-autoWallFill",
+    "label": "Preencher Parede (Auto-Wall-Fill)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartLayout.autoRoomFill` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartLayout-autoRoomFill",
+    "label": "Preencher Sala (Auto-Room-Fill)",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `intelligentDesigner.refine` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-intelligentDesigner-refine",
+    "label": "Refinar Layout",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartLayout.rejectPredictive` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartLayout-rejectPredictive",
+    "label": "Rejeitar layout sugerido",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `remate` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-remate",
+    "label": "Remate",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `remate.remove` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-remate-remove",
+    "label": "Remover remate",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `box.rename` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-box-rename",
+    "label": "Renomear",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `smartAlignSnap.repeatLast` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-smartAlignSnap-repeatLast",
+    "label": "Repetir último alinhamento",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `multi.rotate` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-multi-rotate",
+    "label": "Rodar",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `sala.roomSnappingToggle` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-sala-roomSnappingToggle",
+    "label": "Room snapping",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `sala` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-sala",
+    "label": "Sala",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "mouse",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).",
+    "action": "Ação de menu de contexto `ferramentas.snappingToggle` (label canónica no ContextMenuEngine).",
+    "area": "menu-contexto",
+    "id": "ctx-ferramentas-snappingToggle",
+    "label": "Snapping",
+    "location": "Menu de contexto (clique direito no viewer)",
+    "sourceFile": "src/ui/context-menu/ContextMenuEngine.ts"
+  },
+  {
+    "icon": null,
+    "iconName": "accessories",
+    "shortcut": null,
+    "featureIds": [],
+    "effects": "Altera o painel esquerdo ativo (`onSelect`).",
+    "action": "Abre o painel Acessórios.",
+    "area": "navegacao-lateral",
+    "id": "left-acessorios",
+    "label": "Acessórios",
+    "location": "Barra lateral esquerda",
+    "sourceFile": "src/components/layout/left-toolbar/LeftToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "calculator",
+    "shortcut": null,
+    "featureIds": [],
+    "effects": "Altera o painel esquerdo ativo (`onSelect`).",
+    "action": "Abre o painel Calculadora (resumo e lista de caixas).",
+    "area": "navegacao-lateral",
+    "id": "left-calculadora",
+    "label": "Calculadora",
+    "location": "Barra lateral esquerda",
+    "sourceFile": "src/components/layout/left-toolbar/LeftToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "electro",
+    "shortcut": null,
+    "featureIds": [],
+    "effects": "Altera o painel esquerdo ativo (`onSelect`).",
+    "action": "Abre o painel Eletro.",
+    "area": "navegacao-lateral",
+    "id": "left-eletro",
+    "label": "Eletro",
+    "location": "Barra lateral esquerda",
+    "sourceFile": "src/components/layout/left-toolbar/LeftToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "info",
+    "shortcut": null,
+    "featureIds": [],
+    "effects": "Altera o painel esquerdo ativo (`onSelect`).",
+    "action": "Abre o painel Info (ajuda rápida no app).",
+    "area": "navegacao-lateral",
+    "id": "left-info",
+    "label": "Info",
+    "location": "Barra lateral esquerda",
+    "sourceFile": "src/components/layout/left-toolbar/LeftToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "home",
+    "shortcut": null,
+    "featureIds": [],
+    "effects": "Altera o painel esquerdo ativo (`onSelect`).",
+    "action": "Navega para a home (`/`) e seleciona o painel Início.",
+    "area": "navegacao-lateral",
+    "id": "left-home",
+    "label": "Início",
+    "location": "Barra lateral esquerda",
+    "sourceFile": "src/components/layout/left-toolbar/LeftToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "models",
+    "shortcut": null,
+    "featureIds": [],
+    "effects": "Altera o painel esquerdo ativo (`onSelect`).",
+    "action": "Abre o painel Modelos (modelos CAD/GLB).",
+    "area": "navegacao-lateral",
+    "id": "left-modelos",
+    "label": "Modelos",
+    "location": "Barra lateral esquerda",
+    "sourceFile": "src/components/layout/left-toolbar/LeftToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Altera o painel esquerdo ativo (`onSelect`).",
+    "action": "Abre o painel lateral Móveis (catálogo de caixas/módulos).",
+    "area": "navegacao-lateral",
+    "id": "left-moveis",
+    "label": "Móveis",
+    "location": "Barra lateral esquerda",
+    "sourceFile": "src/components/layout/left-toolbar/LeftToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d",
+      "portas-e-gavetas"
+    ],
+    "effects": "Adiciona a caixa/móvel configurado ao workspace.",
+    "action": "Adiciona a caixa/móvel configurado ao workspace.",
+    "area": "paineis-laterais",
+    "id": "moveis-adicionar",
+    "label": "+ Adicionar ao projeto",
+    "location": "Painel Móveis",
+    "sourceFile": "src/components/layout/left-panel/PainelMoveisUnificado.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Remove a caixa listada na Calculadora.",
+    "action": "Remove a caixa listada na Calculadora.",
+    "area": "paineis-laterais",
+    "id": "calc-apagar-caixa",
+    "label": "Apagar caixa",
+    "location": "Painel Calculadora",
+    "sourceFile": "src/components/layout/left-panel/LeftPanelCalculadora.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminLab",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Ajusta/refina o layout via designer conversacional.",
+    "action": "Dispara a ação de designer «Clássico» (`styleClassic`).",
+    "area": "paineis-laterais",
+    "id": "designer-styleClassic",
+    "label": "Clássico",
+    "location": "Painel Designer Inteligente — Conversação",
+    "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Inicia a criação de uma nova caixa/módulo no projeto.",
+    "action": "Inicia a criação de uma nova caixa/módulo no projeto.",
+    "area": "paineis-laterais",
+    "id": "home-criar-caixa",
+    "label": "Criar Caixa",
+    "location": "Painel Início (sem seleção)",
+    "sourceFile": "src/components/layout/left-panel/HomeLeftPanelEmpty.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
+      "portas-e-gavetas"
+    ],
+    "effects": "Abre configuração de gavetas.",
+    "action": "Abre configuração de gavetas.",
+    "area": "paineis-laterais",
+    "id": "moveis-gavetas",
+    "label": "Gavetas",
+    "location": "Painel Móveis",
+    "sourceFile": "src/components/layout/left-panel/PainelMoveisUnificado.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminLab",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Ajusta/refina o layout via designer conversacional.",
+    "action": "Dispara a ação de designer «Industrial» (`styleIndustrial`).",
+    "area": "paineis-laterais",
+    "id": "designer-styleIndustrial",
+    "label": "Industrial",
+    "location": "Painel Designer Inteligente — Conversação",
+    "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminLab",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Ajusta/refina o layout via designer conversacional.",
+    "action": "Dispara a ação de designer «Japandi» (`styleJapandi`).",
+    "area": "paineis-laterais",
+    "id": "designer-styleJapandi",
+    "label": "Japandi",
+    "location": "Painel Designer Inteligente — Conversação",
+    "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminLab",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Ajusta/refina o layout via designer conversacional.",
+    "action": "Dispara a ação de designer «Luxo» (`styleLuxury`).",
+    "area": "paineis-laterais",
+    "id": "designer-styleLuxury",
+    "label": "Luxo",
+    "location": "Painel Designer Inteligente — Conversação",
+    "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminLab",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Ajusta/refina o layout via designer conversacional.",
+    "action": "Dispara a ação de designer «Mais espaço» (`moreSpace`).",
+    "area": "paineis-laterais",
+    "id": "designer-moreSpace",
+    "label": "Mais espaço",
+    "location": "Painel Designer Inteligente — Conversação",
+    "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminLab",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Ajusta/refina o layout via designer conversacional.",
+    "action": "Dispara a ação de designer «Mais simetria» (`moreSymmetry`).",
+    "area": "paineis-laterais",
+    "id": "designer-moreSymmetry",
+    "label": "Mais simetria",
+    "location": "Painel Designer Inteligente — Conversação",
+    "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminLab",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Ajusta/refina o layout via designer conversacional.",
+    "action": "Dispara a ação de designer «Minimalista» (`minimal`).",
+    "area": "paineis-laterais",
+    "id": "designer-minimal",
+    "label": "Minimalista",
+    "location": "Painel Designer Inteligente — Conversação",
+    "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminLab",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Ajusta/refina o layout via designer conversacional.",
+    "action": "Dispara a ação de designer «Moderno» (`styleModern`).",
+    "area": "paineis-laterais",
+    "id": "designer-styleModern",
+    "label": "Moderno",
+    "location": "Painel Designer Inteligente — Conversação",
+    "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminLab",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Ajusta/refina o layout via designer conversacional.",
+    "action": "Dispara a ação de designer «Nórdico» (`styleNordic`).",
+    "area": "paineis-laterais",
+    "id": "designer-styleNordic",
+    "label": "Nórdico",
+    "location": "Painel Designer Inteligente — Conversação",
+    "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminLab",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Ajusta/refina o layout via designer conversacional.",
+    "action": "Dispara a ação de designer «Otimizar parede» (`optimizeWall`).",
+    "area": "paineis-laterais",
+    "id": "designer-optimizeWall",
+    "label": "Otimizar parede",
+    "location": "Painel Designer Inteligente — Conversação",
+    "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Abre/configura opções de pés no painel de móveis.",
+    "action": "Abre/configura opções de pés no painel de móveis.",
+    "area": "paineis-laterais",
+    "id": "moveis-pes",
+    "label": "Pés",
+    "location": "Painel Móveis",
+    "sourceFile": "src/components/layout/left-panel/PainelMoveisUnificado.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Abre configuração de prateleiras.",
+    "action": "Abre configuração de prateleiras.",
+    "area": "paineis-laterais",
+    "id": "moveis-prateleiras",
+    "label": "Prateleiras",
+    "location": "Painel Móveis",
+    "sourceFile": "src/components/layout/left-panel/PainelMoveisUnificado.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminLab",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Ajusta/refina o layout via designer conversacional.",
+    "action": "Dispara a ação de designer «Variações» (`variations`).",
+    "area": "paineis-laterais",
+    "id": "designer-variations",
+    "label": "Variações",
+    "location": "Painel Designer Inteligente — Conversação",
+    "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre a vista industrial correspondente.",
+    "action": "Navega para `/industrial/operations/cnc`.",
+    "area": "pimo-trak",
+    "id": "industrial-nav-cnc",
+    "label": "CNC",
+    "location": "Menu PIMO-TRAK Industrial (header)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre a vista industrial correspondente.",
+    "action": "Navega para `/industrial/operations/drill`.",
+    "area": "pimo-trak",
+    "id": "industrial-nav-drill",
+    "label": "Drill",
+    "location": "Menu PIMO-TRAK Industrial (header)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre a vista industrial correspondente.",
+    "action": "Navega para `/industrial/operations/embalagem`.",
+    "area": "pimo-trak",
+    "id": "industrial-nav-embalagem",
+    "label": "Embalagem",
+    "location": "Menu PIMO-TRAK Industrial (header)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre a vista industrial correspondente.",
+    "action": "Navega para `/industrial/operations/montagem`.",
+    "area": "pimo-trak",
+    "id": "industrial-nav-montagem",
+    "label": "Montagem",
+    "location": "Menu PIMO-TRAK Industrial (header)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre a vista industrial correspondente.",
+    "action": "Navega para `/industrial/operations/nesting`.",
+    "area": "pimo-trak",
+    "id": "industrial-nav-nesting",
+    "label": "Nesting",
+    "location": "Menu PIMO-TRAK Industrial (header)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre a vista industrial correspondente.",
+    "action": "Navega para `/industrial/operador`.",
+    "area": "pimo-trak",
+    "id": "industrial-nav-operador",
+    "label": "Operador",
+    "location": "Menu PIMO-TRAK Industrial (header)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre a vista industrial correspondente.",
+    "action": "Navega para `/industrial/operations/orlar`.",
+    "area": "pimo-trak",
+    "id": "industrial-nav-orlar",
+    "label": "Orlar",
+    "location": "Menu PIMO-TRAK Industrial (header)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre a vista industrial correspondente.",
+    "action": "Navega para `/industrial/quality`.",
+    "area": "pimo-trak",
+    "id": "industrial-nav-quality",
+    "label": "Quality",
+    "location": "Menu PIMO-TRAK Industrial (header)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre a vista industrial correspondente.",
+    "action": "Navega para `/industrial/rework`.",
+    "area": "pimo-trak",
+    "id": "industrial-nav-rework",
+    "label": "Rework",
+    "location": "Menu PIMO-TRAK Industrial (header)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre a vista industrial correspondente.",
+    "action": "Navega para `/admin/settings/industrial`.",
+    "area": "pimo-trak",
+    "id": "industrial-nav-settings-industrial",
+    "label": "Settings Industrial",
+    "location": "Menu PIMO-TRAK Industrial (header)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre a vista industrial correspondente.",
+    "action": "Navega para `/industrial/supervisor`.",
+    "area": "pimo-trak",
+    "id": "industrial-nav-supervisor",
+    "label": "Supervisor",
+    "location": "Menu PIMO-TRAK Industrial (header)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre a vista industrial correspondente.",
+    "action": "Navega para `/industrial/time-tracking`.",
+    "area": "pimo-trak",
+    "id": "industrial-nav-time-tracking",
+    "label": "Time Tracking",
+    "location": "Menu PIMO-TRAK Industrial (header)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre a vista industrial correspondente.",
+    "action": "Navega para `/industrial/operations`.",
+    "area": "pimo-trak",
+    "id": "industrial-nav-todas-as-operacoes",
+    "label": "Todas as operações",
+    "location": "Menu PIMO-TRAK Industrial (header)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre a vista industrial correspondente.",
+    "action": "Navega para `/industrial/tracking`.",
+    "area": "pimo-trak",
+    "id": "industrial-nav-tracking",
+    "label": "Tracking",
+    "location": "Menu PIMO-TRAK Industrial (header)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Abre a vista industrial correspondente.",
+    "action": "Navega para `/industrial/work-orders`.",
+    "area": "pimo-trak",
+    "id": "industrial-nav-work-orders",
+    "label": "Work Orders",
+    "location": "Menu PIMO-TRAK Industrial (header)",
+    "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  }
+]

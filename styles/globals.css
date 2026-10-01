@@ -950,3 +950,198 @@ main {
 .pimo-glossary-formats h3 {
   margin-top: 0;
 }
+
+/* Buttons catalog */
+.pimo-buttons-filters {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 0.75rem 1rem;
+  margin: 1.25rem 0 0.75rem;
+  padding: 1rem;
+  background: linear-gradient(160deg, rgba(28, 74, 122, 0.06), rgba(255, 255, 255, 0.4));
+  border: 1px solid var(--pimo-border);
+  border-radius: var(--pimo-radius);
+}
+
+.pimo-buttons-filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.pimo-buttons-filters input,
+.pimo-buttons-filters select {
+  font: inherit;
+  font-weight: 400;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--pimo-border);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.pimo-buttons-count {
+  margin: 0.5rem 0 1.25rem;
+  color: var(--pimo-muted, #5a6570);
+}
+
+.pimo-buttons-area {
+  margin: 2rem 0 2.5rem;
+}
+
+.pimo-buttons-area-count {
+  font-weight: 500;
+  color: var(--pimo-muted, #5a6570);
+  font-size: 0.9em;
+}
+
+.pimo-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.85rem;
+}
+
+.pimo-button-card {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--pimo-border);
+  border-radius: var(--pimo-radius);
+  background: var(--pimo-surface, #fff);
+}
+
+.pimo-button-card header {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.pimo-button-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.pimo-button-loc {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+  color: var(--pimo-muted, #5a6570);
+}
+
+.pimo-btn-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  padding: 2px;
+  border-radius: 6px;
+  background: rgba(28, 74, 122, 0.08);
+}
+
+.pimo-btn-icon-fallback {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(28, 74, 122, 0.08);
+  font-size: 14px;
+}
+
+.pimo-button-card p {
+  margin: 0.35rem 0;
+  font-size: 0.9rem;
+}
+
+.pimo-button-source {
+  margin-top: 0.6rem !important;
+  font-size: 0.75rem !important;
+  opacity: 0.85;
+}
+
+.pimo-button-source code {
+  font-size: 0.72rem;
+  word-break: break-all;
+}
+
+.pimo-feature-buttons {
+  margin: 2rem 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--pimo-border);
+}
+
+.pimo-feature-buttons kbd,
+.pimo-button-card kbd {
+  font-size: 0.8em;
+  padding: 0.1em 0.35em;
+  border: 1px solid var(--pimo-border);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* Module flow */
+.pimo-flow-tree {
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  background: linear-gradient(180deg, #0f2740 0%, #163552 100%);
+  color: #e8eef5;
+  border-radius: var(--pimo-radius);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.pimo-modules-table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0 1.5rem;
+}
+
+.pimo-modules-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.pimo-modules-table th,
+.pimo-modules-table td {
+  border: 1px solid var(--pimo-border);
+  padding: 0.65rem 0.75rem;
+  vertical-align: top;
+  text-align: left;
+}
+
+.pimo-modules-table th {
+  background: rgba(28, 74, 122, 0.08);
+}
+
+.pimo-modules-table ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.pimo-module-summary {
+  margin-top: 0.35rem;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--pimo-muted, #5a6570);
+}
+
+.pimo-note {
+  font-size: 0.9rem;
+  color: var(--pimo-muted, #5a6570);
+}
+
+.pimo-flow-svg {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  margin: 0.75rem 0 1.5rem;
+  border-radius: var(--pimo-radius);
+}
+
+@media (max-width: 760px) {
+  .pimo-buttons-filters {
+    grid-template-columns: 1fr;
+  }
+}

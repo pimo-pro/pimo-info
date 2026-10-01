@@ -122,6 +122,8 @@ function main() {
   const { glossaryTerms } = loadDataModule("data/glossary.js")
   const { features } = loadDataModule("data/features.js")
   const { site } = loadDataModule("data/site.js")
+  const { buttons, buttonAreas } = loadDataModule("data/buttons.js")
+  const { appModules, flowOrder } = loadDataModule("data/modules.js")
 
   const mdxFiles = walkMdx(PAGES)
   const pages = []
@@ -155,6 +157,17 @@ function main() {
     items: glossaryTerms,
   })
   writeJson("features.json", { generatedAt: new Date().toISOString(), items: features })
+  writeJson("buttons.json", {
+    generatedAt: new Date().toISOString(),
+    areas: buttonAreas,
+    count: buttons.length,
+    items: buttons,
+  })
+  writeJson("modules.json", {
+    generatedAt: new Date().toISOString(),
+    flowOrder,
+    items: appModules,
+  })
   writeJson("pages.json", {
     generatedAt: new Date().toISOString(),
     items: pages.map(({ text, ...meta }) => meta),
@@ -175,6 +188,8 @@ function main() {
     `- ${site.url}/data/site.json`,
     `- ${site.url}/data/pages.json`,
     `- ${site.url}/data/features.json`,
+    `- ${site.url}/data/buttons.json`,
+    `- ${site.url}/data/modules.json`,
     `- ${site.url}/data/export-formats.json`,
     `- ${site.url}/data/glossary.json`,
     `- ${site.url}/data/sites.json`,
@@ -182,6 +197,8 @@ function main() {
     "## Primary sections",
     `- Hub: ${site.url}/`,
     `- Centro de ajuda pt-PT: ${site.url}/pt-pt/`,
+    `- Como funciona: ${site.url}/pt-pt/como-funciona/`,
+    `- Referência de botões: ${site.url}/pt-pt/referencia/botoes/`,
     `- Glossário: ${site.url}/pt-pt/glossario/`,
     `- Funcionalidades: ${site.url}/pt-pt/funcionalidades/`,
     `- Guias: ${site.url}/pt-pt/guias-utilizador/`,
@@ -201,6 +218,18 @@ function main() {
       (f) => `- ${f.name} [${f.status}] ${site.url}${f.canonicalPath} — ${f.summary}`
     ),
     "",
+    `## UI buttons (${buttons.length})`,
+    ...buttonAreas.map((a) => {
+      const n = buttons.filter((b) => b.area === a.id).length
+      return `- ${a.name}: ${n} controlos`
+    }),
+    "",
+    "## Architecture modules",
+    ...appModules.map(
+      (m) =>
+        `- ${m.name}: in=[${m.inputs.join("; ")}] out=[${m.outputs.join("; ")}] depends=[${m.dependsOn.join(", ") || "—"}]`
+    ),
+    "",
     "## Page index",
     ...pages
       .filter((p) => p.path.startsWith("/pt-pt/") || p.path === "/")
@@ -214,6 +243,35 @@ function main() {
     `Generated: ${new Date().toISOString()}`,
     "",
     llmsLines.join("\n"),
+    "",
+    "# UI buttons catalog",
+    "",
+    ...buttons.map(
+      (b) =>
+        `## Button: ${b.label}\n` +
+        `id: ${b.id}\n` +
+        `area: ${b.area}\n` +
+        `location: ${b.location}\n` +
+        `action: ${b.action}\n` +
+        `effects: ${b.effects}\n` +
+        `shortcut: ${b.shortcut || "—"}\n` +
+        `iconName: ${b.iconName || b.icon || "—"}\n` +
+        `sourceFile: ${b.sourceFile}\n` +
+        `featureIds: ${(b.featureIds || []).join(", ") || "—"}\n`
+    ),
+    "",
+    "# Architecture modules",
+    "",
+    ...appModules.map(
+      (m) =>
+        `## Module: ${m.name}\n` +
+        `id: ${m.id}\n` +
+        `${m.summary}\n` +
+        `inputs: ${m.inputs.join(" | ")}\n` +
+        `outputs: ${m.outputs.join(" | ")}\n` +
+        `dependsOn: ${m.dependsOn.join(", ") || "—"}\n` +
+        `sourceFiles: ${m.sourceFiles.join(", ")}\n`
+    ),
     "",
     "# Full page content",
     "",
@@ -260,7 +318,7 @@ function main() {
   fs.writeFileSync(path.join(PUBLIC, "sitemap.xml"), sitemap, "utf8")
 
   console.log(
-    `KB artifacts: ${pages.length} pages, ${exportFormats.length} formats, ${glossaryTerms.length} glossary terms`
+    `KB artifacts: ${pages.length} pages, ${buttons.length} buttons, ${appModules.length} modules, ${exportFormats.length} formats, ${glossaryTerms.length} glossary terms`
   )
 }
 

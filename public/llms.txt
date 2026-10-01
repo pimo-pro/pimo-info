@@ -11,6 +11,8 @@ Locale: pt-PT
 - https://pimo.info/data/site.json
 - https://pimo.info/data/pages.json
 - https://pimo.info/data/features.json
+- https://pimo.info/data/buttons.json
+- https://pimo.info/data/modules.json
 - https://pimo.info/data/export-formats.json
 - https://pimo.info/data/glossary.json
 - https://pimo.info/data/sites.json
@@ -18,6 +20,8 @@ Locale: pt-PT
 ## Primary sections
 - Hub: https://pimo.info/
 - Centro de ajuda pt-PT: https://pimo.info/pt-pt/
+- Como funciona: https://pimo.info/pt-pt/como-funciona/
+- Referência de botões: https://pimo.info/pt-pt/referencia/botoes/
 - Glossário: https://pimo.info/pt-pt/glossario/
 - Funcionalidades: https://pimo.info/pt-pt/funcionalidades/
 - Guias: https://pimo.info/pt-pt/guias-utilizador/
@@ -64,9 +68,34 @@ Locale: pt-PT
 - Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/ — Tarifas e regras de custo (camada técnica/admin P3.9).
 - Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/ — Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.
 
+## UI buttons (221)
+- Header: 14 controlos
+- Navegação lateral: 7 controlos
+- Barra superior unificada: 28 controlos
+- Ferramentas 3D: 4 controlos
+- Painéis laterais: 17 controlos
+- Menu de contexto: 91 controlos
+- Exportação / Salvar e Gerar: 15 controlos
+- Barra inferior: 21 controlos
+- Design Industrial: 2 controlos
+- PIMO-TRAK: 15 controlos
+- Atalhos de teclado: 7 controlos
+
+## Architecture modules
+- Projeto: in=[Nome do projeto; Import JSON/ZIP; Projetos salvos] out=[ProjectState persistido; Snapshot viewer/sala] depends=[—]
+- Módulos / Caixas: in=[Catálogo Móveis; Criar Caixa; Duplicar / importar] out=[workspaceBoxes[]; seleção ativa] depends=[projeto]
+- Peças / painéis: in=[Geometria da caixa; Espessuras; Divisórias/separadores] out=[Lista de peças com medidas mm; Observações por peça] depends=[modulos-caixas]
+- Materiais e orlas: in=[Catálogo de materiais; Menu de contexto Alterar material; Painel Materiais] out=[materialId por peça/frente; regras de orla] depends=[pecas]
+- Lista de corte (Cutlist): in=[Peças; Materiais; Espessuras] out=[Cutlist PDF/dados; Etiquetas UEE v5; Totais de peças] depends=[pecas, materiais-orlas]
+- Nesting Fast / PRO / V3: in=[Cutlist / peças do projeto; Dimensões de chapa] out=[Layout de Corte PRO; Layout manual; Sessão Nesting V3] depends=[lista-corte]
+- Exportações (TCN / Drill XML / PDF / ZIP): in=[ProjectState; Cutlist; Nesting (quando aplicável)] out=[.tcn; Drill .xml; PDF; XLSX ferragens; ZIP/arquivo completo; JSON local] depends=[lista-corte, nesting, materiais-orlas]
+- Orçamento: in=[Peças e materiais; Configuração de pricing; Dados do cliente (modal)] out=[Resumo financeiro; Pedido de orçamento] depends=[pecas, materiais-orlas, projeto]
+- PIMO-TRAK / Industrial: in=[Projeto exportado / live project; Operações industriais no estado] out=[Work orders; Estados de operação; Análise industrial online] depends=[exportacoes, projeto]
+
 ## Page index
 - Centro visual PIMO Info: https://pimo.info/
 - Centro de ajuda PIMO Criativo: https://pimo.info/pt-pt/
+- Como funciona: https://pimo.info/pt-pt/como-funciona/
 - Contacto: https://pimo.info/pt-pt/contacto/
 - Documentação técnica: https://pimo.info/pt-pt/documentacao-tecnica/
 - System docs: https://pimo.info/pt-pt/documentacao-tecnica/docs-do-sistema/
@@ -107,3 +136,5 @@ Locale: pt-PT
 - Portas e Gavetas: https://pimo.info/pt-pt/guias-utilizador/portas-e-gavetas/
 - Perguntas frequentes: https://pimo.info/pt-pt/perguntas-frequentes/
 - Primeiros passos: https://pimo.info/pt-pt/primeiros-passos/
+- Referência: https://pimo.info/pt-pt/referencia/
+- Botões e controlos: https://pimo.info/pt-pt/referencia/botoes/

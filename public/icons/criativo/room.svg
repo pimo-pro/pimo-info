@@ -1,0 +1,6 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" >
+  <path d="M4 18V9l8-4.5L20 9v9"/>
+  <path d="M4 9l8 4.5L20 9"/>
+  <path d="M12 13.5V21"/>
+  <path d="M4 18h16"/>
+  </svg>

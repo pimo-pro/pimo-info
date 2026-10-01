@@ -104,6 +104,13 @@ npm run export
 4. Extend `data/site.js` locale list and regenerate artifacts.
 5. Do not copy unverified facts — translate from the pt-PT SSOT.
 
+## Referência de UI e fluxo
+
+- `data/buttons.js` — catálogo de controlos (labels/ícones/atalhos verificados no criativo).
+- `data/modules.js` — módulos e dependências do fluxo projeto → PIMO-TRAK.
+- Páginas: `/pt-pt/referencia/botoes/`, `/pt-pt/como-funciona/`.
+- Regenerar catálogo: `node scripts/build-buttons-catalog.cjs` (só leitura sobre `pimo-criativo-source/`).
+
 ## Export & deploy
 
 ```bash

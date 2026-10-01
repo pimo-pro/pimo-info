@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T00:44:28.660Z",
+  "generatedAt": "2026-10-01T00:51:31.812Z",
   "items": [
     {
       "path": "/",
@@ -107,6 +107,25 @@
         "ajuda"
       ],
       "related": [],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/como-funciona/",
+      "file": "pages/pt-pt/como-funciona.mdx",
+      "title": "Como funciona",
+      "description": "Arquitetura e fluxo do PIMO Criativo: projeto → módulos/caixas → peças → materiais → lista de corte → nesting → exportações → orçamento → PIMO-TRAK.",
+      "category": "arquitetura",
+      "tags": [
+        "arquitetura",
+        "fluxo",
+        "kb"
+      ],
+      "related": [
+        "/pt-pt/referencia/botoes/",
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/glossario/"
+      ],
       "lastUpdated": "2026-10-01",
       "status": "implemented"
     },
@@ -758,6 +777,45 @@
       ],
       "related": [
         "/pt-pt/guias-utilizador/",
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/referencia/",
+      "file": "pages/pt-pt/referencia/index.mdx",
+      "title": "Referência",
+      "description": "Referência técnica do PIMO Criativo: botões, controlos e ligações às funcionalidades.",
+      "category": "referencia",
+      "tags": [
+        "referencia",
+        "kb"
+      ],
+      "related": [
+        "/pt-pt/referencia/botoes/",
+        "/pt-pt/como-funciona/",
+        "/pt-pt/funcionalidades/"
+      ],
+      "lastUpdated": "2026-10-01",
+      "status": "implemented"
+    },
+    {
+      "path": "/pt-pt/referencia/botoes/",
+      "file": "pages/pt-pt/referencia/botoes.mdx",
+      "title": "Botões e controlos",
+      "description": "Catálogo completo de botões e ações da interface do PIMO Criativo: ícone, rótulo, localização, ação, efeitos e atalho — verificado no código.",
+      "category": "referencia",
+      "tags": [
+        "referencia",
+        "botoes",
+        "interface",
+        "kb"
+      ],
+      "related": [
+        "/pt-pt/referencia/",
+        "/pt-pt/como-funciona/",
         "/pt-pt/funcionalidades/",
         "/pt-pt/glossario/"
       ],

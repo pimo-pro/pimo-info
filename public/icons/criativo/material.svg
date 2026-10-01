@@ -1,0 +1,6 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" >
+  <path d="M4 14c0-4 8-10 8-10s8 6 8 10a8 8 0 1 1-16 0z"/>
+  <circle cx="9" cy="13" r="1.2" fill={color} stroke="none"/>
+  <circle cx="13" cy="11" r="1.2" fill={color} stroke="none"/>
+  <circle cx="12" cy="15" r="1.2" fill={color} stroke="none"/>
+  </svg>

@@ -24,6 +24,8 @@ const ALLOWED_CATEGORIES = new Set([
   "contacto",
   "redirect",
   "legacy",
+  "referencia",
+  "arquitetura",
 ])
 
 function parseFrontmatter(raw) {
