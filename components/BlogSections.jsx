@@ -8,16 +8,17 @@ export function BlogIndex() {
   const posts = loadBlogPosts()
   return (
     <div className="pimo-blog-index">
-      <p className="pimo-lead">
-        Artigos do ecossistema PIMO. RSS:{" "}
-        <a href="/blog/rss.xml">/blog/rss.xml</a>. Formato para autores:{" "}
-        <a href="https://github.com/pimo-pro/pimo-info/blob/main/docs/BLOG.md">docs/BLOG.md</a>.
+      <p className="pimo-lead pimo-blog-intro">
+        Artigos sobre carpintaria, materiais, fabrico e o ecossistema PIMO.{" "}
+        <a className="pimo-blog-rss" href="/blog/rss.xml" title="Feed RSS">
+          <span className="pimo-blog-rss-icon" aria-hidden="true">
+            RSS
+          </span>
+          <span className="sr-only">Subscrever o feed RSS</span>
+        </a>
       </p>
       {!posts.length ? (
-        <p>
-          Ainda não há artigos publicados. O agente de conteúdos adiciona ficheiros em{" "}
-          <code>pages/pt-pt/blog/posts/</code>.
-        </p>
+        <p>Em breve publicaremos novos artigos neste espaço.</p>
       ) : (
         <ul className="pimo-blog-list">
           {posts.map((p) => (

@@ -1,6 +1,5 @@
 export default {
   "automacao-fabrico": "Automação no fabrico de mobiliário: do projeto à linha de produção",
-  "bem-vindo": "Bem-vindo ao blog PIMO",
   "comercio-mundial-moveis": "Comércio mundial de mobiliário: crescimento moderado e novos equilíbrios",
   "contraplacado-aglomerado": "Contraplacado e aglomerado: como escolher o painel certo",
   "cozinhas-planeadas": "Cozinhas planeadas: do levantamento à montagem com projeto coerente",

@@ -1212,6 +1212,43 @@ main {
 }
 
 /* —— Blog —— */
+.pimo-blog-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.75rem;
+}
+
+.pimo-blog-rss {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--pimo-primary, #1c4a7a);
+  border: 1px solid var(--pimo-primary, #1c4a7a);
+  border-radius: 3px;
+  padding: 0.15rem 0.4rem;
+  line-height: 1.2;
+}
+
+.pimo-blog-rss:hover {
+  background: var(--pimo-primary-soft, rgba(28, 74, 122, 0.08));
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .pimo-blog-list {
   list-style: none;
   padding: 0;

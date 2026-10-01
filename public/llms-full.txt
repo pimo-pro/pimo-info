@@ -1,5 +1,5 @@
 # PIMO Info — full knowledge dump
-Generated: 2026-10-01T01:54:15.928Z
+Generated: 2026-10-01T02:30:55.355Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -116,7 +116,6 @@ Locale: pt-PT
 - Centro de ajuda PIMO Criativo: https://pimo.info/pt-pt/
 - Blog: https://pimo.info/pt-pt/blog/
 - Automação no fabrico de mobiliário: do projeto à linha de produção: https://pimo.info/pt-pt/blog/posts/automacao-fabrico/
-- Bem-vindo ao blog PIMO: https://pimo.info/pt-pt/blog/posts/bem-vindo/
 - Comércio mundial de mobiliário: crescimento moderado e novos equilíbrios: https://pimo.info/pt-pt/blog/posts/comercio-mundial-moveis/
 - Contraplacado e aglomerado: como escolher o painel certo: https://pimo.info/pt-pt/blog/posts/contraplacado-aglomerado/
 - Cozinhas planeadas: do levantamento à montagem com projeto coerente: https://pimo.info/pt-pt/blog/posts/cozinhas-planeadas/
@@ -3778,18 +3777,6 @@ Não há percentagens universais: dependem do ponto de partida. O importante é 
 ## Conclusão
 
 A automação no fabrico de mobiliário é, sobretudo, **continuidade de dados** do primeiro esboço 3D até à montagem. [PIMO Industrial](/pt-pt/sistemas-pimo/pimo-industrial/), [PIMO-TRAK](/pt-pt/sistemas-pimo/pimo-trak/) e o [módulo industrial](/pt-pt/funcionalidades/modulo-industrial/) são peças desse puzzle no ecossistema PIMO. Máquinas rápidas só compensam quando o ficheiro que as alimenta é o certo — e isso começa no projeto, não na serra.
-
----
-
-## Bem-vindo ao blog PIMO
-URL: https://pimo.info/pt-pt/blog/posts/bem-vindo/
-Infraestrutura do blog do centro de ajuda PIMO Info — formato, RSS e fontes.
-
-O blog do **pimo.info** documenta o ecossistema PIMO com artigos verificáveis: guias de utilização, evolução de produto e produção industrial.
-
-Os autores (agentes ou editores) adicionam apenas ficheiros em `pages/pt-pt/blog/posts/` e imagens em `public/blog/images/`, conforme [docs/BLOG.md](https://github.com/pimo-pro/pimo-info/blob/main/docs/BLOG.md).
-
-Cada artigo inclui data, autor, categoria, tags, capa com crédito e secção **Fontes** com ligações ao help center ou à aplicação.
 
 ---
 

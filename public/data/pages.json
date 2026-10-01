@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T01:54:15.927Z",
+  "generatedAt": "2026-10-01T02:30:55.354Z",
   "items": [
     {
       "path": "/",
@@ -145,23 +145,6 @@
         "/pt-pt/funcionalidades/modulo-industrial/"
       ],
       "lastUpdated": "2026-06-15",
-      "status": ""
-    },
-    {
-      "path": "/pt-pt/blog/posts/bem-vindo/",
-      "file": "pages/pt-pt/blog/posts/bem-vindo.mdx",
-      "title": "Bem-vindo ao blog PIMO",
-      "description": "Infraestrutura do blog do centro de ajuda PIMO Info — formato, RSS e fontes.",
-      "category": "noticias",
-      "tags": [
-        "blog",
-        "pimo-info"
-      ],
-      "related": [
-        "/pt-pt/blog/",
-        "/pt-pt/"
-      ],
-      "lastUpdated": "2026-10-01",
       "status": ""
     },
     {

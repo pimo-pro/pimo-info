@@ -113,7 +113,6 @@ Locale: pt-PT
 - Centro de ajuda PIMO Criativo: https://pimo.info/pt-pt/
 - Blog: https://pimo.info/pt-pt/blog/
 - Automação no fabrico de mobiliário: do projeto à linha de produção: https://pimo.info/pt-pt/blog/posts/automacao-fabrico/
-- Bem-vindo ao blog PIMO: https://pimo.info/pt-pt/blog/posts/bem-vindo/
 - Comércio mundial de mobiliário: crescimento moderado e novos equilíbrios: https://pimo.info/pt-pt/blog/posts/comercio-mundial-moveis/
 - Contraplacado e aglomerado: como escolher o painel certo: https://pimo.info/pt-pt/blog/posts/contraplacado-aglomerado/
 - Cozinhas planeadas: do levantamento à montagem com projeto coerente: https://pimo.info/pt-pt/blog/posts/cozinhas-planeadas/

@@ -1,37 +1,6 @@
 {
-  "generatedAt": "2026-10-01T01:54:15.956Z",
+  "generatedAt": "2026-10-01T02:30:55.383Z",
   "posts": [
-    {
-      "slug": "bem-vindo",
-      "href": "/pt-pt/blog/posts/bem-vindo/",
-      "title": "Bem-vindo ao blog PIMO",
-      "description": "Infraestrutura do blog do centro de ajuda PIMO Info — formato, RSS e fontes.",
-      "date": "2026-10-01",
-      "author": "Equipa PIMO",
-      "category": "noticias",
-      "tags": [
-        "blog",
-        "pimo-info"
-      ],
-      "coverImage": "/blog/images/bem-vindo/cover.svg",
-      "coverCredit": "© PIMO Info",
-      "imageAlt": "PIMO Info Blog · Ecossistema",
-      "sources": [
-        {
-          "title": "Centro de ajuda PIMO Info",
-          "url": "https://pimo.info/pt-pt/"
-        },
-        {
-          "title": "Formato de artigos (docs/BLOG.md)",
-          "url": "https://github.com/pimo-pro/pimo-info/blob/main/docs/BLOG.md"
-        },
-        {
-          "title": "Aplicação PIMO Criativo",
-          "url": "https://pimo.pro/"
-        }
-      ],
-      "lastUpdated": "2026-10-01"
-    },
     {
       "slug": "fabrico-digital-2026",
       "href": "/pt-pt/blog/posts/fabrico-digital-2026/",
