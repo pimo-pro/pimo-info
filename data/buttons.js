@@ -58,8 +58,20 @@ export const buttonAreas = [
     "name": "Design Industrial"
   },
   {
+    "id": "nesting-v3",
+    "name": "Nesting V3"
+  },
+  {
+    "id": "pimo-drill",
+    "name": "PIMO DRILL"
+  },
+  {
     "id": "pimo-trak",
     "name": "PIMO-TRAK"
+  },
+  {
+    "id": "showroom",
+    "name": "Showroom"
   },
   {
     "id": "atalhos",
@@ -69,6 +81,21 @@ export const buttonAreas = [
 
 /** @type {UiButton[]} */
 export const buttons = [
+  {
+    "icon": "⌨",
+    "iconName": null,
+    "shortcut": "H",
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Abre/fecha histórico se o foco não estiver num campo editável.",
+    "action": "Alterna o painel de histórico (`BottomInfoToolbar`).",
+    "area": "atalhos",
+    "id": "kbd-history-h",
+    "label": "Abrir/fechar Histórico",
+    "location": "Atalhos de teclado (barra inferior)",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx"
+  },
   {
     "icon": "⌨",
     "iconName": null,
@@ -143,6 +170,96 @@ export const buttons = [
     "sourceFile": "src/components/layout/workspace/Workspace.tsx",
     "id": "kbd-arrows",
     "label": "Mover caixa selecionada"
+  },
+  {
+    "icon": "⌨",
+    "iconName": null,
+    "shortcut": "Escape",
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Limpa seleção/arrasto no Nesting V3.",
+    "action": "Limpa seleção/arrasto no Nesting V3.",
+    "area": "atalhos",
+    "id": "kbd-nesting-esc",
+    "label": "Nesting: Limpa seleção/arrasto no Nesting V3.",
+    "location": "Atalhos Nesting V3",
+    "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
+  },
+  {
+    "icon": "⌨",
+    "iconName": null,
+    "shortcut": "Delete / Backspace",
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Remove a peça selecionada.",
+    "action": "Remove a peça selecionada.",
+    "area": "atalhos",
+    "id": "kbd-nesting-del",
+    "label": "Nesting: Remove a peça selecionada.",
+    "location": "Atalhos Nesting V3",
+    "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
+  },
+  {
+    "icon": "⌨",
+    "iconName": null,
+    "shortcut": "0",
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Repõe zoom/pan.",
+    "action": "Repõe zoom/pan.",
+    "area": "atalhos",
+    "id": "kbd-nesting-zoom-reset",
+    "label": "Nesting: Repõe zoom/pan.",
+    "location": "Atalhos Nesting V3",
+    "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
+  },
+  {
+    "icon": "⌨",
+    "iconName": null,
+    "shortcut": "R",
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Roda a peça selecionada.",
+    "action": "Roda a peça selecionada.",
+    "area": "atalhos",
+    "id": "kbd-nesting-r",
+    "label": "Nesting: Roda a peça selecionada.",
+    "location": "Atalhos Nesting V3",
+    "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
+  },
+  {
+    "icon": "⌨",
+    "iconName": null,
+    "shortcut": "+ / =",
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Zoom in.",
+    "action": "Zoom in.",
+    "area": "atalhos",
+    "id": "kbd-nesting-zoom-in",
+    "label": "Nesting: Zoom in.",
+    "location": "Atalhos Nesting V3",
+    "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
+  },
+  {
+    "icon": "⌨",
+    "iconName": null,
+    "shortcut": "-",
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Zoom out.",
+    "action": "Zoom out.",
+    "area": "atalhos",
+    "id": "kbd-nesting-zoom-out",
+    "label": "Nesting: Zoom out.",
+    "location": "Atalhos Nesting V3",
+    "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
   },
   {
     "icon": "⌨",
@@ -266,6 +383,22 @@ export const buttons = [
     "label": "Editar",
     "location": "Hub Financeiro (barra inferior)",
     "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/FinanceiroHub.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "send",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "Depende de artefactos industriais válidos / PIMO-TRAK.",
+    "action": "Envia a ordem industrial para a fábrica (`enviar()`).",
+    "area": "barra-inferior",
+    "id": "hub-enviar-fabrica-btn",
+    "label": "Enviar ordem para fábrica",
+    "location": "Hub Industriais — Enviar para Fábrica",
+    "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx"
   },
   {
     "icon": null,
@@ -500,6 +633,21 @@ export const buttons = [
   },
   {
     "icon": null,
+    "iconName": "displayCheck",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Adiciona π/2 à rotação Y da caixa ou remate selecionado.",
+    "action": "Adiciona π/2 à rotação Y da caixa ou remate selecionado.",
+    "area": "barra-superior",
+    "location": "Barra superior unificada — opções de visualização / rotação",
+    "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
+    "id": "utt-rotate-90",
+    "label": "90° direita"
+  },
+  {
+    "icon": null,
     "iconName": "lock3D",
     "shortcut": null,
     "featureIds": [
@@ -527,6 +675,21 @@ export const buttons = [
     "sourceFile": "src/components/layout/topbar/DisplayMenuButton.tsx",
     "id": "utt-display-quality",
     "label": "Configurações de Qualidade de Exibição"
+  },
+  {
+    "icon": null,
+    "iconName": "adminDocs",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Descarta alterações e cria um novo projeto.",
+    "action": "Descarta alterações e cria um novo projeto.",
+    "area": "barra-superior",
+    "id": "confirm-descartar-novo",
+    "label": "Descartar e criar novo",
+    "location": "Modal confirmar novo projeto",
+    "sourceFile": "src/components/modals/ConfirmNewProjectModal.tsx"
   },
   {
     "icon": null,
@@ -577,6 +740,21 @@ export const buttons = [
   },
   {
     "icon": null,
+    "iconName": "displayCheck",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Alterna `viewerSettings.hideAllPanels` + `viewerApi.setAllPanelsHidden`.",
+    "action": "Alterna `viewerSettings.hideAllPanels` + `viewerApi.setAllPanelsHidden`.",
+    "area": "barra-superior",
+    "location": "Barra superior unificada — opções de visualização / rotação",
+    "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
+    "id": "utt-hide-all-panels",
+    "label": "Esconder todos os painéis"
+  },
+  {
+    "icon": null,
     "iconName": "exploded",
     "shortcut": null,
     "featureIds": [
@@ -589,6 +767,21 @@ export const buttons = [
     "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
     "id": "utt-exploded",
     "label": "Exploded View"
+  },
+  {
+    "icon": null,
+    "iconName": "adminDocs",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Guarda o projeto atual e cria um novo.",
+    "action": "Guarda o projeto atual e cria um novo.",
+    "area": "barra-superior",
+    "id": "confirm-guardar-novo",
+    "label": "Guardar e criar novo",
+    "location": "Modal confirmar novo projeto",
+    "sourceFile": "src/components/modals/ConfirmNewProjectModal.tsx"
   },
   {
     "icon": null,
@@ -619,6 +812,21 @@ export const buttons = [
     "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
     "id": "utt-dimensions",
     "label": "Medidas do Conjunto"
+  },
+  {
+    "icon": null,
+    "iconName": "displayCheck",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Alterna `viewerSettings.showPanelEdges` + `viewerApi.setPanelEdgesVisible`.",
+    "action": "Alterna `viewerSettings.showPanelEdges` + `viewerApi.setPanelEdgesVisible`.",
+    "area": "barra-superior",
+    "location": "Barra superior unificada — opções de visualização / rotação",
+    "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
+    "id": "utt-show-panel-edges",
+    "label": "Mostrar arestas dos painéis"
   },
   {
     "icon": null,
@@ -746,6 +954,21 @@ export const buttons = [
   },
   {
     "icon": null,
+    "iconName": "displayCheck",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Alterna `viewerSettings.enableReflections` + `viewerApi.setReflectionsEnabled`.",
+    "action": "Alterna `viewerSettings.enableReflections` + `viewerApi.setReflectionsEnabled`.",
+    "area": "barra-superior",
+    "location": "Barra superior unificada — opções de visualização / rotação",
+    "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
+    "id": "utt-reflections",
+    "label": "Reflexos dinâmicos (probe)"
+  },
+  {
+    "icon": null,
     "iconName": "ruler",
     "shortcut": null,
     "featureIds": [
@@ -822,6 +1045,21 @@ export const buttons = [
     "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
     "id": "utt-camera-views",
     "label": "Selecionar vista da câmera"
+  },
+  {
+    "icon": null,
+    "iconName": "pieces",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Alterna `viewerSettings.panelRenderingEnabled`.",
+    "action": "Alterna `viewerSettings.panelRenderingEnabled`.",
+    "area": "barra-superior",
+    "location": "Barra superior unificada — opções de visualização / rotação",
+    "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
+    "id": "utt-ver-pecas",
+    "label": "Ver Peças / Ocultar peças individuais"
   },
   {
     "icon": null,
@@ -961,6 +1199,21 @@ export const buttons = [
   },
   {
     "icon": null,
+    "iconName": "adminChecklist",
+    "shortcut": null,
+    "featureIds": [
+      "modulo-industrial"
+    ],
+    "effects": "Publica o projeto na análise industrial online e navega para o índice (flag `industrialOnlineAnalysis`).",
+    "action": "Publica o projeto na análise industrial online e navega para o índice (flag `industrialOnlineAnalysis`).",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-analise-completo",
+    "label": "Análise arquivo completo"
+  },
+  {
+    "icon": null,
     "iconName": "adminFolder",
     "shortcut": null,
     "featureIds": [
@@ -989,6 +1242,21 @@ export const buttons = [
     "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
     "id": "export-arquivos-cnc",
     "label": "Arquivos CNC"
+  },
+  {
+    "icon": null,
+    "iconName": "camera",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Captura imagem do viewer para o pacote de envio.",
+    "action": "Captura imagem do viewer para o pacote de envio.",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-capturar-foto",
+    "label": "Capturar agora"
   },
   {
     "icon": null,
@@ -1035,6 +1303,21 @@ export const buttons = [
     "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
     "id": "export-download-json",
     "label": "Download local (JSON)"
+  },
+  {
+    "icon": null,
+    "iconName": "send",
+    "shortcut": null,
+    "featureIds": [
+      "pdf-tecnico"
+    ],
+    "effects": "Selecciona método de envio Email no pacote.",
+    "action": "Selecciona método de envio Email no pacote.",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-email",
+    "label": "Email"
   },
   {
     "icon": null,
@@ -1130,6 +1413,21 @@ export const buttons = [
   },
   {
     "icon": null,
+    "iconName": "check",
+    "shortcut": null,
+    "featureIds": [
+      "exportacao-tcn-drill-xml"
+    ],
+    "effects": "Marca avisos do painel de exportação como lidos (`markExportPanelRead`).",
+    "action": "Marca avisos do painel de exportação como lidos (`markExportPanelRead`).",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-marcar-lidos",
+    "label": "Marcar lidos"
+  },
+  {
+    "icon": null,
     "iconName": "grid",
     "shortcut": null,
     "featureIds": [
@@ -1188,6 +1486,21 @@ export const buttons = [
     "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
     "id": "export-secoes-pdfs",
     "label": "Secções Industriais (4 PDFs)"
+  },
+  {
+    "icon": null,
+    "iconName": "send",
+    "shortcut": null,
+    "featureIds": [
+      "pdf-tecnico"
+    ],
+    "effects": "Selecciona método de envio WhatsApp no pacote.",
+    "action": "Selecciona método de envio WhatsApp no pacote.",
+    "area": "exportacao",
+    "location": "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    "sourceFile": "src/components/export/UnifiedExportBubble.tsx",
+    "id": "export-whatsapp",
+    "label": "WhatsApp"
   },
   {
     "icon": null,
@@ -2911,6 +3224,126 @@ export const buttons = [
   },
   {
     "icon": null,
+    "iconName": "grid",
+    "shortcut": null,
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Executa `runAutoLayout` no Nesting V3.",
+    "action": "Executa `runAutoLayout` no Nesting V3.",
+    "area": "nesting-v3",
+    "location": "Toolbar Nesting V3",
+    "sourceFile": "src/nesting-v3/NestingV3Page.tsx",
+    "id": "nesting-auto-layout",
+    "label": "Auto Layout"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTag",
+    "shortcut": null,
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Exporta etiquetas oficiais UEE / LabelSystemV5.",
+    "action": "Exporta etiquetas oficiais UEE / LabelSystemV5.",
+    "area": "nesting-v3",
+    "location": "Toolbar Nesting V3",
+    "sourceFile": "src/nesting-v3/NestingV3Page.tsx",
+    "id": "nesting-etiquetas",
+    "label": "Etiquetas"
+  },
+  {
+    "icon": null,
+    "iconName": "send",
+    "shortcut": null,
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Gera todos os artefactos de nesting (`handleGenerateAll`).",
+    "action": "Gera todos os artefactos de nesting (`handleGenerateAll`).",
+    "area": "nesting-v3",
+    "location": "Toolbar Nesting V3",
+    "sourceFile": "src/nesting-v3/NestingV3Page.tsx",
+    "id": "nesting-gerar-tudo",
+    "label": "Gerar Tudo"
+  },
+  {
+    "icon": null,
+    "iconName": "delete",
+    "shortcut": null,
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Limpa todas as colocações (`clearAll`).",
+    "action": "Limpa todas as colocações (`clearAll`).",
+    "area": "nesting-v3",
+    "location": "Toolbar Nesting V3",
+    "sourceFile": "src/nesting-v3/NestingV3Page.tsx",
+    "id": "nesting-limpar",
+    "label": "Limpar"
+  },
+  {
+    "icon": null,
+    "iconName": "adminDocs",
+    "shortcut": null,
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Exporta Layout PRO em PDF (`handleDownloadPdf`).",
+    "action": "Exporta Layout PRO em PDF (`handleDownloadPdf`).",
+    "area": "nesting-v3",
+    "location": "Toolbar Nesting V3",
+    "sourceFile": "src/nesting-v3/NestingV3Page.tsx",
+    "id": "nesting-pdf",
+    "label": "PDF"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Exporta ficheiros TCN (`handleDownloadTcn`).",
+    "action": "Exporta ficheiros TCN (`handleDownloadTcn`).",
+    "area": "nesting-v3",
+    "location": "Toolbar Nesting V3",
+    "sourceFile": "src/nesting-v3/NestingV3Page.tsx",
+    "id": "nesting-tcn",
+    "label": "TCN"
+  },
+  {
+    "icon": null,
+    "iconName": "grid",
+    "shortcut": null,
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Alterna vista do canvas entre folha e overview.",
+    "action": "Alterna vista do canvas entre folha e overview.",
+    "area": "nesting-v3",
+    "location": "Toolbar Nesting V3",
+    "sourceFile": "src/nesting-v3/NestingV3Page.tsx",
+    "id": "nesting-vista-toggle",
+    "label": "Vista folha / Vista chão"
+  },
+  {
+    "icon": null,
+    "iconName": "chevronRight",
+    "shortcut": null,
+    "featureIds": [
+      "nesting-fast-pro"
+    ],
+    "effects": "Navega de volta ao viewer/projeto (ou `onClose`).",
+    "action": "Navega de volta ao viewer/projeto (ou `onClose`).",
+    "area": "nesting-v3",
+    "location": "Toolbar Nesting V3",
+    "sourceFile": "src/nesting-v3/NestingV3Page.tsx",
+    "id": "nesting-voltar",
+    "label": "Voltar ao Projeto"
+  },
+  {
+    "icon": null,
     "iconName": "furniture",
     "shortcut": null,
     "featureIds": [
@@ -2930,6 +3363,66 @@ export const buttons = [
     "iconName": "furniture",
     "shortcut": null,
     "featureIds": [
+      "modulo-industrial"
+    ],
+    "effects": "Abre o painel Design Industrial (`setIndustrialDesignPanelOpen(true)`).",
+    "action": "Abre o painel Design Industrial (`setIndustrialDesignPanelOpen(true)`).",
+    "area": "paineis-laterais",
+    "location": "Painéis laterais (caixa / camadas)",
+    "id": "modelos-abrir-industrial",
+    "label": "Abrir Design Industrial",
+    "sourceFile": "src/components/layout/left-panel/PainelModelosDaCaixa.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Adiciona uma nova caixa (`addWorkspaceBox`).",
+    "action": "Adiciona uma nova caixa (`addWorkspaceBox`).",
+    "area": "paineis-laterais",
+    "location": "Painéis laterais (caixa / camadas)",
+    "id": "home-adicionar-caixote",
+    "label": "Adicionar Caixote",
+    "sourceFile": "src/components/layout/left-panel/HomeLeftPanelSelected.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Adiciona um divisório à caixa.",
+    "action": "Adiciona um divisório à caixa.",
+    "area": "paineis-laterais",
+    "location": "Painéis laterais (caixa / camadas)",
+    "id": "divsep-add-div",
+    "label": "Adicionar DIVISÓRIO",
+    "sourceFile": "src/components/layout/left-panel/DivSepPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Adiciona um separador à caixa.",
+    "action": "Adiciona um separador à caixa.",
+    "area": "paineis-laterais",
+    "location": "Painéis laterais (caixa / camadas)",
+    "id": "divsep-add-sep",
+    "label": "Adicionar SEPARADOR",
+    "sourceFile": "src/components/layout/left-panel/DivSepPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
       "configurador-3d"
     ],
     "effects": "Remove a caixa listada na Calculadora.",
@@ -2939,6 +3432,81 @@ export const buttons = [
     "label": "Apagar caixa",
     "location": "Painel Calculadora",
     "sourceFile": "src/components/layout/left-panel/LeftPanelCalculadora.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "room",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Aplica dimensões ao motor de sala.",
+    "action": "Aplica dimensões ao motor de sala.",
+    "area": "paineis-laterais",
+    "id": "sala-aplicar-dims",
+    "label": "Aplicar dimensões",
+    "location": "Painel Sala",
+    "sourceFile": "src/components/layout/left-panel/PainelSala.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
+      "portas-e-gavetas"
+    ],
+    "effects": "Aplica um preset de gavetas à caixa.",
+    "action": "Aplica um preset de gavetas à caixa.",
+    "area": "paineis-laterais",
+    "location": "Painéis laterais (caixa / camadas)",
+    "id": "gavetas-aplicar-preset",
+    "label": "Aplicar preset",
+    "sourceFile": "src/components/layout/left-panel/GavetasPopoverPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "room",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Dispara auto-arrange do layout da sala.",
+    "action": "Dispara auto-arrange do layout da sala.",
+    "area": "paineis-laterais",
+    "id": "sala-auto-arrange",
+    "label": "Auto-Arrange",
+    "location": "Painel Sala",
+    "sourceFile": "src/components/layout/left-panel/PainelSala.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "room",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Dispara auto-design do layout da sala.",
+    "action": "Dispara auto-design do layout da sala.",
+    "area": "paineis-laterais",
+    "id": "sala-auto-design",
+    "label": "Auto-Design",
+    "location": "Painel Sala",
+    "sourceFile": "src/components/layout/left-panel/PainelSala.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "projects",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Carrega snapshot do projeto selecionado.",
+    "action": "Carrega snapshot do projeto selecionado.",
+    "area": "paineis-laterais",
+    "id": "projects-carregar",
+    "label": "Carregar",
+    "location": "Modal Projetos salvos",
+    "sourceFile": "src/components/layout/ToolbarModals.tsx"
   },
   {
     "icon": null,
@@ -2972,6 +3540,96 @@ export const buttons = [
   },
   {
     "icon": null,
+    "iconName": "projects",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "actions.createNewProject()",
+    "action": "actions.createNewProject()",
+    "area": "paineis-laterais",
+    "id": "projects-criar-novo",
+    "label": "Criar novo projeto",
+    "location": "Modal Projetos salvos",
+    "sourceFile": "src/components/layout/ToolbarModals.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "room",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Cria/aplica dimensões da sala.",
+    "action": "Cria/aplica dimensões da sala.",
+    "area": "paineis-laterais",
+    "id": "sala-criar",
+    "label": "Criar sala",
+    "location": "Painel Sala",
+    "sourceFile": "src/components/layout/left-panel/PainelSala.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "photoMode",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Descarrega a captura do Photo Mode.",
+    "action": "Descarrega a captura do Photo Mode.",
+    "area": "paineis-laterais",
+    "id": "photo-descarregar",
+    "label": "Descarregar",
+    "location": "Painel Photo Mode",
+    "sourceFile": "src/components/layout/left-panel/PhotoModeSettingsContent.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Duplica a caixa selecionada (`duplicateWorkspaceBox`).",
+    "action": "Duplica a caixa selecionada (`duplicateWorkspaceBox`).",
+    "area": "paineis-laterais",
+    "location": "Painéis laterais (caixa / camadas)",
+    "id": "home-duplicar-caixa",
+    "label": "Duplicar Caixa",
+    "sourceFile": "src/components/layout/left-panel/HomeLeftPanelSelected.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "projects",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Apaga o projeto da lista.",
+    "action": "Apaga o projeto da lista.",
+    "area": "paineis-laterais",
+    "id": "projects-excluir",
+    "label": "Excluir",
+    "location": "Modal Projetos salvos",
+    "sourceFile": "src/components/layout/ToolbarModals.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "photoMode",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Exporta linhas do Photo Mode.",
+    "action": "Exporta linhas do Photo Mode.",
+    "area": "paineis-laterais",
+    "id": "photo-export-linhas",
+    "label": "Exportar linhas",
+    "location": "Painel Photo Mode",
+    "sourceFile": "src/components/layout/left-panel/PhotoModeSettingsContent.tsx"
+  },
+  {
+    "icon": null,
     "iconName": "furniture",
     "shortcut": null,
     "featureIds": [
@@ -2987,6 +3645,36 @@ export const buttons = [
   },
   {
     "icon": null,
+    "iconName": "projects",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Confirma o novo nome (`renameProject`).",
+    "action": "Confirma o novo nome (`renameProject`).",
+    "area": "paineis-laterais",
+    "id": "projects-guardar-nome",
+    "label": "Guardar",
+    "location": "Modal Projetos salvos",
+    "sourceFile": "src/components/layout/ToolbarModals.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
+      "portas-e-gavetas"
+    ],
+    "effects": "Guarda a configuração de gavetas como preset.",
+    "action": "Guarda a configuração de gavetas como preset.",
+    "area": "paineis-laterais",
+    "location": "Painéis laterais (caixa / camadas)",
+    "id": "gavetas-guardar-preset",
+    "label": "Guardar como preset",
+    "sourceFile": "src/components/layout/left-panel/GavetasPopoverPanel.tsx"
+  },
+  {
+    "icon": null,
     "iconName": "adminLab",
     "shortcut": null,
     "featureIds": [
@@ -2999,6 +3687,21 @@ export const buttons = [
     "label": "Industrial",
     "location": "Painel Designer Inteligente — Conversação",
     "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "roomWindow",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Adiciona abertura tipo janela.",
+    "action": "Adiciona abertura tipo janela.",
+    "area": "paineis-laterais",
+    "id": "sala-add-janela",
+    "label": "Janela",
+    "location": "Painel Sala",
+    "sourceFile": "src/components/layout/left-panel/PainelSala.tsx"
   },
   {
     "icon": null,
@@ -3062,6 +3765,21 @@ export const buttons = [
   },
   {
     "icon": null,
+    "iconName": "photoMode",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Alterna marca d'água no Photo Mode.",
+    "action": "Alterna marca d'água no Photo Mode.",
+    "area": "paineis-laterais",
+    "id": "photo-watermark",
+    "label": "Marca d’água",
+    "location": "Painel Photo Mode",
+    "sourceFile": "src/components/layout/left-panel/PhotoModeSettingsContent.tsx"
+  },
+  {
+    "icon": null,
     "iconName": "adminLab",
     "shortcut": null,
     "featureIds": [
@@ -3089,6 +3807,21 @@ export const buttons = [
     "label": "Moderno",
     "location": "Painel Designer Inteligente — Conversação",
     "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "room",
+    "shortcut": "WASD",
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Entra em walkthrough (WASD + rato).",
+    "action": "Entra em walkthrough (WASD + rato).",
+    "area": "paineis-laterais",
+    "id": "sala-walkthrough",
+    "label": "Modo Walkthrough",
+    "location": "Painel Sala",
+    "sourceFile": "src/components/layout/left-panel/PainelSala.tsx"
   },
   {
     "icon": null,
@@ -3137,6 +3870,21 @@ export const buttons = [
   },
   {
     "icon": null,
+    "iconName": "roomDoor",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Adiciona abertura tipo porta.",
+    "action": "Adiciona abertura tipo porta.",
+    "area": "paineis-laterais",
+    "id": "sala-add-porta",
+    "label": "Porta",
+    "location": "Painel Sala",
+    "sourceFile": "src/components/layout/left-panel/PainelSala.tsx"
+  },
+  {
+    "icon": null,
     "iconName": "furniture",
     "shortcut": null,
     "featureIds": [
@@ -3152,6 +3900,81 @@ export const buttons = [
   },
   {
     "icon": null,
+    "iconName": "photoMode",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Alterna realismo avançado.",
+    "action": "Alterna realismo avançado.",
+    "area": "paineis-laterais",
+    "id": "photo-realismo",
+    "label": "Realismo avançado",
+    "location": "Painel Photo Mode",
+    "sourceFile": "src/components/layout/left-panel/PhotoModeSettingsContent.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
+      "portas-e-gavetas"
+    ],
+    "effects": "Regenera as camadas da caixa selecionada.",
+    "action": "Regenera as camadas da caixa selecionada.",
+    "area": "paineis-laterais",
+    "location": "Painéis laterais (caixa / camadas)",
+    "id": "layers-regenerar",
+    "label": "Regenerar Camadas",
+    "sourceFile": "src/components/layout/left-panel/BoxLayersPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "room",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Remove a sala do projeto.",
+    "action": "Remove a sala do projeto.",
+    "area": "paineis-laterais",
+    "id": "sala-remover",
+    "label": "Remover sala",
+    "location": "Painel Sala",
+    "sourceFile": "src/components/layout/left-panel/PainelSala.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "projects",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Entra em modo de renomeação.",
+    "action": "Entra em modo de renomeação.",
+    "area": "paineis-laterais",
+    "id": "projects-renomear",
+    "label": "Renomear",
+    "location": "Modal Projetos salvos",
+    "sourceFile": "src/components/layout/ToolbarModals.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "photoMode",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "Alterna modo Ultra.",
+    "action": "Alterna modo Ultra.",
+    "area": "paineis-laterais",
+    "id": "photo-ultra",
+    "label": "Ultra",
+    "location": "Painel Photo Mode",
+    "sourceFile": "src/components/layout/left-panel/PhotoModeSettingsContent.tsx"
+  },
+  {
+    "icon": null,
     "iconName": "adminLab",
     "shortcut": null,
     "featureIds": [
@@ -3164,6 +3987,150 @@ export const buttons = [
     "label": "Variações",
     "location": "Painel Designer Inteligente — Conversação",
     "sourceFile": "src/components/layout/left-panel/ConversationalDesignerPanel.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "exportacao-tcn-drill-xml",
+      "modulo-industrial"
+    ],
+    "effects": "onSelectFeature(\"arc\")",
+    "action": "onSelectFeature(\"arc\")",
+    "area": "pimo-drill",
+    "id": "drill-arco",
+    "label": "Arco",
+    "location": "PIMO DRILL — toolbar",
+    "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "exportacao-tcn-drill-xml",
+      "modulo-industrial"
+    ],
+    "effects": "onSelectFeature(\"hole\")",
+    "action": "onSelectFeature(\"hole\")",
+    "area": "pimo-drill",
+    "id": "drill-buraco",
+    "label": "Buraco",
+    "location": "PIMO DRILL — toolbar",
+    "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "exportacao-tcn-drill-xml",
+      "modulo-industrial"
+    ],
+    "effects": "onSelectFeature(\"path\")",
+    "action": "onSelectFeature(\"path\")",
+    "area": "pimo-drill",
+    "id": "drill-caminho",
+    "label": "Caminho",
+    "location": "PIMO DRILL — toolbar",
+    "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "exportacao-tcn-drill-xml",
+      "modulo-industrial"
+    ],
+    "effects": "onSelectFeature(\"circle\")",
+    "action": "onSelectFeature(\"circle\")",
+    "area": "pimo-drill",
+    "id": "drill-circulo",
+    "label": "Círculo",
+    "location": "PIMO DRILL — toolbar",
+    "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "exportacao-tcn-drill-xml",
+      "modulo-industrial"
+    ],
+    "effects": "onSelectFeature(\"slot\")",
+    "action": "onSelectFeature(\"slot\")",
+    "area": "pimo-drill",
+    "id": "drill-entalhe",
+    "label": "Entalhe",
+    "location": "PIMO DRILL — toolbar",
+    "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "exportacao-tcn-drill-xml",
+      "modulo-industrial"
+    ],
+    "effects": "onSelectFeature(\"rect\")",
+    "action": "onSelectFeature(\"rect\")",
+    "area": "pimo-drill",
+    "id": "drill-rect",
+    "label": "Rect",
+    "location": "PIMO DRILL — toolbar",
+    "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "exportacao-tcn-drill-xml",
+      "modulo-industrial"
+    ],
+    "effects": "onSelectView(\"2d\")",
+    "action": "onSelectView(\"2d\")",
+    "area": "pimo-drill",
+    "id": "drill-vista-2d",
+    "label": "Vista 2D",
+    "location": "PIMO DRILL — toolbar",
+    "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "exportacao-tcn-drill-xml",
+      "modulo-industrial"
+    ],
+    "effects": "onSelectView(\"3d\")",
+    "action": "onSelectView(\"3d\")",
+    "area": "pimo-drill",
+    "id": "drill-vista-3d",
+    "label": "Vista 3D",
+    "location": "PIMO DRILL — toolbar",
+    "sourceFile": "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "onReload?.()",
+    "action": "onReload?.()",
+    "area": "pimo-trak",
+    "id": "station-actualizar",
+    "label": "Actualizar",
+    "location": "StationToolbar (estações industriais)",
+    "sourceFile": "src/industrial/ui/components/StationToolbar.tsx"
   },
   {
     "icon": null,
@@ -3221,6 +4188,22 @@ export const buttons = [
       "pimo-trak",
       "modulo-industrial"
     ],
+    "effects": "onToggleSidebar?.()",
+    "action": "onToggleSidebar?.()",
+    "area": "pimo-trak",
+    "id": "station-historico",
+    "label": "Histórico",
+    "location": "StationToolbar (estações industriais)",
+    "sourceFile": "src/industrial/ui/components/StationToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
     "effects": "Abre a vista industrial correspondente.",
     "action": "Navega para `/industrial/operations/montagem`.",
     "area": "pimo-trak",
@@ -3228,6 +4211,22 @@ export const buttons = [
     "label": "Montagem",
     "location": "Menu PIMO-TRAK Industrial (header)",
     "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "onToolMode(\"move\")",
+    "action": "onToolMode(\"move\")",
+    "area": "pimo-trak",
+    "id": "station-mover",
+    "label": "Mover",
+    "location": "StationToolbar (estações industriais)",
+    "sourceFile": "src/industrial/ui/components/StationToolbar.tsx"
   },
   {
     "icon": null,
@@ -3317,6 +4316,22 @@ export const buttons = [
       "pimo-trak",
       "modulo-industrial"
     ],
+    "effects": "onToolMode(\"rotate\")",
+    "action": "onToolMode(\"rotate\")",
+    "area": "pimo-trak",
+    "id": "station-rodar",
+    "label": "Rodar",
+    "location": "StationToolbar (estações industriais)",
+    "sourceFile": "src/industrial/ui/components/StationToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
     "effects": "Abre a vista industrial correspondente.",
     "action": "Navega para `/admin/settings/industrial`.",
     "area": "pimo-trak",
@@ -3324,6 +4339,22 @@ export const buttons = [
     "label": "Settings Industrial",
     "location": "Menu PIMO-TRAK Industrial (header)",
     "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "adminTools",
+    "shortcut": null,
+    "featureIds": [
+      "pimo-trak",
+      "modulo-industrial"
+    ],
+    "effects": "onToggleSnap()",
+    "action": "onToggleSnap()",
+    "area": "pimo-trak",
+    "id": "station-snap",
+    "label": "Snap",
+    "location": "StationToolbar (estações industriais)",
+    "sourceFile": "src/industrial/ui/components/StationToolbar.tsx"
   },
   {
     "icon": null,
@@ -3404,5 +4435,125 @@ export const buttons = [
     "label": "Work Orders",
     "location": "Menu PIMO-TRAK Industrial (header)",
     "sourceFile": "src/components/layout/header/HeaderIndustrialMenu.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "move",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "setActiveTool(\"move\")",
+    "action": "setActiveTool(\"move\")",
+    "area": "showroom",
+    "id": "showroom-mover",
+    "label": "Mover",
+    "location": "Showroom toolbar / top bar",
+    "sourceFile": "src/components/showroom/ShowroomToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "move",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "setActiveTool(\"measure\")",
+    "action": "setActiveTool(\"measure\")",
+    "area": "showroom",
+    "id": "showroom-regua",
+    "label": "Régua",
+    "location": "Showroom toolbar / top bar",
+    "sourceFile": "src/components/showroom/ShowroomToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "move",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "resetCamera()",
+    "action": "resetCamera()",
+    "area": "showroom",
+    "id": "showroom-reset",
+    "label": "Reset câmara",
+    "location": "Showroom toolbar / top bar",
+    "sourceFile": "src/components/showroom/ShowroomToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "move",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "setActiveTool(\"rotate\")",
+    "action": "setActiveTool(\"rotate\")",
+    "area": "showroom",
+    "id": "showroom-rodar",
+    "label": "Rodar",
+    "location": "Showroom toolbar / top bar",
+    "sourceFile": "src/components/showroom/ShowroomToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "move",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "onBoxExplodeToggle",
+    "action": "onBoxExplodeToggle",
+    "area": "showroom",
+    "id": "showroom-separar-caixas",
+    "label": "Separar caixas / Reunir caixas",
+    "location": "Showroom toolbar / top bar",
+    "sourceFile": "src/components/showroom/ShowroomViewerTopBar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "move",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "onPieceExplodeToggle",
+    "action": "onPieceExplodeToggle",
+    "area": "showroom",
+    "id": "showroom-separar-pecas",
+    "label": "Separar peças / Reunir peças",
+    "location": "Showroom toolbar / top bar",
+    "sourceFile": "src/components/showroom/ShowroomViewerTopBar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "move",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "adjustCameraZoom(0.9)",
+    "action": "adjustCameraZoom(0.9)",
+    "area": "showroom",
+    "id": "showroom-zoom-in",
+    "label": "Zoom +",
+    "location": "Showroom toolbar / top bar",
+    "sourceFile": "src/components/showroom/ShowroomToolbar.tsx"
+  },
+  {
+    "icon": null,
+    "iconName": "move",
+    "shortcut": null,
+    "featureIds": [
+      "configurador-3d"
+    ],
+    "effects": "adjustCameraZoom(1.1)",
+    "action": "adjustCameraZoom(1.1)",
+    "area": "showroom",
+    "id": "showroom-zoom-out",
+    "label": "Zoom −",
+    "location": "Showroom toolbar / top bar",
+    "sourceFile": "src/components/showroom/ShowroomToolbar.tsx"
   }
 ]

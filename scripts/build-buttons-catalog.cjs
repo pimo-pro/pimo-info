@@ -897,6 +897,429 @@ add({
   })
 })
 
+// --- Visibility options (UnifiedTopToolbar popover) ---
+;[
+  {
+    id: "utt-show-panel-edges",
+    label: "Mostrar arestas dos painéis",
+    action: "Alterna `viewerSettings.showPanelEdges` + `viewerApi.setPanelEdgesVisible`.",
+  },
+  {
+    id: "utt-hide-all-panels",
+    label: "Esconder todos os painéis",
+    action: "Alterna `viewerSettings.hideAllPanels` + `viewerApi.setAllPanelsHidden`.",
+  },
+  {
+    id: "utt-reflections",
+    label: "Reflexos dinâmicos (probe)",
+    action: "Alterna `viewerSettings.enableReflections` + `viewerApi.setReflectionsEnabled`.",
+  },
+  {
+    id: "utt-rotate-90",
+    label: "90° direita",
+    action: "Adiciona π/2 à rotação Y da caixa ou remate selecionado.",
+  },
+  {
+    id: "utt-ver-pecas",
+    label: "Ver Peças / Ocultar peças individuais",
+    iconName: "pieces",
+    action: "Alterna `viewerSettings.panelRenderingEnabled`.",
+  },
+].forEach((e) => {
+  add({
+    iconName: e.iconName || "displayCheck",
+    location: "Barra superior unificada — opções de visualização / rotação",
+    area: "barra-superior",
+    effects: e.action,
+    sourceFile: "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
+    featureIds: ["configurador-3d"],
+    ...e,
+  })
+})
+
+// --- Extra export bubble actions ---
+;[
+  {
+    id: "export-analise-completo",
+    label: "Análise arquivo completo",
+    iconName: "adminChecklist",
+    action:
+      "Publica o projeto na análise industrial online e navega para o índice (flag `industrialOnlineAnalysis`).",
+    featureIds: ["modulo-industrial"],
+  },
+  {
+    id: "export-whatsapp",
+    label: "WhatsApp",
+    iconName: "send",
+    action: "Selecciona método de envio WhatsApp no pacote.",
+    featureIds: ["pdf-tecnico"],
+  },
+  {
+    id: "export-email",
+    label: "Email",
+    iconName: "send",
+    action: "Selecciona método de envio Email no pacote.",
+    featureIds: ["pdf-tecnico"],
+  },
+  {
+    id: "export-capturar-foto",
+    label: "Capturar agora",
+    iconName: "camera",
+    action: "Captura imagem do viewer para o pacote de envio.",
+    featureIds: ["configurador-3d"],
+  },
+  {
+    id: "export-marcar-lidos",
+    label: "Marcar lidos",
+    iconName: "check",
+    action: "Marca avisos do painel de exportação como lidos (`markExportPanelRead`).",
+    featureIds: ["exportacao-tcn-drill-xml"],
+  },
+].forEach((e) => {
+  add({
+    location: "Modal «Salvar e Gerar Design» (UnifiedExportBubble)",
+    area: "exportacao",
+    effects: e.action,
+    sourceFile: "src/components/export/UnifiedExportBubble.tsx",
+    ...e,
+  })
+})
+
+// --- Projetos salvos modal ---
+;[
+  ["projects-criar-novo", "Criar novo projeto", "actions.createNewProject()"],
+  ["projects-carregar", "Carregar", "Carrega snapshot do projeto selecionado."],
+  ["projects-renomear", "Renomear", "Entra em modo de renomeação."],
+  ["projects-excluir", "Excluir", "Apaga o projeto da lista."],
+  ["projects-guardar-nome", "Guardar", "Confirma o novo nome (`renameProject`)."],
+].forEach(([id, label, action]) => {
+  add({
+    id,
+    label,
+    iconName: "projects",
+    location: "Modal Projetos salvos",
+    area: "paineis-laterais",
+    action,
+    effects: action,
+    sourceFile: "src/components/layout/ToolbarModals.tsx",
+    featureIds: ["configurador-3d"],
+  })
+})
+
+// --- Home selected / layers / drawers ---
+;[
+  {
+    id: "home-adicionar-caixote",
+    label: "Adicionar Caixote",
+    action: "Adiciona uma nova caixa (`addWorkspaceBox`).",
+    sourceFile: "src/components/layout/left-panel/HomeLeftPanelSelected.tsx",
+  },
+  {
+    id: "home-duplicar-caixa",
+    label: "Duplicar Caixa",
+    action: "Duplica a caixa selecionada (`duplicateWorkspaceBox`).",
+    sourceFile: "src/components/layout/left-panel/HomeLeftPanelSelected.tsx",
+  },
+  {
+    id: "layers-regenerar",
+    label: "Regenerar Camadas",
+    action: "Regenera as camadas da caixa selecionada.",
+    sourceFile: "src/components/layout/left-panel/BoxLayersPanel.tsx",
+    featureIds: ["portas-e-gavetas"],
+  },
+  {
+    id: "gavetas-guardar-preset",
+    label: "Guardar como preset",
+    action: "Guarda a configuração de gavetas como preset.",
+    sourceFile: "src/components/layout/left-panel/GavetasPopoverPanel.tsx",
+    featureIds: ["portas-e-gavetas"],
+  },
+  {
+    id: "gavetas-aplicar-preset",
+    label: "Aplicar preset",
+    action: "Aplica um preset de gavetas à caixa.",
+    sourceFile: "src/components/layout/left-panel/GavetasPopoverPanel.tsx",
+    featureIds: ["portas-e-gavetas"],
+  },
+  {
+    id: "divsep-add-sep",
+    label: "Adicionar SEPARADOR",
+    action: "Adiciona um separador à caixa.",
+    sourceFile: "src/components/layout/left-panel/DivSepPanel.tsx",
+  },
+  {
+    id: "divsep-add-div",
+    label: "Adicionar DIVISÓRIO",
+    action: "Adiciona um divisório à caixa.",
+    sourceFile: "src/components/layout/left-panel/DivSepPanel.tsx",
+  },
+  {
+    id: "modelos-abrir-industrial",
+    label: "Abrir Design Industrial",
+    action: "Abre o painel Design Industrial (`setIndustrialDesignPanelOpen(true)`).",
+    sourceFile: "src/components/layout/left-panel/PainelModelosDaCaixa.tsx",
+    featureIds: ["modulo-industrial"],
+  },
+].forEach((e) => {
+  add({
+    iconName: "furniture",
+    location: "Painéis laterais (caixa / camadas)",
+    area: "paineis-laterais",
+    effects: e.action,
+    featureIds: e.featureIds || ["configurador-3d"],
+    ...e,
+  })
+})
+
+// --- Sala panel (sample of primary actions) ---
+;[
+  ["sala-criar", "Criar sala", "Cria/aplica dimensões da sala."],
+  ["sala-aplicar-dims", "Aplicar dimensões", "Aplica dimensões ao motor de sala."],
+  ["sala-remover", "Remover sala", "Remove a sala do projeto."],
+  ["sala-walkthrough", "Modo Walkthrough", "Entra em walkthrough (WASD + rato).", "WASD"],
+  ["sala-add-porta", "Porta", "Adiciona abertura tipo porta.", null, "roomDoor"],
+  ["sala-add-janela", "Janela", "Adiciona abertura tipo janela.", null, "roomWindow"],
+  ["sala-auto-arrange", "Auto-Arrange", "Dispara auto-arrange do layout da sala."],
+  ["sala-auto-design", "Auto-Design", "Dispara auto-design do layout da sala."],
+].forEach(([id, label, action, shortcut, iconName]) => {
+  add({
+    id,
+    label,
+    iconName: iconName || "room",
+    location: "Painel Sala",
+    area: "paineis-laterais",
+    action,
+    effects: action,
+    shortcut: shortcut || null,
+    sourceFile: "src/components/layout/left-panel/PainelSala.tsx",
+    featureIds: ["configurador-3d"],
+  })
+})
+
+// --- Nesting V3 toolbar ---
+;[
+  {
+    id: "nesting-voltar",
+    label: "Voltar ao Projeto",
+    iconName: "chevronRight",
+    action: "Navega de volta ao viewer/projeto (ou `onClose`).",
+  },
+  {
+    id: "nesting-auto-layout",
+    label: "Auto Layout",
+    iconName: "grid",
+    action: "Executa `runAutoLayout` no Nesting V3.",
+  },
+  {
+    id: "nesting-limpar",
+    label: "Limpar",
+    iconName: "delete",
+    action: "Limpa todas as colocações (`clearAll`).",
+  },
+  {
+    id: "nesting-pdf",
+    label: "PDF",
+    iconName: "adminDocs",
+    action: "Exporta Layout PRO em PDF (`handleDownloadPdf`).",
+  },
+  {
+    id: "nesting-tcn",
+    label: "TCN",
+    iconName: "adminTools",
+    action: "Exporta ficheiros TCN (`handleDownloadTcn`).",
+  },
+  {
+    id: "nesting-etiquetas",
+    label: "Etiquetas",
+    iconName: "adminTag",
+    action: "Exporta etiquetas oficiais UEE / LabelSystemV5.",
+  },
+  {
+    id: "nesting-gerar-tudo",
+    label: "Gerar Tudo",
+    iconName: "send",
+    action: "Gera todos os artefactos de nesting (`handleGenerateAll`).",
+  },
+  {
+    id: "nesting-vista-toggle",
+    label: "Vista folha / Vista chão",
+    iconName: "grid",
+    action: "Alterna vista do canvas entre folha e overview.",
+  },
+].forEach((e) => {
+  add({
+    location: "Toolbar Nesting V3",
+    area: "nesting-v3",
+    effects: e.action,
+    sourceFile: "src/nesting-v3/NestingV3Page.tsx",
+    featureIds: ["nesting-fast-pro"],
+    ...e,
+  })
+})
+
+// Nesting V3 shortcuts
+;[
+  ["kbd-nesting-esc", "Escape", "Limpa seleção/arrasto no Nesting V3."],
+  ["kbd-nesting-r", "R", "Roda a peça selecionada."],
+  ["kbd-nesting-del", "Delete / Backspace", "Remove a peça selecionada."],
+  ["kbd-nesting-zoom-in", "+ / =", "Zoom in."],
+  ["kbd-nesting-zoom-out", "-", "Zoom out."],
+  ["kbd-nesting-zoom-reset", "0", "Repõe zoom/pan."],
+].forEach(([id, shortcut, action]) => {
+  add({
+    id,
+    label: `Nesting: ${action}`,
+    icon: "⌨",
+    iconName: null,
+    location: "Atalhos Nesting V3",
+    area: "atalhos",
+    shortcut,
+    action,
+    effects: action,
+    sourceFile: "src/nesting-v3/NestingV3Page.tsx",
+    featureIds: ["nesting-fast-pro"],
+  })
+})
+
+// History H shortcut
+add({
+  id: "kbd-history-h",
+  label: "Abrir/fechar Histórico",
+  icon: "⌨",
+  iconName: null,
+  location: "Atalhos de teclado (barra inferior)",
+  area: "atalhos",
+  shortcut: "H",
+  action: "Alterna o painel de histórico (`BottomInfoToolbar`).",
+  effects: "Abre/fecha histórico se o foco não estiver num campo editável.",
+  sourceFile: "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx",
+  featureIds: ["configurador-3d"],
+})
+
+// Industriais hub send
+add({
+  id: "hub-enviar-fabrica-btn",
+  label: "Enviar ordem para fábrica",
+  iconName: "send",
+  location: "Hub Industriais — Enviar para Fábrica",
+  area: "barra-inferior",
+  action: "Envia a ordem industrial para a fábrica (`enviar()`).",
+  effects: "Depende de artefactos industriais válidos / PIMO-TRAK.",
+  sourceFile: "src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx",
+  featureIds: ["pimo-trak", "modulo-industrial"],
+})
+
+// Drill toolbar
+;[
+  ["drill-vista-2d", "Vista 2D", "onSelectView(\"2d\")"],
+  ["drill-vista-3d", "Vista 3D", "onSelectView(\"3d\")"],
+  ["drill-buraco", "Buraco", "onSelectFeature(\"hole\")"],
+  ["drill-entalhe", "Entalhe", "onSelectFeature(\"slot\")"],
+  ["drill-rect", "Rect", "onSelectFeature(\"rect\")"],
+  ["drill-circulo", "Círculo", "onSelectFeature(\"circle\")"],
+  ["drill-arco", "Arco", "onSelectFeature(\"arc\")"],
+  ["drill-caminho", "Caminho", "onSelectFeature(\"path\")"],
+].forEach(([id, label, action]) => {
+  add({
+    id,
+    label,
+    iconName: "adminTools",
+    location: "PIMO DRILL — toolbar",
+    area: "pimo-drill",
+    action,
+    effects: action,
+    sourceFile: "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx",
+    featureIds: ["exportacao-tcn-drill-xml", "modulo-industrial"],
+  })
+})
+
+// Station toolbar
+;[
+  ["station-mover", "Mover", "onToolMode(\"move\")"],
+  ["station-rodar", "Rodar", "onToolMode(\"rotate\")"],
+  ["station-snap", "Snap", "onToggleSnap()"],
+  ["station-actualizar", "Actualizar", "onReload?.()"],
+  ["station-historico", "Histórico", "onToggleSidebar?.()"],
+].forEach(([id, label, action]) => {
+  add({
+    id,
+    label,
+    iconName: "adminTools",
+    location: "StationToolbar (estações industriais)",
+    area: "pimo-trak",
+    action,
+    effects: action,
+    sourceFile: "src/industrial/ui/components/StationToolbar.tsx",
+    featureIds: ["pimo-trak", "modulo-industrial"],
+  })
+})
+
+// Showroom toolbar
+;[
+  ["showroom-mover", "Mover", "setActiveTool(\"move\")"],
+  ["showroom-rodar", "Rodar", "setActiveTool(\"rotate\")"],
+  ["showroom-regua", "Régua", "setActiveTool(\"measure\")"],
+  ["showroom-zoom-in", "Zoom +", "adjustCameraZoom(0.9)"],
+  ["showroom-zoom-out", "Zoom −", "adjustCameraZoom(1.1)"],
+  ["showroom-reset", "Reset câmara", "resetCamera()"],
+  ["showroom-separar-caixas", "Separar caixas / Reunir caixas", "onBoxExplodeToggle"],
+  ["showroom-separar-pecas", "Separar peças / Reunir peças", "onPieceExplodeToggle"],
+].forEach(([id, label, action]) => {
+  add({
+    id,
+    label,
+    iconName: "move",
+    location: "Showroom toolbar / top bar",
+    area: "showroom",
+    action,
+    effects: action,
+    sourceFile:
+      id.startsWith("showroom-separar")
+        ? "src/components/showroom/ShowroomViewerTopBar.tsx"
+        : "src/components/showroom/ShowroomToolbar.tsx",
+    featureIds: ["configurador-3d"],
+  })
+})
+
+// Photo mode
+;[
+  ["photo-watermark", "Marca d’água", "Alterna marca d'água no Photo Mode."],
+  ["photo-ultra", "Ultra", "Alterna modo Ultra."],
+  ["photo-realismo", "Realismo avançado", "Alterna realismo avançado."],
+  ["photo-export-linhas", "Exportar linhas", "Exporta linhas do Photo Mode."],
+  ["photo-descarregar", "Descarregar", "Descarrega a captura do Photo Mode."],
+].forEach(([id, label, action]) => {
+  add({
+    id,
+    label,
+    iconName: "photoMode",
+    location: "Painel Photo Mode",
+    area: "paineis-laterais",
+    action,
+    effects: action,
+    sourceFile: "src/components/layout/left-panel/PhotoModeSettingsContent.tsx",
+    featureIds: ["configurador-3d"],
+  })
+})
+
+// Confirm new project
+;[
+  ["confirm-guardar-novo", "Guardar e criar novo", "Guarda o projeto atual e cria um novo."],
+  ["confirm-descartar-novo", "Descartar e criar novo", "Descarta alterações e cria um novo projeto."],
+].forEach(([id, label, action]) => {
+  add({
+    id,
+    label,
+    iconName: "adminDocs",
+    location: "Modal confirmar novo projeto",
+    area: "barra-superior",
+    action,
+    effects: action,
+    sourceFile: "src/components/modals/ConfirmNewProjectModal.tsx",
+    featureIds: ["configurador-3d"],
+  })
+})
+
 const buttons = [...byId.values()].sort((a, b) => {
   if (a.area !== b.area) return a.area.localeCompare(b.area)
   return a.label.localeCompare(b.label, "pt")
@@ -912,7 +1335,10 @@ const areas = [
   { id: "exportacao", name: "Exportação / Salvar e Gerar" },
   { id: "barra-inferior", name: "Barra inferior" },
   { id: "design-industrial", name: "Design Industrial" },
+  { id: "nesting-v3", name: "Nesting V3" },
+  { id: "pimo-drill", name: "PIMO DRILL" },
   { id: "pimo-trak", name: "PIMO-TRAK" },
+  { id: "showroom", name: "Showroom" },
   { id: "atalhos", name: "Atalhos de teclado" },
 ]
 

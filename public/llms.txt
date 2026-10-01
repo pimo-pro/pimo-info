@@ -68,18 +68,21 @@ Locale: pt-PT
 - Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/ — Tarifas e regras de custo (camada técnica/admin P3.9).
 - Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/ — Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.
 
-## UI buttons (221)
+## UI buttons (296)
 - Header: 14 controlos
 - Navegação lateral: 7 controlos
-- Barra superior unificada: 28 controlos
+- Barra superior unificada: 35 controlos
 - Ferramentas 3D: 4 controlos
-- Painéis laterais: 17 controlos
+- Painéis laterais: 43 controlos
 - Menu de contexto: 91 controlos
-- Exportação / Salvar e Gerar: 15 controlos
-- Barra inferior: 21 controlos
+- Exportação / Salvar e Gerar: 20 controlos
+- Barra inferior: 22 controlos
 - Design Industrial: 2 controlos
-- PIMO-TRAK: 15 controlos
-- Atalhos de teclado: 7 controlos
+- Nesting V3: 8 controlos
+- PIMO DRILL: 8 controlos
+- PIMO-TRAK: 20 controlos
+- Showroom: 8 controlos
+- Atalhos de teclado: 14 controlos
 
 ## Architecture modules
 - Projeto: in=[Nome do projeto; Import JSON/ZIP; Projetos salvos] out=[ProjectState persistido; Snapshot viewer/sala] depends=[—]

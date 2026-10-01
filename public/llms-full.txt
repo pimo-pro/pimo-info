@@ -1,5 +1,5 @@
 # PIMO Info — full knowledge dump
-Generated: 2026-10-01T00:51:31.812Z
+Generated: 2026-10-01T00:54:09.398Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -71,18 +71,21 @@ Locale: pt-PT
 - Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/ — Tarifas e regras de custo (camada técnica/admin P3.9).
 - Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/ — Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.
 
-## UI buttons (221)
+## UI buttons (296)
 - Header: 14 controlos
 - Navegação lateral: 7 controlos
-- Barra superior unificada: 28 controlos
+- Barra superior unificada: 35 controlos
 - Ferramentas 3D: 4 controlos
-- Painéis laterais: 17 controlos
+- Painéis laterais: 43 controlos
 - Menu de contexto: 91 controlos
-- Exportação / Salvar e Gerar: 15 controlos
-- Barra inferior: 21 controlos
+- Exportação / Salvar e Gerar: 20 controlos
+- Barra inferior: 22 controlos
 - Design Industrial: 2 controlos
-- PIMO-TRAK: 15 controlos
-- Atalhos de teclado: 7 controlos
+- Nesting V3: 8 controlos
+- PIMO DRILL: 8 controlos
+- PIMO-TRAK: 20 controlos
+- Showroom: 8 controlos
+- Atalhos de teclado: 14 controlos
 
 ## Architecture modules
 - Projeto: in=[Nome do projeto; Import JSON/ZIP; Projetos salvos] out=[ProjectState persistido; Snapshot viewer/sala] depends=[—]
@@ -145,6 +148,17 @@ Locale: pt-PT
 
 # UI buttons catalog
 
+## Button: Abrir/fechar Histórico
+id: kbd-history-h
+area: atalhos
+location: Atalhos de teclado (barra inferior)
+action: Alterna o painel de histórico (`BottomInfoToolbar`).
+effects: Abre/fecha histórico se o foco não estiver num campo editável.
+shortcut: H
+iconName: ⌨
+sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
+featureIds: configurador-3d
+
 ## Button: Adicionar/remover da seleção
 id: kbd-multi-select
 area: atalhos
@@ -199,6 +213,72 @@ shortcut: Setas
 iconName: ⌨
 sourceFile: src/components/layout/workspace/Workspace.tsx
 featureIds: configurador-3d
+
+## Button: Nesting: Limpa seleção/arrasto no Nesting V3.
+id: kbd-nesting-esc
+area: atalhos
+location: Atalhos Nesting V3
+action: Limpa seleção/arrasto no Nesting V3.
+effects: Limpa seleção/arrasto no Nesting V3.
+shortcut: Escape
+iconName: ⌨
+sourceFile: src/nesting-v3/NestingV3Page.tsx
+featureIds: nesting-fast-pro
+
+## Button: Nesting: Remove a peça selecionada.
+id: kbd-nesting-del
+area: atalhos
+location: Atalhos Nesting V3
+action: Remove a peça selecionada.
+effects: Remove a peça selecionada.
+shortcut: Delete / Backspace
+iconName: ⌨
+sourceFile: src/nesting-v3/NestingV3Page.tsx
+featureIds: nesting-fast-pro
+
+## Button: Nesting: Repõe zoom/pan.
+id: kbd-nesting-zoom-reset
+area: atalhos
+location: Atalhos Nesting V3
+action: Repõe zoom/pan.
+effects: Repõe zoom/pan.
+shortcut: 0
+iconName: ⌨
+sourceFile: src/nesting-v3/NestingV3Page.tsx
+featureIds: nesting-fast-pro
+
+## Button: Nesting: Roda a peça selecionada.
+id: kbd-nesting-r
+area: atalhos
+location: Atalhos Nesting V3
+action: Roda a peça selecionada.
+effects: Roda a peça selecionada.
+shortcut: R
+iconName: ⌨
+sourceFile: src/nesting-v3/NestingV3Page.tsx
+featureIds: nesting-fast-pro
+
+## Button: Nesting: Zoom in.
+id: kbd-nesting-zoom-in
+area: atalhos
+location: Atalhos Nesting V3
+action: Zoom in.
+effects: Zoom in.
+shortcut: + / =
+iconName: ⌨
+sourceFile: src/nesting-v3/NestingV3Page.tsx
+featureIds: nesting-fast-pro
+
+## Button: Nesting: Zoom out.
+id: kbd-nesting-zoom-out
+area: atalhos
+location: Atalhos Nesting V3
+action: Zoom out.
+effects: Zoom out.
+shortcut: -
+iconName: ⌨
+sourceFile: src/nesting-v3/NestingV3Page.tsx
+featureIds: nesting-fast-pro
 
 ## Button: Refazer
 id: kbd-redo-y
@@ -287,6 +367,17 @@ shortcut: —
 iconName: adminChart
 sourceFile: src/components/layout/bottom-info-toolbar/hubs/FinanceiroHub.tsx
 featureIds: orcamentos
+
+## Button: Enviar ordem para fábrica
+id: hub-enviar-fabrica-btn
+area: barra-inferior
+location: Hub Industriais — Enviar para Fábrica
+action: Envia a ordem industrial para a fábrica (`enviar()`).
+effects: Depende de artefactos industriais válidos / PIMO-TRAK.
+shortcut: —
+iconName: send
+sourceFile: src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx
+featureIds: pimo-trak, modulo-industrial
 
 ## Button: Enviar para Fábrica
 id: hub-industriais-enviarFabrica
@@ -453,6 +544,17 @@ iconName: undo
 sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
 featureIds: configurador-3d
 
+## Button: 90° direita
+id: utt-rotate-90
+area: barra-superior
+location: Barra superior unificada — opções de visualização / rotação
+action: Adiciona π/2 à rotação Y da caixa ou remate selecionado.
+effects: Adiciona π/2 à rotação Y da caixa ou remate selecionado.
+shortcut: —
+iconName: displayCheck
+sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
+featureIds: configurador-3d
+
 ## Button: Bloquear / Desbloquear colisão
 id: utt-lock-collision
 area: barra-superior
@@ -473,6 +575,17 @@ effects: Abre presets de qualidade (Baixa / Média / Alta).
 shortcut: —
 iconName: displayMenu
 sourceFile: src/components/layout/topbar/DisplayMenuButton.tsx
+featureIds: configurador-3d
+
+## Button: Descartar e criar novo
+id: confirm-descartar-novo
+area: barra-superior
+location: Modal confirmar novo projeto
+action: Descarta alterações e cria um novo projeto.
+effects: Descarta alterações e cria um novo projeto.
+shortcut: —
+iconName: adminDocs
+sourceFile: src/components/modals/ConfirmNewProjectModal.tsx
 featureIds: configurador-3d
 
 ## Button: DESFAZER
@@ -508,6 +621,17 @@ iconName: send
 sourceFile: src/constants/toolbarConfig.ts
 featureIds: pdf-tecnico
 
+## Button: Esconder todos os painéis
+id: utt-hide-all-panels
+area: barra-superior
+location: Barra superior unificada — opções de visualização / rotação
+action: Alterna `viewerSettings.hideAllPanels` + `viewerApi.setAllPanelsHidden`.
+effects: Alterna `viewerSettings.hideAllPanels` + `viewerApi.setAllPanelsHidden`.
+shortcut: —
+iconName: displayCheck
+sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
+featureIds: configurador-3d
+
 ## Button: Exploded View
 id: utt-exploded
 area: barra-superior
@@ -517,6 +641,17 @@ effects: Abre controlos de vista explodida (ativar + intensidade).
 shortcut: —
 iconName: exploded
 sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
+featureIds: configurador-3d
+
+## Button: Guardar e criar novo
+id: confirm-guardar-novo
+area: barra-superior
+location: Modal confirmar novo projeto
+action: Guarda o projeto atual e cria um novo.
+effects: Guarda o projeto atual e cria um novo.
+shortcut: —
+iconName: adminDocs
+sourceFile: src/components/modals/ConfirmNewProjectModal.tsx
 featureIds: configurador-3d
 
 ## Button: Highlight
@@ -538,6 +673,17 @@ action: Alterna o overlay de medidas do conjunto (`toggleDimensionsOverlay`).
 effects: Alterna o overlay de medidas do conjunto (`toggleDimensionsOverlay`).
 shortcut: —
 iconName: dimensions
+sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
+featureIds: configurador-3d
+
+## Button: Mostrar arestas dos painéis
+id: utt-show-panel-edges
+area: barra-superior
+location: Barra superior unificada — opções de visualização / rotação
+action: Alterna `viewerSettings.showPanelEdges` + `viewerApi.setPanelEdgesVisible`.
+effects: Alterna `viewerSettings.showPanelEdges` + `viewerApi.setPanelEdgesVisible`.
+shortcut: —
+iconName: displayCheck
 sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
 featureIds: configurador-3d
 
@@ -629,6 +775,17 @@ iconName: redo
 sourceFile: src/constants/toolbarConfig.ts
 featureIds: configurador-3d
 
+## Button: Reflexos dinâmicos (probe)
+id: utt-reflections
+area: barra-superior
+location: Barra superior unificada — opções de visualização / rotação
+action: Alterna `viewerSettings.enableReflections` + `viewerApi.setReflectionsEnabled`.
+effects: Alterna `viewerSettings.enableReflections` + `viewerApi.setReflectionsEnabled`.
+shortcut: —
+iconName: displayCheck
+sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
+featureIds: configurador-3d
+
 ## Button: Régua
 id: utt-ruler
 area: barra-superior
@@ -681,6 +838,17 @@ action: Abre o menu de vistas da câmara (Top/Bottom/Front/Back/Left/Right/Isome
 effects: Abre o menu de vistas da câmara (Top/Bottom/Front/Back/Left/Right/Isometric).
 shortcut: —
 iconName: camera
+sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
+featureIds: configurador-3d
+
+## Button: Ver Peças / Ocultar peças individuais
+id: utt-ver-pecas
+area: barra-superior
+location: Barra superior unificada — opções de visualização / rotação
+action: Alterna `viewerSettings.panelRenderingEnabled`.
+effects: Alterna `viewerSettings.panelRenderingEnabled`.
+shortcut: —
+iconName: pieces
 sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
 featureIds: configurador-3d
 
@@ -783,6 +951,17 @@ iconName: close
 sourceFile: src/components/layout/workspace/IndustrialDesignPanel.tsx
 featureIds: modulo-industrial
 
+## Button: Análise arquivo completo
+id: export-analise-completo
+area: exportacao
+location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
+action: Publica o projeto na análise industrial online e navega para o índice (flag `industrialOnlineAnalysis`).
+effects: Publica o projeto na análise industrial online e navega para o índice (flag `industrialOnlineAnalysis`).
+shortcut: —
+iconName: adminChecklist
+sourceFile: src/components/export/UnifiedExportBubble.tsx
+featureIds: modulo-industrial
+
 ## Button: Arquivo Unificado
 id: export-unificado
 area: exportacao
@@ -804,6 +983,17 @@ shortcut: —
 iconName: adminTools
 sourceFile: src/components/export/UnifiedExportBubble.tsx
 featureIds: exportacao-tcn-drill-xml
+
+## Button: Capturar agora
+id: export-capturar-foto
+area: exportacao
+location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
+action: Captura imagem do viewer para o pacote de envio.
+effects: Captura imagem do viewer para o pacote de envio.
+shortcut: —
+iconName: camera
+sourceFile: src/components/export/UnifiedExportBubble.tsx
+featureIds: configurador-3d
 
 ## Button: Cutlist
 id: export-cutlist
@@ -837,6 +1027,17 @@ shortcut: —
 iconName: adminSave
 sourceFile: src/components/export/UnifiedExportBubble.tsx
 featureIds: configurador-3d
+
+## Button: Email
+id: export-email
+area: exportacao
+location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
+action: Selecciona método de envio Email no pacote.
+effects: Selecciona método de envio Email no pacote.
+shortcut: —
+iconName: send
+sourceFile: src/components/export/UnifiedExportBubble.tsx
+featureIds: pdf-tecnico
 
 ## Button: Etiquetas (UEE v5)
 id: export-etiquetas
@@ -904,6 +1105,17 @@ iconName: blueprint
 sourceFile: src/components/export/UnifiedExportBubble.tsx
 featureIds: nesting-fast-pro
 
+## Button: Marcar lidos
+id: export-marcar-lidos
+area: exportacao
+location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
+action: Marca avisos do painel de exportação como lidos (`markExportPanelRead`).
+effects: Marca avisos do painel de exportação como lidos (`markExportPanelRead`).
+shortcut: —
+iconName: check
+sourceFile: src/components/export/UnifiedExportBubble.tsx
+featureIds: exportacao-tcn-drill-xml
+
 ## Button: Nesting V3 (Manual)
 id: export-nesting-v3
 area: exportacao
@@ -947,6 +1159,17 @@ shortcut: —
 iconName: adminChecklist
 sourceFile: src/components/export/UnifiedExportBubble.tsx
 featureIds: modulo-industrial, pdf-tecnico
+
+## Button: WhatsApp
+id: export-whatsapp
+area: exportacao
+location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
+action: Selecciona método de envio WhatsApp no pacote.
+effects: Selecciona método de envio WhatsApp no pacote.
+shortcut: —
+iconName: send
+sourceFile: src/components/export/UnifiedExportBubble.tsx
+featureIds: pdf-tecnico
 
 ## Button: Escalar
 id: tool-3d-scale
@@ -2224,6 +2447,94 @@ iconName: furniture
 sourceFile: src/components/layout/left-toolbar/LeftToolbar.tsx
 featureIds: configurador-3d
 
+## Button: Auto Layout
+id: nesting-auto-layout
+area: nesting-v3
+location: Toolbar Nesting V3
+action: Executa `runAutoLayout` no Nesting V3.
+effects: Executa `runAutoLayout` no Nesting V3.
+shortcut: —
+iconName: grid
+sourceFile: src/nesting-v3/NestingV3Page.tsx
+featureIds: nesting-fast-pro
+
+## Button: Etiquetas
+id: nesting-etiquetas
+area: nesting-v3
+location: Toolbar Nesting V3
+action: Exporta etiquetas oficiais UEE / LabelSystemV5.
+effects: Exporta etiquetas oficiais UEE / LabelSystemV5.
+shortcut: —
+iconName: adminTag
+sourceFile: src/nesting-v3/NestingV3Page.tsx
+featureIds: nesting-fast-pro
+
+## Button: Gerar Tudo
+id: nesting-gerar-tudo
+area: nesting-v3
+location: Toolbar Nesting V3
+action: Gera todos os artefactos de nesting (`handleGenerateAll`).
+effects: Gera todos os artefactos de nesting (`handleGenerateAll`).
+shortcut: —
+iconName: send
+sourceFile: src/nesting-v3/NestingV3Page.tsx
+featureIds: nesting-fast-pro
+
+## Button: Limpar
+id: nesting-limpar
+area: nesting-v3
+location: Toolbar Nesting V3
+action: Limpa todas as colocações (`clearAll`).
+effects: Limpa todas as colocações (`clearAll`).
+shortcut: —
+iconName: delete
+sourceFile: src/nesting-v3/NestingV3Page.tsx
+featureIds: nesting-fast-pro
+
+## Button: PDF
+id: nesting-pdf
+area: nesting-v3
+location: Toolbar Nesting V3
+action: Exporta Layout PRO em PDF (`handleDownloadPdf`).
+effects: Exporta Layout PRO em PDF (`handleDownloadPdf`).
+shortcut: —
+iconName: adminDocs
+sourceFile: src/nesting-v3/NestingV3Page.tsx
+featureIds: nesting-fast-pro
+
+## Button: TCN
+id: nesting-tcn
+area: nesting-v3
+location: Toolbar Nesting V3
+action: Exporta ficheiros TCN (`handleDownloadTcn`).
+effects: Exporta ficheiros TCN (`handleDownloadTcn`).
+shortcut: —
+iconName: adminTools
+sourceFile: src/nesting-v3/NestingV3Page.tsx
+featureIds: nesting-fast-pro
+
+## Button: Vista folha / Vista chão
+id: nesting-vista-toggle
+area: nesting-v3
+location: Toolbar Nesting V3
+action: Alterna vista do canvas entre folha e overview.
+effects: Alterna vista do canvas entre folha e overview.
+shortcut: —
+iconName: grid
+sourceFile: src/nesting-v3/NestingV3Page.tsx
+featureIds: nesting-fast-pro
+
+## Button: Voltar ao Projeto
+id: nesting-voltar
+area: nesting-v3
+location: Toolbar Nesting V3
+action: Navega de volta ao viewer/projeto (ou `onClose`).
+effects: Navega de volta ao viewer/projeto (ou `onClose`).
+shortcut: —
+iconName: chevronRight
+sourceFile: src/nesting-v3/NestingV3Page.tsx
+featureIds: nesting-fast-pro
+
 ## Button: + Adicionar ao projeto
 id: moveis-adicionar
 area: paineis-laterais
@@ -2235,6 +2546,50 @@ iconName: furniture
 sourceFile: src/components/layout/left-panel/PainelMoveisUnificado.tsx
 featureIds: configurador-3d, portas-e-gavetas
 
+## Button: Abrir Design Industrial
+id: modelos-abrir-industrial
+area: paineis-laterais
+location: Painéis laterais (caixa / camadas)
+action: Abre o painel Design Industrial (`setIndustrialDesignPanelOpen(true)`).
+effects: Abre o painel Design Industrial (`setIndustrialDesignPanelOpen(true)`).
+shortcut: —
+iconName: furniture
+sourceFile: src/components/layout/left-panel/PainelModelosDaCaixa.tsx
+featureIds: modulo-industrial
+
+## Button: Adicionar Caixote
+id: home-adicionar-caixote
+area: paineis-laterais
+location: Painéis laterais (caixa / camadas)
+action: Adiciona uma nova caixa (`addWorkspaceBox`).
+effects: Adiciona uma nova caixa (`addWorkspaceBox`).
+shortcut: —
+iconName: furniture
+sourceFile: src/components/layout/left-panel/HomeLeftPanelSelected.tsx
+featureIds: configurador-3d
+
+## Button: Adicionar DIVISÓRIO
+id: divsep-add-div
+area: paineis-laterais
+location: Painéis laterais (caixa / camadas)
+action: Adiciona um divisório à caixa.
+effects: Adiciona um divisório à caixa.
+shortcut: —
+iconName: furniture
+sourceFile: src/components/layout/left-panel/DivSepPanel.tsx
+featureIds: configurador-3d
+
+## Button: Adicionar SEPARADOR
+id: divsep-add-sep
+area: paineis-laterais
+location: Painéis laterais (caixa / camadas)
+action: Adiciona um separador à caixa.
+effects: Adiciona um separador à caixa.
+shortcut: —
+iconName: furniture
+sourceFile: src/components/layout/left-panel/DivSepPanel.tsx
+featureIds: configurador-3d
+
 ## Button: Apagar caixa
 id: calc-apagar-caixa
 area: paineis-laterais
@@ -2244,6 +2599,61 @@ effects: Remove a caixa listada na Calculadora.
 shortcut: —
 iconName: furniture
 sourceFile: src/components/layout/left-panel/LeftPanelCalculadora.tsx
+featureIds: configurador-3d
+
+## Button: Aplicar dimensões
+id: sala-aplicar-dims
+area: paineis-laterais
+location: Painel Sala
+action: Aplica dimensões ao motor de sala.
+effects: Aplica dimensões ao motor de sala.
+shortcut: —
+iconName: room
+sourceFile: src/components/layout/left-panel/PainelSala.tsx
+featureIds: configurador-3d
+
+## Button: Aplicar preset
+id: gavetas-aplicar-preset
+area: paineis-laterais
+location: Painéis laterais (caixa / camadas)
+action: Aplica um preset de gavetas à caixa.
+effects: Aplica um preset de gavetas à caixa.
+shortcut: —
+iconName: furniture
+sourceFile: src/components/layout/left-panel/GavetasPopoverPanel.tsx
+featureIds: portas-e-gavetas
+
+## Button: Auto-Arrange
+id: sala-auto-arrange
+area: paineis-laterais
+location: Painel Sala
+action: Dispara auto-arrange do layout da sala.
+effects: Dispara auto-arrange do layout da sala.
+shortcut: —
+iconName: room
+sourceFile: src/components/layout/left-panel/PainelSala.tsx
+featureIds: configurador-3d
+
+## Button: Auto-Design
+id: sala-auto-design
+area: paineis-laterais
+location: Painel Sala
+action: Dispara auto-design do layout da sala.
+effects: Dispara auto-design do layout da sala.
+shortcut: —
+iconName: room
+sourceFile: src/components/layout/left-panel/PainelSala.tsx
+featureIds: configurador-3d
+
+## Button: Carregar
+id: projects-carregar
+area: paineis-laterais
+location: Modal Projetos salvos
+action: Carrega snapshot do projeto selecionado.
+effects: Carrega snapshot do projeto selecionado.
+shortcut: —
+iconName: projects
+sourceFile: src/components/layout/ToolbarModals.tsx
 featureIds: configurador-3d
 
 ## Button: Clássico
@@ -2268,6 +2678,72 @@ iconName: furniture
 sourceFile: src/components/layout/left-panel/HomeLeftPanelEmpty.tsx
 featureIds: configurador-3d
 
+## Button: Criar novo projeto
+id: projects-criar-novo
+area: paineis-laterais
+location: Modal Projetos salvos
+action: actions.createNewProject()
+effects: actions.createNewProject()
+shortcut: —
+iconName: projects
+sourceFile: src/components/layout/ToolbarModals.tsx
+featureIds: configurador-3d
+
+## Button: Criar sala
+id: sala-criar
+area: paineis-laterais
+location: Painel Sala
+action: Cria/aplica dimensões da sala.
+effects: Cria/aplica dimensões da sala.
+shortcut: —
+iconName: room
+sourceFile: src/components/layout/left-panel/PainelSala.tsx
+featureIds: configurador-3d
+
+## Button: Descarregar
+id: photo-descarregar
+area: paineis-laterais
+location: Painel Photo Mode
+action: Descarrega a captura do Photo Mode.
+effects: Descarrega a captura do Photo Mode.
+shortcut: —
+iconName: photoMode
+sourceFile: src/components/layout/left-panel/PhotoModeSettingsContent.tsx
+featureIds: configurador-3d
+
+## Button: Duplicar Caixa
+id: home-duplicar-caixa
+area: paineis-laterais
+location: Painéis laterais (caixa / camadas)
+action: Duplica a caixa selecionada (`duplicateWorkspaceBox`).
+effects: Duplica a caixa selecionada (`duplicateWorkspaceBox`).
+shortcut: —
+iconName: furniture
+sourceFile: src/components/layout/left-panel/HomeLeftPanelSelected.tsx
+featureIds: configurador-3d
+
+## Button: Excluir
+id: projects-excluir
+area: paineis-laterais
+location: Modal Projetos salvos
+action: Apaga o projeto da lista.
+effects: Apaga o projeto da lista.
+shortcut: —
+iconName: projects
+sourceFile: src/components/layout/ToolbarModals.tsx
+featureIds: configurador-3d
+
+## Button: Exportar linhas
+id: photo-export-linhas
+area: paineis-laterais
+location: Painel Photo Mode
+action: Exporta linhas do Photo Mode.
+effects: Exporta linhas do Photo Mode.
+shortcut: —
+iconName: photoMode
+sourceFile: src/components/layout/left-panel/PhotoModeSettingsContent.tsx
+featureIds: configurador-3d
+
 ## Button: Gavetas
 id: moveis-gavetas
 area: paineis-laterais
@@ -2279,6 +2755,28 @@ iconName: furniture
 sourceFile: src/components/layout/left-panel/PainelMoveisUnificado.tsx
 featureIds: portas-e-gavetas
 
+## Button: Guardar
+id: projects-guardar-nome
+area: paineis-laterais
+location: Modal Projetos salvos
+action: Confirma o novo nome (`renameProject`).
+effects: Confirma o novo nome (`renameProject`).
+shortcut: —
+iconName: projects
+sourceFile: src/components/layout/ToolbarModals.tsx
+featureIds: configurador-3d
+
+## Button: Guardar como preset
+id: gavetas-guardar-preset
+area: paineis-laterais
+location: Painéis laterais (caixa / camadas)
+action: Guarda a configuração de gavetas como preset.
+effects: Guarda a configuração de gavetas como preset.
+shortcut: —
+iconName: furniture
+sourceFile: src/components/layout/left-panel/GavetasPopoverPanel.tsx
+featureIds: portas-e-gavetas
+
 ## Button: Industrial
 id: designer-styleIndustrial
 area: paineis-laterais
@@ -2288,6 +2786,17 @@ effects: Ajusta/refina o layout via designer conversacional.
 shortcut: —
 iconName: adminLab
 sourceFile: src/components/layout/left-panel/ConversationalDesignerPanel.tsx
+featureIds: configurador-3d
+
+## Button: Janela
+id: sala-add-janela
+area: paineis-laterais
+location: Painel Sala
+action: Adiciona abertura tipo janela.
+effects: Adiciona abertura tipo janela.
+shortcut: —
+iconName: roomWindow
+sourceFile: src/components/layout/left-panel/PainelSala.tsx
 featureIds: configurador-3d
 
 ## Button: Japandi
@@ -2334,6 +2843,17 @@ iconName: adminLab
 sourceFile: src/components/layout/left-panel/ConversationalDesignerPanel.tsx
 featureIds: configurador-3d
 
+## Button: Marca d’água
+id: photo-watermark
+area: paineis-laterais
+location: Painel Photo Mode
+action: Alterna marca d'água no Photo Mode.
+effects: Alterna marca d'água no Photo Mode.
+shortcut: —
+iconName: photoMode
+sourceFile: src/components/layout/left-panel/PhotoModeSettingsContent.tsx
+featureIds: configurador-3d
+
 ## Button: Minimalista
 id: designer-minimal
 area: paineis-laterais
@@ -2354,6 +2874,17 @@ effects: Ajusta/refina o layout via designer conversacional.
 shortcut: —
 iconName: adminLab
 sourceFile: src/components/layout/left-panel/ConversationalDesignerPanel.tsx
+featureIds: configurador-3d
+
+## Button: Modo Walkthrough
+id: sala-walkthrough
+area: paineis-laterais
+location: Painel Sala
+action: Entra em walkthrough (WASD + rato).
+effects: Entra em walkthrough (WASD + rato).
+shortcut: WASD
+iconName: room
+sourceFile: src/components/layout/left-panel/PainelSala.tsx
 featureIds: configurador-3d
 
 ## Button: Nórdico
@@ -2389,6 +2920,17 @@ iconName: furniture
 sourceFile: src/components/layout/left-panel/PainelMoveisUnificado.tsx
 featureIds: configurador-3d
 
+## Button: Porta
+id: sala-add-porta
+area: paineis-laterais
+location: Painel Sala
+action: Adiciona abertura tipo porta.
+effects: Adiciona abertura tipo porta.
+shortcut: —
+iconName: roomDoor
+sourceFile: src/components/layout/left-panel/PainelSala.tsx
+featureIds: configurador-3d
+
 ## Button: Prateleiras
 id: moveis-prateleiras
 area: paineis-laterais
@@ -2398,6 +2940,61 @@ effects: Abre configuração de prateleiras.
 shortcut: —
 iconName: furniture
 sourceFile: src/components/layout/left-panel/PainelMoveisUnificado.tsx
+featureIds: configurador-3d
+
+## Button: Realismo avançado
+id: photo-realismo
+area: paineis-laterais
+location: Painel Photo Mode
+action: Alterna realismo avançado.
+effects: Alterna realismo avançado.
+shortcut: —
+iconName: photoMode
+sourceFile: src/components/layout/left-panel/PhotoModeSettingsContent.tsx
+featureIds: configurador-3d
+
+## Button: Regenerar Camadas
+id: layers-regenerar
+area: paineis-laterais
+location: Painéis laterais (caixa / camadas)
+action: Regenera as camadas da caixa selecionada.
+effects: Regenera as camadas da caixa selecionada.
+shortcut: —
+iconName: furniture
+sourceFile: src/components/layout/left-panel/BoxLayersPanel.tsx
+featureIds: portas-e-gavetas
+
+## Button: Remover sala
+id: sala-remover
+area: paineis-laterais
+location: Painel Sala
+action: Remove a sala do projeto.
+effects: Remove a sala do projeto.
+shortcut: —
+iconName: room
+sourceFile: src/components/layout/left-panel/PainelSala.tsx
+featureIds: configurador-3d
+
+## Button: Renomear
+id: projects-renomear
+area: paineis-laterais
+location: Modal Projetos salvos
+action: Entra em modo de renomeação.
+effects: Entra em modo de renomeação.
+shortcut: —
+iconName: projects
+sourceFile: src/components/layout/ToolbarModals.tsx
+featureIds: configurador-3d
+
+## Button: Ultra
+id: photo-ultra
+area: paineis-laterais
+location: Painel Photo Mode
+action: Alterna modo Ultra.
+effects: Alterna modo Ultra.
+shortcut: —
+iconName: photoMode
+sourceFile: src/components/layout/left-panel/PhotoModeSettingsContent.tsx
 featureIds: configurador-3d
 
 ## Button: Variações
@@ -2410,6 +3007,105 @@ shortcut: —
 iconName: adminLab
 sourceFile: src/components/layout/left-panel/ConversationalDesignerPanel.tsx
 featureIds: configurador-3d
+
+## Button: Arco
+id: drill-arco
+area: pimo-drill
+location: PIMO DRILL — toolbar
+action: onSelectFeature("arc")
+effects: onSelectFeature("arc")
+shortcut: —
+iconName: adminTools
+sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
+featureIds: exportacao-tcn-drill-xml, modulo-industrial
+
+## Button: Buraco
+id: drill-buraco
+area: pimo-drill
+location: PIMO DRILL — toolbar
+action: onSelectFeature("hole")
+effects: onSelectFeature("hole")
+shortcut: —
+iconName: adminTools
+sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
+featureIds: exportacao-tcn-drill-xml, modulo-industrial
+
+## Button: Caminho
+id: drill-caminho
+area: pimo-drill
+location: PIMO DRILL — toolbar
+action: onSelectFeature("path")
+effects: onSelectFeature("path")
+shortcut: —
+iconName: adminTools
+sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
+featureIds: exportacao-tcn-drill-xml, modulo-industrial
+
+## Button: Círculo
+id: drill-circulo
+area: pimo-drill
+location: PIMO DRILL — toolbar
+action: onSelectFeature("circle")
+effects: onSelectFeature("circle")
+shortcut: —
+iconName: adminTools
+sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
+featureIds: exportacao-tcn-drill-xml, modulo-industrial
+
+## Button: Entalhe
+id: drill-entalhe
+area: pimo-drill
+location: PIMO DRILL — toolbar
+action: onSelectFeature("slot")
+effects: onSelectFeature("slot")
+shortcut: —
+iconName: adminTools
+sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
+featureIds: exportacao-tcn-drill-xml, modulo-industrial
+
+## Button: Rect
+id: drill-rect
+area: pimo-drill
+location: PIMO DRILL — toolbar
+action: onSelectFeature("rect")
+effects: onSelectFeature("rect")
+shortcut: —
+iconName: adminTools
+sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
+featureIds: exportacao-tcn-drill-xml, modulo-industrial
+
+## Button: Vista 2D
+id: drill-vista-2d
+area: pimo-drill
+location: PIMO DRILL — toolbar
+action: onSelectView("2d")
+effects: onSelectView("2d")
+shortcut: —
+iconName: adminTools
+sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
+featureIds: exportacao-tcn-drill-xml, modulo-industrial
+
+## Button: Vista 3D
+id: drill-vista-3d
+area: pimo-drill
+location: PIMO DRILL — toolbar
+action: onSelectView("3d")
+effects: onSelectView("3d")
+shortcut: —
+iconName: adminTools
+sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
+featureIds: exportacao-tcn-drill-xml, modulo-industrial
+
+## Button: Actualizar
+id: station-actualizar
+area: pimo-trak
+location: StationToolbar (estações industriais)
+action: onReload?.()
+effects: onReload?.()
+shortcut: —
+iconName: adminTools
+sourceFile: src/industrial/ui/components/StationToolbar.tsx
+featureIds: pimo-trak, modulo-industrial
 
 ## Button: CNC
 id: industrial-nav-cnc
@@ -2444,6 +3140,17 @@ iconName: adminTools
 sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
 featureIds: pimo-trak, modulo-industrial
 
+## Button: Histórico
+id: station-historico
+area: pimo-trak
+location: StationToolbar (estações industriais)
+action: onToggleSidebar?.()
+effects: onToggleSidebar?.()
+shortcut: —
+iconName: adminTools
+sourceFile: src/industrial/ui/components/StationToolbar.tsx
+featureIds: pimo-trak, modulo-industrial
+
 ## Button: Montagem
 id: industrial-nav-montagem
 area: pimo-trak
@@ -2453,6 +3160,17 @@ effects: Abre a vista industrial correspondente.
 shortcut: —
 iconName: adminTools
 sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
+featureIds: pimo-trak, modulo-industrial
+
+## Button: Mover
+id: station-mover
+area: pimo-trak
+location: StationToolbar (estações industriais)
+action: onToolMode("move")
+effects: onToolMode("move")
+shortcut: —
+iconName: adminTools
+sourceFile: src/industrial/ui/components/StationToolbar.tsx
 featureIds: pimo-trak, modulo-industrial
 
 ## Button: Nesting
@@ -2510,6 +3228,17 @@ iconName: adminTools
 sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
 featureIds: pimo-trak, modulo-industrial
 
+## Button: Rodar
+id: station-rodar
+area: pimo-trak
+location: StationToolbar (estações industriais)
+action: onToolMode("rotate")
+effects: onToolMode("rotate")
+shortcut: —
+iconName: adminTools
+sourceFile: src/industrial/ui/components/StationToolbar.tsx
+featureIds: pimo-trak, modulo-industrial
+
 ## Button: Settings Industrial
 id: industrial-nav-settings-industrial
 area: pimo-trak
@@ -2519,6 +3248,17 @@ effects: Abre a vista industrial correspondente.
 shortcut: —
 iconName: adminTools
 sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
+featureIds: pimo-trak, modulo-industrial
+
+## Button: Snap
+id: station-snap
+area: pimo-trak
+location: StationToolbar (estações industriais)
+action: onToggleSnap()
+effects: onToggleSnap()
+shortcut: —
+iconName: adminTools
+sourceFile: src/industrial/ui/components/StationToolbar.tsx
 featureIds: pimo-trak, modulo-industrial
 
 ## Button: Supervisor
@@ -2575,6 +3315,94 @@ shortcut: —
 iconName: adminTools
 sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
 featureIds: pimo-trak, modulo-industrial
+
+## Button: Mover
+id: showroom-mover
+area: showroom
+location: Showroom toolbar / top bar
+action: setActiveTool("move")
+effects: setActiveTool("move")
+shortcut: —
+iconName: move
+sourceFile: src/components/showroom/ShowroomToolbar.tsx
+featureIds: configurador-3d
+
+## Button: Régua
+id: showroom-regua
+area: showroom
+location: Showroom toolbar / top bar
+action: setActiveTool("measure")
+effects: setActiveTool("measure")
+shortcut: —
+iconName: move
+sourceFile: src/components/showroom/ShowroomToolbar.tsx
+featureIds: configurador-3d
+
+## Button: Reset câmara
+id: showroom-reset
+area: showroom
+location: Showroom toolbar / top bar
+action: resetCamera()
+effects: resetCamera()
+shortcut: —
+iconName: move
+sourceFile: src/components/showroom/ShowroomToolbar.tsx
+featureIds: configurador-3d
+
+## Button: Rodar
+id: showroom-rodar
+area: showroom
+location: Showroom toolbar / top bar
+action: setActiveTool("rotate")
+effects: setActiveTool("rotate")
+shortcut: —
+iconName: move
+sourceFile: src/components/showroom/ShowroomToolbar.tsx
+featureIds: configurador-3d
+
+## Button: Separar caixas / Reunir caixas
+id: showroom-separar-caixas
+area: showroom
+location: Showroom toolbar / top bar
+action: onBoxExplodeToggle
+effects: onBoxExplodeToggle
+shortcut: —
+iconName: move
+sourceFile: src/components/showroom/ShowroomViewerTopBar.tsx
+featureIds: configurador-3d
+
+## Button: Separar peças / Reunir peças
+id: showroom-separar-pecas
+area: showroom
+location: Showroom toolbar / top bar
+action: onPieceExplodeToggle
+effects: onPieceExplodeToggle
+shortcut: —
+iconName: move
+sourceFile: src/components/showroom/ShowroomViewerTopBar.tsx
+featureIds: configurador-3d
+
+## Button: Zoom +
+id: showroom-zoom-in
+area: showroom
+location: Showroom toolbar / top bar
+action: adjustCameraZoom(0.9)
+effects: adjustCameraZoom(0.9)
+shortcut: —
+iconName: move
+sourceFile: src/components/showroom/ShowroomToolbar.tsx
+featureIds: configurador-3d
+
+## Button: Zoom −
+id: showroom-zoom-out
+area: showroom
+location: Showroom toolbar / top bar
+action: adjustCameraZoom(1.1)
+effects: adjustCameraZoom(1.1)
+shortcut: —
+iconName: move
+sourceFile: src/components/showroom/ShowroomToolbar.tsx
+featureIds: configurador-3d
 
 
 # Architecture modules
