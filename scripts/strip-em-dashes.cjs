@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Remove em dashes (—) and en dashes used as pauses (–) from public *content* sources.
- * Does not rewrite JS/TS logic files (avoids breaking `...` spreads).
+ * Does not rewrite scripts/*.cjs. Protects `...` spreads and `../` relative paths.
  */
 const fs = require("fs")
 const path = require("path")
@@ -27,12 +27,18 @@ function walk(filePath, out = []) {
 
 function rewriteDashes(text) {
   let s = text
-  // Protect JS spreads temporarily
-  const spreads = []
-  s = s.replace(/\.\.\./g, () => {
-    spreads.push("...")
-    return `\u0000SPREAD${spreads.length - 1}\u0000`
-  })
+  const tokens = []
+  const protect = (re) => {
+    s = s.replace(re, (m) => {
+      const i = tokens.length
+      tokens.push(m)
+      return `\u0000TOK${i}\u0000`
+    })
+  }
+  // Protect spreads and relative parent paths before any rewrite
+  protect(/\.\.\./g)
+  protect(/\.\.\//g)
+
   // Numeric / date ranges with en/em dash → hyphen
   s = s.replace(/(\d)\s*[–—]\s*(\d)/g, "$1-$2")
   s = s.replace(/\s+[—–]\s+/g, ", ")
@@ -41,10 +47,10 @@ function rewriteDashes(text) {
   s = s.replace(/,\s*,+/g, ",")
   s = s.replace(/\s+,/g, ",")
   s = s.replace(/,([^\s\d"'\])}])/g, ", $1")
-  s = s.replace(/\s*\(pt-PT\)\.?/g, ".")
-  s = s.replace(/\.\./g, ".")
-  // Restore spreads
-  s = s.replace(/\u0000SPREAD(\d+)\u0000/g, (_, i) => spreads[Number(i)])
+  // Drop leftover "(pt-PT)" labels in titles/copy (bare locale codes stay)
+  s = s.replace(/\s*\(pt-PT\)/g, "")
+
+  s = s.replace(/\u0000TOK(\d+)\u0000/g, (_, i) => tokens[Number(i)])
   return s
 }
 

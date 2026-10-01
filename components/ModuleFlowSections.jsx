@@ -1,5 +1,5 @@
-import { appModules, flowOrder } from "./data/modules"
-import { features } from "./data/features"
+import { appModules, flowOrder } from "../data/modules"
+import { features } from "../data/features"
 
 function featureLinks(ids = []) {
   return ids

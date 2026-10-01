@@ -1,7 +1,7 @@
-import { pimoSystems } from "./data/systems"
-import { features } from "./data/features"
-import { buttons } from "./data/buttons"
-import { appModules } from "./data/modules"
+import { pimoSystems } from "../data/systems"
+import { features } from "../data/features"
+import { buttons } from "../data/buttons"
+import { appModules } from "../data/modules"
 
 function statusLabel(status) {
   if (status === "disponivel") return "Disponível"

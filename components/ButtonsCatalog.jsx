@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react"
-import { buttons, buttonAreas } from "./data/buttons"
-import { features } from "./data/features"
+import { buttons, buttonAreas } from "../data/buttons"
+import { features } from "../data/features"
 
 function IconThumb({ button }) {
   if (button.iconName) {
@@ -44,7 +44,7 @@ export function ButtonsCatalog({ featureFilter = "" } = {}) {
         b.effects,
         b.shortcut || "",
         b.sourceFile,
-        ..(b.featureIds || []),
+        ...(b.featureIds || []),
       ]
         .join(" ")
         .toLowerCase()

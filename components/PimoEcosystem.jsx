@@ -1,4 +1,4 @@
-import { ecosystemIntro, getRelatedSites, getSiteById, pimoSites } from "./data/sites"
+import { ecosystemIntro, getRelatedSites, getSiteById, pimoSites } from "../data/sites"
 
 function statusClass(status) {
   if (status === "active") return "is-active"
