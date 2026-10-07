@@ -10,12 +10,12 @@ related:
   - /pt-pt/funcionalidades/conta-e-acesso/
   - /pt-pt/funcionalidades/sala-e-ambiente/
   - /pt-pt/primeiros-passos/
-lastUpdated: 2026-10-01
+lastUpdated: 2026-10-07
 ---
 
 # Definições
 
-A rota `/definicoes` e as áreas de administração (`/admin/global-settings`, roles, permissões, room settings, industrial) concentram preferências e configuração do sistema.
+A rota `/definicoes` e as áreas de administração concentram preferências e configuração do sistema. Rotas admin exigem permissões (`PermissionRoute` / `hasFullAccess` / `canAccessAdminPanel`) e login.
 
 ## Níveis
 
@@ -27,9 +27,22 @@ A rota `/definicoes` e as áreas de administração (`/admin/global-settings`, r
 | Sala | `/admin/room-settings` | Ambiente / sala 3D |
 | Industrial | `/admin/settings/industrial` | Alertas e parâmetros TRAK |
 
+## Administração (rotas verificadas)
+
+| Área | Rota | Página |
+|---|---|---|
+| Utilizadores | `/admin/users` | `UsersAdminPage` |
+| Partilhas de projeto | `/admin/project-shares` | `ProjectSharesAdminPage` |
+| Roles | `/admin/roles` | `ManageRolesPage` |
+| Permissões | `/admin/permissions` | `ManagePermissionsPage` |
+| Global settings | `/admin/global-settings` | `GlobalSettingsAdminPage` |
+| Room settings | `/admin/room-settings` | `RoomSettingsAdminPage` |
+| Settings industriais | `/admin/settings/industrial` | `IndustrialAdminSettingsPage` |
+| Alertas realtime | `/admin/system-settings/industrial/realtime-alerts` | `RealtimeAlertsAdminPage` |
+
 ## Estado
 
-**Disponível** (parcial na documentação de cada ecrã admin). A gestão avançada de roles/permissões está coberta de forma overview; detalhes de cada flag seguem o código da app.
+**Documentado a partir do código (outubro 2026):** rotas e páginas admin existem na app; o acesso depende de RBAC. Detalhe de cada flag continua na UI da app.
 
 ## Relacionado
 

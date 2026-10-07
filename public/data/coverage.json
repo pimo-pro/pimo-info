@@ -1,11 +1,10 @@
 {
-  "generatedAt": "2026-10-01T03:08:53.462Z",
+  "generatedAt": "2026-10-07T14:49:41.219Z",
   "source": "pimo-criativo-source (read-only) + pages/pt-pt",
   "totals": {
     "items": 67,
     "byStatus": {
-      "coberto": 51,
-      "parcial": 14,
+      "coberto": 65,
       "em-desenvolvimento": 2
     }
   },
@@ -57,8 +56,8 @@
       "name": "Dashboard",
       "purpose": "Painel inicial autenticado",
       "page": "/pt-pt/primeiros-passos/",
-      "status": "parcial",
-      "notes": "Fluxo de entrada coberto; ecrã dashboard específico parcial",
+      "status": "coberto",
+      "notes": "DashboardPage documentado em primeiros passos; captura pública = home (dashboard exige login)",
       "pageExists": true
     },
     {
@@ -98,7 +97,8 @@
       "name": "Showroom / viewer",
       "purpose": "Visualização showroom",
       "page": "/pt-pt/funcionalidades/configurador-3d/",
-      "status": "parcial",
+      "status": "coberto",
+      "notes": "Rota + PermissionRoute canOpenProjectsShowroom documentados",
       "pageExists": true
     },
     {
@@ -158,8 +158,8 @@
       "name": "Ajuda in-app",
       "purpose": "Help embutido na app",
       "page": "/pt-pt/",
-      "status": "parcial",
-      "notes": "Conteúdo espelhado no help center",
+      "status": "coberto",
+      "notes": "Ajuda pública em pimo.pro/ajuda; conteúdo espelhado no help center; captura WebP",
       "pageExists": true
     },
     {
@@ -278,8 +278,9 @@
       "codeRef": "App.tsx:/industrial/tracking",
       "name": "Tracking industrial",
       "purpose": "Rastreio de peças",
-      "page": "/pt-pt/sistemas-pimo/pimo-trak/",
-      "status": "parcial",
+      "page": "/pt-pt/funcionalidades/estacoes-industriais/",
+      "status": "coberto",
+      "notes": "Shell + QrScannerPanel + placeholder Fase 3C.2 documentados",
       "pageExists": true
     },
     {
@@ -289,7 +290,8 @@
       "name": "Qualidade",
       "purpose": "Controlo de qualidade",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
-      "status": "parcial",
+      "status": "coberto",
+      "notes": "Shell + QR + placeholder Fase 3C.2 documentados",
       "pageExists": true
     },
     {
@@ -299,7 +301,8 @@
       "name": "Retrabalho",
       "purpose": "Rework industrial",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
-      "status": "parcial",
+      "status": "coberto",
+      "notes": "Shell + QR + placeholder Fase 3C.2 documentados",
       "pageExists": true
     },
     {
@@ -309,7 +312,8 @@
       "name": "Time tracking",
       "purpose": "Tempos de estação",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
-      "status": "parcial",
+      "status": "coberto",
+      "notes": "Shell + QR + placeholder Fase 3C.2 documentados",
       "pageExists": true
     },
     {
@@ -318,8 +322,9 @@
       "codeRef": "App.tsx:/industrial/events",
       "name": "Eventos industriais",
       "purpose": "Log de eventos",
-      "page": "/pt-pt/sistemas-pimo/pimo-industrial/",
-      "status": "parcial",
+      "page": "/pt-pt/funcionalidades/estacoes-industriais/",
+      "status": "coberto",
+      "notes": "Shell + QR + placeholder Fase 3C.2 documentados",
       "pageExists": true
     },
     {
@@ -330,6 +335,7 @@
       "purpose": "Sistema de furação",
       "page": "/pt-pt/sistemas-pimo/pimo-drill/",
       "status": "em-desenvolvimento",
+      "notes": "UI/rota existem; fluxo operativo completo em evolução",
       "pageExists": true
     },
     {
@@ -339,7 +345,8 @@
       "name": "Operações CNC",
       "purpose": "Vista CNC",
       "page": "/pt-pt/funcionalidades/modulo-industrial/",
-      "status": "parcial",
+      "status": "coberto",
+      "notes": "Redirect documentado para /industrial/work-orders/nesting",
       "pageExists": true
     },
     {
@@ -349,7 +356,7 @@
       "name": "Admin utilizadores",
       "purpose": "Gestão de users",
       "page": "/pt-pt/funcionalidades/definicoes/",
-      "status": "parcial",
+      "status": "coberto",
       "pageExists": true
     },
     {
@@ -359,7 +366,7 @@
       "name": "Admin roles",
       "purpose": "Papéis e permissões",
       "page": "/pt-pt/funcionalidades/definicoes/",
-      "status": "parcial",
+      "status": "coberto",
       "pageExists": true
     },
     {
@@ -389,7 +396,7 @@
       "name": "Admin industrial",
       "purpose": "Settings industriais",
       "page": "/pt-pt/documentacao-tecnica/sistema-industrial/",
-      "status": "parcial",
+      "status": "coberto",
       "pageExists": true
     },
     {
@@ -579,7 +586,8 @@
       "name": "PIMO TRAK",
       "purpose": "Ordens e tracking",
       "page": "/pt-pt/sistemas-pimo/pimo-trak/",
-      "status": "parcial",
+      "status": "coberto",
+      "notes": "Produto parcial na app; documentação de rotas/estações completa (out 2026)",
       "pageExists": true
     },
     {
@@ -609,7 +617,8 @@
       "name": "PIMO INDUSTRIAL",
       "purpose": "Módulo industrial",
       "page": "/pt-pt/sistemas-pimo/pimo-industrial/",
-      "status": "parcial",
+      "status": "coberto",
+      "notes": "Produto parcial (canvas demo); documentação de hub/ops completa",
       "pageExists": true
     },
     {

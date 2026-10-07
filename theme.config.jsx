@@ -112,10 +112,16 @@ export default {
         : "https://pimo.pro/logo-pi.png"
 
     const org = siteMeta.organization
+    const socialSameAs = (siteMeta.social || [])
+      .map((s) => s.url)
+      .filter((u) => typeof u === "string" && u.trim().length > 0)
+
     const organization = {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: org.name,
+      legalName: org.legalName,
+      taxID: org.taxId,
       url: org.url,
       logo: org.logo,
       email: org.email,
@@ -131,6 +137,7 @@ export default {
         "https://pimo.info",
         "https://pim0.com",
         "https://pimo.pt",
+        ...socialSameAs,
       ],
       contactPoint: [
         {

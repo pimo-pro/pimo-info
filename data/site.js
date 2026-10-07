@@ -11,10 +11,8 @@ export const site = {
     "Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.",
   organization: {
     name: "PIMO",
-    /** Razão social formal: preencher quando confirmada (não inventar). */
-    legalName: "[A PREENCHER: razão social]",
-    /** NIF/NIPC: preencher quando confirmado (não inventar). */
-    taxId: "[A PREENCHER: NIF/NIPC]",
+    legalName: "Pimo home",
+    taxId: "316930423",
     url: "https://pimo.pt",
     logo: "https://pimo.pro/logo-pi.png",
     email: "info@pimo.pro",
@@ -33,12 +31,15 @@ export const site = {
     phone: "+351 913 822 833",
     phoneHref: "tel:+351913822833",
     addressDisplay: "Macedo de Cavaleiros, Portugal",
+    legalName: "Pimo home",
+    taxId: "316930423",
     livreReclamacoesUrl: "https://www.livroreclamacoes.pt/Inicio/",
     ralInfoUrl: "https://www.consumidor.gov.pt/",
   },
   /**
-   * Redes sociais: URLs vazias por agora (ícones visíveis, sem ligação ativa).
-   * Preencher `url` quando existir página oficial.
+   * Redes sociais: URLs oficiais (vazias = ícone sem ligação).
+   * Verificação 2026-10-07: pimo.pt e pimo.pro sem perfis oficiais no HTML/JSON-LD
+   * (apenas botões de partilha genéricos em algumas páginas da loja).
    */
   social: [
     { id: "facebook", label: "Facebook", url: "" },
@@ -97,4 +98,5 @@ export const categories = [
   "redirect",
   "legacy",
   "legal",
+  "institucional",
 ]

@@ -26,6 +26,7 @@ const ALLOWED_CATEGORIES = new Set([
   "redirect",
   "legacy",
   "legal",
+  "institucional",
   "referencia",
   "arquitetura",
   "sistemas",

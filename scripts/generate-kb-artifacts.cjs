@@ -337,57 +337,56 @@ function main() {
   }
   fs.writeFileSync(path.join(PUBLIC, "llms-full.txt"), fullParts.join("\n"), "utf8")
 
-  // sitemap
+  // sitemap: só URLs finais 200 (com barra), sem /sub/*, sem RSS, sem redirects
   const today = new Date().toISOString().slice(0, 10)
   const pageByPath = new Map(pages.map((p) => [p.path, p]))
-  const urls = pages
+  const excludePaths = new Set([
+    "/contact/",
+    "/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/",
+    "/pt-pt/blog/posts/bem-vindo/",
+  ])
+  const pageUrls = pages
     .filter((p) => p.category !== "redirect" && p.category !== "legacy")
-    .map((p) => p.path)
-  const unique = [...new Set(["/", ...urls])]
-  const sitemap = [
-    '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    ...unique.map((u) => {
-      const loc = `${site.url}${u === "/" ? "/" : u}`
+    .map((p) => (p.path === "/" ? "/" : p.path.endsWith("/") ? p.path : `${p.path}/`))
+    .filter((u) => !excludePaths.has(u))
+
+  // Subdomínios oficiais (propriedade de domínio cobre-os; /sub/* não entra no sitemap)
+  const subdomainUrls = [
+    "https://pt.pimo.info/",
+    "https://pro.pimo.info/",
+    "https://es.pimo.info/",
+    "https://casa.pimo.info/",
+    "https://design.pimo.info/",
+  ]
+
+  const uniquePaths = [...new Set(["/", ...pageUrls])]
+  const locEntries = [
+    ...uniquePaths.map((u) => {
+      const loc = u === "/" ? `${site.url}/` : `${site.url}${u}`
       const page = pageByPath.get(u)
       const lastmod =
         page?.lastUpdated && /^\d{4}-\d{2}-\d{2}$/.test(page.lastUpdated)
           ? page.lastUpdated
           : today
-      return [
-        "  <url>",
-        `    <loc>${loc}</loc>`,
-        `    <lastmod>${lastmod}</lastmod>`,
-        "  </url>",
-      ].join("\n")
+      return { loc, lastmod }
     }),
+    ...subdomainUrls.map((loc) => ({ loc, lastmod: today })),
+  ]
+
+  const sitemap = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...locEntries.map(
+      ({ loc, lastmod }) =>
+        `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`
+    ),
     "</urlset>",
     "",
   ].join("\n")
   fs.writeFileSync(path.join(PUBLIC, "sitemap.xml"), sitemap, "utf8")
 
-  // Extra URLs: mini-sites + RSS (não são páginas MDX)
-  const extraLocs = [
-    "/sub/pt/",
-    "/sub/pro/",
-    "/sub/es/",
-    "/sub/casa/",
-    "/sub/design/",
-    "/blog/rss.xml",
-  ]
-  let sitemapRaw = fs.readFileSync(path.join(PUBLIC, "sitemap.xml"), "utf8")
-  for (const loc of extraLocs) {
-    if (!sitemapRaw.includes(`${site.url}${loc}`)) {
-      sitemapRaw = sitemapRaw.replace(
-        "</urlset>",
-        `  <url>\n    <loc>${site.url}${loc}</loc>\n    <lastmod>${today}</lastmod>\n  </url>\n</urlset>`
-      )
-    }
-  }
-  fs.writeFileSync(path.join(PUBLIC, "sitemap.xml"), sitemapRaw, "utf8")
-
   console.log(
-    `KB artifacts: ${pages.length} pages, ${buttons.length} buttons, ${appModules.length} modules, ${exportFormats.length} formats, ${glossaryTerms.length} glossary terms`
+    `KB artifacts: ${pages.length} pages, ${buttons.length} buttons, ${appModules.length} modules, ${exportFormats.length} formats, ${glossaryTerms.length} glossary terms; sitemap ${locEntries.length} URLs`
   )
 }
 

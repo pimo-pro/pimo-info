@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T03:08:53.413Z",
+  "generatedAt": "2026-10-07T14:49:41.170Z",
   "items": [
     {
       "path": "/",
@@ -27,7 +27,7 @@
       "title": "Sobre",
       "description": "Os sites do ecossistema PIMO e informação institucional.",
       "author": "",
-      "category": "legacy",
+      "category": "institucional",
       "tags": [
         "sobre",
         "ecossistema"
@@ -38,7 +38,7 @@
         "/pt-pt/contacto/",
         "/pt-pt/legal/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-07",
       "status": "implemented"
     },
     {
@@ -62,14 +62,17 @@
       "path": "/contact/",
       "file": "pages/contact.mdx",
       "title": "Contact",
-      "description": "Contact.",
+      "description": "Redireciona para o contacto canónico em português.",
       "author": "",
-      "category": "contacto",
+      "category": "redirect",
       "tags": [
-        "contacto"
+        "contacto",
+        "redirect"
       ],
-      "related": [],
-      "lastUpdated": "2026-10-01",
+      "related": [
+        "/pt-pt/contacto/"
+      ],
+      "lastUpdated": "2026-10-07",
       "status": "implemented"
     },
     {
@@ -237,7 +240,6 @@
       ],
       "related": [
         "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/",
-        "/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/",
         "/pt-pt/guias-utilizador/exportacao/"
       ],
       "lastUpdated": "2026-08-24",
@@ -668,16 +670,18 @@
       "path": "/pt-pt/documentacao-tecnica/sistema-industrial/",
       "file": "pages/pt-pt/documentacao-tecnica/sistema-industrial.mdx",
       "title": "Sistema Industrial",
-      "description": "Sistema Industrial.",
+      "description": "Visão consolidada da camada industrial: rotas, admin e fases documentadas no PIMO Criativo.",
       "author": "",
       "category": "tecnico",
       "tags": [
         "tecnico"
       ],
       "related": [
-        "/pt-pt/documentacao-tecnica/"
+        "/pt-pt/documentacao-tecnica/",
+        "/pt-pt/sistemas-pimo/pimo-industrial/",
+        "/pt-pt/funcionalidades/estacoes-industriais/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-07",
       "status": "implemented"
     },
     {
@@ -866,7 +870,7 @@
         "/pt-pt/funcionalidades/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-07",
       "status": "implemented"
     },
     {
@@ -885,7 +889,7 @@
         "/pt-pt/funcionalidades/definicoes/",
         "/pt-pt/primeiros-passos/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-07",
       "status": ""
     },
     {
@@ -905,14 +909,14 @@
         "/pt-pt/funcionalidades/sala-e-ambiente/",
         "/pt-pt/primeiros-passos/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-07",
       "status": ""
     },
     {
       "path": "/pt-pt/funcionalidades/estacoes-industriais/",
       "file": "pages/pt-pt/funcionalidades/estacoes-industriais.mdx",
       "title": "Estações industriais",
-      "description": "Estações PIMO TRAK, armazém, nesting, furação, orlar, montagem, embalagem, supervisor e operador.",
+      "description": "Estações PIMO TRAK, armazém, nesting, furação, orlar, montagem, embalagem, supervisor, operador e vistas auxiliares.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -926,7 +930,7 @@
         "/pt-pt/sistemas-pimo/pimo-drill/",
         "/pt-pt/funcionalidades/modulo-industrial/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-07",
       "status": ""
     },
     {
@@ -1053,7 +1057,7 @@
         "/pt-pt/funcionalidades/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-07",
       "status": "implemented"
     },
     {
@@ -1553,7 +1557,7 @@
         "/pt-pt/funcionalidades/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-07",
       "status": "implemented"
     },
     {
@@ -1614,7 +1618,7 @@
         "/pt-pt/funcionalidades/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-07",
       "status": "implemented"
     },
     {
@@ -1634,7 +1638,7 @@
         "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-07",
       "status": "implemented"
     },
     {
@@ -1654,7 +1658,7 @@
         "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-07",
       "status": "implemented"
     },
     {
@@ -1714,7 +1718,7 @@
         "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-07",
       "status": "implemented"
     },
     {

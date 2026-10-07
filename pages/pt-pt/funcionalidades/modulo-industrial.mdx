@@ -7,7 +7,7 @@ tags:
 related:
   - /pt-pt/funcionalidades/
   - /pt-pt/glossario/
-lastUpdated: 2026-10-01
+lastUpdated: 2026-10-07
 status: implemented
 ---
 
@@ -18,21 +18,25 @@ import { FeatureButtons } from "../../../components/ButtonsCatalog"
 <ServiceHero
   title="Módulo Industrial"
   subtitle="Consolida fluxos de operação industrial com leitura por estação, operador e supervisor."
-  image="/visual/readme/ecra-documentacao.webp"
-  imageAlt="Área documental/industrial do ecossistema PIMO"
-  pimoHref="https://pimo.pro"
+  image="/visual/pimo-pro/ajuda.webp"
+  imageAlt="Centro de ajuda do PIMO Criativo (área pública da app)"
+  pimoHref="https://pimo.pro/industrial"
   guideHref="/pt-pt/documentacao-tecnica/sistema-industrial/"
 />
 
 ## O que faz
 
-Segundo a documentação do sistema, a camada industrial agrega leitura visual de runtime, produção, performance e integração sem alterar APIs base.
+A camada industrial agrega hub `/industrial`, estações de work order, operações e perfis operador/supervisor. O acesso às rotas industriais exige login (`ProtectedLayout`).
 
 <section className="pimo-service-benefits">
   <li><strong>Visão por perfil</strong><p>Painéis dedicados para estação, operador e supervisor.</p></li>
-  <li><strong>Fases estruturadas</strong><p>Evolução organizada em fases visuais e industriais documentadas.</p></li>
-  <li><strong>Preparação para integração</strong><p>Base visual pronta para evoluções futuras sem reescrever toda a UI.</p></li>
+  <li><strong>Operações por posto</strong><p>Rotas sob `/industrial/operations/*` (CNC, nesting, drill, orlar, montagem, embalagem).</p></li>
+  <li><strong>TRAK e QR</strong><p>Work orders e leitura de etiquetas nas estações e vistas auxiliares.</p></li>
 </section>
+
+## Operações CNC
+
+A rota `/industrial/operations/cnc` redireciona para `/industrial/work-orders/nesting` (verificado no código: `Navigate` em `operations/cnc/index.tsx`). As outras operações (`nesting`, `drill`, `orlar`, `montagem`, `embalagem`) têm páginas próprias sob `/industrial/operations/`.
 
 <AnimatedHotspotImage
   src="/visual/readme/ecra-documentacao.webp"

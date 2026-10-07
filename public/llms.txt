@@ -9,8 +9,8 @@ Locale: pt-PT
 - Support email: info@pimo.pro
 - Phone: +351 913 822 833
 - Address: Macedo de Cavaleiros, Portugal
-- Legal name: [A PREENCHER: razão social]
-- Tax ID (NIF/NIPC): [A PREENCHER: NIF/NIPC]
+- Legal name: Pimo home
+- Tax ID (NIF/NIPC): 316930423
 - Legal hub: https://pimo.info/pt-pt/legal/
 - Privacy: https://pimo.info/pt-pt/legal/privacidade/
 - Terms: https://pimo.info/pt-pt/legal/termos/

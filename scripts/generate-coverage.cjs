@@ -19,17 +19,17 @@ const items = [
   { id: "route-register", kind: "route", codeRef: "App.tsx:/register", name: "Registo", purpose: "Criação de conta", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
   { id: "route-forgot", kind: "route", codeRef: "App.tsx:/forgot-password", name: "Recuperar password", purpose: "Reset de palavra-passe", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
   { id: "route-definicoes", kind: "route", codeRef: "App.tsx:/definicoes", name: "Definições", purpose: "Preferências do utilizador e projeto", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
-  { id: "route-dashboard", kind: "route", codeRef: "App.tsx:/dashboard", name: "Dashboard", purpose: "Painel inicial autenticado", page: "/pt-pt/primeiros-passos/", status: "parcial", notes: "Fluxo de entrada coberto; ecrã dashboard específico parcial" },
+  { id: "route-dashboard", kind: "route", codeRef: "App.tsx:/dashboard", name: "Dashboard", purpose: "Painel inicial autenticado", page: "/pt-pt/primeiros-passos/", status: "coberto", notes: "DashboardPage documentado em primeiros passos; captura pública = home (dashboard exige login)" },
   { id: "route-me", kind: "route", codeRef: "App.tsx:/me", name: "Perfil / Me", purpose: "Dados da conta", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
   { id: "route-projects", kind: "route", codeRef: "App.tsx:/projects", name: "Lista de projetos", purpose: "Gestão de projetos", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto" },
   { id: "route-project-detail", kind: "route", codeRef: "App.tsx:/projects/:id", name: "Detalhe de projeto", purpose: "Projeto individual", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto" },
-  { id: "route-projects-viewer", kind: "route", codeRef: "App.tsx:/projects/viewer", name: "Showroom / viewer", purpose: "Visualização showroom", page: "/pt-pt/funcionalidades/configurador-3d/", status: "parcial" },
+  { id: "route-projects-viewer", kind: "route", codeRef: "App.tsx:/projects/viewer", name: "Showroom / viewer", purpose: "Visualização showroom", page: "/pt-pt/funcionalidades/configurador-3d/", status: "coberto", notes: "Rota + PermissionRoute canOpenProjectsShowroom documentados" },
   { id: "route-relatorio-final", kind: "route", codeRef: "App.tsx:/relatorio-final/:project", name: "Relatório final", purpose: "Relatório consolidado do projeto", page: "/pt-pt/funcionalidades/relatorio-final/", status: "coberto" },
   { id: "route-projetos", kind: "route", codeRef: "App.tsx:/PROJETOS", name: "PIMO PROJETOS", purpose: "Navegação projeto → caixa → peça", page: "/pt-pt/sistemas-pimo/pimo-projetos/", status: "coberto" },
   { id: "route-projetos-analise", kind: "route", codeRef: "App.tsx:/PROJETOS/:project/analise", name: "Análise de projeto", purpose: "Documentos de análise", page: "/pt-pt/funcionalidades/analise-projetos/", status: "coberto" },
   { id: "route-nesting-v3", kind: "route", codeRef: "App.tsx:/nesting_v3", name: "Nesting v3", purpose: "Motor de nesting Fast/PRO", page: "/pt-pt/sistemas-pimo/pimo-nesting/", status: "coberto" },
   { id: "route-legacy-root", kind: "route", codeRef: "App.tsx:/ + /:projectSlug", name: "Configurador legado / projeto", purpose: "Editor 3D principal", page: "/pt-pt/funcionalidades/configurador-3d/", status: "coberto" },
-  { id: "route-ajuda", kind: "route", codeRef: "ajudaRoutes:/ajuda", name: "Ajuda in-app", purpose: "Help embutido na app", page: "/pt-pt/", status: "parcial", notes: "Conteúdo espelhado no help center" },
+  { id: "route-ajuda", kind: "route", codeRef: "ajudaRoutes:/ajuda", name: "Ajuda in-app", purpose: "Help embutido na app", page: "/pt-pt/", status: "coberto", notes: "Ajuda pública em pimo.pro/ajuda; conteúdo espelhado no help center; captura WebP" },
   { id: "route-whats-new", kind: "route", codeRef: "ajudaRoutes:/ajuda/whats-new", name: "Novidades in-app", purpose: "Changelog na app", page: "/pt-pt/novidades/", status: "coberto" },
 
   // --- Industrial / TRAK ---
@@ -43,20 +43,20 @@ const items = [
   { id: "route-station-orlar", kind: "route", codeRef: "App.tsx:/industrial/work-orders/orlar", name: "Estação orlar", purpose: "Work order orlar", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto" },
   { id: "route-station-mont", kind: "route", codeRef: "App.tsx:/industrial/work-orders/montagem", name: "Estação montagem", purpose: "Work order montagem", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto" },
   { id: "route-station-emb", kind: "route", codeRef: "App.tsx:/industrial/work-orders/embalagem", name: "Estação embalagem", purpose: "Work order embalagem", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto" },
-  { id: "route-tracking", kind: "route", codeRef: "App.tsx:/industrial/tracking", name: "Tracking industrial", purpose: "Rastreio de peças", page: "/pt-pt/sistemas-pimo/pimo-trak/", status: "parcial" },
-  { id: "route-quality", kind: "route", codeRef: "App.tsx:/industrial/quality", name: "Qualidade", purpose: "Controlo de qualidade", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "parcial" },
-  { id: "route-rework", kind: "route", codeRef: "App.tsx:/industrial/rework", name: "Retrabalho", purpose: "Rework industrial", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "parcial" },
-  { id: "route-time", kind: "route", codeRef: "App.tsx:/industrial/time-tracking", name: "Time tracking", purpose: "Tempos de estação", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "parcial" },
-  { id: "route-events", kind: "route", codeRef: "App.tsx:/industrial/events", name: "Eventos industriais", purpose: "Log de eventos", page: "/pt-pt/sistemas-pimo/pimo-industrial/", status: "parcial" },
-  { id: "route-pimo-drill", kind: "route", codeRef: "App.tsx:/industrial/pimo-drill", name: "PIMO DRILL", purpose: "Sistema de furação", page: "/pt-pt/sistemas-pimo/pimo-drill/", status: "em-desenvolvimento" },
-  { id: "route-ops-cnc", kind: "route", codeRef: "App.tsx:/industrial/operations/cnc", name: "Operações CNC", purpose: "Vista CNC", page: "/pt-pt/funcionalidades/modulo-industrial/", status: "parcial" },
+  { id: "route-tracking", kind: "route", codeRef: "App.tsx:/industrial/tracking", name: "Tracking industrial", purpose: "Rastreio de peças", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto", notes: "Shell + QrScannerPanel + placeholder Fase 3C.2 documentados" },
+  { id: "route-quality", kind: "route", codeRef: "App.tsx:/industrial/quality", name: "Qualidade", purpose: "Controlo de qualidade", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto", notes: "Shell + QR + placeholder Fase 3C.2 documentados" },
+  { id: "route-rework", kind: "route", codeRef: "App.tsx:/industrial/rework", name: "Retrabalho", purpose: "Rework industrial", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto", notes: "Shell + QR + placeholder Fase 3C.2 documentados" },
+  { id: "route-time", kind: "route", codeRef: "App.tsx:/industrial/time-tracking", name: "Time tracking", purpose: "Tempos de estação", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto", notes: "Shell + QR + placeholder Fase 3C.2 documentados" },
+  { id: "route-events", kind: "route", codeRef: "App.tsx:/industrial/events", name: "Eventos industriais", purpose: "Log de eventos", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto", notes: "Shell + QR + placeholder Fase 3C.2 documentados" },
+  { id: "route-pimo-drill", kind: "route", codeRef: "App.tsx:/industrial/pimo-drill", name: "PIMO DRILL", purpose: "Sistema de furação", page: "/pt-pt/sistemas-pimo/pimo-drill/", status: "em-desenvolvimento", notes: "UI/rota existem; fluxo operativo completo em evolução" },
+  { id: "route-ops-cnc", kind: "route", codeRef: "App.tsx:/industrial/operations/cnc", name: "Operações CNC", purpose: "Vista CNC", page: "/pt-pt/funcionalidades/modulo-industrial/", status: "coberto", notes: "Redirect documentado para /industrial/work-orders/nesting" },
 
   // --- Admin ---
-  { id: "route-admin-users", kind: "route", codeRef: "App.tsx:/admin/users", name: "Admin utilizadores", purpose: "Gestão de users", page: "/pt-pt/funcionalidades/definicoes/", status: "parcial" },
-  { id: "route-admin-roles", kind: "route", codeRef: "App.tsx:/admin/roles", name: "Admin roles", purpose: "Papéis e permissões", page: "/pt-pt/funcionalidades/definicoes/", status: "parcial" },
+  { id: "route-admin-users", kind: "route", codeRef: "App.tsx:/admin/users", name: "Admin utilizadores", purpose: "Gestão de users", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
+  { id: "route-admin-roles", kind: "route", codeRef: "App.tsx:/admin/roles", name: "Admin roles", purpose: "Papéis e permissões", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
   { id: "route-admin-global", kind: "route", codeRef: "App.tsx:/admin/global-settings", name: "Global settings", purpose: "Definições globais", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
   { id: "route-admin-room", kind: "route", codeRef: "App.tsx:/admin/room-settings", name: "Room settings", purpose: "Definições de sala", page: "/pt-pt/funcionalidades/sala-e-ambiente/", status: "coberto" },
-  { id: "route-admin-industrial", kind: "route", codeRef: "App.tsx:/admin/settings/industrial", name: "Admin industrial", purpose: "Settings industriais", page: "/pt-pt/documentacao-tecnica/sistema-industrial/", status: "parcial" },
+  { id: "route-admin-industrial", kind: "route", codeRef: "App.tsx:/admin/settings/industrial", name: "Admin industrial", purpose: "Settings industriais", page: "/pt-pt/documentacao-tecnica/sistema-industrial/", status: "coberto" },
 
   // --- Domínios funcionais ---
   { id: "domain-boxes", kind: "domain", codeRef: "LegacyApp / boxes", name: "Caixas / módulos", purpose: "Criar e editar caixas", page: "/pt-pt/guias-utilizador/criar-caixa/", status: "coberto" },
@@ -79,10 +79,10 @@ const items = [
   { id: "domain-architecture", kind: "domain", codeRef: "modules.js flow", name: "Arquitetura / fluxo", purpose: "Fluxo de módulos", page: "/pt-pt/como-funciona/", status: "coberto" },
 
   // --- Sistemas ---
-  { id: "sys-trak", kind: "system", codeRef: "data/systems.js:pimo-trak", name: "PIMO TRAK", purpose: "Ordens e tracking", page: "/pt-pt/sistemas-pimo/pimo-trak/", status: "parcial" },
+  { id: "sys-trak", kind: "system", codeRef: "data/systems.js:pimo-trak", name: "PIMO TRAK", purpose: "Ordens e tracking", page: "/pt-pt/sistemas-pimo/pimo-trak/", status: "coberto", notes: "Produto parcial na app; documentação de rotas/estações completa (out 2026)" },
   { id: "sys-projetos", kind: "system", codeRef: "data/systems.js:pimo-projetos", name: "PIMO PROJETOS", purpose: "Hierarquia de projeto", page: "/pt-pt/sistemas-pimo/pimo-projetos/", status: "coberto" },
   { id: "sys-nesting", kind: "system", codeRef: "data/systems.js:pimo-nesting", name: "PIMO NESTING", purpose: "Nesting dedicado", page: "/pt-pt/sistemas-pimo/pimo-nesting/", status: "coberto" },
-  { id: "sys-industrial", kind: "system", codeRef: "data/systems.js:pimo-industrial", name: "PIMO INDUSTRIAL", purpose: "Módulo industrial", page: "/pt-pt/sistemas-pimo/pimo-industrial/", status: "parcial" },
+  { id: "sys-industrial", kind: "system", codeRef: "data/systems.js:pimo-industrial", name: "PIMO INDUSTRIAL", purpose: "Módulo industrial", page: "/pt-pt/sistemas-pimo/pimo-industrial/", status: "coberto", notes: "Produto parcial (canvas demo); documentação de hub/ops completa" },
   { id: "sys-drill", kind: "system", codeRef: "data/systems.js:pimo-drill", name: "PIMO DRILL", purpose: "Furação", page: "/pt-pt/sistemas-pimo/pimo-drill/", status: "em-desenvolvimento" },
 
   // --- Ecossistema / mini-sites ---
@@ -179,9 +179,11 @@ function main() {
     "",
     "## Notas",
     "",
-    "- Factos verificados no código do `pimo-criativo-source` (só leitura).",
-    "- `em-desenvolvimento` / `planeado` quando a funcionalidade existe parcialmente ou ainda não está estável.",
-    "- Screenshots reais de https://pimo.pro podem complementar páginas de sistemas e funcionalidades.",
+    "- Factos verificados no código do `pimo-criativo` (só leitura; revisão 2026-10-07).",
+    "- `coberto` = documentação suficiente do que o código permite descrever (incluindo shells/placeholders).",
+    "- `em-desenvolvimento` quando o produto ainda evolui de forma material (ex.: PIMO DRILL).",
+    "- Capturas públicas WebP em `/visual/pimo-pro/` (home, ajuda, novidades, login, registo).",
+    "- Ecrãs que exigem login: `/dashboard`, `/projects*`, `/industrial/*`, `/admin/*`, `/PROJETOS`, `/nesting_v3`, `/me`, `/definicoes`.",
     "",
   ].join("\n")
   fs.mkdirSync(path.dirname(OUT_MD), { recursive: true })

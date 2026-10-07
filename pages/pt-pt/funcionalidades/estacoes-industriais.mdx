@@ -1,6 +1,6 @@
 ---
 title: Estações industriais
-description: Estações PIMO TRAK, armazém, nesting, furação, orlar, montagem, embalagem, supervisor e operador.
+description: Estações PIMO TRAK, armazém, nesting, furação, orlar, montagem, embalagem, supervisor, operador e vistas auxiliares.
 category: funcionalidade
 tags:
   - industrial
@@ -11,12 +11,14 @@ related:
   - /pt-pt/sistemas-pimo/pimo-industrial/
   - /pt-pt/sistemas-pimo/pimo-drill/
   - /pt-pt/funcionalidades/modulo-industrial/
-lastUpdated: 2026-10-01
+lastUpdated: 2026-10-07
 ---
 
 # Estações industriais
 
-As **estações** do fluxo industrial (verificadas em `App.tsx`) operam ordens de fabrico por posto:
+As **estações** do fluxo industrial (verificadas em `App.tsx` do PIMO Criativo) operam ordens de fabrico por posto. Estas rotas vivem sob autenticação na app (`ProtectedLayout`).
+
+## Estações de work order
 
 | Estação | Rota (app) |
 |---|---|
@@ -26,17 +28,38 @@ As **estações** do fluxo industrial (verificadas em `App.tsx`) operam ordens d
 | Orlar | `/industrial/work-orders/orlar` |
 | Montagem | `/industrial/work-orders/montagem` |
 | Embalagem | `/industrial/work-orders/embalagem` |
-| Supervisor | `/industrial/supervisor` |
-| Operador | `/industrial/operador` |
+| Por estação + projeto | `/industrial/work-orders/:station/:project` |
+| Ordem / projeto | `/industrial/work-orders/order/:orderOrProject` |
 
-Há ainda vistas de qualidade, retrabalho, time-tracking e tracking de peças sob `/industrial/*`.
+## Perfis e supervisão
+
+| Vista | Rota (app) |
+|---|---|
+| Supervisor | `/industrial/supervisor` |
+| Supervisor por projeto | `/industrial/supervisor/:project` |
+| Operador | `/industrial/operador` |
+| Peça industrial | `/industrial/piece/:pieceId` |
+| Execução de estação | `/industrial/stations/:station` |
+
+## Vistas auxiliares (shell + QR)
+
+Estas páginas montam `IndustrialLayout`, painel de leitura QR (`QrScannerPanel`) e um painel placeholder com nota de fase 3C.2 no código:
+
+| Vista | Rota | Nota no código |
+|---|---|---|
+| Tracking | `/industrial/tracking` | Ligar snapshots de tracking e realtime |
+| Qualidade | `/industrial/quality` | Ligar inspeções e rework automático |
+| Retrabalho | `/industrial/rework` | Ligar fila de retrabalho |
+| Time tracking | `/industrial/time-tracking` | Ligar timers operacionais |
+| Eventos | `/industrial/events` | Ligar filtros e feed Supabase |
 
 ## Estado
 
-**Parcial**, ecrãs existem na app; a documentação de cada posto resume o papel no TRAK. App: [pimo.pro/industrial](https://pimo.pro/industrial).
+**Documentado a partir do código (outubro 2026):** estações e perfis existem; as vistas auxiliares acima são shells com QR e placeholder. App: [pimo.pro/industrial](https://pimo.pro/industrial) (requer login).
 
 ## Relacionado
 
 - [PIMO TRAK](/pt-pt/sistemas-pimo/pimo-trak/)
 - [PIMO INDUSTRIAL](/pt-pt/sistemas-pimo/pimo-industrial/)
 - [PIMO DRILL](/pt-pt/sistemas-pimo/pimo-drill/)
+- [Módulo industrial](/pt-pt/funcionalidades/modulo-industrial/)

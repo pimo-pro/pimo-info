@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-10-01T03:08:53.414Z
+Generated: 2026-10-07T14:49:41.172Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -12,8 +12,8 @@ Locale: pt-PT
 - Support email: info@pimo.pro
 - Phone: +351 913 822 833
 - Address: Macedo de Cavaleiros, Portugal
-- Legal name: [A PREENCHER: razão social]
-- Tax ID (NIF/NIPC): [A PREENCHER: NIF/NIPC]
+- Legal name: Pimo home
+- Tax ID (NIF/NIPC): 316930423
 - Legal hub: https://pimo.info/pt-pt/legal/
 - Privacy: https://pimo.info/pt-pt/legal/privacidade/
 - Terms: https://pimo.info/pt-pt/legal/termos/
@@ -4626,7 +4626,7 @@ Cada peça deve chegar com:
 - **Restrições de rotação**, melaminas com veio muitas vezes só rodam 0° ou 180°.
 - **Margem entre peças** (kerf + folga) definida pela fresa e pelo fabricante da máquina.
 
-A [lista de corte](/pt-pt/funcionalidades/lista-de-corte/) do PIMO consolida dimensões do modelo paramétrico; a exportação para TCN ou outros formatos está descrita nas páginas de [exportação CNC](/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/) e no [guia de exportação](/pt-pt/guias-utilizador/exportacao/). Dados desactualizados após uma alteração de porta no escritório propagam-se como desperdício na serra.
+A [lista de corte](/pt-pt/funcionalidades/lista-de-corte/) do PIMO consolida dimensões do modelo paramétrico; a exportação para TCN ou outros formatos está descrita nas páginas de [exportação CNC](/pt-pt/funcionalidades/exportacao-tcn-drill-xml/) e no [guia de exportação](/pt-pt/guias-utilizador/exportacao/). Dados desactualizados após uma alteração de porta no escritório propagam-se como desperdício na serra.
 
 ## Objectivo da optimização: menos chapa, menos tempo
 
@@ -5220,17 +5220,35 @@ O módulo de Orçamentos centraliza tarifas industriais/financeiras com persist�
 
 ## Sistema Industrial
 URL: https://pimo.info/pt-pt/documentacao-tecnica/sistema-industrial/
-Sistema Industrial.
+Visão consolidada da camada industrial: rotas, admin e fases documentadas no PIMO Criativo.
 
 # Sistema Industrial, visão consolidada
 
-Camada visual industrial aplicada a estação, operador e supervisor, sem reescrever APIs, rotas ou lógica core.
+Camada industrial da app em `/industrial/*` (login obrigatório), com hub de estações, work orders, operações e administração.
+
+## Rotas principais (código)
+
+| Área | Rota |
+|---|---|
+| Hub | `/industrial` |
+| Work orders | `/industrial/work-orders` |
+| Operações | `/industrial/operations` (+ `/cnc`, `/nesting`, `/drill`, `/orlar`, `/montagem`, `/embalagem`) |
+| Tracking / quality / rework / time / events | `/industrial/tracking`, `/quality`, `/rework`, `/time-tracking`, `/events` |
+| PIMO DRILL | `/industrial/pimo-drill` (`ProtectedRoute` dedicado) |
+| Release notes industriais | `/industrial/release-notes` |
+
+## Admin industrial
+
+| Área | Rota | Acesso |
+|---|---|---|
+| Settings industriais | `/admin/settings/industrial` | `canAccessAdminPanel` |
+| Alertas realtime | `/admin/system-settings/industrial/realtime-alerts` | `canAccessAdminPanel` |
 
 ## Princípio de implementação
 
 - Leitura de estado já existente no UI.
-- Sem criação de endpoints novos para as fases documentadas.
-- Impacto operacional focado em visualização e clareza de processo.
+- Sem criação de endpoints novos para as fases documentadas na camada visual.
+- Impacto operacional focado em visualização e clareza de processo nas fases visuais 1-6.
 
 ## Fases visuais (1-6)
 
@@ -5258,8 +5276,8 @@ Camada visual industrial aplicada a estação, operador e supervisor, sem reescr
 
 ## Garantias explicitadas
 
-- Sem alteração de rotas `/industrial` existentes.
-- Sem mutação dos fluxos reais de execução por parte da camada visual.
+- Sem alteração arbitrária de rotas `/industrial` existentes na documentação de fases.
+- Shells de Tracking/Quality/Rework/Time/Events usam placeholder Fase 3C.2 até ligarem dados reais.
 - Preparado para integração futura com dados reais adicionais sem reescrever os painéis.
 
 ## Nota
@@ -5398,7 +5416,20 @@ Permite selecionar módulos, configurar dimensões/opções e organizar o layout
  
     Fluxo orientado a produção  Os módulos entram como placeholders e são calculados em bloco com «Gerar Design 3D».  
     Movimento e rotação direta  Ferramentas `S`, `M`, `R` e alinhamento por contexto para ajuste rápido.  
-    Visualização operacional  Feedback de layout e composição antes de avançar para cutlist/nesting.
+    Visualização operacional  Feedback de layout e composição antes de avançar para cutlist/nesting.  
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+## Showroom / viewer
+
+A rota `/projects/viewer` (dentro de `ProtectedLayout`) abre o showroom de projetos quando o utilizador tem a permissão `canOpenProjectsShowroom`. Sem essa permissão ou sem login, a app redireciona para o fluxo de acesso. O workspace principal de modelação continua na raiz `/` (LegacyApp).
 
 ---
 
@@ -5408,7 +5439,7 @@ Login, registo, verificação de email, recuperação de password e perfil no PI
 
 # Conta e acesso
 
-Rotas verificadas em `App.tsx`: `/login`, `/register`, `/register/check-email`, `/verify-email`, `/forgot-password`, `/me`.
+Rotas verificadas em `App.tsx`: `/login`, `/register`, `/register/check-email`, `/verify-email`, `/forgot-password`, `/me`. As páginas de login e registo são públicas; dashboard, projetos e admin exigem autenticação.
 
 ## Fluxos
 
@@ -5417,9 +5448,15 @@ Rotas verificadas em `App.tsx`: `/login`, `/register`, `/register/check-email`, 
 3. **Recuperar password** → email de reset
 4. **Perfil (`/me`)** → dados da conta
 
+## Capturas (pimo.pro)
+
+ 
+
+ 
+
 ## Estado
 
-**Disponível** na aplicação [pimo.pro](https://pimo.pro/login).
+**Disponível** na aplicação [pimo.pro/login](https://pimo.pro/login).
 
 ## Relacionado
 
@@ -5434,7 +5471,7 @@ Definições do utilizador, do projeto e administrativas no PIMO Criativo (rota 
 
 # Definições
 
-A rota `/definicoes` e as áreas de administração (`/admin/global-settings`, roles, permissões, room settings, industrial) concentram preferências e configuração do sistema.
+A rota `/definicoes` e as áreas de administração concentram preferências e configuração do sistema. Rotas admin exigem permissões (`PermissionRoute` / `hasFullAccess` / `canAccessAdminPanel`) e login.
 
 ## Níveis
 
@@ -5446,9 +5483,22 @@ A rota `/definicoes` e as áreas de administração (`/admin/global-settings`, r
 | Sala | `/admin/room-settings` | Ambiente / sala 3D |
 | Industrial | `/admin/settings/industrial` | Alertas e parâmetros TRAK |
 
+## Administração (rotas verificadas)
+
+| Área | Rota | Página |
+|---|---|---|
+| Utilizadores | `/admin/users` | `UsersAdminPage` |
+| Partilhas de projeto | `/admin/project-shares` | `ProjectSharesAdminPage` |
+| Roles | `/admin/roles` | `ManageRolesPage` |
+| Permissões | `/admin/permissions` | `ManagePermissionsPage` |
+| Global settings | `/admin/global-settings` | `GlobalSettingsAdminPage` |
+| Room settings | `/admin/room-settings` | `RoomSettingsAdminPage` |
+| Settings industriais | `/admin/settings/industrial` | `IndustrialAdminSettingsPage` |
+| Alertas realtime | `/admin/system-settings/industrial/realtime-alerts` | `RealtimeAlertsAdminPage` |
+
 ## Estado
 
-**Disponível** (parcial na documentação de cada ecrã admin). A gestão avançada de roles/permissões está coberta de forma overview; detalhes de cada flag seguem o código da app.
+**Documentado a partir do código (outubro 2026):** rotas e páginas admin existem na app; o acesso depende de RBAC. Detalhe de cada flag continua na UI da app.
 
 ## Relacionado
 
@@ -5460,11 +5510,13 @@ A rota `/definicoes` e as áreas de administração (`/admin/global-settings`, r
 
 ## Estações industriais
 URL: https://pimo.info/pt-pt/funcionalidades/estacoes-industriais/
-Estações PIMO TRAK, armazém, nesting, furação, orlar, montagem, embalagem, supervisor e operador.
+Estações PIMO TRAK, armazém, nesting, furação, orlar, montagem, embalagem, supervisor, operador e vistas auxiliares.
 
 # Estações industriais
 
-As **estações** do fluxo industrial (verificadas em `App.tsx`) operam ordens de fabrico por posto:
+As **estações** do fluxo industrial (verificadas em `App.tsx` do PIMO Criativo) operam ordens de fabrico por posto. Estas rotas vivem sob autenticação na app (`ProtectedLayout`).
+
+## Estações de work order
 
 | Estação | Rota (app) |
 |---|---|
@@ -5474,20 +5526,41 @@ As **estações** do fluxo industrial (verificadas em `App.tsx`) operam ordens d
 | Orlar | `/industrial/work-orders/orlar` |
 | Montagem | `/industrial/work-orders/montagem` |
 | Embalagem | `/industrial/work-orders/embalagem` |
-| Supervisor | `/industrial/supervisor` |
-| Operador | `/industrial/operador` |
+| Por estação + projeto | `/industrial/work-orders/:station/:project` |
+| Ordem / projeto | `/industrial/work-orders/order/:orderOrProject` |
 
-Há ainda vistas de qualidade, retrabalho, time-tracking e tracking de peças sob `/industrial/*`.
+## Perfis e supervisão
+
+| Vista | Rota (app) |
+|---|---|
+| Supervisor | `/industrial/supervisor` |
+| Supervisor por projeto | `/industrial/supervisor/:project` |
+| Operador | `/industrial/operador` |
+| Peça industrial | `/industrial/piece/:pieceId` |
+| Execução de estação | `/industrial/stations/:station` |
+
+## Vistas auxiliares (shell + QR)
+
+Estas páginas montam `IndustrialLayout`, painel de leitura QR (`QrScannerPanel`) e um painel placeholder com nota de fase 3C.2 no código:
+
+| Vista | Rota | Nota no código |
+|---|---|---|
+| Tracking | `/industrial/tracking` | Ligar snapshots de tracking e realtime |
+| Qualidade | `/industrial/quality` | Ligar inspeções e rework automático |
+| Retrabalho | `/industrial/rework` | Ligar fila de retrabalho |
+| Time tracking | `/industrial/time-tracking` | Ligar timers operacionais |
+| Eventos | `/industrial/events` | Ligar filtros e feed Supabase |
 
 ## Estado
 
-**Parcial**, ecrãs existem na app; a documentação de cada posto resume o papel no TRAK. App: [pimo.pro/industrial](https://pimo.pro/industrial).
+**Documentado a partir do código (outubro 2026):** estações e perfis existem; as vistas auxiliares acima são shells com QR e placeholder. App: [pimo.pro/industrial](https://pimo.pro/industrial) (requer login).
 
 ## Relacionado
 
 - [PIMO TRAK](/pt-pt/sistemas-pimo/pimo-trak/)
 - [PIMO INDUSTRIAL](/pt-pt/sistemas-pimo/pimo-industrial/)
 - [PIMO DRILL](/pt-pt/sistemas-pimo/pimo-drill/)
+- [Módulo industrial](/pt-pt/funcionalidades/modulo-industrial/)
 
 ---
 
@@ -5601,12 +5674,17 @@ Camada industrial com painéis de estação, operador e supervisor.
 
 ## O que faz
 
-Segundo a documentação do sistema, a camada industrial agrega leitura visual de runtime, produção, performance e integração sem alterar APIs base.
+A camada industrial agrega hub `/industrial`, estações de work order, operações e perfis operador/supervisor. O acesso às rotas industriais exige login (`ProtectedLayout`).
 
  
     Visão por perfil  Painéis dedicados para estação, operador e supervisor.  
-    Fases estruturadas  Evolução organizada em fases visuais e industriais documentadas.  
-    Preparação para integração  Base visual pronta para evoluções futuras sem reescrever toda a UI.
+    Operações por posto  Rotas sob `/industrial/operations/*` (CNC, nesting, drill, orlar, montagem, embalagem).  
+    TRAK e QR  Work orders e leitura de etiquetas nas estações e vistas auxiliares.  
+ 
+
+## Operações CNC
+
+A rota `/industrial/operations/cnc` redireciona para `/industrial/work-orders/nesting` (verificado no código: `Navigate` em `operations/cnc/index.tsx`). As outras operações (`nesting`, `drill`, `orlar`, `montagem`, `embalagem`) têm páginas próprias sob `/industrial/operations/`.
 
 ---
 
@@ -6201,11 +6279,8 @@ Hub legal do ecossistema PIMO: privacidade, termos e cookies (Portugal/UE).
 ## Responsável e contacto
 
 O responsável pelo tratamento dos dados neste hub e pelo contacto institucional do
-ecossistema, para efeitos destas páginas, é identificado sob a marca **PIMO**.
-
-A razão social formal e o NIF/NIPC serão publicados aqui quando estiverem confirmados
-nos registos oficiais. Até lá, ficam marcados como dados a preencher (não inventamos
-estes campos).
+ecossistema, para efeitos destas páginas, é a **Pimo home** (marca PIMO),
+NIF/NIPC **316930423**.
 
  
 
@@ -6239,9 +6314,9 @@ Servem para o site funcionar, lembrar preferências ou, com consentimento, medir
 
 ## 2. Quem é responsável
 
-Marca **PIMO**. Contacto: [info@pimo.pro](mailto:info@pimo.pro). Morada: Macedo de
-Cavaleiros, Portugal. Razão social e NIF/NIPC: a preencher quando confirmados
-([ver privacidade](/pt-pt/legal/privacidade/)).
+Marca **PIMO**. Razão social: **Pimo home**. NIF/NIPC: **316930423**. Contacto:
+[info@pimo.pro](mailto:info@pimo.pro). Morada: Macedo de Cavaleiros, Portugal.
+Mais detalhes na [Política de Privacidade](/pt-pt/legal/privacidade/).
 
  
 
@@ -6293,8 +6368,8 @@ a sua versão.
 ## 1. Responsável pelo tratamento
 
 - **Marca:** PIMO
-- **Razão social:** [A PREENCHER: razão social]
-- **NIF / NIPC:** [A PREENCHER: NIF/NIPC]
+- **Razão social:** Pimo home
+- **NIF / NIPC:** 316930423
 - **Contacto RGPD / suporte:** [info@pimo.pro](mailto:info@pimo.pro)
 - **Telefone:** [+351 913 822 833](tel:+351913822833)
 - **Morada:** Macedo de Cavaleiros, Portugal
@@ -6395,8 +6470,8 @@ próprias; quando existirem, prevalecem nas respetivas experiências.
 ## 1. Identificação
 
 - **Marca:** PIMO
-- **Razão social:** [A PREENCHER: razão social]
-- **NIF / NIPC:** [A PREENCHER: NIF/NIPC]
+- **Razão social:** Pimo home
+- **NIF / NIPC:** 316930423
 - **Contacto:** [info@pimo.pro](mailto:info@pimo.pro)
 - **Telefone:** [+351 913 822 833](tel:+351913822833)
 - **Morada:** Macedo de Cavaleiros, Portugal
@@ -6538,7 +6613,10 @@ Guia rápido do PIMO Criativo: da primeira caixa ao pacote de produção (cutlis
 ## 1) Abrir o PIMO Criativo
 
 1. Aceda a [https://pimo.pro](https://pimo.pro).
-2. Entre na área de design 3D.
+2. Entre na área de design 3D (modo visitante ou com conta).
+3. Após login, o painel autenticado fica em `/dashboard` (`DashboardPage`): atalhos para projetos, perfil, permissões, definições e atividade.
+
+ 
 
 ## 2) Criar módulos base
 
@@ -6626,6 +6704,12 @@ Catálogo dos sistemas acessíveis no menu **Projetos PIMO** do header da aplica
 
  
 
+> As rotas `/industrial/*`, `/dashboard` e a maioria dos sistemas de produto exigem login. Capturas públicas usadas aqui: home, ajuda e novidades.
+
+ 
+
+ 
+
 ## Dados
 
 - [`/data/systems.json`](/data/systems.json)
@@ -6640,6 +6724,12 @@ Sistema próprio de furação (UI 2D/3D) em https://pimo.pro/industrial/pimo-dri
 
 # PIMO DRILL
 
+ 
+
+## Acesso
+
+Rota `/industrial/pimo-drill` com `ProtectedRoute` dedicado (login obrigatório; layout isolado sem TopBar TRAK). Estado de produto continua **em desenvolvimento**; a exportação Drill XML pelo configurador é o caminho paralelo já disponível.
+
 ---
 
 ## PIMO INDUSTRIAL
@@ -6647,6 +6737,12 @@ URL: https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/
 Camada industrial completa: hub, estações e operações.
 
 # PIMO INDUSTRIAL
+
+ 
+
+## Hub e operações
+
+Hub em `/industrial` (login). Operações em `/industrial/operations/*`. A operação CNC redireciona para a estação de nesting de work orders. Documentação consolidada: [Sistema industrial](/pt-pt/documentacao-tecnica/sistema-industrial/).
 
 ---
 
@@ -6671,5 +6767,17 @@ URL: https://pimo.info/pt-pt/sistemas-pimo/pimo-trak/
 Ordens de trabalho, etiquetas QR e rastreamento de produção.
 
 # PIMO TRAK
+
+ 
+
+## Rotas TRAK (app, login)
+
+| Função | Rota |
+|---|---|
+| Work orders | `/industrial/work-orders` |
+| Tracking | `/industrial/tracking` (shell + QR; placeholder Fase 3C.2) |
+| Operador / Supervisor | `/industrial/operador`, `/industrial/supervisor` |
+
+Detalhe das estações: [Estações industriais](/pt-pt/funcionalidades/estacoes-industriais/).
 
 ---

@@ -7,7 +7,7 @@ tags:
 related:
   - /pt-pt/funcionalidades/
   - /pt-pt/glossario/
-lastUpdated: 2026-10-01
+lastUpdated: 2026-10-07
 status: implemented
 ---
 
@@ -18,8 +18,8 @@ import { FeatureButtons } from "../../../components/ButtonsCatalog"
 <ServiceHero
   title="Configurador 3D"
   subtitle="Crie e posicione módulos no workspace 3D com regras paramétricas e preparação técnica para produção."
-  image="/visual/readme/ecra-home-workspace.webp"
-  imageAlt="Workspace 3D do PIMO Criativo"
+  image="/visual/pimo-pro/home.webp"
+  imageAlt="Workspace 3D do PIMO Criativo em pimo.pro"
   pimoHref="https://pimo.pro"
   guideHref="/pt-pt/guias-utilizador/criar-caixa/"
 />
@@ -58,5 +58,9 @@ Permite selecionar módulos, configurar dimensões/opções e organizar o layout
     { title: "Posso ajustar manualmente o auto-layout?", text: "Sim. O auto-posicionamento acelera o arranque, mas pode mover/rodar caixas manualmente sem perder controlo." },
   ]}
 />
+
+## Showroom / viewer
+
+A rota `/projects/viewer` (dentro de `ProtectedLayout`) abre o showroom de projetos quando o utilizador tem a permissão `canOpenProjectsShowroom`. Sem essa permissão ou sem login, a app redireciona para o fluxo de acesso. O workspace principal de modelação continua na raiz `/` (LegacyApp).
 
 <FeatureButtons featureId="configurador-3d" />

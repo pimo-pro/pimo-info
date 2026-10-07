@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T03:08:53.414Z",
+  "generatedAt": "2026-10-07T14:49:41.171Z",
   "name": "PIMO Info",
   "url": "https://pimo.info",
   "appUrl": "https://pimo.pro",
@@ -7,8 +7,8 @@
   "description": "Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.",
   "organization": {
     "name": "PIMO",
-    "legalName": "[A PREENCHER: razão social]",
-    "taxId": "[A PREENCHER: NIF/NIPC]",
+    "legalName": "Pimo home",
+    "taxId": "316930423",
     "url": "https://pimo.pt",
     "logo": "https://pimo.pro/logo-pi.png",
     "email": "info@pimo.pro",
@@ -27,6 +27,8 @@
     "phone": "+351 913 822 833",
     "phoneHref": "tel:+351913822833",
     "addressDisplay": "Macedo de Cavaleiros, Portugal",
+    "legalName": "Pimo home",
+    "taxId": "316930423",
     "livreReclamacoesUrl": "https://www.livroreclamacoes.pt/Inicio/",
     "ralInfoUrl": "https://www.consumidor.gov.pt/"
   },

@@ -5,7 +5,22 @@ DirectoryIndex index.html default.php
   RewriteEngine On
   RewriteBase /
 
-  # —— Mini-sites por subdomínio (document root partilhado = public_html) ——
+  # www -> apex HTTPS (uma etapa, http ou https)
+  RewriteCond %{HTTP_HOST} ^www\.pimo\.info$ [NC]
+  RewriteRule ^ https://pimo.info%{REQUEST_URI} [R=301,L]
+
+  # http apex -> https apex
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP_HOST} ^pimo\.info$ [NC]
+  RewriteRule ^ https://pimo.info%{REQUEST_URI} [R=301,L]
+
+  # Pedidos diretos a /sub/<slug>/ no host pimo.info -> subdomínio canónico
+  # THE_REQUEST evita loop com o rewrite interno por HTTP_HOST abaixo.
+  RewriteCond %{HTTP_HOST} ^pimo\.info$ [NC]
+  RewriteCond %{THE_REQUEST} \s/+sub/(pt|pro|es|casa|design)(/[^\s?]*)?\s [NC]
+  RewriteRule ^sub/(pt|pro|es|casa|design)/?(.*)$ https://$1.pimo.info/$2 [R=301,L,NE]
+
+  # Mini-sites por subdomínio (document root partilhado = public_html)
   # Assets /_next e ficheiros estáticos partilhados continuam na raiz.
   RewriteCond %{HTTP_HOST} ^(pt|pro|es|casa|design)\.pimo\.info$ [NC]
   RewriteCond %{REQUEST_URI} !^/_next/ [NC]
@@ -24,11 +39,14 @@ DirectoryIndex index.html default.php
   # Normaliza URLs index.html para a forma canónica com slash final
   RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L,NE]
 
-  # Redirect canónico: slug antigo de exportação → TCN/Drill XML
+  # Redirect canónico: slug antigo de exportação -> TCN/Drill XML
   RewriteRule ^pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/?$ /pt-pt/funcionalidades/exportacao-tcn-drill-xml/ [R=301,L]
 
   # Post interno removido do blog público
   RewriteRule ^pt-pt/blog/posts/bem-vindo/?$ /pt-pt/blog/ [R=301,L]
+
+  # Stub EN de contacto -> página canónica pt-PT
+  RewriteRule ^contact/?$ /pt-pt/contacto/ [R=301,L]
 
   # Se o recurso físico existe, servir diretamente
   RewriteCond %{REQUEST_FILENAME} -f [OR]

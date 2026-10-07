@@ -1,24 +1,44 @@
 ---
 title: "Sistema Industrial"
-description: "Sistema Industrial."
+description: "Visão consolidada da camada industrial: rotas, admin e fases documentadas no PIMO Criativo."
 category: tecnico
 tags:
   - tecnico
 related:
   - /pt-pt/documentacao-tecnica/
-lastUpdated: 2026-10-01
+  - /pt-pt/sistemas-pimo/pimo-industrial/
+  - /pt-pt/funcionalidades/estacoes-industriais/
+lastUpdated: 2026-10-07
 status: implemented
 ---
 
 # Sistema Industrial, visão consolidada
 
-Camada visual industrial aplicada a estação, operador e supervisor, sem reescrever APIs, rotas ou lógica core.
+Camada industrial da app em `/industrial/*` (login obrigatório), com hub de estações, work orders, operações e administração.
+
+## Rotas principais (código)
+
+| Área | Rota |
+|---|---|
+| Hub | `/industrial` |
+| Work orders | `/industrial/work-orders` |
+| Operações | `/industrial/operations` (+ `/cnc`, `/nesting`, `/drill`, `/orlar`, `/montagem`, `/embalagem`) |
+| Tracking / quality / rework / time / events | `/industrial/tracking`, `/quality`, `/rework`, `/time-tracking`, `/events` |
+| PIMO DRILL | `/industrial/pimo-drill` (`ProtectedRoute` dedicado) |
+| Release notes industriais | `/industrial/release-notes` |
+
+## Admin industrial
+
+| Área | Rota | Acesso |
+|---|---|---|
+| Settings industriais | `/admin/settings/industrial` | `canAccessAdminPanel` |
+| Alertas realtime | `/admin/system-settings/industrial/realtime-alerts` | `canAccessAdminPanel` |
 
 ## Princípio de implementação
 
 - Leitura de estado já existente no UI.
-- Sem criação de endpoints novos para as fases documentadas.
-- Impacto operacional focado em visualização e clareza de processo.
+- Sem criação de endpoints novos para as fases documentadas na camada visual.
+- Impacto operacional focado em visualização e clareza de processo nas fases visuais 1-6.
 
 ## Fases visuais (1-6)
 
@@ -46,8 +66,8 @@ Camada visual industrial aplicada a estação, operador e supervisor, sem reescr
 
 ## Garantias explicitadas
 
-- Sem alteração de rotas `/industrial` existentes.
-- Sem mutação dos fluxos reais de execução por parte da camada visual.
+- Sem alteração arbitrária de rotas `/industrial` existentes na documentação de fases.
+- Shells de Tracking/Quality/Rework/Time/Events usam placeholder Fase 3C.2 até ligarem dados reais.
 - Preparado para integração futura com dados reais adicionais sem reescrever os painéis.
 
 ## Nota

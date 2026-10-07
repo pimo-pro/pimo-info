@@ -84,18 +84,14 @@ export function ContactDetails({ showSocial = true, compact = false }) {
           <dt>Morada</dt>
           <dd>{contact.addressDisplay}</dd>
         </div>
-        {!compact ? (
-          <>
-            <div>
-              <dt>Razão social</dt>
-              <dd>{organization.legalName}</dd>
-            </div>
-            <div>
-              <dt>NIF / NIPC</dt>
-              <dd>{organization.taxId}</dd>
-            </div>
-          </>
-        ) : null}
+        <div>
+          <dt>Razão social</dt>
+          <dd>{organization.legalName}</dd>
+        </div>
+        <div>
+          <dt>NIF / NIPC</dt>
+          <dd>{organization.taxId}</dd>
+        </div>
       </dl>
       {showSocial ? <SocialIcons /> : null}
     </div>

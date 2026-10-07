@@ -271,9 +271,11 @@ export function EcosystemFooterLinks() {
   return (
     <span className="pimo-ecosystem-footer">
       <span className="pimo-footer-brand">
-        © {new Date().getFullYear()} PIMO · Crafted by Khaled
+        © {new Date().getFullYear()} {site.organization.legalName} · Crafted by Khaled
       </span>
       <span className="pimo-footer-contact">
+        <span>NIF {site.organization.taxId}</span>
+        <span aria-hidden="true">·</span>
         <a href={`mailto:${site.contact.supportEmail}`}>{site.contact.supportEmail}</a>
         <span aria-hidden="true">·</span>
         <a href={site.contact.phoneHref}>{site.contact.phone}</a>
