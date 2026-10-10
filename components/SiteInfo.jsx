@@ -1,5 +1,5 @@
 import { site } from "../data/site"
-import { pimoSites } from "../data/sites"
+import { pimoSites, siteAllowsExternalLink, siteHasDedicatedPage } from "../data/sites"
 
 const SOCIAL_PATHS = {
   facebook:
@@ -109,16 +109,24 @@ export function AboutSitesList() {
         {pimoSites.map((item) => (
           <li key={item.id}>
             <h3>
-              <a href={item.url} target="_blank" rel="noreferrer">
-                {item.domain}
-              </a>
+              {siteAllowsExternalLink(item) ? (
+                <a href={item.url} target="_blank" rel="noreferrer">
+                  {item.domain}
+                </a>
+              ) : (
+                <span>{item.domain}</span>
+              )}
             </h3>
             <p className="pimo-about-site-role">{item.shortRole}</p>
             <p>{item.summary}</p>
             <p className="pimo-about-site-meta">
               <span>{item.statusLabel}</span>
-              <span aria-hidden="true">·</span>
-              <a href={`/pt-pt/ecossistema/${item.id}/`}>Mais detalhes</a>
+              {siteHasDedicatedPage(item) ? (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <a href={`/pt-pt/ecossistema/${item.id}/`}>Mais detalhes</a>
+                </>
+              ) : null}
             </p>
           </li>
         ))}

@@ -44,7 +44,7 @@ export function GlossarySections() {
 
       <h2>Formatos de exportação</h2>
       <p>
-        Lista canónica verificada contra o PIMO Criativo (
+        Lista canónica verificada contra o PIMO PRO (
         <code>UnifiedExportBubble</code> / <code>useGerarArquivoHandlers</code>
         ).
       </p>

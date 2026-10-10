@@ -1,6 +1,6 @@
 /**
  * Glossário técnico único do PIMO Info (fonte de verdade terminológica).
- * Termos alinhados com o código/UI do PIMO Criativo.
+ * Termos alinhados com o código/UI do PIMO PRO.
  */
 
 /**

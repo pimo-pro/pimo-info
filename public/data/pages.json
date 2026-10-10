@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-07T14:49:41.170Z",
+  "generatedAt": "2026-10-10T00:36:55.116Z",
   "items": [
     {
       "path": "/",
       "file": "pages/index.mdx",
       "title": "Centro visual PIMO Info",
-      "description": "Centro visual de ajuda e base de conhecimento do PIMO Criativo.",
+      "description": "Centro visual de ajuda e base de conhecimento do PIMO PRO.",
       "author": "",
       "category": "hub",
       "tags": [
@@ -112,8 +112,8 @@
     {
       "path": "/pt-pt/",
       "file": "pages/pt-pt/index.mdx",
-      "title": "Centro de ajuda PIMO Criativo",
-      "description": "Centro de ajuda PIMO Criativo.",
+      "title": "Centro de ajuda PIMO PRO",
+      "description": "Centro de ajuda PIMO PRO.",
       "author": "",
       "category": "hub",
       "tags": [
@@ -270,7 +270,7 @@
       "path": "/pt-pt/blog/posts/ferragens-hettich/",
       "file": "pages/pt-pt/blog/posts/ferragens-hettich.mdx",
       "title": "Ferragens Hettich no projeto de mobiliário: sistemas que o PIMO ajuda a especificar",
-      "description": "Como as ferragens Hettich, gavetas, dobradiças e sistemas de portas, se integram no desenho e na produção quando o projeto vive no PIMO Criativo.",
+      "description": "Como as ferragens Hettich, gavetas, dobradiças e sistemas de portas, se integram no desenho e na produção quando o projeto vive no PIMO PRO.",
       "author": "Khaled",
       "category": "produto",
       "tags": [
@@ -542,7 +542,7 @@
       "path": "/pt-pt/blog/posts/software-design-3d/",
       "file": "pages/pt-pt/blog/posts/software-design-3d.mdx",
       "title": "Software de design 3D para marcenaria: o que procurar e como o PIMO se encaixa",
-      "description": "Critérios para escolher ferramentas de modelação 3D no mobiliário por medida, e relação com o configurador 3D do PIMO Criativo.",
+      "description": "Critérios para escolher ferramentas de modelação 3D no mobiliário por medida, e relação com o configurador 3D do PIMO PRO.",
       "author": "Khaled",
       "category": "tecnico",
       "tags": [
@@ -584,7 +584,7 @@
       "path": "/pt-pt/como-funciona/",
       "file": "pages/pt-pt/como-funciona.mdx",
       "title": "Como funciona",
-      "description": "Arquitetura e fluxo do PIMO Criativo: projeto → módulos/caixas → peças → materiais → lista de corte → nesting → exportações → orçamento → PIMO-TRAK.",
+      "description": "Arquitetura e fluxo do PIMO PRO: projeto → módulos/caixas → peças → materiais → lista de corte → nesting → exportações → orçamento → PIMO-TRAK.",
       "author": "",
       "category": "arquitetura",
       "tags": [
@@ -670,7 +670,7 @@
       "path": "/pt-pt/documentacao-tecnica/sistema-industrial/",
       "file": "pages/pt-pt/documentacao-tecnica/sistema-industrial.mdx",
       "title": "Sistema Industrial",
-      "description": "Visão consolidada da camada industrial: rotas, admin e fases documentadas no PIMO Criativo.",
+      "description": "Visão consolidada da camada industrial: rotas, admin e fases documentadas no PIMO PRO.",
       "author": "",
       "category": "tecnico",
       "tags": [
@@ -689,23 +689,6 @@
       "file": "pages/pt-pt/ecossistema/index.mdx",
       "title": "Ecossistema de sites PIMO",
       "description": "Visão do ecossistema de sete domínios PIMO, loja, aplicação, ajuda, mercados futuros e plano de negócio.",
-      "author": "",
-      "category": "ecossistema",
-      "tags": [
-        "ecossistema",
-        "dominios"
-      ],
-      "related": [
-        "/pt-pt/ecossistema/"
-      ],
-      "lastUpdated": "2026-10-01",
-      "status": "implemented"
-    },
-    {
-      "path": "/pt-pt/ecossistema/pim0-com/",
-      "file": "pages/pt-pt/ecossistema/pim0-com.mdx",
-      "title": "pim0.com",
-      "description": "Site do plano de negócio do projeto PIMO (domínio com zero).",
       "author": "",
       "category": "ecossistema",
       "tags": [
@@ -790,7 +773,7 @@
       "path": "/pt-pt/ecossistema/pimo-pro/",
       "file": "pages/pt-pt/ecossistema/pimo-pro.mdx",
       "title": "pimo.pro",
-      "description": "Site oficial da aplicação e plataforma PIMO Criativo.",
+      "description": "Site oficial da aplicação e plataforma PIMO PRO.",
       "author": "",
       "category": "ecossistema",
       "tags": [
@@ -824,7 +807,7 @@
       "path": "/pt-pt/funcionalidades/",
       "file": "pages/pt-pt/funcionalidades/index.mdx",
       "title": "Funcionalidades PIMO",
-      "description": "Páginas de apresentação visual das funcionalidades principais do PIMO Criativo.",
+      "description": "Páginas de apresentação visual das funcionalidades principais do PIMO PRO.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -860,7 +843,7 @@
       "path": "/pt-pt/funcionalidades/configurador-3d/",
       "file": "pages/pt-pt/funcionalidades/configurador-3d.mdx",
       "title": "Configurador 3D",
-      "description": "Modelação paramétrica no workspace 3D com fluxo real do PIMO Criativo.",
+      "description": "Modelação paramétrica no workspace 3D com fluxo real do PIMO PRO.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -877,7 +860,7 @@
       "path": "/pt-pt/funcionalidades/conta-e-acesso/",
       "file": "pages/pt-pt/funcionalidades/conta-e-acesso.mdx",
       "title": "Conta e acesso",
-      "description": "Login, registo, verificação de email, recuperação de password e perfil no PIMO Criativo.",
+      "description": "Login, registo, verificação de email, recuperação de password e perfil no PIMO PRO.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -896,7 +879,7 @@
       "path": "/pt-pt/funcionalidades/definicoes/",
       "file": "pages/pt-pt/funcionalidades/definicoes.mdx",
       "title": "Definições",
-      "description": "Definições do utilizador, do projeto e administrativas no PIMO Criativo (rota /definicoes e admin).",
+      "description": "Definições do utilizador, do projeto e administrativas no PIMO PRO (rota /definicoes e admin).",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -972,7 +955,7 @@
       "path": "/pt-pt/funcionalidades/ferragens/",
       "file": "pages/pt-pt/funcionalidades/ferragens.mdx",
       "title": "Ferragens",
-      "description": "Ferragens no PIMO Criativo, dobradiças, corrediças, conectores e listagens de exportação.",
+      "description": "Ferragens no PIMO PRO, dobradiças, corrediças, conectores e listagens de exportação.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -1028,7 +1011,7 @@
       "path": "/pt-pt/funcionalidades/modo-foto/",
       "file": "pages/pt-pt/funcionalidades/modo-foto.mdx",
       "title": "Modo foto",
-      "description": "Modo foto no PIMO Criativo, capturas e composição visual do projeto em 3D.",
+      "description": "Modo foto no PIMO PRO, capturas e composição visual do projeto em 3D.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -1153,7 +1136,7 @@
       "path": "/pt-pt/funcionalidades/relatorio-final/",
       "file": "pages/pt-pt/funcionalidades/relatorio-final.mdx",
       "title": "Relatório final",
-      "description": "Relatório final consolidado do projeto no PIMO Criativo (rota /relatorio-final/:project).",
+      "description": "Relatório final consolidado do projeto no PIMO PRO (rota /relatorio-final/:project).",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -1173,7 +1156,7 @@
       "path": "/pt-pt/funcionalidades/remates/",
       "file": "pages/pt-pt/funcionalidades/remates.mdx",
       "title": "Remates e acabamentos",
-      "description": "Remates, rodapés e acabamentos de caixa no PIMO Criativo.",
+      "description": "Remates, rodapés e acabamentos de caixa no PIMO PRO.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -1193,7 +1176,7 @@
       "path": "/pt-pt/funcionalidades/sala-e-ambiente/",
       "file": "pages/pt-pt/funcionalidades/sala-e-ambiente.mdx",
       "title": "Sala e ambiente",
-      "description": "Sala 3D, ambiente e room settings no PIMO Criativo.",
+      "description": "Sala 3D, ambiente e room settings no PIMO PRO.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -1213,7 +1196,7 @@
       "path": "/pt-pt/glossario/",
       "file": "pages/pt-pt/glossario.mdx",
       "title": "Glossário técnico",
-      "description": "Terminologia canónica do PIMO Criativo: módulo/caixa, peça, material, espessura, orla, cutlist, nesting, TCN, Drill XML, PIMO-TRAK e formatos de exportação.",
+      "description": "Terminologia canónica do PIMO PRO: módulo/caixa, peça, material, espessura, orla, cutlist, nesting, TCN, Drill XML, PIMO-TRAK e formatos de exportação.",
       "author": "",
       "category": "glossario",
       "tags": [
@@ -1284,7 +1267,7 @@
       "path": "/pt-pt/guias-utilizador/exportacao/",
       "file": "pages/pt-pt/guias-utilizador/exportacao.mdx",
       "title": "Exportação",
-      "description": "Guia de exportação do PIMO Criativo: PDF técnico, cutlist, etiquetas UEE, TCN, Drill XML, XLSX de ferragens e arquivo ZIP completo.",
+      "description": "Guia de exportação do PIMO PRO: PDF técnico, cutlist, etiquetas UEE, TCN, Drill XML, XLSX de ferragens e arquivo ZIP completo.",
       "author": "",
       "category": "guia",
       "tags": [
@@ -1526,7 +1509,7 @@
       "path": "/pt-pt/perguntas-frequentes/",
       "file": "pages/pt-pt/perguntas-frequentes.mdx",
       "title": "Perguntas frequentes",
-      "description": "FAQ do PIMO Criativo: módulos, nesting, unidades, exportação ZIP, TCN/Drill XML e PIMO-TRAK.",
+      "description": "FAQ do PIMO PRO: módulos, nesting, unidades, exportação ZIP, TCN/Drill XML e PIMO-TRAK.",
       "author": "",
       "category": "faq",
       "tags": [
@@ -1545,7 +1528,7 @@
       "path": "/pt-pt/primeiros-passos/",
       "file": "pages/pt-pt/primeiros-passos.mdx",
       "title": "Primeiros passos",
-      "description": "Guia rápido do PIMO Criativo: da primeira caixa ao pacote de produção (cutlist, nesting, TCN/Drill XML, ZIP).",
+      "description": "Guia rápido do PIMO PRO: da primeira caixa ao pacote de produção (cutlist, nesting, TCN/Drill XML, ZIP).",
       "author": "",
       "category": "hub",
       "tags": [
@@ -1564,7 +1547,7 @@
       "path": "/pt-pt/referencia/",
       "file": "pages/pt-pt/referencia/index.mdx",
       "title": "Referência",
-      "description": "Referência técnica do PIMO Criativo: botões, controlos e ligações às funcionalidades.",
+      "description": "Referência técnica do PIMO PRO: botões, controlos e ligações às funcionalidades.",
       "author": "",
       "category": "referencia",
       "tags": [
@@ -1583,7 +1566,7 @@
       "path": "/pt-pt/referencia/botoes/",
       "file": "pages/pt-pt/referencia/botoes.mdx",
       "title": "Botões e controlos",
-      "description": "Catálogo completo de botões e ações da interface do PIMO Criativo: ícone, rótulo, localização, ação, efeitos e atalho, verificado no código.",
+      "description": "Catálogo completo de botões e ações da interface do PIMO PRO: ícone, rótulo, localização, ação, efeitos e atalho, verificado no código.",
       "author": "",
       "category": "referencia",
       "tags": [
@@ -1605,7 +1588,7 @@
       "path": "/pt-pt/sistemas-pimo/",
       "file": "pages/pt-pt/sistemas-pimo/index.mdx",
       "title": "Sistemas PIMO",
-      "description": "Sistemas de produto na app PIMO: TRAK, PROJETOS, NESTING, INDUSTRIAL e DRILL, definição, estado real e ligações.",
+      "description": "Sistemas de produto na app PIMO PRO: TRAK, PROJETOS, NESTING, INDUSTRIAL e DRILL, definição, estado real e ligações.",
       "author": "",
       "category": "sistemas",
       "tags": [

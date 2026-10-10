@@ -1,4 +1,11 @@
-import { ecosystemIntro, getRelatedSites, getSiteById, pimoSites } from "../data/sites"
+import {
+  ecosystemIntro,
+  getRelatedSites,
+  getSiteById,
+  pimoSites,
+  siteAllowsExternalLink,
+  siteHasDedicatedPage,
+} from "../data/sites"
 import { site } from "../data/site"
 import { SocialIcons } from "./SiteInfo"
 
@@ -9,28 +16,36 @@ function statusClass(status) {
   return "is-planned"
 }
 
+function DomainLabel({ siteItem }) {
+  if (siteHasDedicatedPage(siteItem)) {
+    return <a href={`/pt-pt/ecossistema/${siteItem.id}/`}>{siteItem.domain}</a>
+  }
+  return <span>{siteItem.domain}</span>
+}
+
 export function EcosystemHomeBlock() {
   return (
     <section className="pimo-ecosystem-home">
       <p className="pimo-badge">Ecossistema</p>
       <h2>{ecosystemIntro.title}</h2>
       <p>
-        Sete domínios oficiais, loja, aplicação, ajuda, mercados futuros e plano de
-        negócio, com páginas dedicadas neste centro de informação.
+        Domínios oficiais: loja, aplicação, ajuda, mercados futuros e plano de
+        negócio, com páginas dedicadas neste centro de informação (exceto pim0.com,
+        listado só pelo nome).
       </p>
       <div className="pimo-ecosystem-home-actions">
         <a className="pimo-primary-link" href="/pt-pt/ecossistema/">
           Ver ecossistema
         </a>
-        <a className="pimo-secondary-link" href="https://pim0.com" target="_blank" rel="noreferrer">
-          Plano de negócio
+        <a className="pimo-secondary-link" href="https://pimo.pro" target="_blank" rel="noreferrer">
+          Abrir PIMO PRO
         </a>
       </div>
       <ul className="pimo-ecosystem-home-list">
-        {pimoSites.map((site) => (
-          <li key={site.id}>
-            <a href={`/pt-pt/ecossistema/${site.id}/`}>{site.domain}</a>
-            <span>{site.shortRole}</span>
+        {pimoSites.map((siteItem) => (
+          <li key={siteItem.id}>
+            <DomainLabel siteItem={siteItem} />
+            <span>{siteItem.shortRole}</span>
           </li>
         ))}
       </ul>
@@ -44,35 +59,46 @@ export function EcosystemOverview() {
       <p className="pimo-lead">{ecosystemIntro.lead}</p>
 
       <section className="pimo-ecosystem-cards" aria-label="Sites do ecossistema">
-        {pimoSites.map((site) => (
-          <article key={site.id} className="pimo-ecosystem-card">
+        {pimoSites.map((siteItem) => (
+          <article key={siteItem.id} className="pimo-ecosystem-card">
             <header>
-              <span className={`pimo-ecosystem-status ${statusClass(site.status)}`}>
-                {site.statusLabel}
+              <span className={`pimo-ecosystem-status ${statusClass(siteItem.status)}`}>
+                {siteItem.statusLabel}
               </span>
               <h2>
-                <a href={`/pt-pt/ecossistema/${site.id}/`}>{site.domain}</a>
+                <DomainLabel siteItem={siteItem} />
               </h2>
             </header>
-            <p className="pimo-ecosystem-card-role">{site.shortRole}</p>
-            <p>{site.summary}</p>
+            <p className="pimo-ecosystem-card-role">{siteItem.shortRole}</p>
+            <p>{siteItem.summary}</p>
             <dl className="pimo-ecosystem-card-meta">
               <div>
                 <dt>Estado atual</dt>
-                <dd>{site.currentRouting}</dd>
+                <dd>{siteItem.currentRouting}</dd>
               </div>
               <div>
                 <dt>Futuro</dt>
-                <dd>{site.future}</dd>
+                <dd>{siteItem.future}</dd>
               </div>
             </dl>
             <div className="pimo-ecosystem-card-actions">
-              <a className="pimo-secondary-link" href={`/pt-pt/ecossistema/${site.id}/`}>
-                Sobre este site
-              </a>
-              <a className="pimo-primary-link" href={site.url} target="_blank" rel="noreferrer">
-                {site.visitLabel}
-              </a>
+              {siteHasDedicatedPage(siteItem) ? (
+                <a className="pimo-secondary-link" href={`/pt-pt/ecossistema/${siteItem.id}/`}>
+                  Sobre este site
+                </a>
+              ) : (
+                <span className="pimo-secondary-link is-disabled">Sem página dedicada</span>
+              )}
+              {siteAllowsExternalLink(siteItem) ? (
+                <a
+                  className="pimo-primary-link"
+                  href={siteItem.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {siteItem.visitLabel}
+                </a>
+              ) : null}
             </div>
           </article>
         ))}
@@ -94,15 +120,15 @@ export function EcosystemOverview() {
               </tr>
             </thead>
             <tbody>
-              {pimoSites.map((site) => (
-                <tr key={site.id}>
+              {pimoSites.map((siteItem) => (
+                <tr key={siteItem.id}>
                   <td>
-                    <a href={`/pt-pt/ecossistema/${site.id}/`}>{site.domain}</a>
+                    <DomainLabel siteItem={siteItem} />
                   </td>
-                  <td>{site.shortRole}</td>
-                  <td>{site.statusLabel}</td>
-                  <td>{site.currentRouting}</td>
-                  <td>{site.future}</td>
+                  <td>{siteItem.shortRole}</td>
+                  <td>{siteItem.statusLabel}</td>
+                  <td>{siteItem.currentRouting}</td>
+                  <td>{siteItem.future}</td>
                 </tr>
               ))}
             </tbody>
@@ -119,8 +145,9 @@ export function EcosystemDiagram() {
       <h2>Relações do ecossistema</h2>
       <p>
         A marca e a loja (pimo.pt / pimo.es), a aplicação (pimo.pro), a ajuda (pimo.info)
-        e o plano de negócio (pim0.com) formam o núcleo ativo. pimo.casa e pimo.design
-        estão reservados e ligados à aplicação até terem site próprio.
+        e o plano de negócio (pim0.com, só pelo nome neste site) formam o mapa do
+        projeto. pimo.casa e pimo.design estão reservados e ligados à aplicação até
+        terem site próprio.
       </p>
       <svg viewBox="0 0 920 420" role="img" aria-label="Diagrama das relações entre os sites PIMO">
         <rect x="20" y="30" width="160" height="70" rx="10" />
@@ -144,7 +171,7 @@ export function EcosystemDiagram() {
           pimo.pro
         </text>
         <text x="470" y="218" textAnchor="middle" className="pimo-diagram-sub">
-          Aplicação PIMO
+          Aplicação PIMO PRO
         </text>
 
         <rect x="640" y="30" width="160" height="70" rx="10" />
@@ -188,31 +215,38 @@ export function EcosystemDiagram() {
         <line x1="560" y1="180" x2="640" y2="80" />
       </svg>
       <figcaption>
-        Núcleo ativo: pimo.pt, pimo.pro, pimo.info e pim0.com. Domínios em preparação:
-        pimo.es, pimo.casa e pimo.design.
+        Núcleo: pimo.pt, pimo.pro, pimo.info; pim0.com listado pelo nome. Domínios em
+        preparação: pimo.es, pimo.casa e pimo.design.
       </figcaption>
     </figure>
   )
 }
 
 export function EcosystemSitePage({ slug }) {
-  const site = getSiteById(slug)
-  if (!site) {
+  const siteItem = getSiteById(slug)
+  if (!siteItem || !siteHasDedicatedPage(siteItem)) {
     return <p>Site do ecossistema não encontrado.</p>
   }
 
-  const related = getRelatedSites(site.id)
+  const related = getRelatedSites(siteItem.id)
 
   return (
     <article className="pimo-ecosystem-site">
       <header className="pimo-ecosystem-site-hero">
         <p className="pimo-badge">Ecossistema PIMO</p>
-        <h1>{site.domain}</h1>
-        <p className="pimo-lead">{site.summary}</p>
+        <h1>{siteItem.domain}</h1>
+        <p className="pimo-lead">{siteItem.summary}</p>
         <div className="pimo-hero-actions">
-          <a className="pimo-primary-link" href={site.url} target="_blank" rel="noreferrer">
-            {site.visitLabel}
-          </a>
+          {siteAllowsExternalLink(siteItem) ? (
+            <a
+              className="pimo-primary-link"
+              href={siteItem.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {siteItem.visitLabel}
+            </a>
+          ) : null}
           <a className="pimo-secondary-link" href="/pt-pt/ecossistema/">
             Ver ecossistema
           </a>
@@ -221,26 +255,26 @@ export function EcosystemSitePage({ slug }) {
 
       <section>
         <h2>O que é</h2>
-        <p>{site.whatIs}</p>
+        <p>{siteItem.whatIs}</p>
       </section>
 
       <section>
         <h2>Papel no ecossistema</h2>
-        <p>{site.ecosystemRole}</p>
+        <p>{siteItem.ecosystemRole}</p>
       </section>
 
       <section className="pimo-service-benefits" aria-label="Estado e futuro">
         <li>
           <strong>Estado atual</strong>
-          <p>{site.currentState}</p>
+          <p>{siteItem.currentState}</p>
         </li>
         <li>
           <strong>Ligação / redirecionamento</strong>
-          <p>{site.currentRouting}</p>
+          <p>{siteItem.currentRouting}</p>
         </li>
         <li>
           <strong>Planos futuros</strong>
-          <p>{site.futurePlans}</p>
+          <p>{siteItem.futurePlans}</p>
         </li>
       </section>
 
@@ -258,11 +292,18 @@ export function EcosystemSitePage({ slug }) {
         </ul>
       </section>
 
-      <p className="pimo-ecosystem-site-cta">
-        <a className="pimo-primary-link" href={site.url} target="_blank" rel="noreferrer">
-          {site.visitLabel}
-        </a>
-      </p>
+      {siteAllowsExternalLink(siteItem) ? (
+        <p className="pimo-ecosystem-site-cta">
+          <a
+            className="pimo-primary-link"
+            href={siteItem.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {siteItem.visitLabel}
+          </a>
+        </p>
+      ) : null}
     </article>
   )
 }
@@ -300,12 +341,18 @@ export function EcosystemFooterLinks() {
         {pimoSites.map((item, index) => (
           <span key={item.id} className="pimo-ecosystem-link-item">
             {index > 0 ? <span aria-hidden="true">·</span> : null}
-            <a href={item.url} target="_blank" rel="noreferrer">
-              {item.domain}
-            </a>
-            <a className="pimo-ecosystem-about" href={`/pt-pt/ecossistema/${item.id}/`}>
-              Sobre
-            </a>
+            {siteAllowsExternalLink(item) ? (
+              <a href={item.url} target="_blank" rel="noreferrer">
+                {item.domain}
+              </a>
+            ) : (
+              <span>{item.domain}</span>
+            )}
+            {siteHasDedicatedPage(item) ? (
+              <a className="pimo-ecosystem-about" href={`/pt-pt/ecossistema/${item.id}/`}>
+                Sobre
+              </a>
+            ) : null}
           </span>
         ))}
       </span>

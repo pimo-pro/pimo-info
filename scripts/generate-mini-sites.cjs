@@ -43,10 +43,14 @@ function renderLanding(sub, site, related) {
   const canonical = `https://${sub.host}/`
   const title = `${site.name} · ${sub.host}`
   const relatedHtml = related
-    .map(
-      (r) =>
-        `<li><a href="${escapeHtml(r.url)}">${escapeHtml(r.domain)}</a>, ${escapeHtml(r.shortRole)}</li>`
-    )
+    .map((r) => {
+      const role = escapeHtml(r.shortRole)
+      const domain = escapeHtml(r.domain)
+      if (r.url && /^https?:\/\//i.test(r.url)) {
+        return `<li><a href="${escapeHtml(r.url)}">${domain}</a>, ${role}</li>`
+      }
+      return `<li><span>${domain}</span>, ${role}</li>`
+    })
     .join("\n          ")
 
   return `<!DOCTYPE html>

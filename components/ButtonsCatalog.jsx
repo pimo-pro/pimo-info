@@ -65,7 +65,7 @@ export function ButtonsCatalog({ featureFilter = "" } = {}) {
   return (
     <div className="pimo-buttons-catalog">
       <p className="pimo-lead">
-        {buttons.length} controlos catalogados a partir do código do PIMO Criativo (só leitura).
+        {buttons.length} controlos catalogados a partir do código do PIMO PRO (só leitura).
         Labels e atalhos são os do código-fonte, sem invenções.
       </p>
 

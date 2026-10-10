@@ -1,5 +1,5 @@
 /**
- * Fonte única dos formatos de exportação do PIMO Criativo.
+ * Fonte única dos formatos de exportação do PIMO PRO.
  * Verificado contra pimo-criativo (UnifiedExportBubble + useGerarArquivoHandlers).
  * status: implemented | planned
  */

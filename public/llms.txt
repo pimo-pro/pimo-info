@@ -1,5 +1,5 @@
 # PIMO Info
-> Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.
+> Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
 
 Site: https://pimo.info
 App: https://pimo.pro
@@ -124,7 +124,7 @@ Locale: pt-PT
 
 ## Page index
 - Centro visual PIMO Info: https://pimo.info/
-- Centro de ajuda PIMO Criativo: https://pimo.info/pt-pt/
+- Centro de ajuda PIMO PRO: https://pimo.info/pt-pt/
 - Blog: https://pimo.info/pt-pt/blog/
 - Automação no fabrico de mobiliário: do projeto à linha de produção: https://pimo.info/pt-pt/blog/posts/automacao-fabrico/
 - Comércio mundial de mobiliário: crescimento moderado e novos equilíbrios: https://pimo.info/pt-pt/blog/posts/comercio-mundial-moveis/
@@ -154,7 +154,6 @@ Locale: pt-PT
 - Orçamentos P3.9: https://pimo.info/pt-pt/documentacao-tecnica/orcamentos-p39/
 - Sistema Industrial: https://pimo.info/pt-pt/documentacao-tecnica/sistema-industrial/
 - Ecossistema de sites PIMO: https://pimo.info/pt-pt/ecossistema/
-- pim0.com: https://pimo.info/pt-pt/ecossistema/pim0-com/
 - pimo.casa: https://pimo.info/pt-pt/ecossistema/pimo-casa/
 - pimo.design: https://pimo.info/pt-pt/ecossistema/pimo-design/
 - pimo.es: https://pimo.info/pt-pt/ecossistema/pimo-es/

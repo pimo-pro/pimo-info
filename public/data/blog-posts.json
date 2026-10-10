@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T14:49:41.199Z",
+  "generatedAt": "2026-10-10T00:36:55.150Z",
   "posts": [
     {
       "slug": "fabrico-digital-2026",
@@ -325,7 +325,7 @@
           "url": "https://pimo.info/pt-pt/sistemas-pimo/pimo-trak/"
         },
         {
-          "title": "Módulo industrial no PIMO Criativo",
+          "title": "Módulo industrial no PIMO PRO",
           "url": "https://pimo.info/pt-pt/funcionalidades/modulo-industrial/"
         }
       ],
@@ -335,7 +335,7 @@
       "slug": "software-design-3d",
       "href": "/pt-pt/blog/posts/software-design-3d/",
       "title": "Software de design 3D para marcenaria: o que procurar e como o PIMO se encaixa",
-      "description": "Critérios para escolher ferramentas de modelação 3D no mobiliário por medida, e relação com o configurador 3D do PIMO Criativo.",
+      "description": "Critérios para escolher ferramentas de modelação 3D no mobiliário por medida, e relação com o configurador 3D do PIMO PRO.",
       "date": "2026-06-01",
       "author": "Khaled",
       "category": "tecnico",
@@ -350,7 +350,7 @@
       "imageAlt": "Pessoa a trabalhar num computador portátil em ambiente técnico",
       "sources": [
         {
-          "title": "Configurador 3D, PIMO Criativo",
+          "title": "Configurador 3D, PIMO PRO",
           "url": "https://pimo.info/pt-pt/funcionalidades/configurador-3d/"
         },
         {
@@ -368,7 +368,7 @@
       "slug": "ferragens-hettich",
       "href": "/pt-pt/blog/posts/ferragens-hettich/",
       "title": "Ferragens Hettich no projeto de mobiliário: sistemas que o PIMO ajuda a especificar",
-      "description": "Como as ferragens Hettich, gavetas, dobradiças e sistemas de portas, se integram no desenho e na produção quando o projeto vive no PIMO Criativo.",
+      "description": "Como as ferragens Hettich, gavetas, dobradiças e sistemas de portas, se integram no desenho e na produção quando o projeto vive no PIMO PRO.",
       "date": "2026-05-18",
       "author": "Khaled",
       "category": "produto",
@@ -387,7 +387,7 @@
           "url": "https://www.hettich.com/pt-pt/"
         },
         {
-          "title": "Ferragens no PIMO Criativo",
+          "title": "Ferragens no PIMO PRO",
           "url": "https://pimo.info/pt-pt/funcionalidades/ferragens/"
         },
         {
@@ -416,7 +416,7 @@
       "imageAlt": "Mesa e cadeiras de madeira num ambiente interior",
       "sources": [
         {
-          "title": "Materiais no PIMO Criativo",
+          "title": "Materiais no PIMO PRO",
           "url": "https://pimo.info/pt-pt/funcionalidades/materiais/"
         },
         {
@@ -457,7 +457,7 @@
           "url": "https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/"
         },
         {
-          "title": "Estações industriais no PIMO Criativo",
+          "title": "Estações industriais no PIMO PRO",
           "url": "https://pimo.info/pt-pt/funcionalidades/estacoes-industriais/"
         }
       ],
@@ -552,7 +552,7 @@
           "url": "https://pimo.info/pt-pt/"
         },
         {
-          "title": "Funcionalidades PIMO Criativo",
+          "title": "Funcionalidades PIMO PRO",
           "url": "https://pimo.info/pt-pt/funcionalidades/"
         }
       ],

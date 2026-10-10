@@ -160,7 +160,7 @@ function main() {
   fs.writeFileSync(OUT_JSON, JSON.stringify(payload, null, 2) + "\n", "utf8")
 
   const md = [
-    "# Matriz de cobertura PIMO Criativo → pimo.info",
+    "# Matriz de cobertura PIMO PRO → pimo.info",
     "",
     `Gerado: ${payload.generatedAt}`,
     "",

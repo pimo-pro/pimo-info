@@ -1,5 +1,5 @@
 /**
- * Módulos e fluxo do PIMO Criativo (verificado no código, só leitura).
+ * Módulos e fluxo do PIMO PRO (verificado no código, só leitura).
  * Fontes: projectState, cutlist, nesting-v3, useGerarArquivoHandlers, industrial/PIMO-TRAK.
  */
 

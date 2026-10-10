@@ -48,6 +48,9 @@ DirectoryIndex index.html default.php
   # Stub EN de contacto -> página canónica pt-PT
   RewriteRule ^contact/?$ /pt-pt/contacto/ [R=301,L]
 
+  # Página dedicada pim0.com removida -> hub do ecossistema
+  RewriteRule ^pt-pt/ecossistema/pim0-com/?$ /pt-pt/ecossistema/ [R=301,L]
+
   # Se o recurso físico existe, servir diretamente
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d

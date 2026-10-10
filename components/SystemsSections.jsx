@@ -22,7 +22,7 @@ export function SystemsIndex() {
     <div className="pimo-systems-index">
       <p className="pimo-lead">
         Sistemas de produto acessíveis no menu «Projetos PIMO» do header da app (
-        <code>HeaderProjectsSwitcher</code>). Estado verificado no código do PIMO Criativo.
+        <code>HeaderProjectsSwitcher</code>). Estado verificado no código do PIMO PRO.
       </p>
       <div className="pimo-systems-grid">
         {pimoSystems.map((s) => (

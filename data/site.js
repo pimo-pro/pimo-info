@@ -8,7 +8,7 @@ export const site = {
   appUrl: "https://pimo.pro",
   locale: "pt-PT",
   description:
-    "Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.",
+    "Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.",
   organization: {
     name: "PIMO",
     legalName: "Pimo home",

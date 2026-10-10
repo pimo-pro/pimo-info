@@ -29,7 +29,7 @@ export default function NovidadesPage({ news }) {
     <main>
       <h1>Novidades</h1>
       <p className="pimo-lead">
-        Feed de atualizações do PIMO Criativo gerado em build-time a partir de{" "}
+        Feed de atualizações do PIMO PRO gerado em build-time a partir de{" "}
         <code>https://pimo.pro/updates/news.json</code>.
       </p>
 

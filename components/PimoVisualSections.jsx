@@ -79,7 +79,7 @@ export function LandingHero() {
   return (
     <section className="pimo-hero">
       <div className="pimo-hero-copy">
-        <p className="pimo-badge">PIMO Criativo</p>
+        <p className="pimo-badge">PIMO PRO</p>
         <h1>Centro visual de ajuda e informação para desenho e produção de mobiliário</h1>
         <p>
           Guia completo do fluxo real do PIMO: modelação 3D, materiais, lista de corte,
@@ -97,7 +97,7 @@ export function LandingHero() {
       <div className="pimo-hero-visual">
         <img
           src="/visual/pimo-pro-home.webp"
-          alt="Ecrã inicial do PIMO Criativo em pimo.pro"
+          alt="Ecrã inicial do PIMO PRO em pimo.pro"
           loading="eager"
         />
       </div>

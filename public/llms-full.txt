@@ -1,8 +1,8 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-10-07T14:49:41.172Z
+Generated: 2026-10-10T00:36:55.118Z
 
 # PIMO Info
-> Centro de ajuda e base de conhecimento do PIMO Criativo: guias, funcionalidades, exportação industrial e glossário técnico.
+> Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
 
 Site: https://pimo.info
 App: https://pimo.pro
@@ -127,7 +127,7 @@ Locale: pt-PT
 
 ## Page index
 - Centro visual PIMO Info: https://pimo.info/
-- Centro de ajuda PIMO Criativo: https://pimo.info/pt-pt/
+- Centro de ajuda PIMO PRO: https://pimo.info/pt-pt/
 - Blog: https://pimo.info/pt-pt/blog/
 - Automação no fabrico de mobiliário: do projeto à linha de produção: https://pimo.info/pt-pt/blog/posts/automacao-fabrico/
 - Comércio mundial de mobiliário: crescimento moderado e novos equilíbrios: https://pimo.info/pt-pt/blog/posts/comercio-mundial-moveis/
@@ -157,7 +157,6 @@ Locale: pt-PT
 - Orçamentos P3.9: https://pimo.info/pt-pt/documentacao-tecnica/orcamentos-p39/
 - Sistema Industrial: https://pimo.info/pt-pt/documentacao-tecnica/sistema-industrial/
 - Ecossistema de sites PIMO: https://pimo.info/pt-pt/ecossistema/
-- pim0.com: https://pimo.info/pt-pt/ecossistema/pim0-com/
 - pimo.casa: https://pimo.info/pt-pt/ecossistema/pimo-casa/
 - pimo.design: https://pimo.info/pt-pt/ecossistema/pimo-design/
 - pimo.es: https://pimo.info/pt-pt/ecossistema/pimo-es/
@@ -3625,14 +3624,14 @@ sourceFiles: src/app/industrial/pimo-drill/PimoDrillPage.tsx, src/app/industrial
 
 ## Centro visual PIMO Info
 URL: https://pimo.info/
-Centro visual de ajuda e base de conhecimento do PIMO Criativo.
+Centro visual de ajuda e base de conhecimento do PIMO PRO.
 
 # Centro visual PIMO Info
 
  
 
  
-  O PIMO Info é o centro de ajuda oficial do PIMO Criativo, com foco no fluxo real de desenho e produção:
+  O PIMO Info é o centro de ajuda oficial do PIMO PRO, com foco no fluxo real de desenho e produção:
   da caixa paramétrica aos ficheiros TCN/Drill XML e rastreio PIMO-TRAK.
  
 
@@ -3676,11 +3675,11 @@ Centro visual de ajuda e base de conhecimento do PIMO Criativo.
 
 ---
 
-## Centro de ajuda PIMO Criativo
+## Centro de ajuda PIMO PRO
 URL: https://pimo.info/pt-pt/
-Centro de ajuda PIMO Criativo.
+Centro de ajuda PIMO PRO.
 
-# Centro de ajuda PIMO Criativo
+# Centro de ajuda PIMO PRO
 
  
 
@@ -3924,7 +3923,7 @@ URL: https://pimo.info/pt-pt/blog/posts/cozinhas-planeadas/
 Author: Khaled
 Etapas para desenhar cozinhas sob medida, escolher materiais e ferragens, e evitar erros entre loja, oficina e obra.
 
-Uma cozinha planeada é um puzzle tridimensional: eletrodomésticos com folgas normativas, tubagens que não se movem, luz natural que define onde o cliente quer trabalhar e um orçamento que raramente absorve todos os desejos à primeira. Para lojas e marcenarias em Portugal, o desafio é fazer bem e repetir o processo com margem, prazo e montagem sem surpresas. Um projeto digital alinhado à produção, como o fluxo do PIMO Criativo, liga medição, 3D, materiais e lista de corte; este guia percorre as fases que mais costumam falhar quando essa ligação falta.
+Uma cozinha planeada é um puzzle tridimensional: eletrodomésticos com folgas normativas, tubagens que não se movem, luz natural que define onde o cliente quer trabalhar e um orçamento que raramente absorve todos os desejos à primeira. Para lojas e marcenarias em Portugal, o desafio é fazer bem e repetir o processo com margem, prazo e montagem sem surpresas. Um projeto digital alinhado à produção, como o fluxo do PIMO PRO, liga medição, 3D, materiais e lista de corte; este guia percorre as fases que mais costumam falhar quando essa ligação falta.
 
 ## Levantamento em obra: o que medir antes do desenho
 
@@ -4119,7 +4118,7 @@ Fabrico digital em 2026 significa **disciplina de dados** da venda ao CNC, **ras
 ## Ferragens Hettich no projeto de mobiliário: sistemas que o PIMO ajuda a especificar
 URL: https://pimo.info/pt-pt/blog/posts/ferragens-hettich/
 Author: Khaled
-Como as ferragens Hettich, gavetas, dobradiças e sistemas de portas, se integram no desenho e na produção quando o projeto vive no PIMO Criativo.
+Como as ferragens Hettich, gavetas, dobradiças e sistemas de portas, se integram no desenho e na produção quando o projeto vive no PIMO PRO.
 
 Um módulo de cozinha ou um roupeiro embutido pode ter carcaças impecáveis e frentes de melamina de primeira, mas são as ferragens que determinam se a gaveta abre suavemente, se a porta de correr não salta do trilho e se o conjunto aguenta anos de uso diário. A [Hettich](https://www.hettich.com/pt-pt/) posiciona-se como líder no fabrico de acessórios para móveis e desenvolve, na sua sede em Kirchlengern, Alemanha, soluções que vão dos sistemas de gavetas às dobradiças, passando por portas de correr e portas de fole.
 
@@ -4141,7 +4140,7 @@ As megatendências citadas pela Hettich, individualização, urbanidade, New Wor
 
 Trocar ferragens apenas na montagem é uma receita para furos errados, folgas inesperadas e orçamentos que não fecham. Cada sistema de gaveta ou dobradiça impõe dimensões de furo, distâncias entre centros e folgas entre frente e carcaça. Esses dados devem estar no modelo antes de gerar lista de corte, furação CNC ou lista de compras.
 
-No PIMO Criativo, a secção [Ferragens](/pt-pt/funcionalidades/ferragens/) liga o desenho técnico ao que a oficina vai encomendar. [Portas e gavetas](/pt-pt/funcionalidades/portas-e-gavetas/) aplica regras automáticas para frentes, reduzindo erros de medida repetitivos em cozinhas e roupeiros modulares.
+No PIMO PRO, a secção [Ferragens](/pt-pt/funcionalidades/ferragens/) liga o desenho técnico ao que a oficina vai encomendar. [Portas e gavetas](/pt-pt/funcionalidades/portas-e-gavetas/) aplica regras automáticas para frentes, reduzindo erros de medida repetitivos em cozinhas e roupeiros modulares.
 
 Quando a oficina trabalha habitualmente com Hettich, convém:
 
@@ -4201,7 +4200,7 @@ O objetivo é furar certo e, sobretudo, eliminar reinterpretação manual entre 
 
 ## Do modelo 3D à lista de operações
 
-No PIMO Criativo, o caminho habitual começa no configurador e nas regras de ferragens e portas. Quando o módulo está definido, as peças passam para a [lista de corte](/pt-pt/funcionalidades/lista-de-corte/) com dimensões em milímetros. A furação não é um desenho à parte: deriva das mesmas entidades que alimentam o orçamento e o PDF técnico.
+No PIMO PRO, o caminho habitual começa no configurador e nas regras de ferragens e portas. Quando o módulo está definido, as peças passam para a [lista de corte](/pt-pt/funcionalidades/lista-de-corte/) com dimensões em milímetros. A furação não é um desenho à parte: deriva das mesmas entidades que alimentam o orçamento e o PDF técnico.
 
 Para o chão de fábrica, interessa um **formato que a máquina ou o software da fábrica consiga ler**. No help center documenta-se a exportação de ficheiros **TCN** (`.tcn`) e **Drill XML** (`.xml`) a partir do menu **Arquivos CNC**, ver a página de [exportação TCN/Drill XML](/pt-pt/funcionalidades/exportacao-tcn-drill-xml/). Esses formatos fazem parte do vocabulário industrial real; a escolha entre um e outro depende do equipamento e do pós-processador instalado na empresa.
 
@@ -4221,7 +4220,7 @@ Quando várias encomendas partilham a mesma chapa otimizada no nesting, a furaç
 
 O [PIMO DRILL](/pt-pt/sistemas-pimo/pimo-drill/) é o sistema próprio de furação do ecossistema industrial PIMO, com interface em 2D e 3D, em evolução no produto industrial em [pimo.pro](https://pimo.pro/industrial/pimo-drill). A ideia é concentrar a experiência de preparar, visualizar e validar operações de furação no mesmo universo que o projeto de mobiliário, em vez de duplicar trabalho em softwares desconectados.
 
-Para equipas que já exportam Drill XML a partir do PIMO Criativo, o DRILL representa o passo seguinte: um ambiente onde a lógica de furação é primeira classe, não apenas um ficheiro gerado no fim do fluxo. A documentação no help center será atualizada à medida que o sistema atinge marcos de implementação; consulte sempre a página oficial do sistema para o estado atual.
+Para equipas que já exportam Drill XML a partir do PIMO PRO, o DRILL representa o passo seguinte: um ambiente onde a lógica de furação é primeira classe, não apenas um ficheiro gerado no fim do fluxo. A documentação no help center será atualizada à medida que o sistema atinge marcos de implementação; consulte sempre a página oficial do sistema para o estado atual.
 
 ## Erros frequentes e como evitá-los
 
@@ -4706,7 +4705,7 @@ Nem todas as arestas de uma peça precisam de fita. Costuma-se orlar:
 
 Arestas junto a paredes, encostos ou uniões entre módulos podem ficar sem orla, desde que o acabamento interno seja aceite. O erro clássico é tratar todas as peças igualmente no software e depois orlar arestas que serão cobertas, desperdício de fita e de ciclo de máquina.
 
-No PIMO Criativo, a definição de materiais de carcaça e frentes em [Materiais](/pt-pt/funcionalidades/materiais/) estabelece o decor de referência. Os remates e regras de bordo devem refletir o que a oficina realmente aplica; quando existir discrepância entre a biblioteca de materiais e o stock de fita no armazém, o projeto mente de forma cara.
+No PIMO PRO, a definição de materiais de carcaça e frentes em [Materiais](/pt-pt/funcionalidades/materiais/) estabelece o decor de referência. Os remates e regras de bordo devem refletir o que a oficina realmente aplica; quando existir discrepância entre a biblioteca de materiais e o stock de fita no armazém, o projeto mente de forma cara.
 
 ## Lista de corte e informação para a orlagem
 
@@ -4915,7 +4914,7 @@ Uma divisão útil para equipas e recrutamento:
 4. **Máquinas**, serra de formato, orladora, CNC de nesting, centro de furação; noções de manutenção e segurança.
 5. **Acabamento e montagem**, silicones corretos em cozinha, calços, alinhamento de gavetas, ajuste de dobradiças.
 
-No escritório, ferramentas como o PIMO Criativo concentram desenho paramétrico, materiais e exportação, competências descritas nas [funcionalidades](/pt-pt/funcionalidades/) do produto. Na oficina, o mesmo projeto alimenta orçamento e produção; quem entende os dois lados reduz retrabalho.
+No escritório, ferramentas como o PIMO PRO concentram desenho paramétrico, materiais e exportação, competências descritas nas [funcionalidades](/pt-pt/funcionalidades/) do produto. Na oficina, o mesmo projeto alimenta orçamento e produção; quem entende os dois lados reduz retrabalho.
 
 ## O papel comercial e a relação com o cliente
 
@@ -4948,11 +4947,11 @@ A profissão de carpinteiro no mobiliário contemporâneo é híbrida: mãos na 
 ## Software de design 3D para marcenaria: o que procurar e como o PIMO se encaixa
 URL: https://pimo.info/pt-pt/blog/posts/software-design-3d/
 Author: Khaled
-Critérios para escolher ferramentas de modelação 3D no mobiliário por medida, e relação com o configurador 3D do PIMO Criativo.
+Critérios para escolher ferramentas de modelação 3D no mobiliário por medida, e relação com o configurador 3D do PIMO PRO.
 
 Desenhar móveis em 2D no CAD genérico ainda funciona para algumas oficinas, mas clientes, retalhistas e fábricas pedem cada vez mais **visualização 3D**, listas de peças automáticas e ligação ao orçamento. O mercado oferece desde modeladores livres até suites industriais; para marcenaria e mobiliário por medida, o critério não é «o software mais bonito», mas o que reduz retrabalho entre venda, engenharia e produção.
 
-Este artigo resume o que avaliar ao escolher software de design 3D para carpintaria e mobiliário, e como o [configurador 3D](/pt-pt/funcionalidades/configurador-3d/) do PIMO Criativo se insere num fluxo documentado em [Como funciona](/pt-pt/como-funciona/) e nos [Primeiros passos](/pt-pt/primeiros-passos/).
+Este artigo resume o que avaliar ao escolher software de design 3D para carpintaria e mobiliário, e como o [configurador 3D](/pt-pt/funcionalidades/configurador-3d/) do PIMO PRO se insere num fluxo documentado em [Como funciona](/pt-pt/como-funciona/) e nos [Primeiros passos](/pt-pt/primeiros-passos/).
 
 ## Modelação livre versus configurador paramétrico
 
@@ -5079,11 +5078,11 @@ Sustentabilidade na madeira combina floresta bem gerida, oficina eficiente e pro
 
 ## Como funciona
 URL: https://pimo.info/pt-pt/como-funciona/
-Arquitetura e fluxo do PIMO Criativo: projeto → módulos/caixas → peças → materiais → lista de corte → nesting → exportações → orçamento → PIMO-TRAK.
+Arquitetura e fluxo do PIMO PRO: projeto → módulos/caixas → peças → materiais → lista de corte → nesting → exportações → orçamento → PIMO-TRAK.
 
 # Como funciona
 
-Fluxo ponta a ponta do PIMO Criativo, documentado a partir do código (estado do projeto, cutlist, nesting, exportações e PIMO-TRAK). Sem inventar passos: cada módulo lista entradas, saídas, dependências e ficheiros-fonte. Os sistemas de produto (TRAK, PROJETOS, NESTING, INDUSTRIAL, DRILL) estão em [Sistemas PIMO](/pt-pt/sistemas-pimo/).
+Fluxo ponta a ponta do PIMO PRO, documentado a partir do código (estado do projeto, cutlist, nesting, exportações e PIMO-TRAK). Sem inventar passos: cada módulo lista entradas, saídas, dependências e ficheiros-fonte. Os sistemas de produto (TRAK, PROJETOS, NESTING, INDUSTRIAL, DRILL) estão em [Sistemas PIMO](/pt-pt/sistemas-pimo/).
 
  
 
@@ -5109,10 +5108,10 @@ Contactos oficiais PIMO: email, telefone e morada.
 
 ## Outros canais
 
-- Aplicação: [pimo.pro](https://pimo.pro)
+- Aplicação PIMO PRO: [pimo.pro](https://pimo.pro)
 - Loja online: [pimo.pt](https://pimo.pt)
 - Centro de ajuda: [pimo.info](https://pimo.info)
-- Plano de negócio: [pim0.com](https://pim0.com)
+- Plano de negócio: pim0.com (nome do site do projeto, sem ligação neste centro de ajuda)
 - [Políticas e Termos](/pt-pt/legal/)
 - [Livro de Reclamações online](https://www.livroreclamacoes.pt/Inicio/)
 
@@ -5220,7 +5219,7 @@ O módulo de Orçamentos centraliza tarifas industriais/financeiras com persist�
 
 ## Sistema Industrial
 URL: https://pimo.info/pt-pt/documentacao-tecnica/sistema-industrial/
-Visão consolidada da camada industrial: rotas, admin e fases documentadas no PIMO Criativo.
+Visão consolidada da camada industrial: rotas, admin e fases documentadas no PIMO PRO.
 
 # Sistema Industrial, visão consolidada
 
@@ -5296,14 +5295,6 @@ O PIMO distribui a marca, o produto e a documentação por vários domínios ofi
 
 ---
 
-## pim0.com
-URL: https://pimo.info/pt-pt/ecossistema/pim0-com/
-Site do plano de negócio do projeto PIMO (domínio com zero).
-
-
-
----
-
 ## pimo.casa
 URL: https://pimo.info/pt-pt/ecossistema/pimo-casa/
 Futuro site oficial para designs e projetos prontos PIMO.
@@ -5338,7 +5329,7 @@ Centro de informação e ajuda do PIMO.
 
 ## pimo.pro
 URL: https://pimo.info/pt-pt/ecossistema/pimo-pro/
-Site oficial da aplicação e plataforma PIMO Criativo.
+Site oficial da aplicação e plataforma PIMO PRO.
 
 
 
@@ -5354,12 +5345,12 @@ Loja online principal e site principal da marca PIMO.
 
 ## Funcionalidades PIMO
 URL: https://pimo.info/pt-pt/funcionalidades/
-Páginas de apresentação visual das funcionalidades principais do PIMO Criativo.
+Páginas de apresentação visual das funcionalidades principais do PIMO PRO.
 
 # Funcionalidades PIMO
 
  
-  Explore cada serviço principal do PIMO Criativo com visão funcional, benefícios e ligação direta para
+  Explore cada serviço principal do PIMO PRO com visão funcional, benefícios e ligação direta para
   o respetivo guia operacional.
  
 
@@ -5407,7 +5398,7 @@ Em **PIMO PROJETOS**, as rotas `/PROJETOS/:project/analise` e `/PROJETOS/:projec
 
 ## Configurador 3D
 URL: https://pimo.info/pt-pt/funcionalidades/configurador-3d/
-Modelação paramétrica no workspace 3D com fluxo real do PIMO Criativo.
+Modelação paramétrica no workspace 3D com fluxo real do PIMO PRO.
 
 ## O que faz
 
@@ -5435,7 +5426,7 @@ A rota `/projects/viewer` (dentro de `ProtectedLayout`) abre o showroom de proje
 
 ## Conta e acesso
 URL: https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/
-Login, registo, verificação de email, recuperação de password e perfil no PIMO Criativo.
+Login, registo, verificação de email, recuperação de password e perfil no PIMO PRO.
 
 # Conta e acesso
 
@@ -5467,7 +5458,7 @@ Rotas verificadas em `App.tsx`: `/login`, `/register`, `/register/check-email`, 
 
 ## Definições
 URL: https://pimo.info/pt-pt/funcionalidades/definicoes/
-Definições do utilizador, do projeto e administrativas no PIMO Criativo (rota /definicoes e admin).
+Definições do utilizador, do projeto e administrativas no PIMO PRO (rota /definicoes e admin).
 
 # Definições
 
@@ -5514,7 +5505,7 @@ Estações PIMO TRAK, armazém, nesting, furação, orlar, montagem, embalagem, 
 
 # Estações industriais
 
-As **estações** do fluxo industrial (verificadas em `App.tsx` do PIMO Criativo) operam ordens de fabrico por posto. Estas rotas vivem sob autenticação na app (`ProtectedLayout`).
+As **estações** do fluxo industrial (verificadas em `App.tsx` do PIMO PRO) operam ordens de fabrico por posto. Estas rotas vivem sob autenticação na app (`ProtectedLayout`).
 
 ## Estações de work order
 
@@ -5591,11 +5582,11 @@ Gera ficheiros **TCN** (`.tcn`) e **Drill XML** (`.xml`) a partir do fluxo **Arq
 
 ## Ferragens
 URL: https://pimo.info/pt-pt/funcionalidades/ferragens/
-Ferragens no PIMO Criativo, dobradiças, corrediças, conectores e listagens de exportação.
+Ferragens no PIMO PRO, dobradiças, corrediças, conectores e listagens de exportação.
 
 # Ferragens
 
-As **ferragens** no PIMO Criativo descrevem os componentes mecânicos associados a caixas e frentes: dobradiças, corrediças, conectores e acessórios necessários à montagem.
+As **ferragens** no PIMO PRO descrevem os componentes mecânicos associados a caixas e frentes: dobradiças, corrediças, conectores e acessórios necessários à montagem.
 
 ## Para que serve
 
@@ -5651,7 +5642,7 @@ No fluxo real da app, cada caixa pode ter material de estrutura e material de fr
 
 ## Modo foto
 URL: https://pimo.info/pt-pt/funcionalidades/modo-foto/
-Modo foto no PIMO Criativo, capturas e composição visual do projeto em 3D.
+Modo foto no PIMO PRO, capturas e composição visual do projeto em 3D.
 
 # Modo foto
 
@@ -5768,7 +5759,7 @@ Controla tipo de porta e quantidade de gavetas por módulo, aplicando regras int
 
 ## Relatório final
 URL: https://pimo.info/pt-pt/funcionalidades/relatorio-final/
-Relatório final consolidado do projeto no PIMO Criativo (rota /relatorio-final/:project).
+Relatório final consolidado do projeto no PIMO PRO (rota /relatorio-final/:project).
 
 # Relatório final
 
@@ -5788,7 +5779,7 @@ A rota `/relatorio-final/:project` gera uma vista consolidada do projeto para re
 
 ## Remates e acabamentos
 URL: https://pimo.info/pt-pt/funcionalidades/remates/
-Remates, rodapés e acabamentos de caixa no PIMO Criativo.
+Remates, rodapés e acabamentos de caixa no PIMO PRO.
 
 # Remates e acabamentos
 
@@ -5807,7 +5798,7 @@ Remates, rodapés e acabamentos de caixa no PIMO Criativo.
 
 ## Sala e ambiente
 URL: https://pimo.info/pt-pt/funcionalidades/sala-e-ambiente/
-Sala 3D, ambiente e room settings no PIMO Criativo.
+Sala 3D, ambiente e room settings no PIMO PRO.
 
 # Sala e ambiente
 
@@ -5827,7 +5818,7 @@ O ambiente de **sala** contextualiza o mobiliário no viewport (paredes, luz, HD
 
 ## Glossário técnico
 URL: https://pimo.info/pt-pt/glossario/
-Terminologia canónica do PIMO Criativo: módulo/caixa, peça, material, espessura, orla, cutlist, nesting, TCN, Drill XML, PIMO-TRAK e formatos de exportação.
+Terminologia canónica do PIMO PRO: módulo/caixa, peça, material, espessura, orla, cutlist, nesting, TCN, Drill XML, PIMO-TRAK e formatos de exportação.
 
 # Glossário técnico
 
@@ -5859,7 +5850,7 @@ Guias de utilizador.
 
 # Guias de utilizador
 
-Estas páginas reproduzem o fluxo real do `HelpPage.tsx` da aplicação PIMO Criativo e estão organizadas por tarefa.
+Estas páginas reproduzem o fluxo real do `HelpPage.tsx` da aplicação PIMO PRO e estão organizadas por tarefa.
 
 ## Fluxo recomendado
 
@@ -5937,7 +5928,7 @@ O PIMO usa placeholders no workspace e só gera a estrutura técnica final após
 
 ## Exportação
 URL: https://pimo.info/pt-pt/guias-utilizador/exportacao/
-Guia de exportação do PIMO Criativo: PDF técnico, cutlist, etiquetas UEE, TCN, Drill XML, XLSX de ferragens e arquivo ZIP completo.
+Guia de exportação do PIMO PRO: PDF técnico, cutlist, etiquetas UEE, TCN, Drill XML, XLSX de ferragens e arquivo ZIP completo.
 
 # Exportar ficheiros de produção
 
@@ -6491,7 +6482,7 @@ Ao utilizar este site, aceita estes termos e a
 
 ## 4. Contas e serviços de terceiros
 
-O acesso à aplicação PIMO Criativo, compras na loja ou outros serviços externos regem-se
+O acesso à aplicação PIMO PRO, compras na loja ou outros serviços externos regem-se
 pelas condições desses serviços. Links para pimo.pt, pimo.pro e outros domínios não
 transferem responsabilidade pelo conteúdo externo.
 
@@ -6548,7 +6539,7 @@ Podemos atualizar estes termos. A data no topo indica a versão vigente.
 
 ## Perguntas frequentes
 URL: https://pimo.info/pt-pt/perguntas-frequentes/
-FAQ do PIMO Criativo: módulos, nesting, unidades, exportação ZIP, TCN/Drill XML e PIMO-TRAK.
+FAQ do PIMO PRO: módulos, nesting, unidades, exportação ZIP, TCN/Drill XML e PIMO-TRAK.
 
 # Perguntas frequentes
 
@@ -6602,7 +6593,7 @@ No código SSOT actual a flag `industrialOnlineAnalysis` está **activa**. Conti
 
 ## Primeiros passos
 URL: https://pimo.info/pt-pt/primeiros-passos/
-Guia rápido do PIMO Criativo: da primeira caixa ao pacote de produção (cutlist, nesting, TCN/Drill XML, ZIP).
+Guia rápido do PIMO PRO: da primeira caixa ao pacote de produção (cutlist, nesting, TCN/Drill XML, ZIP).
 
 # Primeiros passos
 
@@ -6610,7 +6601,7 @@ Guia rápido do PIMO Criativo: da primeira caixa ao pacote de produção (cutlis
   Guia rápido para passar da primeira caixa ao primeiro pacote de produção.
  
 
-## 1) Abrir o PIMO Criativo
+## 1) Abrir o PIMO PRO
 
 1. Aceda a [https://pimo.pro](https://pimo.pro).
 2. Entre na área de design 3D (modo visitante ou com conta).
@@ -6666,11 +6657,11 @@ Detalhe canónico: [Glossário, formatos](/pt-pt/glossario/) e [guia de exporta�
 
 ## Referência
 URL: https://pimo.info/pt-pt/referencia/
-Referência técnica do PIMO Criativo: botões, controlos e ligações às funcionalidades.
+Referência técnica do PIMO PRO: botões, controlos e ligações às funcionalidades.
 
 # Referência
 
-Catálogos técnicos verificados no código do PIMO Criativo (repositório fonte em modo só leitura).
+Catálogos técnicos verificados no código do PIMO PRO (repositório fonte em modo só leitura).
 
 - [Botões e controlos](/pt-pt/referencia/botoes/), toolbar, menus, painéis, atalhos
 - [Como funciona](/pt-pt/como-funciona/), fluxo projeto → exportação → PIMO-TRAK
@@ -6679,11 +6670,11 @@ Catálogos técnicos verificados no código do PIMO Criativo (repositório fonte
 
 ## Botões e controlos
 URL: https://pimo.info/pt-pt/referencia/botoes/
-Catálogo completo de botões e ações da interface do PIMO Criativo: ícone, rótulo, localização, ação, efeitos e atalho, verificado no código.
+Catálogo completo de botões e ações da interface do PIMO PRO: ícone, rótulo, localização, ação, efeitos e atalho, verificado no código.
 
 # Botões e controlos
 
-Referência de interface do PIMO Criativo. Cada entrada inclui o ícone real (SVG do `iconRegistry` da app), o rótulo exacto, onde aparece, o que faz, efeitos/dependências, atalho (se existir) e o ficheiro-fonte.
+Referência de interface do PIMO PRO. Cada entrada inclui o ícone real (SVG do `iconRegistry` da app), o rótulo exacto, onde aparece, o que faz, efeitos/dependências, atalho (se existir) e o ficheiro-fonte.
 
  
 
@@ -6696,7 +6687,7 @@ Referência de interface do PIMO Criativo. Cada entrada inclui o ícone real (SV
 
 ## Sistemas PIMO
 URL: https://pimo.info/pt-pt/sistemas-pimo/
-Sistemas de produto na app PIMO: TRAK, PROJETOS, NESTING, INDUSTRIAL e DRILL, definição, estado real e ligações.
+Sistemas de produto na app PIMO PRO: TRAK, PROJETOS, NESTING, INDUSTRIAL e DRILL, definição, estado real e ligações.
 
 # Sistemas PIMO
 

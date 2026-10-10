@@ -1,6 +1,6 @@
 # Architecture — PIMO Info knowledge base
 
-This repository is the **help center and knowledge base** for [PIMO Criativo](https://pimo.pro), published at [https://pimo.info](https://pimo.info).
+This repository is the **help center and knowledge base** for [PIMO PRO](https://pimo.pro), published at [https://pimo.info](https://pimo.info).
 
 It is designed so humans and machines (including PIMO’s future AI) share one consistent source of truth.
 

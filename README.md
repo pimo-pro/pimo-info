@@ -1,6 +1,6 @@
 # pimo-info
 
-Centro de ajuda e informação público do **PIMO Criativo**, preparado para publicação estática em `https://pimo.info`.
+Centro de ajuda e informação público do **PIMO PRO**, preparado para publicação estática em `https://pimo.info`.
 
 ## Stack
 

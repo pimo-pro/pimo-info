@@ -89,7 +89,7 @@ function inferMeta(file, data) {
       : ["/pt-pt/", "/pt-pt/primeiros-passos/", "/pt-pt/glossario/"]
     description =
       description ||
-      "Centro visual de ajuda e base de conhecimento do PIMO Criativo."
+      "Centro visual de ajuda e base de conhecimento do PIMO PRO."
   } else if (url.startsWith("/pt-pt/glossario")) {
     category = "glossario"
     tags = tags.length ? tags : ["glossario", "terminologia"]

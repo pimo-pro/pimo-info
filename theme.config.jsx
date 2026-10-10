@@ -5,7 +5,7 @@ import { site as siteMeta } from "./data/site"
 
 const siteUrl = "https://pimo.info"
 const defaultDescription =
-  "Centro de ajuda e base de conhecimento do PIMO Criativo: guias, exportação técnica, glossário e documentação industrial."
+  "Centro de ajuda e base de conhecimento do PIMO PRO: guias, exportação técnica, glossário e documentação industrial."
 
 function resolveCanonical(asPath) {
   const cleanPath = asPath.split(/[?#]/)[0]
@@ -64,7 +64,7 @@ export default {
           target="_blank"
           rel="noreferrer"
         >
-          Abrir PIMO
+          Abrir PIMO PRO
         </a>
       </span>
     ),
@@ -135,7 +135,6 @@ export default {
       sameAs: [
         "https://pimo.pro",
         "https://pimo.info",
-        "https://pim0.com",
         "https://pimo.pt",
         ...socialSameAs,
       ],

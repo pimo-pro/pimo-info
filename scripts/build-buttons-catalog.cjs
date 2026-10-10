@@ -1343,7 +1343,7 @@ const areas = [
 ]
 
 const header = `/**
- * Catálogo de botões/controlos do PIMO Criativo (verificado no código, só leitura).
+ * Catálogo de botões/controlos do PIMO PRO (verificado no código, só leitura).
  * Gerado por scripts/build-buttons-catalog.cjs, não inventar labels.
  * iconName mapeia para /icons/criativo/<iconName>.svg (SVGs extraídos do iconRegistry).
  */

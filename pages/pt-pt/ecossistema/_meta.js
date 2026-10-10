@@ -6,5 +6,4 @@ export default {
   "pimo-es": "pimo.es",
   "pimo-casa": "pimo.casa",
   "pimo-design": "pimo.design",
-  "pim0-com": "pim0.com",
 }
