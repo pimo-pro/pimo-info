@@ -194,7 +194,6 @@ function main() {
     `- Phone: ${site.contact?.phone || ""}`,
     `- Address: ${site.contact?.addressDisplay || ""}`,
     `- Legal name: ${site.organization?.legalName || ""}`,
-    `- Tax ID (NIF/NIPC): ${site.organization?.taxId || ""}`,
     `- Legal hub: ${site.url}/pt-pt/legal/`,
     `- Privacy: ${site.url}/pt-pt/legal/privacidade/`,
     `- Terms: ${site.url}/pt-pt/legal/termos/`,

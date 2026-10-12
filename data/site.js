@@ -11,8 +11,7 @@ export const site = {
     "Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.",
   organization: {
     name: "PIMO",
-    legalName: "Pimo home",
-    taxId: "316930423",
+    legalName: "Pimo casa",
     url: "https://pimo.pt",
     logo: "https://pimo.pro/logo-pi.png",
     email: "info@pimo.pro",
@@ -30,9 +29,11 @@ export const site = {
     supportEmail: "info@pimo.pro",
     phone: "+351 913 822 833",
     phoneHref: "tel:+351913822833",
+    whatsappHref: "https://wa.me/351913822833",
+    mapsHref:
+      "https://www.google.com/maps?q=Macedo+de+Cavaleiros,+Portugal",
     addressDisplay: "Macedo de Cavaleiros, Portugal",
-    legalName: "Pimo home",
-    taxId: "316930423",
+    legalName: "Pimo casa",
     livreReclamacoesUrl: "https://www.livroreclamacoes.pt/Inicio/",
     ralInfoUrl: "https://www.consumidor.gov.pt/",
   },

@@ -87,7 +87,6 @@ export default {
   },
   nextThemes: {
     defaultTheme: "light",
-    forcedTheme: "light",
   },
   footer: {
     content: <EcosystemFooterLinks />,
@@ -121,7 +120,6 @@ export default {
       "@type": "Organization",
       name: org.name,
       legalName: org.legalName,
-      taxID: org.taxId,
       url: org.url,
       logo: org.logo,
       email: org.email,

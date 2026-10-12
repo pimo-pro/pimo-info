@@ -7,7 +7,7 @@ import {
   siteHasDedicatedPage,
 } from "../data/sites"
 import { site } from "../data/site"
-import { SocialIcons } from "./SiteInfo"
+import { FooterIconRow } from "./SiteInfo"
 
 function statusClass(status) {
   if (status === "active") return "is-active"
@@ -309,53 +309,38 @@ export function EcosystemSitePage({ slug }) {
 }
 
 export function EcosystemFooterLinks() {
+  const year = new Date().getFullYear()
   return (
-    <span className="pimo-ecosystem-footer">
-      <span className="pimo-footer-brand">
-        © {new Date().getFullYear()} {site.organization.legalName}
-      </span>
-      <span className="pimo-footer-contact">
-        <span>NIF {site.organization.taxId}</span>
-        <span aria-hidden="true">·</span>
-        <a href={`mailto:${site.contact.supportEmail}`}>{site.contact.supportEmail}</a>
-        <span aria-hidden="true">·</span>
-        <a href={site.contact.phoneHref}>{site.contact.phone}</a>
-        <span aria-hidden="true">·</span>
-        <span>{site.contact.addressDisplay}</span>
-      </span>
-      <SocialIcons className="pimo-footer-social" />
-      <span className="pimo-footer-legal">
+    <div className="pimo-ecosystem-footer">
+      <FooterIconRow />
+
+      <nav className="pimo-footer-legal" aria-label="Políticas e páginas">
         <a href="/pt-pt/legal/">Políticas e Termos</a>
-        <span aria-hidden="true">·</span>
         <a href="/pt-pt/legal/privacidade/">Privacidade</a>
-        <span aria-hidden="true">·</span>
         <a href="/pt-pt/legal/termos/">Termos</a>
-        <span aria-hidden="true">·</span>
         <a href="/pt-pt/legal/cookies/">Cookies</a>
-        <span aria-hidden="true">·</span>
         <a href="/pt-pt/contacto/">Contacto</a>
-        <span aria-hidden="true">·</span>
         <a href="/about/">Sobre</a>
-      </span>
-      <span className="pimo-ecosystem-links">
-        {pimoSites.map((item, index) => (
-          <span key={item.id} className="pimo-ecosystem-link-item">
-            {index > 0 ? <span aria-hidden="true">·</span> : null}
-            {siteAllowsExternalLink(item) ? (
-              <a href={item.url} target="_blank" rel="noreferrer">
-                {item.domain}
-              </a>
-            ) : (
-              <span>{item.domain}</span>
-            )}
-            {siteHasDedicatedPage(item) ? (
-              <a className="pimo-ecosystem-about" href={`/pt-pt/ecossistema/${item.id}/`}>
-                Sobre
-              </a>
-            ) : null}
-          </span>
-        ))}
-      </span>
-    </span>
+      </nav>
+
+      <nav className="pimo-ecosystem-links" aria-label="Sites PIMO">
+        {pimoSites.map((item) =>
+          siteAllowsExternalLink(item) ? (
+            <a key={item.id} href={item.url} target="_blank" rel="noreferrer">
+              {item.domain}
+            </a>
+          ) : (
+            <span key={item.id}>{item.domain}</span>
+          )
+        )}
+        <a className="pimo-ecosystem-about" href="/pt-pt/ecossistema/">
+          Ecossistema
+        </a>
+      </nav>
+
+      <p className="pimo-footer-brand">
+        © {year} {site.organization.legalName} · Crafted by Khaled
+      </p>
+    </div>
   )
 }

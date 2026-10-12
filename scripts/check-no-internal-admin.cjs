@@ -51,6 +51,8 @@ const FORBIDDEN = [
   { id: "chatbot", re: /\bchatbots?\b/gi },
   { id: "password", re: /\bpassword\b/gi },
   { id: "palavra-passe", re: /palavra-passe/gi },
+  { id: "NIF", re: /\bNIF\b|\bNIPC\b|316930423/g },
+  { id: "Pimo home", re: /Pimo\s+home/g },
 ]
 
 /**
@@ -68,6 +70,9 @@ const PASSWORD_ALLOW = [
   /recuperar(\s+a)?\s+password/i,
   /recupera[çc][aã]o\s+(de\s+)?password/i,
 ]
+
+/** Crédito de rodapé pedido explicitamente pelo responsável. */
+const KHALED_ALLOW = [/Crafted by Khaled/]
 
 const SKIP_FILES = new Set([
   "check-no-internal-admin.cjs",
@@ -92,6 +97,10 @@ function isPasswordAllowed(line) {
   return PASSWORD_ALLOW.some((re) => re.test(line))
 }
 
+function isKhaledAllowed(line) {
+  return KHALED_ALLOW.some((re) => re.test(line))
+}
+
 function scanFile(file) {
   const text = fs.readFileSync(file, "utf8")
   const lines = text.split("\n")
@@ -105,6 +114,9 @@ function scanFile(file) {
         (rule.id === "password" || rule.id === "palavra-passe") &&
         isPasswordAllowed(line)
       ) {
+        continue
+      }
+      if (rule.id === "Khaled" && isKhaledAllowed(line)) {
         continue
       }
       hits.push({

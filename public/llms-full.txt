@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-10-12T21:17:11.266Z
+Generated: 2026-10-12T21:21:32.155Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -12,8 +12,7 @@ Locale: pt-PT
 - Support email: info@pimo.pro
 - Phone: +351 913 822 833
 - Address: Macedo de Cavaleiros, Portugal
-- Legal name: Pimo home
-- Tax ID (NIF/NIPC): 316930423
+- Legal name: Pimo casa
 - Legal hub: https://pimo.info/pt-pt/legal/
 - Privacy: https://pimo.info/pt-pt/legal/privacidade/
 - Terms: https://pimo.info/pt-pt/legal/termos/
@@ -6286,8 +6285,7 @@ Hub legal do ecossistema PIMO: privacidade, termos e cookies (Portugal/UE).
 ## Responsável e contacto
 
 O responsável pelo tratamento dos dados neste hub e pelo contacto institucional do
-ecossistema, para efeitos destas páginas, é a **Pimo home** (marca PIMO),
-NIF/NIPC **316930423**.
+ecossistema, para efeitos destas páginas, é a **Pimo casa** (marca PIMO).
 
  
 
@@ -6321,7 +6319,7 @@ Servem para o site funcionar, lembrar preferências ou, com consentimento, medir
 
 ## 2. Quem é responsável
 
-Marca **PIMO**. Razão social: **Pimo home**. NIF/NIPC: **316930423**. Contacto:
+Marca **PIMO**. Empresa: **Pimo casa**. Contacto:
 [info@pimo.pro](mailto:info@pimo.pro). Morada: Macedo de Cavaleiros, Portugal.
 Mais detalhes na [Política de Privacidade](/pt-pt/legal/privacidade/).
 
@@ -6375,8 +6373,7 @@ a sua versão.
 ## 1. Responsável pelo tratamento
 
 - **Marca:** PIMO
-- **Razão social:** Pimo home
-- **NIF / NIPC:** 316930423
+- **Empresa:** Pimo casa
 - **Contacto RGPD / suporte:** [info@pimo.pro](mailto:info@pimo.pro)
 - **Telefone:** [+351 913 822 833](tel:+351913822833)
 - **Morada:** Macedo de Cavaleiros, Portugal
@@ -6477,8 +6474,7 @@ próprias; quando existirem, prevalecem nas respetivas experiências.
 ## 1. Identificação
 
 - **Marca:** PIMO
-- **Razão social:** Pimo home
-- **NIF / NIPC:** 316930423
+- **Empresa:** Pimo casa
 - **Contacto:** [info@pimo.pro](mailto:info@pimo.pro)
 - **Telefone:** [+351 913 822 833](tel:+351913822833)
 - **Morada:** Macedo de Cavaleiros, Portugal
