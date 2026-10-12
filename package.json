@@ -10,7 +10,7 @@
     "kb:generate": "node scripts/generate-kb-artifacts.cjs && node scripts/generate-blog-rss.cjs && node scripts/generate-coverage.cjs && node scripts/generate-mini-sites.cjs",
     "kb:normalize": "node scripts/normalize-frontmatter.cjs",
     "precheck": "npm run kb:generate",
-    "check": "node scripts/check-kb.cjs && node scripts/check-no-emdash.cjs && node scripts/check-no-pim0-links.cjs",
+    "check": "node scripts/check-kb.cjs && node scripts/check-no-emdash.cjs && node scripts/check-no-pim0-links.cjs && node scripts/check-no-internal-admin.cjs",
     "check:sitemap": "node scripts/check-sitemap-canonical.cjs",
     "check:pim0": "node scripts/check-no-pim0-links.cjs",
     "strip-dashes": "node scripts/strip-em-dashes.cjs",

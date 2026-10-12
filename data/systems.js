@@ -1,6 +1,6 @@
 /**
  * Sistemas PIMO (módulos de produto na app pimo.pro).
- * Estado verificado no código de pimo-criativo (só leitura) + confirmação do dono.
+ * Estado verificado no código de pimo-criativo (só leitura).
  * status: 'disponivel' | 'parcial' | 'em-desenvolvimento' | 'planeado'
  */
 
@@ -56,7 +56,7 @@ export const pimoSystems = [
       "Work orders por estação",
       "PDFs de etiquetas UEE v5",
       "Estados de tarefa (iniciar / concluir / rejeitar)",
-      "POST /api/industrial/orders (envio fábrica)",
+      "Envio de ordem para fábrica quando aplicável",
     ],
     relatedSystemIds: ["pimo-industrial", "pimo-nesting", "pimo-drill", "pimo-projetos"],
     relatedFeatureIds: ["pimo-trak", "lista-de-corte", "modulo-industrial"],
@@ -80,22 +80,22 @@ export const pimoSystems = [
     route: "/PROJETOS",
     status: "disponivel",
     definition:
-      "Área de gestão e visualização de projetos PIMO guardados no servidor (páginas/projeto com snapshot industrial).",
+      "Área de gestão e visualização de projetos PIMO da conta (páginas/projeto com snapshot industrial).",
     purpose:
       "Listar, abrir e apresentar projetos industriais guardados, incluindo showroom e análise online quando aplicável, separados do workspace de edição do configurador.",
     howItWorks:
-      "A rota `/PROJETOS` lista projetos com página PROJETOS no servidor (`{nome}.json`). Requer login (`ProjetosLoginGate`). Cartões abrem o projeto; há painel de showroom e análise industrial online ligada ao snapshot.",
+      "A rota `/PROJETOS` lista os projetos industriais da conta. É preciso ter sessão iniciada. Cartões abrem o projeto; há painel de showroom e análise industrial online ligada ao snapshot.",
     features: [
       "Índice de projetos industriais guardados",
-      "Login gate para acesso",
+      "Acesso com sessão iniciada",
       "Cartões de projeto com navegação",
       "Showroom de projetos",
-      "Análise industrial online (quando flag ativa)",
+      "Análise industrial online (quando disponível)",
     ],
     inputs: [
-      "Projetos persistidos no servidor / API",
+      "Projetos da conta",
       "Snapshots (projectState + viewer + room)",
-      "Sessão autenticada",
+      "Sessão iniciada",
     ],
     outputs: [
       "Lista e abertura de projetos",

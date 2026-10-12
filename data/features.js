@@ -94,11 +94,11 @@ export const features = [
   {
     id: "orcamentos",
     name: "Orçamentos",
-    summary: "Tarifas e regras de custo (camada técnica/admin P3.9).",
+    summary: "Tarifas e regras de custo (Orçamentos P3.9).",
     status: "implemented",
     canonicalPath: "/pt-pt/funcionalidades/orcamentos/",
     guidePath: "/pt-pt/documentacao-tecnica/orcamentos-p39/",
-    tags: ["custos", "admin"],
+    tags: ["custos"],
   },
   {
     id: "modulo-industrial",

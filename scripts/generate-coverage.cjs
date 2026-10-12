@@ -15,15 +15,15 @@ const OUT_MD = path.join(ROOT, "docs", "COVERAGE.md")
 /** @type {CoverageItem[]} */
 const items = [
   // --- Rotas principais ---
-  { id: "route-login", kind: "route", codeRef: "App.tsx:/login", name: "Login", purpose: "Autenticação de utilizador", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto", notes: "Production: login Owner com armazenamento privado no servidor (out 2026)" },
+  { id: "route-login", kind: "route", codeRef: "App.tsx:/login", name: "Login", purpose: "Entrar na conta", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto", notes: "Fluxo público: entrar, terminar sessão, sessão expirada (out 2026)" },
   { id: "route-register", kind: "route", codeRef: "App.tsx:/register", name: "Registo", purpose: "Criação de conta", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
-  { id: "route-forgot", kind: "route", codeRef: "App.tsx:/forgot-password", name: "Recuperar password", purpose: "Reset de palavra-passe", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
+  { id: "route-forgot", kind: "route", codeRef: "App.tsx (recuperar palavra-passe)", name: "Recuperar palavra-passe", purpose: "Pedido de nova palavra-passe por email", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
   { id: "route-definicoes", kind: "route", codeRef: "App.tsx:/definicoes", name: "Definições", purpose: "Preferências do utilizador e projeto", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
-  { id: "route-dashboard", kind: "route", codeRef: "App.tsx:/dashboard", name: "Dashboard", purpose: "Painel inicial autenticado", page: "/pt-pt/primeiros-passos/", status: "coberto", notes: "DashboardPage documentado em primeiros passos; captura pública = home (dashboard exige login)" },
+  { id: "route-dashboard", kind: "route", codeRef: "App.tsx:/dashboard", name: "Dashboard", purpose: "Painel inicial com sessão iniciada", page: "/pt-pt/primeiros-passos/", status: "coberto", notes: "Painel documentado em primeiros passos; captura pública = home" },
   { id: "route-me", kind: "route", codeRef: "App.tsx:/me", name: "Perfil / Me", purpose: "Dados da conta", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
-  { id: "route-meus-projetos", kind: "route", codeRef: "App.tsx:/meus-projetos", name: "Meus Projetos", purpose: "Lista de projetos da conta (+ órfãos para admin)", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto", notes: "Lista por conta; admin vê órfãos/legado; sem projetos de outros utilizadores ativos; Admin «todos» mantém-se (out 2026)" },
+  { id: "route-meus-projetos", kind: "route", codeRef: "App.tsx:/meus-projetos", name: "Meus Projetos", purpose: "Lista de projetos da conta", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto", notes: "Perspetiva utilizador: projetos da conta (out 2026)" },
   { id: "route-projects", kind: "route", codeRef: "App.tsx:/projects", name: "Lista de projetos", purpose: "Gestão de projetos", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto", notes: "Alinhado com Meus Projetos /meus-projetos (out 2026)" },
-  { id: "route-project-detail", kind: "route", codeRef: "App.tsx:/projects/:id", name: "Detalhe de projeto", purpose: "Projeto individual (Admin)", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto", notes: "Sem texto FASE 4; explica editor 3D na home + botão Abrir no editor 3D (out 2026)" },
+  { id: "route-project-detail", kind: "route", codeRef: "App.tsx:/projects/:id", name: "Detalhe de projeto", purpose: "Projeto individual", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto", notes: "Botão Abrir no editor 3D (out 2026)" },
   { id: "route-projects-viewer", kind: "route", codeRef: "App.tsx:/projects/viewer", name: "Showroom / viewer", purpose: "Visualização showroom", page: "/pt-pt/funcionalidades/configurador-3d/", status: "coberto", notes: "Rota + PermissionRoute canOpenProjectsShowroom documentados" },
   { id: "route-relatorio-final", kind: "route", codeRef: "App.tsx:/relatorio-final/:project", name: "Relatório final", purpose: "Relatório consolidado do projeto", page: "/pt-pt/funcionalidades/relatorio-final/", status: "coberto" },
   { id: "route-projetos", kind: "route", codeRef: "App.tsx:/PROJETOS", name: "PIMO PROJETOS", purpose: "Navegação projeto → caixa → peça", page: "/pt-pt/sistemas-pimo/pimo-projetos/", status: "coberto" },
@@ -44,24 +44,16 @@ const items = [
   { id: "route-station-orlar", kind: "route", codeRef: "App.tsx:/industrial/work-orders/orlar", name: "Estação orlar", purpose: "Work order orlar", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto" },
   { id: "route-station-mont", kind: "route", codeRef: "App.tsx:/industrial/work-orders/montagem", name: "Estação montagem", purpose: "Work order montagem", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto" },
   { id: "route-station-emb", kind: "route", codeRef: "App.tsx:/industrial/work-orders/embalagem", name: "Estação embalagem", purpose: "Work order embalagem", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto" },
-  { id: "route-tracking", kind: "route", codeRef: "App.tsx:/industrial/tracking", name: "Tracking industrial", purpose: "Rastreio de peças", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto", notes: "Shell + QrScannerPanel + placeholder Fase 3C.2 documentados" },
-  { id: "route-quality", kind: "route", codeRef: "App.tsx:/industrial/quality", name: "Qualidade", purpose: "Controlo de qualidade", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto", notes: "Shell + QR + placeholder Fase 3C.2 documentados" },
-  { id: "route-rework", kind: "route", codeRef: "App.tsx:/industrial/rework", name: "Retrabalho", purpose: "Rework industrial", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto", notes: "Shell + QR + placeholder Fase 3C.2 documentados" },
-  { id: "route-time", kind: "route", codeRef: "App.tsx:/industrial/time-tracking", name: "Time tracking", purpose: "Tempos de estação", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto", notes: "Shell + QR + placeholder Fase 3C.2 documentados" },
-  { id: "route-events", kind: "route", codeRef: "App.tsx:/industrial/events", name: "Eventos industriais", purpose: "Log de eventos", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto", notes: "Shell + QR + placeholder Fase 3C.2 documentados" },
+  { id: "route-tracking", kind: "route", codeRef: "App.tsx:/industrial/tracking", name: "Tracking industrial", purpose: "Rastreio de peças", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto" },
+  { id: "route-quality", kind: "route", codeRef: "App.tsx:/industrial/quality", name: "Qualidade", purpose: "Controlo de qualidade", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto" },
+  { id: "route-rework", kind: "route", codeRef: "App.tsx:/industrial/rework", name: "Retrabalho", purpose: "Rework industrial", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto" },
+  { id: "route-time", kind: "route", codeRef: "App.tsx:/industrial/time-tracking", name: "Time tracking", purpose: "Tempos de estação", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto" },
+  { id: "route-events", kind: "route", codeRef: "App.tsx:/industrial/events", name: "Eventos industriais", purpose: "Log de eventos", page: "/pt-pt/funcionalidades/estacoes-industriais/", status: "coberto" },
   { id: "route-pimo-drill", kind: "route", codeRef: "App.tsx:/industrial/pimo-drill", name: "PIMO DRILL", purpose: "Sistema de furação", page: "/pt-pt/sistemas-pimo/pimo-drill/", status: "em-desenvolvimento", notes: "UI/rota existem; fluxo operativo completo em evolução" },
   { id: "route-ops-cnc", kind: "route", codeRef: "App.tsx:/industrial/operations/cnc", name: "Operações CNC", purpose: "Vista CNC", page: "/pt-pt/funcionalidades/modulo-industrial/", status: "coberto", notes: "Redirect documentado para /industrial/work-orders/nesting" },
 
-  // --- Admin ---
-  { id: "route-admin", kind: "route", codeRef: "App.tsx:/admin", name: "Admin", purpose: "Área administrativa após login", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto", notes: "Listagem Admin «todos» mantém-se; Meus Projetos é lista por conta (+ órfãos para admin)" },
-  { id: "route-admin-users", kind: "route", codeRef: "App.tsx:/admin/users", name: "Admin utilizadores", purpose: "Gestão de users", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
-  { id: "route-admin-roles", kind: "route", codeRef: "App.tsx:/admin/roles", name: "Admin roles", purpose: "Papéis e permissões", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
-  { id: "route-admin-global", kind: "route", codeRef: "App.tsx:/admin/global-settings", name: "Global settings", purpose: "Definições globais", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
-  { id: "route-admin-room", kind: "route", codeRef: "App.tsx:/admin/room-settings", name: "Room settings", purpose: "Definições de sala", page: "/pt-pt/funcionalidades/sala-e-ambiente/", status: "coberto" },
-  { id: "route-admin-industrial", kind: "route", codeRef: "App.tsx:/admin/settings/industrial", name: "Admin industrial", purpose: "Settings industriais", page: "/pt-pt/documentacao-tecnica/sistema-industrial/", status: "coberto" },
-
   // --- Domínios funcionais ---
-  { id: "domain-auth", kind: "domain", codeRef: "auth / session revalidate + logout", name: "Autenticação e sessão", purpose: "Login, confirmação de sessão no servidor ao reabrir a app, logout, perfil /me", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto", notes: "Ao reabrir: sessão confirmada no servidor; token inválido → /login (sem sessão fantasma). Logout invalida sessão no servidor (out 2026)" },
+  { id: "domain-auth", kind: "domain", codeRef: "auth / session + logout", name: "Autenticação e sessão", purpose: "Entrar na conta, terminar sessão, perfil, sessão expirada", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto", notes: "Só perspetiva utilizador final (out 2026)" },
   { id: "domain-error-ui", kind: "domain", codeRef: "error boundary / unexpected UI failure", name: "Erro inesperado na UI", purpose: "Mensagem Algo correu mal + Voltar ao início em vez de ecrã em branco", page: "/pt-pt/perguntas-frequentes/", status: "coberto", notes: "Error boundary global em qualquer ecrã (out 2026)" },
   { id: "domain-boxes", kind: "domain", codeRef: "LegacyApp / boxes", name: "Caixas / módulos", purpose: "Criar e editar caixas", page: "/pt-pt/guias-utilizador/criar-caixa/", status: "coberto" },
   { id: "domain-pieces", kind: "domain", codeRef: "piece models", name: "Peças", purpose: "Peças e cotas", page: "/pt-pt/guias-utilizador/medicoes-e-cotas/", status: "coberto" },
@@ -187,7 +179,7 @@ function main() {
     "- `coberto` = documentação suficiente do que o código permite descrever (incluindo shells/placeholders).",
     "- `em-desenvolvimento` quando o produto ainda evolui de forma material (ex.: PIMO DRILL).",
     "- Capturas públicas WebP em `/visual/pimo-pro/` (home, ajuda, novidades, login, registo).",
-    "- Ecrãs que exigem login: `/dashboard`, `/meus-projetos`, `/projects*`, `/industrial/*`, `/admin/*`, `/PROJETOS`, `/nesting_v3`, `/me`, `/definicoes`.",
+    "- Ecrãs que pedem sessão iniciada (exemplos): `/dashboard`, `/meus-projetos`, `/projects*`, `/industrial/*`, `/PROJETOS`, `/nesting_v3`, `/me`, `/definicoes`.",
     "",
   ].join("\n")
   fs.mkdirSync(path.dirname(OUT_MD), { recursive: true })

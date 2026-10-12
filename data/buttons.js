@@ -745,8 +745,8 @@ export const buttons = [
     "featureIds": [
       "configurador-3d"
     ],
-    "effects": "Alterna `viewerSettings.hideAllPanels` + `viewerApi.setAllPanelsHidden`.",
-    "action": "Alterna `viewerSettings.hideAllPanels` + `viewerApi.setAllPanelsHidden`.",
+    "effects": "Mostra ou oculta todos os painéis na vista.",
+    "action": "Mostra ou oculta todos os painéis na vista.",
     "area": "barra-superior",
     "location": "Barra superior unificada, opções de visualização / rotação",
     "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
@@ -820,8 +820,8 @@ export const buttons = [
     "featureIds": [
       "configurador-3d"
     ],
-    "effects": "Alterna `viewerSettings.showPanelEdges` + `viewerApi.setPanelEdgesVisible`.",
-    "action": "Alterna `viewerSettings.showPanelEdges` + `viewerApi.setPanelEdgesVisible`.",
+    "effects": "Mostra ou oculta as arestas dos painéis.",
+    "action": "Mostra ou oculta as arestas dos painéis.",
     "area": "barra-superior",
     "location": "Barra superior unificada, opções de visualização / rotação",
     "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
@@ -959,8 +959,8 @@ export const buttons = [
     "featureIds": [
       "configurador-3d"
     ],
-    "effects": "Alterna `viewerSettings.enableReflections` + `viewerApi.setReflectionsEnabled`.",
-    "action": "Alterna `viewerSettings.enableReflections` + `viewerApi.setReflectionsEnabled`.",
+    "effects": "Ativa ou desativa reflexos na vista.",
+    "action": "Ativa ou desativa reflexos na vista.",
     "area": "barra-superior",
     "location": "Barra superior unificada, opções de visualização / rotação",
     "sourceFile": "src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx",
@@ -1069,7 +1069,7 @@ export const buttons = [
       "configurador-3d"
     ],
     "effects": "Altera a orientação da câmara no viewer 3D.",
-    "action": "Define a vista da câmara para «front» via `viewerApi.setCameraView`.",
+    "action": "Define a vista da câmara para «front».",
     "area": "barra-superior",
     "id": "camera-view-front",
     "label": "Vista Frontal (Front)",
@@ -1084,7 +1084,7 @@ export const buttons = [
       "configurador-3d"
     ],
     "effects": "Altera a orientação da câmara no viewer 3D.",
-    "action": "Define a vista da câmara para «bottom» via `viewerApi.setCameraView`.",
+    "action": "Define a vista da câmara para «bottom».",
     "area": "barra-superior",
     "id": "camera-view-bottom",
     "label": "Vista Inferior (Bottom)",
@@ -1099,7 +1099,7 @@ export const buttons = [
       "configurador-3d"
     ],
     "effects": "Altera a orientação da câmara no viewer 3D.",
-    "action": "Define a vista da câmara para «isometric» via `viewerApi.setCameraView`.",
+    "action": "Define a vista da câmara para «isometric».",
     "area": "barra-superior",
     "id": "camera-view-isometric",
     "label": "Vista Isométrica (Isometric)",
@@ -1114,7 +1114,7 @@ export const buttons = [
       "configurador-3d"
     ],
     "effects": "Altera a orientação da câmara no viewer 3D.",
-    "action": "Define a vista da câmara para «right» via `viewerApi.setCameraView`.",
+    "action": "Define a vista da câmara para «right».",
     "area": "barra-superior",
     "id": "camera-view-right",
     "label": "Vista Lateral Direita (Right)",
@@ -1129,7 +1129,7 @@ export const buttons = [
       "configurador-3d"
     ],
     "effects": "Altera a orientação da câmara no viewer 3D.",
-    "action": "Define a vista da câmara para «left» via `viewerApi.setCameraView`.",
+    "action": "Define a vista da câmara para «left».",
     "area": "barra-superior",
     "id": "camera-view-left",
     "label": "Vista Lateral Esquerda (Left)",
@@ -1144,7 +1144,7 @@ export const buttons = [
       "configurador-3d"
     ],
     "effects": "Altera a orientação da câmara no viewer 3D.",
-    "action": "Define a vista da câmara para «top» via `viewerApi.setCameraView`.",
+    "action": "Define a vista da câmara para «top».",
     "area": "barra-superior",
     "id": "camera-view-top",
     "label": "Vista Superior (Top)",
@@ -1159,7 +1159,7 @@ export const buttons = [
       "configurador-3d"
     ],
     "effects": "Altera a orientação da câmara no viewer 3D.",
-    "action": "Define a vista da câmara para «back» via `viewerApi.setCameraView`.",
+    "action": "Define a vista da câmara para «back».",
     "area": "barra-superior",
     "id": "camera-view-back",
     "label": "Vista Traseira (Back)",
@@ -4333,7 +4333,7 @@ export const buttons = [
       "modulo-industrial"
     ],
     "effects": "Abre a vista industrial correspondente.",
-    "action": "Navega para `/admin/settings/industrial`.",
+    "action": "Abre as definições industriais na aplicação.",
     "area": "pimo-trak",
     "id": "industrial-nav-settings-industrial",
     "label": "Settings Industrial",

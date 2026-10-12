@@ -1,6 +1,6 @@
 ---
 title: "Gerir Projetos"
-description: "Guardar, abrir e gerir projetos no PIMO PRO: Meus Projetos, detalhe Admin e abertura no editor 3D."
+description: "Guardar, abrir e gerir projetos no PIMO PRO: Meus Projetos e abertura no editor 3D."
 category: guia
 tags:
   - guia
@@ -16,25 +16,21 @@ status: implemented
 
 # Guardar, carregar e gerir projetos
 
-No PIMO PRO há projetos locais no navegador e projetos da conta no servidor. A lista **Meus Projetos** fica em `/meus-projetos`.
+No PIMO PRO pode guardar projetos na conta e também ter cópias locais no navegador. A lista **Meus Projetos** mostra os projetos da sua conta.
 
 ## Meus Projetos (`/meus-projetos`)
 
-A listagem mostra os **projetos da sua conta**. Não apresenta projetos de outros utilizadores ativos.
+**Meus Projetos** lista os projetos da sua conta, com metadados e miniaturas. A partir daí pode abrir um projeto no workspace.
 
-Depois do restauro, o **administrador da plataforma** também vê projetos **órfãos ou legado** (donos antigos que já não existem na plataforma). Continua a não ver, nesta lista, projetos de outros utilizadores ativos.
+Para entrar na conta, veja [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
 
-A listagem Admin com a opção **«todos»** mantém-se na área Admin (`/admin`), à parte de Meus Projetos.
+## Abrir no editor 3D
 
-Para entrar e aceder à Admin, veja [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
-
-## Detalhe Admin do projeto (`/projects/{nome}`)
-
-Na página de detalhe Admin de um projeto já **não aparece** o texto confuso de «FASE 4». A página explica que o **editor 3D está na página inicial** da aplicação e oferece o botão **Abrir no editor 3D** para ir trabalhar o projeto no configurador.
+Em alguns ecrãs de detalhe do projeto há o botão **Abrir no editor 3D**. Leva-o para o editor na página inicial da aplicação, onde continua a trabalhar o projeto no configurador.
 
 ## Projetos locais no navegador
 
-O armazenamento local no navegador permite auto-save e exportação/importação JSON. Serve de apoio e backup; a lista Meus Projetos no servidor segue as regras de conta acima.
+O armazenamento local no navegador permite auto-save e exportação/importação JSON. Serve de apoio e backup. A lista **Meus Projetos** mostra o que está na sua conta.
 
 ## Passo a passo
 
@@ -42,13 +38,13 @@ O armazenamento local no navegador permite auto-save e exportação/importação
    Auto-save ativo e opção de guardar manualmente na barra superior.
 
 2. **Abrir Meus Projetos**  
-   Em `/meus-projetos`: projetos da sua conta, com metadados e miniaturas. Se for administrador da plataforma, a lista inclui também órfãos ou legado após o restauro.
+   Em `/meus-projetos`: projetos da sua conta, com metadados e miniaturas.
 
 3. **Carregar projeto**  
    Selecione o projeto e abra no workspace.
 
-4. **Detalhe Admin**  
-   Em `/projects/{nome}`, use **Abrir no editor 3D** se quiser editar no configurador da página inicial.
+4. **Abrir no editor 3D**  
+   Use o botão **Abrir no editor 3D** se quiser editar no configurador da página inicial.
 
 5. **Duplicar ou renomear**  
    Disponível por menu de contexto.
@@ -56,9 +52,6 @@ O armazenamento local no navegador permite auto-save e exportação/importação
 6. **Exportar/Importar JSON**  
    Recomendado para backup externo e partilha.
 
-7. **Admin «todos»** (só admin)  
-   Na área Admin, a listagem com **«todos»** continua disponível para gestão alargada, separada de Meus Projetos.
-
 ## Atenção
 
-Se limpar os dados do browser, os projetos guardados localmente podem ser removidos. Os projetos da conta no servidor não dependem do armazenamento local do navegador.
+Se limpar os dados do browser, os projetos guardados localmente podem ser removidos. Os projetos da conta em **Meus Projetos** não dependem só do armazenamento local do navegador.

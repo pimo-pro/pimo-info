@@ -146,7 +146,7 @@ export const glossaryTerms = [
     term: "PIMO PROJETOS",
     aliases: ["PROJETOS", "/PROJETOS"],
     definition:
-      "Área da app para listar e abrir projetos industriais guardados no servidor, com showroom e análise online.",
+      "Área da app para listar e abrir projetos industriais da conta, com showroom e análise online.",
     status: "implemented",
     relatedPaths: ["/pt-pt/sistemas-pimo/pimo-projetos/"],
   },
@@ -209,7 +209,7 @@ export const glossaryTerms = [
     term: "Orçamentos P3.9",
     aliases: ["tarifas", "custos"],
     definition:
-      "Camada técnica/admin de tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.",
+      "Tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.",
     status: "implemented",
     relatedPaths: [
       "/pt-pt/funcionalidades/orcamentos/",
@@ -221,7 +221,7 @@ export const glossaryTerms = [
     term: "Sessão / terminar sessão",
     aliases: ["logout", "sair", "sessão"],
     definition:
-      "Estado autenticado no servidor. Ao terminar sessão, a sessão é invalidada de forma limpa e a app envia o utilizador para o ecrã de login. Em Production o login usa armazenamento privado endurecido no servidor.",
+      "Estado da conta depois de entrar. Ao terminar sessão, a app envia o utilizador para o ecrã de login. Se a sessão expirar, é pedido para entrar de novo.",
     status: "implemented",
     relatedPaths: ["/pt-pt/funcionalidades/conta-e-acesso/"],
   },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T21:12:08.953Z",
+  "generatedAt": "2026-10-12T21:17:11.264Z",
   "items": [
     {
       "path": "/",
@@ -146,7 +146,7 @@
       "file": "pages/pt-pt/blog/posts/automacao-fabrico.mdx",
       "title": "Automação no fabrico de mobiliário: do projeto à linha de produção",
       "description": "Como a automação reduz erros e tempos mortos na marcenaria industrial, e que papel têm PIMO Industrial, PIMO-TRAK e o módulo industrial.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "producao",
       "tags": [
         "automacao",
@@ -167,7 +167,7 @@
       "file": "pages/pt-pt/blog/posts/comercio-mundial-moveis.mdx",
       "title": "Comércio mundial de mobiliário: crescimento moderado e novos equilíbrios",
       "description": "Síntese dos dados CSIL sobre produção, exportações e consumo global em 2024-2026, o que importa para fábricas e exportadores.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "noticias",
       "tags": [
         "comercio-internacional",
@@ -188,7 +188,7 @@
       "file": "pages/pt-pt/blog/posts/contraplacado-aglomerado.mdx",
       "title": "Contraplacado e aglomerado: como escolher o painel certo",
       "description": "Diferenças entre contraplacado e aglomerado em estrutura, humidade e custo, e como reflectir a escolha no PIMO.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "guias",
       "tags": [
         "contraplacado",
@@ -209,7 +209,7 @@
       "file": "pages/pt-pt/blog/posts/cozinhas-planeadas.mdx",
       "title": "Cozinhas planeadas: do levantamento à montagem com projeto coerente",
       "description": "Etapas para desenhar cozinhas sob medida, escolher materiais e ferragens, e evitar erros entre loja, oficina e obra.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "guias",
       "tags": [
         "cozinhas",
@@ -230,7 +230,7 @@
       "file": "pages/pt-pt/blog/posts/exportacao-cnc-ficheiros.mdx",
       "title": "Exportação CNC: TCN e Drill XML na prática",
       "description": "Como escolher formatos industriais, organizar ficheiros por espessura e evitar erros entre desenho PIMO e máquina.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "tecnico",
       "tags": [
         "cnc",
@@ -250,7 +250,7 @@
       "file": "pages/pt-pt/blog/posts/fabrico-digital-2026.mdx",
       "title": "Fabrico digital em 2026: tendências qualitativas para a madeira",
       "description": "Parametrização, rastreio, exportação CNC e leitura de mercado, como preparar a fábrica sem hype estatístico.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "noticias",
       "tags": [
         "fabrico-digital",
@@ -271,7 +271,7 @@
       "file": "pages/pt-pt/blog/posts/ferragens-hettich.mdx",
       "title": "Ferragens Hettich no projeto de mobiliário: sistemas que o PIMO ajuda a especificar",
       "description": "Como as ferragens Hettich, gavetas, dobradiças e sistemas de portas, se integram no desenho e na produção quando o projeto vive no PIMO PRO.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "produto",
       "tags": [
         "ferragens",
@@ -291,7 +291,7 @@
       "file": "pages/pt-pt/blog/posts/furacao-industrial.mdx",
       "title": "Furação industrial no mobiliário: da peça ao ficheiro para a máquina",
       "description": "Como a furação industrial liga o projeto ao chão de fábrica, sistemas CNC, Drill XML e o papel do PIMO DRILL no ecossistema PIMO.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "producao",
       "tags": [
         "furacao",
@@ -312,7 +312,7 @@
       "file": "pages/pt-pt/blog/posts/ia-carpintaria.mdx",
       "title": "Inteligência artificial na carpintaria e no desenho de mobiliário",
       "description": "Como a IA pode apoiar marceneiros e equipas de projeto, da ideação à produção, sem substituir o critério técnico.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "tecnico",
       "tags": [
         "inteligencia-artificial",
@@ -333,7 +333,7 @@
       "file": "pages/pt-pt/blog/posts/lista-corte-residuos.mdx",
       "title": "Lista de corte e gestão de resíduos: do projeto à chapa com menos desperdício",
       "description": "Como consolidar peças no PIMO, optimizar utilização de painéis e organizar retalhos para nesting e custos reais.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "tecnico",
       "tags": [
         "lista de corte",
@@ -354,7 +354,7 @@
       "file": "pages/pt-pt/blog/posts/madeiras-macicas.mdx",
       "title": "Madeiras maciças no mobiliário: espécies, estabilidade e projeto digital",
       "description": "Quando escolher madeira maciça, como gerir humidade e junções, e como documentar espécies e desperdício no fluxo PIMO.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "guias",
       "tags": [
         "madeira",
@@ -375,7 +375,7 @@
       "file": "pages/pt-pt/blog/posts/materiais-cozinhas.mdx",
       "title": "Materiais de cozinha: durabilidade na carcaça e nas frentes",
       "description": "Melaminas, lacados, compactos e madeiras, como escolher combinações que resistem ao uso diário e ao ambiente húmido.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "produto",
       "tags": [
         "cozinha",
@@ -396,7 +396,7 @@
       "file": "pages/pt-pt/blog/posts/mdf-guia-pratico.mdx",
       "title": "MDF: guia prático para carpintaria e mobiliário",
       "description": "O que é o MDF, onde usar em carcaças e frentes, limitações em humidade e como registar o material no fluxo de projeto PIMO.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "guias",
       "tags": [
         "mdf",
@@ -417,7 +417,7 @@
       "file": "pages/pt-pt/blog/posts/melamina-paineis.mdx",
       "title": "Melamina e painéis decorativos: escolher, cortar e orçamentar com rigor",
       "description": "Como funcionam os painéis melamínicos, que acabamentos pedem cozinhas e roupeiros, e como manter materiais e lista de corte alinhados no PIMO.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "guias",
       "tags": [
         "melamina",
@@ -438,7 +438,7 @@
       "file": "pages/pt-pt/blog/posts/nesting-cnc.mdx",
       "title": "Nesting CNC: optimizar chapas, reduzir desperdício e ligar ao projeto",
       "description": "Princípios de nesting em painéis, margens de segurança, ordem de corte e integração com listas exportadas do PIMO.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "tecnico",
       "tags": [
         "nesting",
@@ -459,7 +459,7 @@
       "file": "pages/pt-pt/blog/posts/orlagem-bordos.mdx",
       "title": "Orlagem de bordos: acabamento, precisão e ligação ao projeto digital",
       "description": "Porque a orlagem importa na durabilidade e no aspeto dos móveis, e como alinhar materiais, lista de corte e produção no PIMO.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "producao",
       "tags": [
         "orlagem",
@@ -480,7 +480,7 @@
       "file": "pages/pt-pt/blog/posts/pimo-trak-rastreio.mdx",
       "title": "PIMO TRAK: rastrear peças da exportação à montagem",
       "description": "Etiquetas QR UEE v5, identificação por peça e acompanhamento industrial, o que já pode usar hoje na fábrica.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "producao",
       "tags": [
         "pimo-trak",
@@ -501,7 +501,7 @@
       "file": "pages/pt-pt/blog/posts/portas-gavetas-fabrico.mdx",
       "title": "Regras de fabrico para portas e gavetas",
       "description": "Folgas, exclusividade, ferragens e validação antes da exportação, o que a fábrica precisa de respeitar em frentes de mobiliário.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "guias",
       "tags": [
         "portas",
@@ -522,7 +522,7 @@
       "file": "pages/pt-pt/blog/posts/profissao-carpinteiro.mdx",
       "title": "A profissão de carpinteiro em 2026: oficina, digital e mobiliário sob medida",
       "description": "Competências que o mercado pede a marceneiros e carpinteiros em Portugal, da bancada ao projeto 3D e à produção CNC.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "noticias",
       "tags": [
         "carpintaria",
@@ -543,7 +543,7 @@
       "file": "pages/pt-pt/blog/posts/software-design-3d.mdx",
       "title": "Software de design 3D para marcenaria: o que procurar e como o PIMO se encaixa",
       "description": "Critérios para escolher ferramentas de modelação 3D no mobiliário por medida, e relação com o configurador 3D do PIMO PRO.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "tecnico",
       "tags": [
         "design-3d",
@@ -564,7 +564,7 @@
       "file": "pages/pt-pt/blog/posts/sustentabilidade-madeira.mdx",
       "title": "Sustentabilidade na madeira e no mobiliário: certificação, resíduos e escolhas de projeto",
       "description": "Como a gestão florestal certificada, o desperdício de corte e os materiais no PIMO se ligam a decisões mais sustentáveis na marcenaria.",
-      "author": "Khaled",
+      "author": "Equipa PIMO",
       "category": "ecossistema",
       "tags": [
         "sustentabilidade",
@@ -670,7 +670,7 @@
       "path": "/pt-pt/documentacao-tecnica/sistema-industrial/",
       "file": "pages/pt-pt/documentacao-tecnica/sistema-industrial.mdx",
       "title": "Sistema Industrial",
-      "description": "Visão consolidada da camada industrial: rotas, admin e fases documentadas no PIMO PRO.",
+      "description": "Visão consolidada da camada industrial: rotas e fases documentadas no PIMO PRO.",
       "author": "",
       "category": "tecnico",
       "tags": [
@@ -681,7 +681,7 @@
         "/pt-pt/sistemas-pimo/pimo-industrial/",
         "/pt-pt/funcionalidades/estacoes-industriais/"
       ],
-      "lastUpdated": "2026-10-07",
+      "lastUpdated": "2026-10-12",
       "status": "implemented"
     },
     {
@@ -860,7 +860,7 @@
       "path": "/pt-pt/funcionalidades/conta-e-acesso/",
       "file": "pages/pt-pt/funcionalidades/conta-e-acesso.mdx",
       "title": "Conta e acesso",
-      "description": "Login, registo, verificação de email, recuperação de password, perfil, sessão no servidor e terminar sessão no PIMO PRO.",
+      "description": "Entrar na conta, registo, recuperação de palavra-passe, perfil e terminar sessão no PIMO PRO.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -880,12 +880,11 @@
       "path": "/pt-pt/funcionalidades/definicoes/",
       "file": "pages/pt-pt/funcionalidades/definicoes.mdx",
       "title": "Definições",
-      "description": "Definições do utilizador, do projeto e administrativas no PIMO PRO (rota /definicoes e admin).",
+      "description": "Preferências pessoais e do projeto no PIMO PRO (rota /definicoes).",
       "author": "",
       "category": "funcionalidade",
       "tags": [
         "definicoes",
-        "admin",
         "preferencias"
       ],
       "related": [
@@ -1291,7 +1290,7 @@
       "path": "/pt-pt/guias-utilizador/gerir-projetos/",
       "file": "pages/pt-pt/guias-utilizador/gerir-projetos.mdx",
       "title": "Gerir Projetos",
-      "description": "Guardar, abrir e gerir projetos no PIMO PRO: Meus Projetos, detalhe Admin e abertura no editor 3D.",
+      "description": "Guardar, abrir e gerir projetos no PIMO PRO: Meus Projetos e abertura no editor 3D.",
       "author": "",
       "category": "guia",
       "tags": [
@@ -1572,7 +1571,7 @@
       "path": "/pt-pt/referencia/botoes/",
       "file": "pages/pt-pt/referencia/botoes.mdx",
       "title": "Botões e controlos",
-      "description": "Catálogo completo de botões e ações da interface do PIMO PRO: ícone, rótulo, localização, ação, efeitos e atalho, verificado no código.",
+      "description": "Catálogo de botões e ações da interface do PIMO PRO: ícone, rótulo, localização, ação, efeitos e atalho.",
       "author": "",
       "category": "referencia",
       "tags": [

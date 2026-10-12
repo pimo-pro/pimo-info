@@ -68,14 +68,14 @@ Locale: pt-PT
 - Drill XML: Representação XML do plano de furação por painel (posição, diâmetro, profundidade), gerada no fluxo de Arquivos CNC.
 - PDF Técnico: Exportação PDF com documentação do projeto (3D, cutlist, materiais, ferragens, preço). Não substitui TCN nem Drill XML para máquina. Se a geração falhar, surge o aviso «Erro ao gerar PDF técnico.»
 - PIMO TRAK: Sistema de ordens de trabalho e rastreamento da produção, incluindo etiquetas QR UEE v5. Estado parcial no código: work orders e etiquetas existem; algumas páginas agregadas ainda podem estar incompletas.
-- PIMO PROJETOS: Área da app para listar e abrir projetos industriais guardados no servidor, com showroom e análise online.
+- PIMO PROJETOS: Área da app para listar e abrir projetos industriais da conta, com showroom e análise online.
 - PIMO NESTING: Sistema próprio de nesting (Nesting V3): layout manual/automático de peças em chapas com exportação PDF, TCN e etiquetas. Distinto do nesting Fast/PRO do pipeline de exportação do configurador.
 - PIMO INDUSTRIAL: Camada industrial da app: hub de estações, operações de fábrica e UI partilhada. Estado parcial, rotas reais com canvas de demonstração na home.
 - PIMO DRILL: Sistema dedicado de furação (UI 2D/3D), acessível em https://pimo.pro/industrial/pimo-drill. Estado: em desenvolvimento. A exportação Drill XML pelo configurador («Arquivos CNC») está disponível à parte.
 - Arquivo completo (ZIP): ZIP com os principais artefactos de produção (PDFs, XLSX de ferragens, TCN, Drill XML, etiquetas, layouts). Conteúdo exacto definido pelo gerador na app, ver formatos de exportação.
 - Análise arquivo completo (online): Edição documental online de PDFs industriais em PROJETOS (/analise). No código SSOT (`industrialFeatureFlags`) a flag `industrialOnlineAnalysis` está activa (`true`). Não substitui o ZIP de produção.
-- Orçamentos P3.9: Camada técnica/admin de tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.
-- Sessão / terminar sessão: Estado autenticado no servidor. Ao terminar sessão, a sessão é invalidada de forma limpa e a app envia o utilizador para o ecrã de login. Em Production o login usa armazenamento privado endurecido no servidor.
+- Orçamentos P3.9: Tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.
+- Sessão / terminar sessão: Estado da conta depois de entrar. Ao terminar sessão, a app envia o utilizador para o ecrã de login. Se a sessão expirar, é pedido para entrar de novo.
 
 ## Features
 - Configurador 3D [implemented] https://pimo.info/pt-pt/funcionalidades/configurador-3d/, Modelação paramétrica de módulos no workspace 3D.
@@ -86,12 +86,12 @@ Locale: pt-PT
 - Exportação TCN / Drill XML [implemented] https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/, Ficheiros industriais `.tcn` e Drill XML via menu Arquivos CNC.
 - PDF Técnico [implemented] https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/, Documentação PDF do projeto para cliente/arquivo. Em falha de geração, aviso claro no Workspace.
 - PIMO-TRAK [mixed] https://pimo.info/pt-pt/funcionalidades/pimo-trak/, Etiquetas QR (implementado) e rastreio industrial por peça (camada industrial).
-- Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/, Tarifas e regras de custo (camada técnica/admin P3.9).
+- Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/, Tarifas e regras de custo (Orçamentos P3.9).
 - Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/, Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.
 
 ## PIMO systems
 - PIMO TRAK [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-trak/, Sistema de ordens de trabalho e rastreamento da produção na fábrica, incluindo etiquetas QR por peça (UEE v5).
-- PIMO PROJETOS [disponivel] https://pimo.info/pt-pt/sistemas-pimo/pimo-projetos/, Área de gestão e visualização de projetos PIMO guardados no servidor (páginas/projeto com snapshot industrial).
+- PIMO PROJETOS [disponivel] https://pimo.info/pt-pt/sistemas-pimo/pimo-projetos/, Área de gestão e visualização de projetos PIMO da conta (páginas/projeto com snapshot industrial).
 - PIMO NESTING [disponivel] https://pimo.info/pt-pt/sistemas-pimo/pimo-nesting/, Motor e UI próprios de otimização da distribuição das peças nas chapas (Nesting V3), com redução de desperdício via auto-layout e colocação manual.
 - PIMO INDUSTRIAL [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/, Camada industrial completa da app: hub de estações, operações (CNC, nesting, drill, orlar, montagem, embalagem), operador/supervisor e integrações de fabrico.
 - PIMO DRILL [em-desenvolvimento] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/, Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.

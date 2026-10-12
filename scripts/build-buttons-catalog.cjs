@@ -270,7 +270,7 @@ function add(entry) {
     iconName: "camera",
     location: "Menu vistas da câmara (barra superior)",
     area: "barra-superior",
-    action: `Define a vista da câmara para «${id}» via \`viewerApi.setCameraView\`.`,
+    action: `Define a vista da câmara para «${id}».`,
     effects: "Altera a orientação da câmara no viewer 3D.",
     sourceFile: "src/components/layout/viewer-toolbar/CameraViewMenu.tsx",
     featureIds: ["configurador-3d"],
@@ -406,7 +406,7 @@ function add(entry) {
   ["Orlar", "/industrial/operations/orlar"],
   ["Montagem", "/industrial/operations/montagem"],
   ["Embalagem", "/industrial/operations/embalagem"],
-  ["Settings Industrial", "/admin/settings/industrial"],
+  ["Settings Industrial", "definições industriais"],
 ].forEach(([label, route]) => {
   const slug = label
     .toLowerCase()
@@ -902,17 +902,17 @@ add({
   {
     id: "utt-show-panel-edges",
     label: "Mostrar arestas dos painéis",
-    action: "Alterna `viewerSettings.showPanelEdges` + `viewerApi.setPanelEdgesVisible`.",
+    action: "Mostra ou oculta as arestas dos painéis.",
   },
   {
     id: "utt-hide-all-panels",
     label: "Esconder todos os painéis",
-    action: "Alterna `viewerSettings.hideAllPanels` + `viewerApi.setAllPanelsHidden`.",
+    action: "Mostra ou oculta todos os painéis na vista.",
   },
   {
     id: "utt-reflections",
     label: "Reflexos dinâmicos (probe)",
-    action: "Alterna `viewerSettings.enableReflections` + `viewerApi.setReflectionsEnabled`.",
+    action: "Ativa ou desativa reflexos na vista.",
   },
   {
     id: "utt-rotate-90",

@@ -13,6 +13,7 @@ Este ficheiro diz, por área, **o que atualizar no pimo-info**. Não altera o c�
 3. Nome público da app: **PIMO PRO**. Não renomear sistemas (PIMO TRAK, PIMO PROJETOS, PIMO NESTING, PIMO INDUSTRIAL, PIMO DRILL) nem domínios (`pimo.pro`, etc.).
 4. Sem travessão tipográfico (`—` / `–`) em texto público.
 5. Após editar: `npm run check` (regenera `llms.txt`, `llms-full.txt`, `public/data/*`, `docs/COVERAGE.md`, sitemap, mini-sites) e, se for publicar, push para `main` (deploy FTP).
+6. **Só clientes e utilizadores (obrigatório):** o pimo.info publica apenas o que interessa a quem usa o PIMO PRO: novidades, melhorias e correções visíveis, em ajuda simples. Entradas do `INFO-UPDATES.md` só entram nessa perspetiva. **Nunca publicar** informação pessoal ou interna: dono/administrador da plataforma, agentes de IA, Cursor, bots, logins especiais, API, chaves, palavras-passe (exceto texto legítimo de «recuperar palavra-passe»), registos de trabalho interno, notas técnicas de desenvolvimento, servidor/infra/segurança interna, tokens, BFF, persistência, CI, PRs, batches de estabilidade, listagens privilegiadas, projetos órfãos/legado, rotas de gestão interna. Reescrever só a experiência do utilizador (ex.: entrar na conta, terminar sessão, Meus Projetos, mensagens de erro claras). O `npm run check` falha se o output público contiver termos proibidos (ver `scripts/check-no-internal-admin.cjs`).
 
 ### Artefactos sempre regenerados por `npm run kb:generate` / `npm run check`
 
@@ -64,7 +65,7 @@ Se a mudança afetar cobertura de rotas/conceitos, editar também `scripts/gener
 | Cobertura | `scripts/generate-coverage.cjs` (`sys-trak`, rotas `route-work-orders`, `route-tracking`, …) |
 | UI | `components/SystemsSections.jsx` |
 
-**Removido:** não apagar o sistema sem decisão do dono; marcar `status` / `statusNotes` em `data/systems.js` e na página; retirar da navegação só se for descontinuado de forma definitiva.
+**Removido:** não apagar o sistema sem decisão explícita do produto; marcar `status` / `statusNotes` em `data/systems.js` e na página; retirar da navegação só se for descontinuado de forma definitiva.
 
 ---
 
@@ -157,34 +158,35 @@ Manter `status` alinhado com o criativo (`em-desenvolvimento` / `parcial` / `dis
 
 ### `projetos`
 
-Área da gestão de projetos na app (lista, detalhe, showroom, guardar/abrir), distinta do sistema **PIMO PROJETOS**.
+Área da gestão de projetos na app (lista, detalhe, showroom, guardar/abrir), distinta do sistema **PIMO PROJETOS**. Só o que o utilizador da conta vê (Meus Projetos, abrir no editor 3D). Ignorar entradas só de gestão interna.
 
 | O quê | Onde no pimo.info |
 |---|---|
-| Guia | `/pt-pt/guias-utilizador/gerir-projetos/` (incl. detalhe Admin `/projects/{nome}`) |
-| Conta / dashboard | `/pt-pt/funcionalidades/conta-e-acesso/`, `/pt-pt/primeiros-passos/` |
-| Admin / listagem Production | `/pt-pt/funcionalidades/definicoes/`, FAQ |
-| Showroom / viewer / editor 3D | `/pt-pt/funcionalidades/configurador-3d/` (secção showroom; botão Abrir no editor 3D no detalhe Admin) |
+| Guia | `/pt-pt/guias-utilizador/gerir-projetos/` |
+| Conta / painel | `/pt-pt/funcionalidades/conta-e-acesso/`, `/pt-pt/primeiros-passos/` |
+| Preferências | `/pt-pt/funcionalidades/definicoes/` |
+| Showroom / viewer / editor 3D | `/pt-pt/funcionalidades/configurador-3d/` (secção showroom; botão Abrir no editor 3D) |
 | Sistema relacionado | `/pt-pt/sistemas-pimo/pimo-projetos/` se a mudança for do módulo PROJETOS |
 | Relatório | `/pt-pt/funcionalidades/relatorio-final/` |
-| Cobertura | `route-meus-projetos`, `route-projects`, `route-project-detail`, `route-projects-viewer`, `route-dashboard`, `route-admin` |
+| Cobertura | `route-meus-projetos`, `route-projects`, `route-project-detail`, `route-projects-viewer`, `route-dashboard` |
 
 ---
 
 ### `sistemas/autenticacao`
 
-Auth, login, logout, sessão e acesso Admin (não é um sistema de produto como TRAK/PROJETOS).
+Entrar na conta, terminar sessão e perfil (não é um sistema de produto como TRAK/PROJETOS). Só perspetiva utilizador final.
 
 | O quê | Onde no pimo.info |
 |---|---|
 | Página canónica | `/pt-pt/funcionalidades/conta-e-acesso/` → `pages/pt-pt/funcionalidades/conta-e-acesso.mdx` |
-| Admin / permissões | `/pt-pt/funcionalidades/definicoes/` |
+| Preferências | `/pt-pt/funcionalidades/definicoes/` |
 | Onboarding | `/pt-pt/primeiros-passos/` |
-| FAQ | `/pt-pt/perguntas-frequentes/` (login, terminar sessão) |
-| Cobertura | `route-login`, `route-me`, `route-admin`, `domain-auth` em `scripts/generate-coverage.cjs` |
+| FAQ | `/pt-pt/perguntas-frequentes/` (entrar, terminar sessão, sessão expirada) |
+| Cobertura | `route-login`, `route-me`, `domain-auth` em `scripts/generate-coverage.cjs` |
 
-**Adicionado / alterado:** atualizar fluxos (login, logout, `/me`, Admin, confirmação de sessão ao reabrir a app / API) e o estado em Production.  
-**Removido:** marcar na página se um fluxo deixar de existir; atualizar FAQ e cobertura.
+**Adicionado / alterado:** atualizar fluxos públicos (entrar, sair, perfil, sessão expirada).  
+**Removido:** marcar na página se um fluxo deixar de existir; atualizar FAQ e cobertura.  
+**Ignorar:** detalhe interno de autenticação, gestão privilegiada, infra.
 
 ---
 
@@ -196,7 +198,7 @@ Usar quando a área do `INFO-UPDATES.md` não encaixa acima (UI global, tema, pe
 |---|---|
 | Auth / registo / login / logout | ver `sistemas/autenticacao` → `/pt-pt/funcionalidades/conta-e-acesso/`, FAQ |
 | Erro inesperado / ecrã em branco / recovery UI | `/pt-pt/perguntas-frequentes/` (+ cobertura `domain-error-ui`) |
-| Definições / admin | `/pt-pt/funcionalidades/definicoes/`, docs técnicas |
+| Definições do utilizador | `/pt-pt/funcionalidades/definicoes/` (só preferências; sem gestão interna) |
 | Arquitetura / fluxo | `data/modules.js`, `/pt-pt/como-funciona/` |
 | Glossário só de termo | `data/glossary.js`, `/pt-pt/glossario/` |
 | Ecossistema / sites | `data/sites.js`, `/pt-pt/ecossistema/`, Sobre |

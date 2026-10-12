@@ -1,6 +1,6 @@
 ---
 title: Conta e acesso
-description: Login, registo, verificação de email, recuperação de password, perfil, sessão no servidor e terminar sessão no PIMO PRO.
+description: Entrar na conta, registo, recuperação de palavra-passe, perfil e terminar sessão no PIMO PRO.
 category: funcionalidade
 tags:
   - conta
@@ -15,28 +15,28 @@ lastUpdated: 2026-10-12
 
 # Conta e acesso
 
-Rotas verificadas na app: `/login`, `/register`, `/register/check-email`, `/verify-email`, `/forgot-password`, `/me`. As páginas de login e registo são públicas. O dashboard, os projetos e a área Admin exigem autenticação.
+No PIMO PRO pode criar conta, entrar, recuperar a palavra-passe e gerir o perfil. O painel, os projetos e outras áreas pessoais pedem que tenha sessão iniciada.
 
 ## Fluxos
 
-1. **Registo** → verificação de email → login
-2. **Login** → dashboard, projetos ou Admin (conforme a conta)
-3. **Recuperar password** → email de reset
-4. **Perfil (`/me`)** → dados da conta
-5. **Terminar sessão** → a sessão no servidor é invalidada e a app envia-o para o ecrã de login
-6. **Reabrir a app** → a sessão é confirmada no servidor; se o token já não for válido, vai para o login
+1. **Registo** → verificação de email → **Entrar na conta**
+2. **Entrar na conta** → painel e projetos
+3. **Recuperar palavra-passe** → email de reset
+4. **Perfil** → dados da conta
+5. **Terminar sessão** → a app envia-o para o ecrã de login
+6. **Se a sessão expirar** → é pedido para entrar de novo
 
-## Login em Production
+## Entrar na conta
 
-O login em Production voltou a funcionar com a conta Owner (admin). A autenticação usa armazenamento privado endurecido no servidor. Depois de entrar, a área Admin (`/admin`) fica acessível. O perfil em `/me` continua a funcionar como antes.
+Use o ecrã de login com o email e a palavra-passe da conta. Depois de entrar, pode abrir o painel, **Meus Projetos** e o perfil.
 
-## Sessão ao reabrir a aplicação
+## Se a sessão expirar
 
-Ao abrir de novo o PIMO PRO (ou em pedidos à API), a sessão é **confirmada no servidor**. Se o token já não for válido, o utilizador é enviado para o ecrã de login em vez de ficar com uma sessão fantasma (parece autenticado, mas os pedidos falham).
+Se a sessão já não for válida ao reabrir a aplicação, o PIMO PRO pede para **entrar de novo**. Não fica numa sessão antiga a meio.
 
 ## Terminar sessão
 
-Ao sair da conta, a sessão no servidor é invalidada de forma limpa e o utilizador é enviado para o ecrã de login. O login, a área Admin e a sessão `/me` mantêm-se a funcionar normalmente depois de voltar a entrar.
+Ao escolher **Terminar sessão**, sai da conta e volta ao ecrã de login. Pode voltar a entrar quando quiser.
 
 ## Capturas (pimo.pro)
 
@@ -58,7 +58,7 @@ Ao sair da conta, a sessão no servidor é invalidada de forma limpa e o utiliza
 
 ## Estado
 
-**Disponível** na aplicação [pimo.pro/login](https://pimo.pro/login). Em outubro 2026: login Production com armazenamento privado no servidor, área Admin acessível após login Owner, logout com invalidação limpa da sessão, e confirmação da sessão no servidor ao reabrir a app (token inválido → login).
+**Disponível** na aplicação [pimo.pro/login](https://pimo.pro/login).
 
 ## Relacionado
 

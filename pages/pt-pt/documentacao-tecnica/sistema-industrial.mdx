@@ -1,6 +1,6 @@
 ---
 title: "Sistema Industrial"
-description: "Visão consolidada da camada industrial: rotas, admin e fases documentadas no PIMO PRO."
+description: "Visão consolidada da camada industrial: rotas e fases documentadas no PIMO PRO."
 category: tecnico
 tags:
   - tecnico
@@ -8,15 +8,15 @@ related:
   - /pt-pt/documentacao-tecnica/
   - /pt-pt/sistemas-pimo/pimo-industrial/
   - /pt-pt/funcionalidades/estacoes-industriais/
-lastUpdated: 2026-10-07
+lastUpdated: 2026-10-12
 status: implemented
 ---
 
 # Sistema Industrial, visão consolidada
 
-Camada industrial da app em `/industrial/*` (login obrigatório), com hub de estações, work orders, operações e administração.
+Camada industrial da app em `/industrial/*` (é preciso ter sessão iniciada), com hub de estações, work orders e operações.
 
-## Rotas principais (código)
+## Rotas principais
 
 | Área | Rota |
 |---|---|
@@ -24,20 +24,12 @@ Camada industrial da app em `/industrial/*` (login obrigatório), com hub de est
 | Work orders | `/industrial/work-orders` |
 | Operações | `/industrial/operations` (+ `/cnc`, `/nesting`, `/drill`, `/orlar`, `/montagem`, `/embalagem`) |
 | Tracking / quality / rework / time / events | `/industrial/tracking`, `/quality`, `/rework`, `/time-tracking`, `/events` |
-| PIMO DRILL | `/industrial/pimo-drill` (`ProtectedRoute` dedicado) |
+| PIMO DRILL | `/industrial/pimo-drill` |
 | Release notes industriais | `/industrial/release-notes` |
-
-## Admin industrial
-
-| Área | Rota | Acesso |
-|---|---|---|
-| Settings industriais | `/admin/settings/industrial` | `canAccessAdminPanel` |
-| Alertas realtime | `/admin/system-settings/industrial/realtime-alerts` | `canAccessAdminPanel` |
 
 ## Princípio de implementação
 
 - Leitura de estado já existente no UI.
-- Sem criação de endpoints novos para as fases documentadas na camada visual.
 - Impacto operacional focado em visualização e clareza de processo nas fases visuais 1-6.
 
 ## Fases visuais (1-6)
@@ -57,7 +49,7 @@ Camada industrial da app em `/industrial/*` (login obrigatório), com hub de est
 4. Cost Engine.
 5. Real Execution Engine.
 6. Real Data Engine.
-7. Full Production Engine.
+7. Full Factory Engine.
 8. Real Integration Engine.
 9. Full Industrial Runtime.
 10. Real Operations Engine.
@@ -67,7 +59,7 @@ Camada industrial da app em `/industrial/*` (login obrigatório), com hub de est
 ## Garantias explicitadas
 
 - Sem alteração arbitrária de rotas `/industrial` existentes na documentação de fases.
-- Shells de Tracking/Quality/Rework/Time/Events usam placeholder Fase 3C.2 até ligarem dados reais.
+- Shells de Tracking/Quality/Rework/Time/Events usam placeholder até ligarem dados reais.
 - Preparado para integração futura com dados reais adicionais sem reescrever os painéis.
 
 ## Nota

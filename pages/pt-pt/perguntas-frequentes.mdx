@@ -17,19 +17,15 @@ status: implemented
 
 ## Apareceu «Algo correu mal» na aplicação?
 
-Se a interface falhar de forma inesperada, o PIMO PRO deixa de mostrar um ecrã em branco. Surge a mensagem **Algo correu mal** (erro inesperado) e o botão **Voltar ao início**, que o leva de novo ao arranque da aplicação. Pode continuar a trabalhar a partir daí; se o problema se repetir, contacte o suporte.
+Se algo correr mal de forma inesperada, o PIMO PRO deixa de mostrar um ecrã em branco. Surge a mensagem **Algo correu mal** e o botão **Voltar ao início**, que o leva de novo ao arranque da aplicação. Pode continuar a trabalhar a partir daí; se o problema se repetir, contacte o suporte.
 
-## O login em Production funciona?
+## Como entro e saio da conta?
 
-Sim. Em Production o login voltou a funcionar com a conta Owner (admin). A autenticação usa armazenamento privado endurecido no servidor e, após entrar, a área Admin (`/admin`) fica acessível. Detalhe em [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
+Use **Entrar na conta** no ecrã de login. Para sair, escolha **Terminar sessão**: a app envia-o de novo para o login. Detalhe em [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
 
-## O que acontece quando termino a sessão?
+## O que acontece se a sessão expirar?
 
-Ao sair da conta, a sessão no servidor é invalidada de forma limpa e a app envia-o para o ecrã de login. Pode voltar a entrar normalmente; o perfil `/me` e a Admin mantêm-se a funcionar.
-
-## O que acontece se reabrir a app com a sessão antiga?
-
-A sessão é confirmada no servidor. Se o token já não for válido, o PIMO PRO envia-o para o login em vez de manter uma sessão fantasma. Detalhe em [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
+Se a sessão expirar, é pedido para entrar de novo. Detalhe em [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
 
 ## Posso misturar portas e gavetas no mesmo módulo?
 
@@ -59,11 +55,11 @@ Pode afetar a orientação dos furos nas máquinas CNC. Antes de maquinar, valid
 
 ## Onde ficam guardados os projetos?
 
-Há projetos locais no navegador (`localStorage`) e projetos da conta no servidor. Em **Meus Projetos** (`/meus-projetos`) vê os projetos da sua conta. O administrador da plataforma também vê órfãos ou legado (donos antigos que já não existem), sem ver projetos de outros utilizadores ativos. A listagem Admin com **«todos»** mantém-se. Se limpar os dados do browser, só os projetos locais podem desaparecer. Guia: [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
+Pode ter projetos locais no navegador e projetos da conta. Em **Meus Projetos** (`/meus-projetos`) vê os projetos da sua conta. Se limpar os dados do browser, só os projetos locais podem desaparecer. Guia: [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
 
-## No detalhe Admin do projeto, onde edito em 3D?
+## Como abro um projeto no editor 3D?
 
-Em `/projects/{nome}` já não aparece o texto «FASE 4». A página indica que o editor 3D está na página inicial e tem o botão **Abrir no editor 3D**. Guia: [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
+Em ecrãs de detalhe do projeto use o botão **Abrir no editor 3D** para ir ao configurador na página inicial. Guia: [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
 
 ## Como fazer backup de projetos?
 
@@ -71,11 +67,11 @@ Use **Exportar Projeto (JSON)** para guardar ficheiros fora do navegador e poder
 
 ## O que inclui o Arquivo completo (ZIP)?
 
-Verificado no gerador da app: cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts PRO por espessura, `Layout_de_Corte_manual.pdf`, ficheiros TCN, Drill XML e manifesto industrial. O ZIP usa nesting **PRO**. Não assumir CSV como conteúdo obrigatório do ZIP.
+O pacote pode incluir cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts PRO por espessura, `Layout_de_Corte_manual.pdf`, ficheiros TCN, Drill XML e manifesto industrial. O ZIP usa nesting **PRO**. Não assumir CSV como conteúdo obrigatório do ZIP.
 
 ## O que acontece se falhar a geração do PDF técnico?
 
-No Workspace, se **gerar PDF técnico** falhar, o PIMO PRO mostra o aviso **Erro ao gerar PDF técnico.** em vez de falhar em silêncio. Pode tentar de novo. Cutlist e etiquetas mantêm-se. Guia: [Exportação](/pt-pt/guias-utilizador/exportacao/).
+Se a geração do PDF técnico falhar, aparece a mensagem de erro **Erro ao gerar PDF técnico.** Pode tentar de novo. Cutlist e etiquetas mantêm-se. Guia: [Exportação](/pt-pt/guias-utilizador/exportacao/).
 
 ## O que é o PIMO-TRAK?
 
@@ -83,4 +79,4 @@ Sistema de rastreio por etiquetas QR por peça. A **geração de etiquetas (UEE 
 
 ## A análise online do arquivo completo está sempre disponível?
 
-No código SSOT actual a flag `industrialOnlineAnalysis` está **activa**. Continua a ser uma edição documental em PROJETOS, **não substitui** o ZIP. Se uma instalação concreta tiver a flag desligada, a análise online fica indisponível nessa instância.
+A análise documental online em PROJETOS pode estar disponível conforme a instalação. **Não substitui** o ZIP de produção. Se na sua instalação não aparecer, use o arquivo completo (ZIP) como de costume.

@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-10-12T21:12:08.955Z
+Generated: 2026-10-12T21:17:11.266Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -71,14 +71,14 @@ Locale: pt-PT
 - Drill XML: Representação XML do plano de furação por painel (posição, diâmetro, profundidade), gerada no fluxo de Arquivos CNC.
 - PDF Técnico: Exportação PDF com documentação do projeto (3D, cutlist, materiais, ferragens, preço). Não substitui TCN nem Drill XML para máquina. Se a geração falhar, surge o aviso «Erro ao gerar PDF técnico.»
 - PIMO TRAK: Sistema de ordens de trabalho e rastreamento da produção, incluindo etiquetas QR UEE v5. Estado parcial no código: work orders e etiquetas existem; algumas páginas agregadas ainda podem estar incompletas.
-- PIMO PROJETOS: Área da app para listar e abrir projetos industriais guardados no servidor, com showroom e análise online.
+- PIMO PROJETOS: Área da app para listar e abrir projetos industriais da conta, com showroom e análise online.
 - PIMO NESTING: Sistema próprio de nesting (Nesting V3): layout manual/automático de peças em chapas com exportação PDF, TCN e etiquetas. Distinto do nesting Fast/PRO do pipeline de exportação do configurador.
 - PIMO INDUSTRIAL: Camada industrial da app: hub de estações, operações de fábrica e UI partilhada. Estado parcial, rotas reais com canvas de demonstração na home.
 - PIMO DRILL: Sistema dedicado de furação (UI 2D/3D), acessível em https://pimo.pro/industrial/pimo-drill. Estado: em desenvolvimento. A exportação Drill XML pelo configurador («Arquivos CNC») está disponível à parte.
 - Arquivo completo (ZIP): ZIP com os principais artefactos de produção (PDFs, XLSX de ferragens, TCN, Drill XML, etiquetas, layouts). Conteúdo exacto definido pelo gerador na app, ver formatos de exportação.
 - Análise arquivo completo (online): Edição documental online de PDFs industriais em PROJETOS (/analise). No código SSOT (`industrialFeatureFlags`) a flag `industrialOnlineAnalysis` está activa (`true`). Não substitui o ZIP de produção.
-- Orçamentos P3.9: Camada técnica/admin de tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.
-- Sessão / terminar sessão: Estado autenticado no servidor. Ao terminar sessão, a sessão é invalidada de forma limpa e a app envia o utilizador para o ecrã de login. Em Production o login usa armazenamento privado endurecido no servidor.
+- Orçamentos P3.9: Tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.
+- Sessão / terminar sessão: Estado da conta depois de entrar. Ao terminar sessão, a app envia o utilizador para o ecrã de login. Se a sessão expirar, é pedido para entrar de novo.
 
 ## Features
 - Configurador 3D [implemented] https://pimo.info/pt-pt/funcionalidades/configurador-3d/, Modelação paramétrica de módulos no workspace 3D.
@@ -89,12 +89,12 @@ Locale: pt-PT
 - Exportação TCN / Drill XML [implemented] https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/, Ficheiros industriais `.tcn` e Drill XML via menu Arquivos CNC.
 - PDF Técnico [implemented] https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/, Documentação PDF do projeto para cliente/arquivo. Em falha de geração, aviso claro no Workspace.
 - PIMO-TRAK [mixed] https://pimo.info/pt-pt/funcionalidades/pimo-trak/, Etiquetas QR (implementado) e rastreio industrial por peça (camada industrial).
-- Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/, Tarifas e regras de custo (camada técnica/admin P3.9).
+- Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/, Tarifas e regras de custo (Orçamentos P3.9).
 - Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/, Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.
 
 ## PIMO systems
 - PIMO TRAK [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-trak/, Sistema de ordens de trabalho e rastreamento da produção na fábrica, incluindo etiquetas QR por peça (UEE v5).
-- PIMO PROJETOS [disponivel] https://pimo.info/pt-pt/sistemas-pimo/pimo-projetos/, Área de gestão e visualização de projetos PIMO guardados no servidor (páginas/projeto com snapshot industrial).
+- PIMO PROJETOS [disponivel] https://pimo.info/pt-pt/sistemas-pimo/pimo-projetos/, Área de gestão e visualização de projetos PIMO da conta (páginas/projeto com snapshot industrial).
 - PIMO NESTING [disponivel] https://pimo.info/pt-pt/sistemas-pimo/pimo-nesting/, Motor e UI próprios de otimização da distribuição das peças nas chapas (Nesting V3), com redução de desperdício via auto-layout e colocação manual.
 - PIMO INDUSTRIAL [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/, Camada industrial completa da app: hub de estações, operações (CNC, nesting, drill, orlar, montagem, embalagem), operador/supervisor e integrações de fabrico.
 - PIMO DRILL [em-desenvolvimento] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/, Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.
@@ -693,8 +693,8 @@ featureIds: pdf-tecnico
 id: utt-hide-all-panels
 area: barra-superior
 location: Barra superior unificada, opções de visualização / rotação
-action: Alterna `viewerSettings.hideAllPanels` + `viewerApi.setAllPanelsHidden`.
-effects: Alterna `viewerSettings.hideAllPanels` + `viewerApi.setAllPanelsHidden`.
+action: Mostra ou oculta todos os painéis na vista.
+effects: Mostra ou oculta todos os painéis na vista.
 shortcut: -
 iconName: displayCheck
 sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
@@ -748,8 +748,8 @@ featureIds: configurador-3d
 id: utt-show-panel-edges
 area: barra-superior
 location: Barra superior unificada, opções de visualização / rotação
-action: Alterna `viewerSettings.showPanelEdges` + `viewerApi.setPanelEdgesVisible`.
-effects: Alterna `viewerSettings.showPanelEdges` + `viewerApi.setPanelEdgesVisible`.
+action: Mostra ou oculta as arestas dos painéis.
+effects: Mostra ou oculta as arestas dos painéis.
 shortcut: -
 iconName: displayCheck
 sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
@@ -847,8 +847,8 @@ featureIds: configurador-3d
 id: utt-reflections
 area: barra-superior
 location: Barra superior unificada, opções de visualização / rotação
-action: Alterna `viewerSettings.enableReflections` + `viewerApi.setReflectionsEnabled`.
-effects: Alterna `viewerSettings.enableReflections` + `viewerApi.setReflectionsEnabled`.
+action: Ativa ou desativa reflexos na vista.
+effects: Ativa ou desativa reflexos na vista.
 shortcut: -
 iconName: displayCheck
 sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
@@ -924,7 +924,7 @@ featureIds: configurador-3d
 id: camera-view-front
 area: barra-superior
 location: Menu vistas da câmara (barra superior)
-action: Define a vista da câmara para «front» via `viewerApi.setCameraView`.
+action: Define a vista da câmara para «front».
 effects: Altera a orientação da câmara no viewer 3D.
 shortcut: -
 iconName: camera
@@ -935,7 +935,7 @@ featureIds: configurador-3d
 id: camera-view-bottom
 area: barra-superior
 location: Menu vistas da câmara (barra superior)
-action: Define a vista da câmara para «bottom» via `viewerApi.setCameraView`.
+action: Define a vista da câmara para «bottom».
 effects: Altera a orientação da câmara no viewer 3D.
 shortcut: -
 iconName: camera
@@ -946,7 +946,7 @@ featureIds: configurador-3d
 id: camera-view-isometric
 area: barra-superior
 location: Menu vistas da câmara (barra superior)
-action: Define a vista da câmara para «isometric» via `viewerApi.setCameraView`.
+action: Define a vista da câmara para «isometric».
 effects: Altera a orientação da câmara no viewer 3D.
 shortcut: -
 iconName: camera
@@ -957,7 +957,7 @@ featureIds: configurador-3d
 id: camera-view-right
 area: barra-superior
 location: Menu vistas da câmara (barra superior)
-action: Define a vista da câmara para «right» via `viewerApi.setCameraView`.
+action: Define a vista da câmara para «right».
 effects: Altera a orientação da câmara no viewer 3D.
 shortcut: -
 iconName: camera
@@ -968,7 +968,7 @@ featureIds: configurador-3d
 id: camera-view-left
 area: barra-superior
 location: Menu vistas da câmara (barra superior)
-action: Define a vista da câmara para «left» via `viewerApi.setCameraView`.
+action: Define a vista da câmara para «left».
 effects: Altera a orientação da câmara no viewer 3D.
 shortcut: -
 iconName: camera
@@ -979,7 +979,7 @@ featureIds: configurador-3d
 id: camera-view-top
 area: barra-superior
 location: Menu vistas da câmara (barra superior)
-action: Define a vista da câmara para «top» via `viewerApi.setCameraView`.
+action: Define a vista da câmara para «top».
 effects: Altera a orientação da câmara no viewer 3D.
 shortcut: -
 iconName: camera
@@ -990,7 +990,7 @@ featureIds: configurador-3d
 id: camera-view-back
 area: barra-superior
 location: Menu vistas da câmara (barra superior)
-action: Define a vista da câmara para «back» via `viewerApi.setCameraView`.
+action: Define a vista da câmara para «back».
 effects: Altera a orientação da câmara no viewer 3D.
 shortcut: -
 iconName: camera
@@ -3311,7 +3311,7 @@ featureIds: pimo-trak, modulo-industrial
 id: industrial-nav-settings-industrial
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
-action: Navega para `/admin/settings/industrial`.
+action: Abre as definições industriais na aplicação.
 effects: Abre a vista industrial correspondente.
 shortcut: -
 iconName: adminTools
@@ -3559,7 +3559,7 @@ purpose: Ligar cada peça física ao projeto digital: gerar etiquetas, criar/exe
 howItWorks: A partir do projeto industrial (cutlist + artefactos), o fluxo cria ordens por estação (CNC, nesting, drill, orlar, montagem, embalagem). O operador lê QR (câmara/USB); as etiquetas UEE v5 saem do menu «Salvar e Gerar Design». O menu header «PIMO TRAK» aponta para `/industrial/work-orders` e rotas industriais associadas.
 features: Work orders por estação (`/industrial/work-orders`) | Etiquetas QR UEE v5 (exportação no configurador) | Operador com leitura QR (câmara / USB) | Menu industrial: Tracking, Supervisor, Quality, Rework, Time Tracking, Operations | Envio de ordem para fábrica (hub Industriais)
 inputs: ProjectState / cutlist com números de etiqueta | Artefactos industriais (ZIP / arquivo completo) | Leitura QR na estação
-outputs: Work orders por estação | PDFs de etiquetas UEE v5 | Estados de tarefa (iniciar / concluir / rejeitar) | POST /api/industrial/orders (envio fábrica)
+outputs: Work orders por estação | PDFs de etiquetas UEE v5 | Estados de tarefa (iniciar / concluir / rejeitar) | Envio de ordem para fábrica quando aplicável
 relatedSystems: pimo-industrial, pimo-nesting, pimo-drill, pimo-projetos
 statusNotes: Work orders, etiquetas UEE v5 e rotas de operador/estações existem no código. Páginas agregadas de Tracking/Quality/Rework podem estar incompletas na build, estado «parcial».
 sourceFiles: src/components/layout/header/HeaderProjectsSwitcher.tsx, src/components/layout/header/HeaderIndustrialMenu.tsx, src/app/industrial/work-orders/index.tsx, src/industrial/labels/, src/industrial/tracking/, src/core/fabrication/enviarParaFabrica.ts
@@ -3568,11 +3568,11 @@ sourceFiles: src/components/layout/header/HeaderProjectsSwitcher.tsx, src/compon
 id: pimo-projetos
 status: disponivel
 route: /PROJETOS
-definition: Área de gestão e visualização de projetos PIMO guardados no servidor (páginas/projeto com snapshot industrial).
+definition: Área de gestão e visualização de projetos PIMO da conta (páginas/projeto com snapshot industrial).
 purpose: Listar, abrir e apresentar projetos industriais guardados, incluindo showroom e análise online quando aplicável, separados do workspace de edição do configurador.
-howItWorks: A rota `/PROJETOS` lista projetos com página PROJETOS no servidor (`{nome}.json`). Requer login (`ProjetosLoginGate`). Cartões abrem o projeto; há painel de showroom e análise industrial online ligada ao snapshot.
-features: Índice de projetos industriais guardados | Login gate para acesso | Cartões de projeto com navegação | Showroom de projetos | Análise industrial online (quando flag ativa)
-inputs: Projetos persistidos no servidor / API | Snapshots (projectState + viewer + room) | Sessão autenticada
+howItWorks: A rota `/PROJETOS` lista os projetos industriais da conta. É preciso ter sessão iniciada. Cartões abrem o projeto; há painel de showroom e análise industrial online ligada ao snapshot.
+features: Índice de projetos industriais guardados | Acesso com sessão iniciada | Cartões de projeto com navegação | Showroom de projetos | Análise industrial online (quando disponível)
+inputs: Projetos da conta | Snapshots (projectState + viewer + room) | Sessão iniciada
 outputs: Lista e abertura de projetos | Vista showroom | Entrada para análise industrial
 relatedSystems: pimo-trak, pimo-industrial, pimo-nesting
 statusNotes: UI e fluxo de listagem/abertura verificados em `src/app/PROJETOS/`. Estado «disponível».
@@ -3725,7 +3725,7 @@ Artigos e novidades do ecossistema PIMO, guias, produto e produção.
 
 ## Automação no fabrico de mobiliário: do projeto à linha de produção
 URL: https://pimo.info/pt-pt/blog/posts/automacao-fabrico/
-Author: Khaled
+Author: Equipa PIMO
 Como a automação reduz erros e tempos mortos na marcenaria industrial, e que papel têm PIMO Industrial, PIMO-TRAK e o módulo industrial.
 
 A automação no fabrico de mobiliário raramente significa «robôs a substituir marceneiros». Na prática, significa **menos reintrodução manual de dados**: o mesmo projeto alimenta corte, furação, orlagem, etiquetagem e acompanhamento do estado da encomenda. Fábricas que crescem sem automatizar este fluxo acumulam gargalos no escritório, PDFs reescritos, listas de corte duplicadas e perguntas constantes «qual é a versão certa?».
@@ -3801,7 +3801,7 @@ A automação no fabrico de mobiliário é, sobretudo, **continuidade de dados**
 
 ## Comércio mundial de mobiliário: crescimento moderado e novos equilíbrios
 URL: https://pimo.info/pt-pt/blog/posts/comercio-mundial-moveis/
-Author: Khaled
+Author: Equipa PIMO
 Síntese dos dados CSIL sobre produção, exportações e consumo global em 2024-2026, o que importa para fábricas e exportadores.
 
 O **comércio internacional de mobiliário** atravessou mais um ano de crescimento contido, dentro de um contexto macroeconómico estável mas não exuberante. Para fabricantes ibéricos, muitos orientados ao mercado interno europeu mas atentos a componentes e máquinas importados, estes números ajudam a calibrar **capacidade instalada**, **apostas de exportação** e **investimento em digitalização de fábrica**.
@@ -3854,7 +3854,7 @@ Em 2024, o comércio mundial de mobiliário **cresceu ~2%** para **~USD 174 mil 
 
 ## Contraplacado e aglomerado: como escolher o painel certo
 URL: https://pimo.info/pt-pt/blog/posts/contraplacado-aglomerado/
-Author: Khaled
+Author: Equipa PIMO
 Diferenças entre contraplacado e aglomerado em estrutura, humidade e custo, e como reflectir a escolha no PIMO.
 
 Na loja de madeiras, **contraplacado** e **aglomerado** aparecem lado a lado com preços e nomes comerciais que mudam de fornecedor para fornecedor. Ambos são painéis derivados da madeira, mas a estrutura interna, folhas coladas versus partículas prensadas, altera rigidez, comportamento em humidade e o tipo de aplicação em que cada um brilha. Saber distinguir os dois poupa retrabalho na oficina e evita orçamentos com o material errado no [configurador de materiais](/pt-pt/funcionalidades/materiais/).
@@ -3921,7 +3921,7 @@ Contraplacado e aglomerado não competem no mesmo terreno: um privilegia resist�
 
 ## Cozinhas planeadas: do levantamento à montagem com projeto coerente
 URL: https://pimo.info/pt-pt/blog/posts/cozinhas-planeadas/
-Author: Khaled
+Author: Equipa PIMO
 Etapas para desenhar cozinhas sob medida, escolher materiais e ferragens, e evitar erros entre loja, oficina e obra.
 
 Uma cozinha planeada é um puzzle tridimensional: eletrodomésticos com folgas normativas, tubagens que não se movem, luz natural que define onde o cliente quer trabalhar e um orçamento que raramente absorve todos os desejos à primeira. Para lojas e marcenarias em Portugal, o desafio é fazer bem e repetir o processo com margem, prazo e montagem sem surpresas. Um projeto digital alinhado à produção, como o fluxo do PIMO PRO, liga medição, 3D, materiais e lista de corte; este guia percorre as fases que mais costumam falhar quando essa ligação falta.
@@ -3982,7 +3982,7 @@ Cozinhas planeadas são o produto de referência de muitas empresas PIMO: alto v
 
 ## Exportação CNC: TCN e Drill XML na prática
 URL: https://pimo.info/pt-pt/blog/posts/exportacao-cnc-ficheiros/
-Author: Khaled
+Author: Equipa PIMO
 Como escolher formatos industriais, organizar ficheiros por espessura e evitar erros entre desenho PIMO e máquina.
 
 Passar do projeto digital ao chão de fábrica exige **ficheiros que a máquina compreenda**. No PIMO, a saída industrial concentra-se em **TCN** (`.tcn`) e **Drill XML** (`.xml`) a partir do menu **Arquivos CNC**, «CNC» designa o destino do fluxo, não a extensão do ficheiro. Este artigo explica como encaixar essa exportação no vosso processo, alinhado com a [documentação de exportação TCN/Drill XML](/pt-pt/funcionalidades/exportacao-tcn-drill-xml/) e o [guia de utilizador](/pt-pt/guias-utilizador/exportacao/).
@@ -4014,7 +4014,7 @@ No **arquivo completo (ZIP)**, TCN, etiquetas e layouts agrupam-se frequentement
 
 Sugestões de fábrica:
 
-- Nomeie pastas no servidor interno com o **número de encomenda** e data de exportação.
+- Nomeie pastas de trabalho com o **número de encomenda** e data de exportação.
 - Não reutilize TCN de um projeto sobre peças de outro, mesmo com dimensões iguais, furos e IDs de peça diferem.
 - Arquive o ZIP junto do PDF técnico assinado pelo desenhador.
 
@@ -4056,7 +4056,7 @@ A exportação CNC TCN e Drill XML é o **contrato digital** entre o PIMO e a vo
 
 ## Fabrico digital em 2026: tendências qualitativas para a madeira
 URL: https://pimo.info/pt-pt/blog/posts/fabrico-digital-2026/
-Author: Khaled
+Author: Equipa PIMO
 Parametrização, rastreio, exportação CNC e leitura de mercado, como preparar a fábrica sem hype estatístico.
 
 Entramos em **2026** com fábricas de mobiliário mais digitais do que há uma década, não porque a indústria tenha «virado software», mas porque **projecto paramétrico**, **CNC**, **nesting** e **etiquetas** se tornaram baseline mesmo em PME. O fabrico digital deixa de ser etiqueta de feira e passa a ser **condição de margem**: menos erros, mais variedade, resposta rápida a cozinhas sob medida.
@@ -4118,7 +4118,7 @@ Fabrico digital em 2026 significa **disciplina de dados** da venda ao CNC, **ras
 
 ## Ferragens Hettich no projeto de mobiliário: sistemas que o PIMO ajuda a especificar
 URL: https://pimo.info/pt-pt/blog/posts/ferragens-hettich/
-Author: Khaled
+Author: Equipa PIMO
 Como as ferragens Hettich, gavetas, dobradiças e sistemas de portas, se integram no desenho e na produção quando o projeto vive no PIMO PRO.
 
 Um módulo de cozinha ou um roupeiro embutido pode ter carcaças impecáveis e frentes de melamina de primeira, mas são as ferragens que determinam se a gaveta abre suavemente, se a porta de correr não salta do trilho e se o conjunto aguenta anos de uso diário. A [Hettich](https://www.hettich.com/pt-pt/) posiciona-se como líder no fabrico de acessórios para móveis e desenvolve, na sua sede em Kirchlengern, Alemanha, soluções que vão dos sistemas de gavetas às dobradiças, passando por portas de correr e portas de fole.
@@ -4180,7 +4180,7 @@ Ferragens Hettich representam décadas de engenharia aplicada ao mobiliário. No
 
 ## Furação industrial no mobiliário: da peça ao ficheiro para a máquina
 URL: https://pimo.info/pt-pt/blog/posts/furacao-industrial/
-Author: Khaled
+Author: Equipa PIMO
 Como a furação industrial liga o projeto ao chão de fábrica, sistemas CNC, Drill XML e o papel do PIMO DRILL no ecossistema PIMO.
 
 Na marcenaria e no mobiliário por medida, a furação deixa de ser um detalhe de montagem quando entra em escala industrial. Cada furo para dobradiça, minifix, pino ou sistema de gaveta tem de coincidir com o desenho, com a espessura real da chapa e com o programa que a centradeira ou a CNC vai executar. Um milímetro de desvio acumula-se em portas desalinhadas, frentes que raspam ou lotes inteiros rejeitados no controlo de qualidade.
@@ -4243,7 +4243,7 @@ Se a sua oficina está a dar o salto de gabaritos manuais para CNC de furação,
 
 ## Inteligência artificial na carpintaria e no desenho de mobiliário
 URL: https://pimo.info/pt-pt/blog/posts/ia-carpintaria/
-Author: Khaled
+Author: Equipa PIMO
 Como a IA pode apoiar marceneiros e equipas de projeto, da ideação à produção, sem substituir o critério técnico.
 
 A conversa em torno da **inteligência artificial** chegou às oficinas, às salas de exposição e aos escritórios de desenho de mobiliário. Para muitos marceneiros e projetistas, a pergunta não é se a IA «vai substituir o ofício», mas **onde ela poupa tempo**, **onde introduz risco** e **como manter o controlo sobre dimensões, ferragens e regras de fabrico**.
@@ -4274,7 +4274,7 @@ Três cuidados são transversais a qualquer oficina ou PME do sector:
 
 1. **Alucinações**, modelos generativos inventam dimensões ou ferragens plausíveis mas erradas. Toda saída que vá para produção precisa de revisão humana num ambiente paramétrico.
 2. **Privacidade**, plantas, contactos de clientes e preços não devem ser colados em serviços públicos sem política clara da empresa.
-3. **Responsabilidade**, se uma peça falha ou um módulo não entra na obra, quem responde é a empresa, não o chatbot.
+3. **Responsabilidade**, se uma peça falha ou um módulo não entra na obra, quem responde é a empresa, não o assistente automático.
 
 A IA é mais segura quando actua sobre **artefactos já validados** (PDF técnico, lista de corte, exportação CNC) do que quando «cria» o projeto do zero a partir de uma frase vaga.
 
@@ -4294,7 +4294,7 @@ A inteligência artificial na carpintaria e no desenho de mobiliário é, sobret
 
 ## Lista de corte e gestão de resíduos: do projeto à chapa com menos desperdício
 URL: https://pimo.info/pt-pt/blog/posts/lista-corte-residuos/
-Author: Khaled
+Author: Equipa PIMO
 Como consolidar peças no PIMO, optimizar utilização de painéis e organizar retalhos para nesting e custos reais.
 
 A lista de corte é o documento que transforma um conjunto de módulos 3D em rectângulos numerados para a serra, e, quando está errada ou incompleta, transforma-se em **chapas extra**, telefonemas em obra e retalhos que ninguém reaproveita. Em marcenarias que trabalham com painéis melamínicos e MDF, a diferença entre 78 % e 92 % de utilização de chapa pesa directamente na margem do projecto. Este artigo explica como gerar listas fiéis no PIMO, alimentar nesting CNC e tratar resíduos como recurso, não só como lixo.
@@ -4371,7 +4371,7 @@ Lista de corte e gestão de resíduos são duas faces da mesma moeda: precisão 
 
 ## Madeiras maciças no mobiliário: espécies, estabilidade e projeto digital
 URL: https://pimo.info/pt-pt/blog/posts/madeiras-macicas/
-Author: Khaled
+Author: Equipa PIMO
 Quando escolher madeira maciça, como gerir humidade e junções, e como documentar espécies e desperdício no fluxo PIMO.
 
 Há clientes que pedem «madeira de verdade», e há oficinas que sabem que isso pode significar carvalho europeu numa mesa de jantar, pinho nórdico num roupeiro rústico ou freijó numa frente de gaveta. A **madeira maciça** (peças talhadas ou laminadas a partir de toros, sem aglomerar partículas como no MDF) traz estética, reparabilidade e peso próprio. Também traz movimento dimensional, variação de cor e um custo de matéria-prima que o painel industrial raramente iguala. Este guia ajuda a decidir onde a maciça compensa e como não perder esse valor entre o desenho e a serra.
@@ -4425,7 +4425,7 @@ Madeira maciça continua a ser referência quando o cliente valoriza tacto, long
 
 ## Materiais de cozinha: durabilidade na carcaça e nas frentes
 URL: https://pimo.info/pt-pt/blog/posts/materiais-cozinhas/
-Author: Khaled
+Author: Equipa PIMO
 Melaminas, lacados, compactos e madeiras, como escolher combinações que resistem ao uso diário e ao ambiente húmido.
 
 Uma cozinha é, durante anos, **ambiente húmido**, **superfície de corte indirecto**, **calor próximo do forno** e **milhares de ciclos de abertura de gavetas**. A durabilidade não depende só da «marca» escolhida na loja: depende da **combinação carcaça + frente + orla + ferragem**, da **qualidade de lacagem ou prensagem** e de **como o projecto traduz materiais** no software antes de ir para a serra.
@@ -4499,7 +4499,7 @@ Materiais de cozinha duráveis combinam **escolha técnica informada**, **projec
 
 ## MDF: guia prático para carpintaria e mobiliário
 URL: https://pimo.info/pt-pt/blog/posts/mdf-guia-pratico/
-Author: Khaled
+Author: Equipa PIMO
 O que é o MDF, onde usar em carcaças e frentes, limitações em humidade e como registar o material no fluxo de projeto PIMO.
 
 O **MDF** (medium-density fibreboard, ou fibra de média densidade) é um dos painéis mais presentes em cozinhas, roupeiros e mobiliário sob medida em Portugal. A superfície homogénea, a boa comportação em usinagem e o preço previsível explicam essa popularidade, mas o material só rende quando se escolhe a espessura certa, se protegem os bordos e se evitam ambientes críticos. Este guia resume o que importa na bancada e no escritório, alinhado com a forma como o [PIMO](https://pimo.pro/) trata materiais no projeto.
@@ -4562,7 +4562,7 @@ O MDF é uma ferramenta versátil no fabrico de mobiliário: estável, económic
 
 ## Melamina e painéis decorativos: escolher, cortar e orçamentar com rigor
 URL: https://pimo.info/pt-pt/blog/posts/melamina-paineis/
-Author: Khaled
+Author: Equipa PIMO
 Como funcionam os painéis melamínicos, que acabamentos pedem cozinhas e roupeiros, e como manter materiais e lista de corte alinhados no PIMO.
 
 Na loja de mobiliário ou na oficina de marcenaria, «melamina» é muitas vezes a palavra que o cliente usa quando quer frentes brancas, madeiras claras ou texturas de pedra, sem distinguir se o substrato é aglomerado, MDF ou contraplacado. Para quem projeta e corta, a distinção importa: a melamina é o **revestimento** (papel impregnado com resinas melamínicas, prensado a alta temperatura), não o painel inteiro. Este artigo resume o que precisa de saber para especificar, orçamentar e produzir com painéis melamínicos, em linha com o fluxo de [materiais](/pt-pt/funcionalidades/materiais/) e [lista de corte](/pt-pt/funcionalidades/lista-de-corte/) no PIMO.
@@ -4611,7 +4611,7 @@ Painéis melamínicos são o alicerce do mobiliário residencial moderno em Port
 
 ## Nesting CNC: optimizar chapas, reduzir desperdício e ligar ao projeto
 URL: https://pimo.info/pt-pt/blog/posts/nesting-cnc/
-Author: Khaled
+Author: Equipa PIMO
 Princípios de nesting em painéis, margens de segurança, ordem de corte e integração com listas exportadas do PIMO.
 
 Nesting é o arranjo inteligente de peças 2D numa chapa antes do corte CNC, o mesmo princípio do «quebra-cabeças», mas com euros por metro quadrado em jogo. Uma optimização medíocre deixa retalhos grandes no chão; uma boa combina peças de vários módulos, respeita veio decorativo e margens da máquina. Para oficinas que fabricam cozinhas e roupeiros a partir de projectos digitais, o nesting é o ponto onde **desenho e produção** se encontram ou se desencontram. Este artigo explica conceitos práticos e como alimentar o processo a partir do PIMO.
@@ -4677,7 +4677,7 @@ Nesting CNC não é luxo de grandes fábricas: é disciplina de quem compra pain
 
 ## Orlagem de bordos: acabamento, precisão e ligação ao projeto digital
 URL: https://pimo.info/pt-pt/blog/posts/orlagem-bordos/
-Author: Khaled
+Author: Equipa PIMO
 Porque a orlagem importa na durabilidade e no aspeto dos móveis, e como alinhar materiais, lista de corte e produção no PIMO.
 
 Quem entra numa cozinha ou num roupeiro de qualidade raramente repara nos bordos das prateleiras, até falhar um. A orlagem (aplicação de fita de bordo ou acabamento equivalente) protege o núcleo da chapa, esconde o corte e prolonga a vida do móvel em ambientes húmidos ou de uso intenso. Na produção, porém, a orlagem é um processo crítico: exige sequência correta em relação ao corte, escolha de fita compatível com o decor e registo claro de quais arestas são visíveis.
@@ -4753,7 +4753,7 @@ A orlagem de bordos é o acabamento que o utilizador toca todos os dias. No PIMO
 
 ## PIMO TRAK: rastrear peças da exportação à montagem
 URL: https://pimo.info/pt-pt/blog/posts/pimo-trak-rastreio/
-Author: Khaled
+Author: Equipa PIMO
 Etiquetas QR UEE v5, identificação por peça e acompanhamento industrial, o que já pode usar hoje na fábrica.
 
 Numa cozinha ou roupeiro com dezenas de painéis, **trocar duas peças** ou **perder o estado de furação** custa horas e margem. O **PIMO TRAK** liga cada peça física ao projecto digital através de **códigos QR únicos**, começando pela exportação de **etiquetas UEE v5**, já implementada, e estendendo-se, consoante a instalação, à **camada industrial** de ordens de trabalho e leitura em posto.
@@ -4790,7 +4790,7 @@ Se a vossa fábrica ainda não expõe digitalização em todos os postos, **as e
 
 ## Equipamento de leitura
 
-QR standard lê-se com **câmara de telemóvel** ou scanner USB/Bluetooth compatível. Não é necessário hardware proprietário para beneficiar da identificação por peça; a camada industrial pode exigir dispositivos fixos em postos específicos, valide com o administrador da vossa instalação PIMO.
+QR standard lê-se com **câmara de telemóvel** ou scanner USB/Bluetooth compatível. Não é necessário hardware proprietário para beneficiar da identificação por peça; a camada industrial pode exigir dispositivos fixos em postos específicos, valide com o responsável da vossa instalação PIMO.
 
 ## Integração com CNC e nesting
 
@@ -4830,7 +4830,7 @@ PIMO TRAK transforma exportação digital em **rastreabilidade física**: comece
 
 ## Regras de fabrico para portas e gavetas
 URL: https://pimo.info/pt-pt/blog/posts/portas-gavetas-fabrico/
-Author: Khaled
+Author: Equipa PIMO
 Folgas, exclusividade, ferragens e validação antes da exportação, o que a fábrica precisa de respeitar em frentes de mobiliário.
 
 Portas e gavetas são a face visível do mobiliário, e também onde **folgas erradas**, **ferragens incompatíveis** ou **interferências com módulos vizinhos** se manifestam primeiro. Num fluxo digital como o PIMO, muitas regras são aplicadas automaticamente no desenho; na fábrica, o desafio é garantir que **o que foi exportado** corresponde ao **critério industrial** da empresa e ao **manual do fornecedor de ferragens**.
@@ -4894,7 +4894,7 @@ Regras de fabrico para portas e gavetas são a ponte entre **automação no dese
 
 ## A profissão de carpinteiro em 2026: oficina, digital e mobiliário sob medida
 URL: https://pimo.info/pt-pt/blog/posts/profissao-carpinteiro/
-Author: Khaled
+Author: Equipa PIMO
 Competências que o mercado pede a marceneiros e carpinteiros em Portugal, da bancada ao projeto 3D e à produção CNC.
 
 Carpinteiro, marceneiro, montador de mobiliário, operador CNC, na rua e na oficina, os títulos misturam-se, mas o trabalho continua a juntar **material, precisão e contacto com o cliente**. Em 2026, quem fabrica cozinhas e roupeiros em Portugal encontra moradias mais compactas, exigência de prazo curto e concorrência de grandes marcas com catálogo fechado. A resposta de muitas empresas não é abandonar o ofício: é combinar bancada tradicional com software de projeto, listas de corte optimizadas e rastreio de encomendas. Este artigo descreve o perfil profissional que esse modelo pede, sem romantizar nem reduzir a profissão a «cliques num ecrã».
@@ -4947,7 +4947,7 @@ A profissão de carpinteiro no mobiliário contemporâneo é híbrida: mãos na 
 
 ## Software de design 3D para marcenaria: o que procurar e como o PIMO se encaixa
 URL: https://pimo.info/pt-pt/blog/posts/software-design-3d/
-Author: Khaled
+Author: Equipa PIMO
 Critérios para escolher ferramentas de modelação 3D no mobiliário por medida, e relação com o configurador 3D do PIMO PRO.
 
 Desenhar móveis em 2D no CAD genérico ainda funciona para algumas oficinas, mas clientes, retalhistas e fábricas pedem cada vez mais **visualização 3D**, listas de peças automáticas e ligação ao orçamento. O mercado oferece desde modeladores livres até suites industriais; para marcenaria e mobiliário por medida, o critério não é «o software mais bonito», mas o que reduz retrabalho entre venda, engenharia e produção.
@@ -5022,7 +5022,7 @@ Software de design 3D para marcenaria não é sinónimo de «qualquer modelador 
 
 ## Sustentabilidade na madeira e no mobiliário: certificação, resíduos e escolhas de projeto
 URL: https://pimo.info/pt-pt/blog/posts/sustentabilidade-madeira/
-Author: Khaled
+Author: Equipa PIMO
 Como a gestão florestal certificada, o desperdício de corte e os materiais no PIMO se ligam a decisões mais sustentáveis na marcenaria.
 
 Sustentabilidade no mobiliário deixou de ser só marketing verde: grandes obras públicas, cadeias de retalho e clientes finais perguntam pela origem da madeira, pela emissão de compostos orgânicos voláteis e pelo destino dos retalhos de chapa. Para marcenarias em Portugal, integradas num mercado europeu exigente, a resposta passa por **compras certificadas**, **eficiência de corte** e **durabilidade do produto**. Este artigo liga esses pilares ao trabalho diário de projeto e produção, incluindo o papel da lista de materiais e de corte no PIMO.
@@ -5083,7 +5083,7 @@ Arquitetura e fluxo do PIMO PRO: projeto → módulos/caixas → peças → mate
 
 # Como funciona
 
-Fluxo ponta a ponta do PIMO PRO, documentado a partir do código (estado do projeto, cutlist, nesting, exportações e PIMO-TRAK). Sem inventar passos: cada módulo lista entradas, saídas, dependências e ficheiros-fonte. Os sistemas de produto (TRAK, PROJETOS, NESTING, INDUSTRIAL, DRILL) estão em [Sistemas PIMO](/pt-pt/sistemas-pimo/).
+Fluxo ponta a ponta do PIMO PRO: projeto, cutlist, nesting, exportações e PIMO-TRAK. Cada módulo resume o que entra, o que sai e como se liga ao resto. Os sistemas de produto (TRAK, PROJETOS, NESTING, INDUSTRIAL, DRILL) estão em [Sistemas PIMO](/pt-pt/sistemas-pimo/).
 
  
 
@@ -5220,13 +5220,13 @@ O módulo de Orçamentos centraliza tarifas industriais/financeiras com persist�
 
 ## Sistema Industrial
 URL: https://pimo.info/pt-pt/documentacao-tecnica/sistema-industrial/
-Visão consolidada da camada industrial: rotas, admin e fases documentadas no PIMO PRO.
+Visão consolidada da camada industrial: rotas e fases documentadas no PIMO PRO.
 
 # Sistema Industrial, visão consolidada
 
-Camada industrial da app em `/industrial/*` (login obrigatório), com hub de estações, work orders, operações e administração.
+Camada industrial da app em `/industrial/*` (é preciso ter sessão iniciada), com hub de estações, work orders e operações.
 
-## Rotas principais (código)
+## Rotas principais
 
 | Área | Rota |
 |---|---|
@@ -5234,20 +5234,12 @@ Camada industrial da app em `/industrial/*` (login obrigatório), com hub de est
 | Work orders | `/industrial/work-orders` |
 | Operações | `/industrial/operations` (+ `/cnc`, `/nesting`, `/drill`, `/orlar`, `/montagem`, `/embalagem`) |
 | Tracking / quality / rework / time / events | `/industrial/tracking`, `/quality`, `/rework`, `/time-tracking`, `/events` |
-| PIMO DRILL | `/industrial/pimo-drill` (`ProtectedRoute` dedicado) |
+| PIMO DRILL | `/industrial/pimo-drill` |
 | Release notes industriais | `/industrial/release-notes` |
-
-## Admin industrial
-
-| Área | Rota | Acesso |
-|---|---|---|
-| Settings industriais | `/admin/settings/industrial` | `canAccessAdminPanel` |
-| Alertas realtime | `/admin/system-settings/industrial/realtime-alerts` | `canAccessAdminPanel` |
 
 ## Princípio de implementação
 
 - Leitura de estado já existente no UI.
-- Sem criação de endpoints novos para as fases documentadas na camada visual.
 - Impacto operacional focado em visualização e clareza de processo nas fases visuais 1-6.
 
 ## Fases visuais (1-6)
@@ -5267,7 +5259,7 @@ Camada industrial da app em `/industrial/*` (login obrigatório), com hub de est
 4. Cost Engine.
 5. Real Execution Engine.
 6. Real Data Engine.
-7. Full Production Engine.
+7. Full Factory Engine.
 8. Real Integration Engine.
 9. Full Industrial Runtime.
 10. Real Operations Engine.
@@ -5277,7 +5269,7 @@ Camada industrial da app em `/industrial/*` (login obrigatório), com hub de est
 ## Garantias explicitadas
 
 - Sem alteração arbitrária de rotas `/industrial` existentes na documentação de fases.
-- Shells de Tracking/Quality/Rework/Time/Events usam placeholder Fase 3C.2 até ligarem dados reais.
+- Shells de Tracking/Quality/Rework/Time/Events usam placeholder até ligarem dados reais.
 - Preparado para integração futura com dados reais adicionais sem reescrever os painéis.
 
 ## Nota
@@ -5388,7 +5380,7 @@ Em **PIMO PROJETOS**, as rotas `/PROJETOS/:project/analise` e `/PROJETOS/:projec
 
 ## Estado
 
-**Disponível** no código da app (`ProjetosAnaliseIndexPage`, `ProjetosAnaliseDocPage`).
+**Disponível** em PIMO PROJETOS, quando a análise documental estiver ativa na sua instalação.
 
 ## Relacionado
 
@@ -5427,32 +5419,32 @@ A rota `/projects/viewer` (dentro de `ProtectedLayout`) abre o showroom de proje
 
 ## Conta e acesso
 URL: https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/
-Login, registo, verificação de email, recuperação de password, perfil, sessão no servidor e terminar sessão no PIMO PRO.
+Entrar na conta, registo, recuperação de palavra-passe, perfil e terminar sessão no PIMO PRO.
 
 # Conta e acesso
 
-Rotas verificadas na app: `/login`, `/register`, `/register/check-email`, `/verify-email`, `/forgot-password`, `/me`. As páginas de login e registo são públicas. O dashboard, os projetos e a área Admin exigem autenticação.
+No PIMO PRO pode criar conta, entrar, recuperar a palavra-passe e gerir o perfil. O painel, os projetos e outras áreas pessoais pedem que tenha sessão iniciada.
 
 ## Fluxos
 
-1. **Registo** → verificação de email → login
-2. **Login** → dashboard, projetos ou Admin (conforme a conta)
-3. **Recuperar password** → email de reset
-4. **Perfil (`/me`)** → dados da conta
-5. **Terminar sessão** → a sessão no servidor é invalidada e a app envia-o para o ecrã de login
-6. **Reabrir a app** → a sessão é confirmada no servidor; se o token já não for válido, vai para o login
+1. **Registo** → verificação de email → **Entrar na conta**
+2. **Entrar na conta** → painel e projetos
+3. **Recuperar palavra-passe** → email de reset
+4. **Perfil** → dados da conta
+5. **Terminar sessão** → a app envia-o para o ecrã de login
+6. **Se a sessão expirar** → é pedido para entrar de novo
 
-## Login em Production
+## Entrar na conta
 
-O login em Production voltou a funcionar com a conta Owner (admin). A autenticação usa armazenamento privado endurecido no servidor. Depois de entrar, a área Admin (`/admin`) fica acessível. O perfil em `/me` continua a funcionar como antes.
+Use o ecrã de login com o email e a palavra-passe da conta. Depois de entrar, pode abrir o painel, **Meus Projetos** e o perfil.
 
-## Sessão ao reabrir a aplicação
+## Se a sessão expirar
 
-Ao abrir de novo o PIMO PRO (ou em pedidos à API), a sessão é **confirmada no servidor**. Se o token já não for válido, o utilizador é enviado para o ecrã de login em vez de ficar com uma sessão fantasma (parece autenticado, mas os pedidos falham).
+Se a sessão já não for válida ao reabrir a aplicação, o PIMO PRO pede para **entrar de novo**. Não fica numa sessão antiga a meio.
 
 ## Terminar sessão
 
-Ao sair da conta, a sessão no servidor é invalidada de forma limpa e o utilizador é enviado para o ecrã de login. O login, a área Admin e a sessão `/me` mantêm-se a funcionar normalmente depois de voltar a entrar.
+Ao escolher **Terminar sessão**, sai da conta e volta ao ecrã de login. Pode voltar a entrar quando quiser.
 
 ## Capturas (pimo.pro)
 
@@ -5462,7 +5454,7 @@ Ao sair da conta, a sessão no servidor é invalidada de forma limpa e o utiliza
 
 ## Estado
 
-**Disponível** na aplicação [pimo.pro/login](https://pimo.pro/login). Em outubro 2026: login Production com armazenamento privado no servidor, área Admin acessível após login Owner, logout com invalidação limpa da sessão, e confirmação da sessão no servidor ao reabrir a app (token inválido → login).
+**Disponível** na aplicação [pimo.pro/login](https://pimo.pro/login).
 
 ## Relacionado
 
@@ -5474,45 +5466,31 @@ Ao sair da conta, a sessão no servidor é invalidada de forma limpa e o utiliza
 
 ## Definições
 URL: https://pimo.info/pt-pt/funcionalidades/definicoes/
-Definições do utilizador, do projeto e administrativas no PIMO PRO (rota /definicoes e admin).
+Preferências pessoais e do projeto no PIMO PRO (rota /definicoes).
 
 # Definições
 
-A rota `/definicoes` e as áreas de administração concentram preferências e configuração do sistema. Rotas admin exigem permissões (`PermissionRoute` / `hasFullAccess` / `canAccessAdminPanel`) e login. Em Production, após login com a conta Owner (admin), a área Admin (`/admin`) fica acessível.
+Em **Definições** (`/definicoes`) ajusta preferências da sua conta e opções ligadas ao projeto em que está a trabalhar. É preciso ter sessão iniciada.
 
-## Níveis
+## O que pode configurar
 
 | Nível | Onde | Conteúdo típico |
 |---|---|---|
-| Utilizador | `/definicoes`, `/me` | Preferências pessoais |
-| Projeto | contexto do projeto | Unidades, materiais default |
-| Global | `/admin/global-settings` | Defaults da instalação |
-| Sala | `/admin/room-settings` | Ambiente / sala 3D |
-| Industrial | `/admin/settings/industrial` | Alertas e parâmetros TRAK |
+| Conta / perfil | `/definicoes`, perfil | Preferências pessoais |
+| Projeto | contexto do projeto | Unidades, materiais por defeito |
+| Sala e ambiente | definições de sala na app | Ambiente 3D (paredes, luz) |
 
-## Administração (rotas verificadas)
-
-| Área | Rota | Página |
-|---|---|---|
-| Utilizadores | `/admin/users` | `UsersAdminPage` |
-| Partilhas de projeto | `/admin/project-shares` | `ProjectSharesAdminPage` |
-| Roles | `/admin/roles` | `ManageRolesPage` |
-| Permissões | `/admin/permissions` | `ManagePermissionsPage` |
-| Global settings | `/admin/global-settings` | `GlobalSettingsAdminPage` |
-| Room settings | `/admin/room-settings` | `RoomSettingsAdminPage` |
-| Settings industriais | `/admin/settings/industrial` | `IndustrialAdminSettingsPage` |
-| Alertas realtime | `/admin/system-settings/industrial/realtime-alerts` | `RealtimeAlertsAdminPage` |
+O detalhe de cada opção aparece na própria interface do PIMO PRO.
 
 ## Estado
 
-**Documentado a partir do código (outubro 2026):** rotas e páginas admin existem na app; o acesso depende de RBAC. Em Production o login Owner volta a abrir a Admin. Detalhe de cada flag continua na UI da app.
+**Disponível** na aplicação para utilizadores com sessão iniciada.
 
 ## Relacionado
 
 - [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/)
 - [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/)
 - [Sala e ambiente](/pt-pt/funcionalidades/sala-e-ambiente/)
-- [Sistema industrial](/pt-pt/documentacao-tecnica/sistema-industrial/)
 
 ---
 
@@ -5547,21 +5525,21 @@ As **estações** do fluxo industrial (verificadas em `App.tsx` do PIMO PRO) ope
 | Peça industrial | `/industrial/piece/:pieceId` |
 | Execução de estação | `/industrial/stations/:station` |
 
-## Vistas auxiliares (shell + QR)
+## Vistas auxiliares
 
-Estas páginas montam `IndustrialLayout`, painel de leitura QR (`QrScannerPanel`) e um painel placeholder com nota de fase 3C.2 no código:
+Além das estações, a área industrial inclui vistas de acompanhamento com leitura QR:
 
-| Vista | Rota | Nota no código |
+| Vista | Rota | Utilidade |
 |---|---|---|
-| Tracking | `/industrial/tracking` | Ligar snapshots de tracking e realtime |
-| Qualidade | `/industrial/quality` | Ligar inspeções e rework automático |
-| Retrabalho | `/industrial/rework` | Ligar fila de retrabalho |
-| Time tracking | `/industrial/time-tracking` | Ligar timers operacionais |
-| Eventos | `/industrial/events` | Ligar filtros e feed Supabase |
+| Tracking | `/industrial/tracking` | Acompanhar peças |
+| Qualidade | `/industrial/quality` | Controlo de qualidade |
+| Retrabalho | `/industrial/rework` | Peças a retrabalhar |
+| Time tracking | `/industrial/time-tracking` | Tempos por posto |
+| Eventos | `/industrial/events` | Registo de eventos operacionais |
 
 ## Estado
 
-**Documentado a partir do código (outubro 2026):** estações e perfis existem; as vistas auxiliares acima são shells com QR e placeholder. App: [pimo.pro/industrial](https://pimo.pro/industrial) (requer login).
+**Disponível** na app: estações e perfis; algumas vistas auxiliares podem ainda evoluir. App: [pimo.pro/industrial](https://pimo.pro/industrial) (é preciso ter sessão iniciada).
 
 ## Relacionado
 
@@ -5611,7 +5589,7 @@ As **ferragens** no PIMO PRO descrevem os componentes mecânicos associados a ca
 - Incluir listagens em PDF/XLSX no arquivo industrial
 - Ligar portas/gavetas às regras de ferragem disponíveis no catálogo da app
 
-## Como funciona (verificado no código)
+## Como funciona
 
 Na aplicação ([pimo.pro](https://pimo.pro)), as ferragens entram no fluxo de projeto após definir caixas, portas ou gavetas. As exportações industriais incluem secções de ferragens no ZIP completo e nos PDFs técnicos.
 
@@ -5692,7 +5670,7 @@ A camada industrial agrega hub `/industrial`, estações de work order, operaç�
 
 ## Operações CNC
 
-A rota `/industrial/operations/cnc` redireciona para `/industrial/work-orders/nesting` (verificado no código: `Navigate` em `operations/cnc/index.tsx`). As outras operações (`nesting`, `drill`, `orlar`, `montagem`, `embalagem`) têm páginas próprias sob `/industrial/operations/`.
+A opção de operações CNC leva à área de nesting das work orders. As outras operações (`nesting`, `drill`, `orlar`, `montagem`, `embalagem`) têm páginas próprias sob `/industrial/operations/`.
 
 ---
 
@@ -5824,11 +5802,11 @@ Sala 3D, ambiente e room settings no PIMO PRO.
 
 # Sala e ambiente
 
-O ambiente de **sala** contextualiza o mobiliário no viewport (paredes, luz, HDR). As definições administrativas estão em `/admin/room-settings`.
+O ambiente de **sala** contextualiza o mobiliário no viewport (paredes, luz, HDR). Pode ajustar opções de sala e ambiente nas definições da aplicação.
 
 ## Estado
 
-**Disponível** na app. Ajuste fino de room settings é administrativo.
+**Disponível** na app.
 
 ## Relacionado
 
@@ -5994,7 +5972,7 @@ O menu de exportação (bolha **Salvar e Gerar Design**) reúne os artefactos t�
 
 ## Arquivo completo (ZIP)
 
-Conteúdo gerado pelo código (não inventar CSV obrigatório):
+Conteúdo típico do pacote (não assumir CSV obrigatório):
 
 - Cutlist PDF, PDF técnico, PDF unificado
 - Ferragens PDF + XLSX
@@ -6004,48 +5982,42 @@ Conteúdo gerado pelo código (não inventar CSV obrigatório):
 - Ficheiros **TCN** e **Drill XML**
 - `manifest-industrial.json`
 
-O nesting do ZIP completo usa o modo **PRO** (não Fast). A ordem de fábrica (`industrial_order.json`) **não** vai no ZIP, é enviada via API quando aplicável.
+O nesting do ZIP completo usa o modo **PRO** (não Fast). A ordem de fábrica (`industrial_order.json`) **não** vai no ZIP; o envio para fábrica, quando aplicável, faz-se à parte do ficheiro ZIP.
 
 Fluxo: **Exportar → Gerar arquivo completo**.
 
 ## Análise arquivo completo (online)
 
-- Edição documental online em PROJETOS (`/analise`).
-- No SSOT da app (`industrialFeatureFlags.industrialOnlineAnalysis`) a flag está **activa** (`true`).
+- Edição documental online em PROJETOS (`/analise`), quando disponível na sua instalação.
 - **Não substitui** o ZIP de produção.
-- Estado: **implementado** (sujeito à versão/build da app instalada).
 
-## Nota técnica
+## Nota
 
-Validações em campos editáveis (ex.: quantidade e material) aplicam-se na análise online quando ativa. Edições documentais na cutlist podem refletir-se em PDFs/etiquetas; **TCN/Drill XML não mudam** por essas edições.
+Validações em campos editáveis (ex.: quantidade e material) aplicam-se na análise online quando disponível. Edições documentais na cutlist podem refletir-se em PDFs/etiquetas; **TCN/Drill XML não mudam** por essas edições.
 
 ---
 
 ## Gerir Projetos
 URL: https://pimo.info/pt-pt/guias-utilizador/gerir-projetos/
-Guardar, abrir e gerir projetos no PIMO PRO: Meus Projetos, detalhe Admin e abertura no editor 3D.
+Guardar, abrir e gerir projetos no PIMO PRO: Meus Projetos e abertura no editor 3D.
 
 # Guardar, carregar e gerir projetos
 
-No PIMO PRO há projetos locais no navegador e projetos da conta no servidor. A lista **Meus Projetos** fica em `/meus-projetos`.
+No PIMO PRO pode guardar projetos na conta e também ter cópias locais no navegador. A lista **Meus Projetos** mostra os projetos da sua conta.
 
 ## Meus Projetos (`/meus-projetos`)
 
-A listagem mostra os **projetos da sua conta**. Não apresenta projetos de outros utilizadores ativos.
+**Meus Projetos** lista os projetos da sua conta, com metadados e miniaturas. A partir daí pode abrir um projeto no workspace.
 
-Depois do restauro, o **administrador da plataforma** também vê projetos **órfãos ou legado** (donos antigos que já não existem na plataforma). Continua a não ver, nesta lista, projetos de outros utilizadores ativos.
+Para entrar na conta, veja [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
 
-A listagem Admin com a opção **«todos»** mantém-se na área Admin (`/admin`), à parte de Meus Projetos.
+## Abrir no editor 3D
 
-Para entrar e aceder à Admin, veja [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
-
-## Detalhe Admin do projeto (`/projects/ `)
-
-Na página de detalhe Admin de um projeto já **não aparece** o texto confuso de «FASE 4». A página explica que o **editor 3D está na página inicial** da aplicação e oferece o botão **Abrir no editor 3D** para ir trabalhar o projeto no configurador.
+Em alguns ecrãs de detalhe do projeto há o botão **Abrir no editor 3D**. Leva-o para o editor na página inicial da aplicação, onde continua a trabalhar o projeto no configurador.
 
 ## Projetos locais no navegador
 
-O armazenamento local no navegador permite auto-save e exportação/importação JSON. Serve de apoio e backup; a lista Meus Projetos no servidor segue as regras de conta acima.
+O armazenamento local no navegador permite auto-save e exportação/importação JSON. Serve de apoio e backup. A lista **Meus Projetos** mostra o que está na sua conta.
 
 ## Passo a passo
 
@@ -6053,13 +6025,13 @@ O armazenamento local no navegador permite auto-save e exportação/importação
    Auto-save ativo e opção de guardar manualmente na barra superior.
 
 2. **Abrir Meus Projetos**  
-   Em `/meus-projetos`: projetos da sua conta, com metadados e miniaturas. Se for administrador da plataforma, a lista inclui também órfãos ou legado após o restauro.
+   Em `/meus-projetos`: projetos da sua conta, com metadados e miniaturas.
 
 3. **Carregar projeto**  
    Selecione o projeto e abra no workspace.
 
-4. **Detalhe Admin**  
-   Em `/projects/ `, use **Abrir no editor 3D** se quiser editar no configurador da página inicial.
+4. **Abrir no editor 3D**  
+   Use o botão **Abrir no editor 3D** se quiser editar no configurador da página inicial.
 
 5. **Duplicar ou renomear**  
    Disponível por menu de contexto.
@@ -6067,12 +6039,9 @@ O armazenamento local no navegador permite auto-save e exportação/importação
 6. **Exportar/Importar JSON**  
    Recomendado para backup externo e partilha.
 
-7. **Admin «todos»** (só admin)  
-   Na área Admin, a listagem com **«todos»** continua disponível para gestão alargada, separada de Meus Projetos.
-
 ## Atenção
 
-Se limpar os dados do browser, os projetos guardados localmente podem ser removidos. Os projetos da conta no servidor não dependem do armazenamento local do navegador.
+Se limpar os dados do browser, os projetos guardados localmente podem ser removidos. Os projetos da conta em **Meus Projetos** não dependem só do armazenamento local do navegador.
 
 ---
 
@@ -6592,19 +6561,15 @@ FAQ do PIMO PRO: conta, erros inesperados, módulos, nesting, exportação e PIM
 
 ## Apareceu «Algo correu mal» na aplicação?
 
-Se a interface falhar de forma inesperada, o PIMO PRO deixa de mostrar um ecrã em branco. Surge a mensagem **Algo correu mal** (erro inesperado) e o botão **Voltar ao início**, que o leva de novo ao arranque da aplicação. Pode continuar a trabalhar a partir daí; se o problema se repetir, contacte o suporte.
+Se algo correr mal de forma inesperada, o PIMO PRO deixa de mostrar um ecrã em branco. Surge a mensagem **Algo correu mal** e o botão **Voltar ao início**, que o leva de novo ao arranque da aplicação. Pode continuar a trabalhar a partir daí; se o problema se repetir, contacte o suporte.
 
-## O login em Production funciona?
+## Como entro e saio da conta?
 
-Sim. Em Production o login voltou a funcionar com a conta Owner (admin). A autenticação usa armazenamento privado endurecido no servidor e, após entrar, a área Admin (`/admin`) fica acessível. Detalhe em [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
+Use **Entrar na conta** no ecrã de login. Para sair, escolha **Terminar sessão**: a app envia-o de novo para o login. Detalhe em [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
 
-## O que acontece quando termino a sessão?
+## O que acontece se a sessão expirar?
 
-Ao sair da conta, a sessão no servidor é invalidada de forma limpa e a app envia-o para o ecrã de login. Pode voltar a entrar normalmente; o perfil `/me` e a Admin mantêm-se a funcionar.
-
-## O que acontece se reabrir a app com a sessão antiga?
-
-A sessão é confirmada no servidor. Se o token já não for válido, o PIMO PRO envia-o para o login em vez de manter uma sessão fantasma. Detalhe em [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
+Se a sessão expirar, é pedido para entrar de novo. Detalhe em [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
 
 ## Posso misturar portas e gavetas no mesmo módulo?
 
@@ -6634,11 +6599,11 @@ Pode afetar a orientação dos furos nas máquinas CNC. Antes de maquinar, valid
 
 ## Onde ficam guardados os projetos?
 
-Há projetos locais no navegador (`localStorage`) e projetos da conta no servidor. Em **Meus Projetos** (`/meus-projetos`) vê os projetos da sua conta. O administrador da plataforma também vê órfãos ou legado (donos antigos que já não existem), sem ver projetos de outros utilizadores ativos. A listagem Admin com **«todos»** mantém-se. Se limpar os dados do browser, só os projetos locais podem desaparecer. Guia: [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
+Pode ter projetos locais no navegador e projetos da conta. Em **Meus Projetos** (`/meus-projetos`) vê os projetos da sua conta. Se limpar os dados do browser, só os projetos locais podem desaparecer. Guia: [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
 
-## No detalhe Admin do projeto, onde edito em 3D?
+## Como abro um projeto no editor 3D?
 
-Em `/projects/ ` já não aparece o texto «FASE 4». A página indica que o editor 3D está na página inicial e tem o botão **Abrir no editor 3D**. Guia: [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
+Em ecrãs de detalhe do projeto use o botão **Abrir no editor 3D** para ir ao configurador na página inicial. Guia: [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
 
 ## Como fazer backup de projetos?
 
@@ -6646,11 +6611,11 @@ Use **Exportar Projeto (JSON)** para guardar ficheiros fora do navegador e poder
 
 ## O que inclui o Arquivo completo (ZIP)?
 
-Verificado no gerador da app: cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts PRO por espessura, `Layout_de_Corte_manual.pdf`, ficheiros TCN, Drill XML e manifesto industrial. O ZIP usa nesting **PRO**. Não assumir CSV como conteúdo obrigatório do ZIP.
+O pacote pode incluir cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts PRO por espessura, `Layout_de_Corte_manual.pdf`, ficheiros TCN, Drill XML e manifesto industrial. O ZIP usa nesting **PRO**. Não assumir CSV como conteúdo obrigatório do ZIP.
 
 ## O que acontece se falhar a geração do PDF técnico?
 
-No Workspace, se **gerar PDF técnico** falhar, o PIMO PRO mostra o aviso **Erro ao gerar PDF técnico.** em vez de falhar em silêncio. Pode tentar de novo. Cutlist e etiquetas mantêm-se. Guia: [Exportação](/pt-pt/guias-utilizador/exportacao/).
+Se a geração do PDF técnico falhar, aparece a mensagem de erro **Erro ao gerar PDF técnico.** Pode tentar de novo. Cutlist e etiquetas mantêm-se. Guia: [Exportação](/pt-pt/guias-utilizador/exportacao/).
 
 ## O que é o PIMO-TRAK?
 
@@ -6658,7 +6623,7 @@ Sistema de rastreio por etiquetas QR por peça. A **geração de etiquetas (UEE 
 
 ## A análise online do arquivo completo está sempre disponível?
 
-No código SSOT actual a flag `industrialOnlineAnalysis` está **activa**. Continua a ser uma edição documental em PROJETOS, **não substitui** o ZIP. Se uma instalação concreta tiver a flag desligada, a análise online fica indisponível nessa instância.
+A análise documental online em PROJETOS pode estar disponível conforme a instalação. **Não substitui** o ZIP de produção. Se na sua instalação não aparecer, use o arquivo completo (ZIP) como de costume.
 
 ---
 
@@ -6676,7 +6641,7 @@ Guia rápido do PIMO PRO: da primeira caixa ao pacote de produção (cutlist, ne
 
 1. Aceda a [https://pimo.pro](https://pimo.pro).
 2. Entre na área de design 3D (modo visitante ou com conta).
-3. Após login, o painel autenticado fica em `/dashboard` (`DashboardPage`): atalhos para projetos, perfil, permissões, definições e atividade. **Meus Projetos** está em `/meus-projetos`. A área Admin (`/admin`) continua disponível para quem tem permissão.
+3. Após **entrar na conta**, o painel fica em `/dashboard`: atalhos para projetos, perfil, definições e atividade. **Meus Projetos** está em `/meus-projetos`.
 
  
 
@@ -6720,8 +6685,7 @@ Detalhe canónico: [Glossário, formatos](/pt-pt/glossario/) e [guia de exporta�
 ## 7) Guardar e gerir projeto
 
 1. Guarde manualmente (ou deixe o auto-save atuar no browser).
-2. Em **Meus Projetos** (`/meus-projetos`) vê os projetos da sua conta; pode abrir, duplicar, renomear e exportar/importar JSON.
-3. O administrador da plataforma também vê, nessa lista, projetos órfãos ou legado (donos antigos inexistentes), sem ver projetos de outros utilizadores ativos. A listagem Admin com **«todos»** mantém-se. Detalhe em [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
+2. Em **Meus Projetos** (`/meus-projetos`) vê os projetos da sua conta; pode abrir, duplicar, renomear e exportar/importar JSON. Detalhe em [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
 
 > Dica: configure todas as caixas antes de clicar em **Gerar Design 3D**.
 
@@ -6733,7 +6697,7 @@ Referência técnica do PIMO PRO: botões, controlos e ligações às funcionali
 
 # Referência
 
-Catálogos técnicos verificados no código do PIMO PRO (repositório fonte em modo só leitura).
+Catálogos de referência do PIMO PRO para consulta rápida.
 
 - [Botões e controlos](/pt-pt/referencia/botoes/), toolbar, menus, painéis, atalhos
 - [Como funciona](/pt-pt/como-funciona/), fluxo projeto → exportação → PIMO-TRAK
@@ -6742,7 +6706,7 @@ Catálogos técnicos verificados no código do PIMO PRO (repositório fonte em m
 
 ## Botões e controlos
 URL: https://pimo.info/pt-pt/referencia/botoes/
-Catálogo completo de botões e ações da interface do PIMO PRO: ícone, rótulo, localização, ação, efeitos e atalho, verificado no código.
+Catálogo de botões e ações da interface do PIMO PRO: ícone, rótulo, localização, ação, efeitos e atalho.
 
 # Botões e controlos
 
@@ -6763,7 +6727,7 @@ Sistemas de produto na app PIMO PRO: TRAK, PROJETOS, NESTING, INDUSTRIAL e DRILL
 
 # Sistemas PIMO
 
-Catálogo dos sistemas acessíveis no menu **Projetos PIMO** do header da aplicação (`pimo.pro`). Cada página documenta definição, propósito, funcionamento, entradas/saídas, ligações e estado real verificado no código.
+Catálogo dos sistemas acessíveis no menu **Projetos PIMO** do header da aplicação (`pimo.pro`). Cada página resume definição, propósito, funcionamento, entradas/saídas, ligações e estado.
 
  
 

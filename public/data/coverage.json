@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-12T21:12:09.014Z",
+  "generatedAt": "2026-10-12T21:17:11.315Z",
   "source": "pimo-criativo-source (read-only) + pages/pt-pt",
   "totals": {
-    "items": 71,
+    "items": 65,
     "byStatus": {
-      "coberto": 69,
+      "coberto": 63,
       "em-desenvolvimento": 2
     }
   },
@@ -14,10 +14,10 @@
       "kind": "route",
       "codeRef": "App.tsx:/login",
       "name": "Login",
-      "purpose": "Autenticação de utilizador",
+      "purpose": "Entrar na conta",
       "page": "/pt-pt/funcionalidades/conta-e-acesso/",
       "status": "coberto",
-      "notes": "Production: login Owner com armazenamento privado no servidor (out 2026)",
+      "notes": "Fluxo público: entrar, terminar sessão, sessão expirada (out 2026)",
       "pageExists": true
     },
     {
@@ -33,9 +33,9 @@
     {
       "id": "route-forgot",
       "kind": "route",
-      "codeRef": "App.tsx:/forgot-password",
-      "name": "Recuperar password",
-      "purpose": "Reset de palavra-passe",
+      "codeRef": "App.tsx (recuperar palavra-passe)",
+      "name": "Recuperar palavra-passe",
+      "purpose": "Pedido de nova palavra-passe por email",
       "page": "/pt-pt/funcionalidades/conta-e-acesso/",
       "status": "coberto",
       "pageExists": true
@@ -55,10 +55,10 @@
       "kind": "route",
       "codeRef": "App.tsx:/dashboard",
       "name": "Dashboard",
-      "purpose": "Painel inicial autenticado",
+      "purpose": "Painel inicial com sessão iniciada",
       "page": "/pt-pt/primeiros-passos/",
       "status": "coberto",
-      "notes": "DashboardPage documentado em primeiros passos; captura pública = home (dashboard exige login)",
+      "notes": "Painel documentado em primeiros passos; captura pública = home",
       "pageExists": true
     },
     {
@@ -76,10 +76,10 @@
       "kind": "route",
       "codeRef": "App.tsx:/meus-projetos",
       "name": "Meus Projetos",
-      "purpose": "Lista de projetos da conta (+ órfãos para admin)",
+      "purpose": "Lista de projetos da conta",
       "page": "/pt-pt/guias-utilizador/gerir-projetos/",
       "status": "coberto",
-      "notes": "Lista por conta; admin vê órfãos/legado; sem projetos de outros utilizadores ativos; Admin «todos» mantém-se (out 2026)",
+      "notes": "Perspetiva utilizador: projetos da conta (out 2026)",
       "pageExists": true
     },
     {
@@ -98,10 +98,10 @@
       "kind": "route",
       "codeRef": "App.tsx:/projects/:id",
       "name": "Detalhe de projeto",
-      "purpose": "Projeto individual (Admin)",
+      "purpose": "Projeto individual",
       "page": "/pt-pt/guias-utilizador/gerir-projetos/",
       "status": "coberto",
-      "notes": "Sem texto FASE 4; explica editor 3D na home + botão Abrir no editor 3D (out 2026)",
+      "notes": "Botão Abrir no editor 3D (out 2026)",
       "pageExists": true
     },
     {
@@ -294,7 +294,6 @@
       "purpose": "Rastreio de peças",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
       "status": "coberto",
-      "notes": "Shell + QrScannerPanel + placeholder Fase 3C.2 documentados",
       "pageExists": true
     },
     {
@@ -305,7 +304,6 @@
       "purpose": "Controlo de qualidade",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
       "status": "coberto",
-      "notes": "Shell + QR + placeholder Fase 3C.2 documentados",
       "pageExists": true
     },
     {
@@ -316,7 +314,6 @@
       "purpose": "Rework industrial",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
       "status": "coberto",
-      "notes": "Shell + QR + placeholder Fase 3C.2 documentados",
       "pageExists": true
     },
     {
@@ -327,7 +324,6 @@
       "purpose": "Tempos de estação",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
       "status": "coberto",
-      "notes": "Shell + QR + placeholder Fase 3C.2 documentados",
       "pageExists": true
     },
     {
@@ -338,7 +334,6 @@
       "purpose": "Log de eventos",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
       "status": "coberto",
-      "notes": "Shell + QR + placeholder Fase 3C.2 documentados",
       "pageExists": true
     },
     {
@@ -364,75 +359,14 @@
       "pageExists": true
     },
     {
-      "id": "route-admin",
-      "kind": "route",
-      "codeRef": "App.tsx:/admin",
-      "name": "Admin",
-      "purpose": "Área administrativa após login",
-      "page": "/pt-pt/funcionalidades/definicoes/",
-      "status": "coberto",
-      "notes": "Listagem Admin «todos» mantém-se; Meus Projetos é lista por conta (+ órfãos para admin)",
-      "pageExists": true
-    },
-    {
-      "id": "route-admin-users",
-      "kind": "route",
-      "codeRef": "App.tsx:/admin/users",
-      "name": "Admin utilizadores",
-      "purpose": "Gestão de users",
-      "page": "/pt-pt/funcionalidades/definicoes/",
-      "status": "coberto",
-      "pageExists": true
-    },
-    {
-      "id": "route-admin-roles",
-      "kind": "route",
-      "codeRef": "App.tsx:/admin/roles",
-      "name": "Admin roles",
-      "purpose": "Papéis e permissões",
-      "page": "/pt-pt/funcionalidades/definicoes/",
-      "status": "coberto",
-      "pageExists": true
-    },
-    {
-      "id": "route-admin-global",
-      "kind": "route",
-      "codeRef": "App.tsx:/admin/global-settings",
-      "name": "Global settings",
-      "purpose": "Definições globais",
-      "page": "/pt-pt/funcionalidades/definicoes/",
-      "status": "coberto",
-      "pageExists": true
-    },
-    {
-      "id": "route-admin-room",
-      "kind": "route",
-      "codeRef": "App.tsx:/admin/room-settings",
-      "name": "Room settings",
-      "purpose": "Definições de sala",
-      "page": "/pt-pt/funcionalidades/sala-e-ambiente/",
-      "status": "coberto",
-      "pageExists": true
-    },
-    {
-      "id": "route-admin-industrial",
-      "kind": "route",
-      "codeRef": "App.tsx:/admin/settings/industrial",
-      "name": "Admin industrial",
-      "purpose": "Settings industriais",
-      "page": "/pt-pt/documentacao-tecnica/sistema-industrial/",
-      "status": "coberto",
-      "pageExists": true
-    },
-    {
       "id": "domain-auth",
       "kind": "domain",
-      "codeRef": "auth / session revalidate + logout",
+      "codeRef": "auth / session + logout",
       "name": "Autenticação e sessão",
-      "purpose": "Login, confirmação de sessão no servidor ao reabrir a app, logout, perfil /me",
+      "purpose": "Entrar na conta, terminar sessão, perfil, sessão expirada",
       "page": "/pt-pt/funcionalidades/conta-e-acesso/",
       "status": "coberto",
-      "notes": "Ao reabrir: sessão confirmada no servidor; token inválido → /login (sem sessão fantasma). Logout invalida sessão no servidor (out 2026)",
+      "notes": "Só perspetiva utilizador final (out 2026)",
       "pageExists": true
     },
     {

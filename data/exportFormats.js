@@ -124,7 +124,7 @@ export const exportFormats = [
       "Pacote com cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts PRO por material/espessura, Layout_de_Corte_manual.pdf, ficheiros TCN, Drill XML e manifesto industrial.",
     status: "implemented",
     notes:
-      "ZIP usa nesting PRO. Cutlist no arquivo é PDF (não CSV). Ordem de fábrica vai por API, não como industrial_order.json no ZIP.",
+      "ZIP usa nesting PRO. Cutlist no arquivo é PDF (não CSV). A ordem de fábrica não vai como industrial_order.json no ZIP.",
     relatedPaths: ["/pt-pt/guias-utilizador/exportacao/"],
   },
 ]

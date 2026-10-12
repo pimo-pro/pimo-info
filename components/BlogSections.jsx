@@ -64,7 +64,7 @@ export function BlogPostHeader({ slug }) {
     description: post.description,
     datePublished: post.date,
     dateModified: post.lastUpdated || post.date,
-    author: { "@type": "Person", name: post.author },
+    author: { "@type": "Organization", name: post.author || "Equipa PIMO" },
     image: post.coverImage ? `https://pimo.info${post.coverImage}` : undefined,
     mainEntityOfPage: `https://pimo.info${post.href}`,
   }

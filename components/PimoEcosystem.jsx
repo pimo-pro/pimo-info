@@ -312,7 +312,7 @@ export function EcosystemFooterLinks() {
   return (
     <span className="pimo-ecosystem-footer">
       <span className="pimo-footer-brand">
-        © {new Date().getFullYear()} {site.organization.legalName} · Crafted by Khaled
+        © {new Date().getFullYear()} {site.organization.legalName}
       </span>
       <span className="pimo-footer-contact">
         <span>NIF {site.organization.taxId}</span>

@@ -57,7 +57,7 @@ O menu de exportação (bolha **Salvar e Gerar Design**) reúne os artefactos t�
 
 ## Arquivo completo (ZIP)
 
-Conteúdo gerado pelo código (não inventar CSV obrigatório):
+Conteúdo típico do pacote (não assumir CSV obrigatório):
 
 - Cutlist PDF, PDF técnico, PDF unificado
 - Ferragens PDF + XLSX
@@ -67,17 +67,15 @@ Conteúdo gerado pelo código (não inventar CSV obrigatório):
 - Ficheiros **TCN** e **Drill XML**
 - `manifest-industrial.json`
 
-O nesting do ZIP completo usa o modo **PRO** (não Fast). A ordem de fábrica (`industrial_order.json`) **não** vai no ZIP, é enviada via API quando aplicável.
+O nesting do ZIP completo usa o modo **PRO** (não Fast). A ordem de fábrica (`industrial_order.json`) **não** vai no ZIP; o envio para fábrica, quando aplicável, faz-se à parte do ficheiro ZIP.
 
 Fluxo: **Exportar → Gerar arquivo completo**.
 
 ## Análise arquivo completo (online)
 
-- Edição documental online em PROJETOS (`/analise`).
-- No SSOT da app (`industrialFeatureFlags.industrialOnlineAnalysis`) a flag está **activa** (`true`).
+- Edição documental online em PROJETOS (`/analise`), quando disponível na sua instalação.
 - **Não substitui** o ZIP de produção.
-- Estado: **implementado** (sujeito à versão/build da app instalada).
 
-## Nota técnica
+## Nota
 
-Validações em campos editáveis (ex.: quantidade e material) aplicam-se na análise online quando ativa. Edições documentais na cutlist podem refletir-se em PDFs/etiquetas; **TCN/Drill XML não mudam** por essas edições.
+Validações em campos editáveis (ex.: quantidade e material) aplicam-se na análise online quando disponível. Edições documentais na cutlist podem refletir-se em PDFs/etiquetas; **TCN/Drill XML não mudam** por essas edições.

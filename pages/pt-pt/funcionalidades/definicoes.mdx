@@ -1,10 +1,9 @@
 ---
 title: Definições
-description: Definições do utilizador, do projeto e administrativas no PIMO PRO (rota /definicoes e admin).
+description: Preferências pessoais e do projeto no PIMO PRO (rota /definicoes).
 category: funcionalidade
 tags:
   - definicoes
-  - admin
   - preferencias
 related:
   - /pt-pt/funcionalidades/conta-e-acesso/
@@ -16,38 +15,24 @@ lastUpdated: 2026-10-12
 
 # Definições
 
-A rota `/definicoes` e as áreas de administração concentram preferências e configuração do sistema. Rotas admin exigem permissões (`PermissionRoute` / `hasFullAccess` / `canAccessAdminPanel`) e login. Em Production, após login com a conta Owner (admin), a área Admin (`/admin`) fica acessível.
+Em **Definições** (`/definicoes`) ajusta preferências da sua conta e opções ligadas ao projeto em que está a trabalhar. É preciso ter sessão iniciada.
 
-## Níveis
+## O que pode configurar
 
 | Nível | Onde | Conteúdo típico |
 |---|---|---|
-| Utilizador | `/definicoes`, `/me` | Preferências pessoais |
-| Projeto | contexto do projeto | Unidades, materiais default |
-| Global | `/admin/global-settings` | Defaults da instalação |
-| Sala | `/admin/room-settings` | Ambiente / sala 3D |
-| Industrial | `/admin/settings/industrial` | Alertas e parâmetros TRAK |
+| Conta / perfil | `/definicoes`, perfil | Preferências pessoais |
+| Projeto | contexto do projeto | Unidades, materiais por defeito |
+| Sala e ambiente | definições de sala na app | Ambiente 3D (paredes, luz) |
 
-## Administração (rotas verificadas)
-
-| Área | Rota | Página |
-|---|---|---|
-| Utilizadores | `/admin/users` | `UsersAdminPage` |
-| Partilhas de projeto | `/admin/project-shares` | `ProjectSharesAdminPage` |
-| Roles | `/admin/roles` | `ManageRolesPage` |
-| Permissões | `/admin/permissions` | `ManagePermissionsPage` |
-| Global settings | `/admin/global-settings` | `GlobalSettingsAdminPage` |
-| Room settings | `/admin/room-settings` | `RoomSettingsAdminPage` |
-| Settings industriais | `/admin/settings/industrial` | `IndustrialAdminSettingsPage` |
-| Alertas realtime | `/admin/system-settings/industrial/realtime-alerts` | `RealtimeAlertsAdminPage` |
+O detalhe de cada opção aparece na própria interface do PIMO PRO.
 
 ## Estado
 
-**Documentado a partir do código (outubro 2026):** rotas e páginas admin existem na app; o acesso depende de RBAC. Em Production o login Owner volta a abrir a Admin. Detalhe de cada flag continua na UI da app.
+**Disponível** na aplicação para utilizadores com sessão iniciada.
 
 ## Relacionado
 
 - [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/)
 - [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/)
 - [Sala e ambiente](/pt-pt/funcionalidades/sala-e-ambiente/)
-- [Sistema industrial](/pt-pt/documentacao-tecnica/sistema-industrial/)

@@ -29,16 +29,16 @@ export default function NovidadesPage({ news }) {
     <main>
       <h1>Novidades</h1>
       <p className="pimo-lead">
-        Feed de atualizações do PIMO PRO gerado em build-time a partir de{" "}
-        <code>https://pimo.pro/updates/news.json</code>.
+        Atualizações do PIMO PRO: novidades, melhorias e correções úteis no dia a
+        dia.
       </p>
 
       {isFallback ? (
         <div className="pimo-warning-box">
-          <strong>Fonte remota indisponível no build.</strong>
+          <strong>Lista temporária</strong>
           <p>
-            Foi aplicado fallback local para evitar falha de publicação. Erro
-            registado: {news?.errorMessage || "n/d"}.
+            A lista completa de novidades não está disponível de momento. Em
+            baixo encontra entradas de apoio até a lista voltar ao normal.
           </p>
         </div>
       ) : null}
@@ -54,8 +54,6 @@ export default function NovidadesPage({ news }) {
             <p>{entry.description}</p>
             <p className="pimo-news-meta">
               <span>{formatDate(entry.publishedAt)}</span>
-              {entry.author ? <span>{entry.author}</span> : null}
-              {entry.commit ? <span>{entry.commit}</span> : null}
             </p>
           </li>
         ))}

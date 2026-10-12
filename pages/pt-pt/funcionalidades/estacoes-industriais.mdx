@@ -41,21 +41,21 @@ As **estações** do fluxo industrial (verificadas em `App.tsx` do PIMO PRO) ope
 | Peça industrial | `/industrial/piece/:pieceId` |
 | Execução de estação | `/industrial/stations/:station` |
 
-## Vistas auxiliares (shell + QR)
+## Vistas auxiliares
 
-Estas páginas montam `IndustrialLayout`, painel de leitura QR (`QrScannerPanel`) e um painel placeholder com nota de fase 3C.2 no código:
+Além das estações, a área industrial inclui vistas de acompanhamento com leitura QR:
 
-| Vista | Rota | Nota no código |
+| Vista | Rota | Utilidade |
 |---|---|---|
-| Tracking | `/industrial/tracking` | Ligar snapshots de tracking e realtime |
-| Qualidade | `/industrial/quality` | Ligar inspeções e rework automático |
-| Retrabalho | `/industrial/rework` | Ligar fila de retrabalho |
-| Time tracking | `/industrial/time-tracking` | Ligar timers operacionais |
-| Eventos | `/industrial/events` | Ligar filtros e feed Supabase |
+| Tracking | `/industrial/tracking` | Acompanhar peças |
+| Qualidade | `/industrial/quality` | Controlo de qualidade |
+| Retrabalho | `/industrial/rework` | Peças a retrabalhar |
+| Time tracking | `/industrial/time-tracking` | Tempos por posto |
+| Eventos | `/industrial/events` | Registo de eventos operacionais |
 
 ## Estado
 
-**Documentado a partir do código (outubro 2026):** estações e perfis existem; as vistas auxiliares acima são shells com QR e placeholder. App: [pimo.pro/industrial](https://pimo.pro/industrial) (requer login).
+**Disponível** na app: estações e perfis; algumas vistas auxiliares podem ainda evoluir. App: [pimo.pro/industrial](https://pimo.pro/industrial) (é preciso ter sessão iniciada).
 
 ## Relacionado
 

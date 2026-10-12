@@ -1,19 +1,19 @@
 # Matriz de cobertura PIMO PRO → pimo.info
 
-Gerado: 2026-10-12T21:12:09.014Z
+Gerado: 2026-10-12T21:17:11.315Z
 
-Total de itens: **71**
+Total de itens: **65**
 
 | Estado | Quantidade |
 |---|---|
-| coberto | 69 |
+| coberto | 63 |
 | em-desenvolvimento | 2 |
 
 | ID | Tipo | Nome | Página | Estado | Código |
 |---|---|---|---|---|---|
 | `route-login` | route | Login | [/pt-pt/funcionalidades/conta-e-acesso/](/pt-pt/funcionalidades/conta-e-acesso/) | coberto | `App.tsx:/login` |
 | `route-register` | route | Registo | [/pt-pt/funcionalidades/conta-e-acesso/](/pt-pt/funcionalidades/conta-e-acesso/) | coberto | `App.tsx:/register` |
-| `route-forgot` | route | Recuperar password | [/pt-pt/funcionalidades/conta-e-acesso/](/pt-pt/funcionalidades/conta-e-acesso/) | coberto | `App.tsx:/forgot-password` |
+| `route-forgot` | route | Recuperar palavra-passe | [/pt-pt/funcionalidades/conta-e-acesso/](/pt-pt/funcionalidades/conta-e-acesso/) | coberto | `App.tsx (recuperar palavra-passe)` |
 | `route-definicoes` | route | Definições | [/pt-pt/funcionalidades/definicoes/](/pt-pt/funcionalidades/definicoes/) | coberto | `App.tsx:/definicoes` |
 | `route-dashboard` | route | Dashboard | [/pt-pt/primeiros-passos/](/pt-pt/primeiros-passos/) | coberto | `App.tsx:/dashboard` |
 | `route-me` | route | Perfil / Me | [/pt-pt/funcionalidades/conta-e-acesso/](/pt-pt/funcionalidades/conta-e-acesso/) | coberto | `App.tsx:/me` |
@@ -45,13 +45,7 @@ Total de itens: **71**
 | `route-events` | route | Eventos industriais | [/pt-pt/funcionalidades/estacoes-industriais/](/pt-pt/funcionalidades/estacoes-industriais/) | coberto | `App.tsx:/industrial/events` |
 | `route-pimo-drill` | route | PIMO DRILL | [/pt-pt/sistemas-pimo/pimo-drill/](/pt-pt/sistemas-pimo/pimo-drill/) | em-desenvolvimento | `App.tsx:/industrial/pimo-drill` |
 | `route-ops-cnc` | route | Operações CNC | [/pt-pt/funcionalidades/modulo-industrial/](/pt-pt/funcionalidades/modulo-industrial/) | coberto | `App.tsx:/industrial/operations/cnc` |
-| `route-admin` | route | Admin | [/pt-pt/funcionalidades/definicoes/](/pt-pt/funcionalidades/definicoes/) | coberto | `App.tsx:/admin` |
-| `route-admin-users` | route | Admin utilizadores | [/pt-pt/funcionalidades/definicoes/](/pt-pt/funcionalidades/definicoes/) | coberto | `App.tsx:/admin/users` |
-| `route-admin-roles` | route | Admin roles | [/pt-pt/funcionalidades/definicoes/](/pt-pt/funcionalidades/definicoes/) | coberto | `App.tsx:/admin/roles` |
-| `route-admin-global` | route | Global settings | [/pt-pt/funcionalidades/definicoes/](/pt-pt/funcionalidades/definicoes/) | coberto | `App.tsx:/admin/global-settings` |
-| `route-admin-room` | route | Room settings | [/pt-pt/funcionalidades/sala-e-ambiente/](/pt-pt/funcionalidades/sala-e-ambiente/) | coberto | `App.tsx:/admin/room-settings` |
-| `route-admin-industrial` | route | Admin industrial | [/pt-pt/documentacao-tecnica/sistema-industrial/](/pt-pt/documentacao-tecnica/sistema-industrial/) | coberto | `App.tsx:/admin/settings/industrial` |
-| `domain-auth` | domain | Autenticação e sessão | [/pt-pt/funcionalidades/conta-e-acesso/](/pt-pt/funcionalidades/conta-e-acesso/) | coberto | `auth / session revalidate + logout` |
+| `domain-auth` | domain | Autenticação e sessão | [/pt-pt/funcionalidades/conta-e-acesso/](/pt-pt/funcionalidades/conta-e-acesso/) | coberto | `auth / session + logout` |
 | `domain-error-ui` | domain | Erro inesperado na UI | [/pt-pt/perguntas-frequentes/](/pt-pt/perguntas-frequentes/) | coberto | `error boundary / unexpected UI failure` |
 | `domain-boxes` | domain | Caixas / módulos | [/pt-pt/guias-utilizador/criar-caixa/](/pt-pt/guias-utilizador/criar-caixa/) | coberto | `LegacyApp / boxes` |
 | `domain-pieces` | domain | Peças | [/pt-pt/guias-utilizador/medicoes-e-cotas/](/pt-pt/guias-utilizador/medicoes-e-cotas/) | coberto | `piece models` |
@@ -89,4 +83,4 @@ Total de itens: **71**
 - `coberto` = documentação suficiente do que o código permite descrever (incluindo shells/placeholders).
 - `em-desenvolvimento` quando o produto ainda evolui de forma material (ex.: PIMO DRILL).
 - Capturas públicas WebP em `/visual/pimo-pro/` (home, ajuda, novidades, login, registo).
-- Ecrãs que exigem login: `/dashboard`, `/meus-projetos`, `/projects*`, `/industrial/*`, `/admin/*`, `/PROJETOS`, `/nesting_v3`, `/me`, `/definicoes`.
+- Ecrãs que pedem sessão iniciada (exemplos): `/dashboard`, `/meus-projetos`, `/projects*`, `/industrial/*`, `/PROJETOS`, `/nesting_v3`, `/me`, `/definicoes`.
