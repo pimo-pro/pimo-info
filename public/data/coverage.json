@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T21:00:53.342Z",
+  "generatedAt": "2026-10-12T21:12:09.014Z",
   "source": "pimo-criativo-source (read-only) + pages/pt-pt",
   "totals": {
     "items": 71,
@@ -544,6 +544,7 @@
       "purpose": "Documentação PDF",
       "page": "/pt-pt/funcionalidades/pdf-tecnico/",
       "status": "coberto",
+      "notes": "Se a geração falhar: aviso Erro ao gerar PDF técnico. (não silencioso); cutlist/etiquetas inalterados (out 2026)",
       "pageExists": true
     },
     {

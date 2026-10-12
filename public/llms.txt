@@ -45,7 +45,7 @@ Locale: pt-PT
 - FAQ: https://pimo.info/pt-pt/perguntas-frequentes/
 
 ## Export formats (implemented)
-- PDF Técnico (.pdf): Relatório do projeto com vista 3D, lista de corte, materiais, ferragens e resumo de preço.
+- PDF Técnico (.pdf): Relatório do projeto com vista 3D, lista de corte, materiais, ferragens e resumo de preço. Se a geração falhar, a app mostra o aviso «Erro ao gerar PDF técnico.»
 - Cutlist (PDF) (.pdf): Lista de corte industrial em milímetros: peças, espessuras, materiais e quantidades.
 - PDF Unificado (.pdf): Documento único que combina informação técnica e cutlist para entrega documental.
 - Etiquetas (UEE v5) (.pdf): PDF de etiquetas com QR por peça (motor UEE v5), tipicamente um ficheiro por espessura.
@@ -66,7 +66,7 @@ Locale: pt-PT
 - Nesting / Layout de Corte: Distribuição das peças nas chapas. Modo Fast: estimativa rápida. Modo PRO: otimização com rotação quando aplicável (pode afetar orientação de furação, validar TCN/Drill XML).
 - TCN: Formato de ficheiro industrial `.tcn` para centros CNC. No menu de exportação aparece como «Arquivos CNC»; o ficheiro gerado é TCN.
 - Drill XML: Representação XML do plano de furação por painel (posição, diâmetro, profundidade), gerada no fluxo de Arquivos CNC.
-- PDF Técnico: Exportação PDF com documentação do projeto (3D, cutlist, materiais, ferragens, preço). Não substitui TCN nem Drill XML para máquina.
+- PDF Técnico: Exportação PDF com documentação do projeto (3D, cutlist, materiais, ferragens, preço). Não substitui TCN nem Drill XML para máquina. Se a geração falhar, surge o aviso «Erro ao gerar PDF técnico.»
 - PIMO TRAK: Sistema de ordens de trabalho e rastreamento da produção, incluindo etiquetas QR UEE v5. Estado parcial no código: work orders e etiquetas existem; algumas páginas agregadas ainda podem estar incompletas.
 - PIMO PROJETOS: Área da app para listar e abrir projetos industriais guardados no servidor, com showroom e análise online.
 - PIMO NESTING: Sistema próprio de nesting (Nesting V3): layout manual/automático de peças em chapas com exportação PDF, TCN e etiquetas. Distinto do nesting Fast/PRO do pipeline de exportação do configurador.
@@ -84,7 +84,7 @@ Locale: pt-PT
 - Lista de Corte [implemented] https://pimo.info/pt-pt/funcionalidades/lista-de-corte/, Cutlist em mm gerada a partir do design 3D.
 - Nesting Fast/PRO [implemented] https://pimo.info/pt-pt/funcionalidades/nesting-fast-pro/, Layout de corte em chapa: Fast (estimativa) e PRO (otimização).
 - Exportação TCN / Drill XML [implemented] https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/, Ficheiros industriais `.tcn` e Drill XML via menu Arquivos CNC.
-- PDF Técnico [implemented] https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/, Documentação PDF do projeto para cliente/arquivo.
+- PDF Técnico [implemented] https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/, Documentação PDF do projeto para cliente/arquivo. Em falha de geração, aviso claro no Workspace.
 - PIMO-TRAK [mixed] https://pimo.info/pt-pt/funcionalidades/pimo-trak/, Etiquetas QR (implementado) e rastreio industrial por peça (camada industrial).
 - Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/, Tarifas e regras de custo (camada técnica/admin P3.9).
 - Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/, Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.

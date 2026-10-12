@@ -72,7 +72,7 @@ const items = [
   { id: "domain-nesting", kind: "domain", codeRef: "nesting Fast/PRO", name: "Nesting Fast/PRO", purpose: "Otimização de chapas", page: "/pt-pt/funcionalidades/nesting-fast-pro/", status: "coberto" },
   { id: "domain-exports", kind: "domain", codeRef: "exportFormats", name: "Exportações", purpose: "TCN, Drill XML, ZIP, PDF", page: "/pt-pt/guias-utilizador/exportacao/", status: "coberto" },
   { id: "domain-tcn", kind: "domain", codeRef: "TCN export", name: "Exportação TCN", purpose: "Ficheiros TCN CNC", page: "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/", status: "coberto" },
-  { id: "domain-pdf", kind: "domain", codeRef: "PDF técnico", name: "PDF técnico", purpose: "Documentação PDF", page: "/pt-pt/funcionalidades/pdf-tecnico/", status: "coberto" },
+  { id: "domain-pdf", kind: "domain", codeRef: "PDF técnico", name: "PDF técnico", purpose: "Documentação PDF", page: "/pt-pt/funcionalidades/pdf-tecnico/", status: "coberto", notes: "Se a geração falhar: aviso Erro ao gerar PDF técnico. (não silencioso); cutlist/etiquetas inalterados (out 2026)" },
   { id: "domain-budget", kind: "domain", codeRef: "orçamentos P39", name: "Orçamentos", purpose: "Cálculo de orçamento", page: "/pt-pt/funcionalidades/orcamentos/", status: "coberto" },
   { id: "domain-photo", kind: "domain", codeRef: "photo mode", name: "Modo foto", purpose: "Capturas e renderização", page: "/pt-pt/funcionalidades/modo-foto/", status: "coberto" },
   { id: "domain-room", kind: "domain", codeRef: "room / sala", name: "Sala e ambiente", purpose: "Ambiente 3D e room settings", page: "/pt-pt/funcionalidades/sala-e-ambiente/", status: "coberto" },

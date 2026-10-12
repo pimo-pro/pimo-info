@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T21:00:53.282Z",
+  "generatedAt": "2026-10-12T21:12:08.951Z",
   "items": [
     {
       "id": "pdf-tecnico",
@@ -8,7 +8,7 @@
       "extensions": [
         ".pdf"
       ],
-      "description": "Relatório do projeto com vista 3D, lista de corte, materiais, ferragens e resumo de preço.",
+      "description": "Relatório do projeto com vista 3D, lista de corte, materiais, ferragens e resumo de preço. Se a geração falhar, a app mostra o aviso «Erro ao gerar PDF técnico.»",
       "status": "implemented",
       "relatedPaths": [
         "/pt-pt/funcionalidades/pdf-tecnico/",

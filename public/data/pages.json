@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T21:00:53.284Z",
+  "generatedAt": "2026-10-12T21:12:08.953Z",
   "items": [
     {
       "path": "/",
@@ -1083,7 +1083,7 @@
       "path": "/pt-pt/funcionalidades/pdf-tecnico/",
       "file": "pages/pt-pt/funcionalidades/pdf-tecnico.mdx",
       "title": "PDF técnico",
-      "description": "Geração de PDF técnico com dados de projeto e produção no PIMO.",
+      "description": "Geração de PDF técnico com dados de projeto e produção no PIMO PRO.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -1091,9 +1091,10 @@
       ],
       "related": [
         "/pt-pt/funcionalidades/",
+        "/pt-pt/guias-utilizador/exportacao/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-12",
       "status": "implemented"
     },
     {
@@ -1283,7 +1284,7 @@
         "/pt-pt/funcionalidades/pdf-tecnico/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-12",
       "status": "implemented"
     },
     {

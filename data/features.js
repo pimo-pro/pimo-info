@@ -74,7 +74,8 @@ export const features = [
   {
     id: "pdf-tecnico",
     name: "PDF Técnico",
-    summary: "Documentação PDF do projeto para cliente/arquivo.",
+    summary:
+      "Documentação PDF do projeto para cliente/arquivo. Em falha de geração, aviso claro no Workspace.",
     status: "implemented",
     canonicalPath: "/pt-pt/funcionalidades/pdf-tecnico/",
     guidePath: "/pt-pt/guias-utilizador/exportacao/",

@@ -124,9 +124,9 @@ export const glossaryTerms = [
     term: "PDF Técnico",
     aliases: ["pdf técnico"],
     definition:
-      "Exportação PDF com documentação do projeto (3D, cutlist, materiais, ferragens, preço). Não substitui TCN nem Drill XML para máquina.",
+      "Exportação PDF com documentação do projeto (3D, cutlist, materiais, ferragens, preço). Não substitui TCN nem Drill XML para máquina. Se a geração falhar, surge o aviso «Erro ao gerar PDF técnico.»",
     status: "implemented",
-    relatedPaths: ["/pt-pt/funcionalidades/pdf-tecnico/"],
+    relatedPaths: ["/pt-pt/funcionalidades/pdf-tecnico/", "/pt-pt/guias-utilizador/exportacao/"],
   },
   {
     id: "pimo-trak",

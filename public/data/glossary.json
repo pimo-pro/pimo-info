@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T21:00:53.282Z",
+  "generatedAt": "2026-10-12T21:12:08.951Z",
   "items": [
     {
       "id": "modulo-caixa",
@@ -152,10 +152,11 @@
       "aliases": [
         "pdf técnico"
       ],
-      "definition": "Exportação PDF com documentação do projeto (3D, cutlist, materiais, ferragens, preço). Não substitui TCN nem Drill XML para máquina.",
+      "definition": "Exportação PDF com documentação do projeto (3D, cutlist, materiais, ferragens, preço). Não substitui TCN nem Drill XML para máquina. Se a geração falhar, surge o aviso «Erro ao gerar PDF técnico.»",
       "status": "implemented",
       "relatedPaths": [
-        "/pt-pt/funcionalidades/pdf-tecnico/"
+        "/pt-pt/funcionalidades/pdf-tecnico/",
+        "/pt-pt/guias-utilizador/exportacao/"
       ]
     },
     {

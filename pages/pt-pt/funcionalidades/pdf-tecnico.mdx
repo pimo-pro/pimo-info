@@ -1,13 +1,14 @@
 ---
 title: "PDF técnico"
-description: "Geração de PDF técnico com dados de projeto e produção no PIMO."
+description: "Geração de PDF técnico com dados de projeto e produção no PIMO PRO."
 category: funcionalidade
 tags:
   - funcionalidade
 related:
   - /pt-pt/funcionalidades/
+  - /pt-pt/guias-utilizador/exportacao/
   - /pt-pt/glossario/
-lastUpdated: 2026-10-01
+lastUpdated: 2026-10-12
 status: implemented
 ---
 
@@ -19,20 +20,24 @@ import { FeatureButtons } from "../../../components/ButtonsCatalog"
   title="PDF técnico"
   subtitle="Documento consolidado do projeto para consulta, arquivo e comunicação com equipa/cliente."
   image="/visual/readme/ecra-documentacao.webp"
-  imageAlt="Área documental no ecossistema PIMO"
+  imageAlt="Área documental no ecossistema PIMO PRO"
   pimoHref="https://pimo.pro"
   guideHref="/pt-pt/guias-utilizador/exportacao/"
 />
 
 ## O que faz
 
-Compila o estado do projeto em documento técnico com informação útil de produção, materiais e resumo.
+Compila o estado do projeto em documento técnico com informação útil de produção, materiais e resumo. No Workspace, gera-se pelo menu de exportação (**PDF Técnico**).
 
 <section className="pimo-service-benefits">
   <li><strong>Formato de partilha</strong><p>Facilita comunicação interna e validação com cliente.</p></li>
   <li><strong>Integração com o fluxo</strong><p>É gerado no mesmo menu de exportação usado para TCN e Drill XML.</p></li>
-  <li><strong>Consistência com cálculo</strong><p>Reflete o estado técnico gerado na aplicação principal.</p></li>
+  <li><strong>Aviso se falhar</strong><p>Se a geração falhar, aparece a mensagem <strong>Erro ao gerar PDF técnico.</strong> em vez de falhar em silêncio. Cutlist e etiquetas mantêm o comportamento habitual.</p></li>
 </section>
+
+## Se a geração falhar
+
+Aparece o aviso **Erro ao gerar PDF técnico.** Pode voltar a tentar a exportação. Cutlist e etiquetas continuam disponíveis no mesmo menu. Guia: [Exportação](/pt-pt/guias-utilizador/exportacao/).
 
 <AnimatedHotspotImage
   src="/visual/readme/ecra-documentacao.webp"
@@ -47,6 +52,7 @@ Compila o estado do projeto em documento técnico com informação útil de prod
 <InfoAccordion
   items={[
     { title: "Substitui os ficheiros de máquina?", text: "Não. O PDF é complementar e não substitui TCN nem Drill XML quando vai para fabrico." },
+    { title: "O que acontece se a geração falhar?", text: "Surge a mensagem Erro ao gerar PDF técnico. Pode tentar de novo; cutlist e etiquetas não são afectados por esta falha." },
     { title: "Onde consultar mais detalhe?", text: "No guia de exportação e na área de documentação técnica da aplicação." },
   ]}
 />

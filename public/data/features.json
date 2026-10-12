@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T21:00:53.282Z",
+  "generatedAt": "2026-10-12T21:12:08.951Z",
   "items": [
     {
       "id": "configurador-3d",
@@ -76,7 +76,7 @@
     {
       "id": "pdf-tecnico",
       "name": "PDF Técnico",
-      "summary": "Documentação PDF do projeto para cliente/arquivo.",
+      "summary": "Documentação PDF do projeto para cliente/arquivo. Em falha de geração, aviso claro no Workspace.",
       "status": "implemented",
       "canonicalPath": "/pt-pt/funcionalidades/pdf-tecnico/",
       "guidePath": "/pt-pt/guias-utilizador/exportacao/",

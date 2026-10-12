@@ -26,7 +26,7 @@ export const exportFormats = [
     menuLabel: "PDF Técnico",
     extensions: [".pdf"],
     description:
-      "Relatório do projeto com vista 3D, lista de corte, materiais, ferragens e resumo de preço.",
+      "Relatório do projeto com vista 3D, lista de corte, materiais, ferragens e resumo de preço. Se a geração falhar, a app mostra o aviso «Erro ao gerar PDF técnico.»",
     status: "implemented",
     relatedPaths: [
       "/pt-pt/funcionalidades/pdf-tecnico/",

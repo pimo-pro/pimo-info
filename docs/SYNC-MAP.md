@@ -144,11 +144,12 @@ Manter `status` alinhado com o criativo (`em-desenvolvimento` / `parcial` / `dis
 |---|---|
 | SSOT formatos | `data/exportFormats.js` |
 | Feature canónica | `/pt-pt/funcionalidades/exportacao-tcn-drill-xml/` (+ redirect antigo `exportacao-cnc-tcn-drill-xml` no `.htaccess`, não reintroduzir no sitemap) |
+| PDF técnico (Workspace) | `/pt-pt/funcionalidades/pdf-tecnico/` + secção no guia; aviso **Erro ao gerar PDF técnico.** se a geração falhar (cutlist/etiquetas inalterados) |
 | Guia | `/pt-pt/guias-utilizador/exportacao/` |
 | Glossário | TCN, Drill XML, ZIP, cutlist, etiquetas UEE |
 | Lista de corte / nesting | páginas e features relacionadas |
 | FAQ | `/pt-pt/perguntas-frequentes/` se a pergunta mudar |
-| Cobertura | `domain-exports`, `domain-tcn`, … |
+| Cobertura | `domain-exports`, `domain-tcn`, `domain-pdf`, … |
 
 **Removido (formato):** marcar `status` no `exportFormats.js` (não inventar disponibilidade); retirar da tabela do guia e do glossário se deixou de existir; não deixar URL canónica a apontar para página morta.
 
