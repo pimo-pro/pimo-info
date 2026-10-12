@@ -41,7 +41,10 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          state-name: .ftp-deploy-sync-state-v30.json
+          state-name: .ftp-deploy-sync-state-v31.json
+          timeout: 600000
+          dangerous-clean-slate: false
+          security: loose
 
       # Notify search engines via IndexNow. Never fail the deploy on ping errors.
       - name: IndexNow ping
