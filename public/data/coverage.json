@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-12T19:07:59.648Z",
+  "generatedAt": "2026-10-12T19:14:59.741Z",
   "source": "pimo-criativo-source (read-only) + pages/pt-pt",
   "totals": {
-    "items": 69,
+    "items": 70,
     "byStatus": {
-      "coberto": 67,
+      "coberto": 68,
       "em-desenvolvimento": 2
     }
   },
@@ -72,6 +72,17 @@
       "pageExists": true
     },
     {
+      "id": "route-meus-projetos",
+      "kind": "route",
+      "codeRef": "App.tsx:/meus-projetos",
+      "name": "Meus Projetos",
+      "purpose": "Lista de projetos da conta (+ órfãos para admin)",
+      "page": "/pt-pt/guias-utilizador/gerir-projetos/",
+      "status": "coberto",
+      "notes": "Lista por conta; admin vê órfãos/legado; sem projetos de outros utilizadores ativos; Admin «todos» mantém-se (out 2026)",
+      "pageExists": true
+    },
+    {
       "id": "route-projects",
       "kind": "route",
       "codeRef": "App.tsx:/projects",
@@ -79,7 +90,7 @@
       "purpose": "Gestão de projetos",
       "page": "/pt-pt/guias-utilizador/gerir-projetos/",
       "status": "coberto",
-      "notes": "Production: 26 projetos recuperáveis visíveis após login Owner (out 2026)",
+      "notes": "Alinhado com Meus Projetos /meus-projetos (out 2026)",
       "pageExists": true
     },
     {
@@ -359,7 +370,7 @@
       "purpose": "Área administrativa após login",
       "page": "/pt-pt/funcionalidades/definicoes/",
       "status": "coberto",
-      "notes": "Production: acessível após login Owner; listagem de projetos recuperáveis (out 2026)",
+      "notes": "Listagem Admin «todos» mantém-se; Meus Projetos é lista por conta (+ órfãos para admin)",
       "pageExists": true
     },
     {

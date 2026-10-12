@@ -21,7 +21,8 @@ const items = [
   { id: "route-definicoes", kind: "route", codeRef: "App.tsx:/definicoes", name: "Definições", purpose: "Preferências do utilizador e projeto", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
   { id: "route-dashboard", kind: "route", codeRef: "App.tsx:/dashboard", name: "Dashboard", purpose: "Painel inicial autenticado", page: "/pt-pt/primeiros-passos/", status: "coberto", notes: "DashboardPage documentado em primeiros passos; captura pública = home (dashboard exige login)" },
   { id: "route-me", kind: "route", codeRef: "App.tsx:/me", name: "Perfil / Me", purpose: "Dados da conta", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
-  { id: "route-projects", kind: "route", codeRef: "App.tsx:/projects", name: "Lista de projetos", purpose: "Gestão de projetos", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto", notes: "Production: 26 projetos recuperáveis visíveis após login Owner (out 2026)" },
+  { id: "route-meus-projetos", kind: "route", codeRef: "App.tsx:/meus-projetos", name: "Meus Projetos", purpose: "Lista de projetos da conta (+ órfãos para admin)", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto", notes: "Lista por conta; admin vê órfãos/legado; sem projetos de outros utilizadores ativos; Admin «todos» mantém-se (out 2026)" },
+  { id: "route-projects", kind: "route", codeRef: "App.tsx:/projects", name: "Lista de projetos", purpose: "Gestão de projetos", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto", notes: "Alinhado com Meus Projetos /meus-projetos (out 2026)" },
   { id: "route-project-detail", kind: "route", codeRef: "App.tsx:/projects/:id", name: "Detalhe de projeto", purpose: "Projeto individual", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto" },
   { id: "route-projects-viewer", kind: "route", codeRef: "App.tsx:/projects/viewer", name: "Showroom / viewer", purpose: "Visualização showroom", page: "/pt-pt/funcionalidades/configurador-3d/", status: "coberto", notes: "Rota + PermissionRoute canOpenProjectsShowroom documentados" },
   { id: "route-relatorio-final", kind: "route", codeRef: "App.tsx:/relatorio-final/:project", name: "Relatório final", purpose: "Relatório consolidado do projeto", page: "/pt-pt/funcionalidades/relatorio-final/", status: "coberto" },
@@ -52,7 +53,7 @@ const items = [
   { id: "route-ops-cnc", kind: "route", codeRef: "App.tsx:/industrial/operations/cnc", name: "Operações CNC", purpose: "Vista CNC", page: "/pt-pt/funcionalidades/modulo-industrial/", status: "coberto", notes: "Redirect documentado para /industrial/work-orders/nesting" },
 
   // --- Admin ---
-  { id: "route-admin", kind: "route", codeRef: "App.tsx:/admin", name: "Admin", purpose: "Área administrativa após login", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto", notes: "Production: acessível após login Owner; listagem de projetos recuperáveis (out 2026)" },
+  { id: "route-admin", kind: "route", codeRef: "App.tsx:/admin", name: "Admin", purpose: "Área administrativa após login", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto", notes: "Listagem Admin «todos» mantém-se; Meus Projetos é lista por conta (+ órfãos para admin)" },
   { id: "route-admin-users", kind: "route", codeRef: "App.tsx:/admin/users", name: "Admin utilizadores", purpose: "Gestão de users", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
   { id: "route-admin-roles", kind: "route", codeRef: "App.tsx:/admin/roles", name: "Admin roles", purpose: "Papéis e permissões", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
   { id: "route-admin-global", kind: "route", codeRef: "App.tsx:/admin/global-settings", name: "Global settings", purpose: "Definições globais", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
@@ -185,7 +186,7 @@ function main() {
     "- `coberto` = documentação suficiente do que o código permite descrever (incluindo shells/placeholders).",
     "- `em-desenvolvimento` quando o produto ainda evolui de forma material (ex.: PIMO DRILL).",
     "- Capturas públicas WebP em `/visual/pimo-pro/` (home, ajuda, novidades, login, registo).",
-    "- Ecrãs que exigem login: `/dashboard`, `/projects*`, `/industrial/*`, `/admin/*`, `/PROJETOS`, `/nesting_v3`, `/me`, `/definicoes`.",
+    "- Ecrãs que exigem login: `/dashboard`, `/meus-projetos`, `/projects*`, `/industrial/*`, `/admin/*`, `/PROJETOS`, `/nesting_v3`, `/me`, `/definicoes`.",
     "",
   ].join("\n")
   fs.mkdirSync(path.dirname(OUT_MD), { recursive: true })

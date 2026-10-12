@@ -1,6 +1,6 @@
 ---
 title: "Gerir Projetos"
-description: "Guardar, abrir e gerir projetos no PIMO PRO, incluindo a listagem no servidor e a área Admin."
+description: "Guardar, abrir e gerir projetos no PIMO PRO: Meus Projetos por conta, órfãos para o administrador e listagem Admin."
 category: guia
 tags:
   - guia
@@ -15,17 +15,21 @@ status: implemented
 
 # Guardar, carregar e gerir projetos
 
-No PIMO PRO há projetos locais no navegador e projetos recuperáveis no servidor (Production).
+No PIMO PRO há projetos locais no navegador e projetos da conta no servidor. A lista **Meus Projetos** fica em `/meus-projetos`.
 
-## Projetos no servidor (Production)
+## Meus Projetos (`/meus-projetos`)
 
-Depois de entrar com a conta Owner (admin), a listagem em Production mostra novamente os projetos recuperáveis (26 projetos). Na área Admin (`/admin`) e na listagem de projetos pode abrir esses projetos e continuar a trabalhar.
+A listagem mostra os **projetos da sua conta**. Não apresenta projetos de outros utilizadores ativos.
+
+Depois do restauro, o **administrador da plataforma** também vê projetos **órfãos ou legado** (donos antigos que já não existem na plataforma). Continua a não ver, nesta lista, projetos de outros utilizadores ativos.
+
+A listagem Admin com a opção **«todos»** mantém-se na área Admin (`/admin`), à parte de Meus Projetos.
 
 Para entrar e aceder à Admin, veja [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
 
 ## Projetos locais no navegador
 
-O armazenamento local no navegador permite auto-save e exportação/importação JSON.
+O armazenamento local no navegador permite auto-save e exportação/importação JSON. Serve de apoio e backup; a lista Meus Projetos no servidor segue as regras de conta acima.
 
 ## Passo a passo
 
@@ -33,7 +37,7 @@ O armazenamento local no navegador permite auto-save e exportação/importação
    Auto-save ativo e opção de guardar manualmente na barra superior.
 
 2. **Abrir Meus Projetos**  
-   Lista projetos com metadados e miniaturas. Em Production, com conta Owner, a listagem inclui também os projetos recuperáveis no servidor.
+   Em `/meus-projetos`: projetos da sua conta, com metadados e miniaturas. Se for administrador da plataforma, a lista inclui também órfãos ou legado após o restauro.
 
 3. **Carregar projeto**  
    Selecione o projeto e abra no workspace.
@@ -44,6 +48,9 @@ O armazenamento local no navegador permite auto-save e exportação/importação
 5. **Exportar/Importar JSON**  
    Recomendado para backup externo e partilha.
 
+6. **Admin «todos»** (só admin)  
+   Na área Admin, a listagem com **«todos»** continua disponível para gestão alargada, separada de Meus Projetos.
+
 ## Atenção
 
-Se limpar os dados do browser, os projetos guardados localmente podem ser removidos. Os projetos recuperáveis no servidor em Production não dependem do armazenamento local do navegador.
+Se limpar os dados do browser, os projetos guardados localmente podem ser removidos. Os projetos da conta no servidor não dependem do armazenamento local do navegador.

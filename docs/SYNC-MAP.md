@@ -166,7 +166,7 @@ Manter `status` alinhado com o criativo (`em-desenvolvimento` / `parcial` / `dis
 | Showroom / viewer | `/pt-pt/funcionalidades/configurador-3d/` (secção showroom) |
 | Sistema relacionado | `/pt-pt/sistemas-pimo/pimo-projetos/` se a mudança for do módulo PROJETOS |
 | Relatório | `/pt-pt/funcionalidades/relatorio-final/` |
-| Cobertura | `route-projects`, `route-project-detail`, `route-projects-viewer`, `route-dashboard`, `route-admin` |
+| Cobertura | `route-meus-projetos`, `route-projects`, `route-project-detail`, `route-projects-viewer`, `route-dashboard`, `route-admin` |
 
 ---
 

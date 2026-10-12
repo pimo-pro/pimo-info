@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T19:07:59.596Z",
+  "generatedAt": "2026-10-12T19:14:59.661Z",
   "items": [
     {
       "path": "/",
@@ -1290,7 +1290,7 @@
       "path": "/pt-pt/guias-utilizador/gerir-projetos/",
       "file": "pages/pt-pt/guias-utilizador/gerir-projetos.mdx",
       "title": "Gerir Projetos",
-      "description": "Guardar, abrir e gerir projetos no PIMO PRO, incluindo a listagem no servidor e a área Admin.",
+      "description": "Guardar, abrir e gerir projetos no PIMO PRO: Meus Projetos por conta, órfãos para o administrador e listagem Admin.",
       "author": "",
       "category": "guia",
       "tags": [

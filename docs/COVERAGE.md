@@ -1,12 +1,12 @@
 # Matriz de cobertura PIMO PRO → pimo.info
 
-Gerado: 2026-10-12T19:07:59.648Z
+Gerado: 2026-10-12T19:14:59.741Z
 
-Total de itens: **69**
+Total de itens: **70**
 
 | Estado | Quantidade |
 |---|---|
-| coberto | 67 |
+| coberto | 68 |
 | em-desenvolvimento | 2 |
 
 | ID | Tipo | Nome | Página | Estado | Código |
@@ -17,6 +17,7 @@ Total de itens: **69**
 | `route-definicoes` | route | Definições | [/pt-pt/funcionalidades/definicoes/](/pt-pt/funcionalidades/definicoes/) | coberto | `App.tsx:/definicoes` |
 | `route-dashboard` | route | Dashboard | [/pt-pt/primeiros-passos/](/pt-pt/primeiros-passos/) | coberto | `App.tsx:/dashboard` |
 | `route-me` | route | Perfil / Me | [/pt-pt/funcionalidades/conta-e-acesso/](/pt-pt/funcionalidades/conta-e-acesso/) | coberto | `App.tsx:/me` |
+| `route-meus-projetos` | route | Meus Projetos | [/pt-pt/guias-utilizador/gerir-projetos/](/pt-pt/guias-utilizador/gerir-projetos/) | coberto | `App.tsx:/meus-projetos` |
 | `route-projects` | route | Lista de projetos | [/pt-pt/guias-utilizador/gerir-projetos/](/pt-pt/guias-utilizador/gerir-projetos/) | coberto | `App.tsx:/projects` |
 | `route-project-detail` | route | Detalhe de projeto | [/pt-pt/guias-utilizador/gerir-projetos/](/pt-pt/guias-utilizador/gerir-projetos/) | coberto | `App.tsx:/projects/:id` |
 | `route-projects-viewer` | route | Showroom / viewer | [/pt-pt/funcionalidades/configurador-3d/](/pt-pt/funcionalidades/configurador-3d/) | coberto | `App.tsx:/projects/viewer` |
@@ -87,4 +88,4 @@ Total de itens: **69**
 - `coberto` = documentação suficiente do que o código permite descrever (incluindo shells/placeholders).
 - `em-desenvolvimento` quando o produto ainda evolui de forma material (ex.: PIMO DRILL).
 - Capturas públicas WebP em `/visual/pimo-pro/` (home, ajuda, novidades, login, registo).
-- Ecrãs que exigem login: `/dashboard`, `/projects*`, `/industrial/*`, `/admin/*`, `/PROJETOS`, `/nesting_v3`, `/me`, `/definicoes`.
+- Ecrãs que exigem login: `/dashboard`, `/meus-projetos`, `/projects*`, `/industrial/*`, `/admin/*`, `/PROJETOS`, `/nesting_v3`, `/me`, `/definicoes`.
