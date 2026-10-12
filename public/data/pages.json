@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T20:32:56.887Z",
+  "generatedAt": "2026-10-12T20:46:28.820Z",
   "items": [
     {
       "path": "/",
@@ -1513,7 +1513,7 @@
       "path": "/pt-pt/perguntas-frequentes/",
       "file": "pages/pt-pt/perguntas-frequentes.mdx",
       "title": "Perguntas frequentes",
-      "description": "FAQ do PIMO PRO: módulos, nesting, unidades, exportação ZIP, TCN/Drill XML e PIMO-TRAK.",
+      "description": "FAQ do PIMO PRO: conta, erros inesperados, módulos, nesting, exportação e PIMO-TRAK.",
       "author": "",
       "category": "faq",
       "tags": [

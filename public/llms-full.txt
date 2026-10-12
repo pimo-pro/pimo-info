@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-10-12T20:32:56.889Z
+Generated: 2026-10-12T20:46:28.823Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -6573,9 +6573,13 @@ Podemos atualizar estes termos. A data no topo indica a versão vigente.
 
 ## Perguntas frequentes
 URL: https://pimo.info/pt-pt/perguntas-frequentes/
-FAQ do PIMO PRO: módulos, nesting, unidades, exportação ZIP, TCN/Drill XML e PIMO-TRAK.
+FAQ do PIMO PRO: conta, erros inesperados, módulos, nesting, exportação e PIMO-TRAK.
 
 # Perguntas frequentes
+
+## Apareceu «Algo correu mal» na aplicação?
+
+Se a interface falhar de forma inesperada, o PIMO PRO deixa de mostrar um ecrã em branco. Surge a mensagem **Algo correu mal** (erro inesperado) e o botão **Voltar ao início**, que o leva de novo ao arranque da aplicação. Pode continuar a trabalhar a partir daí; se o problema se repetir, contacte o suporte.
 
 ## O login em Production funciona?
 

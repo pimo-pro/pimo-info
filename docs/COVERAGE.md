@@ -1,12 +1,12 @@
 # Matriz de cobertura PIMO PRO → pimo.info
 
-Gerado: 2026-10-12T20:32:56.943Z
+Gerado: 2026-10-12T20:46:28.885Z
 
-Total de itens: **70**
+Total de itens: **71**
 
 | Estado | Quantidade |
 |---|---|
-| coberto | 68 |
+| coberto | 69 |
 | em-desenvolvimento | 2 |
 
 | ID | Tipo | Nome | Página | Estado | Código |
@@ -52,6 +52,7 @@ Total de itens: **70**
 | `route-admin-room` | route | Room settings | [/pt-pt/funcionalidades/sala-e-ambiente/](/pt-pt/funcionalidades/sala-e-ambiente/) | coberto | `App.tsx:/admin/room-settings` |
 | `route-admin-industrial` | route | Admin industrial | [/pt-pt/documentacao-tecnica/sistema-industrial/](/pt-pt/documentacao-tecnica/sistema-industrial/) | coberto | `App.tsx:/admin/settings/industrial` |
 | `domain-auth` | domain | Autenticação e sessão | [/pt-pt/funcionalidades/conta-e-acesso/](/pt-pt/funcionalidades/conta-e-acesso/) | coberto | `auth / session revalidate + logout` |
+| `domain-error-ui` | domain | Erro inesperado na UI | [/pt-pt/perguntas-frequentes/](/pt-pt/perguntas-frequentes/) | coberto | `error boundary / unexpected UI failure` |
 | `domain-boxes` | domain | Caixas / módulos | [/pt-pt/guias-utilizador/criar-caixa/](/pt-pt/guias-utilizador/criar-caixa/) | coberto | `LegacyApp / boxes` |
 | `domain-pieces` | domain | Peças | [/pt-pt/guias-utilizador/medicoes-e-cotas/](/pt-pt/guias-utilizador/medicoes-e-cotas/) | coberto | `piece models` |
 | `domain-materials` | domain | Materiais | [/pt-pt/funcionalidades/materiais/](/pt-pt/funcionalidades/materiais/) | coberto | `materials catalog` |

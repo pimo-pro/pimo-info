@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-12T20:32:56.943Z",
+  "generatedAt": "2026-10-12T20:46:28.885Z",
   "source": "pimo-criativo-source (read-only) + pages/pt-pt",
   "totals": {
-    "items": 70,
+    "items": 71,
     "byStatus": {
-      "coberto": 68,
+      "coberto": 69,
       "em-desenvolvimento": 2
     }
   },
@@ -432,6 +432,17 @@
       "page": "/pt-pt/funcionalidades/conta-e-acesso/",
       "status": "coberto",
       "notes": "Ao reabrir: sessão confirmada no servidor; token inválido → /login (sem sessão fantasma). Logout invalida sessão no servidor (out 2026)",
+      "pageExists": true
+    },
+    {
+      "id": "domain-error-ui",
+      "kind": "domain",
+      "codeRef": "error boundary / unexpected UI failure",
+      "name": "Erro inesperado na UI",
+      "purpose": "Mensagem Algo correu mal + Voltar ao início em vez de ecrã em branco",
+      "page": "/pt-pt/perguntas-frequentes/",
+      "status": "coberto",
+      "notes": "Error boundary global em qualquer ecrã (out 2026)",
       "pageExists": true
     },
     {

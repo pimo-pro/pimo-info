@@ -194,6 +194,7 @@ Usar quando a área do `INFO-UPDATES.md` não encaixa acima (UI global, tema, pe
 | Tipo de mudança | Destinos típicos no pimo.info |
 |---|---|
 | Auth / registo / login / logout | ver `sistemas/autenticacao` → `/pt-pt/funcionalidades/conta-e-acesso/`, FAQ |
+| Erro inesperado / ecrã em branco / recovery UI | `/pt-pt/perguntas-frequentes/` (+ cobertura `domain-error-ui`) |
 | Definições / admin | `/pt-pt/funcionalidades/definicoes/`, docs técnicas |
 | Arquitetura / fluxo | `data/modules.js`, `/pt-pt/como-funciona/` |
 | Glossário só de termo | `data/glossary.js`, `/pt-pt/glossario/` |
