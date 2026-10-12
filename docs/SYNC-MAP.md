@@ -160,10 +160,10 @@ Manter `status` alinhado com o criativo (`em-desenvolvimento` / `parcial` / `dis
 
 | O quê | Onde no pimo.info |
 |---|---|
-| Guia | `/pt-pt/guias-utilizador/gerir-projetos/` |
+| Guia | `/pt-pt/guias-utilizador/gerir-projetos/` (incl. detalhe Admin `/projects/{nome}`) |
 | Conta / dashboard | `/pt-pt/funcionalidades/conta-e-acesso/`, `/pt-pt/primeiros-passos/` |
 | Admin / listagem Production | `/pt-pt/funcionalidades/definicoes/`, FAQ |
-| Showroom / viewer | `/pt-pt/funcionalidades/configurador-3d/` (secção showroom) |
+| Showroom / viewer / editor 3D | `/pt-pt/funcionalidades/configurador-3d/` (secção showroom; botão Abrir no editor 3D no detalhe Admin) |
 | Sistema relacionado | `/pt-pt/sistemas-pimo/pimo-projetos/` se a mudança for do módulo PROJETOS |
 | Relatório | `/pt-pt/funcionalidades/relatorio-final/` |
 | Cobertura | `route-meus-projetos`, `route-projects`, `route-project-detail`, `route-projects-viewer`, `route-dashboard`, `route-admin` |

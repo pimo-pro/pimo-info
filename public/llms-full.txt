@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-10-12T20:46:28.823Z
+Generated: 2026-10-12T21:00:53.285Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -6017,7 +6017,7 @@ Validações em campos editáveis (ex.: quantidade e material) aplicam-se na an�
 
 ## Gerir Projetos
 URL: https://pimo.info/pt-pt/guias-utilizador/gerir-projetos/
-Guardar, abrir e gerir projetos no PIMO PRO: Meus Projetos por conta, órfãos para o administrador e listagem Admin.
+Guardar, abrir e gerir projetos no PIMO PRO: Meus Projetos, detalhe Admin e abertura no editor 3D.
 
 # Guardar, carregar e gerir projetos
 
@@ -6032,6 +6032,10 @@ Depois do restauro, o **administrador da plataforma** também vê projetos **ór
 A listagem Admin com a opção **«todos»** mantém-se na área Admin (`/admin`), à parte de Meus Projetos.
 
 Para entrar e aceder à Admin, veja [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
+
+## Detalhe Admin do projeto (`/projects/ `)
+
+Na página de detalhe Admin de um projeto já **não aparece** o texto confuso de «FASE 4». A página explica que o **editor 3D está na página inicial** da aplicação e oferece o botão **Abrir no editor 3D** para ir trabalhar o projeto no configurador.
 
 ## Projetos locais no navegador
 
@@ -6048,13 +6052,16 @@ O armazenamento local no navegador permite auto-save e exportação/importação
 3. **Carregar projeto**  
    Selecione o projeto e abra no workspace.
 
-4. **Duplicar ou renomear**  
+4. **Detalhe Admin**  
+   Em `/projects/ `, use **Abrir no editor 3D** se quiser editar no configurador da página inicial.
+
+5. **Duplicar ou renomear**  
    Disponível por menu de contexto.
 
-5. **Exportar/Importar JSON**  
+6. **Exportar/Importar JSON**  
    Recomendado para backup externo e partilha.
 
-6. **Admin «todos»** (só admin)  
+7. **Admin «todos»** (só admin)  
    Na área Admin, a listagem com **«todos»** continua disponível para gestão alargada, separada de Meus Projetos.
 
 ## Atenção
@@ -6622,6 +6629,10 @@ Pode afetar a orientação dos furos nas máquinas CNC. Antes de maquinar, valid
 ## Onde ficam guardados os projetos?
 
 Há projetos locais no navegador (`localStorage`) e projetos da conta no servidor. Em **Meus Projetos** (`/meus-projetos`) vê os projetos da sua conta. O administrador da plataforma também vê órfãos ou legado (donos antigos que já não existem), sem ver projetos de outros utilizadores ativos. A listagem Admin com **«todos»** mantém-se. Se limpar os dados do browser, só os projetos locais podem desaparecer. Guia: [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
+
+## No detalhe Admin do projeto, onde edito em 3D?
+
+Em `/projects/ ` já não aparece o texto «FASE 4». A página indica que o editor 3D está na página inicial e tem o botão **Abrir no editor 3D**. Guia: [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
 
 ## Como fazer backup de projetos?
 

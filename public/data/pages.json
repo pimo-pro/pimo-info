@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T20:46:28.820Z",
+  "generatedAt": "2026-10-12T21:00:53.284Z",
   "items": [
     {
       "path": "/",
@@ -1290,7 +1290,7 @@
       "path": "/pt-pt/guias-utilizador/gerir-projetos/",
       "file": "pages/pt-pt/guias-utilizador/gerir-projetos.mdx",
       "title": "Gerir Projetos",
-      "description": "Guardar, abrir e gerir projetos no PIMO PRO: Meus Projetos por conta, órfãos para o administrador e listagem Admin.",
+      "description": "Guardar, abrir e gerir projetos no PIMO PRO: Meus Projetos, detalhe Admin e abertura no editor 3D.",
       "author": "",
       "category": "guia",
       "tags": [
@@ -1300,6 +1300,7 @@
       "related": [
         "/pt-pt/guias-utilizador/",
         "/pt-pt/funcionalidades/conta-e-acesso/",
+        "/pt-pt/funcionalidades/configurador-3d/",
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-12",

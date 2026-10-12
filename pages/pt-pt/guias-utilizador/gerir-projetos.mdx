@@ -1,6 +1,6 @@
 ---
 title: "Gerir Projetos"
-description: "Guardar, abrir e gerir projetos no PIMO PRO: Meus Projetos por conta, órfãos para o administrador e listagem Admin."
+description: "Guardar, abrir e gerir projetos no PIMO PRO: Meus Projetos, detalhe Admin e abertura no editor 3D."
 category: guia
 tags:
   - guia
@@ -8,6 +8,7 @@ tags:
 related:
   - /pt-pt/guias-utilizador/
   - /pt-pt/funcionalidades/conta-e-acesso/
+  - /pt-pt/funcionalidades/configurador-3d/
   - /pt-pt/glossario/
 lastUpdated: 2026-10-12
 status: implemented
@@ -27,6 +28,10 @@ A listagem Admin com a opção **«todos»** mantém-se na área Admin (`/admin`
 
 Para entrar e aceder à Admin, veja [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
 
+## Detalhe Admin do projeto (`/projects/{nome}`)
+
+Na página de detalhe Admin de um projeto já **não aparece** o texto confuso de «FASE 4». A página explica que o **editor 3D está na página inicial** da aplicação e oferece o botão **Abrir no editor 3D** para ir trabalhar o projeto no configurador.
+
 ## Projetos locais no navegador
 
 O armazenamento local no navegador permite auto-save e exportação/importação JSON. Serve de apoio e backup; a lista Meus Projetos no servidor segue as regras de conta acima.
@@ -42,13 +47,16 @@ O armazenamento local no navegador permite auto-save e exportação/importação
 3. **Carregar projeto**  
    Selecione o projeto e abra no workspace.
 
-4. **Duplicar ou renomear**  
+4. **Detalhe Admin**  
+   Em `/projects/{nome}`, use **Abrir no editor 3D** se quiser editar no configurador da página inicial.
+
+5. **Duplicar ou renomear**  
    Disponível por menu de contexto.
 
-5. **Exportar/Importar JSON**  
+6. **Exportar/Importar JSON**  
    Recomendado para backup externo e partilha.
 
-6. **Admin «todos»** (só admin)  
+7. **Admin «todos»** (só admin)  
    Na área Admin, a listagem com **«todos»** continua disponível para gestão alargada, separada de Meus Projetos.
 
 ## Atenção

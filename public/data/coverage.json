@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T20:46:28.885Z",
+  "generatedAt": "2026-10-12T21:00:53.342Z",
   "source": "pimo-criativo-source (read-only) + pages/pt-pt",
   "totals": {
     "items": 71,
@@ -98,9 +98,10 @@
       "kind": "route",
       "codeRef": "App.tsx:/projects/:id",
       "name": "Detalhe de projeto",
-      "purpose": "Projeto individual",
+      "purpose": "Projeto individual (Admin)",
       "page": "/pt-pt/guias-utilizador/gerir-projetos/",
       "status": "coberto",
+      "notes": "Sem texto FASE 4; explica editor 3D na home + botão Abrir no editor 3D (out 2026)",
       "pageExists": true
     },
     {
