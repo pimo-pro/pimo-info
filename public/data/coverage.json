@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T19:14:59.741Z",
+  "generatedAt": "2026-10-12T20:32:56.943Z",
   "source": "pimo-criativo-source (read-only) + pages/pt-pt",
   "totals": {
     "items": 70,
@@ -426,12 +426,12 @@
     {
       "id": "domain-auth",
       "kind": "domain",
-      "codeRef": "auth / session logout",
+      "codeRef": "auth / session revalidate + logout",
       "name": "Autenticação e sessão",
-      "purpose": "Login, logout com invalidação no servidor, perfil /me",
+      "purpose": "Login, confirmação de sessão no servidor ao reabrir a app, logout, perfil /me",
       "page": "/pt-pt/funcionalidades/conta-e-acesso/",
       "status": "coberto",
-      "notes": "Logout invalida sessão no servidor e redireciona para /login (out 2026)",
+      "notes": "Ao reabrir: sessão confirmada no servidor; token inválido → /login (sem sessão fantasma). Logout invalida sessão no servidor (out 2026)",
       "pageExists": true
     },
     {

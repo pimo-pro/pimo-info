@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-10-12T19:14:59.663Z
+Generated: 2026-10-12T20:32:56.889Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -5427,7 +5427,7 @@ A rota `/projects/viewer` (dentro de `ProtectedLayout`) abre o showroom de proje
 
 ## Conta e acesso
 URL: https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/
-Login, registo, verificação de email, recuperação de password, perfil e terminar sessão no PIMO PRO.
+Login, registo, verificação de email, recuperação de password, perfil, sessão no servidor e terminar sessão no PIMO PRO.
 
 # Conta e acesso
 
@@ -5440,10 +5440,15 @@ Rotas verificadas na app: `/login`, `/register`, `/register/check-email`, `/veri
 3. **Recuperar password** → email de reset
 4. **Perfil (`/me`)** → dados da conta
 5. **Terminar sessão** → a sessão no servidor é invalidada e a app envia-o para o ecrã de login
+6. **Reabrir a app** → a sessão é confirmada no servidor; se o token já não for válido, vai para o login
 
 ## Login em Production
 
 O login em Production voltou a funcionar com a conta Owner (admin). A autenticação usa armazenamento privado endurecido no servidor. Depois de entrar, a área Admin (`/admin`) fica acessível. O perfil em `/me` continua a funcionar como antes.
+
+## Sessão ao reabrir a aplicação
+
+Ao abrir de novo o PIMO PRO (ou em pedidos à API), a sessão é **confirmada no servidor**. Se o token já não for válido, o utilizador é enviado para o ecrã de login em vez de ficar com uma sessão fantasma (parece autenticado, mas os pedidos falham).
 
 ## Terminar sessão
 
@@ -5457,7 +5462,7 @@ Ao sair da conta, a sessão no servidor é invalidada de forma limpa e o utiliza
 
 ## Estado
 
-**Disponível** na aplicação [pimo.pro/login](https://pimo.pro/login). Em outubro 2026: login Production com armazenamento privado no servidor, área Admin acessível após login Owner, e logout com invalidação limpa da sessão.
+**Disponível** na aplicação [pimo.pro/login](https://pimo.pro/login). Em outubro 2026: login Production com armazenamento privado no servidor, área Admin acessível após login Owner, logout com invalidação limpa da sessão, e confirmação da sessão no servidor ao reabrir a app (token inválido → login).
 
 ## Relacionado
 
@@ -6579,6 +6584,10 @@ Sim. Em Production o login voltou a funcionar com a conta Owner (admin). A auten
 ## O que acontece quando termino a sessão?
 
 Ao sair da conta, a sessão no servidor é invalidada de forma limpa e a app envia-o para o ecrã de login. Pode voltar a entrar normalmente; o perfil `/me` e a Admin mantêm-se a funcionar.
+
+## O que acontece se reabrir a app com a sessão antiga?
+
+A sessão é confirmada no servidor. Se o token já não for válido, o PIMO PRO envia-o para o login em vez de manter uma sessão fantasma. Detalhe em [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
 
 ## Posso misturar portas e gavetas no mesmo módulo?
 

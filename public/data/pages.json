@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T19:14:59.661Z",
+  "generatedAt": "2026-10-12T20:32:56.887Z",
   "items": [
     {
       "path": "/",
@@ -860,7 +860,7 @@
       "path": "/pt-pt/funcionalidades/conta-e-acesso/",
       "file": "pages/pt-pt/funcionalidades/conta-e-acesso.mdx",
       "title": "Conta e acesso",
-      "description": "Login, registo, verificação de email, recuperação de password, perfil e terminar sessão no PIMO PRO.",
+      "description": "Login, registo, verificação de email, recuperação de password, perfil, sessão no servidor e terminar sessão no PIMO PRO.",
       "author": "",
       "category": "funcionalidade",
       "tags": [

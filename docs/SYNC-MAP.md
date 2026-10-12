@@ -182,7 +182,7 @@ Auth, login, logout, sessão e acesso Admin (não é um sistema de produto como 
 | FAQ | `/pt-pt/perguntas-frequentes/` (login, terminar sessão) |
 | Cobertura | `route-login`, `route-me`, `route-admin`, `domain-auth` em `scripts/generate-coverage.cjs` |
 
-**Adicionado / alterado:** atualizar fluxos (login, logout, `/me`, Admin) e o estado em Production.  
+**Adicionado / alterado:** atualizar fluxos (login, logout, `/me`, Admin, confirmação de sessão ao reabrir a app / API) e o estado em Production.  
 **Removido:** marcar na página se um fluxo deixar de existir; atualizar FAQ e cobertura.
 
 ---

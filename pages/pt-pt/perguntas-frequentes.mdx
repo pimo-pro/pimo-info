@@ -23,6 +23,10 @@ Sim. Em Production o login voltou a funcionar com a conta Owner (admin). A auten
 
 Ao sair da conta, a sessão no servidor é invalidada de forma limpa e a app envia-o para o ecrã de login. Pode voltar a entrar normalmente; o perfil `/me` e a Admin mantêm-se a funcionar.
 
+## O que acontece se reabrir a app com a sessão antiga?
+
+A sessão é confirmada no servidor. Se o token já não for válido, o PIMO PRO envia-o para o login em vez de manter uma sessão fantasma. Detalhe em [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
+
 ## Posso misturar portas e gavetas no mesmo módulo?
 
 Não. Na mesma caixa, portas e gavetas são mutuamente exclusivas. Ao ativar gavetas, a porta é removida automaticamente.

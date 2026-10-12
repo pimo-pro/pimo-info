@@ -61,7 +61,7 @@ const items = [
   { id: "route-admin-industrial", kind: "route", codeRef: "App.tsx:/admin/settings/industrial", name: "Admin industrial", purpose: "Settings industriais", page: "/pt-pt/documentacao-tecnica/sistema-industrial/", status: "coberto" },
 
   // --- Domínios funcionais ---
-  { id: "domain-auth", kind: "domain", codeRef: "auth / session logout", name: "Autenticação e sessão", purpose: "Login, logout com invalidação no servidor, perfil /me", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto", notes: "Logout invalida sessão no servidor e redireciona para /login (out 2026)" },
+  { id: "domain-auth", kind: "domain", codeRef: "auth / session revalidate + logout", name: "Autenticação e sessão", purpose: "Login, confirmação de sessão no servidor ao reabrir a app, logout, perfil /me", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto", notes: "Ao reabrir: sessão confirmada no servidor; token inválido → /login (sem sessão fantasma). Logout invalida sessão no servidor (out 2026)" },
   { id: "domain-boxes", kind: "domain", codeRef: "LegacyApp / boxes", name: "Caixas / módulos", purpose: "Criar e editar caixas", page: "/pt-pt/guias-utilizador/criar-caixa/", status: "coberto" },
   { id: "domain-pieces", kind: "domain", codeRef: "piece models", name: "Peças", purpose: "Peças e cotas", page: "/pt-pt/guias-utilizador/medicoes-e-cotas/", status: "coberto" },
   { id: "domain-materials", kind: "domain", codeRef: "materials catalog", name: "Materiais", purpose: "Painéis, bordos, texturas", page: "/pt-pt/funcionalidades/materiais/", status: "coberto" },

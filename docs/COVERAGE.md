@@ -1,6 +1,6 @@
 # Matriz de cobertura PIMO PRO → pimo.info
 
-Gerado: 2026-10-12T19:14:59.741Z
+Gerado: 2026-10-12T20:32:56.943Z
 
 Total de itens: **70**
 
@@ -51,7 +51,7 @@ Total de itens: **70**
 | `route-admin-global` | route | Global settings | [/pt-pt/funcionalidades/definicoes/](/pt-pt/funcionalidades/definicoes/) | coberto | `App.tsx:/admin/global-settings` |
 | `route-admin-room` | route | Room settings | [/pt-pt/funcionalidades/sala-e-ambiente/](/pt-pt/funcionalidades/sala-e-ambiente/) | coberto | `App.tsx:/admin/room-settings` |
 | `route-admin-industrial` | route | Admin industrial | [/pt-pt/documentacao-tecnica/sistema-industrial/](/pt-pt/documentacao-tecnica/sistema-industrial/) | coberto | `App.tsx:/admin/settings/industrial` |
-| `domain-auth` | domain | Autenticação e sessão | [/pt-pt/funcionalidades/conta-e-acesso/](/pt-pt/funcionalidades/conta-e-acesso/) | coberto | `auth / session logout` |
+| `domain-auth` | domain | Autenticação e sessão | [/pt-pt/funcionalidades/conta-e-acesso/](/pt-pt/funcionalidades/conta-e-acesso/) | coberto | `auth / session revalidate + logout` |
 | `domain-boxes` | domain | Caixas / módulos | [/pt-pt/guias-utilizador/criar-caixa/](/pt-pt/guias-utilizador/criar-caixa/) | coberto | `LegacyApp / boxes` |
 | `domain-pieces` | domain | Peças | [/pt-pt/guias-utilizador/medicoes-e-cotas/](/pt-pt/guias-utilizador/medicoes-e-cotas/) | coberto | `piece models` |
 | `domain-materials` | domain | Materiais | [/pt-pt/funcionalidades/materiais/](/pt-pt/funcionalidades/materiais/) | coberto | `materials catalog` |
