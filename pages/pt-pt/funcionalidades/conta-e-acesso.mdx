@@ -1,6 +1,6 @@
 ---
 title: Conta e acesso
-description: Login, registo, verificação de email, recuperação de password e perfil no PIMO PRO.
+description: Login, registo, verificação de email, recuperação de password, perfil e terminar sessão no PIMO PRO.
 category: funcionalidade
 tags:
   - conta
@@ -8,20 +8,30 @@ tags:
   - autenticacao
 related:
   - /pt-pt/funcionalidades/definicoes/
+  - /pt-pt/guias-utilizador/gerir-projetos/
   - /pt-pt/primeiros-passos/
-lastUpdated: 2026-10-07
+lastUpdated: 2026-10-12
 ---
 
 # Conta e acesso
 
-Rotas verificadas em `App.tsx`: `/login`, `/register`, `/register/check-email`, `/verify-email`, `/forgot-password`, `/me`. As páginas de login e registo são públicas; dashboard, projetos e admin exigem autenticação.
+Rotas verificadas na app: `/login`, `/register`, `/register/check-email`, `/verify-email`, `/forgot-password`, `/me`. As páginas de login e registo são públicas. O dashboard, os projetos e a área Admin exigem autenticação.
 
 ## Fluxos
 
 1. **Registo** → verificação de email → login
-2. **Login** → dashboard / projetos
+2. **Login** → dashboard, projetos ou Admin (conforme a conta)
 3. **Recuperar password** → email de reset
 4. **Perfil (`/me`)** → dados da conta
+5. **Terminar sessão** → a sessão no servidor é invalidada e a app envia-o para o ecrã de login
+
+## Login em Production
+
+O login em Production voltou a funcionar com a conta Owner (admin). A autenticação usa armazenamento privado endurecido no servidor. Depois de entrar, a área Admin (`/admin`) fica acessível. O perfil em `/me` continua a funcionar como antes.
+
+## Terminar sessão
+
+Ao sair da conta, a sessão no servidor é invalidada de forma limpa e o utilizador é enviado para o ecrã de login. O login, a área Admin e a sessão `/me` mantêm-se a funcionar normalmente depois de voltar a entrar.
 
 ## Capturas (pimo.pro)
 
@@ -43,9 +53,10 @@ Rotas verificadas em `App.tsx`: `/login`, `/register`, `/register/check-email`, 
 
 ## Estado
 
-**Disponível** na aplicação [pimo.pro/login](https://pimo.pro/login).
+**Disponível** na aplicação [pimo.pro/login](https://pimo.pro/login). Em outubro 2026: login Production com armazenamento privado no servidor, área Admin acessível após login Owner, e logout com invalidação limpa da sessão.
 
 ## Relacionado
 
 - [Definições](/pt-pt/funcionalidades/definicoes/)
+- [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/)
 - [Primeiros passos](/pt-pt/primeiros-passos/)

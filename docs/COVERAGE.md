@@ -1,12 +1,12 @@
 # Matriz de cobertura PIMO PRO → pimo.info
 
-Gerado: 2026-10-10T00:36:55.172Z
+Gerado: 2026-10-12T19:07:59.648Z
 
-Total de itens: **67**
+Total de itens: **69**
 
 | Estado | Quantidade |
 |---|---|
-| coberto | 65 |
+| coberto | 67 |
 | em-desenvolvimento | 2 |
 
 | ID | Tipo | Nome | Página | Estado | Código |
@@ -44,11 +44,13 @@ Total de itens: **67**
 | `route-events` | route | Eventos industriais | [/pt-pt/funcionalidades/estacoes-industriais/](/pt-pt/funcionalidades/estacoes-industriais/) | coberto | `App.tsx:/industrial/events` |
 | `route-pimo-drill` | route | PIMO DRILL | [/pt-pt/sistemas-pimo/pimo-drill/](/pt-pt/sistemas-pimo/pimo-drill/) | em-desenvolvimento | `App.tsx:/industrial/pimo-drill` |
 | `route-ops-cnc` | route | Operações CNC | [/pt-pt/funcionalidades/modulo-industrial/](/pt-pt/funcionalidades/modulo-industrial/) | coberto | `App.tsx:/industrial/operations/cnc` |
+| `route-admin` | route | Admin | [/pt-pt/funcionalidades/definicoes/](/pt-pt/funcionalidades/definicoes/) | coberto | `App.tsx:/admin` |
 | `route-admin-users` | route | Admin utilizadores | [/pt-pt/funcionalidades/definicoes/](/pt-pt/funcionalidades/definicoes/) | coberto | `App.tsx:/admin/users` |
 | `route-admin-roles` | route | Admin roles | [/pt-pt/funcionalidades/definicoes/](/pt-pt/funcionalidades/definicoes/) | coberto | `App.tsx:/admin/roles` |
 | `route-admin-global` | route | Global settings | [/pt-pt/funcionalidades/definicoes/](/pt-pt/funcionalidades/definicoes/) | coberto | `App.tsx:/admin/global-settings` |
 | `route-admin-room` | route | Room settings | [/pt-pt/funcionalidades/sala-e-ambiente/](/pt-pt/funcionalidades/sala-e-ambiente/) | coberto | `App.tsx:/admin/room-settings` |
 | `route-admin-industrial` | route | Admin industrial | [/pt-pt/documentacao-tecnica/sistema-industrial/](/pt-pt/documentacao-tecnica/sistema-industrial/) | coberto | `App.tsx:/admin/settings/industrial` |
+| `domain-auth` | domain | Autenticação e sessão | [/pt-pt/funcionalidades/conta-e-acesso/](/pt-pt/funcionalidades/conta-e-acesso/) | coberto | `auth / session logout` |
 | `domain-boxes` | domain | Caixas / módulos | [/pt-pt/guias-utilizador/criar-caixa/](/pt-pt/guias-utilizador/criar-caixa/) | coberto | `LegacyApp / boxes` |
 | `domain-pieces` | domain | Peças | [/pt-pt/guias-utilizador/medicoes-e-cotas/](/pt-pt/guias-utilizador/medicoes-e-cotas/) | coberto | `piece models` |
 | `domain-materials` | domain | Materiais | [/pt-pt/funcionalidades/materiais/](/pt-pt/funcionalidades/materiais/) | coberto | `materials catalog` |

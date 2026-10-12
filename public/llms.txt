@@ -75,6 +75,7 @@ Locale: pt-PT
 - Arquivo completo (ZIP): ZIP com os principais artefactos de produção (PDFs, XLSX de ferragens, TCN, Drill XML, etiquetas, layouts). Conteúdo exacto definido pelo gerador na app, ver formatos de exportação.
 - Análise arquivo completo (online): Edição documental online de PDFs industriais em PROJETOS (/analise). No código SSOT (`industrialFeatureFlags`) a flag `industrialOnlineAnalysis` está activa (`true`). Não substitui o ZIP de produção.
 - Orçamentos P3.9: Camada técnica/admin de tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.
+- Sessão / terminar sessão: Estado autenticado no servidor. Ao terminar sessão, a sessão é invalidada de forma limpa e a app envia o utilizador para o ecrã de login. Em Production o login usa armazenamento privado endurecido no servidor.
 
 ## Features
 - Configurador 3D [implemented] https://pimo.info/pt-pt/funcionalidades/configurador-3d/, Modelação paramétrica de módulos no workspace 3D.

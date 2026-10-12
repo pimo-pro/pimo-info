@@ -9,11 +9,19 @@ related:
   - /pt-pt/primeiros-passos/
   - /pt-pt/guias-utilizador/exportacao/
   - /pt-pt/glossario/
-lastUpdated: 2026-10-01
+lastUpdated: 2026-10-12
 status: implemented
 ---
 
 # Perguntas frequentes
+
+## O login em Production funciona?
+
+Sim. Em Production o login voltou a funcionar com a conta Owner (admin). A autenticação usa armazenamento privado endurecido no servidor e, após entrar, a área Admin (`/admin`) fica acessível. Detalhe em [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
+
+## O que acontece quando termino a sessão?
+
+Ao sair da conta, a sessão no servidor é invalidada de forma limpa e a app envia-o para o ecrã de login. Pode voltar a entrar normalmente; o perfil `/me` e a Admin mantêm-se a funcionar.
 
 ## Posso misturar portas e gavetas no mesmo módulo?
 
@@ -43,7 +51,7 @@ Pode afetar a orientação dos furos nas máquinas CNC. Antes de maquinar, valid
 
 ## Onde ficam guardados os projetos?
 
-No `localStorage` do navegador por predefinição. Se limpar os dados do browser, os projetos locais podem desaparecer. Também existe fluxo de projetos na app (guardar/abrir).
+No `localStorage` do navegador por predefinição. Se limpar os dados do browser, os projetos locais podem desaparecer. Em Production, com a conta Owner (admin), a listagem mostra também os projetos recuperáveis no servidor (26 projetos). Guia: [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
 
 ## Como fazer backup de projetos?
 

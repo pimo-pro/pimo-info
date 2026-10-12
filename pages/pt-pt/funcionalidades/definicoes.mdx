@@ -9,13 +9,14 @@ tags:
 related:
   - /pt-pt/funcionalidades/conta-e-acesso/
   - /pt-pt/funcionalidades/sala-e-ambiente/
+  - /pt-pt/guias-utilizador/gerir-projetos/
   - /pt-pt/primeiros-passos/
-lastUpdated: 2026-10-07
+lastUpdated: 2026-10-12
 ---
 
 # Definições
 
-A rota `/definicoes` e as áreas de administração concentram preferências e configuração do sistema. Rotas admin exigem permissões (`PermissionRoute` / `hasFullAccess` / `canAccessAdminPanel`) e login.
+A rota `/definicoes` e as áreas de administração concentram preferências e configuração do sistema. Rotas admin exigem permissões (`PermissionRoute` / `hasFullAccess` / `canAccessAdminPanel`) e login. Em Production, após login com a conta Owner (admin), a área Admin (`/admin`) fica acessível.
 
 ## Níveis
 
@@ -42,10 +43,11 @@ A rota `/definicoes` e as áreas de administração concentram preferências e c
 
 ## Estado
 
-**Documentado a partir do código (outubro 2026):** rotas e páginas admin existem na app; o acesso depende de RBAC. Detalhe de cada flag continua na UI da app.
+**Documentado a partir do código (outubro 2026):** rotas e páginas admin existem na app; o acesso depende de RBAC. Em Production o login Owner volta a abrir a Admin. Detalhe de cada flag continua na UI da app.
 
 ## Relacionado
 
 - [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/)
+- [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/)
 - [Sala e ambiente](/pt-pt/funcionalidades/sala-e-ambiente/)
 - [Sistema industrial](/pt-pt/documentacao-tecnica/sistema-industrial/)

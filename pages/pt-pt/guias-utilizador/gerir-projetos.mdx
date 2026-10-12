@@ -1,19 +1,31 @@
 ---
 title: "Gerir Projetos"
-description: "Gerir Projetos."
+description: "Guardar, abrir e gerir projetos no PIMO PRO, incluindo a listagem no servidor e a área Admin."
 category: guia
 tags:
   - guia
+  - projetos
 related:
   - /pt-pt/guias-utilizador/
+  - /pt-pt/funcionalidades/conta-e-acesso/
   - /pt-pt/glossario/
-lastUpdated: 2026-10-01
+lastUpdated: 2026-10-12
 status: implemented
 ---
 
 # Guardar, carregar e gerir projetos
 
-O sistema usa armazenamento local no navegador e permite exportação/importação JSON.
+No PIMO PRO há projetos locais no navegador e projetos recuperáveis no servidor (Production).
+
+## Projetos no servidor (Production)
+
+Depois de entrar com a conta Owner (admin), a listagem em Production mostra novamente os projetos recuperáveis (26 projetos). Na área Admin (`/admin`) e na listagem de projetos pode abrir esses projetos e continuar a trabalhar.
+
+Para entrar e aceder à Admin, veja [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
+
+## Projetos locais no navegador
+
+O armazenamento local no navegador permite auto-save e exportação/importação JSON.
 
 ## Passo a passo
 
@@ -21,7 +33,7 @@ O sistema usa armazenamento local no navegador e permite exportação/importaç�
    Auto-save ativo e opção de guardar manualmente na barra superior.
 
 2. **Abrir Meus Projetos**  
-   Lista projetos com metadados e miniaturas.
+   Lista projetos com metadados e miniaturas. Em Production, com conta Owner, a listagem inclui também os projetos recuperáveis no servidor.
 
 3. **Carregar projeto**  
    Selecione o projeto e abra no workspace.
@@ -34,4 +46,4 @@ O sistema usa armazenamento local no navegador e permite exportação/importaç�
 
 ## Atenção
 
-Se limpar os dados do browser, os projetos guardados localmente podem ser removidos.
+Se limpar os dados do browser, os projetos guardados localmente podem ser removidos. Os projetos recuperáveis no servidor em Production não dependem do armazenamento local do navegador.

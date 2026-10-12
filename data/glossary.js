@@ -216,4 +216,13 @@ export const glossaryTerms = [
       "/pt-pt/documentacao-tecnica/orcamentos-p39/",
     ],
   },
+  {
+    id: "sessao",
+    term: "Sessão / terminar sessão",
+    aliases: ["logout", "sair", "sessão"],
+    definition:
+      "Estado autenticado no servidor. Ao terminar sessão, a sessão é invalidada de forma limpa e a app envia o utilizador para o ecrã de login. Em Production o login usa armazenamento privado endurecido no servidor.",
+    status: "implemented",
+    relatedPaths: ["/pt-pt/funcionalidades/conta-e-acesso/"],
+  },
 ]

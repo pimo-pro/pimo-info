@@ -15,13 +15,13 @@ const OUT_MD = path.join(ROOT, "docs", "COVERAGE.md")
 /** @type {CoverageItem[]} */
 const items = [
   // --- Rotas principais ---
-  { id: "route-login", kind: "route", codeRef: "App.tsx:/login", name: "Login", purpose: "Autenticação de utilizador", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
+  { id: "route-login", kind: "route", codeRef: "App.tsx:/login", name: "Login", purpose: "Autenticação de utilizador", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto", notes: "Production: login Owner com armazenamento privado no servidor (out 2026)" },
   { id: "route-register", kind: "route", codeRef: "App.tsx:/register", name: "Registo", purpose: "Criação de conta", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
   { id: "route-forgot", kind: "route", codeRef: "App.tsx:/forgot-password", name: "Recuperar password", purpose: "Reset de palavra-passe", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
   { id: "route-definicoes", kind: "route", codeRef: "App.tsx:/definicoes", name: "Definições", purpose: "Preferências do utilizador e projeto", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
   { id: "route-dashboard", kind: "route", codeRef: "App.tsx:/dashboard", name: "Dashboard", purpose: "Painel inicial autenticado", page: "/pt-pt/primeiros-passos/", status: "coberto", notes: "DashboardPage documentado em primeiros passos; captura pública = home (dashboard exige login)" },
   { id: "route-me", kind: "route", codeRef: "App.tsx:/me", name: "Perfil / Me", purpose: "Dados da conta", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
-  { id: "route-projects", kind: "route", codeRef: "App.tsx:/projects", name: "Lista de projetos", purpose: "Gestão de projetos", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto" },
+  { id: "route-projects", kind: "route", codeRef: "App.tsx:/projects", name: "Lista de projetos", purpose: "Gestão de projetos", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto", notes: "Production: 26 projetos recuperáveis visíveis após login Owner (out 2026)" },
   { id: "route-project-detail", kind: "route", codeRef: "App.tsx:/projects/:id", name: "Detalhe de projeto", purpose: "Projeto individual", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto" },
   { id: "route-projects-viewer", kind: "route", codeRef: "App.tsx:/projects/viewer", name: "Showroom / viewer", purpose: "Visualização showroom", page: "/pt-pt/funcionalidades/configurador-3d/", status: "coberto", notes: "Rota + PermissionRoute canOpenProjectsShowroom documentados" },
   { id: "route-relatorio-final", kind: "route", codeRef: "App.tsx:/relatorio-final/:project", name: "Relatório final", purpose: "Relatório consolidado do projeto", page: "/pt-pt/funcionalidades/relatorio-final/", status: "coberto" },
@@ -52,6 +52,7 @@ const items = [
   { id: "route-ops-cnc", kind: "route", codeRef: "App.tsx:/industrial/operations/cnc", name: "Operações CNC", purpose: "Vista CNC", page: "/pt-pt/funcionalidades/modulo-industrial/", status: "coberto", notes: "Redirect documentado para /industrial/work-orders/nesting" },
 
   // --- Admin ---
+  { id: "route-admin", kind: "route", codeRef: "App.tsx:/admin", name: "Admin", purpose: "Área administrativa após login", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto", notes: "Production: acessível após login Owner; listagem de projetos recuperáveis (out 2026)" },
   { id: "route-admin-users", kind: "route", codeRef: "App.tsx:/admin/users", name: "Admin utilizadores", purpose: "Gestão de users", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
   { id: "route-admin-roles", kind: "route", codeRef: "App.tsx:/admin/roles", name: "Admin roles", purpose: "Papéis e permissões", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
   { id: "route-admin-global", kind: "route", codeRef: "App.tsx:/admin/global-settings", name: "Global settings", purpose: "Definições globais", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
@@ -59,6 +60,7 @@ const items = [
   { id: "route-admin-industrial", kind: "route", codeRef: "App.tsx:/admin/settings/industrial", name: "Admin industrial", purpose: "Settings industriais", page: "/pt-pt/documentacao-tecnica/sistema-industrial/", status: "coberto" },
 
   // --- Domínios funcionais ---
+  { id: "domain-auth", kind: "domain", codeRef: "auth / session logout", name: "Autenticação e sessão", purpose: "Login, logout com invalidação no servidor, perfil /me", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto", notes: "Logout invalida sessão no servidor e redireciona para /login (out 2026)" },
   { id: "domain-boxes", kind: "domain", codeRef: "LegacyApp / boxes", name: "Caixas / módulos", purpose: "Criar e editar caixas", page: "/pt-pt/guias-utilizador/criar-caixa/", status: "coberto" },
   { id: "domain-pieces", kind: "domain", codeRef: "piece models", name: "Peças", purpose: "Peças e cotas", page: "/pt-pt/guias-utilizador/medicoes-e-cotas/", status: "coberto" },
   { id: "domain-materials", kind: "domain", codeRef: "materials catalog", name: "Materiais", purpose: "Painéis, bordos, texturas", page: "/pt-pt/funcionalidades/materiais/", status: "coberto" },

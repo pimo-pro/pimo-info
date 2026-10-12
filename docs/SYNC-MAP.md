@@ -162,20 +162,38 @@ Manter `status` alinhado com o criativo (`em-desenvolvimento` / `parcial` / `dis
 |---|---|
 | Guia | `/pt-pt/guias-utilizador/gerir-projetos/` |
 | Conta / dashboard | `/pt-pt/funcionalidades/conta-e-acesso/`, `/pt-pt/primeiros-passos/` |
+| Admin / listagem Production | `/pt-pt/funcionalidades/definicoes/`, FAQ |
 | Showroom / viewer | `/pt-pt/funcionalidades/configurador-3d/` (secção showroom) |
 | Sistema relacionado | `/pt-pt/sistemas-pimo/pimo-projetos/` se a mudança for do módulo PROJETOS |
 | Relatório | `/pt-pt/funcionalidades/relatorio-final/` |
-| Cobertura | `route-projects`, `route-project-detail`, `route-projects-viewer`, `route-dashboard` |
+| Cobertura | `route-projects`, `route-project-detail`, `route-projects-viewer`, `route-dashboard`, `route-admin` |
+
+---
+
+### `sistemas/autenticacao`
+
+Auth, login, logout, sessão e acesso Admin (não é um sistema de produto como TRAK/PROJETOS).
+
+| O quê | Onde no pimo.info |
+|---|---|
+| Página canónica | `/pt-pt/funcionalidades/conta-e-acesso/` → `pages/pt-pt/funcionalidades/conta-e-acesso.mdx` |
+| Admin / permissões | `/pt-pt/funcionalidades/definicoes/` |
+| Onboarding | `/pt-pt/primeiros-passos/` |
+| FAQ | `/pt-pt/perguntas-frequentes/` (login, terminar sessão) |
+| Cobertura | `route-login`, `route-me`, `route-admin`, `domain-auth` em `scripts/generate-coverage.cjs` |
+
+**Adicionado / alterado:** atualizar fluxos (login, logout, `/me`, Admin) e o estado em Production.  
+**Removido:** marcar na página se um fluxo deixar de existir; atualizar FAQ e cobertura.
 
 ---
 
 ### `outro`
 
-Usar quando a área do `INFO-UPDATES.md` não encaixa acima (UI global, auth, admin, tema, performance, legal da app, etc.).
+Usar quando a área do `INFO-UPDATES.md` não encaixa acima (UI global, tema, performance, legal da app, etc.). Auth recorrente: ver [`sistemas/autenticacao`](#sistemasautenticacao).
 
 | Tipo de mudança | Destinos típicos no pimo.info |
 |---|---|
-| Auth / registo / login | `/pt-pt/funcionalidades/conta-e-acesso/`, FAQ |
+| Auth / registo / login / logout | ver `sistemas/autenticacao` → `/pt-pt/funcionalidades/conta-e-acesso/`, FAQ |
 | Definições / admin | `/pt-pt/funcionalidades/definicoes/`, docs técnicas |
 | Arquitetura / fluxo | `data/modules.js`, `/pt-pt/como-funciona/` |
 | Glossário só de termo | `data/glossary.js`, `/pt-pt/glossario/` |

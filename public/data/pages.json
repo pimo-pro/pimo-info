@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T00:36:55.116Z",
+  "generatedAt": "2026-10-12T19:07:59.596Z",
   "items": [
     {
       "path": "/",
@@ -860,7 +860,7 @@
       "path": "/pt-pt/funcionalidades/conta-e-acesso/",
       "file": "pages/pt-pt/funcionalidades/conta-e-acesso.mdx",
       "title": "Conta e acesso",
-      "description": "Login, registo, verificação de email, recuperação de password e perfil no PIMO PRO.",
+      "description": "Login, registo, verificação de email, recuperação de password, perfil e terminar sessão no PIMO PRO.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -870,9 +870,10 @@
       ],
       "related": [
         "/pt-pt/funcionalidades/definicoes/",
+        "/pt-pt/guias-utilizador/gerir-projetos/",
         "/pt-pt/primeiros-passos/"
       ],
-      "lastUpdated": "2026-10-07",
+      "lastUpdated": "2026-10-12",
       "status": ""
     },
     {
@@ -890,9 +891,10 @@
       "related": [
         "/pt-pt/funcionalidades/conta-e-acesso/",
         "/pt-pt/funcionalidades/sala-e-ambiente/",
+        "/pt-pt/guias-utilizador/gerir-projetos/",
         "/pt-pt/primeiros-passos/"
       ],
-      "lastUpdated": "2026-10-07",
+      "lastUpdated": "2026-10-12",
       "status": ""
     },
     {
@@ -1288,17 +1290,19 @@
       "path": "/pt-pt/guias-utilizador/gerir-projetos/",
       "file": "pages/pt-pt/guias-utilizador/gerir-projetos.mdx",
       "title": "Gerir Projetos",
-      "description": "Gerir Projetos.",
+      "description": "Guardar, abrir e gerir projetos no PIMO PRO, incluindo a listagem no servidor e a área Admin.",
       "author": "",
       "category": "guia",
       "tags": [
-        "guia"
+        "guia",
+        "projetos"
       ],
       "related": [
         "/pt-pt/guias-utilizador/",
+        "/pt-pt/funcionalidades/conta-e-acesso/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-12",
       "status": "implemented"
     },
     {
@@ -1521,7 +1525,7 @@
         "/pt-pt/guias-utilizador/exportacao/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-12",
       "status": "implemented"
     },
     {
@@ -1540,7 +1544,7 @@
         "/pt-pt/funcionalidades/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-07",
+      "lastUpdated": "2026-10-12",
       "status": "implemented"
     },
     {
