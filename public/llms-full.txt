@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-10-17T21:01:52.365Z
+Generated: 2026-10-17T21:10:36.492Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -201,6 +201,7 @@ Locale: pt-PT
 - Política de Cookies: https://pimo.info/pt-pt/legal/cookies/
 - Política de Privacidade: https://pimo.info/pt-pt/legal/privacidade/
 - Termos e Condições: https://pimo.info/pt-pt/legal/termos/
+- Parceiro PIMO: https://pimo.info/pt-pt/parceiros/
 - Perguntas frequentes: https://pimo.info/pt-pt/perguntas-frequentes/
 - Primeiros passos: https://pimo.info/pt-pt/primeiros-passos/
 - Referência: https://pimo.info/pt-pt/referencia/
@@ -6546,6 +6547,18 @@ Podemos atualizar estes termos. A data no topo indica a versão vigente.
 - [Política de Privacidade](/pt-pt/legal/privacidade/)
 - [Política de Cookies](/pt-pt/legal/cookies/)
 - [Hub legal](/pt-pt/legal/)
+
+---
+
+## Parceiro PIMO
+URL: https://pimo.info/pt-pt/parceiros/
+Torne-se Parceiro PIMO com a Pimo Casa: montagem, instalação e transporte. Visita guiada ao ecossistema e ao modelo de trabalho.
+
+# Parceiro PIMO
+
+ 
+  Visita guiada para empresas de montagem, instalação e transporte que queiram
+  trabalhar com a Pimo Casa no ecossistema PIMO.
 
 ---
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T21:01:52.364Z",
+  "generatedAt": "2026-10-17T21:10:36.490Z",
   "items": [
     {
       "path": "/",
@@ -1587,6 +1587,29 @@
         "/pt-pt/contacto/"
       ],
       "lastUpdated": "2026-10-01",
+      "status": "implemented",
+      "draft": false
+    },
+    {
+      "path": "/pt-pt/parceiros/",
+      "file": "pages/pt-pt/parceiros.mdx",
+      "title": "Parceiro PIMO",
+      "description": "Torne-se Parceiro PIMO com a Pimo Casa: montagem, instalação e transporte. Visita guiada ao ecossistema e ao modelo de trabalho.",
+      "author": "",
+      "category": "institucional",
+      "tags": [
+        "parceiros",
+        "montagem",
+        "instalacao",
+        "transporte",
+        "pimo-casa"
+      ],
+      "related": [
+        "/pt-pt/ecossistema/",
+        "/pt-pt/contacto/",
+        "/about/"
+      ],
+      "lastUpdated": "2026-10-17",
       "status": "implemented",
       "draft": false
     },
