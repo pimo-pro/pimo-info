@@ -1805,17 +1805,17 @@ html.dark .pimo-partner-cta,
 }
 
 .pimo-partner-work-icon {
+  display: block;
   width: 28px;
   height: 28px;
   margin-bottom: 0.55rem;
-  opacity: 0.9;
-  filter: none;
+  color: var(--pimo-primary);
+  flex-shrink: 0;
 }
 
 html.dark .pimo-partner-work-icon,
 .dark .pimo-partner-work-icon {
-  filter: invert(1) brightness(1.15);
-  opacity: 0.85;
+  color: var(--pimo-primary-light);
 }
 
 .pimo-partner-steps {

@@ -66,54 +66,150 @@ const THEME_PHOTOS = [
   },
 ]
 
+/** Ícones SVG inline (stroke 1.5, currentColor). Evita ficheiros .svg com sintaxe JSX. */
+function WorkIcon({ name }) {
+  const common = {
+    className: "pimo-partner-work-icon",
+    width: 28,
+    height: 28,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.5,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    "aria-hidden": true,
+  }
+
+  switch (name) {
+    case "cliente":
+      return (
+        <svg {...common}>
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="3" />
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+      )
+    case "valores":
+      return (
+        <svg {...common}>
+          <rect x="4" y="3" width="16" height="18" rx="2" />
+          <path d="M8 7h8M8 11h8M8 15h5" />
+        </svg>
+      )
+    case "pagamento":
+      return (
+        <svg {...common}>
+          <path d="M9 11l3 3L22 4" />
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+        </svg>
+      )
+    case "seguro":
+      return (
+        <svg {...common}>
+          <path d="M12 3l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z" />
+          <path d="M9.5 12l1.8 1.8L15 10" />
+        </svg>
+      )
+    case "garantia":
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M8 12l2.5 2.5L16 9" />
+        </svg>
+      )
+    case "fotos":
+      return (
+        <svg {...common}>
+          <path d="M4 8h3l2-2h6l2 2h3v11H4z" />
+          <circle cx="12" cy="13" r="3.5" />
+        </svg>
+      )
+    case "pontualidade":
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v5l3 2" />
+        </svg>
+      )
+    case "medicao":
+      return (
+        <svg {...common}>
+          <path d="M4 20L20 4" />
+          <path d="M15 4h5v5M9 20H4v-5" />
+        </svg>
+      )
+    case "deslocacoes":
+      return (
+        <svg {...common}>
+          <path d="M3 17h13l3-6h2v6h1" />
+          <path d="M5 17V9h8l2 3" />
+          <circle cx="7.5" cy="17.5" r="1.5" />
+          <circle cx="15.5" cy="17.5" r="1.5" />
+        </svg>
+      )
+    case "equipas":
+      return (
+        <svg {...common}>
+          <circle cx="8" cy="8" r="2.5" />
+          <circle cx="16" cy="8" r="2.5" />
+          <path d="M3.5 19v-1a3.5 3.5 0 0 1 3.5-3.5h2A3.5 3.5 0 0 1 12.5 18v1" />
+          <path d="M11.5 19v-1a3.5 3.5 0 0 1 3.5-3.5h2a3.5 3.5 0 0 1 3.5 3.5v1" />
+        </svg>
+      )
+    default:
+      return null
+  }
+}
+
 const WORK_CARDS = [
   {
-    icon: "/icons/criativo/projects.svg",
+    icon: "cliente",
     title: "A PIMO gere o cliente",
     text: "Nós tratamos do cliente, do projeto e do preço final. O parceiro foca-se na execução no terreno.",
   },
   {
-    icon: "/icons/criativo/calculator.svg",
+    icon: "valores",
     title: "Valores fixos por serviço",
     text: "Montagem, instalação e transporte com valores fixos por tipo de serviço, acordados à partida.",
   },
   {
-    icon: "/icons/criativo/adminChecklist.svg",
+    icon: "pagamento",
     title: "Pagamento a 15 dias",
     text: "Pagamento por fatura, 15 dias após a conclusão e validação do serviço.",
   },
   {
-    icon: "/icons/criativo/lock.svg",
+    icon: "seguro",
     title: "Responsabilidade e seguro",
     text: "O parceiro responde pela qualidade do trabalho e por eventuais danos, com seguro adequado.",
   },
   {
-    icon: "/icons/criativo/check.svg",
+    icon: "garantia",
     title: "Garantia de 12 meses",
     text: "Garantia de 12 meses sobre o trabalho executado.",
   },
   {
-    icon: "/icons/criativo/camera.svg",
+    icon: "fotos",
     title: "Fotografias antes e depois",
     text: "Registo fotográfico antes e depois de cada intervenção, para validação e arquivo.",
   },
   {
-    icon: "/icons/criativo/bell.svg",
+    icon: "pontualidade",
     title: "Pontualidade",
     text: "Cumprimento dos horários combinados no agendamento e na entrega.",
   },
   {
-    icon: "/icons/criativo/ruler.svg",
+    icon: "medicao",
     title: "Medição em obra",
     text: "Medição em obra antes da produção, para o projeto bater certo com o espaço real.",
   },
   {
-    icon: "/icons/criativo/move.svg",
+    icon: "deslocacoes",
     title: "Deslocações",
     text: "Disponibilidade para outras cidades, Espanha e França, conforme a obra.",
   },
   {
-    icon: "/icons/criativo/industrial-operations.svg",
+    icon: "equipas",
     title: "Equipas para obras grandes",
     text: "Capacidade de reunir equipas quando a obra pede mais mãos e ritmo.",
   },
@@ -269,14 +365,7 @@ export function ParceiroPimoLanding() {
         <div className="pimo-partner-work-grid">
           {WORK_CARDS.map((item) => (
             <article key={item.title} className="pimo-partner-card pimo-partner-work-card">
-              <img
-                className="pimo-partner-work-icon"
-                src={item.icon}
-                alt=""
-                width="28"
-                height="28"
-                loading="lazy"
-              />
+              <WorkIcon name={item.icon} />
               <h3>{item.title}</h3>
               <p>{item.text}</p>
             </article>
