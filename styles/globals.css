@@ -1596,38 +1596,236 @@ main {
   }
 }
 
-/* Parceiro PIMO (rascunho) */
-.pimo-partner-eco-grid {
-  list-style: none;
-  margin: 1rem 0 1.5rem;
-  padding: 0;
+/* Parceiro PIMO (rascunho) – landing em cartões */
+.pimo-partner-landing {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  margin: 1rem 0 2.5rem;
+  max-width: 1100px;
+}
+
+.pimo-partner-card {
+  margin: 0;
+  padding: 1.25rem 1.35rem;
+  background: var(--pimo-card);
+  border: 1px solid var(--pimo-border);
+  border-radius: calc(var(--pimo-radius) + 4px);
+  box-shadow: 0 1px 0 rgba(19, 21, 24, 0.04);
+}
+
+.pimo-partner-kicker,
+.pimo-partner-step-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--pimo-sienna);
+  font-weight: 600;
+}
+
+.pimo-partner-hero {
+  background:
+    linear-gradient(135deg, var(--pimo-primary-soft), transparent 55%),
+    var(--pimo-card);
+}
+
+.pimo-partner-hero-title {
+  margin: 0.2rem 0 0.65rem;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  line-height: 1.2;
+  color: var(--pimo-ink);
+}
+
+.pimo-partner-hero-text,
+.pimo-partner-about p,
+.pimo-partner-docs-intro,
+.pimo-partner-cta-block p {
+  margin: 0 0 0.85rem;
+  color: var(--pimo-muted);
+  line-height: 1.55;
+  max-width: 42rem;
+}
+
+.pimo-partner-cta {
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: var(--pimo-radius);
+  background: var(--pimo-primary);
+  color: #fff !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.pimo-partner-cta:hover {
+  background: var(--pimo-primary-dark);
+  transform: translateY(-1px);
+}
+
+html.dark .pimo-partner-cta,
+.dark .pimo-partner-cta {
+  color: #12151a !important;
+}
+
+.pimo-partner-about {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 1.1rem;
+  align-items: center;
+}
+
+.pimo-partner-about-media {
+  overflow: hidden;
+  border-radius: var(--pimo-radius);
+  border: 1px solid var(--pimo-border);
+  background: var(--pimo-surface);
+}
+
+.pimo-partner-about-media img,
+.pimo-partner-eco-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.pimo-partner-about h2,
+.pimo-partner-section-head h2,
+.pimo-partner-card > h2 {
+  margin: 0 0 0.55rem;
+  font-size: 1.35rem;
+  color: var(--pimo-ink);
+}
+
+.pimo-partner-section-head {
+  margin: 0.4rem 0 0.85rem;
+}
+
+.pimo-partner-section-head p {
+  margin: 0;
+  color: var(--pimo-muted);
+  max-width: 40rem;
+}
+
+.pimo-partner-eco-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.9rem;
+}
+
+.pimo-partner-eco-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pimo-partner-eco-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--pimo-surface);
+  border-bottom: 1px solid var(--pimo-border);
+}
+
+.pimo-partner-eco-media img {
+  height: 100%;
+}
+
+.pimo-partner-eco-body {
+  padding: 0.95rem 1rem 1.1rem;
+}
+
+.pimo-partner-eco-body strong {
+  display: block;
+  color: var(--pimo-primary-dark);
+  font-size: 0.92rem;
+}
+
+.pimo-partner-eco-body h3,
+.pimo-partner-work-card h3,
+.pimo-partner-step-card h3 {
+  margin: 0.25rem 0 0.4rem;
+  font-size: 1.02rem;
+  color: var(--pimo-ink);
+}
+
+.pimo-partner-eco-body p,
+.pimo-partner-work-card p,
+.pimo-partner-step-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--pimo-muted);
+  line-height: 1.5;
+}
+
+.pimo-partner-work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 0.75rem;
 }
 
-.pimo-partner-eco-grid li {
+.pimo-partner-work-card {
+  padding: 1rem;
+}
+
+.pimo-partner-work-icon {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 0.55rem;
+  opacity: 0.9;
+  filter: none;
+}
+
+html.dark .pimo-partner-work-icon,
+.dark .pimo-partner-work-icon {
+  filter: invert(1) brightness(1.15);
+  opacity: 0.85;
+}
+
+.pimo-partner-steps {
+  list-style: none;
   margin: 0;
-  padding: 0.85rem 0.95rem;
-  background: var(--pimo-card);
-  border: 1px solid var(--pimo-border);
-  border-radius: var(--pimo-radius);
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
 }
 
-.pimo-partner-eco-grid strong {
-  display: block;
+.pimo-partner-step-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  padding: 1rem 1.1rem;
+}
+
+.pimo-partner-step-n {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: var(--pimo-primary-soft);
   color: var(--pimo-primary-dark);
-  font-size: 0.98rem;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
-.pimo-partner-eco-grid p {
-  margin: 0.35rem 0 0;
-  font-size: 0.9rem;
+.pimo-partner-docs {
+  margin: 0.75rem 0 0;
+  padding-left: 1.15rem;
   color: var(--pimo-muted);
 }
 
+.pimo-partner-docs li {
+  margin: 0.35rem 0;
+  line-height: 1.45;
+}
+
 .pimo-partner-logos {
-  margin: 1rem 0 1.75rem;
+  margin: 0.85rem 0 0;
   padding: 1.5rem 1rem;
   border: 1px dashed var(--pimo-border);
   border-radius: var(--pimo-radius);
@@ -1635,36 +1833,50 @@ main {
   text-align: center;
 }
 
-.pimo-partner-logos-empty p {
-  margin: 0;
+.pimo-partner-logos-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.pimo-partner-logos-title {
   color: var(--pimo-muted);
   font-size: 0.95rem;
 }
 
 .pimo-partner-logos-hint {
-  margin-top: 0.35rem !important;
-  font-size: 0.82rem !important;
+  font-size: 0.82rem;
+  color: var(--pimo-muted);
 }
 
-.pimo-partner-contact {
-  margin: 0.75rem 0 1.5rem;
+.pimo-partner-cta-block {
+  text-align: left;
+  background:
+    linear-gradient(160deg, var(--pimo-primary-soft), transparent 60%),
+    var(--pimo-card);
 }
 
-.pimo-partner-contact a {
-  display: inline-block;
-  padding: 0.55rem 0.95rem;
-  border-radius: var(--pimo-radius);
-  background: var(--pimo-primary);
-  color: #fff !important;
-  text-decoration: none;
+.pimo-partner-mail-hint {
+  margin: 0.9rem 0 0 !important;
+  font-size: 0.9rem;
+}
+
+.pimo-partner-mail-hint a {
+  color: var(--pimo-primary-dark);
   font-weight: 600;
 }
 
-.pimo-partner-contact a:hover {
-  background: var(--pimo-primary-dark);
-}
+@media (max-width: 767px) {
+  .pimo-partner-about {
+    grid-template-columns: 1fr;
+  }
 
-html.dark .pimo-partner-contact a,
-.dark .pimo-partner-contact a {
-  color: #12151a !important;
+  .pimo-partner-landing {
+    gap: 1rem;
+  }
+
+  .pimo-partner-card {
+    padding: 1.05rem 1rem;
+  }
 }
