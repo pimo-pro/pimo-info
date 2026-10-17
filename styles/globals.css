@@ -1595,3 +1595,76 @@ main {
     font-size: 0.78rem;
   }
 }
+
+/* Parceiro PIMO (rascunho) */
+.pimo-partner-eco-grid {
+  list-style: none;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.pimo-partner-eco-grid li {
+  margin: 0;
+  padding: 0.85rem 0.95rem;
+  background: var(--pimo-card);
+  border: 1px solid var(--pimo-border);
+  border-radius: var(--pimo-radius);
+}
+
+.pimo-partner-eco-grid strong {
+  display: block;
+  color: var(--pimo-primary-dark);
+  font-size: 0.98rem;
+}
+
+.pimo-partner-eco-grid p {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  color: var(--pimo-muted);
+}
+
+.pimo-partner-logos {
+  margin: 1rem 0 1.75rem;
+  padding: 1.5rem 1rem;
+  border: 1px dashed var(--pimo-border);
+  border-radius: var(--pimo-radius);
+  background: var(--pimo-primary-soft);
+  text-align: center;
+}
+
+.pimo-partner-logos-empty p {
+  margin: 0;
+  color: var(--pimo-muted);
+  font-size: 0.95rem;
+}
+
+.pimo-partner-logos-hint {
+  margin-top: 0.35rem !important;
+  font-size: 0.82rem !important;
+}
+
+.pimo-partner-contact {
+  margin: 0.75rem 0 1.5rem;
+}
+
+.pimo-partner-contact a {
+  display: inline-block;
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--pimo-radius);
+  background: var(--pimo-primary);
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.pimo-partner-contact a:hover {
+  background: var(--pimo-primary-dark);
+}
+
+html.dark .pimo-partner-contact a,
+.dark .pimo-partner-contact a {
+  color: #12151a !important;
+}

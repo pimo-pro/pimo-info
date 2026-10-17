@@ -19,4 +19,9 @@ export default {
   contacto: "Contacto",
   legal: "Políticas e Termos",
   "documentacao-tecnica": "Documentação técnica",
+  // Rascunho: fora do menu até aprovação (PR draft).
+  parceiros: {
+    title: "Parceiro PIMO",
+    display: "hidden",
+  },
 }

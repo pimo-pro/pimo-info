@@ -132,6 +132,12 @@ function main() {
     const raw = fs.readFileSync(file, "utf8")
     const { data, body } = parseFrontmatter(raw)
     const url = fileToUrl(file)
+    const isDraft =
+      data.draft === true ||
+      data.draft === "true" ||
+      data.noindex === true ||
+      data.noindex === "true" ||
+      data.status === "draft"
     pages.push({
       path: url,
       file: path.relative(ROOT, file).replace(/\\/g, "/"),
@@ -143,11 +149,13 @@ function main() {
       related: Array.isArray(data.related) ? data.related : [],
       lastUpdated: data.lastUpdated || "",
       status: data.status || "",
+      draft: isDraft,
       text: stripMdxToText(body),
     })
   }
 
   pages.sort((a, b) => a.path.localeCompare(b.path))
+  const publicPages = pages.filter((p) => !p.draft)
 
   writeJson("sites.json", { generatedAt: new Date().toISOString(), items: pimoSites })
   writeJson("export-formats.json", {
@@ -177,7 +185,7 @@ function main() {
   })
   writeJson("pages.json", {
     generatedAt: new Date().toISOString(),
-    items: pages.map(({ text, ...meta }) => meta),
+    items: publicPages.map(({ text, ...meta }) => meta),
   })
   writeJson("site.json", { generatedAt: new Date().toISOString(), ...site })
 
@@ -259,7 +267,7 @@ function main() {
     ),
     "",
     "## Page index",
-    ...pages
+    ...publicPages
       .filter((p) => p.path.startsWith("/pt-pt/") || p.path === "/")
       .map((p) => `- ${p.title}: ${site.url}${p.path}`),
     "",
@@ -323,7 +331,9 @@ function main() {
     "# Full page content",
     "",
   ]
-  for (const p of pages.filter((x) => x.path.startsWith("/pt-pt/") || x.path === "/")) {
+  for (const p of publicPages.filter(
+    (x) => x.path.startsWith("/pt-pt/") || x.path === "/"
+  )) {
     fullParts.push(`## ${p.title}`)
     fullParts.push(`URL: ${site.url}${p.path}`)
     if (p.author) fullParts.push(`Author: ${p.author}`)
@@ -343,8 +353,9 @@ function main() {
     "/contact/",
     "/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/",
     "/pt-pt/blog/posts/bem-vindo/",
+    "/pt-pt/parceiros/",
   ])
-  const pageUrls = pages
+  const pageUrls = publicPages
     .filter((p) => p.category !== "redirect" && p.category !== "legacy")
     .map((p) => (p.path === "/" ? "/" : p.path.endsWith("/") ? p.path : `${p.path}/`))
     .filter((u) => !excludePaths.has(u))
