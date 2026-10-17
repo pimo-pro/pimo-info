@@ -206,11 +206,21 @@ export default {
         }
       : null
 
+    const isDraftPage =
+      frontMatter?.draft === true ||
+      frontMatter?.draft === "true" ||
+      frontMatter?.noindex === true ||
+      frontMatter?.noindex === "true" ||
+      frontMatter?.status === "draft"
+
     return (
       <>
         <title>{pageTitle}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={description} />
+        {isDraftPage ? (
+          <meta name="robots" content="noindex, nofollow" />
+        ) : null}
         <meta name="theme-color" content="#F0EDE8" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description} />

@@ -51,7 +51,10 @@ const FORBIDDEN = [
   { id: "chatbot", re: /\bchatbots?\b/gi },
   { id: "password", re: /\bpassword\b/gi },
   { id: "palavra-passe", re: /palavra-passe/gi },
-  { id: "NIF", re: /\bNIF\b|\bNIPC\b|316930423/g },
+  // Número fiscal da empresa e rótulo institucional; «NIF» sozinho pode
+  // aparecer em requisitos de parceiros (documentação pedida a terceiros).
+  { id: "company-tax-id", re: /316930423/g },
+  { id: "NIF company label", re: /NIF\s*\/\s*NIPC|Tax ID \(NIF/g },
   { id: "Pimo home", re: /Pimo\s+home/g },
 ]
 

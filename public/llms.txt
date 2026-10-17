@@ -198,6 +198,7 @@ Locale: pt-PT
 - Política de Cookies: https://pimo.info/pt-pt/legal/cookies/
 - Política de Privacidade: https://pimo.info/pt-pt/legal/privacidade/
 - Termos e Condições: https://pimo.info/pt-pt/legal/termos/
+- Parceiro PIMO: https://pimo.info/pt-pt/parceiros/
 - Perguntas frequentes: https://pimo.info/pt-pt/perguntas-frequentes/
 - Primeiros passos: https://pimo.info/pt-pt/primeiros-passos/
 - Referência: https://pimo.info/pt-pt/referencia/

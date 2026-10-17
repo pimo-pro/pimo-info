@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T21:21:32.153Z",
+  "generatedAt": "2026-10-17T21:10:36.490Z",
   "items": [
     {
       "path": "/",
@@ -19,7 +19,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/about/",
@@ -39,7 +40,8 @@
         "/pt-pt/legal/"
       ],
       "lastUpdated": "2026-10-07",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/ajuda/",
@@ -56,7 +58,8 @@
         "/pt-pt/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/contact/",
@@ -73,7 +76,8 @@
         "/pt-pt/contacto/"
       ],
       "lastUpdated": "2026-10-07",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/docs/",
@@ -90,7 +94,8 @@
         "/pt-pt/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/ecosystem/",
@@ -107,7 +112,8 @@
         "/pt-pt/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/",
@@ -121,7 +127,8 @@
       ],
       "related": [],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/",
@@ -139,7 +146,8 @@
         "/pt-pt/novidades/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/automacao-fabrico/",
@@ -160,7 +168,8 @@
         "/pt-pt/funcionalidades/modulo-industrial/"
       ],
       "lastUpdated": "2026-06-15",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/comercio-mundial-moveis/",
@@ -181,7 +190,8 @@
         "/pt-pt/ecossistema/pimo-pro/"
       ],
       "lastUpdated": "2026-09-21",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/contraplacado-aglomerado/",
@@ -202,7 +212,8 @@
         "/pt-pt/funcionalidades/lista-de-corte/"
       ],
       "lastUpdated": "2026-01-26",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/cozinhas-planeadas/",
@@ -223,7 +234,8 @@
         "/pt-pt/blog/posts/materiais-cozinhas/"
       ],
       "lastUpdated": "2026-03-23",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/exportacao-cnc-ficheiros/",
@@ -243,7 +255,8 @@
         "/pt-pt/guias-utilizador/exportacao/"
       ],
       "lastUpdated": "2026-08-24",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/fabrico-digital-2026/",
@@ -264,7 +277,8 @@
         "/pt-pt/funcionalidades/estacoes-industriais/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/ferragens-hettich/",
@@ -284,7 +298,8 @@
         "/pt-pt/funcionalidades/portas-e-gavetas/"
       ],
       "lastUpdated": "2026-05-18",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/furacao-industrial/",
@@ -305,7 +320,8 @@
         "/pt-pt/funcionalidades/estacoes-industriais/"
       ],
       "lastUpdated": "2026-04-20",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/ia-carpintaria/",
@@ -326,7 +342,8 @@
         "/pt-pt/ecossistema/pimo-design/"
       ],
       "lastUpdated": "2026-07-27",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/lista-corte-residuos/",
@@ -347,7 +364,8 @@
         "/pt-pt/blog/posts/sustentabilidade-madeira/"
       ],
       "lastUpdated": "2026-07-13",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/madeiras-macicas/",
@@ -368,7 +386,8 @@
         "/pt-pt/blog/posts/sustentabilidade-madeira/"
       ],
       "lastUpdated": "2026-02-23",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/materiais-cozinhas/",
@@ -389,7 +408,8 @@
         "/pt-pt/funcionalidades/portas-e-gavetas/"
       ],
       "lastUpdated": "2026-09-28",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/mdf-guia-pratico/",
@@ -410,7 +430,8 @@
         "/pt-pt/guias-utilizador/materiais/"
       ],
       "lastUpdated": "2026-01-12",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/melamina-paineis/",
@@ -431,7 +452,8 @@
         "/pt-pt/blog/posts/mdf-guia-pratico/"
       ],
       "lastUpdated": "2026-02-09",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/nesting-cnc/",
@@ -452,7 +474,8 @@
         "/pt-pt/blog/posts/lista-corte-residuos/"
       ],
       "lastUpdated": "2026-04-06",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/orlagem-bordos/",
@@ -473,7 +496,8 @@
         "/pt-pt/funcionalidades/estacoes-industriais/"
       ],
       "lastUpdated": "2026-05-04",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/pimo-trak-rastreio/",
@@ -494,7 +518,8 @@
         "/pt-pt/guias-utilizador/pimo-trak/"
       ],
       "lastUpdated": "2026-09-07",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/portas-gavetas-fabrico/",
@@ -515,7 +540,8 @@
         "/pt-pt/funcionalidades/ferragens/"
       ],
       "lastUpdated": "2026-08-10",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/profissao-carpinteiro/",
@@ -536,7 +562,8 @@
         "/pt-pt/blog/posts/software-design-3d/"
       ],
       "lastUpdated": "2026-03-09",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/software-design-3d/",
@@ -557,7 +584,8 @@
         "/pt-pt/primeiros-passos/"
       ],
       "lastUpdated": "2026-06-01",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/blog/posts/sustentabilidade-madeira/",
@@ -578,7 +606,8 @@
         "/pt-pt/blog/posts/lista-corte-residuos/"
       ],
       "lastUpdated": "2026-06-29",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/como-funciona/",
@@ -599,7 +628,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/contacto/",
@@ -616,7 +646,8 @@
         "/about/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/documentacao-tecnica/",
@@ -632,7 +663,8 @@
         "/pt-pt/documentacao-tecnica/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/documentacao-tecnica/docs-do-sistema/",
@@ -648,7 +680,8 @@
         "/pt-pt/documentacao-tecnica/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/documentacao-tecnica/orcamentos-p39/",
@@ -664,7 +697,8 @@
         "/pt-pt/documentacao-tecnica/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/documentacao-tecnica/sistema-industrial/",
@@ -682,7 +716,8 @@
         "/pt-pt/funcionalidades/estacoes-industriais/"
       ],
       "lastUpdated": "2026-10-12",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/ecossistema/",
@@ -699,7 +734,8 @@
         "/pt-pt/ecossistema/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/ecossistema/pimo-casa/",
@@ -716,7 +752,8 @@
         "/pt-pt/ecossistema/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/ecossistema/pimo-design/",
@@ -733,7 +770,8 @@
         "/pt-pt/ecossistema/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/ecossistema/pimo-es/",
@@ -750,7 +788,8 @@
         "/pt-pt/ecossistema/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/ecossistema/pimo-info/",
@@ -767,7 +806,8 @@
         "/pt-pt/ecossistema/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/ecossistema/pimo-pro/",
@@ -784,7 +824,8 @@
         "/pt-pt/ecossistema/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/ecossistema/pimo-pt/",
@@ -801,7 +842,8 @@
         "/pt-pt/ecossistema/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/",
@@ -818,7 +860,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/analise-projetos/",
@@ -837,7 +880,8 @@
         "/pt-pt/guias-utilizador/gerir-projetos/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/configurador-3d/",
@@ -854,7 +898,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-07",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/conta-e-acesso/",
@@ -874,7 +919,8 @@
         "/pt-pt/primeiros-passos/"
       ],
       "lastUpdated": "2026-10-12",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/definicoes/",
@@ -894,7 +940,8 @@
         "/pt-pt/primeiros-passos/"
       ],
       "lastUpdated": "2026-10-12",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/estacoes-industriais/",
@@ -915,7 +962,8 @@
         "/pt-pt/funcionalidades/modulo-industrial/"
       ],
       "lastUpdated": "2026-10-07",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/",
@@ -929,7 +977,8 @@
       ],
       "related": [],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/",
@@ -950,7 +999,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/ferragens/",
@@ -970,7 +1020,8 @@
         "/pt-pt/guias-utilizador/exportacao/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/lista-de-corte/",
@@ -988,7 +1039,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/materiais/",
@@ -1006,7 +1058,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/modo-foto/",
@@ -1025,7 +1078,8 @@
         "/pt-pt/funcionalidades/sala-e-ambiente/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/modulo-industrial/",
@@ -1042,7 +1096,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-07",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/nesting-fast-pro/",
@@ -1059,7 +1114,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/orcamentos/",
@@ -1076,7 +1132,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/pdf-tecnico/",
@@ -1094,7 +1151,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-12",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/pimo-trak/",
@@ -1114,7 +1172,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "mixed"
+      "status": "mixed",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/portas-e-gavetas/",
@@ -1132,7 +1191,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/relatorio-final/",
@@ -1152,7 +1212,8 @@
         "/pt-pt/funcionalidades/orcamentos/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/remates/",
@@ -1172,7 +1233,8 @@
         "/pt-pt/funcionalidades/configurador-3d/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/funcionalidades/sala-e-ambiente/",
@@ -1192,7 +1254,8 @@
         "/pt-pt/funcionalidades/configurador-3d/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": ""
+      "status": "",
+      "draft": false
     },
     {
       "path": "/pt-pt/glossario/",
@@ -1212,7 +1275,8 @@
         "/pt-pt/guias-utilizador/exportacao/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/guias-utilizador/",
@@ -1229,7 +1293,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/guias-utilizador/atalhos-teclado/",
@@ -1246,7 +1311,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/guias-utilizador/criar-caixa/",
@@ -1263,7 +1329,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/guias-utilizador/exportacao/",
@@ -1284,7 +1351,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-12",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/guias-utilizador/gerir-projetos/",
@@ -1304,7 +1372,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-12",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/guias-utilizador/lista-de-corte/",
@@ -1321,7 +1390,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/guias-utilizador/materiais/",
@@ -1338,7 +1408,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/guias-utilizador/medicoes-e-cotas/",
@@ -1355,7 +1426,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/guias-utilizador/mover-e-posicionar/",
@@ -1372,7 +1444,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/guias-utilizador/nesting-layout-corte/",
@@ -1389,7 +1462,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/guias-utilizador/pimo-trak/",
@@ -1409,7 +1483,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "mixed"
+      "status": "mixed",
+      "draft": false
     },
     {
       "path": "/pt-pt/guias-utilizador/portas-e-gavetas/",
@@ -1426,7 +1501,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/legal/",
@@ -1448,7 +1524,8 @@
         "/pt-pt/contacto/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/legal/cookies/",
@@ -1467,7 +1544,8 @@
         "/pt-pt/legal/termos/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/legal/privacidade/",
@@ -1488,7 +1566,8 @@
         "/pt-pt/contacto/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/legal/termos/",
@@ -1508,7 +1587,31 @@
         "/pt-pt/contacto/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
+    },
+    {
+      "path": "/pt-pt/parceiros/",
+      "file": "pages/pt-pt/parceiros.mdx",
+      "title": "Parceiro PIMO",
+      "description": "Torne-se Parceiro PIMO com a Pimo Casa: montagem, instalação e transporte. Visita guiada ao ecossistema e ao modelo de trabalho.",
+      "author": "",
+      "category": "institucional",
+      "tags": [
+        "parceiros",
+        "montagem",
+        "instalacao",
+        "transporte",
+        "pimo-casa"
+      ],
+      "related": [
+        "/pt-pt/ecossistema/",
+        "/pt-pt/contacto/",
+        "/about/"
+      ],
+      "lastUpdated": "2026-10-17",
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/perguntas-frequentes/",
@@ -1527,7 +1630,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-12",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/primeiros-passos/",
@@ -1546,7 +1650,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-12",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/referencia/",
@@ -1565,7 +1670,8 @@
         "/pt-pt/funcionalidades/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/referencia/botoes/",
@@ -1587,7 +1693,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/sistemas-pimo/",
@@ -1607,7 +1714,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-07",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/sistemas-pimo/pimo-drill/",
@@ -1627,7 +1735,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-07",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/sistemas-pimo/pimo-industrial/",
@@ -1647,7 +1756,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-07",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/sistemas-pimo/pimo-nesting/",
@@ -1667,7 +1777,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/sistemas-pimo/pimo-projetos/",
@@ -1687,7 +1798,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/pt-pt/sistemas-pimo/pimo-trak/",
@@ -1707,7 +1819,8 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-07",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/release-notes/",
@@ -1724,7 +1837,8 @@
         "/pt-pt/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     },
     {
       "path": "/roadmap/",
@@ -1741,7 +1855,8 @@
         "/pt-pt/"
       ],
       "lastUpdated": "2026-10-01",
-      "status": "implemented"
+      "status": "implemented",
+      "draft": false
     }
   ]
 }
