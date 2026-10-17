@@ -1,6 +1,6 @@
 # Matriz de cobertura PIMO PRO → pimo.info
 
-Gerado: 2026-10-17T21:10:36.539Z
+Gerado: 2026-10-17T21:40:01.079Z
 
 Total de itens: **65**
 

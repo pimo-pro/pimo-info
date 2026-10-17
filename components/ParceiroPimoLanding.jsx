@@ -3,43 +3,66 @@ const ECOSYSTEM = [
     domain: "pimo.pt",
     title: "Loja online e site principal",
     text: "A face comercial da marca: móveis planeados, pedido e contacto com o cliente final.",
-    image: "/blog/images/cozinhas-planeadas/cover.webp",
-    alt: "Exemplo de cozinha planeada no ecossistema PIMO",
+    image: "/visual/parceiros/loja-cozinha.webp",
+    alt: "Cozinha planeada com armários brancos e ilha central",
   },
   {
     domain: "pimo.pro",
     title: "Plataforma e app PIMO PRO",
     text: "Configurador 3D, lista de corte, nesting e ficheiros de produção. É aqui que o projeto técnico nasce.",
-    image: "/visual/pimo-pro/home.webp",
-    alt: "Ecrã inicial do PIMO PRO em pimo.pro",
+    image: "/visual/parceiros/oficina-projeto.webp",
+    alt: "Profissional a furar madeira numa bancada de carpintaria",
   },
   {
     domain: "pimo.casa",
     title: "Designs prontos",
     text: "Marca Pimo Casa: montra de designs e projetos prontos para inspirar e acelerar a escolha do cliente.",
-    image: "/blog/images/software-design-3d/cover.webp",
-    alt: "Design 3D de mobiliário no ecossistema PIMO",
+    image: "/visual/parceiros/designs-prontos.webp",
+    alt: "Sala e cozinha abertas com mobiliário integrado",
   },
   {
     domain: "pimo.design",
     title: "App completa de design",
     text: "Destino futuro da aplicação de design completo, com experiência dedicada ao desenho de mobiliário.",
-    image: "/visual/readme/ecra-home-workspace.webp",
-    alt: "Workspace de design no PIMO PRO",
+    image: "/visual/parceiros/design-mobiliario.webp",
+    alt: "Sala de estar moderna com sofá e poltronas de design",
   },
   {
     domain: "pimo.info",
     title: "Centro de informação",
     text: "Ajuda, guias e documentação em português de Portugal. É o site onde está agora.",
-    image: "/visual/pimo-pro/ajuda.webp",
-    alt: "Área de ajuda do PIMO PRO",
+    image: "/visual/parceiros/medicao-obra.webp",
+    alt: "Ferramentas de carpintaria e réguas de precisão na oficina",
   },
   {
     domain: "pimo.es",
     title: "Loja para Espanha",
     text: "Presença comercial em espanhol. Por agora liga ao ecossistema; no futuro terá conteúdo próprio.",
-    image: "/blog/images/comercio-mundial-moveis/cover.webp",
-    alt: "Mobiliário e mercado na narrativa PIMO",
+    image: "/visual/parceiros/sala-mobiliario.webp",
+    alt: "Sala luminosa com sofá e mobiliário de madeira",
+  },
+]
+
+const THEME_PHOTOS = [
+  {
+    image: "/visual/parceiros/cozinha-medida.webp",
+    alt: "Cozinha moderna à medida com armários brancos",
+    caption: "Cozinhas",
+  },
+  {
+    image: "/visual/parceiros/roupeiro.webp",
+    alt: "Roupeiro de madeira minimalista com puxadores integrados",
+    caption: "Roupeiros",
+  },
+  {
+    image: "/visual/parceiros/montagem-instalacao.webp",
+    alt: "Ferramentas profissionais de montagem e instalação",
+    caption: "Montagem",
+  },
+  {
+    image: "/visual/parceiros/equipa-trabalho.webp",
+    alt: "Equipa a transportar caixa por escadas numa habitação",
+    caption: "Equipas",
   },
 ]
 
@@ -160,10 +183,10 @@ export function ParceiroPimoLanding() {
       <section className="pimo-partner-card pimo-partner-about" aria-labelledby="parceiro-quem">
         <div className="pimo-partner-about-media">
           <img
-            src="/visual/readme/banner-light.webp"
-            alt="Identidade visual PIMO"
-            width="960"
-            height="540"
+            src="/visual/parceiros/quem-somos.webp"
+            alt="Interior moderno com mobiliário à medida, sala e cozinha abertas"
+            width="1280"
+            height="720"
             loading="lazy"
           />
         </div>
@@ -195,8 +218,8 @@ export function ParceiroPimoLanding() {
                 <img
                   src={site.image}
                   alt={site.alt}
-                  width="640"
-                  height="360"
+                  width="960"
+                  height="600"
                   loading="lazy"
                 />
               </div>
@@ -206,6 +229,33 @@ export function ParceiroPimoLanding() {
                 <p>{site.text}</p>
               </div>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section aria-labelledby="parceiro-terreno">
+        <header className="pimo-partner-section-head">
+          <p className="pimo-partner-step-label">No terreno</p>
+          <h2 id="parceiro-terreno">O trabalho dos parceiros</h2>
+          <p>
+            Cozinhas, roupeiros, montagem e equipas: o dia a dia de quem executa
+            connosco.
+          </p>
+        </header>
+        <div className="pimo-partner-theme-grid">
+          {THEME_PHOTOS.map((item) => (
+            <figure key={item.caption} className="pimo-partner-card pimo-partner-theme-card">
+              <div className="pimo-partner-theme-media">
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  width="960"
+                  height="600"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>{item.caption}</figcaption>
+            </figure>
           ))}
         </div>
       </section>
