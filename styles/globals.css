@@ -1914,3 +1914,131 @@ html.dark .pimo-partner-work-icon,
     padding: 1.05rem 1rem;
   }
 }
+
+/* Fabricante Parceiro PIMO (rascunho) */
+.pimo-factory-landing {
+  max-width: 1140px;
+}
+
+.pimo-factory-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 1.15rem;
+  align-items: center;
+}
+
+.pimo-factory-feature-reverse {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+}
+
+.pimo-factory-feature-reverse .pimo-factory-feature-media {
+  order: 2;
+}
+
+.pimo-factory-feature-media {
+  overflow: hidden;
+  border-radius: var(--pimo-radius);
+  border: 1px solid var(--pimo-border);
+  background: var(--pimo-surface);
+}
+
+.pimo-factory-feature-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.pimo-factory-feature h2 {
+  margin: 0 0 0.55rem;
+  font-size: 1.35rem;
+}
+
+.pimo-factory-feature p {
+  margin: 0 0 0.75rem;
+  color: var(--pimo-muted);
+  line-height: 1.55;
+}
+
+.pimo-factory-two {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.pimo-factory-model ul {
+  margin: 0.65rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--pimo-muted);
+}
+
+.pimo-factory-model li {
+  margin: 0.3rem 0;
+  line-height: 1.45;
+}
+
+.pimo-factory-step-head {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.25rem;
+}
+
+.pimo-factory-step-head .pimo-partner-work-icon {
+  margin-bottom: 0;
+  width: 22px;
+  height: 22px;
+}
+
+.pimo-factory-step-head h3 {
+  margin: 0;
+}
+
+.pimo-factory-inline-link {
+  margin: 0.55rem 0 0 !important;
+}
+
+.pimo-factory-inline-link a {
+  color: var(--pimo-primary-dark);
+  font-weight: 600;
+}
+
+.pimo-factory-size-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.9rem;
+}
+
+.pimo-factory-size-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.pimo-factory-size-body {
+  padding: 1rem 1.05rem 1.15rem;
+}
+
+.pimo-factory-size-body h3 {
+  margin: 0.15rem 0 0.55rem;
+  font-size: 1.05rem;
+}
+
+.pimo-factory-size-body ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--pimo-muted);
+}
+
+.pimo-factory-size-body li {
+  margin: 0.35rem 0;
+  line-height: 1.45;
+}
+
+@media (max-width: 767px) {
+  .pimo-factory-feature,
+  .pimo-factory-feature-reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .pimo-factory-feature-reverse .pimo-factory-feature-media {
+    order: 0;
+  }
+}

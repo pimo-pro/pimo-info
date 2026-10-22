@@ -18,6 +18,11 @@ export default {
   "perguntas-frequentes": "Perguntas frequentes",
   contacto: "Contacto",
   parceiros: "Parceiro PIMO",
+  // Rascunho: fora do menu até aprovação (PR draft).
+  fabricantes: {
+    title: "Fabricante Parceiro PIMO",
+    display: "hidden",
+  },
   legal: "Políticas e Termos",
   "documentacao-tecnica": "Documentação técnica",
 }
