@@ -411,6 +411,99 @@ export function FabricantesPimoLanding() {
         </div>
       </section>
 
+      <section aria-labelledby="fab-subscricoes">
+        <header className="pimo-partner-section-head">
+          <h2 id="fab-subscricoes">Subscrições para carpintarias e fábricas</h2>
+          <p>
+            Quando escolhem a subscrição paga, estes são os planos pensados para
+            oficinas e fábricas. A colaboração gratuita mantém-se como está.
+          </p>
+        </header>
+
+        <div className="pimo-factory-price-grid">
+          <article className="pimo-partner-card pimo-factory-price-card">
+            <FactoryIcon name="ficheiro" />
+            <h3>PIMO Pro+ · €25/mês</h3>
+            <p className="pimo-factory-price-audience">
+              Para carpinteiros sem CNC.
+            </p>
+            <p>
+              Inclui tudo do Pro, mais maquetes de corte manual (PDF completo),
+              listas de peças e mapas de montagem. Não inclui ficheiros CNC,
+              TCN ou XML. Preço com IVA.
+            </p>
+          </article>
+
+          <article className="pimo-partner-card pimo-factory-price-card is-recommended">
+            <FactoryIcon name="fabrico" />
+            <p className="pimo-price-badge">Recomendado</p>
+            <h3>PIMO Ultra+ · €300/mês</h3>
+            <p className="pimo-factory-price-audience">
+              O plano principal para fábricas e carpintarias com CNC.
+            </p>
+            <p>
+              Inclui tudo do Ultra, mais ficheiros CNC/TCN e XML de furação,
+              Nesting PRO, etiquetas de produção ligadas ao PIMO Track, URL
+              própria e catálogo com logótipo, e o PIMO AI completo (gera
+              projetos a partir de um pedido escrito e otimiza a parte técnica).
+            </p>
+            <p>
+              Na prática: ficheiros industriais prontos e menos retrabalho.
+              Carpinteiros com CNC ficam no Ultra+. Sem CNC, o caminho certo é o
+              Pro+. Preço com IVA.
+            </p>
+            <p>
+              O PIMO AI chega mais tarde (previsão para 2029). Os preços e o que
+              cada plano inclui são uma proposta e podem mudar antes do
+              lançamento.
+            </p>
+            <a
+              className="pimo-partner-cta"
+              href={
+                "mailto:info@pimo.pt?subject=" +
+                encodeURIComponent("PIMO Ultra+: marcar reunião")
+              }
+            >
+              Marcar reunião online
+            </a>
+          </article>
+
+          <article className="pimo-partner-card pimo-factory-price-card">
+            <FactoryIcon name="grande" />
+            <p className="pimo-price-badge">Enterprise</p>
+            <h3>ALPHA+ · €8.000 a €12.000/ano</h3>
+            <p className="pimo-factory-price-audience">
+              Para grandes empresas e redes.
+            </p>
+            <p>
+              Inclui tudo do Ultra+, mais marca própria completa (white-label),
+              domínio próprio com integração e SLA, integração com os vossos
+              sistemas, formação, acompanhamento no arranque e suporte dedicado.
+            </p>
+            <p>
+              Taxa de arranque única: €1.000 a €3.000. Valores com IVA. É o
+              nível enterprise da subscrição paga, para quem precisa de marca
+              própria e acompanhamento contínuo.
+            </p>
+            <a
+              className="pimo-partner-cta"
+              href={
+                "mailto:info@pimo.pt?subject=" +
+                encodeURIComponent("PIMO ALPHA+: marcar reunião")
+              }
+            >
+              Marcar reunião online
+            </a>
+          </article>
+        </div>
+
+        <p className="pimo-factory-price-more">
+          Ver todos os planos, incluindo Free, Pro e Ultra para utilizadores e
+          lojas, em{" "}
+          <a href="/pt-pt/precos/">Preços e subscrições</a>.
+        </p>
+      </section>
+
       <section aria-labelledby="fab-etapas">
         <header className="pimo-partner-section-head">
           <h2 id="fab-etapas">Do pedido à entrega</h2>
