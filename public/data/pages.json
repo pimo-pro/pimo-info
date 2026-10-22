@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T22:12:05.570Z",
+  "generatedAt": "2026-10-22T12:04:25.374Z",
   "items": [
     {
       "path": "/",
@@ -842,6 +842,28 @@
         "/pt-pt/ecossistema/"
       ],
       "lastUpdated": "2026-10-01",
+      "status": "implemented",
+      "draft": false
+    },
+    {
+      "path": "/pt-pt/fabricantes/",
+      "file": "pages/pt-pt/fabricantes.mdx",
+      "title": "Fabricante Parceiro PIMO",
+      "description": "Fábricas e carpintarias na Pimo Casa: pedidos de fabrico prontos, ficheiros para as vossas máquinas e dois modelos de colaboração.",
+      "author": "",
+      "category": "institucional",
+      "tags": [
+        "fabricantes",
+        "fabricas",
+        "carpintarias",
+        "pimo-casa"
+      ],
+      "related": [
+        "/pt-pt/parceiros/",
+        "/pt-pt/ecossistema/",
+        "/pt-pt/contacto/"
+      ],
+      "lastUpdated": "2026-10-22",
       "status": "implemented",
       "draft": false
     },

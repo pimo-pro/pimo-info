@@ -22,6 +22,26 @@ Pasta: `public/visual/parceiros/`
 | `roupeiro.webp` | Roupeiro | Unsplash (Kam Idris) | [Unsplash License](https://unsplash.com/license) | https://unsplash.com/photos/iOZVDOogyik |
 | `ferramentas.webp` | Ferramentas de oficina | Unsplash | [Unsplash License](https://unsplash.com/license) | https://unsplash.com/photos/a618bc2615dc |
 
+## Página Fabricante Parceiro PIMO (`/pt-pt/fabricantes/`)
+
+Pasta: `public/visual/fabricantes/`
+
+| Ficheiro | Tema | Fonte | Licença | Ligação da fotografia |
+| --- | --- | --- | --- | --- |
+| `hero.webp` | Interior com mobiliário integrado | Unsplash (R Architecture) | [Unsplash License](https://unsplash.com/license) | https://unsplash.com/photos/2gDwlIguSeE |
+| `studio.webp` | Design de mobiliário | Unsplash (Spacejoy) | [Unsplash License](https://unsplash.com/license) | https://unsplash.com/photos/3wylDrjxH-E |
+| `cozinha.webp` | Cozinha planeada | Pexels (ID 2724749) | [Pexels License](https://www.pexels.com/license/) | https://www.pexels.com/photo/2724749/ |
+| `oficina-pequena.webp` | Furação em oficina | Pexels (ID 5974039) | [Pexels License](https://www.pexels.com/license/) | https://www.pexels.com/photo/5974039/ |
+| `oficina-media.webp` | Ferramentas de precisão | Pexels (ID 5974282) | [Pexels License](https://www.pexels.com/license/) | https://www.pexels.com/photo/5974282/ |
+| `grande-fabrica.webp` | Trabalho industrial | Unsplash | [Unsplash License](https://unsplash.com/license) | https://unsplash.com/photos/ygamv_RDIho |
+| `ferramentas.webp` | Ferramentas de oficina | Unsplash | [Unsplash License](https://unsplash.com/license) | https://unsplash.com/photos/a618bc2615dc |
+| `equipa.webp` | Equipa em transporte | Pexels (ID 4246092) | [Pexels License](https://www.pexels.com/license/) | https://www.pexels.com/photo/4246092/ |
+| `maquinas.webp` | Painéis de madeira | Pexels (ID 129731) | [Pexels License](https://www.pexels.com/license/) | https://www.pexels.com/photo/129731/ |
+| `madeira.webp` | Oficina e madeira | Pexels (ID 224924) | [Pexels License](https://www.pexels.com/license/) | https://www.pexels.com/photo/224924/ |
+| `serra.webp` | Acabamento em madeira | Pexels (ID 221027) | [Pexels License](https://www.pexels.com/license/) | https://www.pexels.com/photo/221027/ |
+| `cnc.webp` | Oficina (mesma família visual) | Pexels (ID 224924) | [Pexels License](https://www.pexels.com/license/) | https://www.pexels.com/photo/224924/ |
+| `producao.webp` | Produção industrial | Unsplash | [Unsplash License](https://unsplash.com/license) | https://unsplash.com/photos/ygamv_RDIho |
+
 Notas:
 
 - Ficheiros otimizados em WebP, largura típica 960 a 1280 px.

@@ -267,9 +267,8 @@ export function ParceiroPimoLanding() {
         <h2 className="pimo-partner-hero-title">Parceiro PIMO</h2>
         <p className="pimo-partner-hero-text">
           Procuramos empresas de montagem, instalação e transporte para trabalhar
-          connosco. Esta página é uma visita guiada: avance cartão a cartão,
-          perceba o ecossistema e o modelo de trabalho, e só depois marque uma
-          reunião.
+          connosco. Percorra esta página, perceba o ecossistema e o modelo de
+          trabalho, e só depois marque uma reunião.
         </p>
         <a className="pimo-partner-cta" href={MEETING_MAIL}>
           Marcar reunião online
@@ -287,7 +286,6 @@ export function ParceiroPimoLanding() {
           />
         </div>
         <div>
-          <p className="pimo-partner-step-label">Cartão 1</p>
           <h2 id="parceiro-quem">Quem somos</h2>
           <p>
             Somos a <strong>Pimo Casa</strong>, uma empresa em arranque, em
@@ -303,7 +301,6 @@ export function ParceiroPimoLanding() {
 
       <section aria-labelledby="parceiro-eco">
         <header className="pimo-partner-section-head">
-          <p className="pimo-partner-step-label">Cartão 2</p>
           <h2 id="parceiro-eco">O ecossistema PIMO</h2>
           <p>Seis sites, cada um com um papel claro na marca.</p>
         </header>
@@ -331,7 +328,6 @@ export function ParceiroPimoLanding() {
 
       <section aria-labelledby="parceiro-terreno">
         <header className="pimo-partner-section-head">
-          <p className="pimo-partner-step-label">No terreno</p>
           <h2 id="parceiro-terreno">O trabalho dos parceiros</h2>
           <p>
             Cozinhas, roupeiros, montagem e equipas: o dia a dia de quem executa
@@ -358,7 +354,6 @@ export function ParceiroPimoLanding() {
 
       <section aria-labelledby="parceiro-modelo">
         <header className="pimo-partner-section-head">
-          <p className="pimo-partner-step-label">Cartão 3</p>
           <h2 id="parceiro-modelo">Como trabalhamos com parceiros</h2>
           <p>Regras claras, para o trabalho no terreno correr sem surpresas.</p>
         </header>
@@ -375,7 +370,6 @@ export function ParceiroPimoLanding() {
 
       <section aria-labelledby="parceiro-etapas">
         <header className="pimo-partner-section-head">
-          <p className="pimo-partner-step-label">Cartão 4</p>
           <h2 id="parceiro-etapas">Etapas até Parceiro PIMO</h2>
           <p>
             Convite: registe-se agora e esteja entre os primeiros parceiros no
@@ -398,7 +392,6 @@ export function ParceiroPimoLanding() {
       </section>
 
       <section className="pimo-partner-card" aria-labelledby="parceiro-docs">
-        <p className="pimo-partner-step-label">Cartão 5</p>
         <h2 id="parceiro-docs">Documentos necessários</h2>
         <p className="pimo-partner-docs-intro">
           Prepare estes documentos para avançar na candidatura.
@@ -411,7 +404,6 @@ export function ParceiroPimoLanding() {
       </section>
 
       <section className="pimo-partner-card" aria-labelledby="parceiro-logos">
-        <p className="pimo-partner-step-label">Cartão 6</p>
         <h2 id="parceiro-logos">Os nossos Parceiros PIMO</h2>
         <div className="pimo-partner-logos" aria-label="Logótipos de parceiros">
           <div className="pimo-partner-logos-empty">
@@ -424,7 +416,6 @@ export function ParceiroPimoLanding() {
       </section>
 
       <section className="pimo-partner-card pimo-partner-cta-block" aria-labelledby="parceiro-contacto">
-        <p className="pimo-partner-step-label">Cartão 7</p>
         <h2 id="parceiro-contacto">Pronto para falar connosco?</h2>
         <p>
           Marque uma reunião online. Enviamos a resposta para o email com que

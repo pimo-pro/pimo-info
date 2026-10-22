@@ -160,6 +160,7 @@ Locale: pt-PT
 - pimo.info: https://pimo.info/pt-pt/ecossistema/pimo-info/
 - pimo.pro: https://pimo.info/pt-pt/ecossistema/pimo-pro/
 - pimo.pt: https://pimo.info/pt-pt/ecossistema/pimo-pt/
+- Fabricante Parceiro PIMO: https://pimo.info/pt-pt/fabricantes/
 - Funcionalidades PIMO: https://pimo.info/pt-pt/funcionalidades/
 - Análise de projetos: https://pimo.info/pt-pt/funcionalidades/analise-projetos/
 - Configurador 3D: https://pimo.info/pt-pt/funcionalidades/configurador-3d/

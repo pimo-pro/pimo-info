@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-10-17T22:12:05.572Z
+Generated: 2026-10-22T12:04:25.375Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -163,6 +163,7 @@ Locale: pt-PT
 - pimo.info: https://pimo.info/pt-pt/ecossistema/pimo-info/
 - pimo.pro: https://pimo.info/pt-pt/ecossistema/pimo-pro/
 - pimo.pt: https://pimo.info/pt-pt/ecossistema/pimo-pt/
+- Fabricante Parceiro PIMO: https://pimo.info/pt-pt/fabricantes/
 - Funcionalidades PIMO: https://pimo.info/pt-pt/funcionalidades/
 - Análise de projetos: https://pimo.info/pt-pt/funcionalidades/analise-projetos/
 - Configurador 3D: https://pimo.info/pt-pt/funcionalidades/configurador-3d/
@@ -5333,6 +5334,18 @@ URL: https://pimo.info/pt-pt/ecossistema/pimo-pt/
 Loja online principal e site principal da marca PIMO.
 
 
+
+---
+
+## Fabricante Parceiro PIMO
+URL: https://pimo.info/pt-pt/fabricantes/
+Fábricas e carpintarias na Pimo Casa: pedidos de fabrico prontos, ficheiros para as vossas máquinas e dois modelos de colaboração.
+
+# Fabricante Parceiro PIMO
+
+ 
+  Para fábricas e carpintarias que queiram produzir mobiliário à medida com a
+  Pimo Casa, a partir de ficheiros de fabrico prontos na plataforma.
 
 ---
 

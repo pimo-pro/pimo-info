@@ -18,6 +18,7 @@ export default {
   "perguntas-frequentes": "Perguntas frequentes",
   contacto: "Contacto",
   parceiros: "Parceiro PIMO",
+  fabricantes: "Fabricante Parceiro PIMO",
   legal: "Políticas e Termos",
   "documentacao-tecnica": "Documentação técnica",
 }
