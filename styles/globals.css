@@ -88,6 +88,14 @@ aside.nextra-sidebar {
   flex-direction: column !important;
 }
 
+/* Nextra asPopover (sidebar:false / layout full|raw): md:_hidden não pode
+   ser anulado pelo display:flex !important acima. */
+@media (min-width: 768px) {
+  .nextra-sidebar-container.md\:_hidden {
+    display: none !important;
+  }
+}
+
 .nextra-sidebar-container > .nextra-scrollbar,
 .nextra-sidebar-container > div._overflow-y-auto {
   order: 2;
@@ -2043,12 +2051,33 @@ html.dark .pimo-partner-work-icon,
   }
 }
 
-/* Preços Hostinger-style (rascunho) */
+/* Preços: página full-width (sidebar/TOC desligados só aqui) */
 .pimo-hprice {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  max-width: 1180px;
+  width: 100%;
+  max-width: min(1280px, 100%);
+  margin-inline: auto;
+}
+
+/* Quando Nextra remove a sidebar, alargar o artigo nesta página */
+article:has(.pimo-hprice) {
+  max-width: none !important;
+}
+
+article:has(.pimo-hprice) > main {
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: max(1.25rem, env(safe-area-inset-left));
+  padding-right: max(1.25rem, env(safe-area-inset-right));
+}
+
+@media (min-width: 768px) {
+  article:has(.pimo-hprice) > main {
+    padding-left: max(2rem, env(safe-area-inset-left));
+    padding-right: max(2rem, env(safe-area-inset-right));
+  }
 }
 
 .pimo-hprice-countdown {
