@@ -1,3 +1,5 @@
+import { FabricantesPriceCards } from "./PrecosPimoLanding.jsx"
+
 const ECOSYSTEM = [
   {
     domain: "pimo.pt",
@@ -410,6 +412,8 @@ export function FabricantesPimoLanding() {
           </article>
         </div>
       </section>
+
+      <FabricantesPriceCards />
 
       <section aria-labelledby="fab-etapas">
         <header className="pimo-partner-section-head">
