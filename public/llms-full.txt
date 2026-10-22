@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-10-22T12:44:08.951Z
+Generated: 2026-10-22T12:48:50.909Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -204,6 +204,7 @@ Locale: pt-PT
 - Termos e Condições: https://pimo.info/pt-pt/legal/termos/
 - Parceiro PIMO: https://pimo.info/pt-pt/parceiros/
 - Perguntas frequentes: https://pimo.info/pt-pt/perguntas-frequentes/
+- Preços e subscrições: https://pimo.info/pt-pt/precos/
 - Primeiros passos: https://pimo.info/pt-pt/primeiros-passos/
 - Referência: https://pimo.info/pt-pt/referencia/
 - Botões e controlos: https://pimo.info/pt-pt/referencia/botoes/
@@ -6646,6 +6647,18 @@ Sistema de rastreio por etiquetas QR por peça. A **geração de etiquetas (UEE 
 ## A análise online do arquivo completo está sempre disponível?
 
 A análise documental online em PROJETOS pode estar disponível conforme a instalação. **Não substitui** o ZIP de produção. Se na sua instalação não aparecer, use o arquivo completo (ZIP) como de costume.
+
+---
+
+## Preços e subscrições
+URL: https://pimo.info/pt-pt/precos/
+Planos PIMO Free, Pro, Pro+, Ultra, Ultra+ e ALPHA+: preços com IVA, o que inclui cada subscrição e para quem é.
+
+# Preços e subscrições
+
+ 
+  Proposta de planos para utilizadores, designers, lojas, carpintarias e
+  fábricas. Todos os preços incluem IVA.
 
 ---
 

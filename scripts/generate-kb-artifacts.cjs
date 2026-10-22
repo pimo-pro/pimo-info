@@ -353,8 +353,6 @@ function main() {
     "/contact/",
     "/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/",
     "/pt-pt/blog/posts/bem-vindo/",
-    // Rascunho: não indexar até aprovação
-    "/pt-pt/precos/",
   ])
   const pageUrls = publicPages
     .filter((p) => p.category !== "redirect" && p.category !== "legacy")

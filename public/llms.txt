@@ -201,6 +201,7 @@ Locale: pt-PT
 - Termos e Condições: https://pimo.info/pt-pt/legal/termos/
 - Parceiro PIMO: https://pimo.info/pt-pt/parceiros/
 - Perguntas frequentes: https://pimo.info/pt-pt/perguntas-frequentes/
+- Preços e subscrições: https://pimo.info/pt-pt/precos/
 - Primeiros passos: https://pimo.info/pt-pt/primeiros-passos/
 - Referência: https://pimo.info/pt-pt/referencia/
 - Botões e controlos: https://pimo.info/pt-pt/referencia/botoes/

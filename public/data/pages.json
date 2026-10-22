@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T12:44:08.949Z",
+  "generatedAt": "2026-10-22T12:48:50.906Z",
   "items": [
     {
       "path": "/",
@@ -1653,6 +1653,28 @@
         "/pt-pt/glossario/"
       ],
       "lastUpdated": "2026-10-12",
+      "status": "implemented",
+      "draft": false
+    },
+    {
+      "path": "/pt-pt/precos/",
+      "file": "pages/pt-pt/precos.mdx",
+      "title": "Preços e subscrições",
+      "description": "Planos PIMO Free, Pro, Pro+, Ultra, Ultra+ e ALPHA+: preços com IVA, o que inclui cada subscrição e para quem é.",
+      "author": "",
+      "category": "institucional",
+      "tags": [
+        "precos",
+        "subscricoes",
+        "planos",
+        "pimo-pro"
+      ],
+      "related": [
+        "/pt-pt/fabricantes/",
+        "/pt-pt/parceiros/",
+        "/pt-pt/contacto/"
+      ],
+      "lastUpdated": "2026-10-22",
       "status": "implemented",
       "draft": false
     },

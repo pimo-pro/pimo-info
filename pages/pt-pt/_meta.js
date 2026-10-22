@@ -19,11 +19,7 @@ export default {
   contacto: "Contacto",
   parceiros: "Parceiro PIMO",
   fabricantes: "Fabricante Parceiro PIMO",
-  // Rascunho: fora do menu até aprovação (PR draft).
-  precos: {
-    title: "Preços e subscrições",
-    display: "hidden",
-  },
+  precos: "Preços e subscrições",
   legal: "Políticas e Termos",
   "documentacao-tecnica": "Documentação técnica",
 }
