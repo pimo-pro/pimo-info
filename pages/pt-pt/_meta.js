@@ -19,7 +19,14 @@ export default {
   contacto: "Contacto",
   parceiros: "Parceiro PIMO",
   fabricantes: "Fabricante Parceiro PIMO",
-  precos: "Preços e subscrições",
+  precos: {
+    title: "Preços e subscrições",
+    theme: {
+      layout: "full",
+      sidebar: false,
+      toc: false,
+    },
+  },
   legal: "Políticas e Termos",
   "documentacao-tecnica": "Documentação técnica",
 }
