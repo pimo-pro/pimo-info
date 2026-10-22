@@ -533,9 +533,11 @@ const PLANS = {
     audience: "Para grandes empresas e redes.",
     priceMain: "8.000 a 12.000",
     priceSuffix: "€",
+    priceLine: "€8.000 a €12.000",
     period: "/ano",
     periodNote: "Enterprise",
     extra: "Taxa de arranque única: €1.000 a €3.000",
+    priceLong: true,
     cta: {
       label: "Marcar reunião online",
       href: MEETING_ALPHA,
@@ -633,10 +635,23 @@ function PlanCard({ plan }) {
       <div className="pimo-hprice-card-body">
         <h3 className="pimo-hprice-name">{plan.name}</h3>
         <p className="pimo-hprice-audience">{plan.audience}</p>
-        <div className="pimo-hprice-price">
-          <span className="pimo-hprice-currency">{plan.priceSuffix}</span>
-          <span className="pimo-hprice-value">{plan.priceMain}</span>
-          <span className="pimo-hprice-period">{plan.period}</span>
+        <div
+          className={
+            "pimo-hprice-price" + (plan.priceLong ? " is-long" : "")
+          }
+        >
+          {plan.priceLine ? (
+            <>
+              <span className="pimo-hprice-value">{plan.priceLine}</span>
+              <span className="pimo-hprice-period">{plan.period}</span>
+            </>
+          ) : (
+            <>
+              <span className="pimo-hprice-currency">{plan.priceSuffix}</span>
+              <span className="pimo-hprice-value">{plan.priceMain}</span>
+              <span className="pimo-hprice-period">{plan.period}</span>
+            </>
+          )}
         </div>
         {plan.periodNote ? (
           <p className="pimo-hprice-period-note">{plan.periodNote}</p>
@@ -777,9 +792,9 @@ function CompareTable({ plans }) {
                   <div className="pimo-hprice-th">
                     <strong>{plan.name}</strong>
                     <span>
-                      {plan.priceSuffix}
-                      {plan.priceMain}
-                      {plan.period}
+                      {plan.priceLine
+                        ? `${plan.priceLine}${plan.period}`
+                        : `${plan.priceSuffix}${plan.priceMain}${plan.period}`}
                     </span>
                     <a
                       className={
@@ -881,15 +896,6 @@ export function PrecosPimoLanding() {
 
   return (
     <div className="pimo-hprice">
-      <section className="pimo-hprice-hero" aria-labelledby="precos-hero">
-        <p className="pimo-hprice-kicker">Planos e preços</p>
-        <h2 id="precos-hero">Preços e subscrições</h2>
-        <p>
-          Proposta de planos para utilizadores, designers, lojas, carpintarias e
-          fábricas. Todos os preços incluem IVA.
-        </p>
-      </section>
-
       <aside className="pimo-hprice-note" aria-label="Notas importantes">
         <p>
           <strong>PIMO AI:</strong> chega mais tarde (previsão para 2029).
