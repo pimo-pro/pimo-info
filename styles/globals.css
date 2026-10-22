@@ -41,9 +41,18 @@ body {
   color: var(--pimo-ink);
 }
 
-/* Full-width layout: lift Nextra container / article max-width caps */
+/* Site-wide desktop full width: lift Nextra shell max-width caps.
+   layout:full removes nested main/_max-w-6xl; docs keep the sidebar
+   but content expands to the right. Landing pages hide the sidebar. */
 ._max-w-\[90rem\] {
   max-width: none !important;
+}
+
+article.nextra-content {
+  max-width: none !important;
+  width: 100%;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 article.nextra-content > main._max-w-6xl,
@@ -61,6 +70,13 @@ article.nextra-content > main {
 footer > div._mx-auto {
   padding-left: max(1rem, env(safe-area-inset-left));
   padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+@media (min-width: 768px) {
+  article.nextra-content {
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+  }
 }
 
 @media (max-width: 767px) {
@@ -1604,13 +1620,14 @@ main {
   }
 }
 
-/* Parceiro PIMO (rascunho) – landing em cartões */
+/* Parceiro PIMO – landing em cartões */
 .pimo-partner-landing {
   display: flex;
   flex-direction: column;
   gap: 1.35rem;
   margin: 1rem 0 2.5rem;
-  max-width: 1100px;
+  width: 100%;
+  max-width: min(1280px, 100%);
 }
 
 .pimo-partner-card {
@@ -1923,9 +1940,10 @@ html.dark .pimo-partner-work-icon,
   }
 }
 
-/* Fabricante Parceiro PIMO (rascunho) */
+/* Fabricante Parceiro PIMO */
 .pimo-factory-landing {
-  max-width: 1140px;
+  width: 100%;
+  max-width: min(1280px, 100%);
 }
 
 .pimo-factory-feature {
@@ -2051,7 +2069,7 @@ html.dark .pimo-partner-work-icon,
   }
 }
 
-/* Preços: página full-width (sidebar/TOC desligados só aqui) */
+/* Preços: bloco interno (a página usa layout:full site-wide) */
 .pimo-hprice {
   display: flex;
   flex-direction: column;
@@ -2059,25 +2077,6 @@ html.dark .pimo-partner-work-icon,
   width: 100%;
   max-width: min(1280px, 100%);
   margin-inline: auto;
-}
-
-/* Quando Nextra remove a sidebar, alargar o artigo nesta página */
-article:has(.pimo-hprice) {
-  max-width: none !important;
-}
-
-article:has(.pimo-hprice) > main {
-  max-width: none !important;
-  width: 100% !important;
-  padding-left: max(1.25rem, env(safe-area-inset-left));
-  padding-right: max(1.25rem, env(safe-area-inset-right));
-}
-
-@media (min-width: 768px) {
-  article:has(.pimo-hprice) > main {
-    padding-left: max(2rem, env(safe-area-inset-left));
-    padding-right: max(2rem, env(safe-area-inset-right));
-  }
 }
 
 .pimo-hprice-countdown {
