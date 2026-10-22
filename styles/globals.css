@@ -2051,6 +2051,151 @@ html.dark .pimo-partner-work-icon,
   max-width: 1180px;
 }
 
+.pimo-hprice-countdown {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 1.1rem;
+  align-items: center;
+  padding: 1.15rem 1.25rem;
+  border-radius: 14px;
+  border: 1px solid var(--pimo-border);
+  background:
+    linear-gradient(135deg, var(--pimo-primary-soft), transparent 55%),
+    var(--pimo-card);
+}
+
+.pimo-hprice-countdown-kicker {
+  margin: 0 0 0.35rem;
+  color: var(--pimo-sienna);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pimo-hprice-countdown-text {
+  margin: 0;
+  color: var(--pimo-ink);
+  line-height: 1.5;
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.pimo-hprice-countdown-units {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.pimo-hprice-countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.4rem;
+  padding: 0.55rem 0.35rem;
+  border-radius: 10px;
+  border: 1px solid var(--pimo-border);
+  background: var(--pimo-surface);
+}
+
+.pimo-hprice-countdown-value {
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--pimo-primary-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+.pimo-hprice-countdown-label {
+  margin-top: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--pimo-muted);
+}
+
+.pimo-hprice-name-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.pimo-hprice-free-seal {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--pimo-sienna);
+  background: rgba(139, 74, 28, 0.08);
+  color: var(--pimo-sienna);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+html.dark .pimo-hprice-free-seal,
+.dark .pimo-hprice-free-seal {
+  background: rgba(212, 168, 130, 0.12);
+}
+
+.pimo-hprice-same-note {
+  margin: 0;
+  color: var(--pimo-primary-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.pimo-hprice-features-hint {
+  margin: 0 0 0.35rem;
+  color: var(--pimo-muted);
+  font-size: 0.9rem;
+}
+
+.pimo-hprice-feature-rows.is-all-plans,
+.pimo-hprice-table.is-all-plans {
+  min-width: 860px;
+}
+
+.pimo-hprice-feature-rows.is-all-plans .pimo-hprice-feature-head,
+.pimo-hprice-feature-rows.is-all-plans .pimo-hprice-feature-row {
+  grid-template-columns: minmax(180px, 1.8fr) repeat(6, minmax(52px, 1fr));
+}
+
+@media (max-width: 900px) {
+  .pimo-hprice-countdown {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .pimo-hprice-countdown {
+    padding: 1rem;
+  }
+
+  .pimo-hprice-countdown-units {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.35rem;
+  }
+
+  .pimo-hprice-countdown-unit {
+    min-height: 3.8rem;
+    padding: 0.45rem 0.2rem;
+  }
+
+  .pimo-hprice-countdown-value {
+    font-size: 1.2rem;
+  }
+
+  .pimo-hprice-countdown-label {
+    font-size: 0.6rem;
+  }
+}
+
 .pimo-hprice-embed {
   margin-top: 0.25rem;
 }
