@@ -27,6 +27,15 @@ export default {
       toc: false,
     },
   },
+  "linha-branca": {
+    title: "Linha Branca",
+    display: "hidden",
+    theme: {
+      layout: "full",
+      sidebar: false,
+      toc: false,
+    },
+  },
   legal: "Políticas e Termos",
   "documentacao-tecnica": "Documentação técnica",
 }
