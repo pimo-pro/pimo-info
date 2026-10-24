@@ -29,6 +29,7 @@ function Frame({ title, children, wide }) {
 export function InferiorExplodedDiagram() {
   return (
     <div className="pimo-linha-diagram-block">
+      {/* TODO: imagem provisória, substituir por imagem final */}
       <Frame title="Vista explodida: armário inferior 60 cm">
         <svg viewBox="0 0 520 360" xmlns="http://www.w3.org/2000/svg">
           <rect width="520" height="360" fill="#f8f6f2" />
@@ -116,6 +117,7 @@ export function InferiorExplodedDiagram() {
         </svg>
       </Frame>
 
+      {/* TODO: imagem provisória, substituir por imagem final */}
       <Frame title="Montagem em 3 passos" wide>
         <svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg">
           <rect width="720" height="220" fill="#f8f6f2" />
@@ -193,6 +195,7 @@ export function InferiorExplodedDiagram() {
 export function GavetasExplodedDiagram() {
   return (
     <div className="pimo-linha-diagram-block">
+      {/* TODO: imagem provisória, substituir por imagem final */}
       <Frame title="Vista explodida de uma gaveta">
         <svg viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg">
           <rect width="520" height="300" fill="#f8f6f2" />
@@ -238,6 +241,7 @@ export function GavetasExplodedDiagram() {
         </svg>
       </Frame>
 
+      {/* TODO: imagem provisória, substituir por imagem final */}
       <Frame title="Módulo com gaveta aberta">
         <svg viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg">
           <rect width="420" height="340" fill="#f8f6f2" />
@@ -288,7 +292,9 @@ export function GavetasExplodedDiagram() {
 /** Vista explodida da garrafeira com 5 prateleiras. */
 export function GarrafeiraExplodedDiagram() {
   return (
-    <Frame title="Vista explodida: garrafeira 20 cm com 5 prateleiras reguláveis">
+    <>
+      {/* TODO: imagem provisória, substituir por imagem final */}
+      <Frame title="Vista explodida: garrafeira 20 cm com 5 prateleiras reguláveis">
       <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
         <rect width="480" height="360" fill="#f8f6f2" />
         <ellipse cx="220" cy="330" rx="70" ry="9" fill="#e6e2db" />
@@ -359,13 +365,16 @@ export function GarrafeiraExplodedDiagram() {
         </text>
       </svg>
     </Frame>
+    </>
   )
 }
 
 /** Comparação pé 100 mm vs 15 mm. */
 export function PesComparacaoDiagram() {
   return (
-    <Frame title="Comparação: pé regulável 100 mm e 15 mm" wide>
+    <>
+      {/* TODO: imagem provisória, substituir por imagem final */}
+      <Frame title="Comparação: pé regulável 100 mm e 15 mm" wide>
       <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg">
         <rect width="640" height="280" fill="#f8f6f2" />
         {/* 100 mm */}
@@ -407,5 +416,6 @@ export function PesComparacaoDiagram() {
         </g>
       </svg>
     </Frame>
+    </>
   )
 }

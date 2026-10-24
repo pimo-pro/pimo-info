@@ -29,7 +29,6 @@ export default {
   },
   "linha-branca": {
     title: "Linha Branca",
-    display: "hidden",
     theme: {
       layout: "full",
       sidebar: false,
