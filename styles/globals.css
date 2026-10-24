@@ -2901,3 +2901,229 @@ html.dark .pimo-hprice-btn.is-primary,
     overflow-x: auto;
   }
 }
+
+/* Linha Branca (rascunho): largura total como preços / PR #10 */
+.pimo-linha {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: min(1280px, 100%);
+  margin: 1rem 0 2.5rem;
+}
+
+article:has(.pimo-linha) {
+  max-width: none !important;
+}
+
+article:has(.pimo-linha) > main {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+@media (min-width: 768px) {
+  article:has(.pimo-linha) > main,
+  article:has(.pimo-linha) {
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+  }
+}
+
+.pimo-linha-lead {
+  color: var(--pimo-muted);
+  max-width: 42rem;
+  margin: 0 0 0.5rem;
+}
+
+.pimo-linha-note,
+.pimo-linha-spec,
+.pimo-linha-brand {
+  margin: 0;
+  padding: 1.15rem 1.25rem;
+  background: var(--pimo-card);
+  border: 1px solid var(--pimo-border);
+  border-radius: calc(var(--pimo-radius) + 2px);
+}
+
+.pimo-linha-note h2,
+.pimo-linha-spec h2,
+.pimo-linha-faq h2,
+.pimo-linha-models h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+}
+
+.pimo-linha-note ul,
+.pimo-linha-spec ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.55rem;
+  color: var(--pimo-muted);
+}
+
+.pimo-linha-note li strong,
+.pimo-linha-spec li strong {
+  color: var(--pimo-ink);
+}
+
+.pimo-linha-model-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.pimo-linha-model-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.1rem 1.15rem;
+  background: var(--pimo-card);
+  border: 1px solid var(--pimo-border);
+  border-radius: calc(var(--pimo-radius) + 2px);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pimo-linha-model-card:hover {
+  border-color: var(--pimo-primary);
+  box-shadow: 0 1px 0 rgba(19, 21, 24, 0.04);
+}
+
+.pimo-linha-model-kicker {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--pimo-sienna);
+  font-weight: 600;
+}
+
+.pimo-linha-model-card strong {
+  font-size: 1.05rem;
+  color: var(--pimo-ink);
+}
+
+.pimo-linha-model-card span:last-child {
+  color: var(--pimo-muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.pimo-linha-brand p {
+  margin: 0;
+  color: var(--pimo-muted);
+}
+
+.pimo-linha-brand a {
+  color: var(--pimo-primary);
+  font-weight: 600;
+}
+
+.pimo-linha-diagram-block {
+  display: grid;
+  gap: 1rem;
+}
+
+.pimo-linha-figure {
+  margin: 0;
+  padding: 0.85rem;
+  background: var(--pimo-card);
+  border: 1px solid var(--pimo-border);
+  border-radius: calc(var(--pimo-radius) + 2px);
+}
+
+.pimo-linha-figure-frame {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--pimo-radius);
+  background: var(--pimo-surface);
+}
+
+.pimo-linha-figure-frame svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pimo-linha-figure figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  margin-top: 0.65rem;
+}
+
+.pimo-linha-figure-title {
+  font-weight: 600;
+  color: var(--pimo-ink);
+  font-size: 0.95rem;
+}
+
+.pimo-linha-caption {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--pimo-muted);
+}
+
+.pimo-linha-caption a {
+  color: var(--pimo-primary);
+  font-weight: 600;
+}
+
+.pimo-linha-faq-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.pimo-linha-faq-item {
+  background: var(--pimo-card);
+  border: 1px solid var(--pimo-border);
+  border-radius: calc(var(--pimo-radius) + 2px);
+}
+
+.pimo-linha-faq-item.is-open {
+  border-color: #c5c0b8;
+}
+
+.pimo-linha-faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1.1rem;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  font: inherit;
+  font-weight: 600;
+  color: var(--pimo-ink);
+  cursor: pointer;
+}
+
+.pimo-linha-faq-a {
+  padding: 0 1.1rem 1rem;
+  color: var(--pimo-muted);
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .pimo-linha-model-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .pimo-linha {
+    gap: 1.15rem;
+  }
+
+  .pimo-linha-note,
+  .pimo-linha-spec,
+  .pimo-linha-brand,
+  .pimo-linha-figure {
+    padding: 0.95rem 1rem;
+  }
+}

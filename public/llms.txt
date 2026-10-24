@@ -199,6 +199,11 @@ Locale: pt-PT
 - Política de Cookies: https://pimo.info/pt-pt/legal/cookies/
 - Política de Privacidade: https://pimo.info/pt-pt/legal/privacidade/
 - Termos e Condições: https://pimo.info/pt-pt/legal/termos/
+- Linha Branca: https://pimo.info/pt-pt/linha-branca/
+- Armário com 3 Gavetas: https://pimo.info/pt-pt/linha-branca/armario-3-gavetas/
+- Armário de Cozinha Inferior: https://pimo.info/pt-pt/linha-branca/armario-cozinha-inferior/
+- Garrafeira 20 cm: https://pimo.info/pt-pt/linha-branca/garrafeira-20/
+- Pés Reguláveis: https://pimo.info/pt-pt/linha-branca/pes-regulaveis/
 - Parceiro PIMO: https://pimo.info/pt-pt/parceiros/
 - Perguntas frequentes: https://pimo.info/pt-pt/perguntas-frequentes/
 - Preços e subscrições: https://pimo.info/pt-pt/precos/

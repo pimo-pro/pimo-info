@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-10-22T12:48:50.909Z
+Generated: 2026-10-24T14:13:13.101Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -202,6 +202,11 @@ Locale: pt-PT
 - Política de Cookies: https://pimo.info/pt-pt/legal/cookies/
 - Política de Privacidade: https://pimo.info/pt-pt/legal/privacidade/
 - Termos e Condições: https://pimo.info/pt-pt/legal/termos/
+- Linha Branca: https://pimo.info/pt-pt/linha-branca/
+- Armário com 3 Gavetas: https://pimo.info/pt-pt/linha-branca/armario-3-gavetas/
+- Armário de Cozinha Inferior: https://pimo.info/pt-pt/linha-branca/armario-cozinha-inferior/
+- Garrafeira 20 cm: https://pimo.info/pt-pt/linha-branca/garrafeira-20/
+- Pés Reguláveis: https://pimo.info/pt-pt/linha-branca/pes-regulaveis/
 - Parceiro PIMO: https://pimo.info/pt-pt/parceiros/
 - Perguntas frequentes: https://pimo.info/pt-pt/perguntas-frequentes/
 - Preços e subscrições: https://pimo.info/pt-pt/precos/
@@ -6561,6 +6566,66 @@ Podemos atualizar estes termos. A data no topo indica a versão vigente.
 - [Política de Privacidade](/pt-pt/legal/privacidade/)
 - [Política de Cookies](/pt-pt/legal/cookies/)
 - [Hub legal](/pt-pt/legal/)
+
+---
+
+## Linha Branca
+URL: https://pimo.info/pt-pt/linha-branca/
+Módulos base da Linha Branca da Pimo Casa: armários inferiores, gavetas, garrafeira e pés reguláveis. Desenhados no PIMO PRO.
+
+# Linha Branca
+
+ 
+  Módulos base da Pimo Casa para cozinha. Aqui vês medidas, materiais e como
+  cada peça se monta. Sem preços nesta página: é só informação técnica.
+
+---
+
+## Armário com 3 Gavetas
+URL: https://pimo.info/pt-pt/linha-branca/armario-3-gavetas/
+Armário com 3 gavetas da Linha Branca (30 a 60 cm): frentes MDF carvalho, gavetas em madeira e FAQ. Pimo Casa.
+
+# Armário com 3 Gavetas
+
+ 
+  Módulo base com três gavetas em madeira e frentes MDF carvalho. Larguras de
+  30, 40, 50 ou 60 cm.
+
+---
+
+## Armário de Cozinha Inferior
+URL: https://pimo.info/pt-pt/linha-branca/armario-cozinha-inferior/
+Armário inferior da Linha Branca (30 a 60 cm): medidas, materiais, 2 prateleiras reguláveis e FAQ. Pimo Casa, desenhado no PIMO PRO.
+
+# Armário de Cozinha Inferior
+
+ 
+  Módulo base em larguras de 30, 40, 50 ou 60 cm. Caixa branca, prateleiras
+  reguláveis e porta MDF carvalho opcional.
+
+---
+
+## Garrafeira 20 cm
+URL: https://pimo.info/pt-pt/linha-branca/garrafeira-20/
+Garrafeira 20 cm da Linha Branca: 200 x 500 x 870 mm, frente aberta e 5 prateleiras reguláveis. Pimo Casa.
+
+# Garrafeira 20 cm
+
+ 
+  Módulo estreito de 20 cm com frente aberta e cinco prateleiras reguláveis
+  para garrafas, azeites e condimentos.
+
+---
+
+## Pés Reguláveis
+URL: https://pimo.info/pt-pt/linha-branca/pes-regulaveis/
+Pés reguláveis da Linha Branca: conjunto de 4, alturas 100 mm e 15 mm, troca sem custo nos módulos base. Pimo Casa.
+
+# Pés Reguláveis
+
+ 
+  Conjunto de quatro pés para os módulos base da Linha Branca. Escolhes 100 mm
+  (de série) ou 15 mm, ambos reguláveis, com troca sem custo.
 
 ---
 
