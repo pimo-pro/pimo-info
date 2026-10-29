@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T14:13:13.099Z",
+  "generatedAt": "2026-10-29T22:02:27.589Z",
   "areas": [
     {
       "id": "header",
@@ -58,7 +58,7 @@
       "name": "Atalhos de teclado"
     }
   ],
-  "count": 296,
+  "count": 297,
   "items": [
     {
       "icon": "⌨",
@@ -3441,6 +3441,21 @@
       "id": "gavetas-aplicar-preset",
       "label": "Aplicar preset",
       "sourceFile": "src/components/layout/left-panel/GavetasPopoverPanel.tsx"
+    },
+    {
+      "icon": null,
+      "iconName": "furniture",
+      "shortcut": null,
+      "featureIds": [
+        "materiais"
+      ],
+      "effects": "Aplica um preset de material. Fica indisponível até o visualizador 3D estar pronto, para evitar cliques sem efeito.",
+      "action": "Escolhe e aplica um preset de material no painel Materiais.",
+      "area": "paineis-laterais",
+      "id": "materiais-preset",
+      "label": "Preset de material",
+      "location": "Painel Materiais (lado direito)",
+      "sourceFile": "src/components/layout/right-panel/MateriaisPanel.tsx"
     },
     {
       "icon": null,

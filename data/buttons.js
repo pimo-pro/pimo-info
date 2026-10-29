@@ -3465,6 +3465,21 @@ export const buttons = [
   },
   {
     "icon": null,
+    "iconName": "furniture",
+    "shortcut": null,
+    "featureIds": [
+      "materiais"
+    ],
+    "effects": "Aplica um preset de material. Fica indisponível até o visualizador 3D estar pronto, para evitar cliques sem efeito.",
+    "action": "Escolhe e aplica um preset de material no painel Materiais.",
+    "area": "paineis-laterais",
+    "id": "materiais-preset",
+    "label": "Preset de material",
+    "location": "Painel Materiais (lado direito)",
+    "sourceFile": "src/components/layout/right-panel/MateriaisPanel.tsx"
+  },
+  {
+    "icon": null,
     "iconName": "room",
     "shortcut": null,
     "featureIds": [

@@ -8,7 +8,7 @@ related:
   - /pt-pt/guias-utilizador/materiais/
   - /pt-pt/funcionalidades/
   - /pt-pt/glossario/
-lastUpdated: 2026-10-01
+lastUpdated: 2026-10-14
 status: implemented
 ---
 
@@ -33,6 +33,7 @@ No fluxo real da app, cada caixa pode ter material de estrutura e material de fr
   <li><strong>Aplicação por módulo</strong><p>Define material da carcaça em cada caixa selecionada.</p></li>
   <li><strong>Frentes independentes</strong><p>Portas e gavetas podem usar materiais próprios via menu de contexto.</p></li>
   <li><strong>Cálculo de custo integrado</strong><p>Resumo financeiro acompanha área e custo por m² dos materiais ativos.</p></li>
+  <li><strong>Presets só com o 3D pronto</strong><p>No painel Materiais (lado direito), a escolha de um preset fica indisponível até o visualizador 3D estar pronto, para evitar cliques sem efeito.</p></li>
 </section>
 
 <AnimatedHotspotImage
@@ -48,8 +49,13 @@ No fluxo real da app, cada caixa pode ter material de estrutura e material de fr
 <InfoAccordion
   items={[
     { title: "Quando aplicar materiais?", text: "Preferencialmente antes de gerar o design 3D para garantir consistência entre cálculo técnico e custo." },
-    { title: "Os materiais vêm de onde?", text: "Da biblioteca de materiais gerida na área administrativa da aplicação principal." },
+    { title: "Porque o preset de material está indisponível?", text: "No painel Materiais (lado direito), a escolha de um preset só fica disponível quando o visualizador 3D estiver pronto. Assim evita cliques sem efeito enquanto a vista ainda está a carregar." },
+    { title: "Os materiais vêm de onde?", text: "Da biblioteca de materiais disponível na aplicação PIMO PRO." },
   ]}
 />
+
+## Painel Materiais (lado direito)
+
+No painel Materiais do lado direito pode escolher presets de material. Essa escolha fica **indisponível** até o visualizador 3D estar pronto. Quando a vista 3D carrega, o controlo fica utilizável e o preset aplica-se normalmente.
 
 <FeatureButtons featureId="materiais" />

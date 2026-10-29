@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T14:13:13.100Z",
+  "generatedAt": "2026-10-29T22:02:27.591Z",
   "items": [
     {
       "path": "/",
@@ -920,7 +920,7 @@
         "/pt-pt/funcionalidades/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-07",
+      "lastUpdated": "2026-10-14",
       "status": "implemented",
       "draft": false
     },
@@ -941,7 +941,7 @@
         "/pt-pt/guias-utilizador/gerir-projetos/",
         "/pt-pt/primeiros-passos/"
       ],
-      "lastUpdated": "2026-10-12",
+      "lastUpdated": "2026-10-14",
       "status": "",
       "draft": false
     },
@@ -1080,7 +1080,7 @@
         "/pt-pt/funcionalidades/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-14",
       "status": "implemented",
       "draft": false
     },
@@ -1420,7 +1420,7 @@
       "path": "/pt-pt/guias-utilizador/materiais/",
       "file": "pages/pt-pt/guias-utilizador/materiais.mdx",
       "title": "Materiais",
-      "description": "Materiais.",
+      "description": "Como alterar materiais da carcaça e frentes no PIMO PRO, incluindo presets no painel Materiais.",
       "author": "",
       "category": "guia",
       "tags": [
@@ -1428,9 +1428,10 @@
       ],
       "related": [
         "/pt-pt/guias-utilizador/",
+        "/pt-pt/funcionalidades/materiais/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-14",
       "status": "implemented",
       "draft": false
     },
@@ -1756,7 +1757,7 @@
         "/pt-pt/guias-utilizador/exportacao/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-12",
+      "lastUpdated": "2026-10-14",
       "status": "implemented",
       "draft": false
     },
@@ -1841,7 +1842,7 @@
         "/pt-pt/funcionalidades/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-10-14",
       "status": "implemented",
       "draft": false
     },

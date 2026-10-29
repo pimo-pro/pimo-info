@@ -15,7 +15,7 @@ const OUT_MD = path.join(ROOT, "docs", "COVERAGE.md")
 /** @type {CoverageItem[]} */
 const items = [
   // --- Rotas principais ---
-  { id: "route-login", kind: "route", codeRef: "App.tsx:/login", name: "Login", purpose: "Entrar na conta", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto", notes: "Fluxo público: entrar, terminar sessão, sessão expirada (out 2026)" },
+  { id: "route-login", kind: "route", codeRef: "App.tsx:/login", name: "Login", purpose: "Entrar na conta", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto", notes: "Regresso ao ecrã anterior após entrar ou renovar sessão; sessão expirada encaminha ao login (out 2026)" },
   { id: "route-register", kind: "route", codeRef: "App.tsx:/register", name: "Registo", purpose: "Criação de conta", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
   { id: "route-forgot", kind: "route", codeRef: "App.tsx (recuperar palavra-passe)", name: "Recuperar palavra-passe", purpose: "Pedido de nova palavra-passe por email", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto" },
   { id: "route-definicoes", kind: "route", codeRef: "App.tsx:/definicoes", name: "Definições", purpose: "Preferências do utilizador e projeto", page: "/pt-pt/funcionalidades/definicoes/", status: "coberto" },
@@ -29,7 +29,7 @@ const items = [
   { id: "route-projetos", kind: "route", codeRef: "App.tsx:/PROJETOS", name: "PIMO PROJETOS", purpose: "Navegação projeto → caixa → peça", page: "/pt-pt/sistemas-pimo/pimo-projetos/", status: "coberto" },
   { id: "route-projetos-analise", kind: "route", codeRef: "App.tsx:/PROJETOS/:project/analise", name: "Análise de projeto", purpose: "Documentos de análise", page: "/pt-pt/funcionalidades/analise-projetos/", status: "coberto" },
   { id: "route-nesting-v3", kind: "route", codeRef: "App.tsx:/nesting_v3", name: "Nesting v3", purpose: "Motor de nesting Fast/PRO", page: "/pt-pt/sistemas-pimo/pimo-nesting/", status: "coberto" },
-  { id: "route-legacy-root", kind: "route", codeRef: "App.tsx:/ + /:projectSlug", name: "Configurador legado / projeto", purpose: "Editor 3D principal", page: "/pt-pt/funcionalidades/configurador-3d/", status: "coberto" },
+  { id: "route-legacy-root", kind: "route", codeRef: "App.tsx:/ + /:projectSlug", name: "Configurador legado / projeto", purpose: "Editor 3D principal", page: "/pt-pt/funcionalidades/configurador-3d/", status: "coberto", notes: "Aviso se o visualizador 3D não carregar; erro inesperado mantém cabeçalho e opção de voltar ao início (out 2026)" },
   { id: "route-ajuda", kind: "route", codeRef: "ajudaRoutes:/ajuda", name: "Ajuda in-app", purpose: "Help embutido na app", page: "/pt-pt/", status: "coberto", notes: "Ajuda pública em pimo.pro/ajuda; conteúdo espelhado no help center; captura WebP" },
   { id: "route-whats-new", kind: "route", codeRef: "ajudaRoutes:/ajuda/whats-new", name: "Novidades in-app", purpose: "Changelog na app", page: "/pt-pt/novidades/", status: "coberto" },
 
@@ -53,11 +53,11 @@ const items = [
   { id: "route-ops-cnc", kind: "route", codeRef: "App.tsx:/industrial/operations/cnc", name: "Operações CNC", purpose: "Vista CNC", page: "/pt-pt/funcionalidades/modulo-industrial/", status: "coberto", notes: "Redirect documentado para /industrial/work-orders/nesting" },
 
   // --- Domínios funcionais ---
-  { id: "domain-auth", kind: "domain", codeRef: "auth / session + logout", name: "Autenticação e sessão", purpose: "Entrar na conta, terminar sessão, perfil, sessão expirada", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto", notes: "Só perspetiva utilizador final (out 2026)" },
-  { id: "domain-error-ui", kind: "domain", codeRef: "error boundary / unexpected UI failure", name: "Erro inesperado na UI", purpose: "Mensagem Algo correu mal + Voltar ao início em vez de ecrã em branco", page: "/pt-pt/perguntas-frequentes/", status: "coberto", notes: "Error boundary global em qualquer ecrã (out 2026)" },
+  { id: "domain-auth", kind: "domain", codeRef: "auth / session + logout", name: "Autenticação e sessão", purpose: "Entrar na conta, terminar sessão, perfil, sessão expirada", page: "/pt-pt/funcionalidades/conta-e-acesso/", status: "coberto", notes: "Regresso ao ecrã anterior; sessão expirada como navegação normal (out 2026)" },
+  { id: "domain-error-ui", kind: "domain", codeRef: "error boundary / unexpected UI failure", name: "Erro inesperado na UI", purpose: "Mensagem Algo correu mal + Voltar ao início em vez de ecrã em branco", page: "/pt-pt/perguntas-frequentes/", status: "coberto", notes: "No workspace 3D o cabeçalho mantém-se; aviso se o visualizador não carregar (out 2026)" },
   { id: "domain-boxes", kind: "domain", codeRef: "LegacyApp / boxes", name: "Caixas / módulos", purpose: "Criar e editar caixas", page: "/pt-pt/guias-utilizador/criar-caixa/", status: "coberto" },
   { id: "domain-pieces", kind: "domain", codeRef: "piece models", name: "Peças", purpose: "Peças e cotas", page: "/pt-pt/guias-utilizador/medicoes-e-cotas/", status: "coberto" },
-  { id: "domain-materials", kind: "domain", codeRef: "materials catalog", name: "Materiais", purpose: "Painéis, bordos, texturas", page: "/pt-pt/funcionalidades/materiais/", status: "coberto" },
+  { id: "domain-materials", kind: "domain", codeRef: "materials catalog", name: "Materiais", purpose: "Painéis, bordos, texturas", page: "/pt-pt/funcionalidades/materiais/", status: "coberto", notes: "Preset no painel direito indisponível até o visualizador 3D estar pronto (out 2026)" },
   { id: "domain-hardware", kind: "domain", codeRef: "ferragens / hardware", name: "Ferragens", purpose: "Dobradiças, corrediças, conectores", page: "/pt-pt/funcionalidades/ferragens/", status: "coberto" },
   { id: "domain-doors-drawers", kind: "domain", codeRef: "doors/drawers", name: "Portas e gavetas", purpose: "Frentes e exclusividade mútua", page: "/pt-pt/funcionalidades/portas-e-gavetas/", status: "coberto" },
   { id: "domain-cutlist", kind: "domain", codeRef: "cutlist", name: "Lista de corte", purpose: "Cutlist e fabrico", page: "/pt-pt/funcionalidades/lista-de-corte/", status: "coberto" },
@@ -71,7 +71,7 @@ const items = [
   { id: "domain-remates", kind: "domain", codeRef: "remates / rodapés", name: "Remates e acabamentos", purpose: "Remates, rodapés, frisos", page: "/pt-pt/funcionalidades/remates/", status: "coberto" },
   { id: "domain-move", kind: "domain", codeRef: "move/position", name: "Mover e posicionar", purpose: "Manipulação no viewport", page: "/pt-pt/guias-utilizador/mover-e-posicionar/", status: "coberto" },
   { id: "domain-shortcuts", kind: "domain", codeRef: "keyboard shortcuts", name: "Atalhos de teclado", purpose: "Hotkeys", page: "/pt-pt/guias-utilizador/atalhos-teclado/", status: "coberto" },
-  { id: "domain-buttons", kind: "domain", codeRef: "UI buttons catalog", name: "Botões / controlos UI", purpose: "Catálogo de ações", page: "/pt-pt/referencia/botoes/", status: "coberto" },
+  { id: "domain-buttons", kind: "domain", codeRef: "UI buttons catalog", name: "Botões / controlos UI", purpose: "Catálogo de ações", page: "/pt-pt/referencia/botoes/", status: "coberto", notes: "Preset de material (painel direito) indisponível até o 3D estar pronto (out 2026)" },
   { id: "domain-architecture", kind: "domain", codeRef: "modules.js flow", name: "Arquitetura / fluxo", purpose: "Fluxo de módulos", page: "/pt-pt/como-funciona/", status: "coberto" },
 
   // --- Sistemas ---

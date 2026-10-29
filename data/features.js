@@ -19,7 +19,8 @@ export const features = [
   {
     id: "configurador-3d",
     name: "Configurador 3D",
-    summary: "Modelação paramétrica de módulos no workspace 3D.",
+    summary:
+      "Modelação paramétrica no workspace 3D, com aviso se o visualizador não carregar e recuperação se houver erro inesperado.",
     status: "implemented",
     canonicalPath: "/pt-pt/funcionalidades/configurador-3d/",
     guidePath: "/pt-pt/guias-utilizador/criar-caixa/",
@@ -28,7 +29,8 @@ export const features = [
   {
     id: "materiais",
     name: "Materiais",
-    summary: "Materiais de carcaça e frentes, com espessura e custo.",
+    summary:
+      "Materiais de carcaça e frentes, com espessura e custo. Presets no painel direito só quando o 3D está pronto.",
     status: "implemented",
     canonicalPath: "/pt-pt/funcionalidades/materiais/",
     guidePath: "/pt-pt/guias-utilizador/materiais/",

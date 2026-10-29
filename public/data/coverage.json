@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T14:13:13.154Z",
+  "generatedAt": "2026-10-29T22:02:36.375Z",
   "source": "pimo-criativo-source (read-only) + pages/pt-pt",
   "totals": {
     "items": 65,
@@ -17,7 +17,7 @@
       "purpose": "Entrar na conta",
       "page": "/pt-pt/funcionalidades/conta-e-acesso/",
       "status": "coberto",
-      "notes": "Fluxo público: entrar, terminar sessão, sessão expirada (out 2026)",
+      "notes": "Regresso ao ecrã anterior após entrar ou renovar sessão; sessão expirada encaminha ao login (out 2026)",
       "pageExists": true
     },
     {
@@ -163,6 +163,7 @@
       "purpose": "Editor 3D principal",
       "page": "/pt-pt/funcionalidades/configurador-3d/",
       "status": "coberto",
+      "notes": "Aviso se o visualizador 3D não carregar; erro inesperado mantém cabeçalho e opção de voltar ao início (out 2026)",
       "pageExists": true
     },
     {
@@ -366,7 +367,7 @@
       "purpose": "Entrar na conta, terminar sessão, perfil, sessão expirada",
       "page": "/pt-pt/funcionalidades/conta-e-acesso/",
       "status": "coberto",
-      "notes": "Só perspetiva utilizador final (out 2026)",
+      "notes": "Regresso ao ecrã anterior; sessão expirada como navegação normal (out 2026)",
       "pageExists": true
     },
     {
@@ -377,7 +378,7 @@
       "purpose": "Mensagem Algo correu mal + Voltar ao início em vez de ecrã em branco",
       "page": "/pt-pt/perguntas-frequentes/",
       "status": "coberto",
-      "notes": "Error boundary global em qualquer ecrã (out 2026)",
+      "notes": "No workspace 3D o cabeçalho mantém-se; aviso se o visualizador não carregar (out 2026)",
       "pageExists": true
     },
     {
@@ -408,6 +409,7 @@
       "purpose": "Painéis, bordos, texturas",
       "page": "/pt-pt/funcionalidades/materiais/",
       "status": "coberto",
+      "notes": "Preset no painel direito indisponível até o visualizador 3D estar pronto (out 2026)",
       "pageExists": true
     },
     {
@@ -549,6 +551,7 @@
       "purpose": "Catálogo de ações",
       "page": "/pt-pt/referencia/botoes/",
       "status": "coberto",
+      "notes": "Preset de material (painel direito) indisponível até o 3D estar pronto (out 2026)",
       "pageExists": true
     },
     {

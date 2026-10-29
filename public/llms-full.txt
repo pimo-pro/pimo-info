@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-10-24T14:13:13.101Z
+Generated: 2026-10-29T22:02:27.595Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -80,8 +80,8 @@ Locale: pt-PT
 - Sessão / terminar sessão: Estado da conta depois de entrar. Ao terminar sessão, a app envia o utilizador para o ecrã de login. Se a sessão expirar, é pedido para entrar de novo.
 
 ## Features
-- Configurador 3D [implemented] https://pimo.info/pt-pt/funcionalidades/configurador-3d/, Modelação paramétrica de módulos no workspace 3D.
-- Materiais [implemented] https://pimo.info/pt-pt/funcionalidades/materiais/, Materiais de carcaça e frentes, com espessura e custo.
+- Configurador 3D [implemented] https://pimo.info/pt-pt/funcionalidades/configurador-3d/, Modelação paramétrica no workspace 3D, com aviso se o visualizador não carregar e recuperação se houver erro inesperado.
+- Materiais [implemented] https://pimo.info/pt-pt/funcionalidades/materiais/, Materiais de carcaça e frentes, com espessura e custo. Presets no painel direito só quando o 3D está pronto.
 - Portas e Gavetas [implemented] https://pimo.info/pt-pt/funcionalidades/portas-e-gavetas/, Frentes com regras industriais. Portas e gavetas são mutuamente exclusivas na mesma caixa.
 - Lista de Corte [implemented] https://pimo.info/pt-pt/funcionalidades/lista-de-corte/, Cutlist em mm gerada a partir do design 3D.
 - Nesting Fast/PRO [implemented] https://pimo.info/pt-pt/funcionalidades/nesting-fast-pro/, Layout de corte em chapa: Fast (estimativa) e PRO (otimização).
@@ -98,12 +98,12 @@ Locale: pt-PT
 - PIMO INDUSTRIAL [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/, Camada industrial completa da app: hub de estações, operações (CNC, nesting, drill, orlar, montagem, embalagem), operador/supervisor e integrações de fabrico.
 - PIMO DRILL [em-desenvolvimento] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/, Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.
 
-## UI buttons (296)
+## UI buttons (297)
 - Header: 14 controlos
 - Navegação lateral: 7 controlos
 - Barra superior unificada: 35 controlos
 - Ferramentas 3D: 4 controlos
-- Painéis laterais: 43 controlos
+- Painéis laterais: 44 controlos
 - Menu de contexto: 91 controlos
 - Exportação / Salvar e Gerar: 20 controlos
 - Barra inferior: 22 controlos
@@ -2697,6 +2697,17 @@ shortcut: -
 iconName: furniture
 sourceFile: src/components/layout/left-panel/GavetasPopoverPanel.tsx
 featureIds: portas-e-gavetas
+
+## Button: Preset de material
+id: materiais-preset
+area: paineis-laterais
+location: Painel Materiais (lado direito)
+action: Escolhe e aplica um preset de material no painel Materiais.
+effects: Aplica um preset de material. Fica indisponível até o visualizador 3D estar pronto, para evitar cliques sem efeito.
+shortcut: -
+iconName: furniture
+sourceFile: src/components/layout/right-panel/MateriaisPanel.tsx
+featureIds: materiais
 
 ## Button: Auto-Arrange
 id: sala-auto-arrange
@@ -5430,9 +5441,17 @@ Permite selecionar módulos, configurar dimensões/opções e organizar o layout
 
  
 
+## Se o visualizador 3D falhar
+
+Se o visualizador 3D não conseguir carregar, o PIMO PRO mostra um aviso claro no espaço de design. Não fica um ecrã vazio sem explicação: sabe que a vista 3D não ficou pronta e pode tentar de novo ou sair desse ecrã.
+
+## Erro inesperado no espaço de trabalho
+
+Se acontecer um erro inesperado no workspace, o resto da aplicação continua disponível: o cabeçalho mantém-se e é oferecida a opção de **voltar ao início**. Assim pode continuar noutro ecrã sem perder o acesso às restantes zonas da app.
+
 ## Showroom / viewer
 
-A rota `/projects/viewer` (dentro de `ProtectedLayout`) abre o showroom de projetos quando o utilizador tem a permissão `canOpenProjectsShowroom`. Sem essa permissão ou sem login, a app redireciona para o fluxo de acesso. O workspace principal de modelação continua na raiz `/` (LegacyApp).
+A rota `/projects/viewer` abre o showroom de projetos quando a sua conta tem acesso a essa vista. Sem acesso ou sem sessão iniciada, a app envia-o para o fluxo de entrar na conta. O workspace principal de modelação continua na página inicial da aplicação.
 
 ---
 
@@ -5447,19 +5466,19 @@ No PIMO PRO pode criar conta, entrar, recuperar a palavra-passe e gerir o perfil
 ## Fluxos
 
 1. **Registo** → verificação de email → **Entrar na conta**
-2. **Entrar na conta** → painel e projetos
+2. **Entrar na conta** → regresso ao ecrã onde estava (quando possível) → painel e projetos
 3. **Recuperar palavra-passe** → email de reset
 4. **Perfil** → dados da conta
 5. **Terminar sessão** → a app envia-o para o ecrã de login
-6. **Se a sessão expirar** → é pedido para entrar de novo
+6. **Se a sessão expirar** → encaminhamento natural para o login, como numa navegação normal
 
 ## Entrar na conta
 
-Use o ecrã de login com o email e a palavra-passe da conta. Depois de entrar, pode abrir o painel, **Meus Projetos** e o perfil.
+Use o ecrã de login com o email e a palavra-passe da conta. Depois de entrar, ou quando a sessão é renovada, o PIMO PRO tenta levá-lo de volta ao ecrã onde estava. A partir daí pode abrir o painel, **Meus Projetos** e o perfil.
 
 ## Se a sessão expirar
 
-Se a sessão já não for válida ao reabrir a aplicação, o PIMO PRO pede para **entrar de novo**. Não fica numa sessão antiga a meio.
+Se a sessão deixar de ser válida (por exemplo ao reabrir a aplicação ou a meio do trabalho), o PIMO PRO encaminha-o para o login de forma natural, como numa navegação normal. Não fica numa sessão antiga a meio: entra de novo e, sempre que possível, regressa ao sítio onde estava.
 
 ## Terminar sessão
 
@@ -5650,7 +5669,17 @@ No fluxo real da app, cada caixa pode ter material de estrutura e material de fr
  
     Aplicação por módulo  Define material da carcaça em cada caixa selecionada.  
     Frentes independentes  Portas e gavetas podem usar materiais próprios via menu de contexto.  
-    Cálculo de custo integrado  Resumo financeiro acompanha área e custo por m² dos materiais ativos.
+    Cálculo de custo integrado  Resumo financeiro acompanha área e custo por m² dos materiais ativos.  
+    Presets só com o 3D pronto  No painel Materiais (lado direito), a escolha de um preset fica indisponível até o visualizador 3D estar pronto, para evitar cliques sem efeito.  
+ 
+
+ 
+
+ 
+
+## Painel Materiais (lado direito)
+
+No painel Materiais do lado direito pode escolher presets de material. Essa escolha fica **indisponível** até o visualizador 3D estar pronto. Quando a vista 3D carrega, o controlo fica utilizável e o preset aplica-se normalmente.
 
 ---
 
@@ -6097,7 +6126,7 @@ Faça o cálculo 3D só depois de fechar a configuração do projeto, para evita
 
 ## Materiais
 URL: https://pimo.info/pt-pt/guias-utilizador/materiais/
-Materiais.
+Como alterar materiais da carcaça e frentes no PIMO PRO, incluindo presets no painel Materiais.
 
 # Alterar materiais da carcaça e frentes
 
@@ -6108,8 +6137,8 @@ Cada caixa pode combinar material estrutural e material de frente (portas/gaveta
 1. **Selecionar caixa**  
    Clique no módulo no viewport (ou no painel lateral).
 
-2. **Abrir Modelos**  
-   No painel lateral, abra o separador de modelos/material.
+2. **Abrir Modelos ou o painel Materiais**  
+   No painel lateral, abra o separador de modelos/material; no lado direito use o painel Materiais para presets.
 
 3. **Escolher material da carcaça**  
    Selecione o material da estrutura (ex.: MDF Branco 19, Carvalho, Nogueira).
@@ -6120,10 +6149,15 @@ Cada caixa pode combinar material estrutural e material de frente (portas/gaveta
 5. **Confirmar custo**  
    O resumo financeiro atualiza com base na área e no custo por m².
 
+## Presets no painel Materiais
+
+A escolha de um preset de material no painel Materiais (lado direito) fica **indisponível** até o visualizador 3D estar pronto. Assim evita cliques sem efeito enquanto a vista ainda está a carregar. Quando o 3D fica pronto, o preset volta a estar disponível.
+
 ## Boas práticas
 
 - Defina materiais antes de gerar o design 3D.
-- A biblioteca de materiais é gerida no painel de administração.
+- Espere o visualizador 3D ficar pronto antes de aplicar presets no painel da direita.
+- A biblioteca de materiais está disponível na aplicação PIMO PRO.
 
 ---
 
@@ -6649,15 +6683,19 @@ FAQ do PIMO PRO: conta, erros inesperados, módulos, nesting, exportação e PIM
 
 ## Apareceu «Algo correu mal» na aplicação?
 
-Se algo correr mal de forma inesperada, o PIMO PRO deixa de mostrar um ecrã em branco. Surge a mensagem **Algo correu mal** e o botão **Voltar ao início**, que o leva de novo ao arranque da aplicação. Pode continuar a trabalhar a partir daí; se o problema se repetir, contacte o suporte.
+Se algo correr mal de forma inesperada, o PIMO PRO deixa de mostrar um ecrã em branco. Surge a mensagem **Algo correu mal** e o botão **Voltar ao início**, que o leva de novo ao arranque da aplicação. No espaço de design 3D, o cabeçalho mantém-se e o resto da aplicação continua disponível: pode voltar ao início sem perder o acesso às outras zonas. Se o problema se repetir, contacte o suporte. Detalhe em [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/).
+
+## O visualizador 3D não carrega?
+
+Se o visualizador 3D não conseguir carregar, aparece um aviso claro no espaço de trabalho. Pode tentar atualizar a página ou voltar ao início. Detalhe em [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/).
 
 ## Como entro e saio da conta?
 
-Use **Entrar na conta** no ecrã de login. Para sair, escolha **Terminar sessão**: a app envia-o de novo para o login. Detalhe em [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
+Use **Entrar na conta** no ecrã de login. Depois de entrar (ou quando a sessão é renovada), a app tenta levá-lo de volta ao ecrã onde estava. Para sair, escolha **Terminar sessão**: a app envia-o de novo para o login. Detalhe em [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
 
 ## O que acontece se a sessão expirar?
 
-Se a sessão expirar, é pedido para entrar de novo. Detalhe em [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
+Se a sessão expirar, o PIMO PRO encaminha-o para o login de forma natural, como numa navegação normal. Depois de entrar de novo, tenta regressar ao ecrã onde estava. Detalhe em [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
 
 ## Posso misturar portas e gavetas no mesmo módulo?
 

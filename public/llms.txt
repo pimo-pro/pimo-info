@@ -77,8 +77,8 @@ Locale: pt-PT
 - Sessão / terminar sessão: Estado da conta depois de entrar. Ao terminar sessão, a app envia o utilizador para o ecrã de login. Se a sessão expirar, é pedido para entrar de novo.
 
 ## Features
-- Configurador 3D [implemented] https://pimo.info/pt-pt/funcionalidades/configurador-3d/, Modelação paramétrica de módulos no workspace 3D.
-- Materiais [implemented] https://pimo.info/pt-pt/funcionalidades/materiais/, Materiais de carcaça e frentes, com espessura e custo.
+- Configurador 3D [implemented] https://pimo.info/pt-pt/funcionalidades/configurador-3d/, Modelação paramétrica no workspace 3D, com aviso se o visualizador não carregar e recuperação se houver erro inesperado.
+- Materiais [implemented] https://pimo.info/pt-pt/funcionalidades/materiais/, Materiais de carcaça e frentes, com espessura e custo. Presets no painel direito só quando o 3D está pronto.
 - Portas e Gavetas [implemented] https://pimo.info/pt-pt/funcionalidades/portas-e-gavetas/, Frentes com regras industriais. Portas e gavetas são mutuamente exclusivas na mesma caixa.
 - Lista de Corte [implemented] https://pimo.info/pt-pt/funcionalidades/lista-de-corte/, Cutlist em mm gerada a partir do design 3D.
 - Nesting Fast/PRO [implemented] https://pimo.info/pt-pt/funcionalidades/nesting-fast-pro/, Layout de corte em chapa: Fast (estimativa) e PRO (otimização).
@@ -95,12 +95,12 @@ Locale: pt-PT
 - PIMO INDUSTRIAL [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/, Camada industrial completa da app: hub de estações, operações (CNC, nesting, drill, orlar, montagem, embalagem), operador/supervisor e integrações de fabrico.
 - PIMO DRILL [em-desenvolvimento] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/, Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.
 
-## UI buttons (296)
+## UI buttons (297)
 - Header: 14 controlos
 - Navegação lateral: 7 controlos
 - Barra superior unificada: 35 controlos
 - Ferramentas 3D: 4 controlos
-- Painéis laterais: 43 controlos
+- Painéis laterais: 44 controlos
 - Menu de contexto: 91 controlos
 - Exportação / Salvar e Gerar: 20 controlos
 - Barra inferior: 22 controlos
