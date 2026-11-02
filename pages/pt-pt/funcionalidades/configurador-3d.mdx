@@ -6,14 +6,18 @@ tags:
   - funcionalidade
 related:
   - /pt-pt/funcionalidades/
+  - /pt-pt/guias-utilizador/criar-caixa/
+  - /pt-pt/referencia/botoes/
+  - /pt-pt/primeiros-passos/
   - /pt-pt/glossario/
-lastUpdated: 2026-10-14
+lastUpdated: 2026-11-02
 status: implemented
 ---
 
 import { ServiceHero, InfoAccordion } from "../../../components/PimoVisualSections"
 import { AnimatedHotspotImage, DemoLoopVideo, LazyYouTubeEmbed } from "../../../components/PimoMediaComponents"
 import { FeatureButtons } from "../../../components/ButtonsCatalog"
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
 
 <ServiceHero
   title="Configurador 3D"
@@ -74,3 +78,12 @@ Se acontecer um erro inesperado no workspace, o resto da aplicação continua di
 A rota `/projects/viewer` abre o showroom de projetos quando a sua conta tem acesso a essa vista. Sem acesso ou sem sessão iniciada, a app envia-o para o fluxo de entrar na conta. O workspace principal de modelação continua na página inicial da aplicação.
 
 <FeatureButtons featureId="configurador-3d" />
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/guias-utilizador/criar-caixa/", label: "Guia: criar caixa" },
+    { href: "/pt-pt/guias-utilizador/mover-e-posicionar/", label: "Mover e posicionar" },
+    { href: "/pt-pt/primeiros-passos/", label: "Primeiros passos" },
+    { href: "/pt-pt/referencia/botoes/", label: "Catálogo de botões" },
+  ]}
+/>

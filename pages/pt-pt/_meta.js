@@ -2,7 +2,8 @@ export default {
   index: {
     title: "Início",
     theme: {
-      sidebar: true,
+      layout: "full",
+      sidebar: false,
       toc: false,
     },
   },
@@ -16,9 +17,30 @@ export default {
   glossario: "Glossário",
   blog: "Blog",
   "perguntas-frequentes": "Perguntas frequentes",
-  contacto: "Contacto",
-  parceiros: "Parceiro PIMO",
-  fabricantes: "Fabricante Parceiro PIMO",
+  contacto: {
+    title: "Contacto",
+    theme: {
+      layout: "full",
+      sidebar: false,
+      toc: false,
+    },
+  },
+  parceiros: {
+    title: "Parceiro PIMO",
+    theme: {
+      layout: "full",
+      sidebar: false,
+      toc: false,
+    },
+  },
+  fabricantes: {
+    title: "Fabricante Parceiro PIMO",
+    theme: {
+      layout: "full",
+      sidebar: false,
+      toc: false,
+    },
+  },
   precos: {
     title: "Preços e subscrições",
     theme: {

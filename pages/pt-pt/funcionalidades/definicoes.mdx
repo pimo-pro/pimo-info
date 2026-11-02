@@ -1,6 +1,6 @@
 ---
 title: Definições
-description: Preferências pessoais e do projeto no PIMO PRO (rota /definicoes).
+description: Preferências pessoais e do projeto no PIMO PRO (rota /definicoes), tema e idioma.
 category: funcionalidade
 tags:
   - definicoes
@@ -10,12 +10,16 @@ related:
   - /pt-pt/funcionalidades/sala-e-ambiente/
   - /pt-pt/guias-utilizador/gerir-projetos/
   - /pt-pt/primeiros-passos/
-lastUpdated: 2026-10-12
+  - /pt-pt/referencia/botoes/
+lastUpdated: 2026-11-02
 ---
+
+import { FeatureButtons } from "../../../components/ButtonsCatalog"
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
 
 # Definições
 
-Em **Definições** (`/definicoes`) ajusta preferências da sua conta e opções ligadas ao projeto em que está a trabalhar. É preciso ter sessão iniciada.
+Em **Definições** (`/definicoes`) ajusta preferências da sua conta e opções ligadas ao projeto em que está a trabalhar. É preciso ter sessão iniciada. No cabeçalho pode também alternar o tema claro/escuro e ver o idioma atual (PT).
 
 ## O que pode configurar
 
@@ -24,6 +28,7 @@ Em **Definições** (`/definicoes`) ajusta preferências da sua conta e opções
 | Conta / perfil | `/definicoes`, perfil | Preferências pessoais |
 | Projeto | contexto do projeto | Unidades, materiais por defeito |
 | Sala e ambiente | definições de sala na app | Ambiente 3D (paredes, luz) |
+| Cabeçalho | ícone de tema / idioma | Tema claro/escuro e idioma PT |
 
 O detalhe de cada opção aparece na própria interface do PIMO PRO.
 
@@ -31,8 +36,13 @@ O detalhe de cada opção aparece na própria interface do PIMO PRO.
 
 **Disponível** na aplicação para utilizadores com sessão iniciada.
 
-## Relacionado
+<FeatureButtons featureId="definicoes" />
 
-- [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/)
-- [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/)
-- [Sala e ambiente](/pt-pt/funcionalidades/sala-e-ambiente/)
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/funcionalidades/conta-e-acesso/", label: "Conta e acesso" },
+    { href: "/pt-pt/funcionalidades/sala-e-ambiente/", label: "Sala e ambiente" },
+    { href: "/pt-pt/guias-utilizador/gerir-projetos/", label: "Gerir projetos" },
+    { href: "/pt-pt/referencia/botoes/#area-header", label: "Botões do cabeçalho" },
+  ]}
+/>

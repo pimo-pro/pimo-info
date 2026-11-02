@@ -1,7 +1,7 @@
 export default {
   index: {
     title: "Visão geral",
-    theme: { toc: false },
+    theme: { toc: true },
   },
   "configurador-3d": "Configurador 3D",
   materiais: "Materiais",

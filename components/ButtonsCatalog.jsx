@@ -2,12 +2,30 @@ import { useMemo, useState } from "react"
 import { buttons, buttonAreas } from "../data/buttons"
 import { features } from "../data/features"
 
+const ICON_ALIASES = {
+  finance: "finance",
+  industrial: "industrial",
+  operations: "operations",
+  "⌨": "keyboard",
+  "🌐": "globe",
+}
+
+function resolveIconName(button) {
+  if (button.iconName) return button.iconName
+  if (button.icon && ICON_ALIASES[button.icon]) return ICON_ALIASES[button.icon]
+  if (typeof button.icon === "string" && /^[a-zA-Z0-9_-]+$/.test(button.icon)) {
+    return button.icon
+  }
+  return null
+}
+
 function IconThumb({ button }) {
-  if (button.iconName) {
+  const name = resolveIconName(button)
+  if (name) {
     return (
       <img
         className="pimo-btn-icon"
-        src={`/icons/criativo/${button.iconName}.svg`}
+        src={`/icons/criativo/${name}.svg`}
         alt=""
         width={24}
         height={24}
@@ -15,10 +33,16 @@ function IconThumb({ button }) {
       />
     )
   }
-  if (button.icon) {
-    return <span className="pimo-btn-icon-fallback" aria-hidden>{button.icon}</span>
-  }
-  return <span className="pimo-btn-icon-fallback" aria-hidden>, </span>
+  return (
+    <img
+      className="pimo-btn-icon"
+      src="/icons/criativo/info.svg"
+      alt=""
+      width={24}
+      height={24}
+      loading="lazy"
+    />
+  )
 }
 
 function featureName(id) {
@@ -172,12 +196,16 @@ export function ButtonsCatalog({ featureFilter = "" } = {}) {
 export function FeatureButtons({ featureId }) {
   const list = buttons.filter((b) => (b.featureIds || []).includes(featureId))
   if (!list.length) return null
+  const primaryArea = list[0]?.area
+  const catalogHref = primaryArea
+    ? `/pt-pt/referencia/botoes/#area-${primaryArea}`
+    : "/pt-pt/referencia/botoes/"
   return (
     <section className="pimo-feature-buttons">
       <h2>Botões e controlos relacionados</h2>
       <p>
         {list.length} controlos no catálogo. Ver todos em{" "}
-        <a href={`/pt-pt/referencia/botoes/#area-exportacao`}>Referência de botões</a>{" "}
+        <a href={catalogHref}>Referência de botões</a>{" "}
         (filtrar por funcionalidade).
       </p>
       <ul>

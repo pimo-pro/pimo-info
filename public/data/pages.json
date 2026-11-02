@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-29T22:02:27.591Z",
+  "generatedAt": "2026-11-02T19:53:33.976Z",
   "items": [
     {
       "path": "/",
       "file": "pages/index.mdx",
       "title": "Centro visual PIMO Info",
-      "description": "Centro visual de ajuda e base de conhecimento do PIMO PRO.",
+      "description": "Centro de ajuda e base de conhecimento do PIMO PRO: fluxo visual, guias, funcionalidades e exportação industrial.",
       "author": "",
       "category": "hub",
       "tags": [
@@ -16,9 +16,10 @@
       "related": [
         "/pt-pt/",
         "/pt-pt/primeiros-passos/",
+        "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -119,14 +120,19 @@
       "path": "/pt-pt/",
       "file": "pages/pt-pt/index.mdx",
       "title": "Centro de ajuda PIMO PRO",
-      "description": "Centro de ajuda PIMO PRO.",
+      "description": "Centro de ajuda do PIMO PRO em português europeu: primeiros passos, funcionalidades, guias, botões e FAQ.",
       "author": "",
       "category": "hub",
       "tags": [
         "ajuda"
       ],
-      "related": [],
-      "lastUpdated": "2026-10-01",
+      "related": [
+        "/pt-pt/primeiros-passos/",
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/guias-utilizador/",
+        "/pt-pt/referencia/botoes/"
+      ],
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -613,7 +619,7 @@
       "path": "/pt-pt/como-funciona/",
       "file": "pages/pt-pt/como-funciona.mdx",
       "title": "Como funciona",
-      "description": "Arquitetura e fluxo do PIMO PRO: projeto → módulos/caixas → peças → materiais → lista de corte → nesting → exportações → orçamento → PIMO-TRAK.",
+      "description": "Fluxo técnico do PIMO PRO: projeto, módulos, materiais, lista de corte, nesting, exportações, orçamento e PIMO-TRAK.",
       "author": "",
       "category": "arquitetura",
       "tags": [
@@ -622,12 +628,13 @@
         "kb"
       ],
       "related": [
+        "/pt-pt/primeiros-passos/",
         "/pt-pt/sistemas-pimo/",
         "/pt-pt/referencia/botoes/",
         "/pt-pt/funcionalidades/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -871,18 +878,20 @@
     {
       "path": "/pt-pt/funcionalidades/",
       "file": "pages/pt-pt/funcionalidades/index.mdx",
-      "title": "Funcionalidades PIMO",
-      "description": "Páginas de apresentação visual das funcionalidades principais do PIMO PRO.",
+      "title": "Funcionalidades PIMO PRO",
+      "description": "Serviços do PIMO PRO por área: design 3D, produção, conta, industrial e apresentação. Cada página liga ao guia e aos botões.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
         "funcionalidade"
       ],
       "related": [
-        "/pt-pt/funcionalidades/",
+        "/pt-pt/primeiros-passos/",
+        "/pt-pt/guias-utilizador/",
+        "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -890,7 +899,7 @@
       "path": "/pt-pt/funcionalidades/analise-projetos/",
       "file": "pages/pt-pt/funcionalidades/analise-projetos.mdx",
       "title": "Análise de projetos",
-      "description": "Análise documental em PIMO PROJETOS (/PROJETOS/:project/analise).",
+      "description": "Análise documental em PIMO PROJETOS (rota de análise do projeto).",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -918,9 +927,12 @@
       ],
       "related": [
         "/pt-pt/funcionalidades/",
+        "/pt-pt/guias-utilizador/criar-caixa/",
+        "/pt-pt/referencia/botoes/",
+        "/pt-pt/primeiros-passos/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-14",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -928,7 +940,7 @@
       "path": "/pt-pt/funcionalidades/conta-e-acesso/",
       "file": "pages/pt-pt/funcionalidades/conta-e-acesso.mdx",
       "title": "Conta e acesso",
-      "description": "Entrar na conta, registo, recuperação de palavra-passe, perfil e terminar sessão no PIMO PRO.",
+      "description": "Entrar na conta, registo, recuperação de palavra-passe, perfil e Meus Projetos no PIMO PRO.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -939,9 +951,10 @@
       "related": [
         "/pt-pt/funcionalidades/definicoes/",
         "/pt-pt/guias-utilizador/gerir-projetos/",
-        "/pt-pt/primeiros-passos/"
+        "/pt-pt/primeiros-passos/",
+        "/pt-pt/referencia/botoes/"
       ],
-      "lastUpdated": "2026-10-14",
+      "lastUpdated": "2026-11-02",
       "status": "",
       "draft": false
     },
@@ -949,7 +962,7 @@
       "path": "/pt-pt/funcionalidades/definicoes/",
       "file": "pages/pt-pt/funcionalidades/definicoes.mdx",
       "title": "Definições",
-      "description": "Preferências pessoais e do projeto no PIMO PRO (rota /definicoes).",
+      "description": "Preferências pessoais e do projeto no PIMO PRO (rota /definicoes), tema e idioma.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -960,9 +973,10 @@
         "/pt-pt/funcionalidades/conta-e-acesso/",
         "/pt-pt/funcionalidades/sala-e-ambiente/",
         "/pt-pt/guias-utilizador/gerir-projetos/",
-        "/pt-pt/primeiros-passos/"
+        "/pt-pt/primeiros-passos/",
+        "/pt-pt/referencia/botoes/"
       ],
-      "lastUpdated": "2026-10-12",
+      "lastUpdated": "2026-11-02",
       "status": "",
       "draft": false
     },
@@ -1029,7 +1043,7 @@
       "path": "/pt-pt/funcionalidades/ferragens/",
       "file": "pages/pt-pt/funcionalidades/ferragens.mdx",
       "title": "Ferragens",
-      "description": "Ferragens no PIMO PRO, dobradiças, corrediças, conectores e listagens de exportação.",
+      "description": "Ferragens no PIMO PRO: dobradiças, corrediças, conectores e listagens PDF/XLSX de exportação.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -1040,9 +1054,11 @@
       "related": [
         "/pt-pt/funcionalidades/materiais/",
         "/pt-pt/funcionalidades/portas-e-gavetas/",
-        "/pt-pt/guias-utilizador/exportacao/"
+        "/pt-pt/guias-utilizador/exportacao/",
+        "/pt-pt/guias-utilizador/portas-e-gavetas/",
+        "/pt-pt/referencia/botoes/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-11-02",
       "status": "",
       "draft": false
     },
@@ -1221,7 +1237,7 @@
       "path": "/pt-pt/funcionalidades/relatorio-final/",
       "file": "pages/pt-pt/funcionalidades/relatorio-final.mdx",
       "title": "Relatório final",
-      "description": "Relatório final consolidado do projeto no PIMO PRO (rota /relatorio-final/:project).",
+      "description": "Relatório final consolidado do projeto no PIMO PRO.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -1305,17 +1321,20 @@
       "path": "/pt-pt/guias-utilizador/",
       "file": "pages/pt-pt/guias-utilizador/index.mdx",
       "title": "Guias de utilizador",
-      "description": "Guias de utilizador.",
+      "description": "Guias práticos do PIMO PRO por tarefa: criar caixa, materiais, cutlist, nesting, exportação, TRAK e gerir projetos.",
       "author": "",
       "category": "guia",
       "tags": [
         "guia"
       ],
       "related": [
-        "/pt-pt/guias-utilizador/",
+        "/pt-pt/primeiros-passos/",
+        "/pt-pt/funcionalidades/",
+        "/pt-pt/referencia/botoes/",
+        "/pt-pt/perguntas-frequentes/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -1341,17 +1360,20 @@
       "path": "/pt-pt/guias-utilizador/criar-caixa/",
       "file": "pages/pt-pt/guias-utilizador/criar-caixa.mdx",
       "title": "Criar Caixa",
-      "description": "Criar Caixa.",
+      "description": "Criar e configurar módulos no PIMO PRO: painel Móveis, opções e Gerar Design 3D.",
       "author": "",
       "category": "guia",
       "tags": [
         "guia"
       ],
       "related": [
-        "/pt-pt/guias-utilizador/",
-        "/pt-pt/glossario/"
+        "/pt-pt/funcionalidades/configurador-3d/",
+        "/pt-pt/guias-utilizador/mover-e-posicionar/",
+        "/pt-pt/guias-utilizador/materiais/",
+        "/pt-pt/referencia/botoes/",
+        "/pt-pt/primeiros-passos/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -1371,9 +1393,11 @@
       "related": [
         "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/",
         "/pt-pt/funcionalidades/pdf-tecnico/",
+        "/pt-pt/funcionalidades/ferragens/",
+        "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-12",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -1392,9 +1416,10 @@
         "/pt-pt/guias-utilizador/",
         "/pt-pt/funcionalidades/conta-e-acesso/",
         "/pt-pt/funcionalidades/configurador-3d/",
+        "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-12",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -1402,17 +1427,19 @@
       "path": "/pt-pt/guias-utilizador/lista-de-corte/",
       "file": "pages/pt-pt/guias-utilizador/lista-de-corte.mdx",
       "title": "Lista de Corte",
-      "description": "Lista de Corte.",
+      "description": "Gerar e ler a lista de corte (cutlist) do PIMO PRO em milímetros, com painéis, frentes e ferragens.",
       "author": "",
       "category": "guia",
       "tags": [
         "guia"
       ],
       "related": [
-        "/pt-pt/guias-utilizador/",
-        "/pt-pt/glossario/"
+        "/pt-pt/funcionalidades/lista-de-corte/",
+        "/pt-pt/funcionalidades/ferragens/",
+        "/pt-pt/guias-utilizador/nesting-layout-corte/",
+        "/pt-pt/referencia/botoes/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -1429,9 +1456,11 @@
       "related": [
         "/pt-pt/guias-utilizador/",
         "/pt-pt/funcionalidades/materiais/",
+        "/pt-pt/funcionalidades/portas-e-gavetas/",
+        "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-14",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -1475,17 +1504,19 @@
       "path": "/pt-pt/guias-utilizador/nesting-layout-corte/",
       "file": "pages/pt-pt/guias-utilizador/nesting-layout-corte.mdx",
       "title": "Nesting / Layout de Corte",
-      "description": "Nesting / Layout de Corte.",
+      "description": "Nesting Fast e PRO no PIMO PRO: estimar chapas, reduzir desperdício e validar orientação de furação.",
       "author": "",
       "category": "guia",
       "tags": [
         "guia"
       ],
       "related": [
-        "/pt-pt/guias-utilizador/",
-        "/pt-pt/glossario/"
+        "/pt-pt/funcionalidades/nesting-fast-pro/",
+        "/pt-pt/guias-utilizador/lista-de-corte/",
+        "/pt-pt/guias-utilizador/exportacao/",
+        "/pt-pt/referencia/botoes/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -1755,9 +1786,10 @@
       "related": [
         "/pt-pt/primeiros-passos/",
         "/pt-pt/guias-utilizador/exportacao/",
+        "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-14",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -1787,7 +1819,7 @@
       "path": "/pt-pt/primeiros-passos/",
       "file": "pages/pt-pt/primeiros-passos.mdx",
       "title": "Primeiros passos",
-      "description": "Guia rápido do PIMO PRO: da primeira caixa ao pacote de produção (cutlist, nesting, TCN/Drill XML, ZIP).",
+      "description": "Do registo ao projeto final no PIMO PRO: conta, caixas, materiais, nesting, exportação e Meus Projetos.",
       "author": "",
       "category": "hub",
       "tags": [
@@ -1795,11 +1827,13 @@
         "onboarding"
       ],
       "related": [
+        "/pt-pt/funcionalidades/conta-e-acesso/",
         "/pt-pt/guias-utilizador/",
         "/pt-pt/funcionalidades/",
-        "/pt-pt/glossario/"
+        "/pt-pt/referencia/botoes/",
+        "/pt-pt/perguntas-frequentes/"
       ],
-      "lastUpdated": "2026-10-12",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -1819,7 +1853,7 @@
         "/pt-pt/como-funciona/",
         "/pt-pt/funcionalidades/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -1827,7 +1861,7 @@
       "path": "/pt-pt/referencia/botoes/",
       "file": "pages/pt-pt/referencia/botoes.mdx",
       "title": "Botões e controlos",
-      "description": "Catálogo de botões e ações da interface do PIMO PRO: ícone, rótulo, localização, ação, efeitos e atalho.",
+      "description": "Catálogo completo de botões do PIMO PRO: nome, localização, ação, efeitos, atalho e ligação às funcionalidades.",
       "author": "",
       "category": "referencia",
       "tags": [
@@ -1839,10 +1873,11 @@
       "related": [
         "/pt-pt/referencia/",
         "/pt-pt/como-funciona/",
+        "/pt-pt/primeiros-passos/",
         "/pt-pt/funcionalidades/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-14",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },

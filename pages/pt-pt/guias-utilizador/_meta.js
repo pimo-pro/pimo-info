@@ -2,7 +2,7 @@ export default {
   index: {
     title: "Visão geral",
     theme: {
-      toc: false,
+      toc: true,
     },
   },
   "criar-caixa": "Criar Caixa",

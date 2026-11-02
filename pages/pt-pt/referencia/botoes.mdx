@@ -1,6 +1,6 @@
 ---
 title: "Botões e controlos"
-description: "Catálogo de botões e ações da interface do PIMO PRO: ícone, rótulo, localização, ação, efeitos e atalho."
+description: "Catálogo completo de botões do PIMO PRO: nome, localização, ação, efeitos, atalho e ligação às funcionalidades."
 category: referencia
 tags:
   - referencia
@@ -10,17 +10,29 @@ tags:
 related:
   - /pt-pt/referencia/
   - /pt-pt/como-funciona/
+  - /pt-pt/primeiros-passos/
   - /pt-pt/funcionalidades/
   - /pt-pt/glossario/
-lastUpdated: 2026-10-14
+lastUpdated: 2026-11-02
 status: implemented
 ---
 
 import { ButtonsCatalog } from "../../../components/ButtonsCatalog"
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
 
 # Botões e controlos
 
 Referência de interface do PIMO PRO. Cada entrada inclui o ícone real (SVG do `iconRegistry` da app), o rótulo exacto, onde aparece, o que faz, efeitos/dependências, atalho (se existir) e o ficheiro-fonte.
+
+Use este catálogo quando quiser saber o nome exacto de um controlo visto na app. Para o fluxo completo (registo até exportação), comece por [Primeiros passos](/pt-pt/primeiros-passos/). Nas páginas de [funcionalidades](/pt-pt/funcionalidades/) encontra só os botões ligados a essa área.
+
+## Áreas principais
+
+- **Header**: login, Meus Projetos, definições, tema, troca entre áreas PIMO
+- **Navegação lateral**: Móveis, Modelos, Acessórios, Calculadora, Info
+- **Barra inferior**: cutlist, nesting, exportações e ferramentas técnicas
+- **Exportação**: PDF, cutlist, etiquetas, TCN, Drill XML, ZIP
+- **Menu de contexto**: ações sobre caixas, frentes e sala (botão direito)
 
 <ButtonsCatalog />
 
@@ -28,3 +40,13 @@ Referência de interface do PIMO PRO. Cada entrada inclui o ícone real (SVG do 
 
 - [`/data/buttons.json`](/data/buttons.json)
 - [`/llms-full.txt`](/llms-full.txt)
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/primeiros-passos/", label: "Primeiros passos" },
+    { href: "/pt-pt/como-funciona/", label: "Como funciona" },
+    { href: "/pt-pt/funcionalidades/", label: "Funcionalidades" },
+    { href: "/pt-pt/guias-utilizador/", label: "Guias de utilizador" },
+    { href: "/pt-pt/perguntas-frequentes/", label: "Perguntas frequentes" },
+  ]}
+/>

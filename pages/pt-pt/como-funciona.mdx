@@ -1,25 +1,35 @@
 ---
 title: "Como funciona"
-description: "Arquitetura e fluxo do PIMO PRO: projeto → módulos/caixas → peças → materiais → lista de corte → nesting → exportações → orçamento → PIMO-TRAK."
+description: "Fluxo técnico do PIMO PRO: projeto, módulos, materiais, lista de corte, nesting, exportações, orçamento e PIMO-TRAK."
 category: arquitetura
 tags:
   - arquitetura
   - fluxo
   - kb
 related:
+  - /pt-pt/primeiros-passos/
   - /pt-pt/sistemas-pimo/
   - /pt-pt/referencia/botoes/
   - /pt-pt/funcionalidades/
   - /pt-pt/glossario/
-lastUpdated: 2026-10-01
+lastUpdated: 2026-11-02
 status: implemented
 ---
 
 import { ModuleFlowSections } from "../../components/ModuleFlowSections"
+import { RelatedLinks } from "../../components/RelatedLinks.jsx"
 
 # Como funciona
 
-Fluxo ponta a ponta do PIMO PRO: projeto, cutlist, nesting, exportações e PIMO-TRAK. Cada módulo resume o que entra, o que sai e como se liga ao resto. Os sistemas de produto (TRAK, PROJETOS, NESTING, INDUSTRIAL, DRILL) estão em [Sistemas PIMO](/pt-pt/sistemas-pimo/).
+Fluxo ponta a ponta do PIMO PRO: projeto, cutlist, nesting, exportações e PIMO-TRAK. Cada módulo resume o que entra, o que sai e como se liga ao resto.
+
+Para um caminho prático (registo, caixas, materiais, exportar e guardar), comece por [Primeiros passos](/pt-pt/primeiros-passos/). Os sistemas de produto (TRAK, PROJETOS, NESTING, INDUSTRIAL, DRILL) estão em [Sistemas PIMO](/pt-pt/sistemas-pimo/).
+
+## Antes de começar
+
+1. Conta e sessão: [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
+2. Preferências: [Definições](/pt-pt/funcionalidades/definicoes/).
+3. Guardar e reabrir: [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
 
 <ModuleFlowSections />
 
@@ -28,3 +38,12 @@ Fluxo ponta a ponta do PIMO PRO: projeto, cutlist, nesting, exportações e PIMO
 - [`/data/modules.json`](/data/modules.json)
 - [`/data/buttons.json`](/data/buttons.json)
 - [`/llms-full.txt`](/llms-full.txt)
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/primeiros-passos/", label: "Primeiros passos" },
+    { href: "/pt-pt/referencia/botoes/", label: "Botões e controlos" },
+    { href: "/pt-pt/funcionalidades/", label: "Funcionalidades" },
+    { href: "/pt-pt/glossario/", label: "Glossário" },
+  ]}
+/>

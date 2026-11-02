@@ -87,6 +87,12 @@ Locale: pt-PT
 - PIMO-TRAK [mixed] https://pimo.info/pt-pt/funcionalidades/pimo-trak/, Etiquetas QR (implementado) e rastreio industrial por peça (camada industrial).
 - Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/, Tarifas e regras de custo (Orçamentos P3.9).
 - Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/, Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.
+- Conta e acesso [implemented] https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/, Registo, entrar na conta, sessão e Meus Projetos no PIMO PRO.
+- Definições [implemented] https://pimo.info/pt-pt/funcionalidades/definicoes/, Preferências do utilizador e do projeto no PIMO PRO.
+- Ferragens [implemented] https://pimo.info/pt-pt/funcionalidades/ferragens/, Dobradiças, corrediças e conectores gerados a partir da configuração dos módulos.
+- Sala e ambiente [implemented] https://pimo.info/pt-pt/funcionalidades/sala-e-ambiente/, Ambiente 3D de sala (paredes, luz) para contextualizar o mobiliário.
+- Modo foto [implemented] https://pimo.info/pt-pt/funcionalidades/modo-foto/, Capturas e apresentação visual do projeto no viewport 3D.
+- Remates [implemented] https://pimo.info/pt-pt/funcionalidades/remates/, Acabamentos e remates associados aos módulos do projeto.
 
 ## PIMO systems
 - PIMO TRAK [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-trak/, Sistema de ordens de trabalho e rastreamento da produção na fábrica, incluindo etiquetas QR por peça (UEE v5).
@@ -161,7 +167,7 @@ Locale: pt-PT
 - pimo.pro: https://pimo.info/pt-pt/ecossistema/pimo-pro/
 - pimo.pt: https://pimo.info/pt-pt/ecossistema/pimo-pt/
 - Fabricante Parceiro PIMO: https://pimo.info/pt-pt/fabricantes/
-- Funcionalidades PIMO: https://pimo.info/pt-pt/funcionalidades/
+- Funcionalidades PIMO PRO: https://pimo.info/pt-pt/funcionalidades/
 - Análise de projetos: https://pimo.info/pt-pt/funcionalidades/analise-projetos/
 - Configurador 3D: https://pimo.info/pt-pt/funcionalidades/configurador-3d/
 - Conta e acesso: https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/

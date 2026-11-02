@@ -332,7 +332,7 @@ function add(entry) {
     id: "header-lang",
     label: "Idioma atual: PT",
     iconName: null,
-    icon: "🌐",
+    iconName: "globe",
     action: "Controlo de idioma (atualmente fixo em PT; troca marcada como @PIMO-SOON).",
   },
   {
@@ -550,7 +550,7 @@ exportBtns.forEach((e) => {
     id: "bottom-financeiro",
     label: "Financeiro",
     iconName: null,
-    icon: "finance",
+    iconName: "finance",
     action: "Abre/fecha o hub Financeiro (orçamento/peças).",
     featureIds: ["orcamentos"],
   },
@@ -558,7 +558,7 @@ exportBtns.forEach((e) => {
     id: "bottom-industriais",
     label: "Industriais",
     iconName: null,
-    icon: "industrial",
+    iconName: "industrial",
     action: "Abre/fecha o hub Industriais (peças, chapas, envio fábrica).",
     featureIds: ["lista-de-corte", "modulo-industrial"],
   },
@@ -566,7 +566,7 @@ exportBtns.forEach((e) => {
     id: "bottom-operacoes",
     label: "Operações",
     iconName: null,
-    icon: "operations",
+    iconName: "operations",
     action: "Abre/fecha o hub Operações industriais.",
     featureIds: ["pimo-trak", "modulo-industrial"],
   },
@@ -887,7 +887,7 @@ add({
 ].forEach((e) => {
   add({
     iconName: null,
-    icon: "⌨",
+    iconName: "keyboard",
     location: "Atalhos de teclado (Workspace)",
     area: "atalhos",
     effects: e.action,
@@ -1169,7 +1169,7 @@ add({
   add({
     id,
     label: `Nesting: ${action}`,
-    icon: "⌨",
+    iconName: "keyboard",
     iconName: null,
     location: "Atalhos Nesting V3",
     area: "atalhos",
@@ -1185,7 +1185,7 @@ add({
 add({
   id: "kbd-history-h",
   label: "Abrir/fechar Histórico",
-  icon: "⌨",
+  iconName: "keyboard",
   iconName: null,
   location: "Atalhos de teclado (barra inferior)",
   area: "atalhos",

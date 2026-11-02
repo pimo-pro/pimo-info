@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T22:02:27.589Z",
+  "generatedAt": "2026-11-02T19:53:33.974Z",
   "items": [
     {
       "id": "configurador-3d",
@@ -117,6 +117,71 @@
       "guidePath": "/pt-pt/documentacao-tecnica/sistema-industrial/",
       "tags": [
         "industrial"
+      ]
+    },
+    {
+      "id": "conta-e-acesso",
+      "name": "Conta e acesso",
+      "summary": "Registo, entrar na conta, sessão e Meus Projetos no PIMO PRO.",
+      "status": "implemented",
+      "canonicalPath": "/pt-pt/funcionalidades/conta-e-acesso/",
+      "guidePath": "/pt-pt/guias-utilizador/gerir-projetos/",
+      "tags": [
+        "conta",
+        "sessao"
+      ]
+    },
+    {
+      "id": "definicoes",
+      "name": "Definições",
+      "summary": "Preferências do utilizador e do projeto no PIMO PRO.",
+      "status": "implemented",
+      "canonicalPath": "/pt-pt/funcionalidades/definicoes/",
+      "tags": [
+        "preferencias"
+      ]
+    },
+    {
+      "id": "ferragens",
+      "name": "Ferragens",
+      "summary": "Dobradiças, corrediças e conectores gerados a partir da configuração dos módulos.",
+      "status": "implemented",
+      "canonicalPath": "/pt-pt/funcionalidades/ferragens/",
+      "guidePath": "/pt-pt/guias-utilizador/portas-e-gavetas/",
+      "tags": [
+        "ferragens",
+        "producao"
+      ]
+    },
+    {
+      "id": "sala-e-ambiente",
+      "name": "Sala e ambiente",
+      "summary": "Ambiente 3D de sala (paredes, luz) para contextualizar o mobiliário.",
+      "status": "implemented",
+      "canonicalPath": "/pt-pt/funcionalidades/sala-e-ambiente/",
+      "tags": [
+        "sala",
+        "ambiente"
+      ]
+    },
+    {
+      "id": "modo-foto",
+      "name": "Modo foto",
+      "summary": "Capturas e apresentação visual do projeto no viewport 3D.",
+      "status": "implemented",
+      "canonicalPath": "/pt-pt/funcionalidades/modo-foto/",
+      "tags": [
+        "apresentacao"
+      ]
+    },
+    {
+      "id": "remates",
+      "name": "Remates",
+      "summary": "Acabamentos e remates associados aos módulos do projeto.",
+      "status": "implemented",
+      "canonicalPath": "/pt-pt/funcionalidades/remates/",
+      "tags": [
+        "acabamentos"
       ]
     }
   ]

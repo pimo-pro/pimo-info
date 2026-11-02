@@ -1,25 +1,40 @@
 ---
 title: "Centro de ajuda PIMO PRO"
-description: "Centro de ajuda PIMO PRO."
+description: "Centro de ajuda do PIMO PRO em português europeu: primeiros passos, funcionalidades, guias, botões e FAQ."
 category: hub
 tags:
   - ajuda
 related:
-lastUpdated: 2026-10-01
+  - /pt-pt/primeiros-passos/
+  - /pt-pt/funcionalidades/
+  - /pt-pt/guias-utilizador/
+  - /pt-pt/referencia/botoes/
+lastUpdated: 2026-11-02
 status: implemented
 ---
 
 import { HoverFeatureCards, InteractiveFeatureTabs, LandingHero, WorkflowDiagramSvg, WorkflowMap } from "../../components/PimoVisualSections"
 import { DemoLoopVideo, LazyYouTubeEmbed } from "../../components/PimoMediaComponents"
 import { EcosystemHomeBlock } from "../../components/PimoEcosystem"
+import { RelatedLinks } from "../../components/RelatedLinks.jsx"
 
 # Centro de ajuda PIMO PRO
 
 <LandingHero />
 
-<p className="pimo-lead">
-  Conteúdo em português europeu para carpintarias, designers e fábricas que usam o PIMO no dia a dia.
-</p>
+<div className="pimo-lead">
+  Conteúdo em português europeu para carpintarias, designers e fábricas que usam o PIMO PRO no dia a dia. A marca «Pimo Casa» cobre a presença de produto; a app de trabalho é o PIMO PRO em pimo.pro.
+</div>
+
+## Começar aqui
+
+<ul className="pimo-nav-list">
+  <li><a href="/pt-pt/primeiros-passos/"><span className="pimo-mark">01</span><span className="label">Primeiros passos</span><span className="hint">Do registo ao ZIP</span></a></li>
+  <li><a href="/pt-pt/guias-utilizador/"><span className="pimo-mark">02</span><span className="label">Guias de utilizador</span><span className="hint">Por tarefa</span></a></li>
+  <li><a href="/pt-pt/funcionalidades/"><span className="pimo-mark">03</span><span className="label">Funcionalidades</span><span className="hint">O que faz cada área</span></a></li>
+  <li><a href="/pt-pt/referencia/botoes/"><span className="pimo-mark">04</span><span className="label">Botões e controlos</span><span className="hint">Nome e localização</span></a></li>
+  <li><a href="/pt-pt/perguntas-frequentes/"><span className="pimo-mark">05</span><span className="label">Perguntas frequentes</span><span className="hint">Dúvidas rápidas</span></a></li>
+</ul>
 
 <WorkflowMap />
 
@@ -27,24 +42,26 @@ import { EcosystemHomeBlock } from "../../components/PimoEcosystem"
 
 <InteractiveFeatureTabs />
 
-## Veja o PIMO em ação
+## Veja o PIMO PRO em ação
 
 <LazyYouTubeEmbed
   videoId="j4dJEYJnFH0"
-  title="PIMO PRO em ação, vídeo oficial do proprietário"
+  title="PIMO PRO em ação, vídeo oficial"
 />
 
-<DemoLoopVideo title="Demo animada do README do pimo-criativo (asset real do projeto)" />
+<DemoLoopVideo title="Demonstração animada do fluxo no PIMO PRO" />
 
 <HoverFeatureCards />
 
 <EcosystemHomeBlock />
 
-## Navegação principal
-
-- [Primeiros passos](/pt-pt/primeiros-passos/)
-- [Funcionalidades](/pt-pt/funcionalidades/)
-- [Ecossistema](/pt-pt/ecossistema/)
-- [Guias de utilizador](/pt-pt/guias-utilizador/)
-- [Perguntas frequentes](/pt-pt/perguntas-frequentes/)
-- [Documentação técnica](/pt-pt/documentacao-tecnica/)
+<RelatedLinks
+  title="Explorar mais"
+  items={[
+    { href: "/pt-pt/como-funciona/", label: "Como funciona" },
+    { href: "/pt-pt/sistemas-pimo/", label: "Sistemas PIMO" },
+    { href: "/pt-pt/ecossistema/", label: "Ecossistema" },
+    { href: "/pt-pt/glossario/", label: "Glossário" },
+    { href: "/pt-pt/precos/", label: "Preços e subscrições" },
+  ]}
+/>

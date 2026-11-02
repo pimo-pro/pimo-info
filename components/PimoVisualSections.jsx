@@ -3,39 +3,45 @@ import { useMemo, useState } from "react"
 const workflowSteps = [
   {
     key: "box",
-    icon: "▣",
+    iconName: "furniture",
     title: "Design da caixa",
     text: "Seleção de módulos, dimensões e posicionamento no workspace 3D.",
+    href: "/pt-pt/guias-utilizador/criar-caixa/",
   },
   {
     key: "materials",
-    icon: "◧",
+    iconName: "material",
     title: "Materiais e frentes",
     text: "Aplicação de material da carcaça e de portas/gavetas.",
+    href: "/pt-pt/guias-utilizador/materiais/",
   },
   {
     key: "cutlist",
-    icon: "≣",
+    iconName: "adminChecklist",
     title: "Lista de corte",
     text: "Geração automática de peças em mm, ferragens e custos.",
+    href: "/pt-pt/guias-utilizador/lista-de-corte/",
   },
   {
     key: "nesting",
-    icon: "▦",
+    iconName: "grid",
     title: "Nesting Fast/PRO",
     text: "Distribuição das peças em chapa com foco em aproveitamento.",
+    href: "/pt-pt/guias-utilizador/nesting-layout-corte/",
   },
   {
     key: "export",
-    icon: "⇩",
+    iconName: "upload",
     title: "Exportação industrial",
     text: "TCN, Drill XML, PDF técnico, cutlist, etiquetas e ZIP completo.",
+    href: "/pt-pt/guias-utilizador/exportacao/",
   },
   {
     key: "trak",
-    icon: "⌁",
+    iconName: "adminTag",
     title: "PIMO-TRAK",
     text: "Etiquetas QR por peça para rastreio de execução em fábrica.",
+    href: "/pt-pt/guias-utilizador/pimo-trak/",
   },
 ]
 
@@ -108,12 +114,22 @@ export function LandingHero() {
 export function WorkflowMap() {
   return (
     <section className="pimo-workflow">
-      <h2>Fluxo operacional no PIMO</h2>
+      <h2>Fluxo operacional no PIMO PRO</h2>
       <div className="pimo-workflow-grid">
         {workflowSteps.map((step, index) => (
           <article key={step.key} className="pimo-workflow-card" style={{ animationDelay: `${index * 80}ms` }}>
-            <span className="icon">{step.icon}</span>
-            <h3>{step.title}</h3>
+            <span className="icon" aria-hidden="true">
+              <img
+                src={`/icons/criativo/${step.iconName}.svg`}
+                alt=""
+                width={20}
+                height={20}
+                loading="lazy"
+              />
+            </span>
+            <h3>
+              {step.href ? <a href={step.href}>{step.title}</a> : step.title}
+            </h3>
             <p>{step.text}</p>
           </article>
         ))}
@@ -200,19 +216,19 @@ export function InteractiveFeatureTabs() {
 export function HoverFeatureCards() {
   const cards = [
     {
-      icon: "⧉",
+      iconName: "adminBook",
       title: "Guias práticos",
       text: "Passo a passo fiel ao comportamento atual da aplicação.",
       href: "/pt-pt/guias-utilizador/",
     },
     {
-      icon: "🆕",
+      iconName: "bell",
       title: "Novidades",
       text: "Feed de versões carregado em build-time a partir do sistema principal.",
-      href: "/pt-pt/novidades/",
+      href: "/pt-pt/blog/",
     },
     {
-      icon: "⚙",
+      iconName: "settings",
       title: "Documentação técnica",
       text: "Área separada para Orçamentos P3.9 e Sistema Industrial.",
       href: "/pt-pt/documentacao-tecnica/",
@@ -225,7 +241,15 @@ export function HoverFeatureCards() {
       <div className="pimo-hover-grid">
         {cards.map((card) => (
           <a key={card.title} href={card.href} className="pimo-hover-card">
-            <span className="icon">{card.icon}</span>
+            <span className="icon" aria-hidden="true">
+              <img
+                src={`/icons/criativo/${card.iconName}.svg`}
+                alt=""
+                width={20}
+                height={20}
+                loading="lazy"
+              />
+            </span>
             <strong>{card.title}</strong>
             <p>{card.text}</p>
           </a>

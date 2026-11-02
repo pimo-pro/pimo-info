@@ -1,19 +1,23 @@
 ---
 title: "Lista de Corte"
-description: "Lista de Corte."
+description: "Gerar e ler a lista de corte (cutlist) do PIMO PRO em milímetros, com painéis, frentes e ferragens."
 category: guia
 tags:
   - guia
 related:
-  - /pt-pt/guias-utilizador/
-  - /pt-pt/glossario/
-lastUpdated: 2026-10-01
+  - /pt-pt/funcionalidades/lista-de-corte/
+  - /pt-pt/funcionalidades/ferragens/
+  - /pt-pt/guias-utilizador/nesting-layout-corte/
+  - /pt-pt/referencia/botoes/
+lastUpdated: 2026-11-02
 status: implemented
 ---
 
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
+
 # Gerar e interpretar a lista de corte
 
-A cutlist é gerada após **Gerar Design 3D** e apresenta peças prontas para produção.
+A cutlist é gerada após **Gerar Design 3D** e apresenta peças prontas para produção. Dimensões em **milímetros**.
 
 ## Passo a passo
 
@@ -35,3 +39,14 @@ A cutlist é gerada após **Gerar Design 3D** e apresenta peças prontas para pr
 ## Boa prática
 
 Faça o cálculo 3D só depois de fechar a configuração do projeto, para evitar inconsistências na lista.
+
+Funcionalidade: [Lista de Corte](/pt-pt/funcionalidades/lista-de-corte/). Botões: [barra inferior](/pt-pt/referencia/botoes/#area-barra-inferior).
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/funcionalidades/lista-de-corte/", label: "Funcionalidade Lista de Corte" },
+    { href: "/pt-pt/funcionalidades/ferragens/", label: "Ferragens" },
+    { href: "/pt-pt/guias-utilizador/nesting-layout-corte/", label: "Nesting / Layout de Corte" },
+    { href: "/pt-pt/guias-utilizador/exportacao/", label: "Exportação" },
+  ]}
+/>
