@@ -2842,11 +2842,20 @@ html.dark .pimo-hprice-btn.is-primary,
 }
 
 .pimo-hprice-table-wrap {
+  max-width: 100%;
+  width: 100%;
   max-height: min(70vh, 720px);
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid var(--pimo-border);
   border-radius: 12px;
   background: var(--pimo-card);
+}
+
+article:has(.pimo-hprice),
+article:has(.pimo-hprice) > main {
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 .pimo-hprice-table {
