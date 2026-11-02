@@ -1,6 +1,6 @@
 ---
 title: "Centro visual PIMO Info"
-description: "Centro visual de ajuda e base de conhecimento do PIMO PRO."
+description: "Centro de ajuda e base de conhecimento do PIMO PRO: fluxo visual, guias, funcionalidades e exportação industrial."
 category: hub
 tags:
   - hub
@@ -9,12 +9,14 @@ tags:
 related:
   - /pt-pt/
   - /pt-pt/primeiros-passos/
+  - /pt-pt/referencia/botoes/
   - /pt-pt/glossario/
-lastUpdated: 2026-10-01
+lastUpdated: 2026-11-02
 status: implemented
 ---
 import { HoverFeatureCards, InteractiveFeatureTabs, LandingHero, WorkflowDiagramSvg, WorkflowMap } from "../components/PimoVisualSections"
 import { DemoLoopVideo, LazyYouTubeEmbed } from "../components/PimoMediaComponents"
+import { RelatedLinks } from "../components/RelatedLinks.jsx"
 
 # Centro visual PIMO Info
 
@@ -25,20 +27,27 @@ import { DemoLoopVideo, LazyYouTubeEmbed } from "../components/PimoMediaComponen
   da caixa paramétrica aos ficheiros TCN/Drill XML e rastreio PIMO-TRAK.
 </p>
 
+<ul className="pimo-nav-list">
+  <li><a href="/pt-pt/primeiros-passos/"><span className="pimo-mark">01</span><span className="label">Primeiros passos</span><span className="hint">Registo ao projeto final</span></a></li>
+  <li><a href="/pt-pt/guias-utilizador/"><span className="pimo-mark">02</span><span className="label">Guias</span><span className="hint">Por tarefa</span></a></li>
+  <li><a href="/pt-pt/referencia/botoes/"><span className="pimo-mark">03</span><span className="label">Botões</span><span className="hint">Catálogo completo</span></a></li>
+  <li><a href="/pt-pt/funcionalidades/"><span className="pimo-mark">04</span><span className="label">Funcionalidades</span><span className="hint">Serviços da app</span></a></li>
+</ul>
+
 <WorkflowMap />
 
 <WorkflowDiagramSvg />
 
 <InteractiveFeatureTabs />
 
-## Veja o PIMO em ação
+## Veja o PIMO PRO em ação
 
 <LazyYouTubeEmbed
   videoId="j4dJEYJnFH0"
-  title="PIMO PRO em ação, vídeo oficial do proprietário"
+  title="PIMO PRO em ação, vídeo oficial"
 />
 
-<DemoLoopVideo title="Demonstração animada reutilizada do README técnico do pimo-criativo" />
+<DemoLoopVideo title="Demonstração animada do fluxo no PIMO PRO" />
 
 <section className="pimo-service-benefits">
   <li>
@@ -57,11 +66,14 @@ import { DemoLoopVideo, LazyYouTubeEmbed } from "../components/PimoMediaComponen
 
 <HoverFeatureCards />
 
-## Entrar por objetivo
-
-- [Primeiros passos](/pt-pt/primeiros-passos/)
-- [Funcionalidades](/pt-pt/funcionalidades/)
-- [Guias de utilizador](/pt-pt/guias-utilizador/)
-- [Glossário técnico](/pt-pt/glossario/)
-- [Ecossistema](/pt-pt/ecossistema/)
-- [Documentação técnica](/pt-pt/documentacao-tecnica/)
+<RelatedLinks
+  title="Entrar por objetivo"
+  items={[
+    { href: "/pt-pt/primeiros-passos/", label: "Primeiros passos" },
+    { href: "/pt-pt/funcionalidades/", label: "Funcionalidades" },
+    { href: "/pt-pt/guias-utilizador/", label: "Guias de utilizador" },
+    { href: "/pt-pt/referencia/botoes/", label: "Botões e controlos" },
+    { href: "/pt-pt/glossario/", label: "Glossário técnico" },
+    { href: "/pt-pt/ecossistema/", label: "Ecossistema" },
+  ]}
+/>

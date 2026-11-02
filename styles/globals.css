@@ -1167,6 +1167,78 @@ main {
   background: rgba(0, 0, 0, 0.04);
 }
 
+.pimo-related {
+  margin: 2.25rem 0 1.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--pimo-border);
+  border-radius: var(--pimo-radius);
+  background: linear-gradient(180deg, rgba(28, 74, 122, 0.04) 0%, var(--pimo-card) 100%);
+}
+
+.pimo-related h2 {
+  margin: 0 0 0.65rem;
+  font-size: 1.05rem;
+}
+
+.pimo-related-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.pimo-related-list a {
+  display: block;
+  padding: 0.45rem 0.55rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--pimo-primary-dark);
+  border: 1px solid transparent;
+}
+
+.pimo-related-list a:hover {
+  background: rgba(28, 74, 122, 0.08);
+  border-color: var(--pimo-border);
+}
+
+.pimo-workflow-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pimo-workflow-card h3 a:hover {
+  color: var(--pimo-primary);
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .pimo-related {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .pimo-nav-list a {
+    flex-wrap: wrap;
+    gap: 0.35rem 0.65rem;
+  }
+
+  .pimo-nav-list span.hint {
+    margin-left: 0;
+    width: 100%;
+    padding-left: 2rem;
+  }
+
+  .pimo-workflow-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .pimo-workflow-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Module flow */
 .pimo-flow-tree {
   padding: 1rem 1.1rem;

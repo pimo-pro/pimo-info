@@ -6,36 +6,42 @@ const workflowSteps = [
     icon: "▣",
     title: "Design da caixa",
     text: "Seleção de módulos, dimensões e posicionamento no workspace 3D.",
+    href: "/pt-pt/guias-utilizador/criar-caixa/",
   },
   {
     key: "materials",
     icon: "◧",
     title: "Materiais e frentes",
     text: "Aplicação de material da carcaça e de portas/gavetas.",
+    href: "/pt-pt/guias-utilizador/materiais/",
   },
   {
     key: "cutlist",
     icon: "≣",
     title: "Lista de corte",
     text: "Geração automática de peças em mm, ferragens e custos.",
+    href: "/pt-pt/guias-utilizador/lista-de-corte/",
   },
   {
     key: "nesting",
     icon: "▦",
     title: "Nesting Fast/PRO",
     text: "Distribuição das peças em chapa com foco em aproveitamento.",
+    href: "/pt-pt/guias-utilizador/nesting-layout-corte/",
   },
   {
     key: "export",
     icon: "⇩",
     title: "Exportação industrial",
     text: "TCN, Drill XML, PDF técnico, cutlist, etiquetas e ZIP completo.",
+    href: "/pt-pt/guias-utilizador/exportacao/",
   },
   {
     key: "trak",
     icon: "⌁",
     title: "PIMO-TRAK",
     text: "Etiquetas QR por peça para rastreio de execução em fábrica.",
+    href: "/pt-pt/guias-utilizador/pimo-trak/",
   },
 ]
 
@@ -108,12 +114,16 @@ export function LandingHero() {
 export function WorkflowMap() {
   return (
     <section className="pimo-workflow">
-      <h2>Fluxo operacional no PIMO</h2>
+      <h2>Fluxo operacional no PIMO PRO</h2>
       <div className="pimo-workflow-grid">
         {workflowSteps.map((step, index) => (
           <article key={step.key} className="pimo-workflow-card" style={{ animationDelay: `${index * 80}ms` }}>
-            <span className="icon">{step.icon}</span>
-            <h3>{step.title}</h3>
+            <span className="icon" aria-hidden="true">
+              {step.icon}
+            </span>
+            <h3>
+              {step.href ? <a href={step.href}>{step.title}</a> : step.title}
+            </h3>
             <p>{step.text}</p>
           </article>
         ))}

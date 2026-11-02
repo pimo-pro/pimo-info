@@ -1324,7 +1324,8 @@ export const buttons = [
     "iconName": "adminTag",
     "shortcut": null,
     "featureIds": [
-      "lista-de-corte"
+      "lista-de-corte",
+      "pimo-trak"
     ],
     "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
     "action": "Gera etiquetas UEE v5 (`onEtiquetas`).",
@@ -1566,7 +1567,9 @@ export const buttons = [
     "icon": null,
     "iconName": "settings",
     "shortcut": null,
-    "featureIds": [],
+    "featureIds": [
+      "definicoes"
+    ],
     "effects": "Navega para `/definicoes`.",
     "action": "Navega para `/definicoes`.",
     "area": "header",
@@ -1579,7 +1582,9 @@ export const buttons = [
     "icon": null,
     "iconName": "projects",
     "shortcut": null,
-    "featureIds": [],
+    "featureIds": [
+      "conta-e-acesso"
+    ],
     "effects": "Navega para `/meus-projetos`.",
     "action": "Navega para `/meus-projetos`.",
     "area": "header",
@@ -1592,7 +1597,9 @@ export const buttons = [
     "icon": null,
     "iconName": "user",
     "shortcut": null,
-    "featureIds": [],
+    "featureIds": [
+      "conta-e-acesso"
+    ],
     "effects": "Navega para `/login`.",
     "action": "Navega para `/login`.",
     "area": "header",
@@ -1605,7 +1612,9 @@ export const buttons = [
     "icon": null,
     "iconName": "themeSun",
     "shortcut": null,
-    "featureIds": [],
+    "featureIds": [
+      "definicoes"
+    ],
     "effects": "Alterna tema claro/escuro (`toggleTheme`).",
     "action": "Alterna tema claro/escuro (`toggleTheme`).",
     "area": "header",
@@ -1618,7 +1627,9 @@ export const buttons = [
     "icon": "🌐",
     "iconName": null,
     "shortcut": null,
-    "featureIds": [],
+    "featureIds": [
+      "definicoes"
+    ],
     "effects": "Controlo de idioma (atualmente fixo em PT; troca marcada como @PIMO-SOON).",
     "action": "Controlo de idioma (atualmente fixo em PT; troca marcada como @PIMO-SOON).",
     "area": "header",
@@ -1738,7 +1749,10 @@ export const buttons = [
     "icon": null,
     "iconName": "projects",
     "shortcut": null,
-    "featureIds": [],
+    "featureIds": [
+      "configurador-3d",
+      "conta-e-acesso"
+    ],
     "effects": "Abre o menu de troca entre PIMO PRO / TRAK / PROJETOS / NESTING / Industrial / DRILL.",
     "action": "Abre o menu de troca entre PIMO PRO / TRAK / PROJETOS / NESTING / Industrial / DRILL.",
     "area": "header",
@@ -1751,7 +1765,9 @@ export const buttons = [
     "icon": null,
     "iconName": "upload",
     "shortcut": null,
-    "featureIds": [],
+    "featureIds": [
+      "conta-e-acesso"
+    ],
     "effects": "Importa projeto PIMO a partir de ficheiro JSON/ZIP (Shift+clique: pasta).",
     "action": "Importa projeto PIMO a partir de ficheiro JSON/ZIP (Shift+clique: pasta).",
     "area": "header",
@@ -3133,7 +3149,9 @@ export const buttons = [
     "icon": null,
     "iconName": "accessories",
     "shortcut": null,
-    "featureIds": [],
+    "featureIds": [
+      "configurador-3d"
+    ],
     "effects": "Altera o painel esquerdo ativo (`onSelect`).",
     "action": "Abre o painel Acessórios.",
     "area": "navegacao-lateral",
@@ -3146,7 +3164,9 @@ export const buttons = [
     "icon": null,
     "iconName": "calculator",
     "shortcut": null,
-    "featureIds": [],
+    "featureIds": [
+      "orcamentos"
+    ],
     "effects": "Altera o painel esquerdo ativo (`onSelect`).",
     "action": "Abre o painel Calculadora (resumo e lista de caixas).",
     "area": "navegacao-lateral",
@@ -3159,7 +3179,9 @@ export const buttons = [
     "icon": null,
     "iconName": "electro",
     "shortcut": null,
-    "featureIds": [],
+    "featureIds": [
+      "sala-e-ambiente"
+    ],
     "effects": "Altera o painel esquerdo ativo (`onSelect`).",
     "action": "Abre o painel Eletro.",
     "area": "navegacao-lateral",
@@ -3172,7 +3194,9 @@ export const buttons = [
     "icon": null,
     "iconName": "info",
     "shortcut": null,
-    "featureIds": [],
+    "featureIds": [
+      "configurador-3d"
+    ],
     "effects": "Altera o painel esquerdo ativo (`onSelect`).",
     "action": "Abre o painel Info (ajuda rápida no app).",
     "area": "navegacao-lateral",
@@ -3185,7 +3209,9 @@ export const buttons = [
     "icon": null,
     "iconName": "home",
     "shortcut": null,
-    "featureIds": [],
+    "featureIds": [
+      "configurador-3d"
+    ],
     "effects": "Altera o painel esquerdo ativo (`onSelect`).",
     "action": "Navega para a home (`/`) e seleciona o painel Início.",
     "area": "navegacao-lateral",
@@ -3198,7 +3224,10 @@ export const buttons = [
     "icon": null,
     "iconName": "models",
     "shortcut": null,
-    "featureIds": [],
+    "featureIds": [
+      "configurador-3d",
+      "materiais"
+    ],
     "effects": "Altera o painel esquerdo ativo (`onSelect`).",
     "action": "Abre o painel Modelos (modelos CAD/GLB).",
     "area": "navegacao-lateral",

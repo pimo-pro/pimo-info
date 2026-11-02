@@ -10,10 +10,14 @@ tags:
 related:
   - /pt-pt/funcionalidades/exportacao-tcn-drill-xml/
   - /pt-pt/funcionalidades/pdf-tecnico/
+  - /pt-pt/funcionalidades/ferragens/
+  - /pt-pt/referencia/botoes/
   - /pt-pt/glossario/
-lastUpdated: 2026-10-12
+lastUpdated: 2026-11-02
 status: implemented
 ---
+
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
 
 # Exportar ficheiros de produção
 
@@ -79,3 +83,15 @@ Fluxo: **Exportar → Gerar arquivo completo**.
 ## Nota
 
 Validações em campos editáveis (ex.: quantidade e material) aplicam-se na análise online quando disponível. Edições documentais na cutlist podem refletir-se em PDFs/etiquetas; **TCN/Drill XML não mudam** por essas edições.
+
+Nomes exactos no menu: [Referência de botões (exportação)](/pt-pt/referencia/botoes/#area-exportacao).
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/", label: "Exportação TCN / Drill XML" },
+    { href: "/pt-pt/funcionalidades/pdf-tecnico/", label: "PDF técnico" },
+    { href: "/pt-pt/funcionalidades/ferragens/", label: "Ferragens" },
+    { href: "/pt-pt/guias-utilizador/pimo-trak/", label: "PIMO-TRAK" },
+    { href: "/pt-pt/perguntas-frequentes/", label: "Perguntas frequentes" },
+  ]}
+/>

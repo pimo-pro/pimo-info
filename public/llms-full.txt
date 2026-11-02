@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-10-29T22:02:27.595Z
+Generated: 2026-11-02T19:33:15.161Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -90,6 +90,12 @@ Locale: pt-PT
 - PIMO-TRAK [mixed] https://pimo.info/pt-pt/funcionalidades/pimo-trak/, Etiquetas QR (implementado) e rastreio industrial por peça (camada industrial).
 - Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/, Tarifas e regras de custo (Orçamentos P3.9).
 - Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/, Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.
+- Conta e acesso [implemented] https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/, Registo, entrar na conta, sessão e Meus Projetos no PIMO PRO.
+- Definições [implemented] https://pimo.info/pt-pt/funcionalidades/definicoes/, Preferências do utilizador e do projeto no PIMO PRO.
+- Ferragens [implemented] https://pimo.info/pt-pt/funcionalidades/ferragens/, Dobradiças, corrediças e conectores gerados a partir da configuração dos módulos.
+- Sala e ambiente [implemented] https://pimo.info/pt-pt/funcionalidades/sala-e-ambiente/, Ambiente 3D de sala (paredes, luz) para contextualizar o mobiliário.
+- Modo foto [implemented] https://pimo.info/pt-pt/funcionalidades/modo-foto/, Capturas e apresentação visual do projeto no viewport 3D.
+- Remates [implemented] https://pimo.info/pt-pt/funcionalidades/remates/, Acabamentos e remates associados aos módulos do projeto.
 
 ## PIMO systems
 - PIMO TRAK [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-trak/, Sistema de ordens de trabalho e rastreamento da produção na fábrica, incluindo etiquetas QR por peça (UEE v5).
@@ -164,7 +170,7 @@ Locale: pt-PT
 - pimo.pro: https://pimo.info/pt-pt/ecossistema/pimo-pro/
 - pimo.pt: https://pimo.info/pt-pt/ecossistema/pimo-pt/
 - Fabricante Parceiro PIMO: https://pimo.info/pt-pt/fabricantes/
-- Funcionalidades PIMO: https://pimo.info/pt-pt/funcionalidades/
+- Funcionalidades PIMO PRO: https://pimo.info/pt-pt/funcionalidades/
 - Análise de projetos: https://pimo.info/pt-pt/funcionalidades/analise-projetos/
 - Configurador 3D: https://pimo.info/pt-pt/funcionalidades/configurador-3d/
 - Conta e acesso: https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/
@@ -1123,7 +1129,7 @@ effects: Requer pelo menos uma caixa no projeto (exceto ações finais de downlo
 shortcut: -
 iconName: adminTag
 sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: lista-de-corte
+featureIds: lista-de-corte, pimo-trak
 
 ## Button: Ferragens Industriais
 id: export-ferragens
@@ -1299,7 +1305,7 @@ effects: Navega para `/definicoes`.
 shortcut: -
 iconName: settings
 sourceFile: src/components/layout/header/Header.tsx
-featureIds: -
+featureIds: definicoes
 
 ## Button: Abrir meus projetos
 id: header-meus-projetos
@@ -1310,7 +1316,7 @@ effects: Navega para `/meus-projetos`.
 shortcut: -
 iconName: projects
 sourceFile: src/components/layout/header/Header.tsx
-featureIds: -
+featureIds: conta-e-acesso
 
 ## Button: Abrir página de login
 id: header-login
@@ -1321,7 +1327,7 @@ effects: Navega para `/login`.
 shortcut: -
 iconName: user
 sourceFile: src/components/layout/header/Header.tsx
-featureIds: -
+featureIds: conta-e-acesso
 
 ## Button: Alternar tema claro/escuro
 id: header-theme
@@ -1332,7 +1338,7 @@ effects: Alterna tema claro/escuro (`toggleTheme`).
 shortcut: -
 iconName: themeSun
 sourceFile: src/components/layout/header/Header.tsx
-featureIds: -
+featureIds: definicoes
 
 ## Button: Idioma atual: PT
 id: header-lang
@@ -1343,7 +1349,7 @@ effects: Controlo de idioma (atualmente fixo em PT; troca marcada como @PIMO-SOO
 shortcut: -
 iconName: 🌐
 sourceFile: src/components/layout/header/Header.tsx
-featureIds: -
+featureIds: definicoes
 
 ## Button: PIMO DRILL
 id: nav-app-drill
@@ -1431,7 +1437,7 @@ effects: Abre o menu de troca entre PIMO PRO / TRAK / PROJETOS / NESTING / Indus
 shortcut: -
 iconName: projects
 sourceFile: src/components/layout/header/HeaderProjectsSwitcher.tsx
-featureIds: -
+featureIds: configurador-3d, conta-e-acesso
 
 ## Button: Selecionar ficheiro de projeto
 id: header-upload
@@ -1442,7 +1448,7 @@ effects: Importa projeto PIMO a partir de ficheiro JSON/ZIP (Shift+clique: pasta
 shortcut: -
 iconName: upload
 sourceFile: src/components/layout/header/Header.tsx
-featureIds: -
+featureIds: conta-e-acesso
 
 ## Button: Abrir / consultar cutlist
 id: ctx-cutlist-open
@@ -2454,7 +2460,7 @@ effects: Altera o painel esquerdo ativo (`onSelect`).
 shortcut: -
 iconName: accessories
 sourceFile: src/components/layout/left-toolbar/LeftToolbar.tsx
-featureIds: -
+featureIds: configurador-3d
 
 ## Button: Calculadora
 id: left-calculadora
@@ -2465,7 +2471,7 @@ effects: Altera o painel esquerdo ativo (`onSelect`).
 shortcut: -
 iconName: calculator
 sourceFile: src/components/layout/left-toolbar/LeftToolbar.tsx
-featureIds: -
+featureIds: orcamentos
 
 ## Button: Eletro
 id: left-eletro
@@ -2476,7 +2482,7 @@ effects: Altera o painel esquerdo ativo (`onSelect`).
 shortcut: -
 iconName: electro
 sourceFile: src/components/layout/left-toolbar/LeftToolbar.tsx
-featureIds: -
+featureIds: sala-e-ambiente
 
 ## Button: Info
 id: left-info
@@ -2487,7 +2493,7 @@ effects: Altera o painel esquerdo ativo (`onSelect`).
 shortcut: -
 iconName: info
 sourceFile: src/components/layout/left-toolbar/LeftToolbar.tsx
-featureIds: -
+featureIds: configurador-3d
 
 ## Button: Início
 id: left-home
@@ -2498,7 +2504,7 @@ effects: Altera o painel esquerdo ativo (`onSelect`).
 shortcut: -
 iconName: home
 sourceFile: src/components/layout/left-toolbar/LeftToolbar.tsx
-featureIds: -
+featureIds: configurador-3d
 
 ## Button: Modelos
 id: left-modelos
@@ -2509,7 +2515,7 @@ effects: Altera o painel esquerdo ativo (`onSelect`).
 shortcut: -
 iconName: models
 sourceFile: src/components/layout/left-toolbar/LeftToolbar.tsx
-featureIds: -
+featureIds: configurador-3d, materiais
 
 ## Button: Móveis
 id: left-moveis
@@ -3643,7 +3649,7 @@ sourceFiles: src/app/industrial/pimo-drill/PimoDrillPage.tsx, src/app/industrial
 
 ## Centro visual PIMO Info
 URL: https://pimo.info/
-Centro visual de ajuda e base de conhecimento do PIMO PRO.
+Centro de ajuda e base de conhecimento do PIMO PRO: fluxo visual, guias, funcionalidades e exportação industrial.
 
 # Centro visual PIMO Info
 
@@ -3655,12 +3661,19 @@ Centro visual de ajuda e base de conhecimento do PIMO PRO.
  
 
  
+     01  Primeiros passos  Registo ao projeto final   
+     02  Guias  Por tarefa   
+     03  Botões  Catálogo completo   
+     04  Funcionalidades  Serviços da app   
+ 
+
+ 
 
  
 
  
 
-## Veja o PIMO em ação
+## Veja o PIMO PRO em ação
 
  
 
@@ -3677,33 +3690,30 @@ Centro visual de ajuda e base de conhecimento do PIMO PRO.
    
    
      Estrutura escalável 
-     URL e navegação preparadas para manter pt-PT e adicionar novos idiomas no futuro. 
-   
- 
-
- 
-
-## Entrar por objetivo
-
-- [Primeiros passos](/pt-pt/primeiros-passos/)
-- [Funcionalidades](/pt-pt/funcionalidades/)
-- [Guias de utilizador](/pt-pt/guias-utilizador/)
-- [Glossário técnico](/pt-pt/glossario/)
-- [Ecossistema](/pt-pt/ecossistema/)
-- [Documentação técnica](/pt-pt/documentacao-tecnica/)
+     URL e navegação preparadas para manter pt-PT e adicionar novos idiomas no futuro.
 
 ---
 
 ## Centro de ajuda PIMO PRO
 URL: https://pimo.info/pt-pt/
-Centro de ajuda PIMO PRO.
+Centro de ajuda do PIMO PRO em português europeu: primeiros passos, funcionalidades, guias, botões e FAQ.
 
 # Centro de ajuda PIMO PRO
 
  
 
  
-  Conteúdo em português europeu para carpintarias, designers e fábricas que usam o PIMO no dia a dia.
+  Conteúdo em português europeu para carpintarias, designers e fábricas que usam o PIMO PRO no dia a dia. A marca «Pimo Casa» cobre a presença de produto; a app de trabalho é o PIMO PRO em pimo.pro.
+ 
+
+## Começar aqui
+
+ 
+     01  Primeiros passos  Do registo ao ZIP   
+     02  Guias de utilizador  Por tarefa   
+     03  Funcionalidades  O que faz cada área   
+     04  Botões e controlos  Nome e localização   
+     05  Perguntas frequentes  Dúvidas rápidas   
  
 
  
@@ -3712,24 +3722,7 @@ Centro de ajuda PIMO PRO.
 
  
 
-## Veja o PIMO em ação
-
- 
-
- 
-
- 
-
- 
-
-## Navegação principal
-
-- [Primeiros passos](/pt-pt/primeiros-passos/)
-- [Funcionalidades](/pt-pt/funcionalidades/)
-- [Ecossistema](/pt-pt/ecossistema/)
-- [Guias de utilizador](/pt-pt/guias-utilizador/)
-- [Perguntas frequentes](/pt-pt/perguntas-frequentes/)
-- [Documentação técnica](/pt-pt/documentacao-tecnica/)
+## Veja o PIMO PRO em ação
 
 ---
 
@@ -5097,11 +5090,19 @@ Sustentabilidade na madeira combina floresta bem gerida, oficina eficiente e pro
 
 ## Como funciona
 URL: https://pimo.info/pt-pt/como-funciona/
-Arquitetura e fluxo do PIMO PRO: projeto → módulos/caixas → peças → materiais → lista de corte → nesting → exportações → orçamento → PIMO-TRAK.
+Fluxo técnico do PIMO PRO: projeto, módulos, materiais, lista de corte, nesting, exportações, orçamento e PIMO-TRAK.
 
 # Como funciona
 
-Fluxo ponta a ponta do PIMO PRO: projeto, cutlist, nesting, exportações e PIMO-TRAK. Cada módulo resume o que entra, o que sai e como se liga ao resto. Os sistemas de produto (TRAK, PROJETOS, NESTING, INDUSTRIAL, DRILL) estão em [Sistemas PIMO](/pt-pt/sistemas-pimo/).
+Fluxo ponta a ponta do PIMO PRO: projeto, cutlist, nesting, exportações e PIMO-TRAK. Cada módulo resume o que entra, o que sai e como se liga ao resto.
+
+Para um caminho prático (registo, caixas, materiais, exportar e guardar), comece por [Primeiros passos](/pt-pt/primeiros-passos/). Os sistemas de produto (TRAK, PROJETOS, NESTING, INDUSTRIAL, DRILL) estão em [Sistemas PIMO](/pt-pt/sistemas-pimo/).
+
+## Antes de começar
+
+1. Conta e sessão: [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
+2. Preferências: [Definições](/pt-pt/funcionalidades/definicoes/).
+3. Guardar e reabrir: [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
 
  
 
@@ -5366,37 +5367,54 @@ Fábricas e carpintarias na Pimo Casa: pedidos de fabrico prontos, ficheiros par
 
 ---
 
-## Funcionalidades PIMO
+## Funcionalidades PIMO PRO
 URL: https://pimo.info/pt-pt/funcionalidades/
-Páginas de apresentação visual das funcionalidades principais do PIMO PRO.
+Serviços do PIMO PRO por área: design 3D, produção, conta, industrial e apresentação. Cada página liga ao guia e aos botões.
 
-# Funcionalidades PIMO
+# Funcionalidades PIMO PRO
 
  
-  Explore cada serviço principal do PIMO PRO com visão funcional, benefícios e ligação direta para
-  o respetivo guia operacional.
+  Cada serviço principal do PIMO PRO: o que faz, benefícios e ligação ao guia
+  operacional e ao catálogo de botões.
  
+
+## Design e modelação
 
  
      3D  Configurador 3D  Workspace e modelação   
      MAT  Materiais  Carcaça e frentes   
      PG  Portas e Gavetas  Regras automáticas   
+     SALA  Sala e ambiente  Room 3D   
+     REM  Remates  Acabamentos   
+     FOTO  Modo foto  Capturas 3D   
+ 
+
+## Produção e exportação
+
+ 
      CUT  Lista de Corte  Peças em mm   
      NES  Nesting Fast/PRO  Otimização de chapa   
      TCN  Exportação TCN/Drill XML  Ficheiros de máquina   
      PDF  PDF técnico  Documentação de projeto   
-     €  Orçamentos  Tarifas e custos   
+     FER  Ferragens  Dobradiças e corrediças   
+     ORC  Orçamentos  Tarifas e custos   
+ 
+
+## Conta e projeto
+
+ 
+     ACC  Conta e acesso  Registo e sessão   
+     CFG  Definições  Preferências   
+     ANL  Análise de projetos  Docs PROJETOS   
+     REL  Relatório final  Entrega de projeto   
+ 
+
+## Industrial e rastreio
+
+ 
      QR  PIMO-TRAK  Rastreio por peça   
      IND  Módulo Industrial  Operação por estações   
-     EST  Estações industriais  Postos TRAK   
-     FER  Ferragens  Dobradiças e corrediças   
-     CFG  Definições  Preferências e admin   
-     ACC  Conta e acesso  Login e registo   
-     FOTO  Modo foto  Capturas 3D   
-     SALA  Sala e ambiente  Room 3D   
-     REM  Remates  Acabamentos   
-     REL  Relatório final  Entrega de projeto   
-     ANL  Análise de projetos  Docs PROJETOS
+     EST  Estações industriais  Postos TRAK
 
 ---
 
@@ -5457,7 +5475,7 @@ A rota `/projects/viewer` abre o showroom de projetos quando a sua conta tem ace
 
 ## Conta e acesso
 URL: https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/
-Entrar na conta, registo, recuperação de palavra-passe, perfil e terminar sessão no PIMO PRO.
+Entrar na conta, registo, recuperação de palavra-passe, perfil e Meus Projetos no PIMO PRO.
 
 # Conta e acesso
 
@@ -5494,21 +5512,15 @@ Ao escolher **Terminar sessão**, sai da conta e volta ao ecrã de login. Pode v
 
 **Disponível** na aplicação [pimo.pro/login](https://pimo.pro/login).
 
-## Relacionado
-
-- [Definições](/pt-pt/funcionalidades/definicoes/)
-- [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/)
-- [Primeiros passos](/pt-pt/primeiros-passos/)
-
 ---
 
 ## Definições
 URL: https://pimo.info/pt-pt/funcionalidades/definicoes/
-Preferências pessoais e do projeto no PIMO PRO (rota /definicoes).
+Preferências pessoais e do projeto no PIMO PRO (rota /definicoes), tema e idioma.
 
 # Definições
 
-Em **Definições** (`/definicoes`) ajusta preferências da sua conta e opções ligadas ao projeto em que está a trabalhar. É preciso ter sessão iniciada.
+Em **Definições** (`/definicoes`) ajusta preferências da sua conta e opções ligadas ao projeto em que está a trabalhar. É preciso ter sessão iniciada. No cabeçalho pode também alternar o tema claro/escuro e ver o idioma atual (PT).
 
 ## O que pode configurar
 
@@ -5517,18 +5529,13 @@ Em **Definições** (`/definicoes`) ajusta preferências da sua conta e opções
 | Conta / perfil | `/definicoes`, perfil | Preferências pessoais |
 | Projeto | contexto do projeto | Unidades, materiais por defeito |
 | Sala e ambiente | definições de sala na app | Ambiente 3D (paredes, luz) |
+| Cabeçalho | ícone de tema / idioma | Tema claro/escuro e idioma PT |
 
 O detalhe de cada opção aparece na própria interface do PIMO PRO.
 
 ## Estado
 
 **Disponível** na aplicação para utilizadores com sessão iniciada.
-
-## Relacionado
-
-- [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/)
-- [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/)
-- [Sala e ambiente](/pt-pt/funcionalidades/sala-e-ambiente/)
 
 ---
 
@@ -5615,11 +5622,11 @@ Gera ficheiros **TCN** (`.tcn`) e **Drill XML** (`.xml`) a partir do fluxo **Arq
 
 ## Ferragens
 URL: https://pimo.info/pt-pt/funcionalidades/ferragens/
-Ferragens no PIMO PRO, dobradiças, corrediças, conectores e listagens de exportação.
+Ferragens no PIMO PRO: dobradiças, corrediças, conectores e listagens PDF/XLSX de exportação.
 
 # Ferragens
 
-As **ferragens** no PIMO PRO descrevem os componentes mecânicos associados a caixas e frentes: dobradiças, corrediças, conectores e acessórios necessários à montagem.
+As **ferragens** no PIMO PRO descrevem os componentes mecânicos associados a caixas e frentes: dobradiças, corrediças, conectores e acessórios necessários à montagem. A marca das ferragens na documentação de ajuda permanece genérica; o catálogo concreto aparece na aplicação.
 
 ## Para que serve
 
@@ -5629,17 +5636,11 @@ As **ferragens** no PIMO PRO descrevem os componentes mecânicos associados a ca
 
 ## Como funciona
 
-Na aplicação ([pimo.pro](https://pimo.pro)), as ferragens entram no fluxo de projeto após definir caixas, portas ou gavetas. As exportações industriais incluem secções de ferragens no ZIP completo e nos PDFs técnicos.
+Na aplicação ([pimo.pro](https://pimo.pro)), as ferragens entram no fluxo de projeto após definir caixas, portas ou gavetas. As exportações industriais incluem secções de ferragens no ZIP completo e nos PDFs técnicos. No menu **Exportar** use **Ferragens XLSX** quando precisar da folha de cálculo.
 
 ## Estado
 
 **Disponível** na app, catálogo e exportação. Detalhes de regras por fabricante podem evoluir; consultar a app para o catálogo atual.
-
-## Relacionado
-
-- [Materiais](/pt-pt/funcionalidades/materiais/)
-- [Portas e gavetas](/pt-pt/funcionalidades/portas-e-gavetas/)
-- [Exportação](/pt-pt/guias-utilizador/exportacao/)
 
 ---
 
@@ -5894,11 +5895,11 @@ Fonte única de terminologia do PIMO Info. Use estes termos de forma consistente
 
 ## Guias de utilizador
 URL: https://pimo.info/pt-pt/guias-utilizador/
-Guias de utilizador.
+Guias práticos do PIMO PRO por tarefa: criar caixa, materiais, cutlist, nesting, exportação, TRAK e gerir projetos.
 
 # Guias de utilizador
 
-Estas páginas reproduzem o fluxo real do `HelpPage.tsx` da aplicação PIMO PRO e estão organizadas por tarefa.
+Estas páginas seguem o fluxo real da ajuda na aplicação PIMO PRO e estão organizadas por tarefa. Se está a começar, leia primeiro [Primeiros passos](/pt-pt/primeiros-passos/).
 
 ## Fluxo recomendado
 
@@ -5913,6 +5914,8 @@ Estas páginas reproduzem o fluxo real do `HelpPage.tsx` da aplicação PIMO PRO
 9. [PIMO-TRAK](/pt-pt/guias-utilizador/pimo-trak/)
 10. [Gerir Projetos](/pt-pt/guias-utilizador/gerir-projetos/)
 11. [Atalhos de Teclado](/pt-pt/guias-utilizador/atalhos-teclado/)
+
+Cada guia liga à funcionalidade correspondente e, quando útil, ao [catálogo de botões](/pt-pt/referencia/botoes/).
 
 ---
 
@@ -5943,11 +5946,11 @@ Para operações por módulo, o menu de contexto é a via mais rápida para dupl
 
 ## Criar Caixa
 URL: https://pimo.info/pt-pt/guias-utilizador/criar-caixa/
-Criar Caixa.
+Criar e configurar módulos no PIMO PRO: painel Móveis, opções e Gerar Design 3D.
 
 # Criar e configurar uma nova caixa
 
-O PIMO usa placeholders no workspace e só gera a estrutura técnica final após **Gerar Design 3D**.
+O PIMO PRO usa placeholders no workspace e só gera a estrutura técnica final após **Gerar Design 3D**.
 
 ## Passo a passo
 
@@ -5971,6 +5974,8 @@ O PIMO usa placeholders no workspace e só gera a estrutura técnica final após
 - Pode adicionar vários módulos seguidos sem sair do painel Móveis.
 - Recomenda-se configurar todas as caixas antes da geração 3D.
 - Gavetas e portas não coexistem no mesmo módulo.
+
+Nomes exactos dos controlos: [Referência de botões](/pt-pt/referencia/botoes/). Detalhe do serviço: [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/).
 
 ---
 
@@ -6043,6 +6048,8 @@ Fluxo: **Exportar → Gerar arquivo completo**.
 
 Validações em campos editáveis (ex.: quantidade e material) aplicam-se na análise online quando disponível. Edições documentais na cutlist podem refletir-se em PDFs/etiquetas; **TCN/Drill XML não mudam** por essas edições.
 
+Nomes exactos no menu: [Referência de botões (exportação)](/pt-pt/referencia/botoes/#area-exportacao).
+
 ---
 
 ## Gerir Projetos
@@ -6091,15 +6098,17 @@ O armazenamento local no navegador permite auto-save e exportação/importação
 
 Se limpar os dados do browser, os projetos guardados localmente podem ser removidos. Os projetos da conta em **Meus Projetos** não dependem só do armazenamento local do navegador.
 
+Botões de conta e projetos: [cabeçalho](/pt-pt/referencia/botoes/#area-header).
+
 ---
 
 ## Lista de Corte
 URL: https://pimo.info/pt-pt/guias-utilizador/lista-de-corte/
-Lista de Corte.
+Gerar e ler a lista de corte (cutlist) do PIMO PRO em milímetros, com painéis, frentes e ferragens.
 
 # Gerar e interpretar a lista de corte
 
-A cutlist é gerada após **Gerar Design 3D** e apresenta peças prontas para produção.
+A cutlist é gerada após **Gerar Design 3D** e apresenta peças prontas para produção. Dimensões em **milímetros**.
 
 ## Passo a passo
 
@@ -6121,6 +6130,8 @@ A cutlist é gerada após **Gerar Design 3D** e apresenta peças prontas para pr
 ## Boa prática
 
 Faça o cálculo 3D só depois de fechar a configuração do projeto, para evitar inconsistências na lista.
+
+Funcionalidade: [Lista de Corte](/pt-pt/funcionalidades/lista-de-corte/). Botões: [barra inferior](/pt-pt/referencia/botoes/#area-barra-inferior).
 
 ---
 
@@ -6158,6 +6169,8 @@ A escolha de um preset de material no painel Materiais (lado direito) fica **ind
 - Defina materiais antes de gerar o design 3D.
 - Espere o visualizador 3D ficar pronto antes de aplicar presets no painel da direita.
 - A biblioteca de materiais está disponível na aplicação PIMO PRO.
+
+Funcionalidade: [Materiais](/pt-pt/funcionalidades/materiais/).
 
 ---
 
@@ -6227,7 +6240,7 @@ Antes do cálculo final, o workspace permite organizar módulos manualmente ou c
 
 ## Nesting / Layout de Corte
 URL: https://pimo.info/pt-pt/guias-utilizador/nesting-layout-corte/
-Nesting / Layout de Corte.
+Nesting Fast e PRO no PIMO PRO: estimar chapas, reduzir desperdício e validar orientação de furação.
 
 # Nesting e otimização do layout de corte
 
@@ -6253,6 +6266,8 @@ O Layout de Corte distribui peças por chapa com foco em aproveitamento de mater
 ## Atenção crítica
 
 No modo PRO, rotação de peças pode exigir validação adicional antes de enviar para máquina CNC.
+
+Funcionalidade: [Nesting Fast/PRO](/pt-pt/funcionalidades/nesting-fast-pro/). Botões: [área Nesting](/pt-pt/referencia/botoes/#area-nesting-v3).
 
 ---
 
@@ -6767,47 +6782,72 @@ Planos PIMO Free, Pro, Pro+, Ultra, Ultra+ e ALPHA+: preços com IVA, o que incl
 
 ## Primeiros passos
 URL: https://pimo.info/pt-pt/primeiros-passos/
-Guia rápido do PIMO PRO: da primeira caixa ao pacote de produção (cutlist, nesting, TCN/Drill XML, ZIP).
+Do registo ao projeto final no PIMO PRO: conta, caixas, materiais, nesting, exportação e Meus Projetos.
 
 # Primeiros passos
 
  
-  Guia rápido para passar da primeira caixa ao primeiro pacote de produção.
+  Caminho completo no PIMO PRO: da conta ao pacote de produção. Cada passo liga
+  ao guia ou funcionalidade correspondente.
  
 
-## 1) Abrir o PIMO PRO
+## 1) Conta e acesso
 
 1. Aceda a [https://pimo.pro](https://pimo.pro).
-2. Entre na área de design 3D (modo visitante ou com conta).
-3. Após **entrar na conta**, o painel fica em `/dashboard`: atalhos para projetos, perfil, definições e atividade. **Meus Projetos** está em `/meus-projetos`.
+2. Crie conta ou use **Entrar na conta** (pode começar em modo visitante e registar-se depois).
+3. Depois de entrar, o painel fica em `/dashboard` com atalhos para projetos, perfil e definições.
+4. **Meus Projetos** está em `/meus-projetos`.
+
+Detalhe: [Conta e acesso](/pt-pt/funcionalidades/conta-e-acesso/).
+
+## 2) Abrir o espaço de design 3D
+
+1. Entre na área de design 3D (página inicial da app).
+2. Use o cabeçalho para login, Meus Projetos e definições quando precisar.
 
  
 
-## 2) Criar módulos base
+## 3) Criar módulos base
 
 1. Abra o painel **Móveis**.
 2. Escolha um módulo (cozinha, roupeiro ou PI Models).
 3. Configure dimensões e opções (pés, portas, gavetas, prateleiras).
 4. Clique em **+ Adicionar ao projeto** para inserir placeholders no workspace.
 
-## 3) Organizar no workspace
+Guia: [Criar caixa](/pt-pt/guias-utilizador/criar-caixa/). Funcionalidade: [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/).
+
+## 4) Organizar no workspace
 
 1. Selecione módulos e ajuste posição com **M** (mover) e **R** (rodar).
 2. Use alinhamento por menu de contexto (botão direito) quando necessário.
-3. Verifique colisões/avisos no painel de layout.
+3. Verifique colisões e avisos no painel de layout.
 
-## 4) Gerar o design técnico
+Guia: [Mover e posicionar](/pt-pt/guias-utilizador/mover-e-posicionar/).
+
+## 5) Materiais e frentes
+
+1. Defina o material da carcaça em cada caixa.
+2. Nas portas e gavetas, escolha o material da frente (menu de contexto ou painel Materiais).
+3. No painel Materiais (lado direito), os presets só ficam disponíveis quando o visualizador 3D estiver pronto.
+
+Guia: [Materiais](/pt-pt/guias-utilizador/materiais/). Funcionalidade: [Materiais](/pt-pt/funcionalidades/materiais/).
+
+## 6) Gerar o design técnico
 
 1. Clique em **Gerar Design 3D** quando a composição estiver pronta.
 2. O sistema calcula painéis, ferragens, furação e custos com base no estado atual.
 
-## 5) Validar produção
+> Dica: configure todas as caixas e materiais antes de clicar em **Gerar Design 3D**.
+
+## 7) Validar produção
 
 1. Confirme dimensões com **D** (cotas em **cm** no viewport).
 2. Revise a **Lista de Corte** (dimensões em **mm**) e **Ferragens**.
 3. Simule o **Layout de Corte / Nesting** (Fast para estimativa, PRO para produção).
 
-## 6) Exportar ficheiros
+Guias: [Lista de corte](/pt-pt/guias-utilizador/lista-de-corte/), [Nesting](/pt-pt/guias-utilizador/nesting-layout-corte/), [Ferragens](/pt-pt/funcionalidades/ferragens/).
+
+## 8) Exportar ficheiros
 
 No menu **Exportar** (Salvar e Gerar Design), formatos implementados incluem:
 
@@ -6818,14 +6858,18 @@ No menu **Exportar** (Salvar e Gerar Design), formatos implementados incluem:
 - Arquivos CNC → **TCN** (`.tcn`) e **Drill XML** (`.xml`)
 - Arquivo completo (ZIP)
 
-Detalhe canónico: [Glossário, formatos](/pt-pt/glossario/) e [guia de exportação](/pt-pt/guias-utilizador/exportacao/).
+Detalhe: [guia de exportação](/pt-pt/guias-utilizador/exportacao/), [Exportação TCN/Drill XML](/pt-pt/funcionalidades/exportacao-tcn-drill-xml/), [Glossário](/pt-pt/glossario/).
 
-## 7) Guardar e gerir projeto
+## 9) Guardar e gerir o projeto
 
 1. Guarde manualmente (ou deixe o auto-save atuar no browser).
-2. Em **Meus Projetos** (`/meus-projetos`) vê os projetos da sua conta; pode abrir, duplicar, renomear e exportar/importar JSON. Detalhe em [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
+2. Em **Meus Projetos** (`/meus-projetos`) vê os projetos da sua conta; pode abrir, duplicar, renomear e exportar/importar JSON.
 
-> Dica: configure todas as caixas antes de clicar em **Gerar Design 3D**.
+Guia: [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/).
+
+## Onde ver cada botão
+
+O catálogo completo (nome, localização, ação e atalho) está em [Referência de botões](/pt-pt/referencia/botoes/). Nas páginas de funcionalidade encontra a lista dos controlos ligados a essa área.
 
 ---
 
@@ -6839,16 +6883,28 @@ Catálogos de referência do PIMO PRO para consulta rápida.
 
 - [Botões e controlos](/pt-pt/referencia/botoes/), toolbar, menus, painéis, atalhos
 - [Como funciona](/pt-pt/como-funciona/), fluxo projeto → exportação → PIMO-TRAK
+- [Primeiros passos](/pt-pt/primeiros-passos/), caminho prático do registo ao ZIP
+- [Funcionalidades](/pt-pt/funcionalidades/), serviços por área
 
 ---
 
 ## Botões e controlos
 URL: https://pimo.info/pt-pt/referencia/botoes/
-Catálogo de botões e ações da interface do PIMO PRO: ícone, rótulo, localização, ação, efeitos e atalho.
+Catálogo completo de botões do PIMO PRO: nome, localização, ação, efeitos, atalho e ligação às funcionalidades.
 
 # Botões e controlos
 
 Referência de interface do PIMO PRO. Cada entrada inclui o ícone real (SVG do `iconRegistry` da app), o rótulo exacto, onde aparece, o que faz, efeitos/dependências, atalho (se existir) e o ficheiro-fonte.
+
+Use este catálogo quando quiser saber o nome exacto de um controlo visto na app. Para o fluxo completo (registo até exportação), comece por [Primeiros passos](/pt-pt/primeiros-passos/). Nas páginas de [funcionalidades](/pt-pt/funcionalidades/) encontra só os botões ligados a essa área.
+
+## Áreas principais
+
+- **Header**: login, Meus Projetos, definições, tema, troca entre áreas PIMO
+- **Navegação lateral**: Móveis, Modelos, Acessórios, Calculadora, Info
+- **Barra inferior**: cutlist, nesting, exportações e ferramentas técnicas
+- **Exportação**: PDF, cutlist, etiquetas, TCN, Drill XML, ZIP
+- **Menu de contexto**: ações sobre caixas, frentes e sala (botão direito)
 
  
 

@@ -172,12 +172,16 @@ export function ButtonsCatalog({ featureFilter = "" } = {}) {
 export function FeatureButtons({ featureId }) {
   const list = buttons.filter((b) => (b.featureIds || []).includes(featureId))
   if (!list.length) return null
+  const primaryArea = list[0]?.area
+  const catalogHref = primaryArea
+    ? `/pt-pt/referencia/botoes/#area-${primaryArea}`
+    : "/pt-pt/referencia/botoes/"
   return (
     <section className="pimo-feature-buttons">
       <h2>Botões e controlos relacionados</h2>
       <p>
         {list.length} controlos no catálogo. Ver todos em{" "}
-        <a href={`/pt-pt/referencia/botoes/#area-exportacao`}>Referência de botões</a>{" "}
+        <a href={catalogHref}>Referência de botões</a>{" "}
         (filtrar por funcionalidade).
       </p>
       <ul>

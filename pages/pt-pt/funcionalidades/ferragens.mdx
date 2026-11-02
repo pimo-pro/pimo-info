@@ -1,6 +1,6 @@
 ---
 title: Ferragens
-description: Ferragens no PIMO PRO, dobradiças, corrediças, conectores e listagens de exportação.
+description: Ferragens no PIMO PRO: dobradiças, corrediças, conectores e listagens PDF/XLSX de exportação.
 category: funcionalidade
 tags:
   - ferragens
@@ -10,12 +10,17 @@ related:
   - /pt-pt/funcionalidades/materiais/
   - /pt-pt/funcionalidades/portas-e-gavetas/
   - /pt-pt/guias-utilizador/exportacao/
-lastUpdated: 2026-10-01
+  - /pt-pt/guias-utilizador/portas-e-gavetas/
+  - /pt-pt/referencia/botoes/
+lastUpdated: 2026-11-02
 ---
+
+import { FeatureButtons } from "../../../components/ButtonsCatalog"
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
 
 # Ferragens
 
-As **ferragens** no PIMO PRO descrevem os componentes mecânicos associados a caixas e frentes: dobradiças, corrediças, conectores e acessórios necessários à montagem.
+As **ferragens** no PIMO PRO descrevem os componentes mecânicos associados a caixas e frentes: dobradiças, corrediças, conectores e acessórios necessários à montagem. A marca das ferragens na documentação de ajuda permanece genérica; o catálogo concreto aparece na aplicação.
 
 ## Para que serve
 
@@ -25,14 +30,19 @@ As **ferragens** no PIMO PRO descrevem os componentes mecânicos associados a ca
 
 ## Como funciona
 
-Na aplicação ([pimo.pro](https://pimo.pro)), as ferragens entram no fluxo de projeto após definir caixas, portas ou gavetas. As exportações industriais incluem secções de ferragens no ZIP completo e nos PDFs técnicos.
+Na aplicação ([pimo.pro](https://pimo.pro)), as ferragens entram no fluxo de projeto após definir caixas, portas ou gavetas. As exportações industriais incluem secções de ferragens no ZIP completo e nos PDFs técnicos. No menu **Exportar** use **Ferragens XLSX** quando precisar da folha de cálculo.
 
 ## Estado
 
 **Disponível** na app, catálogo e exportação. Detalhes de regras por fabricante podem evoluir; consultar a app para o catálogo atual.
 
-## Relacionado
+<FeatureButtons featureId="ferragens" />
 
-- [Materiais](/pt-pt/funcionalidades/materiais/)
-- [Portas e gavetas](/pt-pt/funcionalidades/portas-e-gavetas/)
-- [Exportação](/pt-pt/guias-utilizador/exportacao/)
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/funcionalidades/portas-e-gavetas/", label: "Portas e gavetas" },
+    { href: "/pt-pt/funcionalidades/materiais/", label: "Materiais" },
+    { href: "/pt-pt/guias-utilizador/exportacao/", label: "Guia de exportação" },
+    { href: "/pt-pt/referencia/botoes/#area-exportacao", label: "Botões de exportação" },
+  ]}
+/>

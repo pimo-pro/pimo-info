@@ -1,6 +1,6 @@
 ---
 title: Conta e acesso
-description: Entrar na conta, registo, recuperação de palavra-passe, perfil e terminar sessão no PIMO PRO.
+description: Entrar na conta, registo, recuperação de palavra-passe, perfil e Meus Projetos no PIMO PRO.
 category: funcionalidade
 tags:
   - conta
@@ -10,8 +10,12 @@ related:
   - /pt-pt/funcionalidades/definicoes/
   - /pt-pt/guias-utilizador/gerir-projetos/
   - /pt-pt/primeiros-passos/
-lastUpdated: 2026-10-14
+  - /pt-pt/referencia/botoes/
+lastUpdated: 2026-11-02
 ---
+
+import { FeatureButtons } from "../../../components/ButtonsCatalog"
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
 
 # Conta e acesso
 
@@ -60,8 +64,13 @@ Ao escolher **Terminar sessão**, sai da conta e volta ao ecrã de login. Pode v
 
 **Disponível** na aplicação [pimo.pro/login](https://pimo.pro/login).
 
-## Relacionado
+<FeatureButtons featureId="conta-e-acesso" />
 
-- [Definições](/pt-pt/funcionalidades/definicoes/)
-- [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/)
-- [Primeiros passos](/pt-pt/primeiros-passos/)
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/funcionalidades/definicoes/", label: "Definições" },
+    { href: "/pt-pt/guias-utilizador/gerir-projetos/", label: "Gerir projetos" },
+    { href: "/pt-pt/primeiros-passos/", label: "Primeiros passos" },
+    { href: "/pt-pt/referencia/botoes/#area-header", label: "Botões do cabeçalho" },
+  ]}
+/>
