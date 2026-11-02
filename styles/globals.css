@@ -61,19 +61,34 @@ nav.nextra-toc {
   margin: 0 !important;
 }
 
-/* Conteúdo usa toda a largura restante (sidebar esquerda ou ecrã inteiro) */
+/* Conteúdo ocupa o espaço restante sem esmagar a sidebar (não usar width:100% em flex) */
 .nextra-content {
-  flex: 1 1 auto !important;
+  flex: 1 1 0% !important;
   max-width: none !important;
-  width: 100% !important;
+  min-width: 0 !important;
+  width: auto !important;
 }
 
-/* Quando a sidebar está recolhida/escondida, o artigo ocupa 100% */
+/* Sidebar desktop: largura estável para o texto não partir letra a letra */
 @media (min-width: 768px) {
+  .nextra-sidebar-container:not(.md\:_hidden) {
+    width: 16rem !important;
+    min-width: 16rem !important;
+    max-width: 18rem !important;
+    flex: 0 0 16rem !important;
+  }
+
   .nextra-sidebar-container.md\:_hidden + .nextra-content,
   body:has(.nextra-sidebar-container.md\:_hidden) .nextra-content {
     max-width: none !important;
   }
+}
+
+.nextra-sidebar-container .nextra-scrollbar a,
+.nextra-sidebar-container .nextra-scrollbar li {
+  word-break: normal;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 /* Índice «Nesta página» (toc.float=false) na sidebar esquerda */
