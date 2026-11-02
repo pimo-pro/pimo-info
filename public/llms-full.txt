@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-11-02T19:33:15.161Z
+Generated: 2026-11-02T19:37:42.104Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -5420,7 +5420,7 @@ Serviços do PIMO PRO por área: design 3D, produção, conta, industrial e apre
 
 ## Análise de projetos
 URL: https://pimo.info/pt-pt/funcionalidades/analise-projetos/
-Análise documental em PIMO PROJETOS (/PROJETOS/:project/analise).
+Análise documental em PIMO PROJETOS (rota de análise do projeto).
 
 # Análise de projetos
 
@@ -5808,7 +5808,7 @@ Controla tipo de porta e quantidade de gavetas por módulo, aplicando regras int
 
 ## Relatório final
 URL: https://pimo.info/pt-pt/funcionalidades/relatorio-final/
-Relatório final consolidado do projeto no PIMO PRO (rota /relatorio-final/:project).
+Relatório final consolidado do projeto no PIMO PRO.
 
 # Relatório final
 

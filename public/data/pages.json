@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T19:33:15.159Z",
+  "generatedAt": "2026-11-02T19:37:42.103Z",
   "items": [
     {
       "path": "/",
@@ -899,7 +899,7 @@
       "path": "/pt-pt/funcionalidades/analise-projetos/",
       "file": "pages/pt-pt/funcionalidades/analise-projetos.mdx",
       "title": "Análise de projetos",
-      "description": "Análise documental em PIMO PROJETOS (/PROJETOS/:project/analise).",
+      "description": "Análise documental em PIMO PROJETOS (rota de análise do projeto).",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -1237,7 +1237,7 @@
       "path": "/pt-pt/funcionalidades/relatorio-final/",
       "file": "pages/pt-pt/funcionalidades/relatorio-final.mdx",
       "title": "Relatório final",
-      "description": "Relatório final consolidado do projeto no PIMO PRO (rota /relatorio-final/:project).",
+      "description": "Relatório final consolidado do projeto no PIMO PRO.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
