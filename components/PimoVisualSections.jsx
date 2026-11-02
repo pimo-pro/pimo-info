@@ -120,7 +120,7 @@ export function WorkflowMap() {
           <article key={step.key} className="pimo-workflow-card" style={{ animationDelay: `${index * 80}ms` }}>
             <span className="icon" aria-hidden="true">
               <img
-                src={`/icons/criativo/${step.iconName}.svg`}
+                src={`/icons/criativo/${step.iconName}.svg?v=xmlns1`}
                 alt=""
                 width={20}
                 height={20}
@@ -243,7 +243,7 @@ export function HoverFeatureCards() {
           <a key={card.title} href={card.href} className="pimo-hover-card">
             <span className="icon" aria-hidden="true">
               <img
-                src={`/icons/criativo/${card.iconName}.svg`}
+                src={`/icons/criativo/${card.iconName}.svg?v=xmlns1`}
                 alt=""
                 width={20}
                 height={20}

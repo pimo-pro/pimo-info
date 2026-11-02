@@ -25,7 +25,7 @@ function IconThumb({ button }) {
     return (
       <img
         className="pimo-btn-icon"
-        src={`/icons/criativo/${name}.svg`}
+        src={`/icons/criativo/${name}.svg?v=xmlns1`}
         alt=""
         width={24}
         height={24}
@@ -36,7 +36,7 @@ function IconThumb({ button }) {
   return (
     <img
       className="pimo-btn-icon"
-      src="/icons/criativo/info.svg"
+      src="/icons/criativo/info.svg?v=xmlns1"
       alt=""
       width={24}
       height={24}
