@@ -55,7 +55,7 @@ Locale: pt-PT
 - Arquivo completo (ZIP) (.zip): Pacote com cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts PRO por material/espessura, Layout_de_Corte_manual.pdf, ficheiros TCN, Drill XML e manifesto industrial.
 
 ## Glossary terms
-- Módulo / Caixa: Unidade paramétrica de mobiliário no projeto (ex.: base de cozinha, roupeiro). No código e na UI usa-se «caixa»/«box» como entidade; «módulo» é a linguagem de produto para o mesmo conceito.
+- Módulo / Caixa: Unidade de mobiliário no projeto (ex.: base de cozinha, roupeiro). Na aplicação fala-se em caixa ou módulo para o mesmo conceito.
 - Peça: Painel ou elemento fabricável derivado do módulo (lateral, cima, fundo, frente, etc.), com dimensões em milímetros na lista de corte.
 - Material: Material de painel aplicado à carcaça e/ou frentes. Inclui espessura e custo; frentes (portas/gavetas) podem ter material diferente da carcaça.
 - Espessura: Espessura do painel em milímetros. Valores comuns industriais no fluxo incluem 16 mm e 19 mm; a cutlist e o nesting agrupam por espessura.
@@ -72,8 +72,10 @@ Locale: pt-PT
 - PIMO INDUSTRIAL: Camada industrial da app: hub de estações, operações de fábrica e UI partilhada. Estado parcial, rotas reais com canvas de demonstração na home.
 - PIMO DRILL: Sistema dedicado de furação (UI 2D/3D), acessível em https://pimo.pro/industrial/pimo-drill. Estado: em desenvolvimento. A exportação Drill XML pelo configurador («Arquivos CNC») está disponível à parte.
 - Arquivo completo (ZIP): ZIP com os principais artefactos de produção (PDFs, XLSX de ferragens, TCN, Drill XML, etiquetas, layouts). Conteúdo exacto definido pelo gerador na app, ver formatos de exportação.
-- Análise arquivo completo (online): Edição documental online de PDFs industriais em PROJETOS (/analise). No código SSOT (`industrialFeatureFlags`) a flag `industrialOnlineAnalysis` está activa (`true`). Não substitui o ZIP de produção.
-- Orçamentos P3.9: Tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.
+- Análise arquivo completo (online): Edição documental online de PDFs industriais em PIMO PROJETOS (análise do projeto). Não substitui o ZIP de produção.
+- Pedido de orçamento: Pedido enviado à equipa a partir do painel Início ou da exportação. Inclui contacto, projeto, módulos e notas. Não calcula preço automático: a equipa confirma os valores na resposta. Os valores do resumo só aparecem a contas com permissão para ver preços.
+- Remate Completo: Nome do remate do tipo completo na aplicação PIMO PRO. Completa a caixa para fabrico e apresentação, em conjunto com rodapés e outros acabamentos.
+- Pimo casa: Marca apresentada no cabeçalho, rodapé (© 2026 Pimo casa), página de apresentação, textos de ajuda e no cabeçalho/rodapé do PDF de nesting da aplicação PIMO PRO.
 - Sessão / terminar sessão: Estado da conta depois de entrar. Ao terminar sessão, a app envia o utilizador para o ecrã de login. Se a sessão expirar, é pedido para entrar de novo.
 
 ## Features
@@ -85,14 +87,14 @@ Locale: pt-PT
 - Exportação TCN / Drill XML [implemented] https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/, Ficheiros industriais `.tcn` e Drill XML via menu Arquivos CNC.
 - PDF Técnico [implemented] https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/, Documentação PDF do projeto para cliente/arquivo. Em falha de geração, aviso claro no Workspace.
 - PIMO-TRAK [mixed] https://pimo.info/pt-pt/funcionalidades/pimo-trak/, Etiquetas QR (implementado) e rastreio industrial por peça (camada industrial).
-- Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/, Tarifas e regras de custo (Orçamentos P3.9).
+- Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/, Pedido de orçamento a partir do Início ou da exportação: envia contacto, projeto, módulos e notas; a equipa confirma os preços na resposta.
 - Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/, Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.
 - Conta e acesso [implemented] https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/, Registo, entrar na conta, sessão e Meus Projetos no PIMO PRO.
 - Definições [implemented] https://pimo.info/pt-pt/funcionalidades/definicoes/, Preferências do utilizador e do projeto no PIMO PRO.
 - Ferragens [implemented] https://pimo.info/pt-pt/funcionalidades/ferragens/, Dobradiças, corrediças e conectores gerados a partir da configuração dos módulos.
 - Sala e ambiente [implemented] https://pimo.info/pt-pt/funcionalidades/sala-e-ambiente/, Ambiente 3D de sala (paredes, luz) para contextualizar o mobiliário.
 - Modo foto [implemented] https://pimo.info/pt-pt/funcionalidades/modo-foto/, Capturas e apresentação visual do projeto no viewport 3D.
-- Remates [implemented] https://pimo.info/pt-pt/funcionalidades/remates/, Acabamentos e remates associados aos módulos do projeto.
+- Remates [implemented] https://pimo.info/pt-pt/funcionalidades/remates/, Acabamentos associados aos módulos, incluindo o tipo Remate Completo.
 
 ## PIMO systems
 - PIMO TRAK [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-trak/, Sistema de ordens de trabalho e rastreamento da produção na fábrica, incluindo etiquetas QR por peça (UEE v5).
@@ -101,9 +103,9 @@ Locale: pt-PT
 - PIMO INDUSTRIAL [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/, Camada industrial completa da app: hub de estações, operações (CNC, nesting, drill, orlar, montagem, embalagem), operador/supervisor e integrações de fabrico.
 - PIMO DRILL [em-desenvolvimento] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/, Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.
 
-## UI buttons (297)
+## UI buttons (299)
 - Cabeçalho: 14 controlos
-- Navegação lateral: 7 controlos
+- Navegação lateral: 9 controlos
 - Barra superior: 35 controlos
 - Ferramentas 3D: 4 controlos
 - Painéis laterais: 44 controlos
@@ -118,14 +120,14 @@ Locale: pt-PT
 - Atalhos de teclado: 14 controlos
 
 ## Architecture modules
-- Projeto: in=[Nome do projeto; Import JSON/ZIP; Projetos salvos] out=[ProjectState persistido; Snapshot viewer/sala] depends=[-]
+- Projeto: in=[Nome do projeto; Import JSON/ZIP; Projetos salvos] out=[Projeto guardado; Vista 3D e sala] depends=[-]
 - Módulos / Caixas: in=[Catálogo Móveis; Criar Caixa; Duplicar / importar] out=[workspaceBoxes[]; seleção ativa] depends=[projeto]
 - Peças / painéis: in=[Geometria da caixa; Espessuras; Divisórias/separadores] out=[Lista de peças com medidas mm; Observações por peça] depends=[modulos-caixas]
 - Materiais e orlas: in=[Catálogo de materiais; Menu de contexto Alterar material; Painel Materiais] out=[materialId por peça/frente; regras de orla] depends=[pecas]
 - Lista de corte (Cutlist): in=[Peças; Materiais; Espessuras] out=[Cutlist PDF/dados; Etiquetas UEE v5; Totais de peças] depends=[pecas, materiais-orlas]
 - Nesting Fast / PRO / V3: in=[Cutlist / peças do projeto; Dimensões de chapa] out=[Layout de Corte PRO; Layout manual; Sessão Nesting V3] depends=[lista-corte]
 - Exportações (TCN / Drill XML / PDF / ZIP): in=[ProjectState; Cutlist; Nesting (quando aplicável)] out=[.tcn; Drill .xml; PDF; XLSX ferragens; ZIP/arquivo completo; JSON local] depends=[lista-corte, nesting, materiais-orlas]
-- Orçamento: in=[Peças e materiais; Configuração de pricing; Dados do cliente (modal)] out=[Resumo financeiro; Pedido de orçamento] depends=[pecas, materiais-orlas, projeto]
+- Orçamento: in=[Peças e materiais; Dados de contacto; Notas do pedido] out=[Pedido de orçamento enviado; Resumo financeiro (se a conta puder ver preços)] depends=[pecas, materiais-orlas, projeto]
 - PIMO-TRAK / Industrial: in=[Projeto exportado / live project; Operações industriais no estado] out=[Work orders; Estados de operação; Análise industrial online] depends=[exportacoes, projeto]
 
 ## Page index

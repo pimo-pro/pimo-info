@@ -43,6 +43,11 @@ export default function NovidadesPage({ news }) {
         </div>
       ) : null}
 
+      <p className="pimo-lead">
+        As entradas mais recentes descrevem melhorias do PIMO PRO para quem
+        desenha, vende ou fabrica.
+      </p>
+
       <ul className="pimo-news-list">
         {news.entries.map((entry) => (
           <li key={`${entry.version}-${entry.publishedAt}`}>

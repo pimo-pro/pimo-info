@@ -113,7 +113,7 @@ export const pimoSystems = [
     purpose:
       "Permitir layout de corte interativo (drag/drop, rotação, multi-folha) e exportar PDF, TCN e etiquetas a partir do nesting, sem substituir o pipeline industrial automático Fast/PRO do configurador.",
     howItWorks:
-      "As peças vêm da lista de corte do projeto ou de entrada manual. O nesting calcula a utilização das chapas; o Auto Layout organiza o aproveitamento. Exporta PDF técnico, ficheiros de máquina e etiquetas oficiais. Acessível no ecrã de nesting ou pela opção de nesting manual na exportação. O nesting dedicado não altera o pipeline industrial Fast/PRO.",
+      "As peças vêm da lista de corte do projeto ou de entrada manual. O nesting calcula a utilização das chapas; o Auto Layout organiza o aproveitamento. Exporta PDF técnico, ficheiros de máquina e etiquetas oficiais. O PDF de nesting mostra a marca Pimo casa no cabeçalho e no rodapé. Acessível no ecrã de nesting ou pela opção de nesting manual na exportação. O nesting dedicado não altera o pipeline industrial Fast/PRO.",
     features: [
       "Canvas SVG 2D com zoom/pan",
       "Drag & drop e rotação 0/90/180/270°",

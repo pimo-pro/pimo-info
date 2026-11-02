@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T22:09:15.831Z",
+  "generatedAt": "2026-11-02T22:37:26.063Z",
   "flowOrder": [
     "projeto",
     "modulos-caixas",
@@ -15,15 +15,15 @@
     {
       "id": "projeto",
       "name": "Projeto",
-      "summary": "Estado central do design (ProjectState): caixas, materiais, sala, viewer settings, operações industriais.",
+      "summary": "Estado central do design: caixas, materiais, sala, preferências de visualização e operações industriais.",
       "inputs": [
         "Nome do projeto",
         "Import JSON/ZIP",
         "Projetos salvos"
       ],
       "outputs": [
-        "ProjectState persistido",
-        "Snapshot viewer/sala"
+        "Projeto guardado",
+        "Vista 3D e sala"
       ],
       "dependsOn": [],
       "featureIds": [
@@ -164,15 +164,15 @@
     {
       "id": "orcamento",
       "name": "Orçamento",
-      "summary": "Hub Financeiro + pedido de orçamento (email) a partir do estado/pricing do projeto.",
+      "summary": "Pedido de orçamento a partir do painel Início ou da exportação: contacto, projeto, módulos e notas; a equipa confirma os preços. O resumo com valores só aparece a quem tem permissão para ver preços.",
       "inputs": [
         "Peças e materiais",
-        "Configuração de pricing",
-        "Dados do cliente (modal)"
+        "Dados de contacto",
+        "Notas do pedido"
       ],
       "outputs": [
-        "Resumo financeiro",
-        "Pedido de orçamento"
+        "Pedido de orçamento enviado",
+        "Resumo financeiro (se a conta puder ver preços)"
       ],
       "dependsOn": [
         "pecas",

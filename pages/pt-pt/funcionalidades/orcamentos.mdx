@@ -1,54 +1,62 @@
 ---
 title: "Orçamentos"
-description: "Centro de tarifas e regras de custo no ecossistema PIMO."
+description: "Pedir orçamento no PIMO PRO a partir do Início ou da exportação, com confirmação antes do envio."
 category: funcionalidade
 tags:
   - funcionalidade
+  - orcamentos
 related:
   - /pt-pt/funcionalidades/
+  - /pt-pt/guias-utilizador/exportacao/
+  - /pt-pt/referencia/botoes/
   - /pt-pt/glossario/
-lastUpdated: 2026-10-01
+lastUpdated: 2026-11-02
 status: implemented
 ---
 
-import { ServiceHero, InfoAccordion } from "../../../components/PimoVisualSections"
-import { AnimatedHotspotImage } from "../../../components/PimoMediaComponents"
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
 import { FeatureButtons } from "../../../components/ButtonsCatalog"
 
-<ServiceHero
-  title="Orçamentos"
-  subtitle="Configuração de tarifas industriais e financeiras para suporte ao cálculo de custos."
-  image="/visual/readme/ecra-documentacao.webp"
-  imageAlt="Página documental usada como contexto visual da camada de orçamentos"
-  pimoHref="https://pimo.pro"
-  guideHref="/pt-pt/documentacao-tecnica/orcamentos-p39/"
-/>
+# Orçamentos
 
-## O que faz
+No PIMO PRO pode pedir um orçamento à equipa a partir do **painel Início** ou da janela de **exportação**. O pedido descreve o projeto; não calcula um preço automático.
 
-Na documentação técnica oficial, Orçamentos P3.9 centraliza parâmetros de custo com flags e tarifas para diferentes motores do sistema.
+## Pedir Orçamento no painel Início
 
-<section className="pimo-service-benefits">
-  <li><strong>Configuração centralizada</strong><p>Permite ativar/desativar módulos e ajustar impactos económicos.</p></li>
-  <li><strong>Separação clara</strong><p>Distingue regras de Orçamentos de outros blocos financeiros (ex.: portes).</p></li>
-  <li><strong>Integração no cálculo</strong><p>Os valores alimentam custos unificados e preço final por peça.</p></li>
-</section>
+1. Abra o painel **Início** na barra lateral esquerda.
+2. Clique em **Pedir Orçamento**.
+3. Preencha o formulário de contacto e confirme os dados.
 
-<AnimatedHotspotImage
-  src="/visual/readme/ecra-documentacao.webp"
-  alt="Destaques de leitura para secção de orçamentos"
-  hotspots={[
-    { x: 9, y: 14, label: "Menu técnico", delay: 0 },
-    { x: 60, y: 43, label: "Parâmetros/tarifas", delay: 130 },
-    { x: 73, y: 70, label: "Validação operacional", delay: 260 },
-  ]}
-/>
+Abrir o formulário **não** inicia fabrico e **não** grava o projeto. O pedido só é enviado depois de confirmar.
 
-<InfoAccordion
-  items={[
-    { title: "É uma funcionalidade de utilizador final?", text: "Apoia o cálculo de custos e a operação industrial; o detalhe das tarifas pode estar em documentação técnica." },
-    { title: "Onde está o detalhe completo?", text: "Na secção de documentação técnica de Orçamentos P3.9 neste site." },
-  ]}
-/>
+## Pedido a partir da exportação
+
+Na janela **Salvar e Gerar Design** pode usar **Salvar e pedir orçamento**. O fluxo guarda o projeto e abre o pedido com os dados do desenho.
+
+## O que o pedido inclui
+
+Cada pedido enviado inclui:
+
+- dados de contacto
+- identificação do projeto
+- módulos do desenho
+- notas que escrever
+
+A equipa confirma os preços na resposta. Os valores do resumo financeiro na aplicação só aparecem para contas com permissão para ver preços.
+
+## Relacionado
+
+- [Referência de botões](/pt-pt/referencia/botoes/)
+- [Exportação](/pt-pt/guias-utilizador/exportacao/)
+- [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/)
 
 <FeatureButtons featureId="orcamentos" />
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/guias-utilizador/exportacao/", label: "Exportação" },
+    { href: "/pt-pt/referencia/botoes/", label: "Botões e controlos" },
+    { href: "/pt-pt/primeiros-passos/", label: "Primeiros passos" },
+    { href: "/pt-pt/perguntas-frequentes/", label: "Perguntas frequentes" },
+  ]}
+/>

@@ -1,6 +1,6 @@
 /**
  * Glossário técnico único do PIMO Info (fonte de verdade terminológica).
- * Termos alinhados com o código/UI do PIMO PRO.
+ * Termos alinhados com a interface do PIMO PRO.
  */
 
 /**
@@ -21,7 +21,7 @@ export const glossaryTerms = [
     term: "Módulo / Caixa",
     aliases: ["módulo", "caixa", "box"],
     definition:
-      "Unidade paramétrica de mobiliário no projeto (ex.: base de cozinha, roupeiro). No código e na UI usa-se «caixa»/«box» como entidade; «módulo» é a linguagem de produto para o mesmo conceito.",
+      "Unidade de mobiliário no projeto (ex.: base de cozinha, roupeiro). Na aplicação fala-se em caixa ou módulo para o mesmo conceito.",
     status: "implemented",
     relatedPaths: ["/pt-pt/guias-utilizador/criar-caixa/"],
   },
@@ -198,23 +198,41 @@ export const glossaryTerms = [
   {
     id: "analise-online",
     term: "Análise arquivo completo (online)",
-    aliases: ["industrialOnlineAnalysis", "análise documental"],
+    aliases: ["análise documental"],
     definition:
-      "Edição documental online de PDFs industriais em PROJETOS (/analise). No código SSOT (`industrialFeatureFlags`) a flag `industrialOnlineAnalysis` está activa (`true`). Não substitui o ZIP de produção.",
+      "Edição documental online de PDFs industriais em PIMO PROJETOS (análise do projeto). Não substitui o ZIP de produção.",
     status: "implemented",
     relatedPaths: ["/pt-pt/guias-utilizador/exportacao/", "/pt-pt/sistemas-pimo/pimo-projetos/"],
   },
   {
     id: "orcamentos",
-    term: "Orçamentos P3.9",
-    aliases: ["tarifas", "custos"],
+    term: "Pedido de orçamento",
+    aliases: ["orçamento", "pedir orçamento", "Orçamentos"],
     definition:
-      "Tarifas e regras de custo que alimentam o cálculo unificado. Documentada em Orçamentos P3.9.",
+      "Pedido enviado à equipa a partir do painel Início ou da exportação. Inclui contacto, projeto, módulos e notas. Não calcula preço automático: a equipa confirma os valores na resposta. Os valores do resumo só aparecem a contas com permissão para ver preços.",
     status: "implemented",
     relatedPaths: [
       "/pt-pt/funcionalidades/orcamentos/",
-      "/pt-pt/documentacao-tecnica/orcamentos-p39/",
+      "/pt-pt/referencia/botoes/",
     ],
+  },
+  {
+    id: "remate-completo",
+    term: "Remate Completo",
+    aliases: ["remate completo", "remate tipo completo"],
+    definition:
+      "Nome do remate do tipo completo na aplicação PIMO PRO. Completa a caixa para fabrico e apresentação, em conjunto com rodapés e outros acabamentos.",
+    status: "implemented",
+    relatedPaths: ["/pt-pt/funcionalidades/remates/", "/pt-pt/guias-utilizador/criar-caixa/"],
+  },
+  {
+    id: "pimo-casa",
+    term: "Pimo casa",
+    aliases: ["marca Pimo casa"],
+    definition:
+      "Marca apresentada no cabeçalho, rodapé (© 2026 Pimo casa), página de apresentação, textos de ajuda e no cabeçalho/rodapé do PDF de nesting da aplicação PIMO PRO.",
+    status: "implemented",
+    relatedPaths: ["/about/", "/pt-pt/legal/", "/pt-pt/sistemas-pimo/pimo-nesting/"],
   },
   {
     id: "sessao",
