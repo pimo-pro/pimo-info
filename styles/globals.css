@@ -2194,6 +2194,13 @@ html.dark .pimo-partner-work-icon,
   width: 100%;
   max-width: min(1280px, 100%);
   margin-inline: auto;
+  overflow-x: clip;
+}
+
+@media (max-width: 767px) {
+  .pimo-hprice-countdown {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* Quando Nextra remove a sidebar, alargar o artigo nesta página */

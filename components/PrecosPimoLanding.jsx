@@ -203,31 +203,30 @@ function remainingParts(nowMs) {
 }
 
 function useLaunchOfferActive() {
-  const [active, setActive] = useState(
-    () => remainingParts(Date.now()).diff > 0
-  )
+  // Só no cliente: Date.now() no SSR causa mismatch de hidratação.
+  const [active, setActive] = useState(false)
 
   useEffect(() => {
-    if (!active) return undefined
-    const id = setInterval(() => {
-      if (remainingParts(Date.now()).diff <= 0) setActive(false)
-    }, 1000)
+    const tick = () => setActive(remainingParts(Date.now()).diff > 0)
+    tick()
+    const id = setInterval(tick, 1000)
     return () => clearInterval(id)
-  }, [active])
+  }, [])
 
   return active
 }
 
 function LaunchCountdown({ active }) {
-  const [now, setNow] = useState(() => Date.now())
+  const [now, setNow] = useState(null)
 
   useEffect(() => {
     if (!active) return undefined
+    setNow(Date.now())
     const id = setInterval(() => setNow(Date.now()), 1000)
     return () => clearInterval(id)
   }, [active])
 
-  if (!active) return null
+  if (!active || now == null) return null
   const parts = remainingParts(now)
   if (parts.diff <= 0) return null
 
