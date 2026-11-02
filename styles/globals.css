@@ -52,6 +52,40 @@ article.nextra-content > main {
   width: 100%;
 }
 
+/* layout:full article already spans remaining width; ensure no right TOC gutter */
+nav.nextra-toc {
+  display: none !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Conteúdo usa toda a largura restante (sidebar esquerda ou ecrã inteiro) */
+.nextra-content {
+  flex: 1 1 auto !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* Quando a sidebar está recolhida/escondida, o artigo ocupa 100% */
+@media (min-width: 768px) {
+  .nextra-sidebar-container.md\:_hidden + .nextra-content,
+  body:has(.nextra-sidebar-container.md\:_hidden) .nextra-content {
+    max-width: none !important;
+  }
+}
+
+/* Índice «Nesta página» (toc.float=false) na sidebar esquerda */
+.nextra-sidebar-container .nextra-scrollbar ul li a[href^="#"] {
+  font-size: 0.82rem;
+  color: var(--pimo-muted);
+}
+
+.nextra-sidebar-container .nextra-scrollbar ul li a[href^="#"]:hover {
+  color: var(--pimo-primary-dark);
+}
+
 /* Keep readable side padding on very wide viewports */
 .nextra-nav-container nav {
   padding-left: max(env(safe-area-inset-left), 1.5rem);
@@ -407,6 +441,20 @@ main {
   background: rgba(28, 74, 122, 0.1);
   color: var(--pimo-primary-dark);
   margin-bottom: 0.45rem;
+}
+
+.pimo-workflow-card .icon img,
+.pimo-hover-card .icon img,
+.pimo-btn-icon {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
+  object-fit: contain;
+}
+
+.pimo-btn-icon {
+  width: 1.35rem;
+  height: 1.35rem;
 }
 
 .pimo-workflow-card h3 {

@@ -82,8 +82,8 @@ export const buttonAreas = [
 /** @type {UiButton[]} */
 export const buttons = [
   {
-    "icon": "⌨",
-    "iconName": null,
+    "icon": null,
+    "iconName": "keyboard",
     "shortcut": "H",
     "featureIds": [
       "configurador-3d"
@@ -97,8 +97,8 @@ export const buttons = [
     "sourceFile": "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx"
   },
   {
-    "icon": "⌨",
-    "iconName": null,
+    "icon": null,
+    "iconName": "keyboard",
     "shortcut": "Ctrl+Click",
     "featureIds": [
       "configurador-3d"
@@ -112,8 +112,8 @@ export const buttons = [
     "label": "Adicionar/remover da seleção"
   },
   {
-    "icon": "⌨",
-    "iconName": null,
+    "icon": null,
+    "iconName": "keyboard",
     "shortcut": "Ctrl+Z",
     "featureIds": [
       "configurador-3d"
@@ -127,8 +127,8 @@ export const buttons = [
     "label": "Desfazer"
   },
   {
-    "icon": "⌨",
-    "iconName": null,
+    "icon": null,
+    "iconName": "keyboard",
     "shortcut": "Delete / Backspace",
     "featureIds": [
       "configurador-3d"
@@ -142,8 +142,8 @@ export const buttons = [
     "label": "Excluir seleção"
   },
   {
-    "icon": "⌨",
-    "iconName": null,
+    "icon": null,
+    "iconName": "keyboard",
     "shortcut": "Alt",
     "featureIds": [
       "configurador-3d"
@@ -157,8 +157,8 @@ export const buttons = [
     "label": "Mostrar/ocultar ajuda de atalhos"
   },
   {
-    "icon": "⌨",
-    "iconName": null,
+    "icon": null,
+    "iconName": "keyboard",
     "shortcut": "Setas",
     "featureIds": [
       "configurador-3d"
@@ -172,8 +172,8 @@ export const buttons = [
     "label": "Mover caixa selecionada"
   },
   {
-    "icon": "⌨",
-    "iconName": null,
+    "icon": null,
+    "iconName": "keyboard",
     "shortcut": "Escape",
     "featureIds": [
       "nesting-fast-pro"
@@ -187,8 +187,8 @@ export const buttons = [
     "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
   },
   {
-    "icon": "⌨",
-    "iconName": null,
+    "icon": null,
+    "iconName": "keyboard",
     "shortcut": "Delete / Backspace",
     "featureIds": [
       "nesting-fast-pro"
@@ -202,8 +202,8 @@ export const buttons = [
     "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
   },
   {
-    "icon": "⌨",
-    "iconName": null,
+    "icon": null,
+    "iconName": "keyboard",
     "shortcut": "0",
     "featureIds": [
       "nesting-fast-pro"
@@ -217,8 +217,8 @@ export const buttons = [
     "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
   },
   {
-    "icon": "⌨",
-    "iconName": null,
+    "icon": null,
+    "iconName": "keyboard",
     "shortcut": "R",
     "featureIds": [
       "nesting-fast-pro"
@@ -232,8 +232,8 @@ export const buttons = [
     "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
   },
   {
-    "icon": "⌨",
-    "iconName": null,
+    "icon": null,
+    "iconName": "keyboard",
     "shortcut": "+ / =",
     "featureIds": [
       "nesting-fast-pro"
@@ -247,8 +247,8 @@ export const buttons = [
     "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
   },
   {
-    "icon": "⌨",
-    "iconName": null,
+    "icon": null,
+    "iconName": "keyboard",
     "shortcut": "-",
     "featureIds": [
       "nesting-fast-pro"
@@ -262,8 +262,8 @@ export const buttons = [
     "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
   },
   {
-    "icon": "⌨",
-    "iconName": null,
+    "icon": null,
+    "iconName": "keyboard",
     "shortcut": "Ctrl+Y",
     "featureIds": [
       "configurador-3d"
@@ -277,8 +277,8 @@ export const buttons = [
     "label": "Refazer"
   },
   {
-    "icon": "⌨",
-    "iconName": null,
+    "icon": null,
+    "iconName": "keyboard",
     "shortcut": "Ctrl+Shift+Z",
     "featureIds": [
       "configurador-3d"
@@ -433,8 +433,8 @@ export const buttons = [
     "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx"
   },
   {
-    "icon": "finance",
-    "iconName": null,
+    "icon": null,
+    "iconName": "finance",
     "shortcut": null,
     "featureIds": [
       "orcamentos"
@@ -478,8 +478,8 @@ export const buttons = [
     "label": "Histórico"
   },
   {
-    "icon": "industrial",
-    "iconName": null,
+    "icon": null,
+    "iconName": "industrial",
     "shortcut": null,
     "featureIds": [
       "lista-de-corte",
@@ -525,8 +525,8 @@ export const buttons = [
     "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx"
   },
   {
-    "icon": "operations",
-    "iconName": null,
+    "icon": null,
+    "iconName": "operations",
     "shortcut": null,
     "featureIds": [
       "pimo-trak",
@@ -1624,8 +1624,8 @@ export const buttons = [
     "label": "Alternar tema claro/escuro"
   },
   {
-    "icon": "🌐",
-    "iconName": null,
+    "icon": null,
+    "iconName": "globe",
     "shortcut": null,
     "featureIds": [
       "definicoes"

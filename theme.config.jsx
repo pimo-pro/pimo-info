@@ -203,7 +203,7 @@ function JsonLd({ data }) {
 export default {
   logo: (
     <span className="pimo-logo">
-      <img src="https://pimo.pro/logo-pi.png" alt="PIMO PRO" />
+      <img src="/favicon.svg" alt="PIMO PRO" width={28} height={28} />
       <span>PIMO Info</span>
     </span>
   ),
@@ -247,6 +247,10 @@ export default {
   sidebar: {
     defaultMenuCollapseLevel: 1,
     toggleButton: true,
+  },
+  toc: {
+    float: false,
+    title: "Nesta página",
   },
   editLink: {
     content: null,
@@ -388,7 +392,7 @@ export default {
           title="PIMO Info Blog"
           href={`${siteUrl}/blog/rss.xml`}
         />
-        <link rel="icon" type="image/png" href="https://pimo.pro/logo-pi.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <JsonLd data={organization} />
         <JsonLd data={website} />
         {techArticle && !isBlogPost ? <JsonLd data={techArticle} /> : null}

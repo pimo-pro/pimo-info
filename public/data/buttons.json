@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T19:37:42.100Z",
+  "generatedAt": "2026-11-02T19:53:33.974Z",
   "areas": [
     {
       "id": "header",
@@ -61,8 +61,8 @@
   "count": 297,
   "items": [
     {
-      "icon": "⌨",
-      "iconName": null,
+      "icon": null,
+      "iconName": "keyboard",
       "shortcut": "H",
       "featureIds": [
         "configurador-3d"
@@ -76,8 +76,8 @@
       "sourceFile": "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx"
     },
     {
-      "icon": "⌨",
-      "iconName": null,
+      "icon": null,
+      "iconName": "keyboard",
       "shortcut": "Ctrl+Click",
       "featureIds": [
         "configurador-3d"
@@ -91,8 +91,8 @@
       "label": "Adicionar/remover da seleção"
     },
     {
-      "icon": "⌨",
-      "iconName": null,
+      "icon": null,
+      "iconName": "keyboard",
       "shortcut": "Ctrl+Z",
       "featureIds": [
         "configurador-3d"
@@ -106,8 +106,8 @@
       "label": "Desfazer"
     },
     {
-      "icon": "⌨",
-      "iconName": null,
+      "icon": null,
+      "iconName": "keyboard",
       "shortcut": "Delete / Backspace",
       "featureIds": [
         "configurador-3d"
@@ -121,8 +121,8 @@
       "label": "Excluir seleção"
     },
     {
-      "icon": "⌨",
-      "iconName": null,
+      "icon": null,
+      "iconName": "keyboard",
       "shortcut": "Alt",
       "featureIds": [
         "configurador-3d"
@@ -136,8 +136,8 @@
       "label": "Mostrar/ocultar ajuda de atalhos"
     },
     {
-      "icon": "⌨",
-      "iconName": null,
+      "icon": null,
+      "iconName": "keyboard",
       "shortcut": "Setas",
       "featureIds": [
         "configurador-3d"
@@ -151,8 +151,8 @@
       "label": "Mover caixa selecionada"
     },
     {
-      "icon": "⌨",
-      "iconName": null,
+      "icon": null,
+      "iconName": "keyboard",
       "shortcut": "Escape",
       "featureIds": [
         "nesting-fast-pro"
@@ -166,8 +166,8 @@
       "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
     },
     {
-      "icon": "⌨",
-      "iconName": null,
+      "icon": null,
+      "iconName": "keyboard",
       "shortcut": "Delete / Backspace",
       "featureIds": [
         "nesting-fast-pro"
@@ -181,8 +181,8 @@
       "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
     },
     {
-      "icon": "⌨",
-      "iconName": null,
+      "icon": null,
+      "iconName": "keyboard",
       "shortcut": "0",
       "featureIds": [
         "nesting-fast-pro"
@@ -196,8 +196,8 @@
       "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
     },
     {
-      "icon": "⌨",
-      "iconName": null,
+      "icon": null,
+      "iconName": "keyboard",
       "shortcut": "R",
       "featureIds": [
         "nesting-fast-pro"
@@ -211,8 +211,8 @@
       "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
     },
     {
-      "icon": "⌨",
-      "iconName": null,
+      "icon": null,
+      "iconName": "keyboard",
       "shortcut": "+ / =",
       "featureIds": [
         "nesting-fast-pro"
@@ -226,8 +226,8 @@
       "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
     },
     {
-      "icon": "⌨",
-      "iconName": null,
+      "icon": null,
+      "iconName": "keyboard",
       "shortcut": "-",
       "featureIds": [
         "nesting-fast-pro"
@@ -241,8 +241,8 @@
       "sourceFile": "src/nesting-v3/NestingV3Page.tsx"
     },
     {
-      "icon": "⌨",
-      "iconName": null,
+      "icon": null,
+      "iconName": "keyboard",
       "shortcut": "Ctrl+Y",
       "featureIds": [
         "configurador-3d"
@@ -256,8 +256,8 @@
       "label": "Refazer"
     },
     {
-      "icon": "⌨",
-      "iconName": null,
+      "icon": null,
+      "iconName": "keyboard",
       "shortcut": "Ctrl+Shift+Z",
       "featureIds": [
         "configurador-3d"
@@ -412,8 +412,8 @@
       "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx"
     },
     {
-      "icon": "finance",
-      "iconName": null,
+      "icon": null,
+      "iconName": "finance",
       "shortcut": null,
       "featureIds": [
         "orcamentos"
@@ -457,8 +457,8 @@
       "label": "Histórico"
     },
     {
-      "icon": "industrial",
-      "iconName": null,
+      "icon": null,
+      "iconName": "industrial",
       "shortcut": null,
       "featureIds": [
         "lista-de-corte",
@@ -504,8 +504,8 @@
       "sourceFile": "src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx"
     },
     {
-      "icon": "operations",
-      "iconName": null,
+      "icon": null,
+      "iconName": "operations",
       "shortcut": null,
       "featureIds": [
         "pimo-trak",
@@ -1603,8 +1603,8 @@
       "label": "Alternar tema claro/escuro"
     },
     {
-      "icon": "🌐",
-      "iconName": null,
+      "icon": null,
+      "iconName": "globe",
       "shortcut": null,
       "featureIds": [
         "definicoes"

@@ -2,7 +2,7 @@ export default {
   index: {
     title: "Índice técnico",
     theme: {
-      toc: false,
+      toc: true,
     },
   },
   "orcamentos-p39": "Orçamentos P3.9",

@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-11-02T19:37:42.104Z
+Generated: 2026-11-02T19:53:33.977Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -236,7 +236,7 @@ location: Atalhos de teclado (barra inferior)
 action: Alterna o painel de histórico (`BottomInfoToolbar`).
 effects: Abre/fecha histórico se o foco não estiver num campo editável.
 shortcut: H
-iconName: ⌨
+iconName: keyboard
 sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
 featureIds: configurador-3d
 
@@ -247,7 +247,7 @@ location: Atalhos de teclado (Workspace)
 action: Alterna inclusão do objeto na multi-seleção.
 effects: Alterna inclusão do objeto na multi-seleção.
 shortcut: Ctrl+Click
-iconName: ⌨
+iconName: keyboard
 sourceFile: src/components/layout/workspace/Workspace.tsx
 featureIds: configurador-3d
 
@@ -258,7 +258,7 @@ location: Atalhos de teclado (Workspace)
 action: Desfaz (`actions.undo`).
 effects: Desfaz (`actions.undo`).
 shortcut: Ctrl+Z
-iconName: ⌨
+iconName: keyboard
 sourceFile: src/components/layout/workspace/Workspace.tsx
 featureIds: configurador-3d
 
@@ -269,7 +269,7 @@ location: Atalhos de teclado (Workspace)
 action: Remove caixas/remates selecionados.
 effects: Remove caixas/remates selecionados.
 shortcut: Delete / Backspace
-iconName: ⌨
+iconName: keyboard
 sourceFile: src/components/layout/workspace/Workspace.tsx
 featureIds: configurador-3d
 
@@ -280,7 +280,7 @@ location: Atalhos de teclado (Workspace)
 action: Alterna o overlay «Atalhos do teclado».
 effects: Alterna o overlay «Atalhos do teclado».
 shortcut: Alt
-iconName: ⌨
+iconName: keyboard
 sourceFile: src/components/layout/workspace/Workspace.tsx
 featureIds: configurador-3d
 
@@ -291,7 +291,7 @@ location: Atalhos de teclado (Workspace)
 action: Move a caixa selecionada no plano (passo em mm).
 effects: Move a caixa selecionada no plano (passo em mm).
 shortcut: Setas
-iconName: ⌨
+iconName: keyboard
 sourceFile: src/components/layout/workspace/Workspace.tsx
 featureIds: configurador-3d
 
@@ -302,7 +302,7 @@ location: Atalhos Nesting V3
 action: Limpa seleção/arrasto no Nesting V3.
 effects: Limpa seleção/arrasto no Nesting V3.
 shortcut: Escape
-iconName: ⌨
+iconName: keyboard
 sourceFile: src/nesting-v3/NestingV3Page.tsx
 featureIds: nesting-fast-pro
 
@@ -313,7 +313,7 @@ location: Atalhos Nesting V3
 action: Remove a peça selecionada.
 effects: Remove a peça selecionada.
 shortcut: Delete / Backspace
-iconName: ⌨
+iconName: keyboard
 sourceFile: src/nesting-v3/NestingV3Page.tsx
 featureIds: nesting-fast-pro
 
@@ -324,7 +324,7 @@ location: Atalhos Nesting V3
 action: Repõe zoom/pan.
 effects: Repõe zoom/pan.
 shortcut: 0
-iconName: ⌨
+iconName: keyboard
 sourceFile: src/nesting-v3/NestingV3Page.tsx
 featureIds: nesting-fast-pro
 
@@ -335,7 +335,7 @@ location: Atalhos Nesting V3
 action: Roda a peça selecionada.
 effects: Roda a peça selecionada.
 shortcut: R
-iconName: ⌨
+iconName: keyboard
 sourceFile: src/nesting-v3/NestingV3Page.tsx
 featureIds: nesting-fast-pro
 
@@ -346,7 +346,7 @@ location: Atalhos Nesting V3
 action: Zoom in.
 effects: Zoom in.
 shortcut: + / =
-iconName: ⌨
+iconName: keyboard
 sourceFile: src/nesting-v3/NestingV3Page.tsx
 featureIds: nesting-fast-pro
 
@@ -357,7 +357,7 @@ location: Atalhos Nesting V3
 action: Zoom out.
 effects: Zoom out.
 shortcut: -
-iconName: ⌨
+iconName: keyboard
 sourceFile: src/nesting-v3/NestingV3Page.tsx
 featureIds: nesting-fast-pro
 
@@ -368,7 +368,7 @@ location: Atalhos de teclado (Workspace)
 action: Refaz (`actions.redo`).
 effects: Refaz (`actions.redo`).
 shortcut: Ctrl+Y
-iconName: ⌨
+iconName: keyboard
 sourceFile: src/components/layout/workspace/Workspace.tsx
 featureIds: configurador-3d
 
@@ -379,7 +379,7 @@ location: Atalhos de teclado (Workspace)
 action: Refaz (`actions.redo`).
 effects: Refaz (`actions.redo`).
 shortcut: Ctrl+Shift+Z
-iconName: ⌨
+iconName: keyboard
 sourceFile: src/components/layout/workspace/Workspace.tsx
 featureIds: configurador-3d
 
@@ -1347,7 +1347,7 @@ location: Header (barra do topo da app)
 action: Controlo de idioma (atualmente fixo em PT; troca marcada como @PIMO-SOON).
 effects: Controlo de idioma (atualmente fixo em PT; troca marcada como @PIMO-SOON).
 shortcut: -
-iconName: 🌐
+iconName: globe
 sourceFile: src/components/layout/header/Header.tsx
 featureIds: definicoes
 
