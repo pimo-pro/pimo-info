@@ -1,6 +1,5 @@
 {
-  "generatedAt": "2026-11-02T19:53:34.033Z",
-  "source": "pimo-criativo-source (read-only) + pages/pt-pt",
+  "generatedAt": "2026-11-02T22:09:15.885Z",
   "totals": {
     "items": 65,
     "byStatus": {
@@ -12,7 +11,6 @@
     {
       "id": "route-login",
       "kind": "route",
-      "codeRef": "App.tsx:/login",
       "name": "Login",
       "purpose": "Entrar na conta",
       "page": "/pt-pt/funcionalidades/conta-e-acesso/",
@@ -23,7 +21,6 @@
     {
       "id": "route-register",
       "kind": "route",
-      "codeRef": "App.tsx:/register",
       "name": "Registo",
       "purpose": "Criação de conta",
       "page": "/pt-pt/funcionalidades/conta-e-acesso/",
@@ -33,7 +30,6 @@
     {
       "id": "route-forgot",
       "kind": "route",
-      "codeRef": "App.tsx (recuperar palavra-passe)",
       "name": "Recuperar palavra-passe",
       "purpose": "Pedido de nova palavra-passe por email",
       "page": "/pt-pt/funcionalidades/conta-e-acesso/",
@@ -43,7 +39,6 @@
     {
       "id": "route-definicoes",
       "kind": "route",
-      "codeRef": "App.tsx:/definicoes",
       "name": "Definições",
       "purpose": "Preferências do utilizador e projeto",
       "page": "/pt-pt/funcionalidades/definicoes/",
@@ -53,7 +48,6 @@
     {
       "id": "route-dashboard",
       "kind": "route",
-      "codeRef": "App.tsx:/dashboard",
       "name": "Dashboard",
       "purpose": "Painel inicial com sessão iniciada",
       "page": "/pt-pt/primeiros-passos/",
@@ -64,7 +58,6 @@
     {
       "id": "route-me",
       "kind": "route",
-      "codeRef": "App.tsx:/me",
       "name": "Perfil / Me",
       "purpose": "Dados da conta",
       "page": "/pt-pt/funcionalidades/conta-e-acesso/",
@@ -74,7 +67,6 @@
     {
       "id": "route-meus-projetos",
       "kind": "route",
-      "codeRef": "App.tsx:/meus-projetos",
       "name": "Meus Projetos",
       "purpose": "Lista de projetos da conta",
       "page": "/pt-pt/guias-utilizador/gerir-projetos/",
@@ -85,7 +77,6 @@
     {
       "id": "route-projects",
       "kind": "route",
-      "codeRef": "App.tsx:/projects",
       "name": "Lista de projetos",
       "purpose": "Gestão de projetos",
       "page": "/pt-pt/guias-utilizador/gerir-projetos/",
@@ -96,7 +87,6 @@
     {
       "id": "route-project-detail",
       "kind": "route",
-      "codeRef": "App.tsx:/projects/:id",
       "name": "Detalhe de projeto",
       "purpose": "Projeto individual",
       "page": "/pt-pt/guias-utilizador/gerir-projetos/",
@@ -107,7 +97,6 @@
     {
       "id": "route-projects-viewer",
       "kind": "route",
-      "codeRef": "App.tsx:/projects/viewer",
       "name": "Showroom / viewer",
       "purpose": "Visualização showroom",
       "page": "/pt-pt/funcionalidades/configurador-3d/",
@@ -118,7 +107,6 @@
     {
       "id": "route-relatorio-final",
       "kind": "route",
-      "codeRef": "App.tsx:/relatorio-final/:project",
       "name": "Relatório final",
       "purpose": "Relatório consolidado do projeto",
       "page": "/pt-pt/funcionalidades/relatorio-final/",
@@ -128,7 +116,6 @@
     {
       "id": "route-projetos",
       "kind": "route",
-      "codeRef": "App.tsx:/PROJETOS",
       "name": "PIMO PROJETOS",
       "purpose": "Navegação projeto → caixa → peça",
       "page": "/pt-pt/sistemas-pimo/pimo-projetos/",
@@ -138,7 +125,6 @@
     {
       "id": "route-projetos-analise",
       "kind": "route",
-      "codeRef": "App.tsx:/PROJETOS/:project/analise",
       "name": "Análise de projeto",
       "purpose": "Documentos de análise",
       "page": "/pt-pt/funcionalidades/analise-projetos/",
@@ -148,7 +134,6 @@
     {
       "id": "route-nesting-v3",
       "kind": "route",
-      "codeRef": "App.tsx:/nesting_v3",
       "name": "Nesting v3",
       "purpose": "Motor de nesting Fast/PRO",
       "page": "/pt-pt/sistemas-pimo/pimo-nesting/",
@@ -158,7 +143,6 @@
     {
       "id": "route-legacy-root",
       "kind": "route",
-      "codeRef": "App.tsx:/ + /:projectSlug",
       "name": "Configurador legado / projeto",
       "purpose": "Editor 3D principal",
       "page": "/pt-pt/funcionalidades/configurador-3d/",
@@ -169,7 +153,6 @@
     {
       "id": "route-ajuda",
       "kind": "route",
-      "codeRef": "ajudaRoutes:/ajuda",
       "name": "Ajuda in-app",
       "purpose": "Help embutido na app",
       "page": "/pt-pt/",
@@ -180,7 +163,6 @@
     {
       "id": "route-whats-new",
       "kind": "route",
-      "codeRef": "ajudaRoutes:/ajuda/whats-new",
       "name": "Novidades in-app",
       "purpose": "Changelog na app",
       "page": "/pt-pt/novidades/",
@@ -190,7 +172,6 @@
     {
       "id": "route-industrial",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial",
       "name": "Industrial home",
       "purpose": "Hub industrial",
       "page": "/pt-pt/sistemas-pimo/pimo-industrial/",
@@ -200,7 +181,6 @@
     {
       "id": "route-work-orders",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/work-orders",
       "name": "Ordens de fabrico",
       "purpose": "PIMO TRAK work orders",
       "page": "/pt-pt/sistemas-pimo/pimo-trak/",
@@ -210,7 +190,6 @@
     {
       "id": "route-supervisor",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/supervisor",
       "name": "Supervisor",
       "purpose": "Dashboard supervisor",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
@@ -220,7 +199,6 @@
     {
       "id": "route-operador",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/operador",
       "name": "Operador",
       "purpose": "Vista operador",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
@@ -230,7 +208,6 @@
     {
       "id": "route-station-wh",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/work-orders/warehouse",
       "name": "Estação armazém",
       "purpose": "Work order warehouse",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
@@ -240,7 +217,6 @@
     {
       "id": "route-station-nest",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/work-orders/nesting",
       "name": "Estação nesting",
       "purpose": "Work order nesting",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
@@ -250,7 +226,6 @@
     {
       "id": "route-station-drill",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/work-orders/drill",
       "name": "Estação furação",
       "purpose": "Work order drill",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
@@ -260,7 +235,6 @@
     {
       "id": "route-station-orlar",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/work-orders/orlar",
       "name": "Estação orlar",
       "purpose": "Work order orlar",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
@@ -270,7 +244,6 @@
     {
       "id": "route-station-mont",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/work-orders/montagem",
       "name": "Estação montagem",
       "purpose": "Work order montagem",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
@@ -280,7 +253,6 @@
     {
       "id": "route-station-emb",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/work-orders/embalagem",
       "name": "Estação embalagem",
       "purpose": "Work order embalagem",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
@@ -290,7 +262,6 @@
     {
       "id": "route-tracking",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/tracking",
       "name": "Tracking industrial",
       "purpose": "Rastreio de peças",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
@@ -300,7 +271,6 @@
     {
       "id": "route-quality",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/quality",
       "name": "Qualidade",
       "purpose": "Controlo de qualidade",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
@@ -310,7 +280,6 @@
     {
       "id": "route-rework",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/rework",
       "name": "Retrabalho",
       "purpose": "Rework industrial",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
@@ -320,7 +289,6 @@
     {
       "id": "route-time",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/time-tracking",
       "name": "Time tracking",
       "purpose": "Tempos de estação",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
@@ -330,7 +298,6 @@
     {
       "id": "route-events",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/events",
       "name": "Eventos industriais",
       "purpose": "Log de eventos",
       "page": "/pt-pt/funcionalidades/estacoes-industriais/",
@@ -340,7 +307,6 @@
     {
       "id": "route-pimo-drill",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/pimo-drill",
       "name": "PIMO DRILL",
       "purpose": "Sistema de furação",
       "page": "/pt-pt/sistemas-pimo/pimo-drill/",
@@ -351,7 +317,6 @@
     {
       "id": "route-ops-cnc",
       "kind": "route",
-      "codeRef": "App.tsx:/industrial/operations/cnc",
       "name": "Operações CNC",
       "purpose": "Vista CNC",
       "page": "/pt-pt/funcionalidades/modulo-industrial/",
@@ -362,7 +327,6 @@
     {
       "id": "domain-auth",
       "kind": "domain",
-      "codeRef": "auth / session + logout",
       "name": "Autenticação e sessão",
       "purpose": "Entrar na conta, terminar sessão, perfil, sessão expirada",
       "page": "/pt-pt/funcionalidades/conta-e-acesso/",
@@ -373,7 +337,6 @@
     {
       "id": "domain-error-ui",
       "kind": "domain",
-      "codeRef": "error boundary / unexpected UI failure",
       "name": "Erro inesperado na UI",
       "purpose": "Mensagem Algo correu mal + Voltar ao início em vez de ecrã em branco",
       "page": "/pt-pt/perguntas-frequentes/",
@@ -384,7 +347,6 @@
     {
       "id": "domain-boxes",
       "kind": "domain",
-      "codeRef": "LegacyApp / boxes",
       "name": "Caixas / módulos",
       "purpose": "Criar e editar caixas",
       "page": "/pt-pt/guias-utilizador/criar-caixa/",
@@ -394,7 +356,6 @@
     {
       "id": "domain-pieces",
       "kind": "domain",
-      "codeRef": "piece models",
       "name": "Peças",
       "purpose": "Peças e cotas",
       "page": "/pt-pt/guias-utilizador/medicoes-e-cotas/",
@@ -404,7 +365,6 @@
     {
       "id": "domain-materials",
       "kind": "domain",
-      "codeRef": "materials catalog",
       "name": "Materiais",
       "purpose": "Painéis, bordos, texturas",
       "page": "/pt-pt/funcionalidades/materiais/",
@@ -415,7 +375,6 @@
     {
       "id": "domain-hardware",
       "kind": "domain",
-      "codeRef": "ferragens / hardware",
       "name": "Ferragens",
       "purpose": "Dobradiças, corrediças, conectores",
       "page": "/pt-pt/funcionalidades/ferragens/",
@@ -425,7 +384,6 @@
     {
       "id": "domain-doors-drawers",
       "kind": "domain",
-      "codeRef": "doors/drawers",
       "name": "Portas e gavetas",
       "purpose": "Frentes e exclusividade mútua",
       "page": "/pt-pt/funcionalidades/portas-e-gavetas/",
@@ -435,7 +393,6 @@
     {
       "id": "domain-cutlist",
       "kind": "domain",
-      "codeRef": "cutlist",
       "name": "Lista de corte",
       "purpose": "Cutlist e fabrico",
       "page": "/pt-pt/funcionalidades/lista-de-corte/",
@@ -445,7 +402,6 @@
     {
       "id": "domain-nesting",
       "kind": "domain",
-      "codeRef": "nesting Fast/PRO",
       "name": "Nesting Fast/PRO",
       "purpose": "Otimização de chapas",
       "page": "/pt-pt/funcionalidades/nesting-fast-pro/",
@@ -455,7 +411,6 @@
     {
       "id": "domain-exports",
       "kind": "domain",
-      "codeRef": "exportFormats",
       "name": "Exportações",
       "purpose": "TCN, Drill XML, ZIP, PDF",
       "page": "/pt-pt/guias-utilizador/exportacao/",
@@ -465,7 +420,6 @@
     {
       "id": "domain-tcn",
       "kind": "domain",
-      "codeRef": "TCN export",
       "name": "Exportação TCN",
       "purpose": "Ficheiros TCN CNC",
       "page": "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/",
@@ -475,7 +429,6 @@
     {
       "id": "domain-pdf",
       "kind": "domain",
-      "codeRef": "PDF técnico",
       "name": "PDF técnico",
       "purpose": "Documentação PDF",
       "page": "/pt-pt/funcionalidades/pdf-tecnico/",
@@ -486,7 +439,6 @@
     {
       "id": "domain-budget",
       "kind": "domain",
-      "codeRef": "orçamentos P39",
       "name": "Orçamentos",
       "purpose": "Cálculo de orçamento",
       "page": "/pt-pt/funcionalidades/orcamentos/",
@@ -496,7 +448,6 @@
     {
       "id": "domain-photo",
       "kind": "domain",
-      "codeRef": "photo mode",
       "name": "Modo foto",
       "purpose": "Capturas e renderização",
       "page": "/pt-pt/funcionalidades/modo-foto/",
@@ -506,7 +457,6 @@
     {
       "id": "domain-room",
       "kind": "domain",
-      "codeRef": "room / sala",
       "name": "Sala e ambiente",
       "purpose": "Ambiente 3D e room settings",
       "page": "/pt-pt/funcionalidades/sala-e-ambiente/",
@@ -516,7 +466,6 @@
     {
       "id": "domain-remates",
       "kind": "domain",
-      "codeRef": "remates / rodapés",
       "name": "Remates e acabamentos",
       "purpose": "Remates, rodapés, frisos",
       "page": "/pt-pt/funcionalidades/remates/",
@@ -526,7 +475,6 @@
     {
       "id": "domain-move",
       "kind": "domain",
-      "codeRef": "move/position",
       "name": "Mover e posicionar",
       "purpose": "Manipulação no viewport",
       "page": "/pt-pt/guias-utilizador/mover-e-posicionar/",
@@ -536,7 +484,6 @@
     {
       "id": "domain-shortcuts",
       "kind": "domain",
-      "codeRef": "keyboard shortcuts",
       "name": "Atalhos de teclado",
       "purpose": "Hotkeys",
       "page": "/pt-pt/guias-utilizador/atalhos-teclado/",
@@ -546,7 +493,6 @@
     {
       "id": "domain-buttons",
       "kind": "domain",
-      "codeRef": "UI buttons catalog",
       "name": "Botões / controlos UI",
       "purpose": "Catálogo de ações",
       "page": "/pt-pt/referencia/botoes/",
@@ -557,7 +503,6 @@
     {
       "id": "domain-architecture",
       "kind": "domain",
-      "codeRef": "modules.js flow",
       "name": "Arquitetura / fluxo",
       "purpose": "Fluxo de módulos",
       "page": "/pt-pt/como-funciona/",
@@ -567,7 +512,6 @@
     {
       "id": "sys-trak",
       "kind": "system",
-      "codeRef": "data/systems.js:pimo-trak",
       "name": "PIMO TRAK",
       "purpose": "Ordens e tracking",
       "page": "/pt-pt/sistemas-pimo/pimo-trak/",
@@ -578,7 +522,6 @@
     {
       "id": "sys-projetos",
       "kind": "system",
-      "codeRef": "data/systems.js:pimo-projetos",
       "name": "PIMO PROJETOS",
       "purpose": "Hierarquia de projeto",
       "page": "/pt-pt/sistemas-pimo/pimo-projetos/",
@@ -588,7 +531,6 @@
     {
       "id": "sys-nesting",
       "kind": "system",
-      "codeRef": "data/systems.js:pimo-nesting",
       "name": "PIMO NESTING",
       "purpose": "Nesting dedicado",
       "page": "/pt-pt/sistemas-pimo/pimo-nesting/",
@@ -598,7 +540,6 @@
     {
       "id": "sys-industrial",
       "kind": "system",
-      "codeRef": "data/systems.js:pimo-industrial",
       "name": "PIMO INDUSTRIAL",
       "purpose": "Módulo industrial",
       "page": "/pt-pt/sistemas-pimo/pimo-industrial/",
@@ -609,7 +550,6 @@
     {
       "id": "sys-drill",
       "kind": "system",
-      "codeRef": "data/systems.js:pimo-drill",
       "name": "PIMO DRILL",
       "purpose": "Furação",
       "page": "/pt-pt/sistemas-pimo/pimo-drill/",
@@ -619,7 +559,6 @@
     {
       "id": "eco-pt",
       "kind": "ecosystem",
-      "codeRef": "data/sites.js:pimo-pt",
       "name": "pt.pimo.info / pimo.pt",
       "purpose": "Landing loja",
       "page": "/sub/pt/",
@@ -629,7 +568,6 @@
     {
       "id": "eco-pro",
       "kind": "ecosystem",
-      "codeRef": "data/sites.js:pimo-pro",
       "purpose": "Landing app",
       "name": "pro.pimo.info / pimo.pro",
       "page": "/sub/pro/",
@@ -639,7 +577,6 @@
     {
       "id": "eco-es",
       "kind": "ecosystem",
-      "codeRef": "data/sites.js:pimo-es",
       "name": "es.pimo.info / pimo.es",
       "purpose": "Landing ES (redirect pimo.pt)",
       "page": "/sub/es/",
@@ -649,7 +586,6 @@
     {
       "id": "eco-casa",
       "kind": "ecosystem",
-      "codeRef": "data/sites.js:pimo-casa",
       "name": "casa.pimo.info / pimo.casa",
       "purpose": "Landing casa",
       "page": "/sub/casa/",
@@ -659,7 +595,6 @@
     {
       "id": "eco-design",
       "kind": "ecosystem",
-      "codeRef": "data/sites.js:pimo-design",
       "name": "design.pimo.info / pimo.design",
       "purpose": "Landing design",
       "page": "/sub/design/",
@@ -669,7 +604,6 @@
     {
       "id": "eco-blog",
       "kind": "ecosystem",
-      "codeRef": "pages/pt-pt/blog",
       "name": "Blog",
       "purpose": "Infraestrutura de blog",
       "page": "/pt-pt/blog/",

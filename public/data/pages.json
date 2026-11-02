@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T19:53:33.976Z",
+  "generatedAt": "2026-11-02T22:09:15.833Z",
   "items": [
     {
       "path": "/",
@@ -676,8 +676,8 @@
     {
       "path": "/pt-pt/documentacao-tecnica/docs-do-sistema/",
       "file": "pages/pt-pt/documentacao-tecnica/docs-do-sistema.mdx",
-      "title": "System docs",
-      "description": "System docs.",
+      "title": "Documentos de sistema",
+      "description": "Índice público das áreas de documentação de sistema do PIMO PRO: gavetas, PDF industrial e categorias em preparação.",
       "author": "",
       "category": "tecnico",
       "tags": [
@@ -686,7 +686,7 @@
       "related": [
         "/pt-pt/documentacao-tecnica/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -1861,7 +1861,7 @@
       "path": "/pt-pt/referencia/botoes/",
       "file": "pages/pt-pt/referencia/botoes.mdx",
       "title": "Botões e controlos",
-      "description": "Catálogo completo de botões do PIMO PRO: nome, localização, ação, efeitos, atalho e ligação às funcionalidades.",
+      "description": "Catálogo de botões do PIMO PRO: o que fazem, onde aparecem no ecrã e com que funções se ligam, em linguagem clara.",
       "author": "",
       "category": "referencia",
       "tags": [

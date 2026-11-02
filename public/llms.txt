@@ -102,16 +102,16 @@ Locale: pt-PT
 - PIMO DRILL [em-desenvolvimento] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/, Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.
 
 ## UI buttons (297)
-- Header: 14 controlos
+- Cabeçalho: 14 controlos
 - Navegação lateral: 7 controlos
-- Barra superior unificada: 35 controlos
+- Barra superior: 35 controlos
 - Ferramentas 3D: 4 controlos
 - Painéis laterais: 44 controlos
 - Menu de contexto: 91 controlos
-- Exportação / Salvar e Gerar: 20 controlos
+- Exportação e gravação: 20 controlos
 - Barra inferior: 22 controlos
-- Design Industrial: 2 controlos
-- Nesting V3: 8 controlos
+- Design industrial: 2 controlos
+- Nesting: 8 controlos
 - PIMO DRILL: 8 controlos
 - PIMO-TRAK: 20 controlos
 - Showroom: 8 controlos
@@ -156,7 +156,7 @@ Locale: pt-PT
 - Como funciona: https://pimo.info/pt-pt/como-funciona/
 - Contacto: https://pimo.info/pt-pt/contacto/
 - Documentação técnica: https://pimo.info/pt-pt/documentacao-tecnica/
-- System docs: https://pimo.info/pt-pt/documentacao-tecnica/docs-do-sistema/
+- Documentos de sistema: https://pimo.info/pt-pt/documentacao-tecnica/docs-do-sistema/
 - Orçamentos P3.9: https://pimo.info/pt-pt/documentacao-tecnica/orcamentos-p39/
 - Sistema Industrial: https://pimo.info/pt-pt/documentacao-tecnica/sistema-industrial/
 - Ecossistema de sites PIMO: https://pimo.info/pt-pt/ecossistema/

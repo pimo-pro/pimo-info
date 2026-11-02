@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-11-02T19:53:33.977Z
+Generated: 2026-11-02T22:09:15.834Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -105,16 +105,16 @@ Locale: pt-PT
 - PIMO DRILL [em-desenvolvimento] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/, Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.
 
 ## UI buttons (297)
-- Header: 14 controlos
+- Cabeçalho: 14 controlos
 - Navegação lateral: 7 controlos
-- Barra superior unificada: 35 controlos
+- Barra superior: 35 controlos
 - Ferramentas 3D: 4 controlos
 - Painéis laterais: 44 controlos
 - Menu de contexto: 91 controlos
-- Exportação / Salvar e Gerar: 20 controlos
+- Exportação e gravação: 20 controlos
 - Barra inferior: 22 controlos
-- Design Industrial: 2 controlos
-- Nesting V3: 8 controlos
+- Design industrial: 2 controlos
+- Nesting: 8 controlos
 - PIMO DRILL: 8 controlos
 - PIMO-TRAK: 20 controlos
 - Showroom: 8 controlos
@@ -159,7 +159,7 @@ Locale: pt-PT
 - Como funciona: https://pimo.info/pt-pt/como-funciona/
 - Contacto: https://pimo.info/pt-pt/contacto/
 - Documentação técnica: https://pimo.info/pt-pt/documentacao-tecnica/
-- System docs: https://pimo.info/pt-pt/documentacao-tecnica/docs-do-sistema/
+- Documentos de sistema: https://pimo.info/pt-pt/documentacao-tecnica/docs-do-sistema/
 - Orçamentos P3.9: https://pimo.info/pt-pt/documentacao-tecnica/orcamentos-p39/
 - Sistema Industrial: https://pimo.info/pt-pt/documentacao-tecnica/sistema-industrial/
 - Ecossistema de sites PIMO: https://pimo.info/pt-pt/ecossistema/
@@ -230,3271 +230,2380 @@ Locale: pt-PT
 # UI buttons catalog
 
 ## Button: Abrir/fechar Histórico
-id: kbd-history-h
 area: atalhos
-location: Atalhos de teclado (barra inferior)
-action: Alterna o painel de histórico (`BottomInfoToolbar`).
+location: Atalho de teclado (barra inferior)
+action: Abre ou fecha o histórico de alterações.
 effects: Abre/fecha histórico se o foco não estiver num campo editável.
 shortcut: H
-iconName: keyboard
-sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Adicionar/remover da seleção
-id: kbd-multi-select
 area: atalhos
-location: Atalhos de teclado (Workspace)
-action: Alterna inclusão do objeto na multi-seleção.
-effects: Alterna inclusão do objeto na multi-seleção.
+location: Atalho de teclado no espaço de trabalho 3D
+action: Adiciona ou remove o objeto da seleção múltipla.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: Ctrl+Click
-iconName: keyboard
-sourceFile: src/components/layout/workspace/Workspace.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Desfazer
-id: kbd-undo
 area: atalhos
-location: Atalhos de teclado (Workspace)
-action: Desfaz (`actions.undo`).
-effects: Desfaz (`actions.undo`).
+location: Atalho de teclado no espaço de trabalho 3D
+action: Desfaz (a última alteração).
+effects: O projeto volta ao estado anterior.
 shortcut: Ctrl+Z
-iconName: keyboard
-sourceFile: src/components/layout/workspace/Workspace.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Excluir seleção
-id: kbd-delete
 area: atalhos
-location: Atalhos de teclado (Workspace)
-action: Remove caixas/remates selecionados.
-effects: Remove caixas/remates selecionados.
+location: Atalho de teclado no espaço de trabalho 3D
+action: Remove as caixas ou remates selecionados.
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: Delete / Backspace
-iconName: keyboard
-sourceFile: src/components/layout/workspace/Workspace.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Mostrar/ocultar ajuda de atalhos
-id: kbd-alt-help
 area: atalhos
-location: Atalhos de teclado (Workspace)
-action: Alterna o overlay «Atalhos do teclado».
-effects: Alterna o overlay «Atalhos do teclado».
+location: Atalho de teclado no espaço de trabalho 3D
+action: Mostra ou oculta a ajuda de atalhos no ecrã.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: Alt
-iconName: keyboard
-sourceFile: src/components/layout/workspace/Workspace.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Mover caixa selecionada
-id: kbd-arrows
 area: atalhos
-location: Atalhos de teclado (Workspace)
-action: Move a caixa selecionada no plano (passo em mm).
-effects: Move a caixa selecionada no plano (passo em mm).
+location: Atalho de teclado no espaço de trabalho 3D
+action: Move a caixa selecionada no plano, em passos em milímetros.
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: Setas
-iconName: keyboard
-sourceFile: src/components/layout/workspace/Workspace.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Nesting: Limpa seleção/arrasto no Nesting V3.
-id: kbd-nesting-esc
 area: atalhos
-location: Atalhos Nesting V3
+location: Atalho de teclado no ecrã de nesting
 action: Limpa seleção/arrasto no Nesting V3.
-effects: Limpa seleção/arrasto no Nesting V3.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: Escape
-iconName: keyboard
-sourceFile: src/nesting-v3/NestingV3Page.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: Nesting: Remove a peça selecionada.
-id: kbd-nesting-del
 area: atalhos
-location: Atalhos Nesting V3
+location: Atalho de teclado no ecrã de nesting
 action: Remove a peça selecionada.
-effects: Remove a peça selecionada.
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: Delete / Backspace
-iconName: keyboard
-sourceFile: src/nesting-v3/NestingV3Page.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: Nesting: Repõe zoom/pan.
-id: kbd-nesting-zoom-reset
 area: atalhos
-location: Atalhos Nesting V3
+location: Atalho de teclado no ecrã de nesting
 action: Repõe zoom/pan.
-effects: Repõe zoom/pan.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: 0
-iconName: keyboard
-sourceFile: src/nesting-v3/NestingV3Page.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: Nesting: Roda a peça selecionada.
-id: kbd-nesting-r
 area: atalhos
-location: Atalhos Nesting V3
+location: Atalho de teclado no ecrã de nesting
 action: Roda a peça selecionada.
-effects: Roda a peça selecionada.
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: R
-iconName: keyboard
-sourceFile: src/nesting-v3/NestingV3Page.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: Nesting: Zoom in.
-id: kbd-nesting-zoom-in
 area: atalhos
-location: Atalhos Nesting V3
+location: Atalho de teclado no ecrã de nesting
 action: Zoom in.
-effects: Zoom in.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: + / =
-iconName: keyboard
-sourceFile: src/nesting-v3/NestingV3Page.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: Nesting: Zoom out.
-id: kbd-nesting-zoom-out
 area: atalhos
-location: Atalhos Nesting V3
+location: Atalho de teclado no ecrã de nesting
 action: Zoom out.
-effects: Zoom out.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: keyboard
-sourceFile: src/nesting-v3/NestingV3Page.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: Refazer
-id: kbd-redo-y
 area: atalhos
-location: Atalhos de teclado (Workspace)
-action: Refaz (`actions.redo`).
-effects: Refaz (`actions.redo`).
+location: Atalho de teclado no espaço de trabalho 3D
+action: Refaz (a alteração desfeita).
+effects: A alteração desfeita volta a aplicar-se.
 shortcut: Ctrl+Y
-iconName: keyboard
-sourceFile: src/components/layout/workspace/Workspace.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Refazer
-id: kbd-redo-shift-z
 area: atalhos
-location: Atalhos de teclado (Workspace)
-action: Refaz (`actions.redo`).
-effects: Refaz (`actions.redo`).
+location: Atalho de teclado no espaço de trabalho 3D
+action: Refaz (a alteração desfeita).
+effects: A alteração desfeita volta a aplicar-se.
 shortcut: Ctrl+Shift+Z
-iconName: keyboard
-sourceFile: src/components/layout/workspace/Workspace.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Adições
-id: history-filter-add
 area: barra-inferior
-location: Painel Histórico (barra inferior)
+location: Na barra inferior, painel Histórico
 action: Filtra o histórico para «Adições».
 effects: Filtra entradas do histórico de alterações.
 shortcut: -
-iconName: undo
-sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alterações de altura
-id: history-filter-height
 area: barra-inferior
-location: Painel Histórico (barra inferior)
+location: Na barra inferior, painel Histórico
 action: Filtra o histórico para «Alterações de altura».
 effects: Filtra entradas do histórico de alterações.
 shortcut: -
-iconName: undo
-sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Chapas Real
-id: hub-industriais-chapasReal
 area: barra-inferior
-location: Hub Industriais (barra inferior)
+location: Na barra inferior, área Industriais
 action: Mostra o separador «Chapas Real» no hub Industriais.
 effects: Altera o conteúdo do painel industrial inferior.
 shortcut: -
-iconName: adminChecklist
-sourceFile: src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx
-featureIds: lista-de-corte, modulo-industrial
+features: lista-de-corte, modulo-industrial
 
 ## Button: componentes
-id: bottom-componentes
 area: barra-inferior
-location: Barra inferior de informação
+location: Na barra inferior do ecrã
 action: Abre o menu de componentes (peças e painéis).
-effects: Abre o menu de componentes (peças e painéis).
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: grid
-sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
-featureIds: lista-de-corte, configurador-3d
+features: lista-de-corte, configurador-3d
 
 ## Button: Consumo Materiais
-id: hub-industriais-consumoMateriais
 area: barra-inferior
-location: Hub Industriais (barra inferior)
+location: Na barra inferior, área Industriais
 action: Mostra o separador «Consumo Materiais» no hub Industriais.
 effects: Altera o conteúdo do painel industrial inferior.
 shortcut: -
-iconName: adminChecklist
-sourceFile: src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx
-featureIds: lista-de-corte, modulo-industrial
+features: lista-de-corte, modulo-industrial
 
 ## Button: Editar
-id: hub-financeiro-editar
 area: barra-inferior
-location: Hub Financeiro (barra inferior)
+location: Na barra inferior, área Financeiro
 action: Mostra o separador «Editar» no hub Financeiro.
 effects: Visível apenas para admin.
 shortcut: -
-iconName: adminChart
-sourceFile: src/components/layout/bottom-info-toolbar/hubs/FinanceiroHub.tsx
-featureIds: orcamentos
+features: orcamentos
 
 ## Button: Enviar ordem para fábrica
-id: hub-enviar-fabrica-btn
 area: barra-inferior
-location: Hub Industriais, Enviar para Fábrica
-action: Envia a ordem industrial para a fábrica (`enviar()`).
+location: Na barra inferior, área Industriais (Enviar para Fábrica)
+action: Envia a ordem industrial para a fábrica.
 effects: Depende de artefactos industriais válidos / PIMO-TRAK.
 shortcut: -
-iconName: send
-sourceFile: src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Enviar para Fábrica
-id: hub-industriais-enviarFabrica
 area: barra-inferior
-location: Hub Industriais (barra inferior)
+location: Na barra inferior, área Industriais
 action: Mostra o separador «Enviar para Fábrica» no hub Industriais.
 effects: Altera o conteúdo do painel industrial inferior.
 shortcut: -
-iconName: adminChecklist
-sourceFile: src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx
-featureIds: lista-de-corte, modulo-industrial
+features: lista-de-corte, modulo-industrial
 
 ## Button: Ferragens Totais
-id: hub-industriais-ferragensTotais
 area: barra-inferior
-location: Hub Industriais (barra inferior)
+location: Na barra inferior, área Industriais
 action: Mostra o separador «Ferragens Totais» no hub Industriais.
 effects: Altera o conteúdo do painel industrial inferior.
 shortcut: -
-iconName: adminChecklist
-sourceFile: src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx
-featureIds: lista-de-corte, modulo-industrial
+features: lista-de-corte, modulo-industrial
 
 ## Button: Financeiro
-id: bottom-financeiro
 area: barra-inferior
-location: Barra inferior de informação
+location: Na barra inferior do ecrã
 action: Abre/fecha o hub Financeiro (orçamento/peças).
-effects: Abre/fecha o hub Financeiro (orçamento/peças).
+effects: O painel ou menu correspondente abre ou fecha.
 shortcut: -
-iconName: finance
-sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
-featureIds: orcamentos
+features: orcamentos
 
 ## Button: Financeiro peças
-id: hub-financeiro-pecas
 area: barra-inferior
-location: Hub Financeiro (barra inferior)
+location: Na barra inferior, área Financeiro
 action: Mostra o separador «Financeiro peças» no hub Financeiro.
 effects: Altera o painel financeiro.
 shortcut: -
-iconName: adminChart
-sourceFile: src/components/layout/bottom-info-toolbar/hubs/FinanceiroHub.tsx
-featureIds: orcamentos
+features: orcamentos
 
 ## Button: Histórico
-id: bottom-historico
 area: barra-inferior
-location: Barra inferior de informação
+location: Na barra inferior do ecrã
 action: Abre o painel de histórico de alterações.
-effects: Abre o painel de histórico de alterações.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: undo
-sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Industriais
-id: bottom-industriais
 area: barra-inferior
-location: Barra inferior de informação
+location: Na barra inferior do ecrã
 action: Abre/fecha o hub Industriais (peças, chapas, envio fábrica).
-effects: Abre/fecha o hub Industriais (peças, chapas, envio fábrica).
+effects: O painel ou menu correspondente abre ou fecha.
 shortcut: -
-iconName: industrial
-sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
-featureIds: lista-de-corte, modulo-industrial
+features: lista-de-corte, modulo-industrial
 
 ## Button: Movimentações
-id: history-filter-move
 area: barra-inferior
-location: Painel Histórico (barra inferior)
+location: Na barra inferior, painel Histórico
 action: Filtra o histórico para «Movimentações».
 effects: Filtra entradas do histórico de alterações.
 shortcut: -
-iconName: undo
-sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Observações Industriais
-id: hub-industriais-resumoIndustriais
 area: barra-inferior
-location: Hub Industriais (barra inferior)
+location: Na barra inferior, área Industriais
 action: Mostra o separador «Observações Industriais» no hub Industriais.
 effects: Altera o conteúdo do painel industrial inferior.
 shortcut: -
-iconName: adminChecklist
-sourceFile: src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx
-featureIds: lista-de-corte, modulo-industrial
+features: lista-de-corte, modulo-industrial
 
 ## Button: Operações
-id: bottom-operacoes
 area: barra-inferior
-location: Barra inferior de informação
+location: Na barra inferior do ecrã
 action: Abre/fecha o hub Operações industriais.
-effects: Abre/fecha o hub Operações industriais.
+effects: O painel ou menu correspondente abre ou fecha.
 shortcut: -
-iconName: operations
-sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Outras ações
-id: history-filter-other
 area: barra-inferior
-location: Painel Histórico (barra inferior)
+location: Na barra inferior, painel Histórico
 action: Filtra o histórico para «Outras ações».
 effects: Filtra entradas do histórico de alterações.
 shortcut: -
-iconName: undo
-sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Painel Unificado
-id: hub-financeiro-unificado
 area: barra-inferior
-location: Hub Financeiro (barra inferior)
+location: Na barra inferior, área Financeiro
 action: Mostra o separador «Painel Unificado» no hub Financeiro.
 effects: Altera o painel financeiro.
 shortcut: -
-iconName: adminChart
-sourceFile: src/components/layout/bottom-info-toolbar/hubs/FinanceiroHub.tsx
-featureIds: orcamentos
+features: orcamentos
 
 ## Button: Peças Totais
-id: hub-industriais-pecasTotais
 area: barra-inferior
-location: Hub Industriais (barra inferior)
+location: Na barra inferior, área Industriais
 action: Mostra o separador «Peças Totais» no hub Industriais.
 effects: Altera o conteúdo do painel industrial inferior.
 shortcut: -
-iconName: adminChecklist
-sourceFile: src/components/layout/bottom-info-toolbar/hubs/IndustriaisHub.tsx
-featureIds: lista-de-corte, modulo-industrial
+features: lista-de-corte, modulo-industrial
 
 ## Button: Redimensionamentos
-id: history-filter-resize
 area: barra-inferior
-location: Painel Histórico (barra inferior)
+location: Na barra inferior, painel Histórico
 action: Filtra o histórico para «Redimensionamentos».
 effects: Filtra entradas do histórico de alterações.
 shortcut: -
-iconName: undo
-sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Remoções
-id: history-filter-remove
 area: barra-inferior
-location: Painel Histórico (barra inferior)
+location: Na barra inferior, painel Histórico
 action: Filtra o histórico para «Remoções».
 effects: Filtra entradas do histórico de alterações.
 shortcut: -
-iconName: undo
-sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Todas as ações
-id: history-filter-all
 area: barra-inferior
-location: Painel Histórico (barra inferior)
+location: Na barra inferior, painel Histórico
 action: Filtra o histórico para «Todas as ações».
 effects: Filtra entradas do histórico de alterações.
 shortcut: -
-iconName: undo
-sourceFile: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: 90° direita
-id: utt-rotate-90
 area: barra-superior
-location: Barra superior unificada, opções de visualização / rotação
+location: Na barra superior, opções de visualização e rotação
 action: Adiciona π/2 à rotação Y da caixa ou remate selecionado.
-effects: Adiciona π/2 à rotação Y da caixa ou remate selecionado.
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: -
-iconName: displayCheck
-sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Bloquear / Desbloquear colisão
-id: utt-lock-collision
 area: barra-superior
-location: Barra superior unificada do workspace
+location: Na barra superior do espaço de trabalho 3D
 action: Alterna o bloqueio de colisão (impedir ou permitir sobreposição entre caixas, paredes e chão).
-effects: Alterna o bloqueio de colisão (impedir ou permitir sobreposição entre caixas, paredes e chão).
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: lock3D
-sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Configurações de Qualidade de Exibição
-id: utt-display-quality
 area: barra-superior
-location: Barra superior unificada do workspace
+location: Na barra superior do espaço de trabalho 3D
 action: Abre presets de qualidade (Baixa / Média / Alta).
-effects: Abre presets de qualidade (Baixa / Média / Alta).
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: displayMenu
-sourceFile: src/components/layout/topbar/DisplayMenuButton.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Descartar e criar novo
-id: confirm-descartar-novo
 area: barra-superior
-location: Modal confirmar novo projeto
+location: Na janela de confirmação de novo projeto
 action: Descarta alterações e cria um novo projeto.
-effects: Descarta alterações e cria um novo projeto.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: adminDocs
-sourceFile: src/components/modals/ConfirmNewProjectModal.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: DESFAZER
-id: toolbar-desfazer
 area: barra-superior
-location: Barra superior / header (ações de projeto)
-action: Desfaz a última alteração do projeto (`actions.undo`).
-effects: Desfazer (Ctrl+Z)
+location: No topo, ações de projeto
+action: Desfaz a última alteração do projeto (a última alteração).
+effects: Desfazer (Ctrl+Z).
 shortcut: Ctrl+Z
-iconName: undo
-sourceFile: src/constants/toolbarConfig.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Design Industrial
-id: utt-industrial-design
 area: barra-superior
-location: Barra superior unificada do workspace
+location: Na barra superior do espaço de trabalho 3D
 action: Ativa/desativa o workspace de Design Industrial e o painel associado.
-effects: Ativa/desativa o workspace de Design Industrial e o painel associado.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: industrialDesign
-sourceFile: src/components/layout/workspace/WorkspaceToolbar.tsx
-featureIds: modulo-industrial
+features: modulo-industrial
 
 ## Button: ENVIAR
-id: toolbar-enviar
 area: barra-superior
-location: Barra superior / header (ações de projeto)
+location: No topo, ações de projeto
 action: Abre o fluxo de envio de pacote do projeto.
-effects: Enviar pacote
+effects: Enviar pacote.
 shortcut: -
-iconName: send
-sourceFile: src/constants/toolbarConfig.ts
-featureIds: pdf-tecnico
+features: pdf-tecnico
 
 ## Button: Esconder todos os painéis
-id: utt-hide-all-panels
 area: barra-superior
-location: Barra superior unificada, opções de visualização / rotação
+location: Na barra superior, opções de visualização e rotação
 action: Mostra ou oculta todos os painéis na vista.
-effects: Mostra ou oculta todos os painéis na vista.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: displayCheck
-sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Exploded View
-id: utt-exploded
 area: barra-superior
-location: Barra superior unificada do workspace
+location: Na barra superior do espaço de trabalho 3D
 action: Abre controlos de vista explodida (ativar + intensidade).
-effects: Abre controlos de vista explodida (ativar + intensidade).
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: exploded
-sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Guardar e criar novo
-id: confirm-guardar-novo
 area: barra-superior
-location: Modal confirmar novo projeto
+location: Na janela de confirmação de novo projeto
 action: Guarda o projeto atual e cria um novo.
-effects: Guarda o projeto atual e cria um novo.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: adminDocs
-sourceFile: src/components/modals/ConfirmNewProjectModal.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Highlight
-id: utt-highlight
 area: barra-superior
-location: Barra superior unificada do workspace
-action: Alterna highlight de seleção no viewer (`toggleHighlight`).
-effects: Alterna highlight de seleção no viewer (`toggleHighlight`).
+location: Na barra superior do espaço de trabalho 3D
+action: Alterna highlight de seleção no viewer.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: highlight
-sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Medidas do Conjunto
-id: utt-dimensions
 area: barra-superior
-location: Barra superior unificada do workspace
-action: Alterna o overlay de medidas do conjunto (`toggleDimensionsOverlay`).
-effects: Alterna o overlay de medidas do conjunto (`toggleDimensionsOverlay`).
+location: Na barra superior do espaço de trabalho 3D
+action: Alterna o overlay de medidas do conjunto.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: dimensions
-sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Mostrar arestas dos painéis
-id: utt-show-panel-edges
 area: barra-superior
-location: Barra superior unificada, opções de visualização / rotação
+location: Na barra superior, opções de visualização e rotação
 action: Mostra ou oculta as arestas dos painéis.
-effects: Mostra ou oculta as arestas dos painéis.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: displayCheck
-sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: NOVO
-id: toolbar-novo
 area: barra-superior
-location: Barra superior / header (ações de projeto)
+location: No topo, ações de projeto
 action: Confirma e limpa o projeto local para iniciar sessão nova.
-effects: Limpar dados locais e iniciar sessão nova
+effects: Limpar dados locais e iniciar sessão nova.
 shortcut: -
-iconName: adminDocs
-sourceFile: src/constants/toolbarConfig.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Peças / painéis (visibilidade)
-id: utt-pieces-visibility
 area: barra-superior
-location: Barra superior unificada do workspace
+location: Na barra superior do espaço de trabalho 3D
 action: Abre o menu de opções de visualização de peças/painéis.
-effects: Abre o menu de opções de visualização de peças/painéis.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: pieces
-sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: PHOTO
-id: toolbar-photo
 area: barra-superior
-location: Barra superior / header (ações de projeto)
-action: Alterna o painel Photo Mode e `viewerSettings.photoModeEnabled`.
-effects: Photo Mode
+location: No topo, ações de projeto
+action: Alterna o painel Photo Mode e.
+effects: Photo Mode.
 shortcut: -
-iconName: photoMode
-sourceFile: src/constants/toolbarConfig.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: PROJETO
-id: toolbar-projeto
 area: barra-superior
-location: Barra superior / header (ações de projeto)
+location: No topo, ações de projeto
 action: Abre a lista/modal de projetos salvos.
-effects: Projetos salvos
+effects: Projetos salvos.
 shortcut: -
-iconName: projects
-sourceFile: src/constants/toolbarConfig.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Qualidade: Alta
-id: display-quality-alta
 area: barra-superior
-location: Menu Qualidade de Exibição
+location: No menu Qualidade de Exibição (barra superior)
 action: Aplica o preset de qualidade «Alta» (Bloom e reflexos moderados).
-effects: Bloom e reflexos moderados
+effects: Bloom e reflexos moderados.
 shortcut: -
-iconName: displayCheck
-sourceFile: src/components/layout/topbar/DisplayMenuButton.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Qualidade: Baixa
-id: display-quality-baixa
 area: barra-superior
-location: Menu Qualidade de Exibição
+location: No menu Qualidade de Exibição (barra superior)
 action: Aplica o preset de qualidade «Baixa» (Luz simples, sem efeitos).
-effects: Luz simples, sem efeitos
+effects: Luz simples, sem efeitos.
 shortcut: -
-iconName: displayCheck
-sourceFile: src/components/layout/topbar/DisplayMenuButton.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Qualidade: Média
-id: display-quality-media
 area: barra-superior
-location: Menu Qualidade de Exibição
+location: No menu Qualidade de Exibição (barra superior)
 action: Aplica o preset de qualidade «Média» (Bloom leve).
-effects: Bloom leve
+effects: Bloom leve.
 shortcut: -
-iconName: displayCheck
-sourceFile: src/components/layout/topbar/DisplayMenuButton.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: REFAZER
-id: toolbar-refazer
 area: barra-superior
-location: Barra superior / header (ações de projeto)
-action: Refaz a alteração desfeita (`actions.redo`).
-effects: Refazer (Ctrl+Shift+Z)
+location: No topo, ações de projeto
+action: Refaz a alteração desfeita (a alteração desfeita).
+effects: Refazer (Ctrl+Shift+Z).
 shortcut: Ctrl+Shift+Z / Ctrl+Y
-iconName: redo
-sourceFile: src/constants/toolbarConfig.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Reflexos dinâmicos (probe)
-id: utt-reflections
 area: barra-superior
-location: Barra superior unificada, opções de visualização / rotação
+location: Na barra superior, opções de visualização e rotação
 action: Ativa ou desativa reflexos na vista.
-effects: Ativa ou desativa reflexos na vista.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: displayCheck
-sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Régua
-id: utt-ruler
 area: barra-superior
-location: Barra superior unificada do workspace
-action: Alterna a régua no viewer (`toggleRuler`).
-effects: Alterna a régua no viewer (`toggleRuler`).
+location: Na barra superior do espaço de trabalho 3D
+action: Alterna a régua no viewer.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: ruler
-sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: RESET
-id: toolbar-reset-camera
 area: barra-superior
-location: Barra superior / header (ações de projeto)
+location: No topo, ações de projeto
 action: Repõe a câmara na vista frontal centralizada.
-effects: Reset Camera, Vista frontal centralizada
+effects: Reset Camera, Vista frontal centralizada.
 shortcut: -
-iconName: resetCamera
-sourceFile: src/constants/toolbarConfig.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Salão, configurar sala
-id: utt-room
 area: barra-superior
-location: Barra superior unificada do workspace
+location: Na barra superior do espaço de trabalho 3D
 action: Abre/fecha o painel de configuração da sala.
-effects: Abre/fecha o painel de configuração da sala.
+effects: O painel ou menu correspondente abre ou fecha.
 shortcut: -
-iconName: room
-sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Salvar e Gerar Design
-id: utt-salvar-gerar
 area: barra-superior
-location: Barra superior unificada do workspace
-action: Persiste o projeto e abre a bolha unificada de exportação/envio (`UnifiedExportBubble`).
-effects: Persiste o projeto e abre a bolha unificada de exportação/envio (`UnifiedExportBubble`).
+location: Na barra superior do espaço de trabalho 3D
+action: Persiste o projeto e abre a bolha unificada de exportação/envio.
+effects: O ficheiro ou relatório fica pronto para descarregar ou enviar.
 shortcut: -
-iconName: send
-sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
-featureIds: exportacao-tcn-drill-xml, pdf-tecnico, lista-de-corte, nesting-fast-pro
+features: exportacao-tcn-drill-xml, pdf-tecnico, lista-de-corte, nesting-fast-pro
 
 ## Button: Selecionar vista da câmera
-id: utt-camera-views
 area: barra-superior
-location: Barra superior unificada do workspace
+location: Na barra superior do espaço de trabalho 3D
 action: Abre o menu de vistas da câmara (Top/Bottom/Front/Back/Left/Right/Isometric).
-effects: Abre o menu de vistas da câmara (Top/Bottom/Front/Back/Left/Right/Isometric).
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: camera
-sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Ver Peças / Ocultar peças individuais
-id: utt-ver-pecas
 area: barra-superior
-location: Barra superior unificada, opções de visualização / rotação
-action: Alterna `viewerSettings.panelRenderingEnabled`.
-effects: Alterna `viewerSettings.panelRenderingEnabled`.
+location: Na barra superior, opções de visualização e rotação
+action: Alterna.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: pieces
-sourceFile: src/components/layout/unified-toolbar/UnifiedTopToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Vista Frontal (Front)
-id: camera-view-front
 area: barra-superior
-location: Menu vistas da câmara (barra superior)
+location: No menu de vistas da câmara (barra superior)
 action: Define a vista da câmara para «front».
 effects: Altera a orientação da câmara no viewer 3D.
 shortcut: -
-iconName: camera
-sourceFile: src/components/layout/viewer-toolbar/CameraViewMenu.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Vista Inferior (Bottom)
-id: camera-view-bottom
 area: barra-superior
-location: Menu vistas da câmara (barra superior)
+location: No menu de vistas da câmara (barra superior)
 action: Define a vista da câmara para «bottom».
 effects: Altera a orientação da câmara no viewer 3D.
 shortcut: -
-iconName: camera
-sourceFile: src/components/layout/viewer-toolbar/CameraViewMenu.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Vista Isométrica (Isometric)
-id: camera-view-isometric
 area: barra-superior
-location: Menu vistas da câmara (barra superior)
+location: No menu de vistas da câmara (barra superior)
 action: Define a vista da câmara para «isometric».
 effects: Altera a orientação da câmara no viewer 3D.
 shortcut: -
-iconName: camera
-sourceFile: src/components/layout/viewer-toolbar/CameraViewMenu.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Vista Lateral Direita (Right)
-id: camera-view-right
 area: barra-superior
-location: Menu vistas da câmara (barra superior)
+location: No menu de vistas da câmara (barra superior)
 action: Define a vista da câmara para «right».
 effects: Altera a orientação da câmara no viewer 3D.
 shortcut: -
-iconName: camera
-sourceFile: src/components/layout/viewer-toolbar/CameraViewMenu.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Vista Lateral Esquerda (Left)
-id: camera-view-left
 area: barra-superior
-location: Menu vistas da câmara (barra superior)
+location: No menu de vistas da câmara (barra superior)
 action: Define a vista da câmara para «left».
 effects: Altera a orientação da câmara no viewer 3D.
 shortcut: -
-iconName: camera
-sourceFile: src/components/layout/viewer-toolbar/CameraViewMenu.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Vista Superior (Top)
-id: camera-view-top
 area: barra-superior
-location: Menu vistas da câmara (barra superior)
+location: No menu de vistas da câmara (barra superior)
 action: Define a vista da câmara para «top».
 effects: Altera a orientação da câmara no viewer 3D.
 shortcut: -
-iconName: camera
-sourceFile: src/components/layout/viewer-toolbar/CameraViewMenu.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Vista Traseira (Back)
-id: camera-view-back
 area: barra-superior
-location: Menu vistas da câmara (barra superior)
+location: No menu de vistas da câmara (barra superior)
 action: Define a vista da câmara para «back».
 effects: Altera a orientação da câmara no viewer 3D.
 shortcut: -
-iconName: camera
-sourceFile: src/components/layout/viewer-toolbar/CameraViewMenu.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Cavilha 10×40
-id: industrial-cavilha-10x40
 area: design-industrial
-location: Painel Design Industrial
+location: No painel Design industrial
 action: Cria furação de cavilha Ø10×30 na espessura e Ø10×13 na peça oposta (tooltip verificado no código).
 effects: Adiciona operação de cavilha no design industrial.
 shortcut: -
-iconName: adminScrew
-sourceFile: src/components/layout/workspace/IndustrialDesignPanel.tsx
-featureIds: modulo-industrial, exportacao-tcn-drill-xml
+features: modulo-industrial, exportacao-tcn-drill-xml
 
 ## Button: Fechar
-id: industrial-design-close
 area: design-industrial
-location: Painel Design Industrial
-action: Fecha o painel Workspace Industrial de Design.
-effects: Define `industrialDesignPanelOpen` a false.
+location: No painel Design industrial
+action: Fecha o painel Industrial de Design.
+effects: Define a false.
 shortcut: -
-iconName: close
-sourceFile: src/components/layout/workspace/IndustrialDesignPanel.tsx
-featureIds: modulo-industrial
+features: modulo-industrial
 
 ## Button: Análise arquivo completo
-id: export-analise-completo
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
-action: Publica o projeto na análise industrial online e navega para o índice (flag `industrialOnlineAnalysis`).
-effects: Publica o projeto na análise industrial online e navega para o índice (flag `industrialOnlineAnalysis`).
+location: Na janela «Salvar e Gerar Design»
+action: Publica o projeto na análise industrial online e navega para o índice (flag).
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: adminChecklist
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: modulo-industrial
+features: modulo-industrial
 
 ## Button: Arquivo Unificado
-id: export-unificado
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
-action: Gera o arquivo unificado (`onUnificado`).
+location: Na janela «Salvar e Gerar Design»
+action: Gera o arquivo unificado.
 effects: Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).
 shortcut: -
-iconName: adminFolder
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: exportacao-tcn-drill-xml, pdf-tecnico
+features: exportacao-tcn-drill-xml, pdf-tecnico
 
 ## Button: Arquivos CNC
-id: export-arquivos-cnc
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
-action: Gera ficheiros CNC `.tcn` e Drill XML (`onArquivosCnc`).
+location: Na janela «Salvar e Gerar Design»
+action: Gera ficheiros CNC e Drill XML.
 effects: Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: exportacao-tcn-drill-xml
+features: exportacao-tcn-drill-xml
 
 ## Button: Capturar agora
-id: export-capturar-foto
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
+location: Na janela «Salvar e Gerar Design»
 action: Captura imagem do viewer para o pacote de envio.
-effects: Captura imagem do viewer para o pacote de envio.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: camera
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Cutlist
-id: export-cutlist
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
-action: Gera a lista de corte / cutlist (`onCutlist`).
+location: Na janela «Salvar e Gerar Design»
+action: Gera a lista de corte / cutlist.
 effects: Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).
 shortcut: -
-iconName: adminChecklist
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: lista-de-corte
+features: lista-de-corte
 
 ## Button: Cutlist + PDF + Unificado
-id: export-ambos
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
-action: Gera cutlist, PDF técnico e arquivo unificado (`onAmbos`).
+location: Na janela «Salvar e Gerar Design»
+action: Gera cutlist, PDF técnico e arquivo unificado.
 effects: Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).
 shortcut: -
-iconName: adminArchive
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: lista-de-corte, pdf-tecnico
+features: lista-de-corte, pdf-tecnico
 
 ## Button: Download local (JSON)
-id: export-download-json
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
+location: Na janela «Salvar e Gerar Design»
 action: Descarrega o pacote/projeto em JSON localmente.
 effects: Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).
 shortcut: -
-iconName: adminSave
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Email
-id: export-email
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
+location: Na janela «Salvar e Gerar Design»
 action: Selecciona método de envio Email no pacote.
-effects: Selecciona método de envio Email no pacote.
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: -
-iconName: send
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: pdf-tecnico
+features: pdf-tecnico
 
 ## Button: Etiquetas (UEE v5)
-id: export-etiquetas
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
-action: Gera etiquetas UEE v5 (`onEtiquetas`).
+location: Na janela «Salvar e Gerar Design»
+action: Gera etiquetas UEE v5.
 effects: Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).
 shortcut: -
-iconName: adminTag
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: lista-de-corte, pimo-trak
+features: lista-de-corte, pimo-trak
 
 ## Button: Ferragens Industriais
-id: export-ferragens
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
-action: Gera relatório de ferragens industriais (`onFerragensIndustriais`).
+location: Na janela «Salvar e Gerar Design»
+action: Gera relatório de ferragens industriais.
 effects: Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: lista-de-corte
+features: lista-de-corte
 
 ## Button: Ferragens XLSX
-id: export-ferragens-xlsx
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
-action: Exporta ferragens em XLSX (`onFerragensIndustriaisXlsx`).
+location: Na janela «Salvar e Gerar Design»
+action: Exporta ferragens em XLSX.
 effects: Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).
 shortcut: -
-iconName: adminChecklist
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: lista-de-corte
+features: lista-de-corte
 
 ## Button: Gerar arquivo completo
-id: export-arquivo-completo
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
-action: Gera o arquivo completo com bridge SGPI (`onArquivoCompletoWithSgpi`).
+location: Na janela «Salvar e Gerar Design»
+action: Gera o arquivo completo com bridge SGPI.
 effects: Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).
 shortcut: -
-iconName: adminFolder
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: exportacao-tcn-drill-xml, pdf-tecnico, lista-de-corte
+features: exportacao-tcn-drill-xml, pdf-tecnico, lista-de-corte
 
 ## Button: Layout de Corte manual
-id: export-layout-manual
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
-action: Gera layout de corte manual (`onLayoutCorteManual`).
+location: Na janela «Salvar e Gerar Design»
+action: Gera layout de corte manual.
 effects: Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).
 shortcut: -
-iconName: grid
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: Layout de Corte PRO
-id: export-layout-pro
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
-action: Gera layout de corte PRO (`onLayoutCortePro`).
+location: Na janela «Salvar e Gerar Design»
+action: Gera layout de corte PRO.
 effects: Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).
 shortcut: -
-iconName: blueprint
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: Marcar lidos
-id: export-marcar-lidos
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
-action: Marca avisos do painel de exportação como lidos (`markExportPanelRead`).
-effects: Marca avisos do painel de exportação como lidos (`markExportPanelRead`).
+location: Na janela «Salvar e Gerar Design»
+action: Marca avisos do painel de exportação como lidos.
+effects: O ficheiro ou relatório fica pronto para descarregar ou enviar.
 shortcut: -
-iconName: check
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: exportacao-tcn-drill-xml
+features: exportacao-tcn-drill-xml
 
 ## Button: Nesting V3 (Manual)
-id: export-nesting-v3
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
-action: Fecha a bolha e abre Nesting V3 manual (`onOpenNestingV3`).
+location: Na janela «Salvar e Gerar Design»
+action: Fecha a bolha e abre Nesting V3 manual.
 effects: Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).
 shortcut: -
-iconName: grid
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: PDF Técnico
-id: export-pdf-tecnico
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
-action: Gera o PDF técnico do projeto (`onPdfTecnico`).
+location: Na janela «Salvar e Gerar Design»
+action: Gera o PDF técnico do projeto.
 effects: Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).
 shortcut: -
-iconName: adminDocs
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: pdf-tecnico
+features: pdf-tecnico
 
 ## Button: Salvar e pedir orçamento
-id: export-pedir-orcamento
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
+location: Na janela «Salvar e Gerar Design»
 action: Abre o modal de pedido de orçamento após guardar.
 effects: Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).
 shortcut: -
-iconName: send
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: orcamentos
+features: orcamentos
 
 ## Button: Secções Industriais (4 PDFs)
-id: export-secoes-pdfs
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
-action: Gera os 4 PDFs das secções industriais (`onSecoesIndustriaisPdfs`).
+location: Na janela «Salvar e Gerar Design»
+action: Gera os 4 PDFs das secções industriais.
 effects: Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).
 shortcut: -
-iconName: adminChecklist
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: modulo-industrial, pdf-tecnico
+features: modulo-industrial, pdf-tecnico
 
 ## Button: WhatsApp
-id: export-whatsapp
 area: exportacao
-location: Modal «Salvar e Gerar Design» (UnifiedExportBubble)
+location: Na janela «Salvar e Gerar Design»
 action: Selecciona método de envio WhatsApp no pacote.
-effects: Selecciona método de envio WhatsApp no pacote.
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: -
-iconName: send
-sourceFile: src/components/export/UnifiedExportBubble.tsx
-featureIds: pdf-tecnico
+features: pdf-tecnico
 
 ## Button: Escalar
-id: tool-3d-scale
 area: ferramentas-3d
-location: Barra superior unificada, ferramentas 3D
-action: Ativa a ferramenta 3D «Escalar» (evento `tool:scale`).
+location: Na barra superior, ferramentas 3D
+action: Ativa a ferramenta 3D «Escalar» (evento).
 effects: Disponível para modelos GLB/externos não industriais e não bloqueados.
 shortcut: -
-iconName: scale
-sourceFile: src/constants/toolbarConfig.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Mover
-id: tool-3d-move
 area: ferramentas-3d
-location: Barra superior unificada, ferramentas 3D
-action: Ativa a ferramenta 3D «Mover» (evento `tool:move`).
+location: Na barra superior, ferramentas 3D
+action: Ativa a ferramenta 3D «Mover» (evento).
 effects: Define a ferramenta ativa do viewer para move.
 shortcut: -
-iconName: move
-sourceFile: src/constants/toolbarConfig.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Rodar
-id: tool-3d-rotate
 area: ferramentas-3d
-location: Barra superior unificada, ferramentas 3D
-action: Ativa a ferramenta 3D «Rodar» (evento `tool:rotate`).
+location: Na barra superior, ferramentas 3D
+action: Ativa a ferramenta 3D «Rodar» (evento).
 effects: Define a ferramenta ativa do viewer para rotate.
 shortcut: -
-iconName: rotate
-sourceFile: src/constants/toolbarConfig.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Selecionar
-id: tool-3d-select
 area: ferramentas-3d
-location: Barra superior unificada, ferramentas 3D
-action: Ativa a ferramenta 3D «Selecionar» (evento `tool:select`).
+location: Na barra superior, ferramentas 3D
+action: Ativa a ferramenta 3D «Selecionar» (evento).
 effects: Define a ferramenta ativa do viewer para select.
 shortcut: -
-iconName: select
-sourceFile: src/constants/toolbarConfig.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Abrir definições
-id: header-definicoes
 area: header
-location: Header (barra do topo da app)
-action: Navega para `/definicoes`.
-effects: Navega para `/definicoes`.
+location: No topo do ecrã
+action: Navega para.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: settings
-sourceFile: src/components/layout/header/Header.tsx
-featureIds: definicoes
+features: definicoes
 
 ## Button: Abrir meus projetos
-id: header-meus-projetos
 area: header
-location: Header (barra do topo da app)
-action: Navega para `/meus-projetos`.
-effects: Navega para `/meus-projetos`.
+location: No topo do ecrã
+action: Navega para.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: projects
-sourceFile: src/components/layout/header/Header.tsx
-featureIds: conta-e-acesso
+features: conta-e-acesso
 
 ## Button: Abrir página de login
-id: header-login
 area: header
-location: Header (barra do topo da app)
-action: Navega para `/login`.
-effects: Navega para `/login`.
+location: No topo do ecrã
+action: Navega para.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: user
-sourceFile: src/components/layout/header/Header.tsx
-featureIds: conta-e-acesso
+features: conta-e-acesso
 
 ## Button: Alternar tema claro/escuro
-id: header-theme
 area: header
-location: Header (barra do topo da app)
-action: Alterna tema claro/escuro (`toggleTheme`).
-effects: Alterna tema claro/escuro (`toggleTheme`).
+location: No topo do ecrã
+action: Alterna tema claro/escuro.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: themeSun
-sourceFile: src/components/layout/header/Header.tsx
-featureIds: definicoes
+features: definicoes
 
 ## Button: Idioma atual: PT
-id: header-lang
 area: header
-location: Header (barra do topo da app)
+location: No topo do ecrã
 action: Controlo de idioma (atualmente fixo em PT; troca marcada como @PIMO-SOON).
-effects: Controlo de idioma (atualmente fixo em PT; troca marcada como @PIMO-SOON).
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: globe
-sourceFile: src/components/layout/header/Header.tsx
-featureIds: definicoes
+features: definicoes
 
 ## Button: PIMO DRILL
-id: nav-app-drill
 area: header
-location: Menu Projetos PIMO (header)
-action: Navega para `/industrial/pimo-drill`.
+location: No topo, menu Projetos PIMO
+action: Navega para.
 effects: Muda a área da aplicação para PIMO DRILL.
 shortcut: -
-iconName: projects
-sourceFile: src/components/layout/header/HeaderProjectsSwitcher.tsx
-featureIds: exportacao-tcn-drill-xml, modulo-industrial
+features: exportacao-tcn-drill-xml, modulo-industrial
 
 ## Button: PIMO Industrial
-id: nav-app-industrial
 area: header
-location: Menu Projetos PIMO (header)
-action: Navega para `/industrial`.
+location: No topo, menu Projetos PIMO
+action: Navega para.
 effects: Muda a área da aplicação para PIMO Industrial.
 shortcut: -
-iconName: projects
-sourceFile: src/components/layout/header/HeaderProjectsSwitcher.tsx
-featureIds: pimo-trak
+features: pimo-trak
 
 ## Button: PIMO NESTING
-id: nav-app-nesting
 area: header
-location: Menu Projetos PIMO (header)
-action: Navega para `/nesting_v3`.
+location: No topo, menu Projetos PIMO
+action: Navega para.
 effects: Muda a área da aplicação para PIMO NESTING.
 shortcut: -
-iconName: projects
-sourceFile: src/components/layout/header/HeaderProjectsSwitcher.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: PIMO PRO
-id: nav-app-pro
 area: header
-location: Menu Projetos PIMO (header)
-action: Navega para `/`.
+location: No topo, menu Projetos PIMO
+action: Navega para.
 effects: Muda a área da aplicação para PIMO PRO.
 shortcut: -
-iconName: projects
-sourceFile: src/components/layout/header/HeaderProjectsSwitcher.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: PIMO PROJETOS
-id: nav-app-projetos
 area: header
-location: Menu Projetos PIMO (header)
-action: Navega para `/PROJETOS`.
+location: No topo, menu Projetos PIMO
+action: Navega para.
 effects: Muda a área da aplicação para PIMO PROJETOS.
 shortcut: -
-iconName: projects
-sourceFile: src/components/layout/header/HeaderProjectsSwitcher.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: PIMO TRAK
-id: nav-app-trak
 area: header
-location: Menu Projetos PIMO (header)
-action: Navega para `/industrial/work-orders`.
+location: No topo, menu Projetos PIMO
+action: Navega para.
 effects: Muda a área da aplicação para PIMO TRAK.
 shortcut: -
-iconName: projects
-sourceFile: src/components/layout/header/HeaderProjectsSwitcher.tsx
-featureIds: pimo-trak
+features: pimo-trak
 
 ## Button: PIMO-TRAK Industrial
-id: header-industrial-menu
 area: header
-location: Header (barra do topo da app)
+location: No topo do ecrã
 action: Abre o menu industrial (Operador, Tracking, Work Orders, Operations, etc.).
-effects: Abre o menu industrial (Operador, Tracking, Work Orders, Operations, etc.).
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Projetos PIMO
-id: header-projects-switcher
 area: header
-location: Header (barra do topo da app)
+location: No topo do ecrã
 action: Abre o menu de troca entre PIMO PRO / TRAK / PROJETOS / NESTING / Industrial / DRILL.
-effects: Abre o menu de troca entre PIMO PRO / TRAK / PROJETOS / NESTING / Industrial / DRILL.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: projects
-sourceFile: src/components/layout/header/HeaderProjectsSwitcher.tsx
-featureIds: configurador-3d, conta-e-acesso
+features: configurador-3d, conta-e-acesso
 
 ## Button: Selecionar ficheiro de projeto
-id: header-upload
 area: header
-location: Header (barra do topo da app)
+location: No topo do ecrã
 action: Importa projeto PIMO a partir de ficheiro JSON/ZIP (Shift+clique: pasta).
-effects: Importa projeto PIMO a partir de ficheiro JSON/ZIP (Shift+clique: pasta).
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: upload
-sourceFile: src/components/layout/header/Header.tsx
-featureIds: conta-e-acesso
+features: conta-e-acesso
 
 ## Button: Abrir / consultar cutlist
-id: ctx-cutlist-open
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `cutlist.open` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: lista-de-corte
+features: lista-de-corte
 
 ## Button: Aceitar layout sugerido
-id: ctx-smartLayout-applyPredictive
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartLayout.applyPredictive` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Adicionar Âncora
-id: ctx-multi-addAnchor
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `multi.addAnchor` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhamento
-id: ctx-alignment
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `alignment` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhamento e Encaixe Inteligente (Smart Align & Snap)
-id: ctx-smartAlignSnap
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar à Direita
-id: ctx-alignment-right
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `alignment.right` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar à Esquerda
-id: ctx-alignment-left
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `alignment.left` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar à Frente
-id: ctx-remate-snapFrente
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `remate.snapFrente` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar à Frente
-id: ctx-alignment-front
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `alignment.front` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar Abaixo
-id: ctx-alignment-bottom
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `alignment.bottom` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar Acima
-id: ctx-alignment-top
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `alignment.top` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar Atrás
-id: ctx-alignment-back
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `alignment.back` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar baixo
-id: ctx-box-alignBottom
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `box.alignBottom` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar com Gaveta
-id: ctx-smartAlignSnap-alignDrawer
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.alignDrawer` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar com Porta
-id: ctx-smartAlignSnap-alignDoor
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.alignDoor` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar pela Direita (Right Align)
-id: ctx-smartAlignSnap-right
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.right` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar pela Esquerda (Left Align)
-id: ctx-smartAlignSnap-left
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.left` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar pela frente
-id: ctx-box-alignFront
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `box.alignFront` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar pela Frente (Front Align)
-id: ctx-smartAlignSnap-front
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.front` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar por Baixo
-id: ctx-remate-snapFundo
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `remate.snapFundo` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar por Baixo (Bottom Align)
-id: ctx-smartAlignSnap-bottom
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.bottom` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar por Cima
-id: ctx-remate-snapCima
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `remate.snapCima` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar por Cima (Top Align)
-id: ctx-smartAlignSnap-top
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.top` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alinhar por Trás (Back Align)
-id: ctx-smartAlignSnap-back
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.back` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alterar material
-id: ctx-porta-material
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `porta.material` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: materiais, portas-e-gavetas
+features: materiais, portas-e-gavetas
 
 ## Button: Alterar material
-id: ctx-peca-material
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `peca.material` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: materiais, portas-e-gavetas
+features: materiais, portas-e-gavetas
 
 ## Button: Alterar material
-id: ctx-remate-material
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `remate.material` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: materiais, portas-e-gavetas
+features: materiais, portas-e-gavetas
 
 ## Button: Alterar Material
-id: ctx-multi-changeMaterial
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `multi.changeMaterial` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alterar material da frente
-id: ctx-gaveta-material
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `gaveta.material` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: materiais, portas-e-gavetas
+features: materiais, portas-e-gavetas
 
 ## Button: Alterar Medidas
-id: ctx-multi-changeDimensions
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `multi.changeDimensions` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alterar medidas (aditivo)
-id: ctx-multi-changeDimensionsAdditive
 area: menu-contexto
-location: Menu de contexto, Alterar medidas
-action: Executa `multi.changeDimensionsAdditive` no menu de contexto (scaling preview).
+location: No menu de contexto, Alterar medidas
+action: Executa no menu de contexto (scaling preview).
 effects: Redimensiona objetos selecionados após preview.
 shortcut: -
-iconName: adminRuler
-sourceFile: src/components/layout/workspace/ContextMenu.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Alterar medidas (proporcional)
-id: ctx-multi-changeDimensionsRatio
 area: menu-contexto
-location: Menu de contexto, Alterar medidas
-action: Executa `multi.changeDimensionsRatio` no menu de contexto (scaling preview).
+location: No menu de contexto, Alterar medidas
+action: Executa no menu de contexto (scaling preview).
 effects: Redimensiona objetos selecionados após preview.
 shortcut: -
-iconName: adminRuler
-sourceFile: src/components/layout/workspace/ContextMenu.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Apagar
-id: ctx-multi-delete
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `multi.delete` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Aplicar Design A
-id: ctx-intelligentDesigner-applyA
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `intelligentDesigner.applyA` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Aplicar Design B
-id: ctx-intelligentDesigner-applyB
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `intelligentDesigner.applyB` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Aplicar Design C
-id: ctx-intelligentDesigner-applyC
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `intelligentDesigner.applyC` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Aprender Preferências
-id: ctx-intelligentDesigner-learnPreferences
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `intelligentDesigner.learnPreferences` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Ativar Smart Align & Snap
-id: ctx-smartAlignSnap-toggle
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.toggle` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Auto Balance (automático)
-id: ctx-smartAlignSnap-auto
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.auto` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Auto-Stack Shelves
-id: ctx-smartLayout-autoStackShelves
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartLayout.autoStackShelves` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Bloquear / desbloquear
-id: ctx-box-lockToggle
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `box.lockToggle` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Box
-id: ctx-box
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `box` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Clássico
-id: ctx-designerStyles-classic
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `designerStyles.classic` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Continuar Linha (Remate ↔ Rodapé)
-id: ctx-smartAlignSnap-continueLine
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.continueLine` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Copiar
-id: ctx-multi-copy
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `multi.copy` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Criar Grupo
-id: ctx-multi-createGroup
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `multi.createGroup` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Ctrl+Click para selecionar múltiplas caixas
-id: ctx-alignment-ctrlClickHint
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `alignment.ctrlClickHint` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Cutlist
-id: ctx-cutlist
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `cutlist` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: lista-de-corte
+features: lista-de-corte
 
 ## Button: Designer Inteligente (AI Layout Generator)
-id: ctx-intelligentDesigner
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `intelligentDesigner` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Distribuição Inteligente
-id: ctx-smartLayout-autoDistribute
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartLayout.autoDistribute` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Duplicar
-id: ctx-box-duplicate
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `box.duplicate` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Escandinavo
-id: ctx-designerStyles-scandinavian
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `designerStyles.scandinavian` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Estilos (Designer Inteligente)
-id: ctx-designerStyles
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `designerStyles` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Excluir
-id: ctx-box-delete
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `box.delete` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Ferramentas
-id: ctx-ferramentas
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `ferramentas` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Flush Frontal
-id: ctx-smartAlignSnap-flushFront
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.flushFront` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Flush Lateral (Direita)
-id: ctx-smartAlignSnap-flushRight
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.flushRight` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Flush Lateral (Esquerda)
-id: ctx-smartAlignSnap-flushLeft
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.flushLeft` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Flush Traseiro
-id: ctx-smartAlignSnap-flushBack
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.flushBack` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Gerar Layouts (A/B/C)
-id: ctx-intelligentDesigner-generateABC
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `intelligentDesigner.generateABC` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Gerar Variações
-id: ctx-intelligentDesigner-generateVariations
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `intelligentDesigner.generateVariations` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Industrial
-id: ctx-designerStyles-industrial
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `designerStyles.industrial` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Inverter alinhamento
-id: ctx-smartAlignSnap-inverse
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.inverse` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Japandi
-id: ctx-designerStyles-japandi
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `designerStyles.japandi` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Luxo
-id: ctx-designerStyles-luxury
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `designerStyles.luxury` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Materiais
-id: ctx-materiais
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `materiais` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Minimalista
-id: ctx-designerStyles-minimalist
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `designerStyles.minimalist` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Moderno
-id: ctx-designerStyles-modern
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `designerStyles.modern` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Modo do mouse
-id: ctx-materiais-mousePreset
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `materiais.mousePreset` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Modo snapping
-id: ctx-ferramentas-snapModeToggle
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `ferramentas.snapModeToggle` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Mostrar Medidas MC
-id: ctx-multi-showMcDimensions
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `multi.showMcDimensions` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Mouse CAD
-id: mouse-preset-cad
 area: menu-contexto
-location: Menu de contexto, Modo do mouse
+location: No menu de contexto, Modo do rato
 action: Define o preset de rato do viewer para «cad».
-effects: Altera `viewerSettings.mousePreset`.
+effects: Altera.
 shortcut: -
-iconName: mouse
-sourceFile: src/components/layout/workspace/ContextMenu.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Mouse Classic
-id: mouse-preset-classic
 area: menu-contexto
-location: Menu de contexto, Modo do mouse
+location: No menu de contexto, Modo do rato
 action: Define o preset de rato do viewer para «classic».
-effects: Altera `viewerSettings.mousePreset`.
+effects: Altera.
 shortcut: -
-iconName: mouse
-sourceFile: src/components/layout/workspace/ContextMenu.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Mouse-Centric
-id: mouse-preset-mouseCentric
 area: menu-contexto
-location: Menu de contexto, Modo do mouse
+location: No menu de contexto, Modo do rato
 action: Define o preset de rato do viewer para «mouseCentric».
-effects: Altera `viewerSettings.mousePreset`.
+effects: Altera.
 shortcut: -
-iconName: mouse
-sourceFile: src/components/layout/workspace/ContextMenu.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Mover
-id: ctx-multi-move
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `multi.move` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Nórdico
-id: ctx-designerStyles-nordic
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `designerStyles.nordic` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Orbit-Friendly
-id: mouse-preset-orbitFriendly
 area: menu-contexto
-location: Menu de contexto, Modo do mouse
+location: No menu de contexto, Modo do rato
 action: Define o preset de rato do viewer para «orbitFriendly».
-effects: Altera `viewerSettings.mousePreset`.
+effects: Altera.
 shortcut: -
-iconName: mouse
-sourceFile: src/components/layout/workspace/ContextMenu.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Peça
-id: ctx-peca
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `peca` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Porta
-id: ctx-porta
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `porta` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Preencher Parede (Auto-Wall-Fill)
-id: ctx-smartLayout-autoWallFill
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartLayout.autoWallFill` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Preencher Sala (Auto-Room-Fill)
-id: ctx-smartLayout-autoRoomFill
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartLayout.autoRoomFill` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Refinar Layout
-id: ctx-intelligentDesigner-refine
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `intelligentDesigner.refine` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Rejeitar layout sugerido
-id: ctx-smartLayout-rejectPredictive
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartLayout.rejectPredictive` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Remate
-id: ctx-remate
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `remate` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Remover remate
-id: ctx-remate-remove
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `remate.remove` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Renomear
-id: ctx-box-rename
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `box.rename` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Repetir último alinhamento
-id: ctx-smartAlignSnap-repeatLast
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `smartAlignSnap.repeatLast` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Rodar
-id: ctx-multi-rotate
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `multi.rotate` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Room snapping
-id: ctx-sala-roomSnappingToggle
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `sala.roomSnappingToggle` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Sala
-id: ctx-sala
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `sala` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Snapping
-id: ctx-ferramentas-snappingToggle
 area: menu-contexto
-location: Menu de contexto (clique direito no viewer)
-action: Ação de menu de contexto `ferramentas.snappingToggle` (label canónica no ContextMenuEngine).
+location: No menu de contexto (clique direito no modelo 3D)
+action: Ação de menu de contexto (label canónica no ContextMenuEngine).
 effects: Depende do alvo (caixa, porta, gaveta, remate, sala, multi-seleção).
 shortcut: -
-iconName: mouse
-sourceFile: src/ui/context-menu/ContextMenuEngine.ts
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Acessórios
-id: left-acessorios
 area: navegacao-lateral
-location: Barra lateral esquerda
+location: Na barra lateral esquerda
 action: Abre o painel Acessórios.
-effects: Altera o painel esquerdo ativo (`onSelect`).
+effects: O painel do lado esquerdo muda para a secção escolhida.
 shortcut: -
-iconName: accessories
-sourceFile: src/components/layout/left-toolbar/LeftToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Calculadora
-id: left-calculadora
 area: navegacao-lateral
-location: Barra lateral esquerda
+location: Na barra lateral esquerda
 action: Abre o painel Calculadora (resumo e lista de caixas).
-effects: Altera o painel esquerdo ativo (`onSelect`).
+effects: O painel do lado esquerdo muda para a secção escolhida.
 shortcut: -
-iconName: calculator
-sourceFile: src/components/layout/left-toolbar/LeftToolbar.tsx
-featureIds: orcamentos
+features: orcamentos
 
 ## Button: Eletro
-id: left-eletro
 area: navegacao-lateral
-location: Barra lateral esquerda
+location: Na barra lateral esquerda
 action: Abre o painel Eletro.
-effects: Altera o painel esquerdo ativo (`onSelect`).
+effects: O painel do lado esquerdo muda para a secção escolhida.
 shortcut: -
-iconName: electro
-sourceFile: src/components/layout/left-toolbar/LeftToolbar.tsx
-featureIds: sala-e-ambiente
+features: sala-e-ambiente
 
 ## Button: Info
-id: left-info
 area: navegacao-lateral
-location: Barra lateral esquerda
+location: Na barra lateral esquerda
 action: Abre o painel Info (ajuda rápida no app).
-effects: Altera o painel esquerdo ativo (`onSelect`).
+effects: O painel do lado esquerdo muda para a secção escolhida.
 shortcut: -
-iconName: info
-sourceFile: src/components/layout/left-toolbar/LeftToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Início
-id: left-home
 area: navegacao-lateral
-location: Barra lateral esquerda
-action: Navega para a home (`/`) e seleciona o painel Início.
-effects: Altera o painel esquerdo ativo (`onSelect`).
+location: Na barra lateral esquerda
+action: Navega para a home  e seleciona o painel Início.
+effects: O painel do lado esquerdo muda para a secção escolhida.
 shortcut: -
-iconName: home
-sourceFile: src/components/layout/left-toolbar/LeftToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Modelos
-id: left-modelos
 area: navegacao-lateral
-location: Barra lateral esquerda
+location: Na barra lateral esquerda
 action: Abre o painel Modelos (modelos CAD/GLB).
-effects: Altera o painel esquerdo ativo (`onSelect`).
+effects: O painel do lado esquerdo muda para a secção escolhida.
 shortcut: -
-iconName: models
-sourceFile: src/components/layout/left-toolbar/LeftToolbar.tsx
-featureIds: configurador-3d, materiais
+features: configurador-3d, materiais
 
 ## Button: Móveis
-id: left-moveis
 area: navegacao-lateral
-location: Barra lateral esquerda
+location: Na barra lateral esquerda
 action: Abre o painel lateral Móveis (catálogo de caixas/módulos).
-effects: Altera o painel esquerdo ativo (`onSelect`).
+effects: O painel do lado esquerdo muda para a secção escolhida.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/left-toolbar/LeftToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Auto Layout
-id: nesting-auto-layout
 area: nesting-v3
-location: Toolbar Nesting V3
-action: Executa `runAutoLayout` no Nesting V3.
-effects: Executa `runAutoLayout` no Nesting V3.
+location: Na barra de ferramentas do nesting
+action: Executa no Nesting V3.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: grid
-sourceFile: src/nesting-v3/NestingV3Page.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: Etiquetas
-id: nesting-etiquetas
 area: nesting-v3
-location: Toolbar Nesting V3
+location: Na barra de ferramentas do nesting
 action: Exporta etiquetas oficiais UEE / LabelSystemV5.
-effects: Exporta etiquetas oficiais UEE / LabelSystemV5.
+effects: O ficheiro ou relatório fica pronto para descarregar ou enviar.
 shortcut: -
-iconName: adminTag
-sourceFile: src/nesting-v3/NestingV3Page.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: Gerar Tudo
-id: nesting-gerar-tudo
 area: nesting-v3
-location: Toolbar Nesting V3
-action: Gera todos os artefactos de nesting (`handleGenerateAll`).
-effects: Gera todos os artefactos de nesting (`handleGenerateAll`).
+location: Na barra de ferramentas do nesting
+action: Gera todos os artefactos de nesting.
+effects: O ficheiro ou relatório fica pronto para descarregar ou enviar.
 shortcut: -
-iconName: send
-sourceFile: src/nesting-v3/NestingV3Page.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: Limpar
-id: nesting-limpar
 area: nesting-v3
-location: Toolbar Nesting V3
-action: Limpa todas as colocações (`clearAll`).
-effects: Limpa todas as colocações (`clearAll`).
+location: Na barra de ferramentas do nesting
+action: Limpa todas as colocações.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: delete
-sourceFile: src/nesting-v3/NestingV3Page.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: PDF
-id: nesting-pdf
 area: nesting-v3
-location: Toolbar Nesting V3
-action: Exporta Layout PRO em PDF (`handleDownloadPdf`).
-effects: Exporta Layout PRO em PDF (`handleDownloadPdf`).
+location: Na barra de ferramentas do nesting
+action: Exporta Layout PRO em PDF.
+effects: O ficheiro ou relatório fica pronto para descarregar ou enviar.
 shortcut: -
-iconName: adminDocs
-sourceFile: src/nesting-v3/NestingV3Page.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: TCN
-id: nesting-tcn
 area: nesting-v3
-location: Toolbar Nesting V3
-action: Exporta ficheiros TCN (`handleDownloadTcn`).
-effects: Exporta ficheiros TCN (`handleDownloadTcn`).
+location: Na barra de ferramentas do nesting
+action: Exporta ficheiros TCN.
+effects: O ficheiro ou relatório fica pronto para descarregar ou enviar.
 shortcut: -
-iconName: adminTools
-sourceFile: src/nesting-v3/NestingV3Page.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: Vista folha / Vista chão
-id: nesting-vista-toggle
 area: nesting-v3
-location: Toolbar Nesting V3
+location: Na barra de ferramentas do nesting
 action: Alterna vista do canvas entre folha e overview.
-effects: Alterna vista do canvas entre folha e overview.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: grid
-sourceFile: src/nesting-v3/NestingV3Page.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: Voltar ao Projeto
-id: nesting-voltar
 area: nesting-v3
-location: Toolbar Nesting V3
-action: Navega de volta ao viewer/projeto (ou `onClose`).
-effects: Navega de volta ao viewer/projeto (ou `onClose`).
+location: Na barra de ferramentas do nesting
+action: Navega de volta ao viewer/projeto (ou).
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: chevronRight
-sourceFile: src/nesting-v3/NestingV3Page.tsx
-featureIds: nesting-fast-pro
+features: nesting-fast-pro
 
 ## Button: + Adicionar ao projeto
-id: moveis-adicionar
 area: paineis-laterais
-location: Painel Móveis
+location: No painel Móveis (lado esquerdo)
 action: Adiciona a caixa/móvel configurado ao workspace.
-effects: Adiciona a caixa/móvel configurado ao workspace.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/left-panel/PainelMoveisUnificado.tsx
-featureIds: configurador-3d, portas-e-gavetas
+features: configurador-3d, portas-e-gavetas
 
 ## Button: Abrir Design Industrial
-id: modelos-abrir-industrial
 area: paineis-laterais
-location: Painéis laterais (caixa / camadas)
-action: Abre o painel Design Industrial (`setIndustrialDesignPanelOpen(true)`).
-effects: Abre o painel Design Industrial (`setIndustrialDesignPanelOpen(true)`).
+location: Nos painéis laterais (caixa e camadas)
+action: Abre o painel Design Industrial.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/left-panel/PainelModelosDaCaixa.tsx
-featureIds: modulo-industrial
+features: modulo-industrial
 
 ## Button: Adicionar Caixote
-id: home-adicionar-caixote
 area: paineis-laterais
-location: Painéis laterais (caixa / camadas)
-action: Adiciona uma nova caixa (`addWorkspaceBox`).
-effects: Adiciona uma nova caixa (`addWorkspaceBox`).
+location: Nos painéis laterais (caixa e camadas)
+action: Adiciona uma nova caixa.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/left-panel/HomeLeftPanelSelected.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Adicionar DIVISÓRIO
-id: divsep-add-div
 area: paineis-laterais
-location: Painéis laterais (caixa / camadas)
+location: Nos painéis laterais (caixa e camadas)
 action: Adiciona um divisório à caixa.
-effects: Adiciona um divisório à caixa.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/left-panel/DivSepPanel.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Adicionar SEPARADOR
-id: divsep-add-sep
 area: paineis-laterais
-location: Painéis laterais (caixa / camadas)
+location: Nos painéis laterais (caixa e camadas)
 action: Adiciona um separador à caixa.
-effects: Adiciona um separador à caixa.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/left-panel/DivSepPanel.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Apagar caixa
-id: calc-apagar-caixa
 area: paineis-laterais
-location: Painel Calculadora
+location: No painel Calculadora (lado esquerdo)
 action: Remove a caixa listada na Calculadora.
-effects: Remove a caixa listada na Calculadora.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/left-panel/LeftPanelCalculadora.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Aplicar dimensões
-id: sala-aplicar-dims
 area: paineis-laterais
-location: Painel Sala
+location: No painel Sala
 action: Aplica dimensões ao motor de sala.
-effects: Aplica dimensões ao motor de sala.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: room
-sourceFile: src/components/layout/left-panel/PainelSala.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Aplicar preset
-id: gavetas-aplicar-preset
 area: paineis-laterais
-location: Painéis laterais (caixa / camadas)
+location: Nos painéis laterais (caixa e camadas)
 action: Aplica um preset de gavetas à caixa.
-effects: Aplica um preset de gavetas à caixa.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/left-panel/GavetasPopoverPanel.tsx
-featureIds: portas-e-gavetas
+features: portas-e-gavetas
 
 ## Button: Preset de material
-id: materiais-preset
 area: paineis-laterais
-location: Painel Materiais (lado direito)
+location: No painel de materiais (lado direito)
 action: Escolhe e aplica um preset de material no painel Materiais.
 effects: Aplica um preset de material. Fica indisponível até o visualizador 3D estar pronto, para evitar cliques sem efeito.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/right-panel/MateriaisPanel.tsx
-featureIds: materiais
+features: materiais
 
 ## Button: Auto-Arrange
-id: sala-auto-arrange
 area: paineis-laterais
-location: Painel Sala
+location: No painel Sala
 action: Dispara auto-arrange do layout da sala.
-effects: Dispara auto-arrange do layout da sala.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: room
-sourceFile: src/components/layout/left-panel/PainelSala.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Auto-Design
-id: sala-auto-design
 area: paineis-laterais
-location: Painel Sala
+location: No painel Sala
 action: Dispara auto-design do layout da sala.
-effects: Dispara auto-design do layout da sala.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: room
-sourceFile: src/components/layout/left-panel/PainelSala.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Carregar
-id: projects-carregar
 area: paineis-laterais
-location: Modal Projetos salvos
+location: Na janela Projetos guardados
 action: Carrega snapshot do projeto selecionado.
-effects: Carrega snapshot do projeto selecionado.
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: -
-iconName: projects
-sourceFile: src/components/layout/ToolbarModals.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Clássico
-id: designer-styleClassic
 area: paineis-laterais
 location: Painel Designer Inteligente, Conversação
-action: Dispara a ação de designer «Clássico» (`styleClassic`).
+action: Dispara a ação de designer «Clássico».
 effects: Ajusta/refina o layout via designer conversacional.
 shortcut: -
-iconName: adminLab
-sourceFile: src/components/layout/left-panel/ConversationalDesignerPanel.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Criar Caixa
-id: home-criar-caixa
 area: paineis-laterais
 location: Painel Início (sem seleção)
 action: Inicia a criação de uma nova caixa/módulo no projeto.
-effects: Inicia a criação de uma nova caixa/módulo no projeto.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/left-panel/HomeLeftPanelEmpty.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Criar novo projeto
-id: projects-criar-novo
 area: paineis-laterais
-location: Modal Projetos salvos
-action: actions.createNewProject()
-effects: actions.createNewProject()
+location: Na janela Projetos guardados
+action: Actions.createNewProject.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: projects
-sourceFile: src/components/layout/ToolbarModals.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Criar sala
-id: sala-criar
 area: paineis-laterais
-location: Painel Sala
+location: No painel Sala
 action: Cria/aplica dimensões da sala.
-effects: Cria/aplica dimensões da sala.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: room
-sourceFile: src/components/layout/left-panel/PainelSala.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Descarregar
-id: photo-descarregar
 area: paineis-laterais
 location: Painel Photo Mode
 action: Descarrega a captura do Photo Mode.
-effects: Descarrega a captura do Photo Mode.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: photoMode
-sourceFile: src/components/layout/left-panel/PhotoModeSettingsContent.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Duplicar Caixa
-id: home-duplicar-caixa
 area: paineis-laterais
-location: Painéis laterais (caixa / camadas)
-action: Duplica a caixa selecionada (`duplicateWorkspaceBox`).
-effects: Duplica a caixa selecionada (`duplicateWorkspaceBox`).
+location: Nos painéis laterais (caixa e camadas)
+action: Duplica a caixa selecionada.
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/left-panel/HomeLeftPanelSelected.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Excluir
-id: projects-excluir
 area: paineis-laterais
-location: Modal Projetos salvos
+location: Na janela Projetos guardados
 action: Apaga o projeto da lista.
-effects: Apaga o projeto da lista.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: projects
-sourceFile: src/components/layout/ToolbarModals.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Exportar linhas
-id: photo-export-linhas
 area: paineis-laterais
 location: Painel Photo Mode
 action: Exporta linhas do Photo Mode.
-effects: Exporta linhas do Photo Mode.
+effects: O ficheiro ou relatório fica pronto para descarregar ou enviar.
 shortcut: -
-iconName: photoMode
-sourceFile: src/components/layout/left-panel/PhotoModeSettingsContent.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Gavetas
-id: moveis-gavetas
 area: paineis-laterais
-location: Painel Móveis
+location: No painel Móveis (lado esquerdo)
 action: Abre configuração de gavetas.
-effects: Abre configuração de gavetas.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/left-panel/PainelMoveisUnificado.tsx
-featureIds: portas-e-gavetas
+features: portas-e-gavetas
 
 ## Button: Guardar
-id: projects-guardar-nome
 area: paineis-laterais
-location: Modal Projetos salvos
-action: Confirma o novo nome (`renameProject`).
-effects: Confirma o novo nome (`renameProject`).
+location: Na janela Projetos guardados
+action: Confirma o novo nome.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: projects
-sourceFile: src/components/layout/ToolbarModals.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Guardar como preset
-id: gavetas-guardar-preset
 area: paineis-laterais
-location: Painéis laterais (caixa / camadas)
+location: Nos painéis laterais (caixa e camadas)
 action: Guarda a configuração de gavetas como preset.
-effects: Guarda a configuração de gavetas como preset.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/left-panel/GavetasPopoverPanel.tsx
-featureIds: portas-e-gavetas
+features: portas-e-gavetas
 
 ## Button: Industrial
-id: designer-styleIndustrial
 area: paineis-laterais
 location: Painel Designer Inteligente, Conversação
-action: Dispara a ação de designer «Industrial» (`styleIndustrial`).
+action: Dispara a ação de designer «Industrial».
 effects: Ajusta/refina o layout via designer conversacional.
 shortcut: -
-iconName: adminLab
-sourceFile: src/components/layout/left-panel/ConversationalDesignerPanel.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Janela
-id: sala-add-janela
 area: paineis-laterais
-location: Painel Sala
+location: No painel Sala
 action: Adiciona abertura tipo janela.
-effects: Adiciona abertura tipo janela.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: roomWindow
-sourceFile: src/components/layout/left-panel/PainelSala.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Japandi
-id: designer-styleJapandi
 area: paineis-laterais
 location: Painel Designer Inteligente, Conversação
-action: Dispara a ação de designer «Japandi» (`styleJapandi`).
+action: Dispara a ação de designer «Japandi».
 effects: Ajusta/refina o layout via designer conversacional.
 shortcut: -
-iconName: adminLab
-sourceFile: src/components/layout/left-panel/ConversationalDesignerPanel.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Luxo
-id: designer-styleLuxury
 area: paineis-laterais
 location: Painel Designer Inteligente, Conversação
-action: Dispara a ação de designer «Luxo» (`styleLuxury`).
+action: Dispara a ação de designer «Luxo».
 effects: Ajusta/refina o layout via designer conversacional.
 shortcut: -
-iconName: adminLab
-sourceFile: src/components/layout/left-panel/ConversationalDesignerPanel.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Mais espaço
-id: designer-moreSpace
 area: paineis-laterais
 location: Painel Designer Inteligente, Conversação
-action: Dispara a ação de designer «Mais espaço» (`moreSpace`).
+action: Dispara a ação de designer «Mais espaço».
 effects: Ajusta/refina o layout via designer conversacional.
 shortcut: -
-iconName: adminLab
-sourceFile: src/components/layout/left-panel/ConversationalDesignerPanel.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Mais simetria
-id: designer-moreSymmetry
 area: paineis-laterais
 location: Painel Designer Inteligente, Conversação
-action: Dispara a ação de designer «Mais simetria» (`moreSymmetry`).
+action: Dispara a ação de designer «Mais simetria».
 effects: Ajusta/refina o layout via designer conversacional.
 shortcut: -
-iconName: adminLab
-sourceFile: src/components/layout/left-panel/ConversationalDesignerPanel.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Marca d’água
-id: photo-watermark
 area: paineis-laterais
 location: Painel Photo Mode
 action: Alterna marca d'água no Photo Mode.
-effects: Alterna marca d'água no Photo Mode.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: photoMode
-sourceFile: src/components/layout/left-panel/PhotoModeSettingsContent.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Minimalista
-id: designer-minimal
 area: paineis-laterais
 location: Painel Designer Inteligente, Conversação
-action: Dispara a ação de designer «Minimalista» (`minimal`).
+action: Dispara a ação de designer «Minimalista».
 effects: Ajusta/refina o layout via designer conversacional.
 shortcut: -
-iconName: adminLab
-sourceFile: src/components/layout/left-panel/ConversationalDesignerPanel.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Moderno
-id: designer-styleModern
 area: paineis-laterais
 location: Painel Designer Inteligente, Conversação
-action: Dispara a ação de designer «Moderno» (`styleModern`).
+action: Dispara a ação de designer «Moderno».
 effects: Ajusta/refina o layout via designer conversacional.
 shortcut: -
-iconName: adminLab
-sourceFile: src/components/layout/left-panel/ConversationalDesignerPanel.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Modo Walkthrough
-id: sala-walkthrough
 area: paineis-laterais
-location: Painel Sala
+location: No painel Sala
 action: Entra em walkthrough (WASD + rato).
-effects: Entra em walkthrough (WASD + rato).
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: WASD
-iconName: room
-sourceFile: src/components/layout/left-panel/PainelSala.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Nórdico
-id: designer-styleNordic
 area: paineis-laterais
 location: Painel Designer Inteligente, Conversação
-action: Dispara a ação de designer «Nórdico» (`styleNordic`).
+action: Dispara a ação de designer «Nórdico».
 effects: Ajusta/refina o layout via designer conversacional.
 shortcut: -
-iconName: adminLab
-sourceFile: src/components/layout/left-panel/ConversationalDesignerPanel.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Otimizar parede
-id: designer-optimizeWall
 area: paineis-laterais
 location: Painel Designer Inteligente, Conversação
-action: Dispara a ação de designer «Otimizar parede» (`optimizeWall`).
+action: Dispara a ação de designer «Otimizar parede».
 effects: Ajusta/refina o layout via designer conversacional.
 shortcut: -
-iconName: adminLab
-sourceFile: src/components/layout/left-panel/ConversationalDesignerPanel.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Pés
-id: moveis-pes
 area: paineis-laterais
-location: Painel Móveis
+location: No painel Móveis (lado esquerdo)
 action: Abre/configura opções de pés no painel de móveis.
-effects: Abre/configura opções de pés no painel de móveis.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/left-panel/PainelMoveisUnificado.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Porta
-id: sala-add-porta
 area: paineis-laterais
-location: Painel Sala
+location: No painel Sala
 action: Adiciona abertura tipo porta.
-effects: Adiciona abertura tipo porta.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: roomDoor
-sourceFile: src/components/layout/left-panel/PainelSala.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Prateleiras
-id: moveis-prateleiras
 area: paineis-laterais
-location: Painel Móveis
+location: No painel Móveis (lado esquerdo)
 action: Abre configuração de prateleiras.
-effects: Abre configuração de prateleiras.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/left-panel/PainelMoveisUnificado.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Realismo avançado
-id: photo-realismo
 area: paineis-laterais
 location: Painel Photo Mode
 action: Alterna realismo avançado.
-effects: Alterna realismo avançado.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: photoMode
-sourceFile: src/components/layout/left-panel/PhotoModeSettingsContent.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Regenerar Camadas
-id: layers-regenerar
 area: paineis-laterais
-location: Painéis laterais (caixa / camadas)
+location: Nos painéis laterais (caixa e camadas)
 action: Regenera as camadas da caixa selecionada.
-effects: Regenera as camadas da caixa selecionada.
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: -
-iconName: furniture
-sourceFile: src/components/layout/left-panel/BoxLayersPanel.tsx
-featureIds: portas-e-gavetas
+features: portas-e-gavetas
 
 ## Button: Remover sala
-id: sala-remover
 area: paineis-laterais
-location: Painel Sala
+location: No painel Sala
 action: Remove a sala do projeto.
-effects: Remove a sala do projeto.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: room
-sourceFile: src/components/layout/left-panel/PainelSala.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Renomear
-id: projects-renomear
 area: paineis-laterais
-location: Modal Projetos salvos
+location: Na janela Projetos guardados
 action: Entra em modo de renomeação.
-effects: Entra em modo de renomeação.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: projects
-sourceFile: src/components/layout/ToolbarModals.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Ultra
-id: photo-ultra
 area: paineis-laterais
 location: Painel Photo Mode
 action: Alterna modo Ultra.
-effects: Alterna modo Ultra.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: photoMode
-sourceFile: src/components/layout/left-panel/PhotoModeSettingsContent.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Variações
-id: designer-variations
 area: paineis-laterais
 location: Painel Designer Inteligente, Conversação
-action: Dispara a ação de designer «Variações» (`variations`).
+action: Dispara a ação de designer «Variações».
 effects: Ajusta/refina o layout via designer conversacional.
 shortcut: -
-iconName: adminLab
-sourceFile: src/components/layout/left-panel/ConversationalDesignerPanel.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Arco
-id: drill-arco
 area: pimo-drill
 location: PIMO DRILL, toolbar
-action: onSelectFeature("arc")
-effects: onSelectFeature("arc")
+action: OnSelectFeature("arc").
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: -
-iconName: adminTools
-sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
-featureIds: exportacao-tcn-drill-xml, modulo-industrial
+features: exportacao-tcn-drill-xml, modulo-industrial
 
 ## Button: Buraco
-id: drill-buraco
 area: pimo-drill
 location: PIMO DRILL, toolbar
-action: onSelectFeature("hole")
-effects: onSelectFeature("hole")
+action: OnSelectFeature("hole").
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: -
-iconName: adminTools
-sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
-featureIds: exportacao-tcn-drill-xml, modulo-industrial
+features: exportacao-tcn-drill-xml, modulo-industrial
 
 ## Button: Caminho
-id: drill-caminho
 area: pimo-drill
 location: PIMO DRILL, toolbar
-action: onSelectFeature("path")
-effects: onSelectFeature("path")
+action: OnSelectFeature("path").
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: -
-iconName: adminTools
-sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
-featureIds: exportacao-tcn-drill-xml, modulo-industrial
+features: exportacao-tcn-drill-xml, modulo-industrial
 
 ## Button: Círculo
-id: drill-circulo
 area: pimo-drill
 location: PIMO DRILL, toolbar
-action: onSelectFeature("circle")
-effects: onSelectFeature("circle")
+action: OnSelectFeature("circle").
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: -
-iconName: adminTools
-sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
-featureIds: exportacao-tcn-drill-xml, modulo-industrial
+features: exportacao-tcn-drill-xml, modulo-industrial
 
 ## Button: Entalhe
-id: drill-entalhe
 area: pimo-drill
 location: PIMO DRILL, toolbar
-action: onSelectFeature("slot")
-effects: onSelectFeature("slot")
+action: OnSelectFeature("slot").
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: -
-iconName: adminTools
-sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
-featureIds: exportacao-tcn-drill-xml, modulo-industrial
+features: exportacao-tcn-drill-xml, modulo-industrial
 
 ## Button: Rect
-id: drill-rect
 area: pimo-drill
 location: PIMO DRILL, toolbar
-action: onSelectFeature("rect")
-effects: onSelectFeature("rect")
+action: OnSelectFeature("rect").
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: -
-iconName: adminTools
-sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
-featureIds: exportacao-tcn-drill-xml, modulo-industrial
+features: exportacao-tcn-drill-xml, modulo-industrial
 
 ## Button: Vista 2D
-id: drill-vista-2d
 area: pimo-drill
 location: PIMO DRILL, toolbar
-action: onSelectView("2d")
-effects: onSelectView("2d")
+action: OnSelectView("2d").
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: -
-iconName: adminTools
-sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
-featureIds: exportacao-tcn-drill-xml, modulo-industrial
+features: exportacao-tcn-drill-xml, modulo-industrial
 
 ## Button: Vista 3D
-id: drill-vista-3d
 area: pimo-drill
 location: PIMO DRILL, toolbar
-action: onSelectView("3d")
-effects: onSelectView("3d")
+action: OnSelectView("3d").
+effects: A seleção no modelo 3D atualiza-se de imediato.
 shortcut: -
-iconName: adminTools
-sourceFile: src/app/industrial/pimo-drill/PimoDrillToolbar.tsx
-featureIds: exportacao-tcn-drill-xml, modulo-industrial
+features: exportacao-tcn-drill-xml, modulo-industrial
 
 ## Button: Actualizar
-id: station-actualizar
 area: pimo-trak
 location: StationToolbar (estações industriais)
-action: onReload?.()
-effects: onReload?.()
+action: OnReload?
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: adminTools
-sourceFile: src/industrial/ui/components/StationToolbar.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: CNC
-id: industrial-nav-cnc
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
-action: Navega para `/industrial/operations/cnc`.
+action: Navega para.
 effects: Abre a vista industrial correspondente.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Drill
-id: industrial-nav-drill
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
-action: Navega para `/industrial/operations/drill`.
+action: Navega para.
 effects: Abre a vista industrial correspondente.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Embalagem
-id: industrial-nav-embalagem
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
-action: Navega para `/industrial/operations/embalagem`.
+action: Navega para.
 effects: Abre a vista industrial correspondente.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Histórico
-id: station-historico
 area: pimo-trak
 location: StationToolbar (estações industriais)
-action: onToggleSidebar?.()
-effects: onToggleSidebar?.()
+action: OnToggleSidebar?
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: adminTools
-sourceFile: src/industrial/ui/components/StationToolbar.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Montagem
-id: industrial-nav-montagem
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
-action: Navega para `/industrial/operations/montagem`.
+action: Navega para.
 effects: Abre a vista industrial correspondente.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Mover
-id: station-mover
 area: pimo-trak
 location: StationToolbar (estações industriais)
-action: onToolMode("move")
-effects: onToolMode("move")
+action: OnToolMode("move").
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: adminTools
-sourceFile: src/industrial/ui/components/StationToolbar.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Nesting
-id: industrial-nav-nesting
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
-action: Navega para `/industrial/operations/nesting`.
+action: Navega para.
 effects: Abre a vista industrial correspondente.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Operador
-id: industrial-nav-operador
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
-action: Navega para `/industrial/operador`.
+action: Navega para.
 effects: Abre a vista industrial correspondente.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Orlar
-id: industrial-nav-orlar
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
-action: Navega para `/industrial/operations/orlar`.
+action: Navega para.
 effects: Abre a vista industrial correspondente.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Quality
-id: industrial-nav-quality
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
-action: Navega para `/industrial/quality`.
+action: Navega para.
 effects: Abre a vista industrial correspondente.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Rework
-id: industrial-nav-rework
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
-action: Navega para `/industrial/rework`.
+action: Navega para.
 effects: Abre a vista industrial correspondente.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Rodar
-id: station-rodar
 area: pimo-trak
 location: StationToolbar (estações industriais)
-action: onToolMode("rotate")
-effects: onToolMode("rotate")
+action: OnToolMode("rotate").
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: adminTools
-sourceFile: src/industrial/ui/components/StationToolbar.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Settings Industrial
-id: industrial-nav-settings-industrial
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
 action: Abre as definições industriais na aplicação.
 effects: Abre a vista industrial correspondente.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Snap
-id: station-snap
 area: pimo-trak
 location: StationToolbar (estações industriais)
-action: onToggleSnap()
-effects: onToggleSnap()
+action: OnToggleSnap.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: adminTools
-sourceFile: src/industrial/ui/components/StationToolbar.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Supervisor
-id: industrial-nav-supervisor
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
-action: Navega para `/industrial/supervisor`.
+action: Navega para.
 effects: Abre a vista industrial correspondente.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Time Tracking
-id: industrial-nav-time-tracking
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
-action: Navega para `/industrial/time-tracking`.
+action: Navega para.
 effects: Abre a vista industrial correspondente.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Todas as operações
-id: industrial-nav-todas-as-operacoes
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
-action: Navega para `/industrial/operations`.
+action: Navega para.
 effects: Abre a vista industrial correspondente.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Tracking
-id: industrial-nav-tracking
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
-action: Navega para `/industrial/tracking`.
+action: Navega para.
 effects: Abre a vista industrial correspondente.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Work Orders
-id: industrial-nav-work-orders
 area: pimo-trak
 location: Menu PIMO-TRAK Industrial (header)
-action: Navega para `/industrial/work-orders`.
+action: Navega para.
 effects: Abre a vista industrial correspondente.
 shortcut: -
-iconName: adminTools
-sourceFile: src/components/layout/header/HeaderIndustrialMenu.tsx
-featureIds: pimo-trak, modulo-industrial
+features: pimo-trak, modulo-industrial
 
 ## Button: Mover
-id: showroom-mover
 area: showroom
 location: Showroom toolbar / top bar
-action: setActiveTool("move")
-effects: setActiveTool("move")
+action: SetActiveTool("move").
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: move
-sourceFile: src/components/showroom/ShowroomToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Régua
-id: showroom-regua
 area: showroom
 location: Showroom toolbar / top bar
-action: setActiveTool("measure")
-effects: setActiveTool("measure")
+action: SetActiveTool("measure").
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: move
-sourceFile: src/components/showroom/ShowroomToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Reset câmara
-id: showroom-reset
 area: showroom
 location: Showroom toolbar / top bar
-action: resetCamera()
-effects: resetCamera()
+action: ResetCamera.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: move
-sourceFile: src/components/showroom/ShowroomToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Rodar
-id: showroom-rodar
 area: showroom
 location: Showroom toolbar / top bar
-action: setActiveTool("rotate")
-effects: setActiveTool("rotate")
+action: SetActiveTool("rotate").
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: move
-sourceFile: src/components/showroom/ShowroomToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Separar caixas / Reunir caixas
-id: showroom-separar-caixas
 area: showroom
 location: Showroom toolbar / top bar
-action: onBoxExplodeToggle
-effects: onBoxExplodeToggle
+action: OnBoxExplodeToggle.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: move
-sourceFile: src/components/showroom/ShowroomViewerTopBar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Separar peças / Reunir peças
-id: showroom-separar-pecas
 area: showroom
 location: Showroom toolbar / top bar
-action: onPieceExplodeToggle
-effects: onPieceExplodeToggle
+action: OnPieceExplodeToggle.
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: move
-sourceFile: src/components/showroom/ShowroomViewerTopBar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Zoom +
-id: showroom-zoom-in
 area: showroom
 location: Showroom toolbar / top bar
-action: adjustCameraZoom(0.9)
-effects: adjustCameraZoom(0.9)
+action: AdjustCameraZoom(0.9).
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: move
-sourceFile: src/components/showroom/ShowroomToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 ## Button: Zoom −
-id: showroom-zoom-out
 area: showroom
 location: Showroom toolbar / top bar
-action: adjustCameraZoom(1.1)
-effects: adjustCameraZoom(1.1)
+action: AdjustCameraZoom(1.1).
+effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
-iconName: move
-sourceFile: src/components/showroom/ShowroomToolbar.tsx
-featureIds: configurador-3d
+features: configurador-3d
 
 
 # Architecture modules
@@ -3505,7 +2614,6 @@ Estado central do design (ProjectState): caixas, materiais, sala, viewer setting
 inputs: Nome do projeto | Import JSON/ZIP | Projetos salvos
 outputs: ProjectState persistido | Snapshot viewer/sala
 dependsOn: -
-sourceFiles: src/context/projectTypes.ts, src/context/projectState.ts, src/context/projectPersistence.ts, src/core/projects/projectsClient.ts
 
 ## Module: Módulos / Caixas
 id: modulos-caixas
@@ -3513,7 +2621,6 @@ Entidades workspaceBoxes: geometria, posição, portas/gavetas, materiais, lock.
 inputs: Catálogo Móveis | Criar Caixa | Duplicar / importar
 outputs: workspaceBoxes[] | seleção ativa
 dependsOn: projeto
-sourceFiles: src/components/layout/left-panel/PainelMoveisUnificado.tsx, src/components/layout/left-panel/HomeLeftPanelEmpty.tsx, src/context/projectState.ts
 
 ## Module: Peças / painéis
 id: pecas
@@ -3521,7 +2628,6 @@ Painéis derivados da caixa (laterais, fundo, prateleiras, frentes). Alimentam c
 inputs: Geometria da caixa | Espessuras | Divisórias/separadores
 outputs: Lista de peças com medidas mm | Observações por peça
 dependsOn: modulos-caixas
-sourceFiles: src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx, src/components/panels/CutlistPanel.tsx
 
 ## Module: Materiais e orlas
 id: materiais-orlas
@@ -3529,7 +2635,6 @@ Materiais de carcaça/frentes e regras visuais/industriais de orla aplicados às
 inputs: Catálogo de materiais | Menu de contexto Alterar material | Painel Materiais
 outputs: materialId por peça/frente | regras de orla
 dependsOn: pecas
-sourceFiles: src/components/layout/right-panel/MaterialPanel.tsx, src/components/layout/workspace/ContextMenu.tsx, src/3d/viewer-engine/orla/orlaVisualRules.ts
 
 ## Module: Lista de corte (Cutlist)
 id: lista-corte
@@ -3537,15 +2642,13 @@ Cutlist em mm gerada a partir do design 3D; base para nesting e CNC.
 inputs: Peças | Materiais | Espessuras
 outputs: Cutlist PDF/dados | Etiquetas UEE v5 | Totais de peças
 dependsOn: pecas, materiais-orlas
-sourceFiles: src/hooks/useGerarArquivoHandlers.ts, src/components/panels/CutlistPanel.tsx, src/components/export/UnifiedExportBubble.tsx
 
 ## Module: Nesting Fast / PRO / V3
 id: nesting
-Layout de corte em chapa: estimativa Fast, otimização PRO, e Nesting V3 manual (`/nesting_v3`).
+Layout de corte em chapa: estimativa Fast, otimização PRO, e Nesting V3 manual (/nesting_v3).
 inputs: Cutlist / peças do projeto | Dimensões de chapa
 outputs: Layout de Corte PRO | Layout manual | Sessão Nesting V3
 dependsOn: lista-corte
-sourceFiles: src/nesting-v3/NestingV3Page.tsx, src/nesting-v3/utils/convertProjectToV3Pieces.ts, src/components/export/UnifiedExportBubble.tsx
 
 ## Module: Exportações (TCN / Drill XML / PDF / ZIP)
 id: exportacoes
@@ -3553,7 +2656,6 @@ Bolha «Salvar e Gerar Design»: PDF técnico, cutlist, CNC (`.tcn` + Drill XML)
 inputs: ProjectState | Cutlist | Nesting (quando aplicável)
 outputs: .tcn | Drill .xml | PDF | XLSX ferragens | ZIP/arquivo completo | JSON local
 dependsOn: lista-corte, nesting, materiais-orlas
-sourceFiles: src/components/export/UnifiedExportBubble.tsx, src/hooks/useGerarArquivoHandlers.ts, src/industrial/sgpi/industrialExportBridge.ts
 
 ## Module: Orçamento
 id: orcamento
@@ -3561,7 +2663,6 @@ Hub Financeiro + pedido de orçamento (email) a partir do estado/pricing do proj
 inputs: Peças e materiais | Configuração de pricing | Dados do cliente (modal)
 outputs: Resumo financeiro | Pedido de orçamento
 dependsOn: pecas, materiais-orlas, projeto
-sourceFiles: src/components/layout/bottom-info-toolbar/hubs/FinanceiroHub.tsx, src/components/modals/QuoteRequestModal.tsx, src/core/quotes/sendQuoteRequestEmail.ts, src/core/pricing/centralPricingConfig.ts
 
 ## Module: PIMO-TRAK / Industrial
 id: pimo-trak
@@ -3569,7 +2670,6 @@ Work orders, operações (CNC, nesting, drill, orlar, montagem, embalagem), trac
 inputs: Projeto exportado / live project | Operações industriais no estado
 outputs: Work orders | Estados de operação | Análise industrial online
 dependsOn: exportacoes, projeto
-sourceFiles: src/components/layout/header/HeaderIndustrialMenu.tsx, src/core/industrial/onlineAnalysis/industrialLiveProjectStore.ts, src/industrial/config/featureFlags.ts
 
 
 # PIMO systems
@@ -3577,72 +2677,62 @@ sourceFiles: src/components/layout/header/HeaderIndustrialMenu.tsx, src/core/ind
 ## System: PIMO TRAK
 id: pimo-trak
 status: parcial
-route: /industrial/work-orders
 definition: Sistema de ordens de trabalho e rastreamento da produção na fábrica, incluindo etiquetas QR por peça (UEE v5).
 purpose: Ligar cada peça física ao projeto digital: gerar etiquetas, criar/executar work orders por estação e acompanhar o progresso (operador, tracking, supervisor).
-howItWorks: A partir do projeto industrial (cutlist + artefactos), o fluxo cria ordens por estação (CNC, nesting, drill, orlar, montagem, embalagem). O operador lê QR (câmara/USB); as etiquetas UEE v5 saem do menu «Salvar e Gerar Design». O menu header «PIMO TRAK» aponta para `/industrial/work-orders` e rotas industriais associadas.
-features: Work orders por estação (`/industrial/work-orders`) | Etiquetas QR UEE v5 (exportação no configurador) | Operador com leitura QR (câmara / USB) | Menu industrial: Tracking, Supervisor, Quality, Rework, Time Tracking, Operations | Envio de ordem para fábrica (hub Industriais)
+howItWorks: A partir do projeto industrial (cutlist + artefactos), o fluxo cria ordens por estação (CNC, nesting, drill, orlar, montagem, embalagem). O operador lê QR (câmara/USB); as etiquetas UEE v5 saem do menu «Salvar e Gerar Design». O menu header «PIMO TRAK» aponta para /industrial/work-orders e rotas industriais associadas.
+features: Work orders por estação (/industrial/work-orders) | Etiquetas QR UEE v5 (exportação no configurador) | Operador com leitura QR (câmara / USB) | Menu industrial: Tracking, Supervisor, Quality, Rework, Time Tracking, Operations | Envio de ordem para fábrica (hub Industriais)
 inputs: ProjectState / cutlist com números de etiqueta | Artefactos industriais (ZIP / arquivo completo) | Leitura QR na estação
 outputs: Work orders por estação | PDFs de etiquetas UEE v5 | Estados de tarefa (iniciar / concluir / rejeitar) | Envio de ordem para fábrica quando aplicável
 relatedSystems: pimo-industrial, pimo-nesting, pimo-drill, pimo-projetos
-statusNotes: Work orders, etiquetas UEE v5 e rotas de operador/estações existem no código. Páginas agregadas de Tracking/Quality/Rework podem estar incompletas na build, estado «parcial».
-sourceFiles: src/components/layout/header/HeaderProjectsSwitcher.tsx, src/components/layout/header/HeaderIndustrialMenu.tsx, src/app/industrial/work-orders/index.tsx, src/industrial/labels/, src/industrial/tracking/, src/core/fabrication/enviarParaFabrica.ts
+statusNotes: Ordens de fabrico, etiquetas UEE e ecrãs de operador/estações estão disponíveis. Algumas vistas agregadas de rastreio, qualidade e retrabalho podem ainda estar incompletas (estado «parcial»).
 
 ## System: PIMO PROJETOS
 id: pimo-projetos
 status: disponivel
-route: /PROJETOS
 definition: Área de gestão e visualização de projetos PIMO da conta (páginas/projeto com snapshot industrial).
 purpose: Listar, abrir e apresentar projetos industriais guardados, incluindo showroom e análise online quando aplicável, separados do workspace de edição do configurador.
-howItWorks: A rota `/PROJETOS` lista os projetos industriais da conta. É preciso ter sessão iniciada. Cartões abrem o projeto; há painel de showroom e análise industrial online ligada ao snapshot.
+howItWorks: A rota /PROJETOS lista os projetos industriais da conta. É preciso ter sessão iniciada. Cartões abrem o projeto; há painel de showroom e análise industrial online ligada ao snapshot.
 features: Índice de projetos industriais guardados | Acesso com sessão iniciada | Cartões de projeto com navegação | Showroom de projetos | Análise industrial online (quando disponível)
 inputs: Projetos da conta | Snapshots (projectState + viewer + room) | Sessão iniciada
 outputs: Lista e abertura de projetos | Vista showroom | Entrada para análise industrial
 relatedSystems: pimo-trak, pimo-industrial, pimo-nesting
-statusNotes: UI e fluxo de listagem/abertura verificados em `src/app/PROJETOS/`. Estado «disponível».
-sourceFiles: src/app/PROJETOS/page.tsx, src/app/PROJETOS/ProjetosLoginGate.tsx, src/app/PROJETOS/ProjetosShowroomPanel.tsx, src/app/PROJETOS/projetosPagesClient.ts, src/components/layout/header/HeaderProjectsSwitcher.tsx
+statusNotes: Listagem e abertura de projetos disponíveis na app. Estado «disponível».
 
 ## System: PIMO NESTING
 id: pimo-nesting
 status: disponivel
-route: /nesting_v3
 definition: Motor e UI próprios de otimização da distribuição das peças nas chapas (Nesting V3), com redução de desperdício via auto-layout e colocação manual.
 purpose: Permitir layout de corte interativo (drag/drop, rotação, multi-folha) e exportar PDF, TCN e etiquetas a partir do nesting, sem substituir o pipeline industrial automático Fast/PRO do configurador.
-howItWorks: Peças vêm da cutlist do projeto (`convertProjectToV3Pieces`) ou de entrada manual. O motor `nestingV3Engine` calcula utilização; Auto Layout faz shelf-packing. Exporta PDF técnico, TCN e etiquetas oficiais UEE. Acessível por `/nesting_v3` ou «Nesting V3 (Manual)» na bolha de exportação. Comentário no código: «NÃO toca no motor industrial» (pipeline Fast/PRO à parte).
+howItWorks: As peças vêm da lista de corte do projeto ou de entrada manual. O nesting calcula a utilização das chapas; o Auto Layout organiza o aproveitamento. Exporta PDF técnico, ficheiros de máquina e etiquetas oficiais. Acessível no ecrã de nesting ou pela opção de nesting manual na exportação. O nesting dedicado não altera o pipeline industrial Fast/PRO.
 features: Canvas SVG 2D com zoom/pan | Drag & drop e rotação 0/90/180/270° | Auto Layout (shelf-packing) | Multi-folha | Export PDF + TCN + etiquetas UEE | Atalhos: R, Delete, +/-, 0, Escape
 inputs: Peças da cutlist do projeto | Peças manuais | Definições de chapa / settings V3
 outputs: Layout de folhas com utilização | PDF de layout | Ficheiros TCN | Etiquetas oficiais
 relatedSystems: pimo-trak, pimo-industrial, pimo-drill
 statusNotes: Nesting V3 está implementado como sistema próprio. Distinto do nesting Fast/PRO embutido no pipeline de exportação do configurador. Estado «disponível».
-sourceFiles: src/nesting-v3/NestingV3Page.tsx, src/nesting-v3/nestingV3Engine.ts, src/nesting-v3/nestingV3Export.ts, src/app/nesting-v3/NestingV3RoutePage.tsx, src/components/export/UnifiedExportBubble.tsx
 
 ## System: PIMO INDUSTRIAL
 id: pimo-industrial
 status: parcial
-route: /industrial
 definition: Camada industrial completa da app: hub de estações, operações (CNC, nesting, drill, orlar, montagem, embalagem), operador/supervisor e integrações de fabrico.
 purpose: Concentrar a visão de fábrica, da entrada do projeto exportado até às estações de produção, com UI industrial partilhada (layout de 3 colunas, station toolbar, ferragens 3D).
-howItWorks: A home `/industrial` apresenta um rail de estações (IND, SUP, NES, DRI, ORL, MON, EMB) e canvas de peças. As operações vivem sob `/industrial/operations/*`. Integra com PIMO TRAK (work orders), Nesting e Drill. O hub usa peças de demonstração (`FAKE_PIECES`) no canvas visual; a lógica de work orders e operações é real noutros módulos.
-features: Hub industrial `/industrial` | Operações por estação (CNC, Nesting, Drill, Orlar, Montagem, Embalagem) | Station toolbar (Mover, Rodar, Snap, Histórico) | Ferragens 3D overlay | Perfis operador / supervisor / quality | Bridge SGPI / arquivo completo
-inputs: Projeto / cutlist exportados | Work orders e estados de operação | Flags industriais (`industrialFeatureFlags`)
+howItWorks: O hub industrial mostra as estações (armazém, nesting, furação, orlagem, montagem, embalagem e supervisão) e um quadro de peças. Liga-se ao PIMO TRAK, ao nesting e à furação. No hub pode haver peças de demonstração no quadro visual; as ordens de fabrico e operações reais estão nas restantes áreas industriais.
+features: Hub industrial /industrial | Operações por estação (CNC, Nesting, Drill, Orlar, Montagem, Embalagem) | Station toolbar (Mover, Rodar, Snap, Histórico) | Ferragens 3D overlay | Perfis operador / supervisor / quality | Bridge SGPI / arquivo completo
+inputs: Projeto / cutlist exportados | Work orders e estados de operação | Opções industriais da conta e do projeto
 outputs: Vista de estações e operações | Conclusão de operações | Integração com TRAK e exportações
 relatedSystems: pimo-trak, pimo-nesting, pimo-drill, pimo-projetos
-statusNotes: Rotas e UI industriais existem; o canvas da home usa peças fake de demonstração. Pacote `industrial/` documenta fases de migração. Estado «parcial».
-sourceFiles: src/app/industrial/index.tsx, src/app/industrial/operations/, src/industrial/ui/, src/industrial/README.md, src/industrial/sgpi/industrialExportBridge.ts
+statusNotes: Os ecrãs industriais existem; o hub pode mostrar peças de demonstração. A migração completa do módulo industrial continua. Estado «parcial».
 
 ## System: PIMO DRILL
 id: pimo-drill
 status: em-desenvolvimento
-route: /industrial/pimo-drill
 definition: Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.
 purpose: Oferecer um workspace dedicado de furação (buraco, entalhe, rect, círculo, arco, caminho) separado do configurador 3D, complementar à exportação Drill XML do menu Arquivos CNC.
-howItWorks: A página `/industrial/pimo-drill` (aberta em https://pimo.pro/industrial/pimo-drill) monta toolbar, painel esquerdo e viewers 2D/3D, com bridge mínimo ao Design Industrial e import KDT XML. O sistema está acessível e em desenvolvimento ativo: a UI e a rota existem; o fluxo operativo completo de inserção/validação de furos continua a evoluir. A geração de Drill XML a partir do configurador (`onArquivosCnc`) é um caminho paralelo já disponível.
-features: Rota e UI acessíveis em pimo.pro | Vistas 2D/3D e toolbar de ferramentas de furação | Bridge Design Industrial mínimo | Import KDT XML (código presente) | Exportação Drill XML via configurador (sistema à parte, disponível)
+howItWorks: O PIMO DRILL (em pimo.pro, área industrial) oferece barra de ferramentas, painel lateral e vistas 2D/3D, com ligação ao Design industrial e importação KDT XML. Está acessível e em desenvolvimento: a inserção e validação completa de furos continua a evoluir. A geração de ficheiros de furação a partir do configurador já está disponível em paralelo.
+features: Rota e UI acessíveis em pimo.pro | Vistas 2D/3D e toolbar de ferramentas de furação | Bridge Design Industrial mínimo | Importação de ficheiros KDT XML | Exportação Drill XML via configurador (sistema à parte, disponível)
 inputs: Modelo de peça (PieceModel) | Import KDT XML | Cutlist / furos do projeto (via exportação CNC do configurador)
 outputs: Plano de furação no workspace DRILL (em evolução) | Drill XML / TCN via fluxo «Arquivos CNC» do configurador (já disponível)
 relatedSystems: pimo-industrial, pimo-trak, pimo-nesting
 statusNotes: Acessível em https://pimo.pro/industrial/pimo-drill. Estado «em desenvolvimento»: a app e a rota existem; o simulador/fluxo operativo completo ainda evolui. A exportação Drill XML do configurador continua disponível.
-sourceFiles: src/app/industrial/pimo-drill/PimoDrillPage.tsx, src/app/industrial/pimo-drill/PimoDrillToolbar.tsx, src/app/industrial/pimo-drill/import/kdtXmlParser.ts, src/hooks/useGerarArquivoHandlers.ts, src/core/drill/drillExport.ts
 
 
 # Full page content
@@ -5157,39 +4247,32 @@ Secção separada para material de administração, engenharia de processo e cam
 
 ---
 
-## System docs
+## Documentos de sistema
 URL: https://pimo.info/pt-pt/documentacao-tecnica/docs-do-sistema/
-System docs.
+Índice público das áreas de documentação de sistema do PIMO PRO: gavetas, PDF industrial e categorias em preparação.
 
-# Documentos de sistema (read-only)
+# Documentos de sistema
 
-No código da aplicação principal (`pimo-criativo`), a documentação de sistema é carregada por `src/utils/loadSystemDoc.ts` e separada por categorias.
+Índice das áreas de documentação de sistema usadas no PIMO PRO. Serve para orientar quem precisa de perceber o que já está descrito e o que ainda está em preparação.
 
-## Categorias atualmente disponíveis
+## Categorias disponíveis
 
-- **Drawers System**  
-  Master plan, pipeline oficial/legado e certificação industrial de gavetas.
+- **Sistema de gavetas**  
+  Plano geral, fluxo oficial e regras industriais de gavetas.
 
-- **PDF Engine**  
-  Documentação de análise online de PDFs industriais e comportamentos associados.
+- **Motor de PDF**  
+  Análise de PDFs industriais e comportamentos associados à geração de documentos.
 
-## Categorias listadas como "em preparação"
+## Categorias em preparação
 
-- Doors System
-- CNC Pipeline
-- PI System
-- Viewer Architecture
-- UI Architecture
-- Settings & Rules
+- Sistema de portas
+- Pipeline CNC
+- Sistema PI
+- Arquitetura do visualizador
+- Arquitetura da interface
+- Definições e regras
 
-## Fontes técnicas de referência (na app principal)
-
-- `src/core/drawers/DrawerSystemReference.ts`
-- `src/core/drawers/DrawerIndustrialCertificationReport.md`
-- `src/core/industrial/onlineAnalysis/IndustrialOnlineAnalysisSystemDoc.md`
-- `src/utils/loadSystemDoc.ts`
-
-> Esta página funciona como índice público. O detalhe operacional continua a evoluir no repositório da aplicação principal.
+> Esta página é um índice público. O detalhe operativo continua a evoluir com o produto.
 
 ---
 
@@ -5545,7 +4628,7 @@ Estações PIMO TRAK, armazém, nesting, furação, orlar, montagem, embalagem, 
 
 # Estações industriais
 
-As **estações** do fluxo industrial (verificadas em `App.tsx` do PIMO PRO) operam ordens de fabrico por posto. Estas rotas vivem sob autenticação na app (`ProtectedLayout`).
+As **estações** do fluxo industrial do PIMO PRO operam ordens de fabrico por posto. Só estão disponíveis depois de iniciar sessão na app.
 
 ## Estações de work order
 
@@ -5709,7 +4792,7 @@ Camada industrial com painéis de estação, operador e supervisor.
 
 ## O que faz
 
-A camada industrial agrega hub `/industrial`, estações de work order, operações e perfis operador/supervisor. O acesso às rotas industriais exige login (`ProtectedLayout`).
+A camada industrial reúne o hub industrial, as estações de ordem de fabrico, as operações e os perfis de operador e supervisor. O acesso a estas áreas exige sessão iniciada na app.
 
  
     Visão por perfil  Painéis dedicados para estação, operador e supervisor.  
@@ -6890,28 +5973,21 @@ Catálogos de referência do PIMO PRO para consulta rápida.
 
 ## Botões e controlos
 URL: https://pimo.info/pt-pt/referencia/botoes/
-Catálogo completo de botões do PIMO PRO: nome, localização, ação, efeitos, atalho e ligação às funcionalidades.
+Catálogo de botões do PIMO PRO: o que fazem, onde aparecem no ecrã e com que funções se ligam, em linguagem clara.
 
 # Botões e controlos
 
-Referência de interface do PIMO PRO. Cada entrada inclui o ícone real (SVG do `iconRegistry` da app), o rótulo exacto, onde aparece, o que faz, efeitos/dependências, atalho (se existir) e o ficheiro-fonte.
+Guia visual dos controlos do PIMO PRO para quem desenha, vende ou fabrica. Cada entrada mostra o ícone, o nome, onde aparece no ecrã, o que faz, o que acontece a seguir e a ligação à funcionalidade ou guia correspondente.
 
-Use este catálogo quando quiser saber o nome exacto de um controlo visto na app. Para o fluxo completo (registo até exportação), comece por [Primeiros passos](/pt-pt/primeiros-passos/). Nas páginas de [funcionalidades](/pt-pt/funcionalidades/) encontra só os botões ligados a essa área.
+Para o fluxo completo (da conta ao projeto final), comece por [Primeiros passos](/pt-pt/primeiros-passos/). Nas páginas de [funcionalidades](/pt-pt/funcionalidades/) encontra os botões ligados a cada área.
 
 ## Áreas principais
 
-- **Header**: login, Meus Projetos, definições, tema, troca entre áreas PIMO
+- **Cabeçalho**: conta, Meus Projetos, definições, tema e troca entre áreas PIMO
 - **Navegação lateral**: Móveis, Modelos, Acessórios, Calculadora, Info
-- **Barra inferior**: cutlist, nesting, exportações e ferramentas técnicas
-- **Exportação**: PDF, cutlist, etiquetas, TCN, Drill XML, ZIP
-- **Menu de contexto**: ações sobre caixas, frentes e sala (botão direito)
-
- 
-
-## Dados
-
-- [`/data/buttons.json`](/data/buttons.json)
-- [`/llms-full.txt`](/llms-full.txt)
+- **Barra inferior**: lista de corte, nesting, exportações e ferramentas do dia a dia
+- **Exportação e gravação**: PDF, lista de corte, etiquetas, ficheiros de máquina e pacotes
+- **Menu de contexto**: ações sobre caixas, frentes e sala (clique direito)
 
 ---
 

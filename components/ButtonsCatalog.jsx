@@ -45,8 +45,10 @@ function IconThumb({ button }) {
   )
 }
 
-function featureName(id) {
-  return features.find((f) => f.id === id)?.name || id
+function featureLinks(ids = []) {
+  return (ids || [])
+    .map((fid) => features.find((x) => x.id === fid))
+    .filter(Boolean)
 }
 
 export function ButtonsCatalog({ featureFilter = "" } = {}) {
@@ -60,16 +62,10 @@ export function ButtonsCatalog({ featureFilter = "" } = {}) {
       if (area !== "all" && b.area !== area) return false
       if (feature !== "all" && !(b.featureIds || []).includes(feature)) return false
       if (!q) return true
-      const hay = [
-        b.id,
-        b.label,
-        b.location,
-        b.action,
-        b.effects,
-        b.shortcut || "",
-        b.sourceFile,
-        ...(b.featureIds || []),
-      ]
+      const linked = featureLinks(b.featureIds)
+        .map((f) => `${f.name} ${f.summary || ""}`)
+        .join(" ")
+      const hay = [b.label, b.location, b.action, b.effects, b.shortcut || "", linked]
         .join(" ")
         .toLowerCase()
       return hay.includes(q)
@@ -88,10 +84,10 @@ export function ButtonsCatalog({ featureFilter = "" } = {}) {
 
   return (
     <div className="pimo-buttons-catalog">
-      <p className="pimo-lead">
-        {buttons.length} controlos catalogados a partir do código do PIMO PRO (só leitura).
-        Labels e atalhos são os do código-fonte, sem invenções.
-      </p>
+      <div className="pimo-lead">
+        {buttons.length} controlos do PIMO PRO explicados para quem desenha, vende ou fabrica:
+        o que fazem, onde aparecem no ecrã e com que funções se ligam.
+      </div>
 
       <div className="pimo-buttons-filters" role="search">
         <label>
@@ -100,7 +96,7 @@ export function ButtonsCatalog({ featureFilter = "" } = {}) {
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="label, atalho, ficheiro, feature…"
+            placeholder="nome, zona do ecrã, atalho…"
             aria-label="Pesquisar botões"
           />
         </label>
@@ -145,45 +141,53 @@ export function ButtonsCatalog({ featureFilter = "" } = {}) {
               <span className="pimo-buttons-area-count">({list.length})</span>
             </h2>
             <div className="pimo-buttons-grid">
-              {list.map((b) => (
-                <article key={b.id} id={b.id} className="pimo-button-card">
-                  <header>
-                    <IconThumb button={b} />
-                    <div>
-                      <h3>{b.label}</h3>
-                      <p className="pimo-button-loc">{b.location}</p>
-                    </div>
-                  </header>
-                  <p>{b.action}</p>
-                  {b.effects ? (
+              {list.map((b) => {
+                const linked = featureLinks(b.featureIds)
+                return (
+                  <article key={b.id} id={b.id} className="pimo-button-card">
+                    <header>
+                      <IconThumb button={b} />
+                      <div>
+                        <h3>{b.label}</h3>
+                        <p className="pimo-button-loc">
+                          <strong>Onde:</strong> {b.location}
+                        </p>
+                      </div>
+                    </header>
                     <p>
-                      <strong>Efeitos:</strong> {b.effects}
+                      <strong>O que faz:</strong> {b.action}
                     </p>
-                  ) : null}
-                  {b.shortcut ? (
-                    <p>
-                      <strong>Atalho:</strong> <kbd>{b.shortcut}</kbd>
-                    </p>
-                  ) : null}
-                  {b.featureIds?.length ? (
-                    <p className="pimo-button-features">
-                      <strong>Funcionalidades:</strong>{" "}
-                      {b.featureIds.map((fid, i) => {
-                        const f = features.find((x) => x.id === fid)
-                        return (
-                          <span key={fid}>
+                    {b.effects ? (
+                      <p>
+                        <strong>A seguir:</strong> {b.effects}
+                      </p>
+                    ) : null}
+                    {b.shortcut ? (
+                      <p>
+                        <strong>Atalho:</strong> <kbd>{b.shortcut}</kbd>
+                      </p>
+                    ) : null}
+                    {linked.length ? (
+                      <p className="pimo-button-features">
+                        <strong>Liga-se a:</strong>{" "}
+                        {linked.map((f, i) => (
+                          <span key={f.id}>
                             {i > 0 ? " · " : null}
-                            {f ? <a href={f.canonicalPath}>{f.name}</a> : fid}
+                            <a href={f.canonicalPath}>{f.name}</a>
+                            {f.guidePath ? (
+                              <>
+                                {" "}
+                                (
+                                <a href={f.guidePath}>guia</a>)
+                              </>
+                            ) : null}
                           </span>
-                        )
-                      })}
-                    </p>
-                  ) : null}
-                  <p className="pimo-button-source">
-                    <code>{b.sourceFile}</code>
-                  </p>
-                </article>
-              ))}
+                        ))}
+                      </p>
+                    ) : null}
+                  </article>
+                )
+              })}
             </div>
           </section>
         )
@@ -205,8 +209,7 @@ export function FeatureButtons({ featureId }) {
       <h2>Botões e controlos relacionados</h2>
       <p>
         {list.length} controlos no catálogo. Ver todos em{" "}
-        <a href={catalogHref}>Referência de botões</a>{" "}
-        (filtrar por funcionalidade).
+        <a href={catalogHref}>Referência de botões</a>.
       </p>
       <ul>
         {list.slice(0, 24).map((b) => (
@@ -225,8 +228,4 @@ export function FeatureButtons({ featureId }) {
       {list.length > 24 ? <p>… e mais {list.length - 24} no catálogo completo.</p> : null}
     </section>
   )
-}
-
-export function featureNameExport(id) {
-  return featureName(id)
 }

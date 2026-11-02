@@ -182,14 +182,6 @@ export function SystemDetail({ systemId }) {
         <strong>{statusLabel(s.status)}.</strong> {s.statusNotes}
       </p>
 
-      <h2>Ficheiros-fonte (criativo)</h2>
-      <ul>
-        {s.sourceFiles.map((f) => (
-          <li key={f}>
-            <code>{f}</code>
-          </li>
-        ))}
-      </ul>
     </div>
   )
 }
