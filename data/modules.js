@@ -20,9 +20,9 @@ export const appModules = [
     id: "projeto",
     name: "Projeto",
     summary:
-      "Estado central do design (ProjectState): caixas, materiais, sala, viewer settings, operações industriais.",
+      "Estado central do design: caixas, materiais, sala, preferências de visualização e operações industriais.",
     inputs: ["Nome do projeto", "Import JSON/ZIP", "Projetos salvos"],
-    outputs: ["ProjectState persistido", "Snapshot viewer/sala"],
+    outputs: ["Projeto guardado", "Vista 3D e sala"],
     dependsOn: [],
 
     featureIds: ["configurador-3d"],
