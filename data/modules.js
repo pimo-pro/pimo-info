@@ -11,7 +11,6 @@
  * @property {string[]} inputs
  * @property {string[]} outputs
  * @property {string[]} dependsOn
- * @property {string[]} sourceFiles
  * @property {string[]} [featureIds]
  */
 
@@ -25,12 +24,7 @@ export const appModules = [
     inputs: ["Nome do projeto", "Import JSON/ZIP", "Projetos salvos"],
     outputs: ["ProjectState persistido", "Snapshot viewer/sala"],
     dependsOn: [],
-    sourceFiles: [
-      "src/context/projectTypes.ts",
-      "src/context/projectState.ts",
-      "src/context/projectPersistence.ts",
-      "src/core/projects/projectsClient.ts",
-    ],
+
     featureIds: ["configurador-3d"],
   },
   {
@@ -41,11 +35,7 @@ export const appModules = [
     inputs: ["Catálogo Móveis", "Criar Caixa", "Duplicar / importar"],
     outputs: ["workspaceBoxes[]", "seleção ativa"],
     dependsOn: ["projeto"],
-    sourceFiles: [
-      "src/components/layout/left-panel/PainelMoveisUnificado.tsx",
-      "src/components/layout/left-panel/HomeLeftPanelEmpty.tsx",
-      "src/context/projectState.ts",
-    ],
+
     featureIds: ["configurador-3d", "portas-e-gavetas"],
   },
   {
@@ -56,10 +46,7 @@ export const appModules = [
     inputs: ["Geometria da caixa", "Espessuras", "Divisórias/separadores"],
     outputs: ["Lista de peças com medidas mm", "Observações por peça"],
     dependsOn: ["modulos-caixas"],
-    sourceFiles: [
-      "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx",
-      "src/components/panels/CutlistPanel.tsx",
-    ],
+
     featureIds: ["lista-de-corte", "configurador-3d"],
   },
   {
@@ -70,11 +57,7 @@ export const appModules = [
     inputs: ["Catálogo de materiais", "Menu de contexto Alterar material", "Painel Materiais"],
     outputs: ["materialId por peça/frente", "regras de orla"],
     dependsOn: ["pecas"],
-    sourceFiles: [
-      "src/components/layout/right-panel/MaterialPanel.tsx",
-      "src/components/layout/workspace/ContextMenu.tsx",
-      "src/3d/viewer-engine/orla/orlaVisualRules.ts",
-    ],
+
     featureIds: ["materiais"],
   },
   {
@@ -84,26 +67,18 @@ export const appModules = [
     inputs: ["Peças", "Materiais", "Espessuras"],
     outputs: ["Cutlist PDF/dados", "Etiquetas UEE v5", "Totais de peças"],
     dependsOn: ["pecas", "materiais-orlas"],
-    sourceFiles: [
-      "src/hooks/useGerarArquivoHandlers.ts",
-      "src/components/panels/CutlistPanel.tsx",
-      "src/components/export/UnifiedExportBubble.tsx",
-    ],
+
     featureIds: ["lista-de-corte"],
   },
   {
     id: "nesting",
     name: "Nesting Fast / PRO / V3",
     summary:
-      "Layout de corte em chapa: estimativa Fast, otimização PRO, e Nesting V3 manual (`/nesting_v3`).",
+      "Layout de corte em chapa: estimativa Fast, otimização PRO, e Nesting V3 manual (/nesting_v3).",
     inputs: ["Cutlist / peças do projeto", "Dimensões de chapa"],
     outputs: ["Layout de Corte PRO", "Layout manual", "Sessão Nesting V3"],
     dependsOn: ["lista-corte"],
-    sourceFiles: [
-      "src/nesting-v3/NestingV3Page.tsx",
-      "src/nesting-v3/utils/convertProjectToV3Pieces.ts",
-      "src/components/export/UnifiedExportBubble.tsx",
-    ],
+
     featureIds: ["nesting-fast-pro"],
   },
   {
@@ -114,11 +89,7 @@ export const appModules = [
     inputs: ["ProjectState", "Cutlist", "Nesting (quando aplicável)"],
     outputs: [".tcn", "Drill .xml", "PDF", "XLSX ferragens", "ZIP/arquivo completo", "JSON local"],
     dependsOn: ["lista-corte", "nesting", "materiais-orlas"],
-    sourceFiles: [
-      "src/components/export/UnifiedExportBubble.tsx",
-      "src/hooks/useGerarArquivoHandlers.ts",
-      "src/industrial/sgpi/industrialExportBridge.ts",
-    ],
+
     featureIds: ["exportacao-tcn-drill-xml", "pdf-tecnico"],
   },
   {
@@ -129,12 +100,7 @@ export const appModules = [
     inputs: ["Peças e materiais", "Configuração de pricing", "Dados do cliente (modal)"],
     outputs: ["Resumo financeiro", "Pedido de orçamento"],
     dependsOn: ["pecas", "materiais-orlas", "projeto"],
-    sourceFiles: [
-      "src/components/layout/bottom-info-toolbar/hubs/FinanceiroHub.tsx",
-      "src/components/modals/QuoteRequestModal.tsx",
-      "src/core/quotes/sendQuoteRequestEmail.ts",
-      "src/core/pricing/centralPricingConfig.ts",
-    ],
+
     featureIds: ["orcamentos"],
   },
   {
@@ -145,11 +111,7 @@ export const appModules = [
     inputs: ["Projeto exportado / live project", "Operações industriais no estado"],
     outputs: ["Work orders", "Estados de operação", "Análise industrial online"],
     dependsOn: ["exportacoes", "projeto"],
-    sourceFiles: [
-      "src/components/layout/header/HeaderIndustrialMenu.tsx",
-      "src/core/industrial/onlineAnalysis/industrialLiveProjectStore.ts",
-      "src/industrial/config/featureFlags.ts",
-    ],
+
     featureIds: ["pimo-trak", "modulo-industrial"],
   },
 ]

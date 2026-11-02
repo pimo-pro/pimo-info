@@ -170,21 +170,6 @@ export function ModuleFlowSections() {
         </table>
       </div>
 
-      <h2>Ficheiros-fonte (criativo)</h2>
-      <ul>
-        {ordered.map((m) => (
-          <li key={`src-${m.id}`}>
-            <strong>{m.name}:</strong>{" "}
-            {m.sourceFiles.map((f, i) => (
-              <span key={f}>
-                {i > 0 ? ", " : null}
-                <code>{f}</code>
-              </span>
-            ))}
-          </li>
-        ))}
-      </ul>
-
       <h2>Sistemas PIMO (produto)</h2>
       <p>
         Os sistemas do menu «Projetos PIMO» ligam-se a este fluxo. Detalhe em{" "}

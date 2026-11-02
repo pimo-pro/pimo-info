@@ -145,11 +145,11 @@ function main() {
   })
 
   const byStatus = summarize(enriched)
+  const publicItems = enriched.map(({ codeRef, ...rest }) => rest)
   const payload = {
     generatedAt: new Date().toISOString(),
-    source: "pimo-criativo-source (read-only) + pages/pt-pt",
-    totals: { items: enriched.length, byStatus },
-    items: enriched,
+    totals: { items: publicItems.length, byStatus },
+    items: publicItems,
   }
 
   fs.mkdirSync(path.dirname(OUT_JSON), { recursive: true })
@@ -166,20 +166,19 @@ function main() {
     "|---|---|",
     ...Object.entries(byStatus).map(([k, v]) => `| ${k} | ${v} |`),
     "",
-    "| ID | Tipo | Nome | Página | Estado | Código |",
-    "|---|---|---|---|---|---|",
+    "| ID | Tipo | Nome | Página | Estado |",
+    "|---|---|---|---|---|",
     ...enriched.map(
       (i) =>
-        `| \`${i.id}\` | ${i.kind} | ${i.name} | [${i.page}](${i.page}) | ${i.status} | \`${i.codeRef}\` |`
+        `| ${i.id} | ${i.kind} | ${i.name} | [${i.page}](${i.page}) | ${i.status} |`
     ),
     "",
     "## Notas",
     "",
-    "- Factos verificados no código do `pimo-criativo` (só leitura; revisão 2026-10-07).",
-    "- `coberto` = documentação suficiente do que o código permite descrever (incluindo shells/placeholders).",
+    "- Documentação alinhada ao que a app PIMO PRO permite descrever.",
+    "- `coberto` = página suficiente para o utilizador.",
     "- `em-desenvolvimento` quando o produto ainda evolui de forma material (ex.: PIMO DRILL).",
-    "- Capturas públicas WebP em `/visual/pimo-pro/` (home, ajuda, novidades, login, registo).",
-    "- Ecrãs que pedem sessão iniciada (exemplos): `/dashboard`, `/meus-projetos`, `/projects*`, `/industrial/*`, `/PROJETOS`, `/nesting_v3`, `/me`, `/definicoes`.",
+    "- Capturas públicas em `/visual/pimo-pro/`.",
     "",
   ].join("\n")
   fs.mkdirSync(path.dirname(OUT_MD), { recursive: true })

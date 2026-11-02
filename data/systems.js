@@ -1,6 +1,6 @@
 /**
  * Sistemas PIMO (módulos de produto na app pimo.pro).
- * Estado verificado no código de pimo-criativo (só leitura).
+ * Estado alinhado ao produto PIMO PRO.
  * status: 'disponivel' | 'parcial' | 'em-desenvolvimento' | 'planeado'
  */
 
@@ -21,7 +21,6 @@
  * @property {string[]} relatedSystemIds
  * @property {string[]} relatedFeatureIds
  * @property {string[]} relatedButtonAreas
- * @property {string[]} sourceFiles
  * @property {string} statusNotes
  * @property {string} canonicalPath
  */
@@ -39,9 +38,9 @@ export const pimoSystems = [
     purpose:
       "Ligar cada peça física ao projeto digital: gerar etiquetas, criar/executar work orders por estação e acompanhar o progresso (operador, tracking, supervisor).",
     howItWorks:
-      "A partir do projeto industrial (cutlist + artefactos), o fluxo cria ordens por estação (CNC, nesting, drill, orlar, montagem, embalagem). O operador lê QR (câmara/USB); as etiquetas UEE v5 saem do menu «Salvar e Gerar Design». O menu header «PIMO TRAK» aponta para `/industrial/work-orders` e rotas industriais associadas.",
+      "A partir do projeto industrial (cutlist + artefactos), o fluxo cria ordens por estação (CNC, nesting, drill, orlar, montagem, embalagem). O operador lê QR (câmara/USB); as etiquetas UEE v5 saem do menu «Salvar e Gerar Design». O menu header «PIMO TRAK» aponta para /industrial/work-orders e rotas industriais associadas.",
     features: [
-      "Work orders por estação (`/industrial/work-orders`)",
+      "Work orders por estação (/industrial/work-orders)",
       "Etiquetas QR UEE v5 (exportação no configurador)",
       "Operador com leitura QR (câmara / USB)",
       "Menu industrial: Tracking, Supervisor, Quality, Rework, Time Tracking, Operations",
@@ -61,16 +60,9 @@ export const pimoSystems = [
     relatedSystemIds: ["pimo-industrial", "pimo-nesting", "pimo-drill", "pimo-projetos"],
     relatedFeatureIds: ["pimo-trak", "lista-de-corte", "modulo-industrial"],
     relatedButtonAreas: ["pimo-trak", "exportacao", "barra-inferior"],
-    sourceFiles: [
-      "src/components/layout/header/HeaderProjectsSwitcher.tsx",
-      "src/components/layout/header/HeaderIndustrialMenu.tsx",
-      "src/app/industrial/work-orders/index.tsx",
-      "src/industrial/labels/",
-      "src/industrial/tracking/",
-      "src/core/fabrication/enviarParaFabrica.ts",
-    ],
+
     statusNotes:
-      "Work orders, etiquetas UEE v5 e rotas de operador/estações existem no código. Páginas agregadas de Tracking/Quality/Rework podem estar incompletas na build, estado «parcial».",
+      "Ordens de fabrico, etiquetas UEE e ecrãs de operador/estações estão disponíveis. Algumas vistas agregadas de rastreio, qualidade e retrabalho podem ainda estar incompletas (estado «parcial»).",
     canonicalPath: "/pt-pt/sistemas-pimo/pimo-trak/",
   },
   {
@@ -84,7 +76,7 @@ export const pimoSystems = [
     purpose:
       "Listar, abrir e apresentar projetos industriais guardados, incluindo showroom e análise online quando aplicável, separados do workspace de edição do configurador.",
     howItWorks:
-      "A rota `/PROJETOS` lista os projetos industriais da conta. É preciso ter sessão iniciada. Cartões abrem o projeto; há painel de showroom e análise industrial online ligada ao snapshot.",
+      "A rota /PROJETOS lista os projetos industriais da conta. É preciso ter sessão iniciada. Cartões abrem o projeto; há painel de showroom e análise industrial online ligada ao snapshot.",
     features: [
       "Índice de projetos industriais guardados",
       "Acesso com sessão iniciada",
@@ -105,15 +97,9 @@ export const pimoSystems = [
     relatedSystemIds: ["pimo-trak", "pimo-industrial", "pimo-nesting"],
     relatedFeatureIds: ["configurador-3d", "modulo-industrial"],
     relatedButtonAreas: ["header"],
-    sourceFiles: [
-      "src/app/PROJETOS/page.tsx",
-      "src/app/PROJETOS/ProjetosLoginGate.tsx",
-      "src/app/PROJETOS/ProjetosShowroomPanel.tsx",
-      "src/app/PROJETOS/projetosPagesClient.ts",
-      "src/components/layout/header/HeaderProjectsSwitcher.tsx",
-    ],
+
     statusNotes:
-      "UI e fluxo de listagem/abertura verificados em `src/app/PROJETOS/`. Estado «disponível».",
+      "Listagem e abertura de projetos disponíveis na app. Estado «disponível».",
     canonicalPath: "/pt-pt/sistemas-pimo/pimo-projetos/",
   },
   {
@@ -127,7 +113,7 @@ export const pimoSystems = [
     purpose:
       "Permitir layout de corte interativo (drag/drop, rotação, multi-folha) e exportar PDF, TCN e etiquetas a partir do nesting, sem substituir o pipeline industrial automático Fast/PRO do configurador.",
     howItWorks:
-      "Peças vêm da cutlist do projeto (`convertProjectToV3Pieces`) ou de entrada manual. O motor `nestingV3Engine` calcula utilização; Auto Layout faz shelf-packing. Exporta PDF técnico, TCN e etiquetas oficiais UEE. Acessível por `/nesting_v3` ou «Nesting V3 (Manual)» na bolha de exportação. Comentário no código: «NÃO toca no motor industrial» (pipeline Fast/PRO à parte).",
+      "As peças vêm da lista de corte do projeto ou de entrada manual. O nesting calcula a utilização das chapas; o Auto Layout organiza o aproveitamento. Exporta PDF técnico, ficheiros de máquina e etiquetas oficiais. Acessível no ecrã de nesting ou pela opção de nesting manual na exportação. O nesting dedicado não altera o pipeline industrial Fast/PRO.",
     features: [
       "Canvas SVG 2D com zoom/pan",
       "Drag & drop e rotação 0/90/180/270°",
@@ -150,13 +136,7 @@ export const pimoSystems = [
     relatedSystemIds: ["pimo-trak", "pimo-industrial", "pimo-drill"],
     relatedFeatureIds: ["nesting-fast-pro", "lista-de-corte", "exportacao-tcn-drill-xml"],
     relatedButtonAreas: ["nesting-v3", "exportacao"],
-    sourceFiles: [
-      "src/nesting-v3/NestingV3Page.tsx",
-      "src/nesting-v3/nestingV3Engine.ts",
-      "src/nesting-v3/nestingV3Export.ts",
-      "src/app/nesting-v3/NestingV3RoutePage.tsx",
-      "src/components/export/UnifiedExportBubble.tsx",
-    ],
+
     statusNotes:
       "Nesting V3 está implementado como sistema próprio. Distinto do nesting Fast/PRO embutido no pipeline de exportação do configurador. Estado «disponível».",
     canonicalPath: "/pt-pt/sistemas-pimo/pimo-nesting/",
@@ -172,9 +152,9 @@ export const pimoSystems = [
     purpose:
       "Concentrar a visão de fábrica, da entrada do projeto exportado até às estações de produção, com UI industrial partilhada (layout de 3 colunas, station toolbar, ferragens 3D).",
     howItWorks:
-      "A home `/industrial` apresenta um rail de estações (IND, SUP, NES, DRI, ORL, MON, EMB) e canvas de peças. As operações vivem sob `/industrial/operations/*`. Integra com PIMO TRAK (work orders), Nesting e Drill. O hub usa peças de demonstração (`FAKE_PIECES`) no canvas visual; a lógica de work orders e operações é real noutros módulos.",
+      "O hub industrial mostra as estações (armazém, nesting, furação, orlagem, montagem, embalagem e supervisão) e um quadro de peças. Liga-se ao PIMO TRAK, ao nesting e à furação. No hub pode haver peças de demonstração no quadro visual; as ordens de fabrico e operações reais estão nas restantes áreas industriais.",
     features: [
-      "Hub industrial `/industrial`",
+      "Hub industrial /industrial",
       "Operações por estação (CNC, Nesting, Drill, Orlar, Montagem, Embalagem)",
       "Station toolbar (Mover, Rodar, Snap, Histórico)",
       "Ferragens 3D overlay",
@@ -184,7 +164,7 @@ export const pimoSystems = [
     inputs: [
       "Projeto / cutlist exportados",
       "Work orders e estados de operação",
-      "Flags industriais (`industrialFeatureFlags`)",
+      "Opções industriais da conta e do projeto",
     ],
     outputs: [
       "Vista de estações e operações",
@@ -194,15 +174,9 @@ export const pimoSystems = [
     relatedSystemIds: ["pimo-trak", "pimo-nesting", "pimo-drill", "pimo-projetos"],
     relatedFeatureIds: ["modulo-industrial", "pimo-trak", "exportacao-tcn-drill-xml"],
     relatedButtonAreas: ["pimo-trak", "design-industrial", "barra-inferior"],
-    sourceFiles: [
-      "src/app/industrial/index.tsx",
-      "src/app/industrial/operations/",
-      "src/industrial/ui/",
-      "src/industrial/README.md",
-      "src/industrial/sgpi/industrialExportBridge.ts",
-    ],
+
     statusNotes:
-      "Rotas e UI industriais existem; o canvas da home usa peças fake de demonstração. Pacote `industrial/` documenta fases de migração. Estado «parcial».",
+      "Os ecrãs industriais existem; o hub pode mostrar peças de demonstração. A migração completa do módulo industrial continua. Estado «parcial».",
     canonicalPath: "/pt-pt/sistemas-pimo/pimo-industrial/",
   },
   {
@@ -217,12 +191,12 @@ export const pimoSystems = [
     purpose:
       "Oferecer um workspace dedicado de furação (buraco, entalhe, rect, círculo, arco, caminho) separado do configurador 3D, complementar à exportação Drill XML do menu Arquivos CNC.",
     howItWorks:
-      "A página `/industrial/pimo-drill` (aberta em https://pimo.pro/industrial/pimo-drill) monta toolbar, painel esquerdo e viewers 2D/3D, com bridge mínimo ao Design Industrial e import KDT XML. O sistema está acessível e em desenvolvimento ativo: a UI e a rota existem; o fluxo operativo completo de inserção/validação de furos continua a evoluir. A geração de Drill XML a partir do configurador (`onArquivosCnc`) é um caminho paralelo já disponível.",
+      "O PIMO DRILL (em pimo.pro, área industrial) oferece barra de ferramentas, painel lateral e vistas 2D/3D, com ligação ao Design industrial e importação KDT XML. Está acessível e em desenvolvimento: a inserção e validação completa de furos continua a evoluir. A geração de ficheiros de furação a partir do configurador já está disponível em paralelo.",
     features: [
       "Rota e UI acessíveis em pimo.pro",
       "Vistas 2D/3D e toolbar de ferramentas de furação",
       "Bridge Design Industrial mínimo",
-      "Import KDT XML (código presente)",
+      "Importação de ficheiros KDT XML",
       "Exportação Drill XML via configurador (sistema à parte, disponível)",
     ],
     inputs: [
@@ -237,13 +211,7 @@ export const pimoSystems = [
     relatedSystemIds: ["pimo-industrial", "pimo-trak", "pimo-nesting"],
     relatedFeatureIds: ["exportacao-tcn-drill-xml", "modulo-industrial"],
     relatedButtonAreas: ["pimo-drill", "exportacao"],
-    sourceFiles: [
-      "src/app/industrial/pimo-drill/PimoDrillPage.tsx",
-      "src/app/industrial/pimo-drill/PimoDrillToolbar.tsx",
-      "src/app/industrial/pimo-drill/import/kdtXmlParser.ts",
-      "src/hooks/useGerarArquivoHandlers.ts",
-      "src/core/drill/drillExport.ts",
-    ],
+
     statusNotes:
       "Acessível em https://pimo.pro/industrial/pimo-drill. Estado «em desenvolvimento»: a app e a rota existem; o simulador/fluxo operativo completo ainda evolui. A exportação Drill XML do configurador continua disponível.",
     canonicalPath: "/pt-pt/sistemas-pimo/pimo-drill/",

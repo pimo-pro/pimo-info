@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T19:53:33.976Z",
+  "generatedAt": "2026-11-02T22:09:15.831Z",
   "flowOrder": [
     "projeto",
     "modulos-caixas",
@@ -26,12 +26,6 @@
         "Snapshot viewer/sala"
       ],
       "dependsOn": [],
-      "sourceFiles": [
-        "src/context/projectTypes.ts",
-        "src/context/projectState.ts",
-        "src/context/projectPersistence.ts",
-        "src/core/projects/projectsClient.ts"
-      ],
       "featureIds": [
         "configurador-3d"
       ]
@@ -51,11 +45,6 @@
       ],
       "dependsOn": [
         "projeto"
-      ],
-      "sourceFiles": [
-        "src/components/layout/left-panel/PainelMoveisUnificado.tsx",
-        "src/components/layout/left-panel/HomeLeftPanelEmpty.tsx",
-        "src/context/projectState.ts"
       ],
       "featureIds": [
         "configurador-3d",
@@ -78,10 +67,6 @@
       "dependsOn": [
         "modulos-caixas"
       ],
-      "sourceFiles": [
-        "src/components/layout/bottom-info-toolbar/BottomInfoToolbar.tsx",
-        "src/components/panels/CutlistPanel.tsx"
-      ],
       "featureIds": [
         "lista-de-corte",
         "configurador-3d"
@@ -102,11 +87,6 @@
       ],
       "dependsOn": [
         "pecas"
-      ],
-      "sourceFiles": [
-        "src/components/layout/right-panel/MaterialPanel.tsx",
-        "src/components/layout/workspace/ContextMenu.tsx",
-        "src/3d/viewer-engine/orla/orlaVisualRules.ts"
       ],
       "featureIds": [
         "materiais"
@@ -130,11 +110,6 @@
         "pecas",
         "materiais-orlas"
       ],
-      "sourceFiles": [
-        "src/hooks/useGerarArquivoHandlers.ts",
-        "src/components/panels/CutlistPanel.tsx",
-        "src/components/export/UnifiedExportBubble.tsx"
-      ],
       "featureIds": [
         "lista-de-corte"
       ]
@@ -142,7 +117,7 @@
     {
       "id": "nesting",
       "name": "Nesting Fast / PRO / V3",
-      "summary": "Layout de corte em chapa: estimativa Fast, otimização PRO, e Nesting V3 manual (`/nesting_v3`).",
+      "summary": "Layout de corte em chapa: estimativa Fast, otimização PRO, e Nesting V3 manual (/nesting_v3).",
       "inputs": [
         "Cutlist / peças do projeto",
         "Dimensões de chapa"
@@ -154,11 +129,6 @@
       ],
       "dependsOn": [
         "lista-corte"
-      ],
-      "sourceFiles": [
-        "src/nesting-v3/NestingV3Page.tsx",
-        "src/nesting-v3/utils/convertProjectToV3Pieces.ts",
-        "src/components/export/UnifiedExportBubble.tsx"
       ],
       "featureIds": [
         "nesting-fast-pro"
@@ -186,11 +156,6 @@
         "nesting",
         "materiais-orlas"
       ],
-      "sourceFiles": [
-        "src/components/export/UnifiedExportBubble.tsx",
-        "src/hooks/useGerarArquivoHandlers.ts",
-        "src/industrial/sgpi/industrialExportBridge.ts"
-      ],
       "featureIds": [
         "exportacao-tcn-drill-xml",
         "pdf-tecnico"
@@ -214,12 +179,6 @@
         "materiais-orlas",
         "projeto"
       ],
-      "sourceFiles": [
-        "src/components/layout/bottom-info-toolbar/hubs/FinanceiroHub.tsx",
-        "src/components/modals/QuoteRequestModal.tsx",
-        "src/core/quotes/sendQuoteRequestEmail.ts",
-        "src/core/pricing/centralPricingConfig.ts"
-      ],
       "featureIds": [
         "orcamentos"
       ]
@@ -240,11 +199,6 @@
       "dependsOn": [
         "exportacoes",
         "projeto"
-      ],
-      "sourceFiles": [
-        "src/components/layout/header/HeaderIndustrialMenu.tsx",
-        "src/core/industrial/onlineAnalysis/industrialLiveProjectStore.ts",
-        "src/industrial/config/featureFlags.ts"
       ],
       "featureIds": [
         "pimo-trak",

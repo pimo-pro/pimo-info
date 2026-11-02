@@ -285,15 +285,12 @@ function main() {
     ...buttons.map(
       (b) =>
         `## Button: ${b.label}\n` +
-        `id: ${b.id}\n` +
         `area: ${b.area}\n` +
         `location: ${b.location}\n` +
         `action: ${b.action}\n` +
         `effects: ${b.effects}\n` +
         `shortcut: ${b.shortcut || "-"}\n` +
-        `iconName: ${b.iconName || b.icon || "-"}\n` +
-        `sourceFile: ${b.sourceFile}\n` +
-        `featureIds: ${(b.featureIds || []).join(", ") || "-"}\n`
+        `features: ${(b.featureIds || []).join(", ") || "-"}\n`
     ),
     "",
     "# Architecture modules",
@@ -305,8 +302,7 @@ function main() {
         `${m.summary}\n` +
         `inputs: ${m.inputs.join(" | ")}\n` +
         `outputs: ${m.outputs.join(" | ")}\n` +
-        `dependsOn: ${m.dependsOn.join(", ") || "-"}\n` +
-        `sourceFiles: ${m.sourceFiles.join(", ")}\n`
+        `dependsOn: ${m.dependsOn.join(", ") || "-"}\n`
     ),
     "",
     "# PIMO systems",
@@ -316,7 +312,6 @@ function main() {
         `## System: ${s.name}\n` +
         `id: ${s.id}\n` +
         `status: ${s.status}\n` +
-        `route: ${s.route}\n` +
         `definition: ${s.definition}\n` +
         `purpose: ${s.purpose}\n` +
         `howItWorks: ${s.howItWorks}\n` +
@@ -324,8 +319,7 @@ function main() {
         `inputs: ${s.inputs.join(" | ")}\n` +
         `outputs: ${s.outputs.join(" | ")}\n` +
         `relatedSystems: ${s.relatedSystemIds.join(", ")}\n` +
-        `statusNotes: ${s.statusNotes}\n` +
-        `sourceFiles: ${s.sourceFiles.join(", ")}\n`
+        `statusNotes: ${s.statusNotes}\n`
     ),
     "",
     "# Full page content",
