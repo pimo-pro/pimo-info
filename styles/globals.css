@@ -2847,15 +2847,24 @@ html.dark .pimo-hprice-btn.is-primary,
   max-height: min(70vh, 720px);
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  contain: inline-size;
   border: 1px solid var(--pimo-border);
   border-radius: 12px;
   background: var(--pimo-card);
 }
 
 article:has(.pimo-hprice),
-article:has(.pimo-hprice) > main {
+article:has(.pimo-hprice) > main,
+.pimo-hprice,
+.pimo-hprice-compare {
   overflow-x: clip;
   max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  body:has(.pimo-hprice) {
+    overflow-x: hidden;
+  }
 }
 
 .pimo-hprice-table {
