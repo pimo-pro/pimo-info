@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T22:09:15.885Z",
+  "generatedAt": "2026-11-02T22:37:26.116Z",
   "totals": {
     "items": 65,
     "byStatus": {
@@ -351,6 +351,7 @@
       "purpose": "Criar e editar caixas",
       "page": "/pt-pt/guias-utilizador/criar-caixa/",
       "status": "coberto",
+      "notes": "Config do catálogo aplicada ao módulo; alinhamento ao lado; telemóvel em folha inferior; sem aviso de rotação inválida ao criar; Apagar módulo no Início (nov 2026)",
       "pageExists": true
     },
     {
@@ -440,9 +441,10 @@
       "id": "domain-budget",
       "kind": "domain",
       "name": "Orçamentos",
-      "purpose": "Cálculo de orçamento",
+      "purpose": "Pedido de orçamento (Início e Export)",
       "page": "/pt-pt/funcionalidades/orcamentos/",
       "status": "coberto",
+      "notes": "Formulário com confirmação; sem preço automático; preços no resumo só com permissão (nov 2026)",
       "pageExists": true
     },
     {
@@ -470,6 +472,7 @@
       "purpose": "Remates, rodapés, frisos",
       "page": "/pt-pt/funcionalidades/remates/",
       "status": "coberto",
+      "notes": "Tipo completo chama-se Remate Completo; marca Pimo casa na app e no PDF de nesting (nov 2026)",
       "pageExists": true
     },
     {
@@ -497,7 +500,7 @@
       "purpose": "Catálogo de ações",
       "page": "/pt-pt/referencia/botoes/",
       "status": "coberto",
-      "notes": "Preset de material (painel direito) indisponível até o 3D estar pronto (out 2026)",
+      "notes": "Pedir Orçamento e Apagar módulo no Início; preset de material (painel direito) indisponível até o 3D estar pronto (nov 2026)",
       "pageExists": true
     },
     {

@@ -96,9 +96,9 @@ export const appModules = [
     id: "orcamento",
     name: "Orçamento",
     summary:
-      "Hub Financeiro + pedido de orçamento (email) a partir do estado/pricing do projeto.",
-    inputs: ["Peças e materiais", "Configuração de pricing", "Dados do cliente (modal)"],
-    outputs: ["Resumo financeiro", "Pedido de orçamento"],
+      "Pedido de orçamento a partir do painel Início ou da exportação: contacto, projeto, módulos e notas; a equipa confirma os preços. O resumo com valores só aparece a quem tem permissão para ver preços.",
+    inputs: ["Peças e materiais", "Dados de contacto", "Notas do pedido"],
+    outputs: ["Pedido de orçamento enviado", "Resumo financeiro (se a conta puder ver preços)"],
     dependsOn: ["pecas", "materiais-orlas", "projeto"],
 
     featureIds: ["orcamentos"],

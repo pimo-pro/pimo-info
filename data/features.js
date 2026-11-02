@@ -96,11 +96,12 @@ export const features = [
   {
     id: "orcamentos",
     name: "Orçamentos",
-    summary: "Tarifas e regras de custo (Orçamentos P3.9).",
+    summary:
+      "Pedido de orçamento a partir do Início ou da exportação: envia contacto, projeto, módulos e notas; a equipa confirma os preços na resposta.",
     status: "implemented",
     canonicalPath: "/pt-pt/funcionalidades/orcamentos/",
     guidePath: "/pt-pt/documentacao-tecnica/orcamentos-p39/",
-    tags: ["custos"],
+    tags: ["custos", "pedido"],
   },
   {
     id: "modulo-industrial",
@@ -159,7 +160,8 @@ export const features = [
   {
     id: "remates",
     name: "Remates",
-    summary: "Acabamentos e remates associados aos módulos do projeto.",
+    summary:
+      "Acabamentos associados aos módulos, incluindo o tipo Remate Completo.",
     status: "implemented",
     canonicalPath: "/pt-pt/funcionalidades/remates/",
     tags: ["acabamentos"],

@@ -1,6 +1,6 @@
 ---
 title: "Criar Caixa"
-description: "Criar e configurar módulos no PIMO PRO: painel Móveis, opções e Gerar Design 3D."
+description: "Criar e configurar módulos no PIMO PRO: painel Móveis, opções, telemóvel e alinhamento."
 category: guia
 tags:
   - guia
@@ -18,7 +18,7 @@ import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
 
 # Criar e configurar uma nova caixa
 
-O PIMO PRO usa placeholders no workspace e só gera a estrutura técnica final após **Gerar Design 3D**.
+No PIMO PRO escolhe o módulo no painel **Móveis**, confirma a configuração e adiciona-o ao projeto. A estrutura técnica completa fica pronta depois de **Gerar Design 3D**.
 
 ## Passo a passo
 
@@ -26,28 +26,40 @@ O PIMO PRO usa placeholders no workspace e só gera a estrutura técnica final a
    Na barra lateral esquerda, clique no ícone de Móveis para ver módulos por categoria.
 
 2. **Escolher o módulo**  
-   Clique no módulo para abrir o painel flutuante com pré-visualização 3D e dimensões.
+   Clique no módulo para abrir a janela de configuração com pré-visualização e dimensões. Os valores iniciais (prateleiras, gavetas, porta e pés) coincidem com o modelo do catálogo.
 
 3. **Configurar opções**  
-   Ajuste pés, tipo de porta, número de gavetas e prateleiras antes de adicionar.
+   Ajuste pés, tipo de porta, número de gavetas e prateleiras. Pode deixar zero gavetas ou sem porta: a configuração confirmada aplica-se só a este módulo e já não altera outro módulo selecionado por engano.
 
 4. **Adicionar ao projeto**  
-   Clique em **+ Adicionar ao projeto**. A caixa entra no viewport como placeholder.
+   Clique em **+ Adicionar ao projeto**. Se não houver outro módulo selecionado, o novo fica alinhado ao lado dos existentes (em vez de aparecer por cima).
 
 5. **Gerar Design 3D**  
-   Clique em **Gerar Design 3D** para converter placeholders em módulos calculados com painéis, ferragens, furação e custos.
+   Clique em **Gerar Design 3D** para converter os placeholders em módulos calculados com painéis, ferragens, furação e custos.
+
+## Em telemóvel
+
+Em ecrãs estreitos, a janela de configuração abre dentro da área visível, como folha inferior com scroll. O botão **Adicionar ao projeto** fica sempre acessível. Em ecrãs largos a janela mantém-se ao lado do painel.
+
+## Painel Início
+
+No painel **Início** pode:
+
+- **Pedir Orçamento**: abre o formulário de contacto; o pedido só é enviado depois de confirmar os dados.
+- **Apagar módulo** (ícone de lixo): aparece quando há um módulo selecionado e remove-o do projeto. Pode desfazer com **Desfazer**.
 
 ## Notas importantes
 
 - Pode adicionar vários módulos seguidos sem sair do painel Móveis.
-- Recomenda-se configurar todas as caixas antes da geração 3D.
+- Caixas novas já não mostram o aviso de rotação inválida logo após criar: as rotações X, Y e Z começam com valor neutro.
 - Gavetas e portas não coexistem no mesmo módulo.
 
-Nomes exactos dos controlos: [Referência de botões](/pt-pt/referencia/botoes/). Detalhe do serviço: [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/).
+Nomes exactos dos controlos: [Referência de botões](/pt-pt/referencia/botoes/). Detalhe do serviço: [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/). Pedido comercial: [Orçamentos](/pt-pt/funcionalidades/orcamentos/).
 
 <RelatedLinks
   items={[
     { href: "/pt-pt/funcionalidades/configurador-3d/", label: "Configurador 3D" },
+    { href: "/pt-pt/funcionalidades/orcamentos/", label: "Orçamentos" },
     { href: "/pt-pt/guias-utilizador/mover-e-posicionar/", label: "Mover e posicionar" },
     { href: "/pt-pt/guias-utilizador/materiais/", label: "Materiais" },
     { href: "/pt-pt/referencia/botoes/#area-navegacao-lateral", label: "Botões laterais" },

@@ -1367,8 +1367,8 @@ export const buttons = [
     "shortcut": null,
     "area": "exportacao",
     "location": "Na janela «Salvar e Gerar Design»",
-    "action": "Abre o modal de pedido de orçamento após guardar.",
-    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Guarda o projeto e abre o pedido de orçamento a partir da exportação.",
+    "effects": "O pedido inclui contacto, projeto, módulos e notas. Não calcula preço automático: a equipa confirma os valores na resposta. Abrir o pedido não inicia fabrico.",
     "featureIds": [
       "orcamentos"
     ]
@@ -3154,8 +3154,8 @@ export const buttons = [
     "shortcut": null,
     "area": "paineis-laterais",
     "location": "No painel Móveis (lado esquerdo)",
-    "action": "Adiciona a caixa/móvel configurado ao workspace.",
-    "effects": "O ecrã e o projeto atualizam-se conforme a ação.",
+    "action": "Adiciona ao projeto o módulo com a configuração confirmada na janela (incluindo zero gavetas ou sem porta).",
+    "effects": "O módulo entra no projeto com os valores escolhidos. Se não houver outro módulo selecionado, alinha-se ao lado dos existentes. Em telemóvel, o botão fica sempre acessível na folha inferior.",
     "featureIds": [
       "configurador-3d",
       "portas-e-gavetas"
@@ -4291,6 +4291,35 @@ export const buttons = [
     "location": "Showroom toolbar / top bar",
     "action": "AdjustCameraZoom(1.1).",
     "effects": "O ecrã e o projeto atualizam-se conforme a ação.",
+    "featureIds": [
+      "configurador-3d"
+    ]
+  },
+  {
+    "id": "home-pedir-orcamento",
+    "label": "Pedir Orçamento",
+    "iconName": "finance",
+    "icon": null,
+    "shortcut": null,
+    "area": "navegacao-lateral",
+    "location": "No painel Início (lado esquerdo)",
+    "action": "Abre o formulário de contacto para pedir um orçamento do projeto.",
+    "effects": "O pedido só é enviado depois de confirmar os dados. Abrir o formulário não inicia fabrico nem grava o projeto.",
+    "featureIds": [
+      "orcamentos",
+      "configurador-3d"
+    ]
+  },
+  {
+    "id": "home-apagar-modulo",
+    "label": "Apagar módulo",
+    "iconName": "delete",
+    "icon": null,
+    "shortcut": null,
+    "area": "navegacao-lateral",
+    "location": "No painel Início, quando há um módulo selecionado",
+    "action": "Remove o módulo selecionado do projeto (ícone de lixo).",
+    "effects": "O módulo sai do projeto. Pode recuperar a ação com Desfazer, como nas outras formas de apagar.",
     "featureIds": [
       "configurador-3d"
     ]

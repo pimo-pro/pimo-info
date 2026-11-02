@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T22:09:15.833Z",
+  "generatedAt": "2026-11-02T22:37:26.063Z",
   "items": [
     {
       "path": "/",
@@ -1160,17 +1160,20 @@
       "path": "/pt-pt/funcionalidades/orcamentos/",
       "file": "pages/pt-pt/funcionalidades/orcamentos.mdx",
       "title": "Orçamentos",
-      "description": "Centro de tarifas e regras de custo no ecossistema PIMO.",
+      "description": "Pedir orçamento no PIMO PRO a partir do Início ou da exportação, com confirmação antes do envio.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
-        "funcionalidade"
+        "funcionalidade",
+        "orcamentos"
       ],
       "related": [
         "/pt-pt/funcionalidades/",
+        "/pt-pt/guias-utilizador/exportacao/",
+        "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-11-02",
       "status": "implemented",
       "draft": false
     },
@@ -1258,7 +1261,7 @@
       "path": "/pt-pt/funcionalidades/remates/",
       "file": "pages/pt-pt/funcionalidades/remates.mdx",
       "title": "Remates e acabamentos",
-      "description": "Remates, rodapés e acabamentos de caixa no PIMO PRO.",
+      "description": "Remates, rodapés e acabamentos de caixa no PIMO PRO, incluindo Remate Completo.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -1271,7 +1274,7 @@
         "/pt-pt/funcionalidades/materiais/",
         "/pt-pt/funcionalidades/configurador-3d/"
       ],
-      "lastUpdated": "2026-10-01",
+      "lastUpdated": "2026-11-02",
       "status": "",
       "draft": false
     },
@@ -1360,7 +1363,7 @@
       "path": "/pt-pt/guias-utilizador/criar-caixa/",
       "file": "pages/pt-pt/guias-utilizador/criar-caixa.mdx",
       "title": "Criar Caixa",
-      "description": "Criar e configurar módulos no PIMO PRO: painel Móveis, opções e Gerar Design 3D.",
+      "description": "Criar e configurar módulos no PIMO PRO: painel Móveis, opções, telemóvel e alinhamento.",
       "author": "",
       "category": "guia",
       "tags": [
