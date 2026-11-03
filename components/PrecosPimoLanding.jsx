@@ -1,12 +1,16 @@
 import { useEffect, useId, useState } from "react"
 
-const MEETING_ULTRA =
+const MEETING_OFICINA =
   "mailto:info@pimo.pt?subject=" +
-  encodeURIComponent("PIMO Ultra+: marcar reunião")
+  encodeURIComponent("PIMO Oficina: marcar reunião")
 
 const MEETING_ALPHA =
   "mailto:info@pimo.pt?subject=" +
   encodeURIComponent("PIMO ALPHA+: marcar reunião")
+
+const MEETING_LOJA =
+  "mailto:info@pimo.pt?subject=" +
+  encodeURIComponent("PIMO Loja/Showroom: marcar reunião")
 
 const CTA_FREE = "https://pimo.pro/"
 const CTA_PRO = "https://pimo.pro/"
@@ -387,7 +391,7 @@ const GROUP_ORDER = [
   "Suporte e formação",
 ]
 
-const ULTRA_PLUS_FEATURES = {
+const OFICINA_CNC_FEATURES = {
   configurador: true,
   medidas: true,
   historico: true,
@@ -398,9 +402,9 @@ const ULTRA_PLUS_FEATURES = {
   cnc: true,
   nesting: true,
   etiquetas: true,
-  url: true,
+  url: false,
   orcamento: true,
-  pos: true,
+  pos: false,
   whitelabel: false,
   dominio: false,
   aiAssist: true,
@@ -417,7 +421,7 @@ const PLANS = {
     priceMain: "0",
     priceSuffix: "€",
     period: "/mês",
-    periodNote: "para sempre",
+    periodNote: "grátis",
     launchFree: true,
     cta: { label: "Começar grátis", href: CTA_FREE, primary: false },
     highlights: [
@@ -451,7 +455,7 @@ const PLANS = {
     shortName: "Pro",
     name: "PIMO Pro",
     audience: "Para utilizadores finais que querem ajustar medidas.",
-    priceMain: "10",
+    priceMain: "12",
     priceSuffix: "€",
     period: "/mês",
     launchFree: true,
@@ -486,55 +490,18 @@ const PLANS = {
   proPlus: {
     id: "pro-plus",
     shortName: "Pro+",
-    name: "PIMO Pro+",
-    audience: "Para carpinteiros sem CNC.",
-    priceMain: "25",
+    name: "PIMO Pro+ / Designer",
+    audience: "Para designers e quem prepara projetos para oficina.",
+    priceMain: "29",
     priceSuffix: "€",
     period: "/mês",
     launchFree: true,
     cta: { label: "Escolher Pro+", href: CTA_PRO, primary: false },
     highlights: [
       { icon: "cube", text: "Tudo do Pro" },
-      { icon: "cut", text: "Maquetes de corte manual (PDF completo)" },
-      { icon: "file", text: "Listas de peças e mapas de montagem" },
-      { icon: "cnc", text: "Sem ficheiros CNC, TCN ou XML" },
-    ],
-    features: {
-      configurador: true,
-      medidas: true,
-      historico: true,
-      fluxo: false,
-      maquetes: true,
-      listas: true,
-      export: false,
-      cnc: false,
-      nesting: false,
-      etiquetas: false,
-      url: false,
-      orcamento: true,
-      pos: false,
-      whitelabel: false,
-      dominio: false,
-      aiAssist: false,
-      aiFull: false,
-      formacao: false,
-    },
-  },
-  ultra: {
-    id: "ultra",
-    shortName: "Ultra",
-    name: "PIMO Ultra",
-    audience: "Para designers e arquitetos.",
-    priceMain: "100",
-    priceSuffix: "€",
-    period: "/mês",
-    launchFree: true,
-    cta: { label: "Escolher Ultra", href: CTA_PRO, primary: false },
-    highlights: [
-      { icon: "file", text: "Tudo do Pro+" },
       { icon: "flow", text: "Fluxo de projeto entre oficina e cliente" },
       { icon: "file", text: "Exportações técnicas PDF e DXF" },
-      { icon: "ai", text: "Assistente PIMO AI" },
+      { icon: "cut", text: "Maquetes e listas para produção manual" },
       { icon: "cnc", text: "Sem pacote industrial CNC completo" },
     ],
     features: {
@@ -558,48 +525,201 @@ const PLANS = {
       formacao: false,
     },
   },
-  ultraPlus: {
-    id: "ultra-plus",
-    shortName: "Ultra+",
-    name: "PIMO Ultra+",
-    priceMain: "300",
+  loja: {
+    id: "loja",
+    shortName: "Loja",
+    name: "Loja / Showroom",
+    audience: "Para lojas e showrooms que vendem com o configurador.",
+    priceMain: "99",
     priceSuffix: "€",
     period: "/mês",
+    extra: "Configuração: 300 a 600 €",
     launchFree: true,
     recommended: true,
-    ribbon: "Mais escolhido",
-    samePlanNote: "O mesmo plano serve para vender e para fabricar.",
+    ribbon: "Lojas",
     cta: {
       label: "Marcar reunião online",
-      href: MEETING_ULTRA,
+      href: MEETING_LOJA,
       primary: true,
     },
-    features: ULTRA_PLUS_FEATURES,
-    focus: {
-      utilizadores: {
-        audience: "O plano principal para lojas e venda.",
-        detail:
-          "A loja compra ao preço B2B, a montagem está incluída e vende ao preço público da pimo.pt, sem investir em produção nem em stock. O mesmo plano serve para vender e para fabricar.",
-        highlights: [
-          { icon: "shop", text: "Configurador no ponto de venda e compra B2B" },
-          { icon: "shop", text: "URL própria e catálogo com logótipo" },
-          { icon: "cnc", text: "Ficheiros CNC/TCN e XML de furação" },
-          { icon: "nest", text: "Nesting PRO e etiquetas PIMO Track" },
-          { icon: "ai", text: "PIMO AI completo" },
-        ],
-      },
-      fabricas: {
-        audience: "O plano principal para fábricas e carpintarias com CNC.",
-        detail:
-          "Ficheiros industriais prontos e menos retrabalho. Carpinteiros com CNC ficam no Ultra+. Sem CNC, o caminho certo é o Pro+. O mesmo plano serve para vender e para fabricar.",
-        highlights: [
-          { icon: "cnc", text: "Ficheiros CNC/TCN e XML de furação" },
-          { icon: "nest", text: "Nesting PRO e etiquetas PIMO Track" },
-          { icon: "shop", text: "URL própria, catálogo e ponto de venda" },
-          { icon: "shop", text: "Orçamento imediato e compra B2B" },
-          { icon: "ai", text: "PIMO AI completo" },
-        ],
-      },
+    highlights: [
+      { icon: "shop", text: "Configurador no ponto de venda" },
+      { icon: "shop", text: "URL própria e catálogo com logótipo" },
+      { icon: "file", text: "Orçamento imediato e pedido pela plataforma" },
+      { icon: "users", text: "Arranque com configuração assistida" },
+    ],
+    features: {
+      configurador: true,
+      medidas: true,
+      historico: true,
+      fluxo: true,
+      maquetes: false,
+      listas: false,
+      export: false,
+      cnc: false,
+      nesting: false,
+      etiquetas: false,
+      url: true,
+      orcamento: true,
+      pos: true,
+      whitelabel: false,
+      dominio: false,
+      aiAssist: true,
+      aiFull: false,
+      formacao: false,
+    },
+  },
+  oficina: {
+    id: "oficina",
+    shortName: "Oficina",
+    name: "Oficina",
+    audience: "Para carpintarias: listas de corte e otimização.",
+    priceMain: "49",
+    priceSuffix: "€",
+    period: "/mês",
+    periodNote: "preço de lançamento",
+    extra: "Depois 79 €/mês",
+    launchFree: true,
+    recommended: true,
+    ribbon: "Lançamento",
+    cta: {
+      label: "Marcar reunião online",
+      href: MEETING_OFICINA,
+      primary: true,
+    },
+    highlights: [
+      { icon: "cut", text: "Listas de corte e mapas de montagem" },
+      { icon: "nest", text: "Otimização de layout de corte" },
+      { icon: "file", text: "Maquetes e exportações para a oficina" },
+      { icon: "cnc", text: "Sem ficheiros CNC/TCN completos" },
+    ],
+    features: {
+      configurador: true,
+      medidas: true,
+      historico: true,
+      fluxo: true,
+      maquetes: true,
+      listas: true,
+      export: true,
+      cnc: false,
+      nesting: true,
+      etiquetas: false,
+      url: false,
+      orcamento: true,
+      pos: false,
+      whitelabel: false,
+      dominio: false,
+      aiAssist: true,
+      aiFull: false,
+      formacao: false,
+    },
+  },
+  oficinaCnc: {
+    id: "oficina-cnc",
+    shortName: "Oficina CNC",
+    name: "Oficina CNC",
+    audience: "Para oficinas e fábricas com máquinas CNC.",
+    priceMain: "149",
+    priceSuffix: "€",
+    period: "/mês",
+    periodNote: "preço de lançamento",
+    extra: "Depois 199 €/mês",
+    launchFree: true,
+    ribbon: "CNC",
+    cta: {
+      label: "Marcar reunião online",
+      href: MEETING_OFICINA,
+      primary: false,
+    },
+    highlights: [
+      { icon: "cnc", text: "Ficheiros CNC/TCN e XML de furação" },
+      { icon: "nest", text: "Nesting PRO e etiquetas PIMO Track" },
+      { icon: "cut", text: "Tudo da Oficina (listas e otimização)" },
+      { icon: "ai", text: "PIMO AI completo (previsão 2027)" },
+    ],
+    features: OFICINA_CNC_FEATURES,
+  },
+  servico: {
+    id: "servico",
+    shortName: "Projeto",
+    name: "Serviço de Projeto",
+    audience: "Projeto feito pela equipa PIMO, sob medida.",
+    priceLine: "150 a 400 €",
+    priceSuffix: "€",
+    period: " por projeto",
+    priceLong: true,
+    launchFree: false,
+    cta: {
+      label: "Pedir orçamento de projeto",
+      href: "mailto:info@pimo.pt?subject=" + encodeURIComponent("Serviço de Projeto PIMO"),
+      primary: false,
+    },
+    highlights: [
+      { icon: "cube", text: "Projeto preparado pela equipa" },
+      { icon: "file", text: "Entrega alinhada ao vosso fluxo" },
+      { icon: "users", text: "Adequado quando preferem não desenhar" },
+    ],
+    features: {
+      configurador: true,
+      medidas: true,
+      historico: true,
+      fluxo: true,
+      maquetes: true,
+      listas: true,
+      export: true,
+      cnc: false,
+      nesting: false,
+      etiquetas: false,
+      url: false,
+      orcamento: true,
+      pos: false,
+      whitelabel: false,
+      dominio: false,
+      aiAssist: false,
+      aiFull: false,
+      formacao: false,
+    },
+  },
+  marketplace: {
+    id: "marketplace",
+    shortName: "Market",
+    name: "Marketplace",
+    audience: "Comissão sobre vendas na rede PIMO.",
+    priceLine: "10 a 15%",
+    priceSuffix: "",
+    period: " de comissão",
+    periodNote: "desde o primeiro mês",
+    priceLong: true,
+    launchFree: false,
+    cta: {
+      label: "Saber mais",
+      href: "mailto:info@pimo.pt?subject=" + encodeURIComponent("Marketplace PIMO"),
+      primary: false,
+    },
+    highlights: [
+      { icon: "shop", text: "Comissão de 10 a 15%" },
+      { icon: "flow", text: "Desde o primeiro mês" },
+      { icon: "users", text: "Para quem vende na rede PIMO" },
+    ],
+    features: {
+      configurador: false,
+      medidas: false,
+      historico: false,
+      fluxo: true,
+      maquetes: false,
+      listas: false,
+      export: false,
+      cnc: false,
+      nesting: false,
+      etiquetas: false,
+      url: false,
+      orcamento: false,
+      pos: false,
+      whitelabel: false,
+      dominio: false,
+      aiAssist: false,
+      aiFull: false,
+      formacao: false,
     },
   },
   alpha: {
@@ -610,9 +730,8 @@ const PLANS = {
     priceMain: "8.000 a 12.000",
     priceSuffix: "€",
     priceLine: "€8.000 a €12.000",
-    period: "/ano",
+    period: "",
     periodNote: "Enterprise",
-    extra: "Taxa de arranque única: €1.000 a €3.000",
     priceLong: true,
     launchFree: false,
     cta: {
@@ -621,13 +740,15 @@ const PLANS = {
       primary: false,
     },
     highlights: [
-      { icon: "cnc", text: "Tudo do Ultra+" },
+      { icon: "cnc", text: "Tudo da Oficina CNC" },
       { icon: "shield", text: "Marca própria completa (white-label)" },
       { icon: "shield", text: "Domínio próprio, integração e SLA" },
       { icon: "users", text: "Formação, arranque e suporte dedicado" },
     ],
     features: {
-      ...ULTRA_PLUS_FEATURES,
+      ...OFICINA_CNC_FEATURES,
+      url: true,
+      pos: true,
       whitelabel: true,
       dominio: true,
       formacao: true,
@@ -639,10 +760,13 @@ const ALL_PLANS = [
   PLANS.free,
   PLANS.pro,
   PLANS.proPlus,
-  PLANS.ultra,
-  PLANS.ultraPlus,
+  PLANS.loja,
+  PLANS.oficina,
+  PLANS.oficinaCnc,
   PLANS.alpha,
 ]
+
+const EXTRA_PLANS = [PLANS.servico, PLANS.marketplace]
 
 const TABS = [
   {
@@ -652,8 +776,8 @@ const TABS = [
     icon: "users",
     focusKey: "utilizadores",
     intro:
-      "Cartões em destaque para quem desenha e vende. Abaixo, a comparação mostra todos os planos lado a lado.",
-    planIds: ["free", "pro", "ultra", "ultra-plus"],
+      "Cartões em destaque para quem desenha e vende. Abaixo, a comparação mostra os planos de subscrição lado a lado.",
+    planIds: ["free", "pro", "pro-plus", "loja"],
   },
   {
     id: "fabricas",
@@ -662,8 +786,8 @@ const TABS = [
     icon: "factory",
     focusKey: "fabricas",
     intro:
-      "Cartões em destaque para quem fabrica. Abaixo, a comparação mostra todos os planos lado a lado.",
-    planIds: ["pro-plus", "ultra-plus", "alpha"],
+      "Cartões em destaque para quem fabrica. A Oficina começa a preço de lançamento; a Oficina CNC inclui ficheiros de máquina.",
+    planIds: ["oficina", "oficina-cnc", "alpha"],
   },
 ]
 
@@ -674,7 +798,11 @@ const FAQ = [
   },
   {
     q: "A subscrição é gratuita até ao fim de 2026?",
-    a: "Sim. Até 31 de dezembro de 2026 (23:59, hora de Lisboa), a subscrição é gratuita em todos os planos exceto o ALPHA+. O ALPHA+ mantém os preços enterprise indicados.",
+    a: "Sim. Até 31 de dezembro de 2026 (23:59, hora de Lisboa), a subscrição é gratuita em todos os planos mensais exceto o ALPHA+. O ALPHA+, o Serviço de Projeto e a comissão do Marketplace mantêm os valores indicados.",
+  },
+  {
+    q: "O que significa preço de lançamento na Oficina?",
+    a: "A Oficina fica a 49 €/mês no lançamento e passa a 79 €/mês depois. A Oficina CNC fica a 149 €/mês no lançamento e passa a 199 €/mês depois. Enquanto a oferta de 2026 estiver ativa, a subscrição mensal continua gratuita nestes planos (exceto ALPHA+).",
   },
   {
     q: "Posso mudar de plano mais tarde?",
@@ -682,7 +810,15 @@ const FAQ = [
   },
   {
     q: "O que é o ALPHA+?",
-    a: "É o plano enterprise: inclui tudo do Ultra+, mais marca própria completa (white-label), domínio próprio com integração e SLA, integração com os vossos sistemas, formação, acompanhamento no arranque e suporte dedicado. Custa entre €8.000 e €12.000 por ano, com uma taxa de arranque única entre €1.000 e €3.000 (valores com IVA). Não entra na oferta de subscrição gratuita de 2026.",
+    a: "É o plano enterprise: inclui o pacote industrial da Oficina CNC, marca própria completa (white-label), domínio próprio com integração e SLA, formação, acompanhamento no arranque e suporte dedicado. Custa entre €8.000 e €12.000 (valores com IVA). Não entra na oferta de subscrição gratuita de 2026.",
+  },
+  {
+    q: "O que é o Serviço de Projeto?",
+    a: "É um serviço pontual: a equipa prepara o projeto por si. Custa entre 150 e 400 € por projeto (IVA incluído), conforme a complexidade.",
+  },
+  {
+    q: "Como funciona o Marketplace?",
+    a: "Quem vende na rede PIMO paga uma comissão de 10 a 15% desde o primeiro mês. Não é uma subscrição mensal fixa.",
   },
   {
     q: "Quando chega o PIMO AI?",
@@ -690,11 +826,7 @@ const FAQ = [
   },
   {
     q: "Estes preços são finais?",
-    a: "Não. Os preços e o que cada plano inclui são uma proposta e podem mudar antes do lançamento.",
-  },
-  {
-    q: "O Ultra+ é o mesmo para lojas e para fábricas?",
-    a: "Sim. O PIMO Ultra+ (€300/mês) é um só plano com tudo incluído: ficheiros CNC/TCN e XML, Nesting PRO, etiquetas PIMO Track, URL e catálogo próprios, configurador no ponto de venda, orçamento imediato, compra B2B e PIMO AI completo. O mesmo plano serve para vender e para fabricar.",
+    a: "Não. Os preços e o que cada plano inclui são uma proposta oficial a 3 de novembro de 2026 e podem ainda ser ajustados antes do lançamento.",
   },
 ]
 
@@ -803,7 +935,8 @@ function FeatureGroups({ plans }) {
       {open ? (
         <div className="pimo-hprice-feature-groups">
           <p className="pimo-hprice-features-hint">
-            Todos os planos lado a lado: Free, Pro, Pro+, Ultra, Ultra+ e ALPHA+.
+            Todos os planos de subscrição lado a lado: Free, Pro, Pro+, Loja,
+            Oficina, Oficina CNC e ALPHA+.
           </p>
           {grouped.map(({ group, items }) => {
             const isOpen = openGroups.has(group)
@@ -877,8 +1010,8 @@ function CompareTable({ plans }) {
       <header className="pimo-hprice-section-head">
         <h2 id="precos-compare">Compare todos os planos</h2>
         <p>
-          Free, Pro, Pro+, Ultra, Ultra+ e ALPHA+ na mesma tabela. Cabeçalho
-          fixo ao fazer scroll.
+          Free, Pro, Pro+ / Designer, Loja / Showroom, Oficina, Oficina CNC e
+          ALPHA+ na mesma tabela. Cabeçalho fixo ao fazer scroll.
         </p>
       </header>
       <div className="pimo-hprice-table-wrap">
@@ -1081,18 +1214,23 @@ export function PrecosPimoLanding() {
 
       <FaqSection />
 
+      <ExtraPlansSection launchOfferActive={launchOfferActive} />
+
       <section className="pimo-hprice-cta" aria-labelledby="precos-contacto">
-        <h2 id="precos-contacto">Quer falar dos planos Ultra+ ou ALPHA+?</h2>
+        <h2 id="precos-contacto">Quer falar de Loja, Oficina ou ALPHA+?</h2>
         <p>
           Marque uma reunião online. Explicamos o que faz sentido para a vossa
           loja, oficina ou fábrica.
         </p>
         <div className="pimo-hprice-cta-row">
-          <a className="pimo-hprice-btn is-primary" href={MEETING_ULTRA}>
-            Marcar reunião online (Ultra+)
+          <a className="pimo-hprice-btn is-primary" href={MEETING_LOJA}>
+            Marcar reunião (Loja / Showroom)
+          </a>
+          <a className="pimo-hprice-btn is-outline" href={MEETING_OFICINA}>
+            Marcar reunião (Oficina)
           </a>
           <a className="pimo-hprice-btn is-outline" href={MEETING_ALPHA}>
-            Marcar reunião online (ALPHA+)
+            Marcar reunião (ALPHA+)
           </a>
         </div>
         <p className="pimo-hprice-mail">
@@ -1104,13 +1242,117 @@ export function PrecosPimoLanding() {
   )
 }
 
+function ExtraPlansSection({ launchOfferActive }) {
+  return (
+    <section className="pimo-hprice-extra-plans" aria-labelledby="precos-extra">
+      <header className="pimo-hprice-section-head">
+        <h2 id="precos-extra">Serviço de Projeto e Marketplace</h2>
+        <p>
+          Opções à parte das subscrições mensais: projeto feito pela equipa ou
+          comissão sobre vendas na rede.
+        </p>
+      </header>
+      <div className="pimo-hprice-grid is-two">
+        {EXTRA_PLANS.map((plan) => (
+          <PlanCard
+            key={plan.id}
+            plan={plan}
+            launchOfferActive={launchOfferActive}
+          />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+export function PrecosStructuredData() {
+  const offers = [
+    {
+      "@type": "Offer",
+      name: "PIMO Free",
+      price: "0",
+      priceCurrency: "EUR",
+      description: "Plano gratuito",
+    },
+    {
+      "@type": "Offer",
+      name: "PIMO Pro",
+      price: "12",
+      priceCurrency: "EUR",
+      description: "12 €/mês (IVA incluído)",
+    },
+    {
+      "@type": "Offer",
+      name: "PIMO Pro+ / Designer",
+      price: "29",
+      priceCurrency: "EUR",
+      description: "29 €/mês (IVA incluído)",
+    },
+    {
+      "@type": "Offer",
+      name: "Loja / Showroom",
+      price: "99",
+      priceCurrency: "EUR",
+      description: "99 €/mês + 300 a 600 € de configuração (IVA incluído)",
+    },
+    {
+      "@type": "Offer",
+      name: "Oficina",
+      price: "49",
+      priceCurrency: "EUR",
+      description: "49 €/mês preço de lançamento; depois 79 €/mês (IVA incluído)",
+    },
+    {
+      "@type": "Offer",
+      name: "Oficina CNC",
+      price: "149",
+      priceCurrency: "EUR",
+      description: "149 €/mês preço de lançamento; depois 199 €/mês (IVA incluído)",
+    },
+    {
+      "@type": "Offer",
+      name: "Serviço de Projeto",
+      price: "150",
+      priceCurrency: "EUR",
+      description: "150 a 400 € por projeto (IVA incluído)",
+    },
+    {
+      "@type": "Offer",
+      name: "ALPHA+",
+      price: "8000",
+      priceCurrency: "EUR",
+      description: "8.000 a 12.000 € (IVA incluído)",
+    },
+    {
+      "@type": "Offer",
+      name: "Marketplace",
+      price: "0",
+      priceCurrency: "EUR",
+      description: "Comissão de 10 a 15% desde o primeiro mês",
+    },
+  ]
+
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "PIMO PRO",
+    applicationCategory: "DesignApplication",
+    operatingSystem: "Web Browser",
+    url: "https://pimo.pro",
+    offers,
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
+}
+
 export function FabricantesPriceCards() {
   const launchOfferActive = useLaunchOfferActive()
-  const plans = [
-    PLANS.proPlus,
-    resolvePlan(PLANS.ultraPlus, "fabricas"),
-    PLANS.alpha,
-  ]
+  const plans = [PLANS.oficina, PLANS.oficinaCnc, PLANS.alpha]
   return (
     <section
       className="pimo-hprice pimo-hprice-embed"
@@ -1119,8 +1361,8 @@ export function FabricantesPriceCards() {
       <header className="pimo-hprice-section-head">
         <h2 id="fab-subscricoes">Subscrições para carpintarias e fábricas</h2>
         <p>
-          Quando escolhem a subscrição paga, estes são os planos pensados para
-          oficinas e fábricas. A colaboração gratuita mantém-se como está.
+          Oficina (listas de corte e otimização), Oficina CNC e ALPHA+. A
+          colaboração gratuita mantém-se como está.
         </p>
       </header>
       <aside className="pimo-hprice-note" aria-label="Notas importantes">
@@ -1128,8 +1370,8 @@ export function FabricantesPriceCards() {
           <strong>PIMO AI:</strong> chega mais tarde (previsão para 2027).
         </p>
         <p>
-          Os preços e o que cada plano inclui são uma proposta e podem mudar
-          antes do lançamento.
+          Os preços e o que cada plano inclui são a tabela oficial a 3 de
+          novembro de 2026 e podem ainda ser ajustados.
         </p>
       </aside>
       <div className="pimo-hprice-grid is-three">
@@ -1142,9 +1384,8 @@ export function FabricantesPriceCards() {
         ))}
       </div>
       <p className="pimo-hprice-more">
-        Ver todos os planos, incluindo Free, Pro e Ultra para utilizadores e
-        lojas, em{" "}
-        <a href="/pt-pt/precos/">Preços e subscrições</a>.
+        Ver todos os planos, incluindo Free, Pro, Pro+ / Designer e Loja /
+        Showroom, em <a href="/pt-pt/precos/">Preços e subscrições</a>.
       </p>
     </section>
   )

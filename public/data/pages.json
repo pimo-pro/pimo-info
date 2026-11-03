@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T22:37:26.063Z",
+  "generatedAt": "2026-11-03T21:30:58.322Z",
   "items": [
     {
       "path": "/",
@@ -871,7 +871,7 @@
         "/pt-pt/ecossistema/",
         "/pt-pt/contacto/"
       ],
-      "lastUpdated": "2026-10-22",
+      "lastUpdated": "2026-11-03",
       "status": "implemented",
       "draft": false
     },
@@ -1768,10 +1768,11 @@
       ],
       "related": [
         "/pt-pt/ecossistema/",
+        "/pt-pt/precos/",
         "/pt-pt/contacto/",
         "/about/"
       ],
-      "lastUpdated": "2026-10-17",
+      "lastUpdated": "2026-11-03",
       "status": "implemented",
       "draft": false
     },
@@ -1792,7 +1793,7 @@
         "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-11-02",
+      "lastUpdated": "2026-11-03",
       "status": "implemented",
       "draft": false
     },
@@ -1800,7 +1801,7 @@
       "path": "/pt-pt/precos/",
       "file": "pages/pt-pt/precos.mdx",
       "title": "Preços e subscrições",
-      "description": "Planos PIMO Free, Pro, Pro+, Ultra, Ultra+ e ALPHA+: preços com IVA, o que inclui cada subscrição e para quem é.",
+      "description": "Tabela oficial PIMO (3 Nov 2026, IVA incluído): Free, Pro, Pro+/Designer, Oficina, Oficina CNC, Loja/Showroom, Serviço de Projeto, ALPHA+ e Marketplace.",
       "author": "",
       "category": "institucional",
       "tags": [
@@ -1814,7 +1815,7 @@
         "/pt-pt/parceiros/",
         "/pt-pt/contacto/"
       ],
-      "lastUpdated": "2026-10-22",
+      "lastUpdated": "2026-11-03",
       "status": "implemented",
       "draft": false
     },
