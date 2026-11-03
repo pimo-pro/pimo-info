@@ -124,9 +124,21 @@ export const glossaryTerms = [
     term: "PDF Técnico",
     aliases: ["pdf técnico"],
     definition:
-      "Exportação PDF com documentação do projeto (3D, cutlist, materiais, ferragens, preço). Não substitui TCN nem Drill XML para máquina. Se a geração falhar, surge o aviso «Erro ao gerar PDF técnico.»",
+      "Relatório industrial do projeto (vista 3D, lista de corte, materiais, ferragens, preço). Continua disponível à parte do Desenho Técnico (PDF). Não substitui TCN nem Drill XML. Se a geração falhar, surge o aviso «Erro ao gerar PDF técnico.»",
     status: "implemented",
     relatedPaths: ["/pt-pt/funcionalidades/pdf-tecnico/", "/pt-pt/guias-utilizador/exportacao/"],
+  },
+  {
+    id: "desenho-tecnico-pdf",
+    term: "Desenho Técnico (PDF)",
+    aliases: ["desenho técnico", "PDF A4 cotas", "vistas e cotas"],
+    definition:
+      "Documento A4 horizontal com vistas e cotas do móvel, gerado em Salvar e Gerar Design. Não substitui o PDF Técnico da lista industrial. Entra por omissão no arquivo completo (ZIP).",
+    status: "implemented",
+    relatedPaths: [
+      "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
+      "/pt-pt/guias-utilizador/exportacao/",
+    ],
   },
   {
     id: "pimo-trak",

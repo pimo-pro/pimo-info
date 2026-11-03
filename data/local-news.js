@@ -6,6 +6,24 @@
 /** @type {{ version: string, title: string, description: string, publishedAt: string, type: string, author?: string }[]} */
 export const localNewsEntries = [
   {
+    version: "2026-11-03",
+    title: "Desenho Técnico (PDF) na exportação",
+    description:
+      "Em Salvar e Gerar Design há a opção Desenho Técnico (PDF): documento A4 horizontal com vistas e cotas do móvel. Não substitui o PDF Técnico industrial, que continua disponível.",
+    publishedAt: "2026-11-03T18:00:00.000Z",
+    type: "feature",
+    author: "Equipa PIMO",
+  },
+  {
+    version: "2026-11-03",
+    title: "Arquivo completo inclui o Desenho Técnico",
+    description:
+      "O ZIP do arquivo completo passa a incluir por omissão o Desenho Técnico (PDF) com vistas e cotas, além do PDF Técnico da lista industrial.",
+    publishedAt: "2026-11-03T18:01:00.000Z",
+    type: "update",
+    author: "Equipa PIMO",
+  },
+  {
     version: "2026-11-02",
     title: "Pedir Orçamento no painel Início",
     description:

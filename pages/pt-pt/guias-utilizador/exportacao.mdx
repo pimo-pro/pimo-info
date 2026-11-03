@@ -1,6 +1,6 @@
 ---
 title: "Exportação"
-description: "Guia de exportação do PIMO PRO: PDF técnico, cutlist, etiquetas UEE, TCN, Drill XML, XLSX de ferragens e arquivo ZIP completo."
+description: "Guia de exportação do PIMO PRO: Desenho Técnico (PDF), PDF técnico, cutlist, etiquetas UEE, TCN, Drill XML e arquivo ZIP completo."
 category: guia
 tags:
   - guia
@@ -10,10 +10,11 @@ tags:
 related:
   - /pt-pt/funcionalidades/exportacao-tcn-drill-xml/
   - /pt-pt/funcionalidades/pdf-tecnico/
+  - /pt-pt/funcionalidades/desenho-tecnico-pdf/
   - /pt-pt/funcionalidades/ferragens/
   - /pt-pt/referencia/botoes/
   - /pt-pt/glossario/
-lastUpdated: 2026-11-02
+lastUpdated: 2026-11-03
 status: implemented
 ---
 
@@ -21,75 +22,85 @@ import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
 
 # Exportar ficheiros de produção
 
-O menu de exportação (bolha **Salvar e Gerar Design**) reúne os artefactos técnicos necessários para fabrico e acompanhamento. Os nomes abaixo são os da UI; as extensões são as reais dos ficheiros.
+O menu de exportação (janela **Salvar e Gerar Design**) reúne os documentos e ficheiros necessários para fabrico e acompanhamento. Os nomes abaixo são os da aplicação.
+
+## Desenho Técnico (PDF)
+
+- Documento **A4 horizontal** com **vistas e cotas** do móvel.
+- Fluxo: **Salvar e Gerar Design → Gerar arquivo → Desenho Técnico (PDF)**.
+- Serve para ler medidas e partilhar o desenho com clareza.
+- **Não substitui** o PDF Técnico da lista industrial, que continua disponível no mesmo menu.
+- Detalhe: [Desenho Técnico (PDF)](/pt-pt/funcionalidades/desenho-tecnico-pdf/).
 
 ## PDF Técnico
 
-- Inclui 3D do projeto, lista de corte, materiais, ferragens e resumo de preço.
-- Fluxo no Workspace: **Exportar → PDF Técnico** (gerar PDF técnico).
-- Extensão: `.pdf`.
-- Se a geração falhar, o PIMO PRO mostra o aviso **Erro ao gerar PDF técnico.** em vez de falhar em silêncio. Pode voltar a tentar; cutlist e etiquetas continuam a funcionar como antes.
+- Relatório industrial com vista 3D, lista de corte, materiais, ferragens e resumo de preço.
+- Fluxo: **Salvar e Gerar Design → PDF Técnico**.
+- Se a geração falhar, o PIMO PRO mostra o aviso **Erro ao gerar PDF técnico.** Pode voltar a tentar; cutlist e etiquetas continuam a funcionar como antes.
+- Detalhe: [PDF técnico](/pt-pt/funcionalidades/pdf-tecnico/).
 
 ## Cutlist (PDF)
 
 - Lista de corte em **milímetros**.
-- Fluxo: **Exportar → Cutlist**.
-- Extensão: `.pdf`.
+- Fluxo: **Salvar e Gerar Design → Cutlist**.
 
 ## Etiquetas (UEE v5)
 
-- Etiquetas com QR por peça (motor UEE v5); tipicamente um PDF por espessura.
-- Fluxo: **Exportar → Etiquetas (UEE v5)**.
+- Etiquetas com QR por peça; tipicamente um PDF por espessura.
+- Fluxo: **Salvar e Gerar Design → Etiquetas (UEE v5)**.
 - Base física do **PIMO-TRAK**.
 
 ## Ferragens XLSX
 
 - Folha Excel com ferragens industriais.
-- Fluxo: **Exportar → Ferragens XLSX**.
-- Extensão: `.xlsx`.
+- Fluxo: **Salvar e Gerar Design → Ferragens XLSX**.
 
 ## Secções industriais (4 PDFs)
 
 - Resumo financeiro, peças totais, ferragens totais e totais do projeto.
-- Fluxo: **Exportar → Secções Industriais (4 PDFs)**.
+- Fluxo: **Salvar e Gerar Design → Secções Industriais (4 PDFs)**.
 
 ## TCN e Drill XML (Arquivos CNC)
 
 - O menu chama-se **Arquivos CNC**.
-- Formatos gerados: **TCN** (`.tcn`) e **Drill XML** (`.xml`).
-- CNC não é um formato de ficheiro, é o destino/menu.
+- Formatos gerados: **TCN** e **Drill XML**.
+- CNC não é um formato de ficheiro, é o destino do menu.
 
 ## Arquivo completo (ZIP)
 
 Conteúdo típico do pacote (não assumir CSV obrigatório):
 
-- Cutlist PDF, PDF técnico, PDF unificado
-- Ferragens PDF + XLSX
-- PDFs de secções industriais + armazém
+- Cutlist PDF
+- **PDF Técnico** (lista industrial)
+- **Desenho Técnico (PDF)** com vistas e cotas, **incluído por omissão**
+- PDF unificado
+- Ferragens PDF e XLSX
+- PDFs de secções industriais
 - Etiquetas UEE e layouts de corte PRO (por material/espessura)
-- `Layout_de_Corte_manual.pdf` (raiz do ZIP)
+- Layout de corte manual
 - Ficheiros **TCN** e **Drill XML**
-- `manifest-industrial.json`
+- Manifesto industrial
 
-O nesting do ZIP completo usa o modo **PRO** (não Fast). A ordem de fábrica (`industrial_order.json`) **não** vai no ZIP; o envio para fábrica, quando aplicável, faz-se à parte do ficheiro ZIP.
+O nesting do ZIP completo usa o modo **PRO** (não Fast). O envio para fábrica, quando aplicável, faz-se à parte do ficheiro ZIP.
 
-Fluxo: **Exportar → Gerar arquivo completo**.
+Fluxo: **Salvar e Gerar Design → Gerar arquivo completo**.
 
 ## Análise arquivo completo (online)
 
-- Edição documental online em PROJETOS (`/analise`), quando disponível na sua instalação.
+- Edição documental online em PIMO PROJETOS, quando disponível na sua instalação.
 - **Não substitui** o ZIP de produção.
 
 ## Nota
 
-Validações em campos editáveis (ex.: quantidade e material) aplicam-se na análise online quando disponível. Edições documentais na cutlist podem refletir-se em PDFs/etiquetas; **TCN/Drill XML não mudam** por essas edições.
+Validações em campos editáveis (ex.: quantidade e material) aplicam-se na análise online quando disponível. Edições documentais na cutlist podem refletir-se em PDFs e etiquetas; **TCN e Drill XML não mudam** por essas edições.
 
 Nomes exactos no menu: [Referência de botões (exportação)](/pt-pt/referencia/botoes/#area-exportacao).
 
 <RelatedLinks
   items={[
-    { href: "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/", label: "Exportação TCN / Drill XML" },
+    { href: "/pt-pt/funcionalidades/desenho-tecnico-pdf/", label: "Desenho Técnico (PDF)" },
     { href: "/pt-pt/funcionalidades/pdf-tecnico/", label: "PDF técnico" },
+    { href: "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/", label: "Exportação TCN / Drill XML" },
     { href: "/pt-pt/funcionalidades/ferragens/", label: "Ferragens" },
     { href: "/pt-pt/guias-utilizador/pimo-trak/", label: "PIMO-TRAK" },
     { href: "/pt-pt/perguntas-frequentes/", label: "Perguntas frequentes" },

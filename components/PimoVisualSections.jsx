@@ -33,7 +33,7 @@ const workflowSteps = [
     key: "export",
     iconName: "upload",
     title: "Exportação industrial",
-    text: "TCN, Drill XML, PDF técnico, cutlist, etiquetas e ZIP completo.",
+    text: "Desenho Técnico, PDF técnico, TCN, Drill XML, cutlist, etiquetas e ZIP completo.",
     href: "/pt-pt/guias-utilizador/exportacao/",
   },
   {

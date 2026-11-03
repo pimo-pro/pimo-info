@@ -77,11 +77,21 @@ export const features = [
     id: "pdf-tecnico",
     name: "PDF Técnico",
     summary:
-      "Documentação PDF do projeto para cliente/arquivo. Em falha de geração, aviso claro no Workspace.",
+      "Relatório industrial do projeto (lista, materiais, ferragens). Continua disponível à parte do Desenho Técnico (PDF).",
     status: "implemented",
     canonicalPath: "/pt-pt/funcionalidades/pdf-tecnico/",
     guidePath: "/pt-pt/guias-utilizador/exportacao/",
     tags: ["exportacao", "pdf"],
+  },
+  {
+    id: "desenho-tecnico-pdf",
+    name: "Desenho Técnico (PDF)",
+    summary:
+      "PDF A4 horizontal com vistas e cotas do móvel, na janela Salvar e Gerar Design. Não substitui o PDF Técnico industrial.",
+    status: "implemented",
+    canonicalPath: "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
+    guidePath: "/pt-pt/guias-utilizador/exportacao/",
+    tags: ["exportacao", "pdf", "cotas"],
   },
   {
     id: "pimo-trak",
