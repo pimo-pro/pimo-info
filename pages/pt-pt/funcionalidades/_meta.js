@@ -14,6 +14,7 @@ export default {
     display: "hidden",
   },
   "pdf-tecnico": "PDF técnico",
+  "desenho-tecnico-pdf": "Desenho Técnico (PDF)",
   orcamentos: "Orçamentos",
   "pimo-trak": "PIMO-TRAK",
   "modulo-industrial": "Módulo Industrial",

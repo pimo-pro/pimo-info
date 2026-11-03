@@ -8,7 +8,7 @@ related:
   - /pt-pt/funcionalidades/
   - /pt-pt/guias-utilizador/exportacao/
   - /pt-pt/glossario/
-lastUpdated: 2026-10-12
+lastUpdated: 2026-11-03
 status: implemented
 ---
 
@@ -18,7 +18,7 @@ import { FeatureButtons } from "../../../components/ButtonsCatalog"
 
 <ServiceHero
   title="PDF técnico"
-  subtitle="Documento consolidado do projeto para consulta, arquivo e comunicação com equipa/cliente."
+  subtitle="Relatório industrial do projeto para consulta, arquivo e comunicação com equipa ou cliente."
   image="/visual/readme/ecra-documentacao.webp"
   imageAlt="Área documental no ecossistema PIMO PRO"
   pimoHref="https://pimo.pro"
@@ -27,11 +27,13 @@ import { FeatureButtons } from "../../../components/ButtonsCatalog"
 
 ## O que faz
 
-Compila o estado do projeto em documento técnico com informação útil de produção, materiais e resumo. No Workspace, gera-se pelo menu de exportação (**PDF Técnico**).
+Compila o estado do projeto num relatório industrial com informação de produção, materiais e resumo. Gera-se na janela **Salvar e Gerar Design** (**PDF Técnico**).
+
+Não confundir com o **Desenho Técnico (PDF)**, que é o documento A4 horizontal com vistas e cotas. Os dois coexistam: o PDF Técnico cobre a lista industrial; o Desenho Técnico cobre as vistas cotadas. Ver [Desenho Técnico (PDF)](/pt-pt/funcionalidades/desenho-tecnico-pdf/).
 
 <section className="pimo-service-benefits">
   <li><strong>Formato de partilha</strong><p>Facilita comunicação interna e validação com cliente.</p></li>
-  <li><strong>Integração com o fluxo</strong><p>É gerado no mesmo menu de exportação usado para TCN e Drill XML.</p></li>
+  <li><strong>Integração com o fluxo</strong><p>É gerado no mesmo menu de exportação usado para Desenho Técnico, TCN e Drill XML.</p></li>
   <li><strong>Aviso se falhar</strong><p>Se a geração falhar, aparece a mensagem <strong>Erro ao gerar PDF técnico.</strong> em vez de falhar em silêncio. Cutlist e etiquetas mantêm o comportamento habitual.</p></li>
 </section>
 
@@ -51,9 +53,10 @@ Aparece o aviso **Erro ao gerar PDF técnico.** Pode voltar a tentar a exportaç
 
 <InfoAccordion
   items={[
-    { title: "Substitui os ficheiros de máquina?", text: "Não. O PDF é complementar e não substitui TCN nem Drill XML quando vai para fabrico." },
+    { title: "Substitui os ficheiros de máquina?", text: "Não. O PDF Técnico é complementar e não substitui TCN nem Drill XML quando vai para fabrico." },
+    { title: "Substitui o Desenho Técnico (PDF)?", text: "Não. O Desenho Técnico traz vistas e cotas em A4 horizontal; o PDF Técnico mantém a documentação industrial. Ambos estão no menu Salvar e Gerar Design." },
     { title: "O que acontece se a geração falhar?", text: "Surge a mensagem Erro ao gerar PDF técnico. Pode tentar de novo; cutlist e etiquetas não são afectados por esta falha." },
-    { title: "Onde consultar mais detalhe?", text: "No guia de exportação e na área de documentação técnica da aplicação." },
+    { title: "Onde consultar mais detalhe?", text: "No guia de exportação e na página do Desenho Técnico (PDF)." },
   ]}
 />
 

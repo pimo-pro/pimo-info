@@ -1,12 +1,12 @@
 # Matriz de cobertura PIMO PRO → pimo.info
 
-Gerado: 2026-11-03T21:30:58.390Z
+Gerado: 2026-11-03T22:12:03.840Z
 
-Total de itens: **65**
+Total de itens: **66**
 
 | Estado | Quantidade |
 |---|---|
-| coberto | 63 |
+| coberto | 64 |
 | em-desenvolvimento | 2 |
 
 | ID | Tipo | Nome | Página | Estado |
@@ -57,6 +57,7 @@ Total de itens: **65**
 | domain-exports | domain | Exportações | [/pt-pt/guias-utilizador/exportacao/](/pt-pt/guias-utilizador/exportacao/) | coberto |
 | domain-tcn | domain | Exportação TCN | [/pt-pt/funcionalidades/exportacao-tcn-drill-xml/](/pt-pt/funcionalidades/exportacao-tcn-drill-xml/) | coberto |
 | domain-pdf | domain | PDF técnico | [/pt-pt/funcionalidades/pdf-tecnico/](/pt-pt/funcionalidades/pdf-tecnico/) | coberto |
+| domain-desenho-tecnico | domain | Desenho Técnico (PDF) | [/pt-pt/funcionalidades/desenho-tecnico-pdf/](/pt-pt/funcionalidades/desenho-tecnico-pdf/) | coberto |
 | domain-budget | domain | Orçamentos | [/pt-pt/funcionalidades/orcamentos/](/pt-pt/funcionalidades/orcamentos/) | coberto |
 | domain-photo | domain | Modo foto | [/pt-pt/funcionalidades/modo-foto/](/pt-pt/funcionalidades/modo-foto/) | coberto |
 | domain-room | domain | Sala e ambiente | [/pt-pt/funcionalidades/sala-e-ambiente/](/pt-pt/funcionalidades/sala-e-ambiente/) | coberto |

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T21:30:58.322Z",
+  "generatedAt": "2026-11-03T22:12:03.782Z",
   "items": [
     {
       "path": "/",
@@ -981,6 +981,28 @@
       "draft": false
     },
     {
+      "path": "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
+      "file": "pages/pt-pt/funcionalidades/desenho-tecnico-pdf.mdx",
+      "title": "Desenho Técnico (PDF)",
+      "description": "PDF A4 horizontal com vistas e cotas do móvel no PIMO PRO, na janela Salvar e Gerar Design.",
+      "author": "",
+      "category": "funcionalidade",
+      "tags": [
+        "funcionalidade",
+        "exportacao",
+        "pdf"
+      ],
+      "related": [
+        "/pt-pt/funcionalidades/pdf-tecnico/",
+        "/pt-pt/guias-utilizador/exportacao/",
+        "/pt-pt/referencia/botoes/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-11-03",
+      "status": "implemented",
+      "draft": false
+    },
+    {
       "path": "/pt-pt/funcionalidades/estacoes-industriais/",
       "file": "pages/pt-pt/funcionalidades/estacoes-industriais.mdx",
       "title": "Estações industriais",
@@ -1192,7 +1214,7 @@
         "/pt-pt/guias-utilizador/exportacao/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-10-12",
+      "lastUpdated": "2026-11-03",
       "status": "implemented",
       "draft": false
     },
@@ -1384,7 +1406,7 @@
       "path": "/pt-pt/guias-utilizador/exportacao/",
       "file": "pages/pt-pt/guias-utilizador/exportacao.mdx",
       "title": "Exportação",
-      "description": "Guia de exportação do PIMO PRO: PDF técnico, cutlist, etiquetas UEE, TCN, Drill XML, XLSX de ferragens e arquivo ZIP completo.",
+      "description": "Guia de exportação do PIMO PRO: Desenho Técnico (PDF), PDF técnico, cutlist, etiquetas UEE, TCN, Drill XML e arquivo ZIP completo.",
       "author": "",
       "category": "guia",
       "tags": [
@@ -1396,11 +1418,12 @@
       "related": [
         "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/",
         "/pt-pt/funcionalidades/pdf-tecnico/",
+        "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
         "/pt-pt/funcionalidades/ferragens/",
         "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-11-02",
+      "lastUpdated": "2026-11-03",
       "status": "implemented",
       "draft": false
     },

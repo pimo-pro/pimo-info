@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T21:30:58.320Z",
+  "generatedAt": "2026-11-03T22:12:03.779Z",
   "items": [
     {
       "id": "pdf-tecnico",
@@ -8,10 +8,24 @@
       "extensions": [
         ".pdf"
       ],
-      "description": "Relatório do projeto com vista 3D, lista de corte, materiais, ferragens e resumo de preço. Se a geração falhar, a app mostra o aviso «Erro ao gerar PDF técnico.»",
+      "description": "Relatório industrial do projeto com vista 3D, lista de corte, materiais, ferragens e resumo de preço. Continua disponível à parte do Desenho Técnico (PDF). Se a geração falhar, a app mostra o aviso «Erro ao gerar PDF técnico.»",
       "status": "implemented",
       "relatedPaths": [
         "/pt-pt/funcionalidades/pdf-tecnico/",
+        "/pt-pt/guias-utilizador/exportacao/"
+      ]
+    },
+    {
+      "id": "desenho-tecnico-pdf",
+      "name": "Desenho Técnico (PDF)",
+      "menuLabel": "Desenho Técnico (PDF)",
+      "extensions": [
+        ".pdf"
+      ],
+      "description": "Documento A4 horizontal com vistas e cotas do móvel. Serve para leitura rápida do desenho; não substitui o PDF Técnico da lista industrial.",
+      "status": "implemented",
+      "relatedPaths": [
+        "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
         "/pt-pt/guias-utilizador/exportacao/"
       ]
     },
@@ -118,11 +132,13 @@
       "extensions": [
         ".zip"
       ],
-      "description": "Pacote com cutlist PDF, PDF técnico, PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts PRO por material/espessura, Layout_de_Corte_manual.pdf, ficheiros TCN, Drill XML e manifesto industrial.",
+      "description": "Pacote com cutlist PDF, PDF Técnico da lista industrial, Desenho Técnico (PDF) com vistas e cotas (incluído por omissão), PDF unificado, ferragens PDF/XLSX, secções industriais, etiquetas UEE, layouts PRO por material/espessura, layout de corte manual, ficheiros TCN, Drill XML e manifesto industrial.",
       "status": "implemented",
-      "notes": "ZIP usa nesting PRO. Cutlist no arquivo é PDF (não CSV). A ordem de fábrica não vai como industrial_order.json no ZIP.",
+      "notes": "ZIP usa nesting PRO. Cutlist no arquivo é PDF (não CSV). O Desenho Técnico (PDF) entra por omissão, em paralelo com o PDF Técnico.",
       "relatedPaths": [
-        "/pt-pt/guias-utilizador/exportacao/"
+        "/pt-pt/guias-utilizador/exportacao/",
+        "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
+        "/pt-pt/funcionalidades/pdf-tecnico/"
       ]
     }
   ]

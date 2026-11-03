@@ -952,13 +952,14 @@ export const buttons = [
     "shortcut": null,
     "area": "barra-superior",
     "location": "Na barra superior do espaço de trabalho 3D",
-    "action": "Persiste o projeto e abre a bolha unificada de exportação/envio.",
-    "effects": "O ficheiro ou relatório fica pronto para descarregar ou enviar.",
+    "action": "Guarda o projeto e abre a janela Salvar e Gerar Design, onde gera PDFs, listas, ficheiros de máquina e o arquivo completo.",
+    "effects": "Fica disponível o menu de exportação, incluindo Desenho Técnico (PDF) e PDF Técnico.",
     "featureIds": [
       "exportacao-tcn-drill-xml",
       "pdf-tecnico",
       "lista-de-corte",
-      "nesting-fast-pro"
+      "nesting-fast-pro",
+      "desenho-tecnico-pdf"
     ]
   },
   {
@@ -1281,12 +1282,13 @@ export const buttons = [
     "shortcut": null,
     "area": "exportacao",
     "location": "Na janela «Salvar e Gerar Design»",
-    "action": "Gera o arquivo completo com bridge SGPI.",
-    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Gera o pacote ZIP completo do projeto para produção e arquivo.",
+    "effects": "O ZIP inclui por omissão o Desenho Técnico (PDF) com vistas e cotas, além do PDF Técnico industrial, lista de corte, etiquetas, layouts e ficheiros de máquina quando aplicável.",
     "featureIds": [
       "exportacao-tcn-drill-xml",
       "pdf-tecnico",
-      "lista-de-corte"
+      "lista-de-corte",
+      "desenho-tecnico-pdf"
     ]
   },
   {
@@ -1353,8 +1355,8 @@ export const buttons = [
     "shortcut": null,
     "area": "exportacao",
     "location": "Na janela «Salvar e Gerar Design»",
-    "action": "Gera o PDF técnico do projeto.",
-    "effects": "Requer pelo menos uma caixa no projeto (exceto ações finais de download/orçamento).",
+    "action": "Gera o PDF Técnico industrial do projeto (lista, materiais, ferragens e resumo).",
+    "effects": "Descarrega o relatório industrial. Continua disponível à parte do Desenho Técnico (PDF). Se falhar, surge o aviso «Erro ao gerar PDF técnico.»",
     "featureIds": [
       "pdf-tecnico"
     ]
@@ -4322,6 +4324,21 @@ export const buttons = [
     "effects": "O módulo sai do projeto. Pode recuperar a ação com Desfazer, como nas outras formas de apagar.",
     "featureIds": [
       "configurador-3d"
+    ]
+  },
+  {
+    "id": "export-desenho-tecnico",
+    "label": "Desenho Técnico (PDF)",
+    "iconName": "adminDocs",
+    "icon": null,
+    "shortcut": null,
+    "area": "exportacao",
+    "location": "Na janela «Salvar e Gerar Design», em Gerar arquivo",
+    "action": "Gera um PDF A4 horizontal com vistas e cotas do móvel.",
+    "effects": "Descarrega o Desenho Técnico. Não substitui o PDF Técnico da lista industrial, que continua no mesmo menu. Também entra por omissão no arquivo completo (ZIP).",
+    "featureIds": [
+      "desenho-tecnico-pdf",
+      "pdf-tecnico"
     ]
   }
 ]

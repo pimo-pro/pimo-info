@@ -85,12 +85,19 @@ export const appModules = [
     id: "exportacoes",
     name: "Exportações (TCN / Drill XML / PDF / ZIP)",
     summary:
-      "Bolha «Salvar e Gerar Design»: PDF técnico, cutlist, CNC (`.tcn` + Drill XML), layouts, arquivo completo/SGPI.",
-    inputs: ["ProjectState", "Cutlist", "Nesting (quando aplicável)"],
-    outputs: [".tcn", "Drill .xml", "PDF", "XLSX ferragens", "ZIP/arquivo completo", "JSON local"],
+      "Janela «Salvar e Gerar Design»: Desenho Técnico (PDF) com vistas e cotas, PDF Técnico industrial, cutlist, CNC (TCN e Drill XML), layouts e arquivo completo (ZIP com Desenho Técnico por omissão).",
+    inputs: ["Projeto", "Lista de corte", "Nesting (quando aplicável)"],
+    outputs: [
+      "TCN",
+      "Drill XML",
+      "Desenho Técnico (PDF)",
+      "PDF Técnico",
+      "XLSX ferragens",
+      "ZIP / arquivo completo",
+    ],
     dependsOn: ["lista-corte", "nesting", "materiais-orlas"],
 
-    featureIds: ["exportacao-tcn-drill-xml", "pdf-tecnico"],
+    featureIds: ["exportacao-tcn-drill-xml", "pdf-tecnico", "desenho-tecnico-pdf"],
   },
   {
     id: "orcamento",

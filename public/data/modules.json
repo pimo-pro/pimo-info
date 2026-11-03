@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T21:30:58.321Z",
+  "generatedAt": "2026-11-03T22:12:03.782Z",
   "flowOrder": [
     "projeto",
     "modulos-caixas",
@@ -137,19 +137,19 @@
     {
       "id": "exportacoes",
       "name": "Exportações (TCN / Drill XML / PDF / ZIP)",
-      "summary": "Bolha «Salvar e Gerar Design»: PDF técnico, cutlist, CNC (`.tcn` + Drill XML), layouts, arquivo completo/SGPI.",
+      "summary": "Janela «Salvar e Gerar Design»: Desenho Técnico (PDF) com vistas e cotas, PDF Técnico industrial, cutlist, CNC (TCN e Drill XML), layouts e arquivo completo (ZIP com Desenho Técnico por omissão).",
       "inputs": [
-        "ProjectState",
-        "Cutlist",
+        "Projeto",
+        "Lista de corte",
         "Nesting (quando aplicável)"
       ],
       "outputs": [
-        ".tcn",
-        "Drill .xml",
-        "PDF",
+        "TCN",
+        "Drill XML",
+        "Desenho Técnico (PDF)",
+        "PDF Técnico",
         "XLSX ferragens",
-        "ZIP/arquivo completo",
-        "JSON local"
+        "ZIP / arquivo completo"
       ],
       "dependsOn": [
         "lista-corte",
@@ -158,7 +158,8 @@
       ],
       "featureIds": [
         "exportacao-tcn-drill-xml",
-        "pdf-tecnico"
+        "pdf-tecnico",
+        "desenho-tecnico-pdf"
       ]
     },
     {
