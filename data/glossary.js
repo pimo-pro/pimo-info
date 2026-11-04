@@ -133,10 +133,11 @@ export const glossaryTerms = [
     term: "Desenho Técnico (PDF)",
     aliases: ["desenho técnico", "PDF A4 cotas", "vistas e cotas"],
     definition:
-      "Documento A4 horizontal com vistas e cotas do móvel, gerado em Salvar e Gerar Design. Não substitui o PDF Técnico da lista industrial. Entra por omissão no arquivo completo (ZIP).",
+      "Documento A4 horizontal com vistas e cotas do móvel, gerado em Salvar e Gerar Design. Guia completo na Ajuda (Desenho Técnico e Exportação) com tipologias, remates e símbolos. Não substitui o PDF Técnico da lista industrial. Entra por omissão no arquivo completo (ZIP).",
     status: "implemented",
     relatedPaths: [
       "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
+      "/pt-pt/guias-utilizador/desenho-tecnico/",
       "/pt-pt/guias-utilizador/exportacao/",
     ],
   },

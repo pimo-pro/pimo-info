@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-11-03T22:12:03.783Z
+Generated: 2026-11-04T00:09:04.021Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -48,7 +48,7 @@ Locale: pt-PT
 
 ## Export formats (implemented)
 - PDF Técnico (.pdf): Relatório industrial do projeto com vista 3D, lista de corte, materiais, ferragens e resumo de preço. Continua disponível à parte do Desenho Técnico (PDF). Se a geração falhar, a app mostra o aviso «Erro ao gerar PDF técnico.»
-- Desenho Técnico (PDF) (.pdf): Documento A4 horizontal com vistas e cotas do móvel. Serve para leitura rápida do desenho; não substitui o PDF Técnico da lista industrial.
+- Desenho Técnico (PDF) (.pdf): Documento A4 horizontal com vistas e cotas do móvel. Guia completo na Ajuda e em Exportação. Não substitui o PDF Técnico da lista industrial.
 - Cutlist (PDF) (.pdf): Lista de corte industrial em milímetros: peças, espessuras, materiais e quantidades.
 - PDF Unificado (.pdf): Documento único que combina informação técnica e cutlist para entrega documental.
 - Etiquetas (UEE v5) (.pdf): PDF de etiquetas com QR por peça (motor UEE v5), tipicamente um ficheiro por espessura.
@@ -70,7 +70,7 @@ Locale: pt-PT
 - TCN: Formato de ficheiro industrial `.tcn` para centros CNC. No menu de exportação aparece como «Arquivos CNC»; o ficheiro gerado é TCN.
 - Drill XML: Representação XML do plano de furação por painel (posição, diâmetro, profundidade), gerada no fluxo de Arquivos CNC.
 - PDF Técnico: Relatório industrial do projeto (vista 3D, lista de corte, materiais, ferragens, preço). Continua disponível à parte do Desenho Técnico (PDF). Não substitui TCN nem Drill XML. Se a geração falhar, surge o aviso «Erro ao gerar PDF técnico.»
-- Desenho Técnico (PDF): Documento A4 horizontal com vistas e cotas do móvel, gerado em Salvar e Gerar Design. Não substitui o PDF Técnico da lista industrial. Entra por omissão no arquivo completo (ZIP).
+- Desenho Técnico (PDF): Documento A4 horizontal com vistas e cotas do móvel, gerado em Salvar e Gerar Design. Guia completo na Ajuda (Desenho Técnico e Exportação) com tipologias, remates e símbolos. Não substitui o PDF Técnico da lista industrial. Entra por omissão no arquivo completo (ZIP).
 - PIMO TRAK: Sistema de ordens de trabalho e rastreamento da produção, incluindo etiquetas QR UEE v5. Estado parcial no código: work orders e etiquetas existem; algumas páginas agregadas ainda podem estar incompletas.
 - PIMO PROJETOS: Área da app para listar e abrir projetos industriais da conta, com showroom e análise online.
 - PIMO NESTING: Sistema próprio de nesting (Nesting V3): layout manual/automático de peças em chapas com exportação PDF, TCN e etiquetas. Distinto do nesting Fast/PRO do pipeline de exportação do configurador.
@@ -91,7 +91,7 @@ Locale: pt-PT
 - Nesting Fast/PRO [implemented] https://pimo.info/pt-pt/funcionalidades/nesting-fast-pro/, Layout de corte em chapa: Fast (estimativa) e PRO (otimização).
 - Exportação TCN / Drill XML [implemented] https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/, Ficheiros industriais `.tcn` e Drill XML via menu Arquivos CNC.
 - PDF Técnico [implemented] https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/, Relatório industrial do projeto (lista, materiais, ferragens). Continua disponível à parte do Desenho Técnico (PDF).
-- Desenho Técnico (PDF) [implemented] https://pimo.info/pt-pt/funcionalidades/desenho-tecnico-pdf/, PDF A4 horizontal com vistas e cotas do móvel, na janela Salvar e Gerar Design. Não substitui o PDF Técnico industrial.
+- Desenho Técnico (PDF) [implemented] https://pimo.info/pt-pt/funcionalidades/desenho-tecnico-pdf/, PDF A4 horizontal com vistas e cotas do móvel, na janela Salvar e Gerar Design. Guia completo na Ajuda e em Exportação. Não substitui o PDF Técnico industrial.
 - PIMO-TRAK [mixed] https://pimo.info/pt-pt/funcionalidades/pimo-trak/, Etiquetas QR (implementado) e rastreio industrial por peça (camada industrial).
 - Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/, Pedido de orçamento a partir do Início ou da exportação: envia contacto, projeto, módulos e notas; a equipa confirma os preços na resposta.
 - Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/, Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.
@@ -201,6 +201,7 @@ Locale: pt-PT
 - Guias de utilizador: https://pimo.info/pt-pt/guias-utilizador/
 - Atalhos de Teclado: https://pimo.info/pt-pt/guias-utilizador/atalhos-teclado/
 - Criar Caixa: https://pimo.info/pt-pt/guias-utilizador/criar-caixa/
+- Guia do Desenho Técnico: https://pimo.info/pt-pt/guias-utilizador/desenho-tecnico/
 - Exportação: https://pimo.info/pt-pt/guias-utilizador/exportacao/
 - Gerir Projetos: https://pimo.info/pt-pt/guias-utilizador/gerir-projetos/
 - Lista de Corte: https://pimo.info/pt-pt/guias-utilizador/lista-de-corte/
@@ -4508,7 +4509,8 @@ Serviços do PIMO PRO por área: design 3D, produção, conta, industrial e apre
      CUT  Lista de Corte  Peças em mm   
      NES  Nesting Fast/PRO  Otimização de chapa   
      TCN  Exportação TCN/Drill XML  Ficheiros de máquina   
-     PDF  PDF técnico  Documentação de projeto   
+     PDF  PDF técnico  Lista industrial   
+     DES  Desenho Técnico  Vistas e cotas A4   
      FER  Ferragens  Dobradiças e corrediças   
      ORC  Orçamentos  Tarifas e custos   
  
@@ -4670,6 +4672,8 @@ No PIMO PRO pode gerar um **Desenho Técnico (PDF)** a partir da janela **Salvar
 
 1. No espaço de trabalho 3D, abra **Salvar e Gerar Design** (barra superior).
 2. Em **Gerar arquivo**, escolha **Desenho Técnico (PDF)**.
+
+Também encontra o guia completo na **Ajuda** do PIMO PRO (secção **Desenho Técnico**) e a partir da secção **Exportação** da Ajuda. Neste site: [Guia do Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/).
 
 ## Relação com o PDF Técnico
 
@@ -4927,7 +4931,7 @@ Geração de PDF técnico com dados de projeto e produção no PIMO PRO.
 
 Compila o estado do projeto num relatório industrial com informação de produção, materiais e resumo. Gera-se na janela **Salvar e Gerar Design** (**PDF Técnico**).
 
-Não confundir com o **Desenho Técnico (PDF)**, que é o documento A4 horizontal com vistas e cotas. Os dois coexistam: o PDF Técnico cobre a lista industrial; o Desenho Técnico cobre as vistas cotadas. Ver [Desenho Técnico (PDF)](/pt-pt/funcionalidades/desenho-tecnico-pdf/).
+Não confundir com o **Desenho Técnico (PDF)**, que é o documento A4 horizontal com vistas e cotas. Os dois coexistam: o PDF Técnico cobre a lista industrial; o Desenho Técnico cobre as vistas cotadas. Ver [Desenho Técnico (PDF)](/pt-pt/funcionalidades/desenho-tecnico-pdf/) e o [Guia do Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/).
 
  
     Formato de partilha  Facilita comunicação interna e validação com cliente.  
@@ -5006,12 +5010,17 @@ Remates, rodapés e acabamentos de caixa no PIMO PRO, incluindo Remate Completo.
 
 O remate do tipo completo chama-se **Remate Completo** na aplicação. Use este nome ao escolher o tipo de remate no projeto e ao falar com a equipa de produção.
 
+## No Desenho Técnico
+
+No **Desenho Técnico (PDF)**, os remates do projeto aparecem com posição e orientação. Em conjuntos com vários módulos, a capa pode mostrar uma legenda de separação de montagem. Guia: [Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/).
+
 ## Estado
 
 Disponível no modelo de projeto. As regras por tipo continuam a ser documentadas à medida que o catálogo estabiliza.
 
 ## Relacionado
 
+- [Guia do Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/)
 - [Criar caixa](/pt-pt/guias-utilizador/criar-caixa/)
 - [Materiais](/pt-pt/funcionalidades/materiais/)
 - [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/)
@@ -5068,7 +5077,7 @@ Fonte única de terminologia do PIMO Info. Use estes termos de forma consistente
 
 ## Guias de utilizador
 URL: https://pimo.info/pt-pt/guias-utilizador/
-Guias práticos do PIMO PRO por tarefa: criar caixa, materiais, cutlist, nesting, exportação, TRAK e gerir projetos.
+Guias práticos do PIMO PRO por tarefa: criar caixa, materiais, cutlist, nesting, exportação, Desenho Técnico, TRAK e gerir projetos.
 
 # Guias de utilizador
 
@@ -5084,9 +5093,10 @@ Estas páginas seguem o fluxo real da ajuda na aplicação PIMO PRO e estão org
 6. [Lista de Corte](/pt-pt/guias-utilizador/lista-de-corte/)
 7. [Nesting / Layout de Corte](/pt-pt/guias-utilizador/nesting-layout-corte/)
 8. [Exportação](/pt-pt/guias-utilizador/exportacao/)
-9. [PIMO-TRAK](/pt-pt/guias-utilizador/pimo-trak/)
-10. [Gerir Projetos](/pt-pt/guias-utilizador/gerir-projetos/)
-11. [Atalhos de Teclado](/pt-pt/guias-utilizador/atalhos-teclado/)
+9. [Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/)
+10. [PIMO-TRAK](/pt-pt/guias-utilizador/pimo-trak/)
+11. [Gerir Projetos](/pt-pt/guias-utilizador/gerir-projetos/)
+12. [Atalhos de Teclado](/pt-pt/guias-utilizador/atalhos-teclado/)
 
 Cada guia liga à funcionalidade correspondente e, quando útil, ao [catálogo de botões](/pt-pt/referencia/botoes/).
 
@@ -5163,6 +5173,156 @@ Nomes exactos dos controlos: [Referência de botões](/pt-pt/referencia/botoes/)
 
 ---
 
+## Guia do Desenho Técnico
+URL: https://pimo.info/pt-pt/guias-utilizador/desenho-tecnico/
+Como ler e gerar o Desenho Técnico (PDF) no PIMO PRO: vistas, cotas, remates, símbolos e exemplos de tipologias.
+
+# Guia do Desenho Técnico
+
+O **Desenho Técnico (PDF)** do PIMO PRO é o documento A4 horizontal com vistas do móvel, cotas de montagem, remates e identificação do projeto. Serve para ler medidas, partilhar com a obra e validar o desenho sem abrir a aplicação. As imagens e PDFs desta página são páginas reais geradas pelo PIMO PRO.
+
+Não substitui o **PDF Técnico** da lista industrial: um foca vistas e cotas; o outro reúne a documentação industrial.
+
+ 
+
+## Como abrir o guia na Ajuda e na Exportação
+
+Na aplicação PIMO PRO:
+
+1. Abra a **Ajuda** e escolha a secção **Desenho Técnico** para o guia completo (tipologias, remates, cotas e símbolos).
+2. Na mesma Ajuda, a secção **Exportação** também aponta para este guia e explica como gerar o PDF.
+3. Neste centro de ajuda (pimo.info), use esta página e o atalho em [Exportação](/pt-pt/guias-utilizador/exportacao/).
+
+## Como gerar o PDF
+
+1. Coloque os módulos no espaço de trabalho e execute **Gerar Design 3D**.
+2. Abra **Salvar e Gerar Design** (barra superior).
+3. Em **Gerar arquivo**, escolha **Desenho Técnico (PDF)**.
+4. O browser descarrega o PDF em A4 horizontal, com várias páginas quando o projeto o pedir.
+
+No **arquivo completo (ZIP)**, o Desenho Técnico entra por omissão, sem substituir o PDF Técnico industrial.
+
+Detalhe da funcionalidade: [Desenho Técnico (PDF)](/pt-pt/funcionalidades/desenho-tecnico-pdf/).
+
+## Vistas, cotas e escala
+
+Cada módulo pode gerar vistas de frente, traseira, laterais, superior, interior e, quando faz sentido, isometria.
+
+- As **cotas** gerais e interiores (por exemplo vãos entre prateleiras) estão em **milímetros**.
+- A **escala** aparece no cabeçalho de cada página (por exemplo 1:6).
+- Paredes, sala, chão e tecto **não entram** no desenho técnico.
+
+ 
+   
+     
+     Módulo clássico: vista frontal com cotas gerais e interiores. 
+   
+   
+     
+     Módulo clássico: outra vista do mesmo documento. 
+   
+ 
+
+Para cotas no ecrã 3D (atalho **D**), veja também [Medições e Cotas](/pt-pt/guias-utilizador/medicoes-e-cotas/).
+
+## Tipologias com exemplos
+
+Exemplos reais gerados na aplicação, para reconhecer o que aparece no PDF:
+
+### Portas e gavetas
+
+ 
+   
+     
+     Portas duplas. 
+   
+   
+     
+     Gavetas. 
+   
+ 
+
+### Divisória / separador
+
+ 
+   
+   Divisória e separador com posição e orientação no desenho. 
+ 
+
+### Canto, caixa de forno e roupeiro
+
+ 
+   
+     
+     Móvel de canto. 
+   
+   
+     
+     Caixa de forno. 
+   
+   
+     
+     Roupeiro. 
+   
+ 
+
+Em tipologias especiais, o desenho mostra a carcaça disponível. Quando faltam faces fiáveis, o documento deixa isso claro em vez de inventar geometria.
+
+## Remates e conjuntos separados
+
+Remates laterais e outros remates do projeto entram no modelo com dimensões, espessura, posição e orientação. Se houver conjuntos fisicamente afastados, a capa mostra uma legenda de separação de montagem com distâncias em mm.
+
+Folgas normais de construção **não** geram aviso falso de elementos separados.
+
+ 
+   
+     
+     Capa multi-módulo: remates e legenda de separação. 
+   
+   
+     
+     Vista com remates no mesmo documento A4. 
+   
+ 
+
+Mais sobre remates no projeto: [Remates e acabamentos](/pt-pt/funcionalidades/remates/).
+
+## Símbolos e leitura do documento
+
+| Elemento | Significado |
+| --- | --- |
+| Cabeçalho PIMO | Identidade do documento, designer, responsável e data. |
+| Escala (ex. 1:6) | Proporção da vista impressa em A4 horizontal. |
+| Cotas em mm | Medidas de montagem e instalação (gerais e interiores). |
+| Legenda de separação | Conjuntos fisicamente separados, com distância útil. |
+| Ambiente arquitectónico excluído | Paredes, sala, chão e tecto fora do desenho técnico. |
+| Paginação | Rodapé com nome do projeto e página N / total. |
+
+Imprima em A4 horizontal e confirme margens e legibilidade antes de enviar para obra.
+
+## PDFs de exemplo
+
+Descarregue documentos gerados pelo PIMO PRO:
+
+- [Módulo clássico](/visual/desenho-tecnico/exemplos/modulo-classico.pdf)
+- [Portas duplas](/visual/desenho-tecnico/exemplos/portas-duplas.pdf)
+- [Gavetas](/visual/desenho-tecnico/exemplos/gavetas.pdf)
+- [Divisória / separador](/visual/desenho-tecnico/exemplos/divisoria-separador.pdf)
+- [Remates múltiplos](/visual/desenho-tecnico/exemplos/remates-multiplos.pdf)
+- [Canto](/visual/desenho-tecnico/exemplos/canto.pdf)
+- [Caixa de forno](/visual/desenho-tecnico/exemplos/caixa-forno.pdf)
+- [Roupeiro](/visual/desenho-tecnico/exemplos/roupeiro.pdf)
+
+## Relação com o ZIP e o PDF Técnico
+
+- **Desenho Técnico**: vistas e cotas em A4 horizontal.
+- **PDF Técnico**: lista industrial (materiais, corte, ferragens, resumo). Continua disponível no mesmo menu.
+- Nesting, TCN, Drill XML e etiquetas não mudam por causa deste documento.
+
+Guia geral de exportação: [Exportação](/pt-pt/guias-utilizador/exportacao/). PDF industrial: [PDF técnico](/pt-pt/funcionalidades/pdf-tecnico/).
+
+---
+
 ## Exportação
 URL: https://pimo.info/pt-pt/guias-utilizador/exportacao/
 Guia de exportação do PIMO PRO: Desenho Técnico (PDF), PDF técnico, cutlist, etiquetas UEE, TCN, Drill XML e arquivo ZIP completo.
@@ -5177,7 +5337,9 @@ O menu de exportação (janela **Salvar e Gerar Design**) reúne os documentos e
 - Fluxo: **Salvar e Gerar Design → Gerar arquivo → Desenho Técnico (PDF)**.
 - Serve para ler medidas e partilhar o desenho com clareza.
 - **Não substitui** o PDF Técnico da lista industrial, que continua disponível no mesmo menu.
-- Detalhe: [Desenho Técnico (PDF)](/pt-pt/funcionalidades/desenho-tecnico-pdf/).
+- Guia completo (cotas, remates, símbolos, tipologias e PDFs de exemplo): [Guia do Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/).
+- Na Ajuda do PIMO PRO, a secção **Desenho Técnico** e a secção **Exportação** também abrem este guia.
+- Resumo da funcionalidade: [Desenho Técnico (PDF)](/pt-pt/funcionalidades/desenho-tecnico-pdf/).
 
 ## PDF Técnico
 
@@ -5963,7 +6125,7 @@ O pacote pode incluir cutlist PDF, **PDF Técnico** industrial, **Desenho Técni
 
 ## O que é o Desenho Técnico (PDF)?
 
-É um documento A4 horizontal com vistas e cotas do móvel, gerado em **Salvar e Gerar Design → Gerar arquivo → Desenho Técnico (PDF)**. Não substitui o PDF Técnico industrial. Detalhe: [Desenho Técnico (PDF)](/pt-pt/funcionalidades/desenho-tecnico-pdf/).
+É um documento A4 horizontal com vistas e cotas do móvel, gerado em **Salvar e Gerar Design → Gerar arquivo → Desenho Técnico (PDF)**. Não substitui o PDF Técnico industrial. Na Ajuda do PIMO PRO (secções **Desenho Técnico** e **Exportação**) encontra o guia completo com tipologias, remates, cotas e símbolos. Guia: [Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/). Resumo: [Desenho Técnico (PDF)](/pt-pt/funcionalidades/desenho-tecnico-pdf/).
 
 ## O que acontece se falhar a geração do PDF técnico?
 

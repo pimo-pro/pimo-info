@@ -13,6 +13,7 @@ export default {
   "lista-de-corte": "Lista de Corte",
   "nesting-layout-corte": "Nesting / Layout de Corte",
   exportacao: "Exportação",
+  "desenho-tecnico": "Desenho Técnico",
   "pimo-trak": "PIMO-TRAK",
   "gerir-projetos": "Gerir Projetos",
   "atalhos-teclado": "Atalhos de Teclado",

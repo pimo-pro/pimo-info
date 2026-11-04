@@ -190,6 +190,26 @@ Entrar na conta, terminar sessão e perfil (não é um sistema de produto como T
 
 ---
 
+### `sistemas/ajuda`
+
+Ajuda embutida na app (secções do help center in-app) e o espelho em pimo.info. Só conteúdo para utilizador final.
+
+| O quê | Onde no pimo.info |
+|---|---|
+| Índice de guias | `/pt-pt/guias-utilizador/` → `pages/pt-pt/guias-utilizador/` |
+| Guia Desenho Técnico | `/pt-pt/guias-utilizador/desenho-tecnico/` (+ feature `/pt-pt/funcionalidades/desenho-tecnico-pdf/`) |
+| Guia Exportação | `/pt-pt/guias-utilizador/exportacao/` |
+| Imagens / PDFs de exemplo do guia | `public/visual/desenho-tecnico/` (cópias públicas; sem nomes internos de código) |
+| Onboarding | `/pt-pt/primeiros-passos/` |
+| FAQ | `/pt-pt/perguntas-frequentes/` |
+| Novidades | `data/local-news.js` → `/pt-pt/novidades/` |
+| Cobertura | `route-ajuda`, `domain-desenho-tecnico`, … em `scripts/generate-coverage.cjs` |
+
+**Adicionado / alterado:** atualizar o guia correspondente; ligar a partir de Ajuda/Exportação nas páginas públicas; regenerar artefactos.  
+**Ignorar:** painéis de administração, opções só de dono, caminhos de código.
+
+---
+
 ### `outro`
 
 Usar quando a área do `INFO-UPDATES.md` não encaixa acima (UI global, tema, performance, legal da app, etc.). Auth recorrente: ver [`sistemas/autenticacao`](#sistemasautenticacao).

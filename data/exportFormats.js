@@ -39,10 +39,11 @@ export const exportFormats = [
     menuLabel: "Desenho Técnico (PDF)",
     extensions: [".pdf"],
     description:
-      "Documento A4 horizontal com vistas e cotas do móvel. Serve para leitura rápida do desenho; não substitui o PDF Técnico da lista industrial.",
+      "Documento A4 horizontal com vistas e cotas do móvel. Guia completo na Ajuda e em Exportação. Não substitui o PDF Técnico da lista industrial.",
     status: "implemented",
     relatedPaths: [
       "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
+      "/pt-pt/guias-utilizador/desenho-tecnico/",
       "/pt-pt/guias-utilizador/exportacao/",
     ],
   },
@@ -140,6 +141,7 @@ export const exportFormats = [
       "ZIP usa nesting PRO. Cutlist no arquivo é PDF (não CSV). O Desenho Técnico (PDF) entra por omissão, em paralelo com o PDF Técnico.",
     relatedPaths: [
       "/pt-pt/guias-utilizador/exportacao/",
+      "/pt-pt/guias-utilizador/desenho-tecnico/",
       "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
       "/pt-pt/funcionalidades/pdf-tecnico/",
     ],

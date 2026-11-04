@@ -1,6 +1,6 @@
 # Matriz de cobertura PIMO PRO → pimo.info
 
-Gerado: 2026-11-03T22:12:03.840Z
+Gerado: 2026-11-04T00:09:04.087Z
 
 Total de itens: **66**
 
@@ -26,7 +26,7 @@ Total de itens: **66**
 | route-projetos-analise | route | Análise de projeto | [/pt-pt/funcionalidades/analise-projetos/](/pt-pt/funcionalidades/analise-projetos/) | coberto |
 | route-nesting-v3 | route | Nesting v3 | [/pt-pt/sistemas-pimo/pimo-nesting/](/pt-pt/sistemas-pimo/pimo-nesting/) | coberto |
 | route-legacy-root | route | Configurador legado / projeto | [/pt-pt/funcionalidades/configurador-3d/](/pt-pt/funcionalidades/configurador-3d/) | coberto |
-| route-ajuda | route | Ajuda in-app | [/pt-pt/](/pt-pt/) | coberto |
+| route-ajuda | route | Ajuda in-app | [/pt-pt/guias-utilizador/](/pt-pt/guias-utilizador/) | coberto |
 | route-whats-new | route | Novidades in-app | [/pt-pt/novidades/](/pt-pt/novidades/) | coberto |
 | route-industrial | route | Industrial home | [/pt-pt/sistemas-pimo/pimo-industrial/](/pt-pt/sistemas-pimo/pimo-industrial/) | coberto |
 | route-work-orders | route | Ordens de fabrico | [/pt-pt/sistemas-pimo/pimo-trak/](/pt-pt/sistemas-pimo/pimo-trak/) | coberto |
@@ -57,7 +57,7 @@ Total de itens: **66**
 | domain-exports | domain | Exportações | [/pt-pt/guias-utilizador/exportacao/](/pt-pt/guias-utilizador/exportacao/) | coberto |
 | domain-tcn | domain | Exportação TCN | [/pt-pt/funcionalidades/exportacao-tcn-drill-xml/](/pt-pt/funcionalidades/exportacao-tcn-drill-xml/) | coberto |
 | domain-pdf | domain | PDF técnico | [/pt-pt/funcionalidades/pdf-tecnico/](/pt-pt/funcionalidades/pdf-tecnico/) | coberto |
-| domain-desenho-tecnico | domain | Desenho Técnico (PDF) | [/pt-pt/funcionalidades/desenho-tecnico-pdf/](/pt-pt/funcionalidades/desenho-tecnico-pdf/) | coberto |
+| domain-desenho-tecnico | domain | Desenho Técnico (PDF) | [/pt-pt/guias-utilizador/desenho-tecnico/](/pt-pt/guias-utilizador/desenho-tecnico/) | coberto |
 | domain-budget | domain | Orçamentos | [/pt-pt/funcionalidades/orcamentos/](/pt-pt/funcionalidades/orcamentos/) | coberto |
 | domain-photo | domain | Modo foto | [/pt-pt/funcionalidades/modo-foto/](/pt-pt/funcionalidades/modo-foto/) | coberto |
 | domain-room | domain | Sala e ambiente | [/pt-pt/funcionalidades/sala-e-ambiente/](/pt-pt/funcionalidades/sala-e-ambiente/) | coberto |

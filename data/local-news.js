@@ -7,6 +7,15 @@
 export const localNewsEntries = [
   {
     version: "2026-11-03",
+    title: "Guia completo do Desenho Técnico na Ajuda",
+    description:
+      "Na Ajuda do PIMO PRO há um guia do Desenho Técnico com imagens e PDFs reais, exemplos de tipologias (caixa de forno, módulo clássico, canto, divisória, gavetas, portas duplas, remates múltiplos, roupeiro), explicação de remates, cotas e símbolos. Abre a partir da Ajuda e da Exportação.",
+    publishedAt: "2026-11-03T20:00:00.000Z",
+    type: "feature",
+    author: "Equipa PIMO",
+  },
+  {
+    version: "2026-11-03",
     title: "Desenho Técnico (PDF) na exportação",
     description:
       "Em Salvar e Gerar Design há a opção Desenho Técnico (PDF): documento A4 horizontal com vistas e cotas do móvel. Não substitui o PDF Técnico industrial, que continua disponível.",

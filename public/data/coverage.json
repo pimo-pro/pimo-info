@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T22:12:03.840Z",
+  "generatedAt": "2026-11-04T00:09:04.087Z",
   "totals": {
     "items": 66,
     "byStatus": {
@@ -155,9 +155,9 @@
       "kind": "route",
       "name": "Ajuda in-app",
       "purpose": "Help embutido na app",
-      "page": "/pt-pt/",
+      "page": "/pt-pt/guias-utilizador/",
       "status": "coberto",
-      "notes": "Ajuda pública em pimo.pro/ajuda; conteúdo espelhado no help center; captura WebP",
+      "notes": "Ajuda pública em pimo.pro/ajuda; guias espelhados no help center incl. Desenho Técnico (nov 2026)",
       "pageExists": true
     },
     {
@@ -443,9 +443,9 @@
       "kind": "domain",
       "name": "Desenho Técnico (PDF)",
       "purpose": "PDF A4 horizontal com vistas e cotas",
-      "page": "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
+      "page": "/pt-pt/guias-utilizador/desenho-tecnico/",
       "status": "coberto",
-      "notes": "Salvar e Gerar Design / Gerar arquivo; incluído por omissão no ZIP completo (nov 2026)",
+      "notes": "Guia completo na Ajuda/Exportação com tipologias, remates, cotas e símbolos; feature em /pt-pt/funcionalidades/desenho-tecnico-pdf/; ZIP inclui por omissão (nov 2026)",
       "pageExists": true
     },
     {

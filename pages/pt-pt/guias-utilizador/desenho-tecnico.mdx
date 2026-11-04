@@ -1,0 +1,242 @@
+---
+title: "Guia do Desenho Técnico"
+description: "Como ler e gerar o Desenho Técnico (PDF) no PIMO PRO: vistas, cotas, remates, símbolos e exemplos de tipologias."
+category: guia
+tags:
+  - guia
+  - exportacao
+  - pdf
+  - cotas
+related:
+  - /pt-pt/funcionalidades/desenho-tecnico-pdf/
+  - /pt-pt/guias-utilizador/exportacao/
+  - /pt-pt/funcionalidades/pdf-tecnico/
+  - /pt-pt/funcionalidades/remates/
+  - /pt-pt/guias-utilizador/medicoes-e-cotas/
+  - /pt-pt/glossario/
+lastUpdated: 2026-11-03
+status: implemented
+---
+
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
+
+# Guia do Desenho Técnico
+
+O **Desenho Técnico (PDF)** do PIMO PRO é o documento A4 horizontal com vistas do móvel, cotas de montagem, remates e identificação do projeto. Serve para ler medidas, partilhar com a obra e validar o desenho sem abrir a aplicação. As imagens e PDFs desta página são páginas reais geradas pelo PIMO PRO.
+
+Não substitui o **PDF Técnico** da lista industrial: um foca vistas e cotas; o outro reúne a documentação industrial.
+
+<img
+  src="/icons/criativo/blueprint.svg"
+  alt=""
+  width="48"
+  height="48"
+  style={{ marginBottom: "0.5rem" }}
+/>
+
+## Como abrir o guia na Ajuda e na Exportação
+
+Na aplicação PIMO PRO:
+
+1. Abra a **Ajuda** e escolha a secção **Desenho Técnico** para o guia completo (tipologias, remates, cotas e símbolos).
+2. Na mesma Ajuda, a secção **Exportação** também aponta para este guia e explica como gerar o PDF.
+3. Neste centro de ajuda (pimo.info), use esta página e o atalho em [Exportação](/pt-pt/guias-utilizador/exportacao/).
+
+## Como gerar o PDF
+
+1. Coloque os módulos no espaço de trabalho e execute **Gerar Design 3D**.
+2. Abra **Salvar e Gerar Design** (barra superior).
+3. Em **Gerar arquivo**, escolha **Desenho Técnico (PDF)**.
+4. O browser descarrega o PDF em A4 horizontal, com várias páginas quando o projeto o pedir.
+
+No **arquivo completo (ZIP)**, o Desenho Técnico entra por omissão, sem substituir o PDF Técnico industrial.
+
+Detalhe da funcionalidade: [Desenho Técnico (PDF)](/pt-pt/funcionalidades/desenho-tecnico-pdf/).
+
+## Vistas, cotas e escala
+
+Cada módulo pode gerar vistas de frente, traseira, laterais, superior, interior e, quando faz sentido, isometria.
+
+- As **cotas** gerais e interiores (por exemplo vãos entre prateleiras) estão em **milímetros**.
+- A **escala** aparece no cabeçalho de cada página (por exemplo 1:6).
+- Paredes, sala, chão e tecto **não entram** no desenho técnico.
+
+<div className="pimo-media-grid" style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
+  <figure>
+    <img
+      src="/visual/desenho-tecnico/imagens/modulo-classico-vista.png"
+      alt="Vista frontal de módulo clássico com cotas gerais e interiores"
+      width="1600"
+      height="1132"
+      loading="lazy"
+    />
+    <figcaption>Módulo clássico: vista frontal com cotas gerais e interiores.</figcaption>
+  </figure>
+  <figure>
+    <img
+      src="/visual/desenho-tecnico/imagens/modulo-classico-vista-2.png"
+      alt="Outra página do Desenho Técnico do módulo clássico"
+      width="1600"
+      height="1132"
+      loading="lazy"
+    />
+    <figcaption>Módulo clássico: outra vista do mesmo documento.</figcaption>
+  </figure>
+</div>
+
+Para cotas no ecrã 3D (atalho **D**), veja também [Medições e Cotas](/pt-pt/guias-utilizador/medicoes-e-cotas/).
+
+## Tipologias com exemplos
+
+Exemplos reais gerados na aplicação, para reconhecer o que aparece no PDF:
+
+### Portas e gavetas
+
+<div className="pimo-media-grid" style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
+  <figure>
+    <img
+      src="/visual/desenho-tecnico/imagens/portas-duplas.png"
+      alt="Desenho técnico de móvel com portas duplas"
+      width="1600"
+      height="1132"
+      loading="lazy"
+    />
+    <figcaption>Portas duplas.</figcaption>
+  </figure>
+  <figure>
+    <img
+      src="/visual/desenho-tecnico/imagens/gavetas.png"
+      alt="Desenho técnico de móvel com gavetas"
+      width="1600"
+      height="1132"
+      loading="lazy"
+    />
+    <figcaption>Gavetas.</figcaption>
+  </figure>
+</div>
+
+### Divisória / separador
+
+<figure>
+  <img
+    src="/visual/desenho-tecnico/imagens/divisoria-separador.png"
+    alt="Desenho técnico com divisória e separador"
+    width="1600"
+    height="1132"
+    loading="lazy"
+  />
+  <figcaption>Divisória e separador com posição e orientação no desenho.</figcaption>
+</figure>
+
+### Canto, caixa de forno e roupeiro
+
+<div className="pimo-media-grid" style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
+  <figure>
+    <img
+      src="/visual/desenho-tecnico/imagens/canto.png"
+      alt="Desenho técnico de móvel de canto"
+      width="1600"
+      height="1132"
+      loading="lazy"
+    />
+    <figcaption>Móvel de canto.</figcaption>
+  </figure>
+  <figure>
+    <img
+      src="/visual/desenho-tecnico/imagens/caixa-forno.png"
+      alt="Desenho técnico de caixa de forno"
+      width="1600"
+      height="1132"
+      loading="lazy"
+    />
+    <figcaption>Caixa de forno.</figcaption>
+  </figure>
+  <figure>
+    <img
+      src="/visual/desenho-tecnico/imagens/roupeiro.png"
+      alt="Desenho técnico de roupeiro"
+      width="1600"
+      height="1132"
+      loading="lazy"
+    />
+    <figcaption>Roupeiro.</figcaption>
+  </figure>
+</div>
+
+Em tipologias especiais, o desenho mostra a carcaça disponível. Quando faltam faces fiáveis, o documento deixa isso claro em vez de inventar geometria.
+
+## Remates e conjuntos separados
+
+Remates laterais e outros remates do projeto entram no modelo com dimensões, espessura, posição e orientação. Se houver conjuntos fisicamente afastados, a capa mostra uma legenda de separação de montagem com distâncias em mm.
+
+Folgas normais de construção **não** geram aviso falso de elementos separados.
+
+<div className="pimo-media-grid" style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
+  <figure>
+    <img
+      src="/visual/desenho-tecnico/imagens/remates-capa.png"
+      alt="Capa do Desenho Técnico com remates e legenda de separação"
+      width="1600"
+      height="1132"
+      loading="lazy"
+    />
+    <figcaption>Capa multi-módulo: remates e legenda de separação.</figcaption>
+  </figure>
+  <figure>
+    <img
+      src="/visual/desenho-tecnico/imagens/remates-vista.png"
+      alt="Vista do Desenho Técnico com remates"
+      width="1600"
+      height="1132"
+      loading="lazy"
+    />
+    <figcaption>Vista com remates no mesmo documento A4.</figcaption>
+  </figure>
+</div>
+
+Mais sobre remates no projeto: [Remates e acabamentos](/pt-pt/funcionalidades/remates/).
+
+## Símbolos e leitura do documento
+
+| Elemento | Significado |
+| --- | --- |
+| Cabeçalho PIMO | Identidade do documento, designer, responsável e data. |
+| Escala (ex. 1:6) | Proporção da vista impressa em A4 horizontal. |
+| Cotas em mm | Medidas de montagem e instalação (gerais e interiores). |
+| Legenda de separação | Conjuntos fisicamente separados, com distância útil. |
+| Ambiente arquitectónico excluído | Paredes, sala, chão e tecto fora do desenho técnico. |
+| Paginação | Rodapé com nome do projeto e página N / total. |
+
+Imprima em A4 horizontal e confirme margens e legibilidade antes de enviar para obra.
+
+## PDFs de exemplo
+
+Descarregue documentos gerados pelo PIMO PRO:
+
+- [Módulo clássico](/visual/desenho-tecnico/exemplos/modulo-classico.pdf)
+- [Portas duplas](/visual/desenho-tecnico/exemplos/portas-duplas.pdf)
+- [Gavetas](/visual/desenho-tecnico/exemplos/gavetas.pdf)
+- [Divisória / separador](/visual/desenho-tecnico/exemplos/divisoria-separador.pdf)
+- [Remates múltiplos](/visual/desenho-tecnico/exemplos/remates-multiplos.pdf)
+- [Canto](/visual/desenho-tecnico/exemplos/canto.pdf)
+- [Caixa de forno](/visual/desenho-tecnico/exemplos/caixa-forno.pdf)
+- [Roupeiro](/visual/desenho-tecnico/exemplos/roupeiro.pdf)
+
+## Relação com o ZIP e o PDF Técnico
+
+- **Desenho Técnico**: vistas e cotas em A4 horizontal.
+- **PDF Técnico**: lista industrial (materiais, corte, ferragens, resumo). Continua disponível no mesmo menu.
+- Nesting, TCN, Drill XML e etiquetas não mudam por causa deste documento.
+
+Guia geral de exportação: [Exportação](/pt-pt/guias-utilizador/exportacao/). PDF industrial: [PDF técnico](/pt-pt/funcionalidades/pdf-tecnico/).
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/funcionalidades/desenho-tecnico-pdf/", label: "Desenho Técnico (PDF)" },
+    { href: "/pt-pt/guias-utilizador/exportacao/", label: "Guia de exportação" },
+    { href: "/pt-pt/funcionalidades/pdf-tecnico/", label: "PDF técnico" },
+    { href: "/pt-pt/funcionalidades/remates/", label: "Remates" },
+    { href: "/pt-pt/guias-utilizador/medicoes-e-cotas/", label: "Medições e cotas" },
+    { href: "/pt-pt/perguntas-frequentes/", label: "Perguntas frequentes" },
+  ]}
+/>

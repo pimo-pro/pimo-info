@@ -234,7 +234,7 @@
   </url>
   <url>
     <loc>https://pimo.info/pt-pt/funcionalidades/remates/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://pimo.info/pt-pt/funcionalidades/sala-e-ambiente/</loc>
@@ -246,7 +246,7 @@
   </url>
   <url>
     <loc>https://pimo.info/pt-pt/guias-utilizador/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://pimo.info/pt-pt/guias-utilizador/atalhos-teclado/</loc>
@@ -255,6 +255,10 @@
   <url>
     <loc>https://pimo.info/pt-pt/guias-utilizador/criar-caixa/</loc>
     <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://pimo.info/pt-pt/guias-utilizador/desenho-tecnico/</loc>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://pimo.info/pt-pt/guias-utilizador/exportacao/</loc>
@@ -378,22 +382,22 @@
   </url>
   <url>
     <loc>https://pt.pimo.info/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://pro.pimo.info/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://es.pimo.info/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://casa.pimo.info/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://design.pimo.info/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
 </urlset>

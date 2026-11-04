@@ -87,10 +87,10 @@ export const features = [
     id: "desenho-tecnico-pdf",
     name: "Desenho Técnico (PDF)",
     summary:
-      "PDF A4 horizontal com vistas e cotas do móvel, na janela Salvar e Gerar Design. Não substitui o PDF Técnico industrial.",
+      "PDF A4 horizontal com vistas e cotas do móvel, na janela Salvar e Gerar Design. Guia completo na Ajuda e em Exportação. Não substitui o PDF Técnico industrial.",
     status: "implemented",
     canonicalPath: "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
-    guidePath: "/pt-pt/guias-utilizador/exportacao/",
+    guidePath: "/pt-pt/guias-utilizador/desenho-tecnico/",
     tags: ["exportacao", "pdf", "cotas"],
   },
   {

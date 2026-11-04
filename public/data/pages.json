@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T22:12:03.782Z",
+  "generatedAt": "2026-11-04T00:09:04.020Z",
   "items": [
     {
       "path": "/",
@@ -994,6 +994,7 @@
       ],
       "related": [
         "/pt-pt/funcionalidades/pdf-tecnico/",
+        "/pt-pt/guias-utilizador/desenho-tecnico/",
         "/pt-pt/guias-utilizador/exportacao/",
         "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
@@ -1293,10 +1294,11 @@
       ],
       "related": [
         "/pt-pt/guias-utilizador/criar-caixa/",
+        "/pt-pt/guias-utilizador/desenho-tecnico/",
         "/pt-pt/funcionalidades/materiais/",
         "/pt-pt/funcionalidades/configurador-3d/"
       ],
-      "lastUpdated": "2026-11-02",
+      "lastUpdated": "2026-11-03",
       "status": "",
       "draft": false
     },
@@ -1346,7 +1348,7 @@
       "path": "/pt-pt/guias-utilizador/",
       "file": "pages/pt-pt/guias-utilizador/index.mdx",
       "title": "Guias de utilizador",
-      "description": "Guias práticos do PIMO PRO por tarefa: criar caixa, materiais, cutlist, nesting, exportação, TRAK e gerir projetos.",
+      "description": "Guias práticos do PIMO PRO por tarefa: criar caixa, materiais, cutlist, nesting, exportação, Desenho Técnico, TRAK e gerir projetos.",
       "author": "",
       "category": "guia",
       "tags": [
@@ -1359,7 +1361,7 @@
         "/pt-pt/perguntas-frequentes/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-11-02",
+      "lastUpdated": "2026-11-03",
       "status": "implemented",
       "draft": false
     },
@@ -1403,6 +1405,31 @@
       "draft": false
     },
     {
+      "path": "/pt-pt/guias-utilizador/desenho-tecnico/",
+      "file": "pages/pt-pt/guias-utilizador/desenho-tecnico.mdx",
+      "title": "Guia do Desenho Técnico",
+      "description": "Como ler e gerar o Desenho Técnico (PDF) no PIMO PRO: vistas, cotas, remates, símbolos e exemplos de tipologias.",
+      "author": "",
+      "category": "guia",
+      "tags": [
+        "guia",
+        "exportacao",
+        "pdf",
+        "cotas"
+      ],
+      "related": [
+        "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
+        "/pt-pt/guias-utilizador/exportacao/",
+        "/pt-pt/funcionalidades/pdf-tecnico/",
+        "/pt-pt/funcionalidades/remates/",
+        "/pt-pt/guias-utilizador/medicoes-e-cotas/",
+        "/pt-pt/glossario/"
+      ],
+      "lastUpdated": "2026-11-03",
+      "status": "implemented",
+      "draft": false
+    },
+    {
       "path": "/pt-pt/guias-utilizador/exportacao/",
       "file": "pages/pt-pt/guias-utilizador/exportacao.mdx",
       "title": "Exportação",
@@ -1419,6 +1446,7 @@
         "/pt-pt/funcionalidades/exportacao-tcn-drill-xml/",
         "/pt-pt/funcionalidades/pdf-tecnico/",
         "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
+        "/pt-pt/guias-utilizador/desenho-tecnico/",
         "/pt-pt/funcionalidades/ferragens/",
         "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
