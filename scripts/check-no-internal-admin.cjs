@@ -87,7 +87,8 @@ function walk(abs, out = []) {
   const st = fs.statSync(abs)
   if (st.isDirectory()) {
     for (const name of fs.readdirSync(abs)) {
-      if (name === "node_modules" || name === ".git") continue
+      // Bundles Next/webpack têm falsos positivos (API, password, etc.)
+      if (name === "node_modules" || name === ".git" || name === "_next") continue
       walk(path.join(abs, name), out)
     }
   } else if (EXT.has(path.extname(abs)) || path.basename(abs) === "llms.txt") {

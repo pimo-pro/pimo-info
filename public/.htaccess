@@ -72,3 +72,10 @@ DirectoryIndex index.html default.php
 
 # Caminho distinto da regra Rewrite ^404 para não entrar em loop 500
 ErrorDocument 404 /404/index.html
+
+# Feeds RSS: manter 200, impedir indexação. Não aplica a sitemap.xml.
+<IfModule mod_headers.c>
+  <Files "rss.xml">
+    Header set X-Robots-Tag "noindex, follow"
+  </Files>
+</IfModule>

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
-import { getNewsData } from "../lib/news"
-import { localNewsEntries } from "../data/local-news"
+import newsSnapshot from "../data/news-feed.json"
 
 const TYPE_LABEL = {
   feature: "Funcionalidade",
@@ -16,11 +15,13 @@ function formatDate(value) {
 }
 
 function initialNews() {
-  const entries = (localNewsEntries || []).slice()
-  return {
-    source: entries.length ? "local" : "fallback",
-    entries,
+  if (newsSnapshot?.entries?.length) {
+    return {
+      source: newsSnapshot.source || "local",
+      entries: newsSnapshot.entries,
+    }
   }
+  return { source: "fallback", entries: [] }
 }
 
 export function NovidadesFeed() {
@@ -28,9 +29,15 @@ export function NovidadesFeed() {
 
   useEffect(() => {
     let cancelled = false
-    getNewsData()
+    fetch("/data/news.json", { headers: { Accept: "application/json" } })
+      .then((res) => (res.ok ? res.json() : null))
       .then((payload) => {
-        if (!cancelled && payload?.entries?.length) setNews(payload)
+        if (!cancelled && payload?.entries?.length) {
+          setNews({
+            source: payload.source || "local",
+            entries: payload.entries,
+          })
+        }
       })
       .catch(() => {})
     return () => {
@@ -38,7 +45,7 @@ export function NovidadesFeed() {
     }
   }, [])
 
-  const isFallback = news?.source === "fallback"
+  const isFallback = news?.source === "fallback" || !(news?.entries || []).length
 
   return (
     <>

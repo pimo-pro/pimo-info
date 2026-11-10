@@ -1,0 +1,2318 @@
+{
+  "source": "remote",
+  "fetchedAt": "2026-11-10T15:49:25.661Z",
+  "entries": [
+    {
+      "version": "2026-11-03",
+      "title": "Guia completo do Desenho Técnico na Ajuda",
+      "description": "Na Ajuda do PIMO PRO há um guia do Desenho Técnico com imagens e PDFs reais, exemplos de tipologias (caixa de forno, módulo clássico, canto, divisória, gavetas, portas duplas, remates múltiplos, roupeiro), explicação de remates, cotas e símbolos. Abre a partir da Ajuda e da Exportação",
+      "publishedAt": "2026-11-03T20:00:00.000Z",
+      "type": "feature",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "2026-11-03",
+      "title": "Arquivo completo inclui o Desenho Técnico",
+      "description": "O ZIP do arquivo completo passa a incluir por omissão o Desenho Técnico (PDF) com vistas e cotas, além do PDF Técnico da lista industrial",
+      "publishedAt": "2026-11-03T18:01:00.000Z",
+      "type": "update",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "2026-11-03",
+      "title": "Desenho Técnico (PDF) na exportação",
+      "description": "Em Salvar e Gerar Design há a opção Desenho Técnico (PDF): documento A4 horizontal com vistas e cotas do móvel. Não substitui o PDF Técnico industrial, que continua disponível",
+      "publishedAt": "2026-11-03T18:00:00.000Z",
+      "type": "feature",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "2026-11-02",
+      "title": "Marca Pimo casa e Remate Completo",
+      "description": "A aplicação PIMO PRO mostra a marca Pimo casa no cabeçalho, rodapé (© 2026 Pimo casa), página de apresentação, textos de ajuda e no PDF de nesting. O remate do tipo completo chama-se Remate Completo",
+      "publishedAt": "2026-11-02T12:08:00.000Z",
+      "type": "update",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "2026-11-02",
+      "title": "Nomes únicos em projetos novos",
+      "description": "Cada projeto novo recebe automaticamente um nome diferente dos já existentes. Projetos com o mesmo nome escrito à mão continuam separados e a lista deixa de mostrar duplicados",
+      "publishedAt": "2026-11-02T12:07:00.000Z",
+      "type": "update",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "2026-11-02",
+      "title": "Caixas novas sem aviso de rotação inválida",
+      "description": "Depois de criar uma caixa, as rotações X, Y e Z começam com valor neutro. Deixa de aparecer o aviso de rotação inválida logo após criar",
+      "publishedAt": "2026-11-02T12:06:00.000Z",
+      "type": "fix",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "2026-11-02",
+      "title": "Novos módulos alinhados ao lado",
+      "description": "Ao adicionar um módulo sem outro selecionado, o novo fica alinhado ao lado dos existentes em vez de aparecer por cima",
+      "publishedAt": "2026-11-02T12:05:00.000Z",
+      "type": "fix",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "2026-11-02",
+      "title": "Configuração de módulos no telemóvel",
+      "description": "Em ecrãs estreitos, a janela de configuração abre como folha inferior com scroll e o botão Adicionar ao projeto fica sempre acessível. Em ecrãs largos mantém-se ao lado do painel",
+      "publishedAt": "2026-11-02T12:04:00.000Z",
+      "type": "update",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "2026-11-02",
+      "title": "Configuração do módulo alinhada ao catálogo",
+      "description": "Na janela de configuração do painel Móveis, os valores iniciais coincidem com o modelo do catálogo. Ao adicionar, a configuração confirmada aplica-se só a esse módulo, incluindo zero gavetas ou sem porta",
+      "publishedAt": "2026-11-02T12:03:00.000Z",
+      "type": "fix",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "2026-11-02",
+      "title": "Apagar módulo no painel Início",
+      "description": "Com um módulo selecionado, o ícone de lixo remove-o do projeto. Pode recuperar a ação com Desfazer, como nas outras formas de apagar",
+      "publishedAt": "2026-11-02T12:02:00.000Z",
+      "type": "feature",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "2026-11-02",
+      "title": "Pedido de orçamento sem preço automático",
+      "description": "O pedido enviado (Início ou Exportação) inclui contacto, projeto, módulos e notas. A equipa confirma os preços na resposta. Os valores do resumo só aparecem a contas com permissão para ver preços",
+      "publishedAt": "2026-11-02T12:01:00.000Z",
+      "type": "update",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "2026-11-02",
+      "title": "Pedir Orçamento no painel Início",
+      "description": "O botão Pedir Orçamento abre um formulário de contacto. O pedido só é enviado depois de confirmar os dados. Abrir o formulário não inicia fabrico nem grava o projeto",
+      "publishedAt": "2026-11-02T12:00:00.000Z",
+      "type": "feature",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "v6.1013.1343",
+      "title": "Novidade: cartoes com selecao multipla e visualizar no viewer",
+      "description": "Novidade: cartoes com selecao multipla e visualizar no viewer",
+      "publishedAt": "2026-10-13T13:46:07+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1010.1332",
+      "title": "Documentação: backlog, plano mestre e Novidades apos auditoria F10",
+      "description": "Documentação: backlog, plano mestre e Novidades apos auditoria F10 Regista evidencias P4, correcao 5c805e05, TOCTOU F9.12 BLOCKED e gate sem tag ate autorizacao",
+      "publishedAt": "2026-10-10T13:08:34+01:00",
+      "type": "docs",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1010.0250",
+      "title": "Correção: index-last e verificacao de chunks lazy (P3.8)",
+      "description": "Correção: index-last e verificacao de chunks lazy (P3.8) Activa version/news antes do HTML; verify pre-activacao cobre refs do index e prefixos Vite lazy. Sem atomicidade FTP garantida; testes locais alargados",
+      "publishedAt": "2026-10-10T02:40:04+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1010.0155",
+      "title": "Correção: upload-first FTP para nao degradar o site se o sync falhar",
+      "description": "Correção: upload-first FTP para nao degradar o site se o sync falhar Remove a limpeza remota antecipada de assets; publica stage, verifica HTTP e so depois ativa index/version/news. Testes locais sem tocar em producao",
+      "publishedAt": "2026-10-10T01:44:59+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1008.0137",
+      "title": "Novidade: Melhorias do sistema documental industrial",
+      "description": "Novidade: Melhorias do sistema documental industrial",
+      "publishedAt": "2026-10-08T01:40:41+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1007.1649",
+      "title": "Correção: F4 W4-A/B - etiquetas e financeiro usam orlaPieces SSOT",
+      "description": "Correção: F4 W4-A/B - etiquetas e financeiro usam orlaPieces SSOT",
+      "publishedAt": "2026-10-07T16:51:20+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1007.1510",
+      "title": "formalize F3.* and close golden gaps for porta_correr + cx_gav",
+      "description": "formalize F3.* and close golden gaps for porta_correr + cx_gav",
+      "publishedAt": "2026-10-07T15:15:09+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1006.2320",
+      "title": "Novidade: estabilidade e rastreabilidade das peças de gaveta (identity + alias legado)",
+      "description": "Novidade: estabilidade e rastreabilidade das peças de gaveta (identity + alias legado)",
+      "publishedAt": "2026-10-06T23:30:55+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1006.2124",
+      "title": "Novidade: formalize legacy identity compatibility and golden regression (B1.5F)",
+      "description": "Novidade: formalize legacy identity compatibility and golden regression (B1.5F)",
+      "publishedAt": "2026-10-06T21:28:26+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1006.1954",
+      "title": "Novidade: QR/TRAK resolve via canonical N QR (B1.5D)",
+      "description": "Novidade: QR/TRAK resolve via canonical N QR (B1.5D)",
+      "publishedAt": "2026-10-06T19:57:09+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1006.1947",
+      "title": "Novidade: B_canon N QR from CanonicalLabelIdentity (B1.5C)",
+      "description": "Novidade: B_canon N QR from CanonicalLabelIdentity (B1.5C)",
+      "publishedAt": "2026-10-06T19:49:49+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1006.1939",
+      "title": "Correção: include currentProjectId in NestingV3 labels input type",
+      "description": "Correção: include currentProjectId in NestingV3 labels input type",
+      "publishedAt": "2026-10-06T18:39:44.597Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1006.1937",
+      "title": "Novidade: thread stable local projectId into label/export paths (B1.5C.2)",
+      "description": "Novidade: thread stable local projectId into label/export paths (B1.5C.2)",
+      "publishedAt": "2026-10-06T18:37:38.197Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1006.1903",
+      "title": "Novidade: stable local project identity (B1.5C.1)",
+      "description": "Novidade: stable local project identity (B1.5C.1)",
+      "publishedAt": "2026-10-06T19:32:23+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1006.1736",
+      "title": "Novidade: add canonical label identity foundation (B1.5B)",
+      "description": "Novidade: add canonical label identity foundation (B1.5B)",
+      "publishedAt": "2026-10-06T17:39:22+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1006.1701",
+      "title": "Novidade: stabilize piece identity and label architecture baseline",
+      "description": "Novidade: stabilize piece identity and label architecture baseline",
+      "publishedAt": "2026-10-06T17:06:02+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1002.2139",
+      "title": "PIMO vNext - publicação oficial",
+      "description": "PIMO vNext - publicação oficial",
+      "publishedAt": "2026-10-02T21:48:52+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1002.2056",
+      "title": "PIMO vNext - publicação oficial",
+      "description": "PIMO vNext - publicação oficial",
+      "publishedAt": "2026-10-02T21:05:13+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1002.2101",
+      "title": "PIMO vNext - publicação oficial",
+      "description": "PIMO vNext - publicação oficial",
+      "publishedAt": "2026-10-02T20:01:38.657Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1002.2031",
+      "title": "O PIMO vNext está oficialmente concluído e é agora o motor principal do sistema. RoomMeshEngine substitui o RoomManag",
+      "description": "O PIMO vNext está oficialmente concluído e é agora o motor principal do sistema. RoomMeshEngine substitui o RoomManager; mesh derivado de project.room (mm). Domínio unificado em pimo-room/domain (AI/IFC/Catalog/Bridge/Converter); pimo-room-v4 removido. UI via uiStore; sync sem wallStore; legado 3d/room e wallStore eliminados. Industrial/CNC intacto. Base sólida para a nova geração do PIMO",
+      "publishedAt": "2026-10-02T19:31:06.767Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.1002.1924",
+      "title": "Correção: corrigir imports pós-M10 para build de produção",
+      "description": "Correção: corrigir imports pós-M10 para build de produção",
+      "publishedAt": "2026-10-02T19:28:48+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0927.1910",
+      "title": "Publicada versão estável PIMO-V4.0.0 - ponto de retorno seguro antes da reestruturação e desenvolvimento do PIMO-V4",
+      "description": "Publicada versão estável PIMO-V4.0.0 - ponto de retorno seguro antes da reestruturação e desenvolvimento do PIMO-V4",
+      "publishedAt": "2026-09-27T19:12:21+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0903.1734",
+      "title": "Correção: limpar Novidades (scope técnico, Co-authored-by, texto amigável)",
+      "description": "Correção: limpar Novidades (scope técnico, Co-authored-by, texto amigável)",
+      "publishedAt": "2026-09-03T17:40:10+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0902.1158",
+      "title": "Correção: exceções permanentes à verificação de email no login",
+      "description": "Correção: exceções permanentes à verificação de email no login",
+      "publishedAt": "2026-09-02T12:03:55+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0901.1638",
+      "title": "Correção: narrowing TS em sync/persist para build de producao",
+      "description": "Correção: narrowing TS em sync/persist para build de producao",
+      "publishedAt": "2026-09-01T16:42:35+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0828.1714",
+      "title": "Novidade: códigos de convite admin com aprovação imediata e verificação de email",
+      "description": "Novidade: códigos de convite admin com aprovação imediata e verificação de email",
+      "publishedAt": "2026-08-28T17:16:50+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0828.1643",
+      "title": "Correção: rewrite Apache para GET/POST /project-shares",
+      "description": "Correção: rewrite Apache para GET/POST /project-shares",
+      "publishedAt": "2026-08-28T16:45:27+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0828.1611",
+      "title": "Correção: rewrite Apache para GET /auth/verify-email",
+      "description": "Correção: rewrite Apache para GET /auth/verify-email",
+      "publishedAt": "2026-08-28T16:13:17+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0828.1552",
+      "title": "Novidade: verificação de email, notificação admin e email de aprovação",
+      "description": "Novidade: verificação de email, notificação admin e email de aprovação",
+      "publishedAt": "2026-08-28T15:54:54+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0828.1409",
+      "title": "Correção: SSOT nome comercial/técnico e regras industriais",
+      "description": "Correção: SSOT nome comercial/técnico e regras industriais",
+      "publishedAt": "2026-08-28T14:11:24+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0828.1135",
+      "title": "Correção: monetizar Painéis em modo Estimado (por_chapas_reais)",
+      "description": "Correção: monetizar Painéis em modo Estimado (por_chapas_reais)",
+      "publishedAt": "2026-08-28T11:37:36+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0828.1006",
+      "title": "ignorar artefactos temporários de diagnóstico (_tmp_*, auditoria)",
+      "description": "ignorar artefactos temporários de diagnóstico (_tmp_*, auditoria)",
+      "publishedAt": "2026-08-28T09:45:25+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0828.0923",
+      "title": "Novidade: health check dos proxies de email (endpoint dedicado + workflow horário + página admin)",
+      "description": "Novidade: health check dos proxies de email (endpoint dedicado + workflow horário + página admin)",
+      "publishedAt": "2026-08-28T09:22:08+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0827.2028",
+      "title": "Correção: gate de login + Bearer nas thumbnails (Phase 1 ACL)",
+      "description": "Correção: gate de login + Bearer nas thumbnails (Phase 1 ACL)",
+      "publishedAt": "2026-08-27T20:27:00+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0827.1729",
+      "title": "Novidade: Passo B/F4 - congelar todas as linhas do Financeiro no productionRelease",
+      "description": "Novidade: Passo B/F4 - congelar todas as linhas do Financeiro no productionRelease No «Gerar arquivo completo», grava custosEffective do Unificado (Gavetas, Orla, Operações, Desperdício, Serragem, Mão de obra, Logística, Ops avançadas, ADM, Montagem, Portes) após toast+yield; custosOrigem sinaliza oficial vs estimado_fallback",
+      "publishedAt": "2026-08-27T17:28:51+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0827.1645",
+      "title": "Correção: Passo A - priceChapasSheetsEur SSOT partilhado (ADMIN/peças/Relatório)",
+      "description": "Correção: Passo A - priceChapasSheetsEur SSOT partilhado (ADMIN/peças/Relatório) Corrige subconto de materiais múltiplos em Custos ADMIN alinhando ao Relatório Final; média €/chapa fica só em meta UI",
+      "publishedAt": "2026-08-27T16:45:05+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0827.1410",
+      "title": "Novidade: SSOT productionRelease F0+F1+F2 (ultima geracao TCN)",
+      "description": "Novidade: SSOT productionRelease F0+F1+F2 (ultima geracao TCN) F0: persiste settings.productionRelease no fim de Gerar arquivo completo\ncom fire-and-forget + outbox (ZIP/redirect nunca esperam pela rede).\nF1: Relatorio deixa de recalcular Unificado live; le o release (ou vazio)\ncom aviso de total parcial (so Paineis+Ferragens ate F4).\nF2: accordion Paineis/Ferragens e sugestoes TAMPO a partir do release,\nsem computeChapasReal nem remates live",
+      "publishedAt": "2026-08-27T14:09:42+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0827.1038",
+      "title": "Novidade: Fases 0-4 provenance + suite Fase 5 (flag default false)",
+      "description": "Novidade: Fases 0-4 provenance + suite Fase 5 (flag default false) SSOT+manual no Relatorio: provenance, R1 sync, matching estavel Paineis, lineOverrides conscientes e sugestoes TAMPO. Suite Fase 5 incluida. reportFinanceiroProvenance permanece false ate override localStorage",
+      "publishedAt": "2026-08-27T10:38:04+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0827.0852",
+      "title": "backup FTP - nao falhar no ls|head (broken pipe)",
+      "description": "backup FTP - nao falhar no ls|head (broken pipe)",
+      "publishedAt": "2026-08-27T08:50:39+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0826.2226",
+      "title": "backup FTP nao falhar se users.json ausente",
+      "description": "backup FTP nao falhar se users.json ausente",
+      "publishedAt": "2026-08-26T22:23:54+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0826.1626",
+      "title": "Novidade: separar accountCategory de role no registo",
+      "description": "Novidade: separar accountCategory de role no registo",
+      "publishedAt": "2026-08-26T16:19:00+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0826.1656",
+      "title": "Novidade: separar accountCategory de role no registo",
+      "description": "Novidade: separar accountCategory de role no registo",
+      "publishedAt": "2026-08-26T16:19:00+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0826.1449",
+      "title": "Correção: adicionar rewrite em falta para auth/register",
+      "description": "Correção: adicionar rewrite em falta para auth/register",
+      "publishedAt": "2026-08-26T14:47:33+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0824.1107",
+      "title": "remover residual test_output_v1.tcn",
+      "description": "remover residual test_output_v1.tcn",
+      "publishedAt": "2026-08-24T11:09:21+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0824.1042",
+      "title": "alinhar gen-test-tcn com nesting_mo e v2_new",
+      "description": "alinhar gen-test-tcn com nesting_mo e v2_new",
+      "publishedAt": "2026-08-24T10:44:18+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0822.1622",
+      "title": "remoção das entradas de pipeline v6.0822.1540 e v6.0822.1552",
+      "description": "remoção das entradas de pipeline v6.0822.1540 e v6.0822.1552",
+      "publishedAt": "2026-08-22T16:24:06+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0822.1452",
+      "title": "Correção: corrigido comprimento industrial do gav_fundo (SSOT sideDepth+10) - traseira flush com gav_cost; largura in",
+      "description": "Correção: corrigido comprimento industrial do gav_fundo (SSOT sideDepth+10) - traseira flush com gav_cost; largura inalterada; viewer/cutlist/BOM alinhados (550×500 → 484×450)",
+      "publishedAt": "2026-08-22T14:52:00.000Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0822.1540",
+      "title": "remoção da entrada automática v6.0822.1455 (limpeza do WhatsNew)",
+      "description": "remoção da entrada automática v6.0822.1455 (limpeza do WhatsNew)",
+      "publishedAt": "2026-08-22T15:42:56+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0822.1537-clean",
+      "title": "remoção da entrada automática v6.0822.1455 (limpeza do WhatsNew)",
+      "description": "remoção da entrada automática v6.0822.1455 (limpeza do WhatsNew)",
+      "publishedAt": "2026-08-22T15:37:35+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0822.1455",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-08-22T14:57:16+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0821.1743",
+      "title": "Correção: alinhar testes Progressivas ao stack interior SSOT (interiorFrontStack)",
+      "description": "Correção: alinhar testes Progressivas ao stack interior SSOT (interiorFrontStack)",
+      "publishedAt": "2026-08-21T17:44:57+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0821.1739",
+      "title": "Restauro completo do sistema de gavetas clássico + correções GPS embutido - frente, fundo, elevação GAV_1, SSOT intac",
+      "description": "Restauro completo do sistema de gavetas clássico + correções GPS embutido - frente, fundo, elevação GAV_1, SSOT intacto, furos 41 mm verificados",
+      "publishedAt": "2026-08-21T16:39:06.564Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0821.1559",
+      "title": "Correção: persistir relatório no servidor (sem localStorage)",
+      "description": "Correção: persistir relatório no servidor (sem localStorage)",
+      "publishedAt": "2026-08-21T16:01:57+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0821.1557",
+      "title": "Correção: persistir relatório no servidor (sem localStorage)",
+      "description": "Correção: persistir relatório no servidor (sem localStorage)",
+      "publishedAt": "2026-08-21T14:57:52.800Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0821.1433",
+      "title": "Proteção SSOT gavetas + fix ficheiros corrompidos + integração WIP local",
+      "description": "Proteção SSOT gavetas + fix ficheiros corrompidos + integração WIP local",
+      "publishedAt": "2026-08-21T13:33:40.516Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0821.1414",
+      "title": "Correção: remover import SSOT não usado (build tsc)",
+      "description": "Correção: remover import SSOT não usado (build tsc)",
+      "publishedAt": "2026-08-21T14:16:47+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0821.1413",
+      "title": "Correção: SSOT floorTop + proteções industriais/Viewer (18,5/22,5/41)",
+      "description": "Correção: SSOT floorTop + proteções industriais/Viewer (18,5/22,5/41)",
+      "publishedAt": "2026-08-21T13:13:05.998Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0820.1728",
+      "title": "Correção: silenciar TS6133 em wrappers privados do ViewerCore para desbloquear build de deploy",
+      "description": "Correção: silenciar TS6133 em wrappers privados do ViewerCore para desbloquear build de deploy",
+      "publishedAt": "2026-08-20T17:30:12+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0820.1115",
+      "title": "Novidade: modal de pedido de orçamento + envio de email via pimo-mail-service",
+      "description": "Novidade: modal de pedido de orçamento + envio de email via pimo-mail-service",
+      "publishedAt": "2026-08-20T11:12:40+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0820.0813",
+      "title": "Baixa renderiza direto, sem EffectComposer",
+      "description": "Baixa renderiza direto, sem EffectComposer",
+      "publishedAt": "2026-08-20T08:17:40+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0819.2021",
+      "title": "Baixa renderiza direto, sem EffectComposer",
+      "description": "Baixa renderiza direto, sem EffectComposer",
+      "publishedAt": "2026-08-19T20:23:12+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0819.1746",
+      "title": "atualizar benchmarks de cutlayout",
+      "description": "atualizar benchmarks de cutlayout",
+      "publishedAt": "2026-08-19T17:48:10+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0819.1400",
+      "title": "Correção: z-03-10 quality pipeline - bloom/shadows/tone",
+      "description": "Correção: z-03-10 quality pipeline - bloom/shadows/tone",
+      "publishedAt": "2026-08-19T14:01:59+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0818.2214",
+      "title": "Correção: qualidade 4K da captura e do modo Alta no Relatório Final",
+      "description": "Correção: qualidade 4K da captura e do modo Alta no Relatório Final",
+      "publishedAt": "2026-08-18T22:16:23+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0818.2132",
+      "title": "Correção: corrigir tipos de emitFerragensTotalVisual (P3.28)",
+      "description": "Correção: corrigir tipos de emitFerragensTotalVisual (P3.28)",
+      "publishedAt": "2026-08-18T21:34:40+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0818.2129",
+      "title": "Correção: reativação da lista dinâmica de Ferragens no Financeiro (P3.28)",
+      "description": "Correção: reativação da lista dinâmica de Ferragens no Financeiro (P3.28)",
+      "publishedAt": "2026-08-18T20:29:57.950Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0818.1743",
+      "title": "Z-02.5: unificar Orbit, Pan e Zoom no MouseInputMapper",
+      "description": "Z-02.5: unificar Orbit, Pan e Zoom no MouseInputMapper",
+      "publishedAt": "2026-08-18T17:45:04+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "industrial-nqr-v5-prod-20260818-090336",
+      "title": "N-QR v5 unificado em produção",
+      "description": "N-QR v5 unificado em produção. • Metadata das Work Orders antigas corrigida na BD Supabase\n• Leitores QR activos em todas as páginas industriais\n• Fluxo PIMO TRAK consistente com etiquetas impressas\n• Runtime industrial alinhado com etiquetas v5 em todas as camadas",
+      "publishedAt": "2026-08-18T09:03:36.000Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0818.0930",
+      "title": "Regeneração das Work Orders antigas com N-QR v5 unificado",
+      "description": "Regeneração das Work Orders antigas com N-QR v5 unificado",
+      "publishedAt": "2026-08-18T09:32:50+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "industrial-nqr-v5-20260818-081510",
+      "title": "N-QR v5 unificado em todas as camadas do runtime industrial",
+      "description": "N-QR v5 unificado em todas as camadas do runtime industrial. • Identidade N-QR alinhada com etiquetas v5 (display + payload QR canónico)\n• Metadata industrial das Work Orders antigas regenerada com resolveAuthoritativeLabelNumber\n• Leitor QR activo em todas as páginas industriais (operador, supervisor, tracking, qualidade, etc.)\n• Fluxo PIMO TRAK consistente com etiquetas impressas - todas as páginas reconhecem o N-QR real",
+      "publishedAt": "2026-08-18T08:15:10.000Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0818.0907",
+      "title": "Regeneração das Work Orders antigas com N-QR v5 unificado",
+      "description": "Regeneração das Work Orders antigas com N-QR v5 unificado",
+      "publishedAt": "2026-08-18T09:08:53+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0818.0821",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-08-18T08:22:56+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0817.1203",
+      "title": "Integração industrial completa do TAMPO",
+      "description": "Integração industrial completa do TAMPO • Integração industrial completa do TAMPO\n• Chapa MDB 3660×630×30 (Fase A)\n• Geometria tipada sem (Fase B)\n• Ponte cutlist→produção com outerPolygonMm + innerContours (Fase C)\n• PDF industrial com polígono e recortes (Fase D)\n• TCN industrial com contorno poligonal + interiores (Fase E)\n• XML excluído por design (fresagem, não furação)\n• Regressão caixaria 19 mm intacta",
+      "publishedAt": "2026-08-17T12:05:06+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0817.0950",
+      "title": "Novidade: família AGL LAM BRANCO; fix(tampo): seleção no Viewer",
+      "description": "Novidade: família AGL LAM BRANCO; fix(tampo): seleção no Viewer",
+      "publishedAt": "2026-08-17T09:51:47+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "tampo-industrial-v1",
+      "title": "• Integração industrial completa do TAMPO",
+      "description": "• Integração industrial completa do TAMPO\n• Chapa MDB 3660×630×30 (Fase A)\n• Geometria tipada sem (Fase B)\n• Ponte cutlist→produção com outerPolygonMm + innerContours (Fase C)\n• PDF industrial com polígono e recortes (Fase D)\n• TCN industrial com contorno poligonal + interiores (Fase E)\n• XML excluído por design (fresagem, não furação)\n• Regressão caixaria 19 mm intacta",
+      "publishedAt": "2026-08-17T08:49:50.000Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0817.0859",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-08-17T09:01:36+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0817.0857",
+      "title": "Correção: geometria angular correta, ângulo real, postforming seguro; retangular intacto",
+      "description": "Correção: geometria angular correta, ângulo real, postforming seguro; retangular intacto",
+      "publishedAt": "2026-08-17T08:57:33+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "tampo-angle-geometry",
+      "title": "Correção TAMPO angular - geometria estável, frente≠trás, ângulo real, postforming seguro; montagem retangular intacta",
+      "description": "Correção TAMPO angular - geometria estável, frente≠trás, ângulo real, postforming seguro; montagem retangular intacta. • Trapézio com lado esquerdo a esquadria; frente em +Y; coordenadas em metros.\n• Ângulo real: atan2(trás − frente, 630).\n• Postforming só na aresta frontal; se o CSG colapsar, mantém-se o extrude.\n• Frente ≠ trás aceite (incluindo frente > trás).\n• TAMPO retangular (frente = trás / angleConfig == null) intacto",
+      "publishedAt": "2026-08-17T07:56:00.000Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0817.0833",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-08-17T08:34:47+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0817.0829",
+      "title": "Correção: comportamento correto para tampo angular sem quebrar montagem retangular",
+      "description": "Correção: comportamento correto para tampo angular sem quebrar montagem retangular",
+      "publishedAt": "2026-08-17T08:29:26+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "tampo-angular-pose",
+      "title": "Correção TAMPO angular - frente≠trás, pose horizontal, rotação preservada; montagem retangular intacta",
+      "description": "Correção TAMPO angular - frente≠trás, pose horizontal, rotação preservada; montagem retangular intacta. • TAMPO angular (angleConfig) deixa o pipeline de montagem da caixa (followBox / CIMA).\n• Frente ≠ trás aceite, incluindo frente > trás (ângulo negativo até −60°).\n• Pose horizontal (lay-flat); rotação guardada após sync.\n• TAMPO retangular (angleConfig == null) mantém followBox + CIMA.\n• Gavetas, portas, DIV, SEP, PI e remates AVISTA/L/COMPLETO intactos",
+      "publishedAt": "2026-08-17T07:27:00.000Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0816.1952",
+      "title": "Correção: incluir tampoVisualizer.getRoot no raycast de remates",
+      "description": "Correção: incluir tampoVisualizer.getRoot no raycast de remates",
+      "publishedAt": "2026-08-16T19:54:29+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0816.1950",
+      "title": "Correção: incluir tampoVisualizer.getRoot no raycast de remates",
+      "description": "Correção: incluir tampoVisualizer.getRoot no raycast de remates",
+      "publishedAt": "2026-08-16T19:50:49+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "tampo-raycast-fix",
+      "title": "Correção: TAMPO agora pode ser selecionado no Viewer (raycast roots)",
+      "description": "Correção: TAMPO agora pode ser selecionado no Viewer (raycast roots)",
+      "publishedAt": "2026-08-16T18:49:00.000Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0816.1934",
+      "title": "Novidade: presets industriais + suporte completo a trapézio (Fase 5)",
+      "description": "Novidade: presets industriais + suporte completo a trapézio (Fase 5)",
+      "publishedAt": "2026-08-16T19:35:44+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0816.1931",
+      "title": "Novidade: presets industriais + suporte completo a trapézio (Fase 5)",
+      "description": "Novidade: presets industriais + suporte completo a trapézio (Fase 5)",
+      "publishedAt": "2026-08-16T19:31:09+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "tampo-fase5-presets",
+      "title": "Nova fase do sistema TAMPO com suporte completo a trapézio e modelos pré-definidos",
+      "description": "Nova fase do sistema TAMPO com suporte completo a trapézio e modelos pré-definidos. • Presets industriais: Tampo 1 (1995→2303 mm) e Tampo 2 (1633→1818 mm).\n• Frente e trás com comprimentos diferentes (angleConfig).\n• Geometria em trapézio no Viewer (shape → postforming → recortes → união).\n• Postforming frontal, recortes e união entre tampos mantêm-se intactos.\n• UI TampoPresetSelector no fluxo Remate (modal e drawer).\n• Metadata tampoAngle na cutlist (sem linhas adicionais)",
+      "publishedAt": "2026-08-16T18:30:00.000Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "tampo-v1",
+      "title": "Sistema completo de tampo de cozinha",
+      "description": "Sistema completo de tampo de cozinha. • Matéria MDB Laminado 30 mm (3660×630, 30 €/m², laminado de fábrica).\n• Peça TAMPO_COZINHA no fluxo Remate (630×30, comprimento dinâmico).\n• Viewer com postforming frontal (~11 mm).\n• Recortes: fogão, pia, retangular, circular (CSG + metadata cutlist).\n• União entre tampos: overlap 5 - 10 mm (default 8), direcções LEFT/RIGHT/FRONT/BACK",
+      "publishedAt": "2026-08-16T14:40:00.000Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0816.1445",
+      "title": "Correção: tipagem do modal de recortes para build de deploy",
+      "description": "Correção: tipagem do modal de recortes para build de deploy",
+      "publishedAt": "2026-08-16T14:47:44+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0816.1442",
+      "title": "Novidade: matéria MDB laminado + viewer + recortes + união entre tampos",
+      "description": "Novidade: matéria MDB laminado + viewer + recortes + união entre tampos",
+      "publishedAt": "2026-08-16T13:42:51.228Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0815.1944",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-08-15T19:46:09+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v3-viewer-drawer-visual-flip-20260815-1942",
+      "title": "Correção: aplicar flip visual vertical do corpo da gaveta (indústria intacta)",
+      "description": "Correção: aplicar flip visual vertical do corpo da gaveta (indústria intacta)",
+      "publishedAt": "2026-08-15T19:42:07+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v3-viewer-drawer-visual-flip",
+      "title": "Camada visual isolada e removível (drawerVisualBodyFlip)",
+      "description": "Camada visual isolada e removível (drawerVisualBodyFlip). • Desnível grande (48 mm) no topo; pequeno (~20,5 mm) na base.\n• Frente e flush inalterados; corpo não penetra a frente.\n• Indústria 100% intacta (cutlist, XML, furação).\n• Flag DRAWER_VIEWER_BODY_VERTICAL_FLIP para reverter na revisão industrial",
+      "publishedAt": "2026-08-15T18:40:00.000Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0815.1534",
+      "title": "Encerramento do tópico DRILL + nota técnica de incompletude",
+      "description": "Encerramento do tópico DRILL + nota técnica de incompletude • Encerramento do tópico DRILL no desenvolvimento activo.\n• Simulador PIMO DRILL marcado como incompleto: sem inserção operativa de furos, validação completa ou fluxo operacional.\n• Migração futura do Design Industrial para o módulo DRILL fica adiada até nova ordem.\n• Estado actual: shell parcial (M0 - M1); não avançar fases",
+      "publishedAt": "2026-08-15T15:36:27+01:00",
+      "type": "docs",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0814.1702",
+      "title": "Novidade: Sistema Industrial Diff1+Diff2+Diff3 - modelo gavita 8 (corrediças Y, corpo, stack equal_quase)",
+      "description": "Novidade: Sistema Industrial Diff1+Diff2+Diff3 - modelo gavita 8 (corrediças Y, corpo, stack equal_quase)",
+      "publishedAt": "2026-08-14T17:03:53+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0814.full-gavetas-industrial-165950",
+      "title": "Release v6.0814.full-gavetas-industrial-165950",
+      "description": "Release v6.0814.full-gavetas-industrial-165950",
+      "publishedAt": "2026-08-14T16:59:41+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0814.1326",
+      "title": "Correção: GAV_1 frontBottom=2 mm para Δ industrial 22,5",
+      "description": "Correção: GAV_1 frontBottom=2 mm para Δ industrial 22,5",
+      "publishedAt": "2026-08-14T13:28:18+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0814.1321",
+      "title": "Correção: GAV_1 frontBottom=2 mm para Δ industrial 22,5",
+      "description": "Correção: GAV_1 frontBottom=2 mm para Δ industrial 22,5",
+      "publishedAt": "2026-08-14T13:23:44+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0812.2205",
+      "title": "Correção: alinhar GAV_1 com elevação 16,5 mm e ratio 0,685",
+      "description": "Correção: alinhar GAV_1 com elevação 16,5 mm e ratio 0,685",
+      "publishedAt": "2026-08-12T22:07:02+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0812.1540",
+      "title": "Novidade: financeiro dinâmico no relatório final (P3.27)",
+      "description": "Novidade: financeiro dinâmico no relatório final (P3.27)",
+      "publishedAt": "2026-08-12T15:42:47+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0812.1533",
+      "title": "Novidade: financeiro dinâmico no relatório final (P3.27)",
+      "description": "Novidade: financeiro dinâmico no relatório final (P3.27)",
+      "publishedAt": "2026-08-12T14:33:20.114Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.20260812.1533-p327-financeiro-dinamico",
+      "title": "Novidade: financeiro dinâmico no relatório final (P3.27)",
+      "description": "Novidade: financeiro dinâmico no relatório final (P3.27) Accordions editáveis em todas as linhas; motor visual sem alterar SSOT Unificado; overrides com badge e PDF anotado",
+      "publishedAt": "2026-08-12T15:32:58+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0812.1501",
+      "title": "Correção: unificar preços Painéis (ADMIN ↔ Relatório)",
+      "description": "Correção: unificar preços Painéis (ADMIN ↔ Relatório)",
+      "publishedAt": "2026-08-12T15:03:49+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.20260812.1459-p326-paineis-ssot",
+      "title": "Correção: unificar preços Painéis (ADMIN ↔ Relatório)",
+      "description": "Correção: unificar preços Painéis (ADMIN ↔ Relatório) P3.26 - totais oficiais só via Unificado; detalhe de chapas só visualização; overrides manuais sem reprecificar a base",
+      "publishedAt": "2026-08-12T14:59:27+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0812.0019",
+      "title": "Relatório Final sincronizado com o Financeiro ADMIN",
+      "description": "Relatório Final sincronizado com o Financeiro ADMIN:\n• SSOT = computeFinanceiroUnificado (Subtotal / IVA / Total)\n• Painéis = paineis + chapasReais (sem duplicação)\n• Sem recalculo interno nem fallbacks de chapas/ferragens\n• Totais do Relatório = totais do ADMIN",
+      "publishedAt": "2026-08-11T23:19:36.550Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0811.2344",
+      "title": "Correção do módulo Adicionar chapa e preço dinâmico no Painéis",
+      "description": "Correção do módulo Adicionar chapa e preço dinâmico no Painéis:\n• Modal com z-index e backdrop opaco correctos\n• Selecção adiciona chapa ao state (Painéis + espelho chapasReais)\n• Preço €/m e parcial recalculados ao alterar medidas ou €/m²\n• UI intacta (layout/accordions/estilo sem alterações)",
+      "publishedAt": "2026-08-11T22:44:22.511Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0811.2231",
+      "title": "Correções finais da página Financeiro (custos dinâmicos)",
+      "description": "Correções finais da página Financeiro (custos dinâmicos):\n• Caracteres UTF-8 correctos (Painéis ▸, Portas ▸, Gavetas ▸)\n• Remoção de «Prego para Costa» e nomes de peças do caixa\n• Accordions fechados por defeito; sem duplicações\n• Totais alinhados ao Financeiro Unificado (ADMIN)",
+      "publishedAt": "2026-08-11T21:31:36.612Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0811.2205",
+      "title": "Restauração completa do fluxo original da página Financeiro (custos dinâmicos)",
+      "description": "Restauração completa do fluxo original da página Financeiro (custos dinâmicos):\n• state → financeiroAdapter → financeiroIndustrialRules → financeiroTotals → UI\n• Blocos, detalhes e painéis originais (accordions abertos, chapas editáveis)\n• Unificado = SSOT dos totais oficiais; não constrói a UI detalhada\n• Sem simplificações P3.17 - P3.20; sem esconder nem colapsar blocos",
+      "publishedAt": "2026-08-11T21:05:06.154Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0811.2151",
+      "title": "Relatório Final: página «Financeiro (custos dinâmicos)» restaurada ao fluxo pré-P3.17",
+      "description": "Relatório Final: página «Financeiro (custos dinâmicos)» restaurada ao fluxo pré-P3.17.\nSeed/merge antigo com chapas e orla; UI completa com todos os blocos e detalhes editáveis.\nSem live-overwrite P3.17; sem simplificação P3.18; sem bloco Painéis separado P3.19.\nSSOT de cálculo permanece o Financeiro Unificado",
+      "publishedAt": "2026-08-11T20:51:28.954Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0811.2055",
+      "title": "Relatório Final: bloco «Financeiro (custos dinâmicos)» restaurado ao layout pré-P3.18",
+      "description": "Relatório Final: bloco «Financeiro (custos dinâmicos)» restaurado ao layout pré-P3.18.\nTodos os blocos visíveis com accordions e detalhes (Adicionar chapa, Portas, Gavetas, Ferragens, Orla, Remates, Ops, Desperdício, Serragem, MO, Logística, Ops avançadas, ADM, Montagem, Portes, IVA, Total).\nSem alteração de pipelines industriais nem do Financeiro Unificado; Painéis dedicado mantém-se",
+      "publishedAt": "2026-08-11T19:55:05.504Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0811.1941",
+      "title": "Correcções de interface",
+      "description": "Correcções de interface:\n• Financeiro ADMIN: removido «€/chapa derivado»; Painéis mostra o custo total das chapas (sem duplicar Chapas reais)\n• Relatório Final: bloco Painéis restaurado (chapas reais editáveis - nomes, medidas, €/m², totais)\n• Totais oficiais continuam live do Financeiro Unificado (sem reprecificar pipelines industriais)",
+      "publishedAt": "2026-08-11T18:41:19.592Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0813.release",
+      "title": "Release - Independência das prateleiras + Correções industriais do gaveteiro",
+      "description": "Release - Independência das prateleiras + Correções industriais do gaveteiro",
+      "publishedAt": "2026-08-11T16:29:24+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0813.1500",
+      "title": "Correcção industrial completa das gavetas, incluindo orientação correta da frente GAV_FRENTE_EXT_01 no XML, restauraç",
+      "description": "Correcção industrial completa das gavetas, incluindo orientação correta da frente GAV_FRENTE_EXT_01 no XML, restauração dos furos de cavilha ausentes em GAV_LAT_DIR_01 e GAV_LAT_ESQ_01, validação das dimensões dinâmicas conforme caixa e trilho, compatibilidade total com furação lateral do trilho, e garantia de produção CNC correta para todas as gavetas",
+      "publishedAt": "2026-08-11T14:00:00.000Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0812.1445",
+      "title": "Correção completa das peças do gaveteiro, incluindo orientação correta da peça GAV_FRENTE_EXT_01 no XML, adição dos f",
+      "description": "Correção completa das peças do gaveteiro, incluindo orientação correta da peça GAV_FRENTE_EXT_01 no XML, adição dos furos de cavilha ausentes em GAV_LAT_DIR_01 e GAV_LAT_ESQ_01, e validação da coerência estrutural entre todas as gavetas.\nInclui verificação das dimensões dinâmicas conforme caixa e trilho, compatibilidade com furação lateral do trilho, e garantia de produção industrial correta para CNC",
+      "publishedAt": "2026-08-11T13:45:00.000Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0811.1423",
+      "title": "Implementação industrial que separa completamente o comportamento das prateleiras da geometria DIV/SEP",
+      "description": "Implementação industrial que separa completamente o comportamento das prateleiras da geometria DIV/SEP.\nInclui planos full/short dinâmicos conforme a área disponível, furação autónoma baseada apenas na direcção e grelha, margens superiores/inferiores, grelha contínua ou segmentada, passo 32/64 mm, migração dinâmica sem mover SEP ou DIV, e validação completa (74/74 testes).\nComportamento final: prateleiras independentes, DIV/SEP fixos, furação correcta em todas as direcções",
+      "publishedAt": "2026-08-11T13:23:00.000Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0810.2308",
+      "title": "Expansão Prateleiras DIV/SEP - Direção dinâmica + grelha segmentada + margens",
+      "description": "Expansão Prateleiras DIV/SEP - Direção dinâmica + grelha segmentada + margens Expansão industrial completa do sistema de prateleiras para caixas com DIV e SEP.\nInclui direção configurável (Direita, Esquerda, Superior, Inferior), passo 32/64 mm, grelha contínua ou segmentada (blocos 4 - 8), margens superiores/inferiores com centragem automática, migração dinâmica com SEP parcial, integração total com 3D, cutlist e furação industrial.\nValidação completa: 44 testes núcleo + integração cutlist/phaseG/drillingAdapter",
+      "publishedAt": "2026-08-10T23:10:24+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0810.2057",
+      "title": "Correção industrial que garante que, ao mover o SEP 2 para Esquerda/Direita, todas as regras e furos migram com a peç",
+      "description": "Correção industrial que garante que, ao mover o SEP 2 para Esquerda/Direita, todas as regras e furos migram com a peça. O lado livre passa a ter grelha contínua de prateleiras (LAT + DIV), sem intervalos ou furos residuais. SEP parcial deixa de cortar o lado oposto; DIV mantém altura completa. Inclui validação total (67/67 testes) e Phase G",
+      "publishedAt": "2026-08-10T20:59:11+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0810.1645",
+      "title": "Release v6.0810.1645",
+      "description": "Release v6.0810.1645",
+      "publishedAt": "2026-08-10T16:47:27+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0810.1624",
+      "title": "Activada a regra única «Redução das laterais (%)» no Admin (Regras das Gavetas). Um percentual inteiro define o facto",
+      "description": "Activada a regra única «Redução das laterais (%)» no Admin (Regras das Gavetas). Um percentual inteiro define o factor (1 − %/100) aplicado a laterais, costa e frente interna, com cascata Parametrics → layers → viewer → cutlist → CNC",
+      "publishedAt": "2026-08-10T15:45:32.890Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0810.1503",
+      "title": "Novidade: percentuais Admin para altura de laterais e costa",
+      "description": "Novidade: percentuais Admin para altura de laterais e costa",
+      "publishedAt": "2026-08-10T15:05:05+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0809.1947",
+      "title": "PIMO - Relatório/Financeiro: remover Chapas reais da UI e título Gavetas limpo",
+      "description": "PIMO - Relatório/Financeiro: remover Chapas reais da UI e título Gavetas limpo",
+      "publishedAt": "2026-08-09T19:48:45+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0809.1929",
+      "title": "PIMO - Relatório Final: reforma visual (painel cards + feedback unificado)",
+      "description": "PIMO - Relatório Final: reforma visual (painel cards + feedback unificado)",
+      "publishedAt": "2026-08-09T19:31:22+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0809.1431",
+      "title": "PIMO - Release v6.0809.1402 (Relatório Final v3.2) - baseline oficial sem alterações adicionais",
+      "description": "PIMO - Release v6.0809.1402 (Relatório Final v3.2) - baseline oficial sem alterações adicionais",
+      "publishedAt": "2026-08-09T14:32:56+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0809.1402",
+      "title": "PIMO - Relatório Final v3.2: Painéis com chapas (L×A), preço por metro, sem secção Materiais",
+      "description": "PIMO - Relatório Final v3.2: Painéis com chapas (L×A), preço por metro, sem secção Materiais",
+      "publishedAt": "2026-08-09T14:04:15+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0809.1335",
+      "title": "PIMO - Financeiro Industrial v3.1: correção final de portas=0€, gavetas=15€, remates=0€, chapas reais como fonte única",
+      "description": "PIMO - Financeiro Industrial v3.1: correção final de portas=0€, gavetas=15€, remates=0€, chapas reais como fonte única",
+      "publishedAt": "2026-08-09T13:37:00+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0809.1238",
+      "title": "PIMO - Financeiro Industrial v3.0: modo chapas reais por defeito, remates a 0€, gavetas 15€, ferragens unificadas",
+      "description": "PIMO - Financeiro Industrial v3.0: modo chapas reais por defeito, remates a 0€, gavetas 15€, ferragens unificadas",
+      "publishedAt": "2026-08-09T12:40:25+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0808.2334",
+      "title": "PIMO - Financeiro v2.2: accordions nos itens, correção de Orla, preços editáveis",
+      "description": "PIMO - Financeiro v2.2: accordions nos itens, correção de Orla, preços editáveis",
+      "publishedAt": "2026-08-08T23:36:43+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v2.2-financeiro",
+      "title": "PIMO - Financeiro v2.2: accordions nos itens, correção de Orla, preços editáveis",
+      "description": "PIMO - Financeiro v2.2: accordions nos itens, correção de Orla, preços editáveis",
+      "publishedAt": "2026-08-08T23:33:08+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0808.2316",
+      "title": "PIMO - Relatório Final v2.1: cartões adicionais no Painel gráfico + cálculo por m² nos Paineis",
+      "description": "PIMO - Relatório Final v2.1: cartões adicionais no Painel gráfico + cálculo por m² nos Paineis",
+      "publishedAt": "2026-08-08T23:18:06+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v2.1-relatorio-final",
+      "title": "PIMO - Relatório Final v2.1: cartões adicionais no Painel gráfico + cálculo por m² nos Paineis",
+      "description": "PIMO - Relatório Final v2.1: cartões adicionais no Painel gráfico + cálculo por m² nos Paineis",
+      "publishedAt": "2026-08-08T23:14:25+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0808.2247",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-08-08T22:49:03+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0808.2208",
+      "title": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1)",
+      "description": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1) - Conclusão das Fases A/B/C/D/E/F\n- Sistema Industrial completo (cx_gav, gaveta_porta_sep, SEP parcial, a_1)\n- Consolidação industrial (Industrial Admin System)\n- Nova página: Industrial Models (UI)\n- Pipeline clássico intacto\n- 45/45 testes verdes",
+      "publishedAt": "2026-08-08T22:10:17+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0808.2151",
+      "title": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1)",
+      "description": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1) - Conclusão das Fases A/B/C/D/E/F\n- Sistema Industrial completo (cx_gav, gaveta_porta_sep, SEP parcial, a_1)\n- Consolidação industrial (Industrial Admin System)\n- Nova página: Industrial Models (UI)\n- Pipeline clássico intacto\n- 45/45 testes verdes",
+      "publishedAt": "2026-08-08T21:53:12+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0808.2128",
+      "title": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1)",
+      "description": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1) - Conclusão das Fases A/B/C/D/E/F\n- Sistema Industrial completo (cx_gav, gaveta_porta_sep, SEP parcial, a_1)\n- Consolidação industrial (Industrial Admin System)\n- Nova página: Industrial Models (UI)\n- Pipeline clássico intacto\n- 45/45 testes verdes",
+      "publishedAt": "2026-08-08T21:30:31+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0808.2058",
+      "title": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1)",
+      "description": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1) - Conclusão das Fases A/B/C/D/E/F\n- Sistema Industrial completo (cx_gav, gaveta_porta_sep, SEP parcial, a_1)\n- Consolidação industrial (Industrial Admin System)\n- Nova página: Industrial Models (UI)\n- Pipeline clássico intacto\n- 45/45 testes verdes",
+      "publishedAt": "2026-08-08T20:59:58+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0808.2034",
+      "title": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1)",
+      "description": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1) - Conclusão das Fases A/B/C/D/E/F\n- Sistema Industrial completo (cx_gav, gaveta_porta_sep, SEP parcial, a_1)\n- Consolidação industrial (Industrial Admin System)\n- Nova página: Industrial Models (UI)\n- Pipeline clássico intacto\n- 45/45 testes verdes",
+      "publishedAt": "2026-08-08T20:35:56+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0808.2021",
+      "title": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1)",
+      "description": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1) - Conclusão das Fases A/B/C/D/E/F\n- Sistema Industrial completo (cx_gav, gaveta_porta_sep, SEP parcial, a_1)\n- Consolidação industrial (Industrial Admin System)\n- Nova página: Industrial Models (UI)\n- Pipeline clássico intacto\n- 45/45 testes verdes",
+      "publishedAt": "2026-08-08T20:23:03+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0808.1853",
+      "title": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1)",
+      "description": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1) - Conclusão das Fases A/B/C/D/E/F\n- Sistema Industrial completo (cx_gav, gaveta_porta_sep, SEP parcial, a_1)\n- Consolidação industrial (Industrial Admin System)\n- Nova página: Industrial Models (UI)\n- Pipeline clássico intacto\n- 45/45 testes verdes",
+      "publishedAt": "2026-08-08T18:55:34+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0808.1849",
+      "title": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1)",
+      "description": "Fases A - F concluídas - Sistema Industrial + Industrial Admin UI (parte 1) - Conclusão das Fases A/B/C/D/E/F\n- Sistema Industrial completo (cx_gav, gaveta_porta_sep, SEP parcial, a_1)\n- Consolidação industrial (Industrial Admin System)\n- Nova página: Industrial Models (UI)\n- Pipeline clássico intacto\n- 45/45 testes verdes",
+      "publishedAt": "2026-08-08T17:49:39.616Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0808.1523",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-08-08T15:25:44+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0808.0321",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-08-08T02:21:10.535Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0807.2055",
+      "title": "Release - Nova versão completa sincronizada do projeto",
+      "description": "Release - Nova versão completa sincronizada do projeto",
+      "publishedAt": "2026-08-07T19:55:05.095Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v-full-release",
+      "title": "Release - Versão completa sincronizada do projeto",
+      "description": "Release - Versão completa sincronizada do projeto",
+      "publishedAt": "2026-08-07T20:29:03+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0807.1245",
+      "title": "Régua unificada - implementação completa",
+      "description": "Régua unificada - implementação completa",
+      "publishedAt": "2026-08-07T12:45:19+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0806.1609",
+      "title": "Correção final DIV+SEP - altura exacta (1990,5), furos 2000, gap 0, remoção do Math.round no cutlist, validação de in",
+      "description": "Correção final DIV+SEP - altura exacta (1990,5), furos 2000, gap 0, remoção do Math.round no cutlist, validação de integração concluída",
+      "publishedAt": "2026-08-06T16:11:46+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0806.1545",
+      "title": "Correção matemática DIV+SEP - altura do DIV agora igual à distância rosto FUNDO → rosto SEP; folga vertical anulada (",
+      "description": "Correção matemática DIV+SEP - altura do DIV agora igual à distância rosto FUNDO → rosto SEP; folga vertical anulada (gap 0), furos laterais mantidos no centro da peça (positionMm); modelo industrial T/2 exacto respeitado (DIV=2000 → furos=2009.5 com T=19, 2008 com T=16); 52 testes a passar, encaixe rosto a rosto sem desvio",
+      "publishedAt": "2026-08-06T15:46:58+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0806.1533",
+      "title": "Correção matemática DIV+SEP - altura do DIV agora igual à distância rosto FUNDO → rosto SEP; folga vertical anulada (",
+      "description": "Correção matemática DIV+SEP - altura do DIV agora igual à distância rosto FUNDO → rosto SEP; folga vertical anulada (gap 0), furos laterais mantidos no centro da peça (positionMm); modelo industrial T/2 exacto respeitado (DIV=2000 → furos=2009.5 com T=19, 2008 com T=16); 52 testes a passar, encaixe rosto a rosto sem desvio",
+      "publishedAt": "2026-08-06T15:35:22+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0806.1456",
+      "title": "Correção: remover variável dims não usada em drillTopBottomForDiv (build tsc)",
+      "description": "Correção: remover variável dims não usada em drillTopBottomForDiv (build tsc)",
+      "publishedAt": "2026-08-06T14:58:36+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0806.1237",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-08-06T12:39:41+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0805.1648",
+      "title": "Correção: SEP LAT Y alinhado e rasgo frente gaveta Width 11",
+      "description": "Correção: SEP LAT Y alinhado e rasgo frente gaveta Width 11 Furos SEP nas laterais com Y = absoluteY − T (Viewer/cutlist/DRILL/TCN alinhados). Rasgo inferior da frente da gaveta: Width 11 mm, Depth 11 mm, centro intacto",
+      "publishedAt": "2026-08-05T16:52:56+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v-ref-quadroV6-38b1-0805",
+      "title": "Correção: Quadro V6 intermédios oficiais 38+b1(NL)",
+      "description": "Correção: Quadro V6 intermédios oficiais 38+b1(NL)",
+      "publishedAt": "2026-08-05T16:52:56+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0805.1621",
+      "title": "Correção: SEP LAT Y alinhado e rasgo frente gaveta Width 11",
+      "description": "Correção: SEP LAT Y alinhado e rasgo frente gaveta Width 11 Furos SEP nas laterais com Y = absoluteY − T (Viewer/cutlist/DRILL/TCN alinhados). Rasgo inferior da frente da gaveta: Width 11 mm, Depth 11 mm, centro intacto",
+      "publishedAt": "2026-08-05T16:24:02+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0805.1551",
+      "title": "Correção: SEP LAT Y alinhado e rasgo frente gaveta Width 11",
+      "description": "Correção: SEP LAT Y alinhado e rasgo frente gaveta Width 11 Furos SEP nas laterais com Y = absoluteY − T (Viewer/cutlist/DRILL/TCN alinhados). Rasgo inferior da frente da gaveta: Width 11 mm, Depth 11 mm, centro intacto",
+      "publishedAt": "2026-08-05T15:54:25+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0805.1519",
+      "title": "Correção: SEP LAT Y alinhado e rasgo frente gaveta Width 11",
+      "description": "Correção: SEP LAT Y alinhado e rasgo frente gaveta Width 11 Furos SEP nas laterais com Y = absoluteY − T (Viewer/cutlist/DRILL/TCN alinhados). Rasgo inferior da frente da gaveta: Width 11 mm, Depth 11 mm, centro intacto",
+      "publishedAt": "2026-08-05T15:22:45+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0805.1229",
+      "title": "Novidade: SSOT na seleção, texturas reais e cartas por família",
+      "description": "Novidade: SSOT na seleção, texturas reais e cartas por família A seleção de materiais foi totalmente alinhada com o SSOT, garantindo nomes corretos, texturas reais, espessuras separadas e integração direta com o 3D. Eliminados nomes antigos com números anexados (Carvalho 10, Nogueira 16, etc.)",
+      "publishedAt": "2026-08-05T12:32:08+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0805.1221",
+      "title": "Novidade: SSOT na seleção, texturas reais e cartas por família",
+      "description": "Novidade: SSOT na seleção, texturas reais e cartas por família",
+      "publishedAt": "2026-08-05T11:21:34.300Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v2026.08-financeiro-manual-modes",
+      "title": "Correção: mão de obra só com EUR manual Admin",
+      "description": "Correção: mão de obra só com EUR manual Admin",
+      "publishedAt": "2026-08-04T17:36:41+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0804.1713",
+      "title": "Correção: restaurar ORLA completa e gavetas a 15 EUR",
+      "description": "Correção: restaurar ORLA completa e gavetas a 15 EUR",
+      "publishedAt": "2026-08-04T17:12:43+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0804.1641",
+      "title": "Documentação: activação controlada Chapas Reais só via Admin (Fase 5E)",
+      "description": "Documentação: activação controlada Chapas Reais só via Admin (Fase 5E)",
+      "publishedAt": "2026-08-04T16:27:53+01:00",
+      "type": "docs",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v-next-ferragens3d-ui.1",
+      "title": "Correção.htaccess em /industrial para SPA nao receber 403 da pasta release/",
+      "description": "Correção.htaccess em /industrial para SPA nao receber 403 da pasta release/",
+      "publishedAt": "2026-08-04T12:34:35+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v-next-ferragens3d-ui",
+      "title": "Release v-next-ferragens3d-ui",
+      "description": "Release v-next-ferragens3d-ui",
+      "publishedAt": "2026-08-04T12:24:12+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0803.abd",
+      "title": "Release v6.0803.abd",
+      "description": "Release v6.0803.abd",
+      "publishedAt": "2026-08-03T22:18:41+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0803.2052",
+      "title": "Industrial: Elevação real do gaveta inferior",
+      "description": "Industrial: Elevação real do gaveta inferior Corpo a T+18,5 mm (18,5 mm acima do topo do FUNDO). Frente Y=0. Pairing dos furos preservado. Viewer e merge SSOT corrigidos",
+      "publishedAt": "2026-08-03T20:57:36+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0803.1946",
+      "title": "Industrial: Unificação geométrica das gavetas",
+      "description": "Industrial: Unificação geométrica das gavetas Laterais/costas/frentes iguais (sideH = h−64,5). Corpo inferior 18,5 mm. Folga superior ≥33 mm (elev 12,5). Pairing dos furos preservado. Gap 4 mm; piso 41 mm intacto",
+      "publishedAt": "2026-08-03T19:50:48+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0803.1733",
+      "title": "Industrial: Correção geométrica gavetas 2/3 alinhada ao modelo SolidWorks - contrato 41 mm preservado",
+      "description": "Industrial: Correção geométrica gavetas 2/3 alinhada ao modelo SolidWorks - contrato 41 mm preservado",
+      "publishedAt": "2026-08-03T17:37:46+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0803.1648",
+      "title": "Industrial: Conclusão do plano de correção (Fases 1 - 4) - estabilidade financeira e SSOT consolidado",
+      "description": "Industrial: Conclusão do plano de correção (Fases 1 - 4) - estabilidade financeira e SSOT consolidado",
+      "publishedAt": "2026-08-03T16:52:40+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0803.1531",
+      "title": "Industrial: Correções finais DRILL - Ø4→Ø5, Z centrado, laterais módulo alinhadas ao XML golden",
+      "description": "Industrial: Correções finais DRILL - Ø4→Ø5, Z centrado, laterais módulo alinhadas ao XML golden",
+      "publishedAt": "2026-08-03T15:36:00+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0803.1529",
+      "title": "Industrial: Correções finais DRILL - Ø4→Ø5, Z centrado, laterais módulo alinhadas ao XML golden",
+      "description": "Industrial: Correções finais DRILL - Ø4→Ø5, Z centrado, laterais módulo alinhadas ao XML golden",
+      "publishedAt": "2026-08-03T15:28:37+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0803.1135",
+      "title": "Correção: alinhar gaveta_lat_* ao SSOT transversal cx gav lat",
+      "description": "Correção: alinhar gaveta_lat_* ao SSOT transversal cx gav lat",
+      "publishedAt": "2026-08-03T11:38:50+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0803.1132",
+      "title": "Correção: alinhar gaveta_lat_* ao SSOT transversal cx gav lat",
+      "description": "Correção: alinhar gaveta_lat_* ao SSOT transversal cx gav lat",
+      "publishedAt": "2026-08-03T11:35:45+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0803.1129",
+      "title": "Correção: alinhar gaveta_lat_* ao SSOT transversal cx gav lat",
+      "description": "Correção: alinhar gaveta_lat_* ao SSOT transversal cx gav lat",
+      "publishedAt": "2026-08-03T10:29:06.117Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.2355",
+      "title": "Ajustes industriais · navegação e chrome",
+      "description": "Ajustes industriais · navegação e chrome Correção do chrome global, navegação SUP/NES/DRI/ORL/MON/EMB por projecto, naming correcto em Ordem · Drill e Estação · Nesting, remoção de caracteres estranhos e unificação visual",
+      "publishedAt": "2026-08-01T23:58:31+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.2255",
+      "title": "Naming industrial · unificação completa",
+      "description": "Naming industrial · unificação completa Aplicação das Fases A+B+C. Unificação de nomes de projecto, rotas industriais por projecto, correção de relatório final, correção de links, eliminação de pimo-* como display, normalização de slug, anchors industriais e integração com cutlist, etiquetas e QR",
+      "publishedAt": "2026-08-01T22:58:44+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.2251",
+      "title": "Naming industrial · unificação completa",
+      "description": "Naming industrial · unificação completa Aplicação das Fases A+B+C. Unificação de nomes de projecto, rotas industriais por projecto, correção de relatório final, correção de links, eliminação de pimo-* como display, normalização de slug, anchors industriais e integração com cutlist, etiquetas e QR",
+      "publishedAt": "2026-08-01T21:51:47.533Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.2154",
+      "title": "TopBar-TRK · Cabeçalho industrial unificado",
+      "description": "TopBar-TRK · Cabeçalho industrial unificado Reestruturação do chrome por módulo. Páginas industriais passam a usar o novo TopBarTrak com título dinâmico, indicadores reais (tarefas activas, ordens, online/offline) e sessão do uútilizador. Remoção do Navbar antigo nas rotas TRK",
+      "publishedAt": "2026-08-01T21:57:33+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.2057",
+      "title": "Correção: remove unused SupervisorAlertItem import blocking industrial build",
+      "description": "Correção: remove unused SupervisorAlertItem import blocking industrial build",
+      "publishedAt": "2026-08-01T21:01:03+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.2054",
+      "title": "Correção: remove unused SupervisorAlertItem import blocking industrial build",
+      "description": "Correção: remove unused SupervisorAlertItem import blocking industrial build",
+      "publishedAt": "2026-08-01T20:57:48+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.2047",
+      "title": "Industrial UI: tema global nas Ordens/Estacoes; remover Finalization Layer falsa (estacoes, supervisor, operador)",
+      "description": "Industrial UI: tema global nas Ordens/Estacoes; remover Finalization Layer falsa (estacoes, supervisor, operador)",
+      "publishedAt": "2026-08-01T19:47:15.503Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.2045",
+      "title": "Industrial UI: tema global nas Ordens/Estacoes; remover Finalization Layer falsa (estacoes, supervisor, operador)",
+      "description": "Industrial UI: tema global nas Ordens/Estacoes; remover Finalization Layer falsa (estacoes, supervisor, operador)",
+      "publishedAt": "2026-08-01T19:45:38.961Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.1914",
+      "title": "Ordem: StationPageShell + QR bulk/ações em grupo; contraste light; Portas sem double-count material",
+      "description": "Ordem: StationPageShell + QR bulk/ações em grupo; contraste light; Portas sem double-count material",
+      "publishedAt": "2026-08-01T19:17:53+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.1911",
+      "title": "Ordem: StationPageShell + QR bulk/ações em grupo; contraste light; Portas sem double-count material",
+      "description": "Ordem: StationPageShell + QR bulk/ações em grupo; contraste light; Portas sem double-count material",
+      "publishedAt": "2026-08-01T19:14:34+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.1839",
+      "title": "Industrial Stations: seleção múltipla, leitura QR bulk, ações em grupo (Iniciar/Concluir/Rejeitar)",
+      "description": "Industrial Stations: seleção múltipla, leitura QR bulk, ações em grupo (Iniciar/Concluir/Rejeitar)",
+      "publishedAt": "2026-08-01T18:42:24+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.1835",
+      "title": "Industrial Stations: seleção múltipla, leitura QR bulk, ações em grupo (Iniciar/Concluir/Rejeitar)",
+      "description": "Industrial Stations: seleção múltipla, leitura QR bulk, ações em grupo (Iniciar/Concluir/Rejeitar)",
+      "publishedAt": "2026-08-01T18:38:51+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.1519",
+      "title": "Atualização do ProjectState: Designer, Empresa executora, Materiais + integração Relatorio Final/PDF",
+      "description": "Atualização do ProjectState: Designer, Empresa executora, Materiais + integração Relatorio Final/PDF",
+      "publishedAt": "2026-08-01T15:23:27+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.1516",
+      "title": "Atualização do ProjectState: Designer, Empresa executora, Materiais + integração Relatorio Final/PDF",
+      "description": "Atualização do ProjectState: Designer, Empresa executora, Materiais + integração Relatorio Final/PDF",
+      "publishedAt": "2026-08-01T15:19:38+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.1240",
+      "title": "Relatório Final: PDF, histórico, notas, qualidade, integração TRAK/Industrial",
+      "description": "Relatório Final: PDF, histórico, notas, qualidade, integração TRAK/Industrial",
+      "publishedAt": "2026-08-01T12:43:24+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0801.1137",
+      "title": "Hotfix: cotagem engenheirada de trilho no Layout de Corte manual (38/204/41, sem repetição, cotas externas)",
+      "description": "Hotfix: cotagem engenheirada de trilho no Layout de Corte manual (38/204/41, sem repetição, cotas externas)",
+      "publishedAt": "2026-08-01T11:40:50+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v1.1.2-layout-corte-manual-rail",
+      "title": "Hotfix: cotagem engenheirada de trilho no Layout de Corte manual (38/204/41, sem repetição, cotas externas)",
+      "description": "Hotfix: cotagem engenheirada de trilho no Layout de Corte manual (38/204/41, sem repetição, cotas externas)",
+      "publishedAt": "2026-08-01T11:35:41+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v-ref-layout-corte-manual-0731",
+      "title": "Nova funcionalidade: Layout de Corte manual (PDF úúnico com furos coloridos, cotas inteligentes e rasgos). Integração",
+      "description": "Nova funcionalidade: Layout de Corte manual (PDF úúnico com furos coloridos, cotas inteligentes e rasgos). Integração na UI e no Gerar arquivo completo",
+      "publishedAt": "2026-07-31T22:52:24+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0731.2248",
+      "title": "Nova funcionalidade: Layout de Corte manual (PDF úúnico com furos coloridos, cotas inteligentes e rasgos). Integração",
+      "description": "Nova funcionalidade: Layout de Corte manual (PDF úúnico com furos coloridos, cotas inteligentes e rasgos). Integração na UI e no Gerar arquivo completo",
+      "publishedAt": "2026-07-31T21:48:57.913Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v1.1.0-layout-corte-manual",
+      "title": "Nova funcionalidade: Layout de Corte manual (PDF úúnico com furos coloridos, cotas inteligentes e rasgos). Integração",
+      "description": "Nova funcionalidade: Layout de Corte manual (PDF úúnico com furos coloridos, cotas inteligentes e rasgos). Integração na UI e no Gerar arquivo completo",
+      "publishedAt": "2026-07-31T22:44:33+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0731.2148",
+      "title": "Atualização: melhorias no Layout de Corte PRO (nome completo, miniatura landscape, ajuste de colunas, altura das linh",
+      "description": "Atualização: melhorias no Layout de Corte PRO (nome completo, miniatura landscape, ajuste de colunas, altura das linhas). Preparação para Layout de Corte manual",
+      "publishedAt": "2026-07-31T21:51:00+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v-ref-layout-corte-pro-0731",
+      "title": "Atualização: melhorias no Layout de Corte PRO (nome completo, miniatura landscape, ajuste de colunas, altura das linh",
+      "description": "Atualização: melhorias no Layout de Corte PRO (nome completo, miniatura landscape, ajuste de colunas, altura das linhas). Preparação para Layout de Corte manual",
+      "publishedAt": "2026-07-31T21:51:00+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0731.2021",
+      "title": "Novidade: SSOT cavilha 10x30↔10x13 + CAVILHA_10x40 (gavetas, módulos, cantos)",
+      "description": "Novidade: SSOT cavilha 10x30↔10x13 + CAVILHA_10x40 (gavetas, módulos, cantos)",
+      "publishedAt": "2026-07-31T20:23:35+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0731.1441",
+      "title": "Gaveta - remoção total de furações indevidas (Ø5 mm) nas laterais e costa. `calcCorredica` descontinuado, `computeDra",
+      "description": "Gaveta - remoção total de furações indevidas (Ø5 mm) nas laterais e costa. `calcCorredica` descontinuado, `computeDrawerPieceCorredicaHoles` no-op, `shouldDrillCorredicaOnDrawerPieceType=false`. Pipeline limpo: apenas cavilhas + rasgo inferior. XML/CNC/PDF alinhados. 78/78 testes + 8 novos OK",
+      "publishedAt": "2026-07-31T14:43:01+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0731.1253",
+      "title": "Corrediças - padrão de marcação industrial actualizado. X1=38 mm, X_last=D−38 mm, distribuição proporcional 4/5 furos",
+      "description": "Corrediças - padrão de marcação industrial actualizado. X1=38 mm, X_last=D−38 mm, distribuição proporcional 4/5 furos por NL, profundidade 1 mm (mark-only), simetria L/R, compatível com Quadro V6 (CC). Nenhum impacto no SSOT estrutural, interlock, cavilhas, XML ou PDF. 64/64 testes OK",
+      "publishedAt": "2026-07-31T12:54:43+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0730.2042",
+      "title": "Gavetas - Sistema de cavilhas com interlock completo. Profundidades dinâmicas (face/espessura), Y paramétrico (39/30)",
+      "description": "Gavetas - Sistema de cavilhas com interlock completo. Profundidades dinâmicas (face/espessura), Y paramétrico (39/30), centro T/2, sincronização lateral↔frente↔costa, espelhamento L/R, XML alinhado ao SSOT. Correcção do layout PDF (cutLayoutEngine/cutLayoutPdf/cutLayoutGeomRotation) para incluir cavilhas de aresta sem filtro topDrillable. 71/71 + 5/5 + 13/13 testes OK",
+      "publishedAt": "2026-07-30T20:47:03+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0730.1847",
+      "title": "Versão de referência industrial - Quadro V6 YOU M Silent System + etiquetas L/R. Marcada como estável: v-ref-quadroV6",
+      "description": "Versão de referência industrial - Quadro V6 YOU M Silent System + etiquetas L/R. Marcada como estável: v-ref-quadroV6-youM-0730",
+      "publishedAt": "2026-07-30T18:49:20+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0730.1844",
+      "title": "Versão de referência industrial - Quadro V6 YOU M Silent System + etiquetas L/R. Marcada como estável: v-ref-quadroV6",
+      "description": "Versão de referência industrial - Quadro V6 YOU M Silent System + etiquetas L/R. Marcada como estável: v-ref-quadroV6-youM-0730",
+      "publishedAt": "2026-07-30T17:44:06.606Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v-ref-quadroV6-youM-0730",
+      "title": "Versão de referência industrial - Quadro V6 YOU M Silent System + etiquetas L/R",
+      "description": "Versão de referência industrial - Quadro V6 YOU M Silent System + etiquetas L/R. • Catálogo Quadro V6 YOU M Silent System (X1=38 mm, X2=b1−1, Y=41 mm).\n• Furação laterais: espelhamento L/R, clamp e anti-overlap DIV/SEP.\n• Etiquetas industriais invertidas apenas no fabrico (Viewer/cutlist correctos).\n• Marcada como versão estável de referência: v-ref-quadroV6-youM-0730",
+      "publishedAt": "2026-07-30T17:34:39.015Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0730.1635",
+      "title": "Novidades do Sistema - novo fluxo completo de gavetas com Ferragens global/individual e Hettich ArciTech como corredi",
+      "description": "Novidades do Sistema - novo fluxo completo de gavetas com Ferragens global/individual e Hettich ArciTech como corrediça padrão",
+      "publishedAt": "2026-07-30T16:37:05+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v-next-gavetas-arciTech",
+      "title": "Novidades do Sistema - novo fluxo completo de gavetas com Ferragens global/individual e Hettich ArciTech como corredi",
+      "description": "Novidades do Sistema - novo fluxo completo de gavetas com Ferragens global/individual e Hettich ArciTech como corrediça padrão. • Ferragens global no topo da ficha de gavetas (aplicar a todas).\n• Controlo individual por gaveta com prioridade (hardwareSource).\n• Hettich ArciTech como sistema de corrediça padrão.\n• Genérica mantida como opção secundária seleccionável.\n• Fingerprint e Viewer actualizados para rebuild correcto",
+      "publishedAt": "2026-07-30T16:31:54+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0730.1559",
+      "title": "Novidades do Sistema - correção de encoding nas novas fichas de gavetas. Textos PT agora 100% UTF-8 sem BOM, sem símb",
+      "description": "Novidades do Sistema - correção de encoding nas novas fichas de gavetas. Textos PT agora 100% UTF-8 sem BOM, sem símbolos estranhos",
+      "publishedAt": "2026-07-30T16:01:13+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v-next-utf8-gavetas",
+      "title": "Novidades do Sistema - correção de encoding nas novas fichas de gavetas. Textos PT agora 100% UTF-8 sem BOM, sem símb",
+      "description": "Novidades do Sistema - correção de encoding nas novas fichas de gavetas. Textos PT agora 100% UTF-8 sem BOM, sem símbolos estranhos. • Correção de encoding nas novas fichas de gavetas.\n• Ficheiro convertido para UTF-8 sem BOM.\n• Remoção de símbolos estranhos (mojibake) em textos PT.\n• Normalização de acentuação: configurações, corrediça, cartão, padrão, divisórios.\n• Verificação dos restantes ficheiros (todos OK)",
+      "publishedAt": "2026-07-30T15:57:19+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0730.1532",
+      "title": "Novidades do Sistema - estabilidade total das matérias da frente da gaveta e frente fixa. Sem fallback. Sem substitui",
+      "description": "Novidades do Sistema - estabilidade total das matérias da frente da gaveta e frente fixa. Sem fallback. Sem substituição automática. Fluxo unificado com portas. • Correção completa do fluxo de matéria da frente da gaveta.\n• Frente fixa agora preserva a matéria escolhida pelo uútilizador.\n• Fallback silencioso removido.\n• Nenhuma matéria é substituída automaticamente ao abrir o projecto.\n• Fluxo unificado com portas (SSOT).\n• Estabilidade garantida no Viewer e no load",
+      "publishedAt": "2026-07-30T15:34:47+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v-next-materiais-estaveis",
+      "title": "Novidades do Sistema - estabilidade total das matérias da frente da gaveta e frente fixa. Sem fallback. Sem substitui",
+      "description": "Novidades do Sistema - estabilidade total das matérias da frente da gaveta e frente fixa. Sem fallback. Sem substituição automática. Fluxo unificado com portas. • Correção completa do fluxo de matéria da frente da gaveta.\n• Frente fixa agora preserva a matéria escolhida pelo uútilizador.\n• Fallback silencioso removido.\n• Nenhuma matéria é substituída automaticamente ao abrir o projecto.\n• Fluxo unificado com portas (SSOT).\n• Estabilidade garantida no Viewer e no load",
+      "publishedAt": "2026-07-30T14:28:02.501Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0729.2148",
+      "title": "Correção: frente +1mm + aviso curso real",
+      "description": "Correção: frente +1mm + aviso curso real",
+      "publishedAt": "2026-07-29T21:50:45+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0728.2332",
+      "title": "Finalizacao da remocao do Modelo B, restauracao completa do Modelo A, limpeza de gates, QA validado - pronto para pro",
+      "description": "Finalizacao da remocao do Modelo B, restauracao completa do Modelo A, limpeza de gates, QA validado - pronto para producao",
+      "publishedAt": "2026-07-27T23:36:18+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0727.2223",
+      "title": "Finalizacao da remocao do Modelo B, restauracao completa do Modelo A, limpeza de gates, QA validado - pronto para pro",
+      "description": "Finalizacao da remocao do Modelo B, restauracao completa do Modelo A, limpeza de gates, QA validado - pronto para producao",
+      "publishedAt": "2026-07-27T22:25:29+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0727.1156",
+      "title": "PIMO Industrial - Finalização completa (Fases 1→12) + Documentação Centro de Ajuda + Consolidação Final",
+      "description": "PIMO Industrial - Finalização completa (Fases 1→12) + Documentação Centro de Ajuda + Consolidação Final",
+      "publishedAt": "2026-07-27T11:58:03+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0727.0021",
+      "title": "Correção: tornar workspaceBoxes opcional nos slices de PDF/financeiro",
+      "description": "Correção: tornar workspaceBoxes opcional nos slices de PDF/financeiro",
+      "publishedAt": "2026-07-27T00:22:35+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0726.3D-B-FIX",
+      "title": "O sistema de gavetas europeias foi actualizado com um novo pipeline 3D alinhado ao Modelo A. As gavetas passam a ser",
+      "description": "O sistema de gavetas europeias foi actualizado com um novo pipeline 3D alinhado ao Modelo A. As gavetas passam a ser posicionadas correctamente dentro da caixa, com stacking industrial, offsets locais e distribuição correcta das peças (laterais, costa, fundo, frente)",
+      "publishedAt": "2026-07-26T22:58:37+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0726.2204",
+      "title": "Release v6.0726.2204",
+      "description": "Release v6.0726.2204",
+      "publishedAt": "2026-07-26T22:06:15+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0726.1951",
+      "title": "Correção: correções mínimas TypeScript para build PIMO.PRO-V5.0",
+      "description": "Correção: correções mínimas TypeScript para build PIMO.PRO-V5.0",
+      "publishedAt": "2026-07-26T19:53:00+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0726.0136",
+      "title": "Rollback completo: retorno à versão estável v6.0726.0136 (commit 805134d)",
+      "description": "Rollback completo: retorno à versão estável v6.0726.0136 (commit 805134d)",
+      "publishedAt": "2026-07-26T15:11:25+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0726.0136-rollback",
+      "title": "Rollback completo do Hub de Documentação para a versão estável publicada v6.0726.0136 (commit 805134d / Publish & Dep",
+      "description": "Rollback completo do Hub de Documentação para a versão estável publicada v6.0726.0136 (commit 805134d / Publish & Deploy #641). Removidas alterações visuais experimentais posteriores; sidebar textual, Documentação atual e layout A+C restaurados. Nada industrial tocado",
+      "publishedAt": "2026-07-26T14:11:24.204Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0726.0125",
+      "title": "Melhoria visual/estrutural do Hub de Documentação: renomeação para Documentação avançada / Documentação Interna; secç",
+      "description": "Melhoria visual/estrutural do Hub de Documentação: renomeação para Documentação avançada / Documentação Interna; secção inicial Documentação atual; cards superiores só em #atual; cards redesenhadas (layout horizontal profissional); conteúdo full-width nas outras secções; Roadmap SVG + fases editoriais; Dashboard com KPIs horizontais + sparkline; layout responsivo preservado (<820px); contagem dinâmica de Projetos criados; nada industrial tocado",
+      "publishedAt": "2026-07-26T00:36:27.362Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0726.0126",
+      "title": "Melhoria visual/estrutural do Hub: nomes, cards, comportamento, layout",
+      "description": "Melhoria visual/estrutural do Hub: nomes, cards, comportamento, layout",
+      "publishedAt": "2026-07-26T01:27:24+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0726.0044",
+      "title": "Release v6.0726.0044",
+      "description": "Release v6.0726.0044",
+      "publishedAt": "2026-07-26T00:46:20+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0726.0040",
+      "title": "Hub completo: Fase 10 + Fase 11 + Fase 12 + pimo-soon + Novidades",
+      "description": "Hub completo: Fase 10 + Fase 11 + Fase 12 + pimo-soon + Novidades",
+      "publishedAt": "2026-07-25T23:40:26.378Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0726.0038",
+      "title": "Hub de Documentação Interna completo em /documentacao: Fase 10 - Planeamento Futuro integrada; Fase 11 - Atual (Estad",
+      "description": "Hub de Documentação Interna completo em /documentacao: Fase 10 - Planeamento Futuro integrada; Fase 11 - Atual (Estado do Sistema) adicionada; Fase 12 - Dashboard Avançado publicada; pimo-soon - Plano Futuro (fases 13 - 18) como secção oficial; layout full-width + grelha responsiva; encoding UTF-8 sem BOM validado; KPIs, snapshots, gráficos SVG e ligações cruzadas ativos. Secções: Histórico + Refs + Progresso + Planeamento + Atual + Dashboard + pimo-soon",
+      "publishedAt": "2026-07-25T23:38:41.011Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.2240",
+      "title": "excluir pasta DEV (@PIMO-SOON) da publicação estável",
+      "description": "excluir pasta DEV (@PIMO-SOON) da publicação estável",
+      "publishedAt": "2026-07-25T22:40:54+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.2148",
+      "title": "Correção: correção da apresentação das Novidades do Sistema + SVG + remoção de texto fixo",
+      "description": "Correção: correção da apresentação das Novidades do Sistema + SVG + remoção de texto fixo",
+      "publishedAt": "2026-07-25T21:48:13+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.2055",
+      "title": "Correção: tipar ADM do pricing central no Unificado",
+      "description": "Correção: tipar ADM do pricing central no Unificado",
+      "publishedAt": "2026-07-25T20:46:37.291Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.2053",
+      "title": "Correção: reduzir CNC/Drill e ADM a 50% do valor anterior",
+      "description": "Correção: reduzir CNC/Drill e ADM a 50% do valor anterior",
+      "publishedAt": "2026-07-25T19:53:48.298Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.2035",
+      "title": "Correção: alinhar CAIXA 1201 a precos de mercado (paineis/orla/ferragens/CNC)",
+      "description": "Correção: alinhar CAIXA 1201 a precos de mercado (paineis/orla/ferragens/CNC)",
+      "publishedAt": "2026-07-25T20:37:47+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.1956",
+      "title": "Correção: tornar orlaPresets opcional no slice Unificado",
+      "description": "Correção: tornar orlaPresets opcional no slice Unificado",
+      "publishedAt": "2026-07-25T19:58:09+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.1953",
+      "title": "Correção: eliminar remates fantasma, orla stale, ferragens e CNC inflados",
+      "description": "Correção: eliminar remates fantasma, orla stale, ferragens e CNC inflados",
+      "publishedAt": "2026-07-25T18:53:24.963Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.1924",
+      "title": "Correção: corrigir desperdício, orla, montagem e remates fantasma",
+      "description": "Correção: corrigir desperdício, orla, montagem e remates fantasma",
+      "publishedAt": "2026-07-25T19:26:22+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.1905",
+      "title": "Correção: servir /config/global e evitar POST thumb sem imagem",
+      "description": "Correção: servir /config/global e evitar POST thumb sem imagem",
+      "publishedAt": "2026-07-25T19:07:30+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.1848",
+      "title": "Correção: silenciar parâmetro cornerAtStart não usado após remates off",
+      "description": "Correção: silenciar parâmetro cornerAtStart não usado após remates off",
+      "publishedAt": "2026-07-25T18:50:13+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.1846",
+      "title": "Correção: Portes só com escolha explícita; remates sem custo fantasma",
+      "description": "Correção: Portes só com escolha explícita; remates sem custo fantasma",
+      "publishedAt": "2026-07-25T17:46:08.312Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.1823",
+      "title": "Novidade: SSOT de mercado PT/EU em pricing.json",
+      "description": "Novidade: SSOT de mercado PT/EU em pricing.json",
+      "publishedAt": "2026-07-25T18:22:38+01:00",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.1711",
+      "title": "Correção: devolver 404 real para /assets em falta (evitar MIME text/html)",
+      "description": "Correção: devolver 404 real para /assets em falta (evitar MIME text/html)",
+      "publishedAt": "2026-07-25T17:11:22+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.1706",
+      "title": "Correção: registar erros PDF/Layout em invariantes e impedir SPA fallback em /assets",
+      "description": "Correção: registar erros PDF/Layout em invariantes e impedir SPA fallback em /assets",
+      "publishedAt": "2026-07-25T17:05:58+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.1640",
+      "title": "P3.9 - Unificar preços via pricing.json, sync financeiroAdmin e filtrar remates inválidos",
+      "description": "P3.9 - Unificar preços via pricing.json, sync financeiroAdmin e filtrar remates inválidos",
+      "publishedAt": "2026-07-25T16:39:25+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0725.1413",
+      "title": "P3.9 - Novidades do Sistema: actionUrl, commit hash curto, ícones por tipo, ordenação automática",
+      "description": "P3.9 - Novidades do Sistema: actionUrl, commit hash curto, ícones por tipo, ordenação automática",
+      "publishedAt": "2026-07-25T14:13:45+01:00",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0724.1853",
+      "title": "Correção: restaurar Novidades com /updates/news.json automático no deploy",
+      "description": "Correção: restaurar Novidades com /updates/news.json automático no deploy",
+      "publishedAt": "2026-07-24T18:53:25+01:00",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0724.1837",
+      "title": "P3.9 - Documentação oficial atualizada: integração completa das Fases 1 - 4 em /documentacao, /project-progress, /paine",
+      "description": "P3.9 - Documentação oficial atualizada: integração completa das Fases 1 - 4 em /documentacao, /project-progress, /painel-referencia e nova secção /ajuda. Sistema financeiro industrial P3.9 totalmente documentado",
+      "publishedAt": "2026-07-24T17:38:00.828Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0724.1755",
+      "title": "P3.9 - Fases 1 - 3c concluídas: Orçamentos, unificação ferragens, CNC/Drill, desperdício/serragem, chapas reais/MO/logí",
+      "description": "P3.9 - Fases 1 - 3c concluídas: Orçamentos, unificação ferragens, CNC/Drill, desperdício/serragem, chapas reais/MO/logística (modo exclusivo). Baseline intacto com defaults",
+      "publishedAt": "2026-07-24T16:56:13.003Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0722.2307",
+      "title": "Release v6.0722.2307",
+      "description": "Release v6.0722.2307",
+      "publishedAt": "2026-07-22T22:07:46.857Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0722.2258",
+      "title": "Release v6.0722.2258",
+      "description": "Release v6.0722.2258",
+      "publishedAt": "2026-07-22T21:59:00.123Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0722.2225",
+      "title": "Release v6.0722.2225",
+      "description": "Release v6.0722.2225",
+      "publishedAt": "2026-07-22T21:25:52.111Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0722.2215",
+      "title": "Release v6.0722.2215",
+      "description": "Release v6.0722.2215",
+      "publishedAt": "2026-07-22T21:15:35.393Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0722.2202",
+      "title": "Correção: corrigir mojibake UTF-8 nos textos PT",
+      "description": "Correção: corrigir mojibake UTF-8 nos textos PT",
+      "publishedAt": "2026-07-22T21:02:06.221Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0722.2124",
+      "title": "ativar flag industrialOnlineAnalysis",
+      "description": "ativar flag industrialOnlineAnalysis",
+      "publishedAt": "2026-07-22T20:24:46.589Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0722.2055",
+      "title": "Novidade: Análise arquivo completo (Fases 1 - 6)",
+      "description": "Novidade: Análise arquivo completo (Fases 1 - 6)",
+      "publishedAt": "2026-07-22T19:55:19.358Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0719.2325",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-07-19T22:25:29.709Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0719.2317",
+      "title": "Release v6.0719.2317",
+      "description": "Release v6.0719.2317",
+      "publishedAt": "2026-07-19T22:17:30.057Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0719.2311",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-07-19T22:11:37.114Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0719.2257",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-07-19T21:57:52.374Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0719.2248",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-07-19T21:48:07.907Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0719.2229",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-07-19T21:29:36.447Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0719.2138",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-07-19T20:38:04.348Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0719.2109",
+      "title": "Auto deploy",
+      "description": "Auto deploy",
+      "publishedAt": "2026-07-19T20:09:01.583Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0719.2010",
+      "title": "Novidade: add Pi CTA accent tokens using Sienna 600",
+      "description": "Novidade: add Pi CTA accent tokens using Sienna 600",
+      "publishedAt": "2026-07-19T19:10:31.040Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0719.1852",
+      "title": "Novidade: remove hex remap; Pi palette is CI-native",
+      "description": "Novidade: remove hex remap; Pi palette is CI-native",
+      "publishedAt": "2026-07-19T17:52:31.321Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0719.0150",
+      "title": "Novidade: orla automatica, calcos, folgas, Coloprador e ajuste vertical - Orla tipada (costa=0, gav_frent_int so topo",
+      "description": "Novidade: orla automatica, calcos, folgas, Coloprador e ajuste vertical - Orla tipada (costa=0, gav_frent_int so topo, metros no PDF); calcos Ref 00/03 + I-Sensys 8645i; Coloprador; folgas porta 2mm; limiar stack vertical 40mm. Modulos",
+      "publishedAt": "2026-07-19T00:50:16.975Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0719.0146",
+      "title": "Novidade: orla automatica, calcos, folgas, Coloprador e ajuste vertical",
+      "description": "Novidade: orla automatica, calcos, folgas, Coloprador e ajuste vertical",
+      "publishedAt": "2026-07-19T00:46:46.365Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0718.2309",
+      "title": "Correção: dobradicas por canecos reais e design original do PDF - Contagem exclusiva holeType===dobradica (Dobradica/",
+      "description": "Correção: dobradicas por canecos reais e design original do PDF - Contagem exclusiva holeType===dobradica (Dobradica/8654i/35mm, total real ex. 13 ANTUNIS); remocao regras fixas/duplicacao industrial; design restaurado fontSize 9; Chapas: Material|Ref|Medida|Qtd|Preco|Data|Responsavel; Ferragens: Material|Ref|Medida|Qtd|Preco total|Responsavel; UTF-8; export dual ferragens_totais+industrial_armazem. Modulos",
+      "publishedAt": "2026-07-18T22:09:52.229Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0718.2226",
+      "title": "Novidade: restaurar ferragens_totais.pdf, pe_plastico e exportacao dual| pdfFerragensTotaisN",
+      "description": "Novidade: restaurar ferragens_totais.pdf, pe_plastico e exportacao dual",
+      "publishedAt": "2026-07-18T21:26:16.931Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0717.2328",
+      "title": "Novidade: normalizar ferragens_totais com tabela uúnica landscape",
+      "description": "Novidade: normalizar ferragens_totais com tabela uúnica landscape",
+      "publishedAt": "2026-07-17T22:28:46.618Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0717.2259",
+      "title": "Correção: discriminar itens do Projects Switcher via path",
+      "description": "Correção: discriminar itens do Projects Switcher via path",
+      "publishedAt": "2026-07-17T21:59:28.645Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0717.2256",
+      "title": "Correção: corrigir narrowing TypeScript no Projects Switcher",
+      "description": "Correção: corrigir narrowing TypeScript no Projects Switcher",
+      "publishedAt": "2026-07-17T21:56:13.740Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0717.2254",
+      "title": "Novidade: adicionar Projects Switcher no header",
+      "description": "Novidade: adicionar Projects Switcher no header",
+      "publishedAt": "2026-07-17T21:54:48.745Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0717.2225",
+      "title": "Novidade: adicionar matéria-prima AGL_Carvalho (19/16/10 mm)",
+      "description": "Novidade: adicionar matéria-prima AGL_Carvalho (19/16/10 mm)",
+      "publishedAt": "2026-07-17T21:25:15.730Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0717.2152",
+      "title": "incluir build completo antes do commit e push",
+      "description": "incluir build completo antes do commit e push",
+      "publishedAt": "2026-07-17T20:52:19.053Z",
+      "type": "update",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0717.1215-branding",
+      "title": "Novidade: logótipo industrial dedicado e atribuição designer/responsável nos PDFs",
+      "description": "Novidade: logótipo industrial dedicado e atribuição designer/responsável nos PDFs",
+      "publishedAt": "2026-07-17T11:15:00.000Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0717.1145-ferragens",
+      "title": "Novidade: reestruturar ferragens_totais.pdf em landscape com totais agregados",
+      "description": "Novidade: reestruturar ferragens_totais.pdf em landscape com totais agregados",
+      "publishedAt": "2026-07-17T10:45:00.000Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0717.1026-armazem",
+      "title": "Novidade: unificar chapas_real e consumo_materiais no PDF armazém",
+      "description": "Novidade: unificar chapas_real e consumo_materiais no PDF armazém",
+      "publishedAt": "2026-07-17T10:05:00.000Z",
+      "type": "feature",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0717.1026",
+      "title": "Correção: impedir prateleiras acima do SEP no pipeline completo",
+      "description": "Correção: impedir prateleiras acima do SEP no pipeline completo",
+      "publishedAt": "2026-07-17T09:26:44.213Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0717.0931",
+      "title": "Correção: alinhar Y dos furos de prateleira LAT e DIV",
+      "description": "Correção: alinhar Y dos furos de prateleira LAT e DIV",
+      "publishedAt": "2026-07-17T08:31:47.317Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0717.0827",
+      "title": "Correção: N prateleiras so no compartimento LAT+DIV+SEP",
+      "description": "Correção: N prateleiras so no compartimento LAT+DIV+SEP",
+      "publishedAt": "2026-07-17T07:27:28.690Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0716.1719",
+      "title": "Correção: mostrar furos de prateleira no DIV via marcadores",
+      "description": "Correção: mostrar furos de prateleira no DIV via marcadores",
+      "publishedAt": "2026-07-16T16:19:07.150Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0716.1232",
+      "title": "Correção: remover parametro nao usado em resolveDivisorShelfPanelId",
+      "description": "Correção: remover parametro nao usado em resolveDivisorShelfPanelId",
+      "publishedAt": "2026-07-16T11:32:26.912Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0716.1046",
+      "title": "Correção: prateleiras apenas em compartimentos LAT+DIV abaixo do SEP",
+      "description": "Correção: prateleiras apenas em compartimentos LAT+DIV abaixo do SEP",
+      "publishedAt": "2026-07-16T09:46:20.135Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    },
+    {
+      "version": "v6.0716.1022",
+      "title": "Correção: grelha industrial 32mm e prateleiras espelhadas com DIV",
+      "description": "Correção: grelha industrial 32mm e prateleiras espelhadas com DIV",
+      "publishedAt": "2026-07-16T09:22:37.603Z",
+      "type": "fix",
+      "author": "pimo-pro"
+    }
+  ]
+}
