@@ -33,6 +33,9 @@ jobs:
       # Exclusive public_html for pimo.info. Fresh state-name escapes stale
       # sync entries that tried to delete missing _next/data paths (FTP 550).
       # No clean-slate: keep the live site available during upload.
+      - name: Pause before FTP
+        run: sleep 30
+
       - name: Upload /out via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -41,11 +44,11 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          state-name: .ftp-deploy-sync-state-v60.json
+          state-name: .ftp-deploy-sync-state-v61.json
           timeout: 600000
           dangerous-clean-slate: false
           security: loose
-          # Media pesada já no servidor; excluir reduz ECONNRESET em sync limpo.
+          # Media pesada já no servidor; excluir reduz carga em sync limpo.
           exclude: |
             **/*.mp4
             **/*.webm
