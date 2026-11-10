@@ -1,28 +1,85 @@
 ---
 title: Sala e ambiente
-description: Sala 3D, ambiente e room settings no PIMO PRO.
+description: "Configure a sala 3D no PIMO PRO: paredes, luz e ambiente para contextualizar o mobiliário antes do modo foto ou da apresentação."
 category: funcionalidade
 tags:
   - sala
   - ambiente
-  - room
+  - apresentacao
 related:
   - /pt-pt/funcionalidades/modo-foto/
   - /pt-pt/funcionalidades/definicoes/
   - /pt-pt/funcionalidades/configurador-3d/
-lastUpdated: 2026-10-01
+lastUpdated: 2026-11-10
 ---
+
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
 
 # Sala e ambiente
 
-O ambiente de **sala** contextualiza o mobiliário no viewport (paredes, luz, HDR). Pode ajustar opções de sala e ambiente nas definições da aplicação.
+A **sala e o ambiente** no PIMO PRO colocam o mobiliário num espaço 3D com paredes, chão e iluminação. Não fazem parte do Desenho Técnico nem da lista de corte: servem para apresentar o projeto com contexto, validar proporções no espaço e preparar capturas no modo foto.
 
-## Estado
+## O que faz
 
-**Disponível** na app.
+Com a sala ativa, vê o módulo «dentro» de um ambiente, em vez de flutuar só no vazio do viewport. Pode criar ou ajustar a sala, definir dimensões úteis para a apresentação e controlar opções de ambiente (luz e aspeto da sala) nas definições e no painel dedicado.
+
+Isto ajuda a:
+
+- mostrar ao cliente como o móvel ocupa a parede ou o canto;
+- alinhar módulos a paredes ou limites da sala quando o ajuste à sala está ativo;
+- preparar uma vista mais realista antes de descarregar uma imagem.
+
+## Onde está no ecrã
+
+- Na **barra superior** do espaço de trabalho 3D, o controlo de **sala** abre ou fecha o painel de configuração da sala.
+- No **painel Sala** pode criar a sala e aplicar dimensões.
+- Opções de ambiente também aparecem nas **definições** da aplicação, quando disponíveis.
+- No **menu de contexto**, pode haver ações ligadas ao ajuste à sala (por exemplo ativar ou desativar o encaixe à sala).
+
+A sala não substitui o layout de produção: paredes e ambiente **não entram** no Desenho Técnico (PDF).
+
+## Para que serve
+
+Use a sala quando o objetivo é **apresentar** ou **validar espacialmente**. Use o configurador sem sala quando está a focar só carcaça, ferragens e exportação.
+
+Fluxo típico:
+
+1. Desenhe e posicione os módulos.
+2. Abra o painel da sala e crie ou ajuste o ambiente.
+3. Verifique se o conjunto cabe visualmente no espaço.
+4. Passe ao [modo foto](/pt-pt/funcionalidades/modo-foto/) se quiser capturar a vista.
+
+## O que acontece a seguir
+
+Depois de configurar a sala, pode:
+
+- continuar a editar módulos normalmente (mover, rodar, materiais);
+- entrar no modo foto para descarregar a imagem;
+- gerar o design 3D e exportar ficheiros de produção (a sala continua fora do PDF técnico e do Desenho Técnico).
+
+## Dicas
+
+- Trate a sala como cenário de apresentação, não como peça de fabrico.
+- Se a vista parece «apertada», ajuste dimensões da sala antes de culpar o módulo.
+- Para medidas de montagem, use cotas no viewport ou o Desenho Técnico, não a escala visual da sala.
+
+## Erros comuns
+
+- Esperar cotas de paredes no Desenho Técnico: o ambiente arquitectónico é excluído de propósito.
+- Ligar o modo foto sem ter a sala ou a iluminação mínimas: a captura fica pobre.
+- Confundir painel Sala com painel Materiais ou Móveis.
 
 ## Relacionado
 
 - [Modo foto](/pt-pt/funcionalidades/modo-foto/)
 - [Definições](/pt-pt/funcionalidades/definicoes/)
 - [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/)
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/funcionalidades/modo-foto/", label: "Modo foto" },
+    { href: "/pt-pt/funcionalidades/configurador-3d/", label: "Configurador 3D" },
+    { href: "/pt-pt/guias-utilizador/mover-e-posicionar/", label: "Mover e posicionar" },
+    { href: "/pt-pt/guias-utilizador/desenho-tecnico/", label: "Guia do Desenho Técnico" },
+  ]}
+/>

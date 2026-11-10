@@ -7,7 +7,7 @@ export default {
   },
   "criar-caixa": "Criar Caixa",
   "mover-e-posicionar": "Mover e Posicionar",
-  materiais: "Materiais",
+  materiais: "Aplicar materiais",
   "portas-e-gavetas": "Portas e Gavetas",
   "medicoes-e-cotas": "Medições e Cotas",
   "lista-de-corte": "Lista de Corte",

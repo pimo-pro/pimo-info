@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-11-04T00:09:04.021Z
+Generated: 2026-11-10T11:40:14.586Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -45,6 +45,7 @@ Locale: pt-PT
 - Guias: https://pimo.info/pt-pt/guias-utilizador/
 - Ecossistema: https://pimo.info/pt-pt/ecossistema/
 - FAQ: https://pimo.info/pt-pt/perguntas-frequentes/
+- Novidades: https://pimo.info/pt-pt/novidades/
 
 ## Export formats (implemented)
 - PDF Técnico (.pdf): Relatório industrial do projeto com vista 3D, lista de corte, materiais, ferragens e resumo de preço. Continua disponível à parte do Desenho Técnico (PDF). Se a geração falhar, a app mostra o aviso «Erro ao gerar PDF técnico.»
@@ -180,18 +181,17 @@ Locale: pt-PT
 - Configurador 3D: https://pimo.info/pt-pt/funcionalidades/configurador-3d/
 - Conta e acesso: https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/
 - Definições: https://pimo.info/pt-pt/funcionalidades/definicoes/
-- Desenho Técnico (PDF): https://pimo.info/pt-pt/funcionalidades/desenho-tecnico-pdf/
+- Desenho Técnico (PDF) com vistas e cotas: https://pimo.info/pt-pt/funcionalidades/desenho-tecnico-pdf/
 - Estações industriais: https://pimo.info/pt-pt/funcionalidades/estacoes-industriais/
-- Redirecionamento, Exportação TCN/Drill XML: https://pimo.info/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/
 - Exportação TCN/Drill XML: https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/
 - Ferragens: https://pimo.info/pt-pt/funcionalidades/ferragens/
 - Lista de Corte: https://pimo.info/pt-pt/funcionalidades/lista-de-corte/
-- Materiais: https://pimo.info/pt-pt/funcionalidades/materiais/
+- Materiais no PIMO PRO: https://pimo.info/pt-pt/funcionalidades/materiais/
 - Modo foto: https://pimo.info/pt-pt/funcionalidades/modo-foto/
 - Módulo Industrial: https://pimo.info/pt-pt/funcionalidades/modulo-industrial/
 - Nesting Fast/PRO: https://pimo.info/pt-pt/funcionalidades/nesting-fast-pro/
 - Orçamentos: https://pimo.info/pt-pt/funcionalidades/orcamentos/
-- PDF técnico: https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/
+- PDF técnico industrial: https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/
 - PIMO-TRAK: https://pimo.info/pt-pt/funcionalidades/pimo-trak/
 - Portas e Gavetas: https://pimo.info/pt-pt/funcionalidades/portas-e-gavetas/
 - Relatório final: https://pimo.info/pt-pt/funcionalidades/relatorio-final/
@@ -205,7 +205,7 @@ Locale: pt-PT
 - Exportação: https://pimo.info/pt-pt/guias-utilizador/exportacao/
 - Gerir Projetos: https://pimo.info/pt-pt/guias-utilizador/gerir-projetos/
 - Lista de Corte: https://pimo.info/pt-pt/guias-utilizador/lista-de-corte/
-- Materiais: https://pimo.info/pt-pt/guias-utilizador/materiais/
+- Guia: aplicar materiais no PIMO PRO: https://pimo.info/pt-pt/guias-utilizador/materiais/
 - Medições e Cotas: https://pimo.info/pt-pt/guias-utilizador/medicoes-e-cotas/
 - Mover e Posicionar: https://pimo.info/pt-pt/guias-utilizador/mover-e-posicionar/
 - Nesting / Layout de Corte: https://pimo.info/pt-pt/guias-utilizador/nesting-layout-corte/
@@ -220,6 +220,7 @@ Locale: pt-PT
 - Armário de Cozinha Inferior: https://pimo.info/pt-pt/linha-branca/armario-cozinha-inferior/
 - Garrafeira 20 cm: https://pimo.info/pt-pt/linha-branca/garrafeira-20/
 - Pés Reguláveis: https://pimo.info/pt-pt/linha-branca/pes-regulaveis/
+- Novidades: https://pimo.info/pt-pt/novidades/
 - Parceiro PIMO: https://pimo.info/pt-pt/parceiros/
 - Perguntas frequentes: https://pimo.info/pt-pt/perguntas-frequentes/
 - Preços e subscrições: https://pimo.info/pt-pt/precos/
@@ -2835,6 +2836,7 @@ Centro de ajuda do PIMO PRO em português europeu: primeiros passos, funcionalid
      03  Funcionalidades  O que faz cada área   
      04  Botões e controlos  Nome e localização   
      05  Perguntas frequentes  Dúvidas rápidas   
+     06  Novidades  O que mudou na app   
  
 
  
@@ -4262,19 +4264,63 @@ Contactos oficiais PIMO: email, telefone e morada.
 
 ## Documentação técnica
 URL: https://pimo.info/pt-pt/documentacao-tecnica/
-Documentação técnica.
+Documentação técnica do PIMO PRO: orçamentos, sistema industrial e notas de processo para equipas de produção e projeto.
 
 # Documentação técnica
 
-Secção separada para material de administração, engenharia de processo e camadas industriais do PIMO.
+Esta secção reúne páginas mais densas sobre **como o PIMO PRO calcula e organiza informação industrial**: orçamentos, fluxo industrial e notas de sistema úteis a quem fecha produção. Não substitui os [guias de utilizador](/pt-pt/guias-utilizador/), pensados para o dia a dia no configurador 3D.
 
-## Conteúdo
+## Quando abrir esta área
 
-- [Orçamentos P3.9](/pt-pt/documentacao-tecnica/orcamentos-p39/)
-- [Sistema Industrial](/pt-pt/documentacao-tecnica/sistema-industrial/)
-- [System docs (drawers, PDF engine e categorias)](/pt-pt/documentacao-tecnica/docs-do-sistema/)
+Abra a documentação técnica se precisa de:
 
-> Esta área é orientada a equipas técnicas e administrativas. Para operação diária do configurador, use os [guias de utilizador](/pt-pt/guias-utilizador/).
+- perceber o modelo de orçamentos e tarifas;
+- entender o papel do sistema industrial e das estações;
+- consultar notas de processo que vão além do botão a botão.
+
+Se só quer «como exportar» ou «como criar uma caixa», comece pelos guias.
+
+## Porquê cada subpágina
+
+### [Orçamentos P3.9](/pt-pt/documentacao-tecnica/orcamentos-p39/)
+
+Explica o centro de tarifas e a lógica de custos ligada ao pedido de orçamento. Útil a quem valida preços e respostas comerciais a partir do projeto.
+
+### [Sistema industrial](/pt-pt/documentacao-tecnica/sistema-industrial/)
+
+Descreve a camada industrial do PIMO: o que acontece depois do desenho, no caminho para fabrico e acompanhamento. Complementa [PIMO Industrial](/pt-pt/sistemas-pimo/pimo-industrial/) e as estações.
+
+### [Docs do sistema](/pt-pt/documentacao-tecnica/docs-do-sistema/)
+
+Notas técnicas de apoio (por exemplo categorias e comportamento documental). Use quando um guia prático não chega e precisa de contexto de processo.
+
+## Como navegar
+
+1. Identifique a dúvida (preço, fabrico ou comportamento do sistema).
+2. Abra a subpágina correspondente.
+3. Volte aos guias ou às funcionalidades para a ação no ecrã.
+4. Se a dúvida for de conta ou exportação rápida, use a [FAQ](/pt-pt/perguntas-frequentes/).
+
+## Relação com o resto do centro de ajuda
+
+| Precisa de… | Vá a… |
+| --- | --- |
+| Passos no ecrã | [Guias de utilizador](/pt-pt/guias-utilizador/) |
+| O que faz cada área | [Funcionalidades](/pt-pt/funcionalidades/) |
+| Nome do botão | [Referência de botões](/pt-pt/referencia/botoes/) |
+| Fundamento de cálculo / processo | **Documentação técnica** (aqui) |
+
+## Dica
+
+Leia primeiro o parágrafo inicial de cada subpágina e só depois as tabelas ou listas longas. Assim confirma se está no documento certo antes de investir tempo.
+
+## O que não encontrar aqui
+
+Esta área não substitui o catálogo de botões, nem os guias de criar caixa ou exportar. Também não é a lista de [novidades](/pt-pt/novidades/) da aplicação. Se a dúvida for «onde clico?», vá à [referência](/pt-pt/referencia/). Se for «que passos sigo?», vá aos [guias](/pt-pt/guias-utilizador/).
+
+## Próximo passo sugerido
+
+Comece por [Orçamentos P3.9](/pt-pt/documentacao-tecnica/orcamentos-p39/) se a dúvida é de preço, ou por [Sistema industrial](/pt-pt/documentacao-tecnica/sistema-industrial/) se a dúvida é de fabrico e acompanhamento.
 
 ---
 
@@ -4309,7 +4355,7 @@ URL: https://pimo.info/pt-pt/documentacao-tecnica/docs-do-sistema/
 
 ## Orçamentos P3.9
 URL: https://pimo.info/pt-pt/documentacao-tecnica/orcamentos-p39/
-Orçamentos P3.9.
+Como o PIMO PRO calcula orçamentos industriais (P3.9): tarifas, custos e ligação ao fluxo de pedido de orçamento ao cliente.
 
 # Orçamentos, Centro de Tarifas P3.9
 
@@ -4413,7 +4459,7 @@ Scores, tempos e custos exibidos nesta camada devem ser interpretados como leitu
 
 ## Ecossistema de sites PIMO
 URL: https://pimo.info/pt-pt/ecossistema/
-Visão do ecossistema de sete domínios PIMO, loja, aplicação, ajuda, mercados futuros e plano de negócio.
+Mapa do ecossistema PIMO: loja, aplicação PIMO PRO, centro de ajuda pimo.info, mercados e ligações entre os sites da marca.
 
 # Ecossistema de sites PIMO
 
@@ -4423,7 +4469,7 @@ O PIMO distribui a marca, o produto e a documentação por vários domínios ofi
 
 ## pimo.casa
 URL: https://pimo.info/pt-pt/ecossistema/pimo-casa/
-Futuro site oficial para designs e projetos prontos PIMO.
+Pimo Casa: marca e vitrine de designs e projetos prontos no ecossistema PIMO, com ligação clara ao trabalho diário na aplicação PIMO PRO.
 
 
 
@@ -4431,7 +4477,7 @@ Futuro site oficial para designs e projetos prontos PIMO.
 
 ## pimo.design
 URL: https://pimo.info/pt-pt/ecossistema/pimo-design/
-Futuro site oficial da aplicação de design completo PIMO.
+PIMO Design: visão do site de design completo no ecossistema PIMO, pensado para complementar a aplicação de trabalho PIMO PRO.
 
 
 
@@ -4439,7 +4485,7 @@ Futuro site oficial da aplicação de design completo PIMO.
 
 ## pimo.es
 URL: https://pimo.info/pt-pt/ecossistema/pimo-es/
-Loja oficial PIMO em espanhol, atualmente redireciona para pimo.pt.
+PIMO em espanhol: loja e presença para o mercado hispânico no ecossistema PIMO, com ligação à loja principal em português.
 
 
 
@@ -4447,7 +4493,7 @@ Loja oficial PIMO em espanhol, atualmente redireciona para pimo.pt.
 
 ## pimo.info
 URL: https://pimo.info/pt-pt/ecossistema/pimo-info/
-Centro de informação e ajuda do PIMO.
+PIMO Info: centro de ajuda e documentação do PIMO PRO em português europeu, com guias práticos, FAQ, glossário e referência.
 
 
 
@@ -4455,7 +4501,7 @@ Centro de informação e ajuda do PIMO.
 
 ## pimo.pro
 URL: https://pimo.info/pt-pt/ecossistema/pimo-pro/
-Site oficial da aplicação e plataforma PIMO PRO.
+PIMO PRO: aplicação web de design e produção de mobiliário em 3D, com exportação, nesting, orçamentos e rastreio industrial.
 
 
 
@@ -4463,7 +4509,7 @@ Site oficial da aplicação e plataforma PIMO PRO.
 
 ## pimo.pt
 URL: https://pimo.info/pt-pt/ecossistema/pimo-pt/
-Loja online principal e site principal da marca PIMO.
+pimo.pt: loja online principal da marca PIMO, com catálogo, informação comercial e ligação ao restante ecossistema da marca.
 
 
 
@@ -4535,20 +4581,68 @@ Serviços do PIMO PRO por área: design 3D, produção, conta, industrial e apre
 
 ## Análise de projetos
 URL: https://pimo.info/pt-pt/funcionalidades/analise-projetos/
-Análise documental em PIMO PROJETOS (rota de análise do projeto).
+Análise documental em PIMO PROJETOS: consulte e, quando disponível, edite documentos do arquivo industrial sem substituir o ZIP.
 
 # Análise de projetos
 
-Em **PIMO PROJETOS**, as rotas `/PROJETOS/:project/analise` e `/PROJETOS/:project/analise/:docId` cobrem documentos de análise associados ao projeto.
+A **análise de projetos** vive em **PIMO PROJETOS**. Serve para abrir os documentos industriais associados a um projeto da conta, ler tabelas e, quando a instalação o permitir, corrigir informação documental online. É a ferramenta de trabalho sobre o **arquivo**, não a vista de fecho do relatório final.
 
-## Estado
+## O que faz
 
-**Disponível** em PIMO PROJETOS, quando a análise documental estiver ativa na sua instalação.
+Depois de gerar o arquivo completo (ou documentos individuais), a análise mostra o conteúdo documental do projeto: listas, secções e histórico das alterações feitas na análise. O objetivo é validar e, se necessário, ajustar o que vai para a comunicação industrial, sem voltar a montar o móvel no editor 3D.
+
+Em resumo:
+
+- consulta documentos do projeto numa vista tabular;
+- destaca células ou linhas alteradas quando edita;
+- guarda ou cancela o rascunho da edição documental;
+- **não** substitui o ZIP de produção nem os ficheiros de máquina.
+
+## Onde está no ecrã
+
+1. Entre na conta e abra **PIMO PROJETOS** (projetos industriais da conta).
+2. Escolha o projeto.
+3. Use **Análise arquivo completo** (também pode aparecer nas ações finais de **Salvar e Gerar Design**, conforme a instalação).
+4. No índice, escolha o documento a consultar.
+
+Se a análise não aparecer na sua instalação, use o arquivo completo (ZIP) e os PDFs exportados como de costume.
+
+## Diferença face ao relatório final
+
+| Necessidade | Onde ir |
+| --- | --- |
+| Vista consolidada para entregar ou rever o projeto | [Relatório final](/pt-pt/funcionalidades/relatorio-final/) |
+| Ler ou editar documentos do arquivo industrial | **Análise de projetos** (esta página) |
+| Gerar PDFs e ficheiros de máquina | [Exportação](/pt-pt/guias-utilizador/exportacao/) |
+
+O relatório final fecha o projeto para pessoas. A análise trabalha o conteúdo documental. São complementares.
+
+## O que acontece a seguir
+
+1. Guarde o projeto no configurador 3D.
+2. Gere o arquivo completo ou os documentos que precisa.
+3. Abra a análise e confira listas e totais.
+4. Se editar, grave só quando tiver a certeza; cancele para descartar o rascunho.
+5. Volte a descarregar o que a fábrica precisa. Alterações documentais na cutlist podem refletir-se em PDFs e etiquetas; **TCN e Drill XML não mudam** por essas edições.
+
+## Dicas
+
+- Trate a análise como revisão documental, não como segundo editor 3D.
+- Se só precisa de partilhar vistas cotadas, use o Desenho Técnico; se precisa de lista industrial, use o PDF técnico.
+- Confirme na sua instalação se a edição online está ativa antes de prometer correções ao cliente.
+
+## Erros comuns
+
+- Esperar que a análise reescreva ficheiros CNC: não o faz.
+- Usar a análise sem ter gerado o arquivo: não há documentos para abrir.
+- Confundir com o relatório final e achar que «já está tudo exportado».
 
 ## Relacionado
 
+- [Relatório final](/pt-pt/funcionalidades/relatorio-final/)
 - [PIMO PROJETOS](/pt-pt/sistemas-pimo/pimo-projetos/)
 - [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/)
+- [Exportação](/pt-pt/guias-utilizador/exportacao/)
 
 ---
 
@@ -4654,9 +4748,9 @@ O detalhe de cada opção aparece na própria interface do PIMO PRO.
 
 ---
 
-## Desenho Técnico (PDF)
+## Desenho Técnico (PDF) com vistas e cotas
 URL: https://pimo.info/pt-pt/funcionalidades/desenho-tecnico-pdf/
-PDF A4 horizontal com vistas e cotas do móvel no PIMO PRO, na janela Salvar e Gerar Design.
+Exporte o Desenho Técnico em A4 horizontal no PIMO PRO: vistas, cotas de montagem e partilha clara, distinto do PDF técnico industrial.
 
 # Desenho Técnico (PDF)
 
@@ -4741,16 +4835,6 @@ Além das estações, a área industrial inclui vistas de acompanhamento com lei
 
 ---
 
-## Redirecionamento, Exportação TCN/Drill XML
-URL: https://pimo.info/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/
-Esta página moveu-se para Exportação TCN/Drill XML.
-
-# Página movida
-
-O conteúdo de exportação industrial está agora em [Exportação TCN/Drill XML](/pt-pt/funcionalidades/exportacao-tcn-drill-xml/).
-
----
-
 ## Exportação TCN/Drill XML
 URL: https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/
 Exportação de ficheiros industriais TCN (.tcn) e Drill XML (.xml) via menu Arquivos CNC.
@@ -4805,9 +4889,9 @@ Após o cálculo 3D, o sistema apresenta todas as peças técnicas por módulo, 
 
 ---
 
-## Materiais
+## Materiais no PIMO PRO
 URL: https://pimo.info/pt-pt/funcionalidades/materiais/
-Gestão visual de materiais da carcaça e frentes no PIMO.
+Escolha e aplique materiais da carcaça e das frentes no painel Materiais do PIMO PRO, antes de gerar o design 3D completo.
 
 ## O que faz
 
@@ -4832,20 +4916,68 @@ No painel Materiais do lado direito pode escolher presets de material. Essa esco
 
 ## Modo foto
 URL: https://pimo.info/pt-pt/funcionalidades/modo-foto/
-Modo foto no PIMO PRO, capturas e composição visual do projeto em 3D.
+Modo foto no PIMO PRO: capture e descarregue vistas do projeto 3D para apresentar ao cliente, com sala e ambiente como apoio.
 
 # Modo foto
 
-O **modo foto** permite capturar e apresentar o projeto no viewport 3D com composição orientada a imagem (iluminação/ambiente da sala).
+O **modo foto** do PIMO PRO prepara o viewport 3D para capturas e apresentação. Em vez de trabalhar com painéis e ferragens, foca a composição visual do projeto: enquadramento, ambiente e descarregamento da imagem.
 
-## Estado
+## O que faz
 
-**Disponível / parcial**, a capacidade existe na app; a documentação detalhada de controlos segue o catálogo de [botões](/pt-pt/referencia/botoes/) e a UI ao vivo em [pimo.pro](https://pimo.pro).
+Ao ativar o modo foto (controlo **PHOTO** no topo), abre o painel dedicado. Aí pode:
+
+- preparar a vista do projeto para uma imagem limpa;
+- **descarregar** a captura;
+- usar opções de exportação visual disponíveis no painel (por exemplo exportar linhas, quando aparecerem na sua versão).
+
+O modo foto **não** gera lista de corte, TCN nem Desenho Técnico. É comunicação visual.
+
+## Onde está no ecrã
+
+1. No espaço de trabalho 3D, na **barra superior**, escolha **PHOTO**.
+2. Abre-se o **painel Photo Mode**.
+3. Ajuste a câmara (orbitar, aproximar) e, se quiser, a [sala e ambiente](/pt-pt/funcionalidades/sala-e-ambiente/).
+4. Use **Descarregar** no painel para obter a imagem.
+
+Os nomes exactos dos controlos estão no [catálogo de botões](/pt-pt/referencia/botoes/).
+
+## Para que serve
+
+- Enviar ao cliente uma vista do móvel no espaço.
+- Arquivar uma imagem do estado do projeto antes de uma alteração grande.
+- Preparar material comercial sem abrir ferramentas de fabrico.
+
+Se precisa de medidas oficiais, use cotas no ecrã ou o Desenho Técnico (PDF). Se precisa de produção, use a exportação.
+
+## O que acontece a seguir
+
+1. Posicione os módulos e, se fizer sentido, configure a sala.
+2. Ative o modo foto e enquadre a vista.
+3. Descarregue a captura.
+4. Saia do modo foto para voltar a editar ou a exportar ficheiros de produção.
+
+## Dicas
+
+- Combine modo foto com sala e boa iluminação do ambiente.
+- Evite overlays a mais (grelha, cotas) se a imagem for para o cliente final; ative-os só se quiser mostrar medidas na captura.
+- Guarde o projeto antes de uma sessão longa de capturas.
+
+## Erros comuns
+
+- Pensar que a foto substitui o PDF técnico ou o Desenho Técnico.
+- Descarregar sem verificar se a câmara está de frente para o conjunto certo.
+- Procurar o modo foto fora do workspace 3D (está na barra superior do editor).
+- Ativar o modo foto com a grelha e as cotas ligadas e enviar essa imagem ao cliente sem querer: oculte overlays primeiro (`G` e `D`).
+
+## Boas práticas de apresentação
+
+Prepare a sala, alinhe os módulos, escolha um ângulo a três quartos ou de frente, e só então descarregue. Guarde duas capturas (geral e detalhe) se o projeto for grande. Para documentação de obra, continue a usar a exportação formal.
 
 ## Relacionado
 
-- [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/)
 - [Sala e ambiente](/pt-pt/funcionalidades/sala-e-ambiente/)
+- [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/)
+- [Catálogo de botões](/pt-pt/referencia/botoes/)
 
 ---
 
@@ -4923,9 +5055,9 @@ A equipa confirma os preços na resposta. Os valores do resumo financeiro na apl
 
 ---
 
-## PDF técnico
+## PDF técnico industrial
 URL: https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/
-Geração de PDF técnico com dados de projeto e produção no PIMO PRO.
+Gere o PDF técnico industrial do PIMO PRO com lista de corte, materiais, ferragens e resumo, a partir de Salvar e Gerar Design.
 
 ## O que faz
 
@@ -4980,20 +5112,61 @@ Controla tipo de porta e quantidade de gavetas por módulo, aplicando regras int
 
 ## Relatório final
 URL: https://pimo.info/pt-pt/funcionalidades/relatorio-final/
-Relatório final consolidado do projeto no PIMO PRO.
+Relatório final consolidado do projeto no PIMO PRO: o que mostra, quando usar e como difere da análise documental em PROJETOS.
 
 # Relatório final
 
-A rota `/relatorio-final/:project` gera uma vista consolidada do projeto para revisão e entrega.
+O **relatório final** do PIMO PRO junta, num só sítio, a visão consolidada de um projeto já trabalhado: o que foi desenhado, o que conta para produção e o que precisa de revisão antes de entregar ao cliente ou à fábrica. Serve para fechar o ciclo do projeto, não para editar documentos industriais linha a linha.
 
-## Estado
+## O que faz
 
-**Disponível** na app autenticada.
+O relatório final apresenta o estado do projeto de forma legível para quem não está dentro do editor 3D. Em linguagem simples, ajuda a responder: o projeto está completo? As medidas e a composição fazem sentido? Há documentação suficiente para avançar?
+
+Use-o quando quiser:
+
+- rever o conjunto antes de enviar um orçamento ou um pacote de fabrico;
+- partilhar um resumo com a equipa comercial ou de montagem;
+- confirmar que o projeto guardado corresponde ao que exportou.
+
+## Onde está no ecrã
+
+Com sessão iniciada, abra o projeto a partir de **Meus Projetos** ou da lista de projetos da conta. O relatório final aparece no fluxo de consulta do projeto (não no menu de desenho 3D do workspace). Se não o vir na sua instalação, continue a usar a exportação habitual: PDF técnico, Desenho Técnico e arquivo completo.
+
+## Para que serve (e para que não serve)
+
+Serve para **rever e entregar**. Não substitui:
+
+- o **PDF técnico industrial**, com lista de corte, materiais e ferragens;
+- o **Desenho Técnico (PDF)**, com vistas e cotas;
+- a **análise documental** em PIMO PROJETOS, onde se consultam e, quando disponível, se editam documentos do arquivo.
+
+Papel distinto: o relatório final é a vista de fecho do projeto; a [análise de projetos](/pt-pt/funcionalidades/analise-projetos/) é a leitura documental online dos artefactos industriais.
+
+## O que acontece a seguir
+
+1. Guarde o projeto com o nome certo.
+2. Confirme materiais, portas ou gavetas e medidas no configurador 3D.
+3. Gere o design 3D se ainda não o fez.
+4. Exporte o que a fábrica precisa (ZIP, PDF técnico, Desenho Técnico, TCN ou Drill XML).
+5. Use o relatório final para validar a entrega com a equipa.
+
+## Dicas
+
+- Abra o relatório só depois de o projeto estar estável: alterações grandes no 3D pedem nova geração e nova exportação.
+- Se o cliente pede «só o desenho com medidas», prefira o Desenho Técnico; se pede «lista e custos», prefira o PDF técnico e o pedido de orçamento.
+- Mantenha o mesmo nome de projeto no relatório e nos ficheiros exportados para evitar confusão na obra.
+
+## Erros comuns
+
+- Confundir relatório final com análise online: a análise trabalha documentos do arquivo; o relatório fecha a vista do projeto.
+- Exportar sem gerar o design 3D: o relatório e os PDFs ficam desatualizados face ao que vê no ecrã.
+- Entregar só o relatório sem ZIP: a fábrica continua a precisar dos ficheiros de corte e máquina.
 
 ## Relacionado
 
+- [Análise de projetos](/pt-pt/funcionalidades/analise-projetos/)
 - [Exportação](/pt-pt/guias-utilizador/exportacao/)
-- [PDF técnico](/pt-pt/funcionalidades/pdf-tecnico/)
+- [PDF técnico industrial](/pt-pt/funcionalidades/pdf-tecnico/)
 - [Orçamentos](/pt-pt/funcionalidades/orcamentos/)
 
 ---
@@ -5029,15 +5202,61 @@ Disponível no modelo de projeto. As regras por tipo continuam a ser documentada
 
 ## Sala e ambiente
 URL: https://pimo.info/pt-pt/funcionalidades/sala-e-ambiente/
-Sala 3D, ambiente e room settings no PIMO PRO.
+Configure a sala 3D no PIMO PRO: paredes, luz e ambiente para contextualizar o mobiliário antes do modo foto ou da apresentação.
 
 # Sala e ambiente
 
-O ambiente de **sala** contextualiza o mobiliário no viewport (paredes, luz, HDR). Pode ajustar opções de sala e ambiente nas definições da aplicação.
+A **sala e o ambiente** no PIMO PRO colocam o mobiliário num espaço 3D com paredes, chão e iluminação. Não fazem parte do Desenho Técnico nem da lista de corte: servem para apresentar o projeto com contexto, validar proporções no espaço e preparar capturas no modo foto.
 
-## Estado
+## O que faz
 
-**Disponível** na app.
+Com a sala ativa, vê o módulo «dentro» de um ambiente, em vez de flutuar só no vazio do viewport. Pode criar ou ajustar a sala, definir dimensões úteis para a apresentação e controlar opções de ambiente (luz e aspeto da sala) nas definições e no painel dedicado.
+
+Isto ajuda a:
+
+- mostrar ao cliente como o móvel ocupa a parede ou o canto;
+- alinhar módulos a paredes ou limites da sala quando o ajuste à sala está ativo;
+- preparar uma vista mais realista antes de descarregar uma imagem.
+
+## Onde está no ecrã
+
+- Na **barra superior** do espaço de trabalho 3D, o controlo de **sala** abre ou fecha o painel de configuração da sala.
+- No **painel Sala** pode criar a sala e aplicar dimensões.
+- Opções de ambiente também aparecem nas **definições** da aplicação, quando disponíveis.
+- No **menu de contexto**, pode haver ações ligadas ao ajuste à sala (por exemplo ativar ou desativar o encaixe à sala).
+
+A sala não substitui o layout de produção: paredes e ambiente **não entram** no Desenho Técnico (PDF).
+
+## Para que serve
+
+Use a sala quando o objetivo é **apresentar** ou **validar espacialmente**. Use o configurador sem sala quando está a focar só carcaça, ferragens e exportação.
+
+Fluxo típico:
+
+1. Desenhe e posicione os módulos.
+2. Abra o painel da sala e crie ou ajuste o ambiente.
+3. Verifique se o conjunto cabe visualmente no espaço.
+4. Passe ao [modo foto](/pt-pt/funcionalidades/modo-foto/) se quiser capturar a vista.
+
+## O que acontece a seguir
+
+Depois de configurar a sala, pode:
+
+- continuar a editar módulos normalmente (mover, rodar, materiais);
+- entrar no modo foto para descarregar a imagem;
+- gerar o design 3D e exportar ficheiros de produção (a sala continua fora do PDF técnico e do Desenho Técnico).
+
+## Dicas
+
+- Trate a sala como cenário de apresentação, não como peça de fabrico.
+- Se a vista parece «apertada», ajuste dimensões da sala antes de culpar o módulo.
+- Para medidas de montagem, use cotas no viewport ou o Desenho Técnico, não a escala visual da sala.
+
+## Erros comuns
+
+- Esperar cotas de paredes no Desenho Técnico: o ambiente arquitectónico é excluído de propósito.
+- Ligar o modo foto sem ter a sala ou a iluminação mínimas: a captura fica pobre.
+- Confundir painel Sala com painel Materiais ou Móveis.
 
 ## Relacionado
 
@@ -5081,49 +5300,136 @@ Guias práticos do PIMO PRO por tarefa: criar caixa, materiais, cutlist, nesting
 
 # Guias de utilizador
 
-Estas páginas seguem o fluxo real da ajuda na aplicação PIMO PRO e estão organizadas por tarefa. Se está a começar, leia primeiro [Primeiros passos](/pt-pt/primeiros-passos/).
+Os **guias de utilizador** seguem o fluxo real da ajuda na aplicação PIMO PRO, organizados por tarefa. Cada página diz o que fazer no ecrã, o que acontece a seguir e que erros evitar. Se está a começar, leia primeiro [Primeiros passos](/pt-pt/primeiros-passos/).
 
-## Fluxo recomendado
+## Porquê esta secção
 
-1. [Criar Caixa](/pt-pt/guias-utilizador/criar-caixa/)
-2. [Mover e Posicionar](/pt-pt/guias-utilizador/mover-e-posicionar/)
-3. [Materiais](/pt-pt/guias-utilizador/materiais/)
-4. [Portas e Gavetas](/pt-pt/guias-utilizador/portas-e-gavetas/)
-5. [Medições e Cotas](/pt-pt/guias-utilizador/medicoes-e-cotas/)
-6. [Lista de Corte](/pt-pt/guias-utilizador/lista-de-corte/)
-7. [Nesting / Layout de Corte](/pt-pt/guias-utilizador/nesting-layout-corte/)
-8. [Exportação](/pt-pt/guias-utilizador/exportacao/)
-9. [Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/)
-10. [PIMO-TRAK](/pt-pt/guias-utilizador/pimo-trak/)
-11. [Gerir Projetos](/pt-pt/guias-utilizador/gerir-projetos/)
-12. [Atalhos de Teclado](/pt-pt/guias-utilizador/atalhos-teclado/)
+As funcionalidades descrevem capacidades. A referência nomeia botões. Os guias ensinam a **executar** o trabalho: do primeiro módulo ao ZIP de produção. Use-os no dia a dia e na formação da equipa.
 
-Cada guia liga à funcionalidade correspondente e, quando útil, ao [catálogo de botões](/pt-pt/referencia/botoes/).
+## Fluxo recomendado (e porquê cada guia)
+
+1. [Criar Caixa](/pt-pt/guias-utilizador/criar-caixa/)  
+   Escolher o módulo, configurar e adicionar ao projeto. Base de tudo o resto.
+
+2. [Mover e Posicionar](/pt-pt/guias-utilizador/mover-e-posicionar/)  
+   Organizar o layout no viewport antes de calcular.
+
+3. [Aplicar materiais](/pt-pt/guias-utilizador/materiais/)  
+   Definir carcaça e frentes para custo e aspeto certos.
+
+4. [Portas e Gavetas](/pt-pt/guias-utilizador/portas-e-gavetas/)  
+   Frentes, exclusão mútua e teste de abertura.
+
+5. [Medições e Cotas](/pt-pt/guias-utilizador/medicoes-e-cotas/)  
+   Validar tamanhos no ecrã (cm) antes da cutlist (mm).
+
+6. [Lista de Corte](/pt-pt/guias-utilizador/lista-de-corte/)  
+   Conferir peças e quantidades para fabrico.
+
+7. [Nesting / Layout de Corte](/pt-pt/guias-utilizador/nesting-layout-corte/)  
+   Dispor peças na chapa (Fast ou PRO).
+
+8. [Exportação](/pt-pt/guias-utilizador/exportacao/)  
+   PDF técnico, Desenho Técnico, TCN, Drill XML e ZIP.
+
+9. [Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/)  
+   Ler vistas, cotas, remates e tipologias do PDF A4.
+
+10. [PIMO-TRAK](/pt-pt/guias-utilizador/pimo-trak/)  
+    Etiquetas e rastreio por peça.
+
+11. [Gerir Projetos](/pt-pt/guias-utilizador/gerir-projetos/)  
+    Guardar, abrir e organizar projetos da conta.
+
+12. [Atalhos de Teclado](/pt-pt/guias-utilizador/atalhos-teclado/)  
+    Acelerar seleção, movimento, cotas e nesting.
+
+## Como escolher o guia certo
+
+| Situação | Guia |
+| --- | --- |
+| Ainda não tem módulos no projeto | Criar caixa |
+| Os módulos estão no sítio errado | Mover e posicionar |
+| Vai falar com a fábrica | Exportação + lista de corte |
+| O cliente pede desenho cotado | Desenho Técnico |
+| Quer ir mais depressa no ecrã | Atalhos de teclado |
+
+## Dica
+
+Abra o guia e a [referência de botões](/pt-pt/referencia/botoes/) em separadores lado a lado. Um explica o fluxo; a outra confirma o nome exacto do controlo. Para o que mudou na app, veja [Novidades](/pt-pt/novidades/).
+
+## Ordem se tiver pouco tempo
+
+Se só pode ler três guias hoje: **Criar caixa**, **Exportação** e **Desenho Técnico**. Com isso cobre o essencial do desenho ao documento de obra. Depois complete materiais, nesting e TRAK conforme o papel na equipa.
 
 ---
 
 ## Atalhos de Teclado
 URL: https://pimo.info/pt-pt/guias-utilizador/atalhos-teclado/
-Atalhos de Teclado.
+Atalhos reais do viewport e do nesting no PIMO PRO: selecionar, mover, cotas, desfazer, zoom, histórico e menu de contexto.
 
 # Atalhos de teclado do viewport
 
-## Navegação e edição
+No PIMO PRO, os atalhos aceleram o trabalho no espaço 3D e no ecrã de nesting. Só funcionam bem quando o foco **não** está num campo de texto. Se um atalho não reagir, clique no viewport e tente de novo.
 
-- `S`, selecionar módulo.
-- `M`, mover módulo.
-- `R`, rodar módulo.
-- `D`, mostrar/ocultar cotas.
-- `G`, mostrar/ocultar grelha.
-- `Home`, repor câmara.
-- `Escape`, cancelar seleção.
-- `Ctrl + Z`, desfazer.
-- `Ctrl + Y`, refazer.
-- `Botão direito`, menu de contexto do módulo.
+Esta lista segue os atalhos reais da ajuda e do catálogo de controlos da aplicação. Não inventa combinações.
 
-## Dica
+## Viewport 3D: ferramentas principais
 
-Para operações por módulo, o menu de contexto é a via mais rápida para duplicar, alinhar, renomear, trocar material ou remover.
+| Tecla | Ação |
+| --- | --- |
+| `S` | Selecionar módulo. Clique no móvel para ver propriedades. |
+| `M` | Mover (translação). Arraste nos eixos horizontais do plano. |
+| `R` | Rodar em torno do eixo vertical. |
+| `D` | Mostrar ou ocultar cotas do módulo (largura, altura e profundidade em centímetros). |
+| `G` | Mostrar ou ocultar a grelha do chão. |
+| `Home` | Repor a câmara na vista isométrica padrão. |
+| `Escape` | Cancelar a seleção e voltar à ferramenta de seleção. |
+
+## Edição e histórico
+
+| Tecla | Ação |
+| --- | --- |
+| `Ctrl + Z` | Desfazer a última alteração. |
+| `Ctrl + Y` | Refazer. |
+| `Ctrl + Shift + Z` | Refazer (alternativa). |
+| `Delete` ou `Backspace` | Remover caixas ou remates selecionados. |
+| `H` | Abrir ou fechar o histórico de alterações (barra inferior), se o foco não estiver num campo editável. |
+| `Alt` | Mostrar ou ocultar a ajuda de atalhos no ecrã. |
+| `Ctrl + clique` | Adicionar ou remover um objeto da seleção múltipla. |
+| Setas | Mover a caixa selecionada no plano, em passos. |
+
+## Menu de contexto (botão direito)
+
+Com o rato sobre um módulo, o **botão direito** abre o menu de contexto. É a via mais rápida para duplicar, renomear, bloquear, alinhar, alterar material ou remover. Combine com `S` para garantir a seleção certa antes de abrir o menu.
+
+## Nesting
+
+No ecrã de nesting, os atalhos mudam de papel:
+
+| Tecla | Ação no nesting |
+| --- | --- |
+| `Escape` | Limpa seleção ou arrasto. |
+| `Delete` / `Backspace` | Remove a peça selecionada do layout. |
+| `R` | Roda a peça selecionada. |
+| `0` | Repõe zoom e pan. |
+| `+` ou `=` | Aproxima (zoom in). |
+| `-` | Afasta (zoom out). |
+
+## Como usar no dia a dia
+
+1. Clique no viewport para focar o espaço 3D.
+2. Prima `S`, escolha o módulo, depois `M` ou `R`.
+3. Valide medidas com `D` antes de exportar.
+4. Se errar, `Ctrl + Z`. Se precisar da lista de atalhos no ecrã, `Alt`.
+
+Para o fluxo completo de posicionamento, veja [Mover e posicionar](/pt-pt/guias-utilizador/mover-e-posicionar/). Para cotas, [Medições e cotas](/pt-pt/guias-utilizador/medicoes-e-cotas/). Nomes dos controlos: [Botões](/pt-pt/referencia/botoes/).
+
+## Erros comuns
+
+- Premir atalhos com o cursor dentro de um campo de nome ou dimensão.
+- Confundir `R` do viewport (rodar módulo) com `R` do nesting (rodar peça na chapa).
+- Apagar com `Delete` sem confirmar a seleção: use `Ctrl + Z` de imediato se remover o módulo errado.
 
 ---
 
@@ -5494,9 +5800,9 @@ Funcionalidade: [Lista de Corte](/pt-pt/funcionalidades/lista-de-corte/). Botõe
 
 ---
 
-## Materiais
+## Guia: aplicar materiais no PIMO PRO
 URL: https://pimo.info/pt-pt/guias-utilizador/materiais/
-Como alterar materiais da carcaça e frentes no PIMO PRO, incluindo presets no painel Materiais.
+Passo a passo para alterar materiais da carcaça e das frentes no PIMO PRO, com presets no painel Materiais e boas práticas.
 
 # Alterar materiais da carcaça e frentes
 
@@ -5535,65 +5841,137 @@ Funcionalidade: [Materiais](/pt-pt/funcionalidades/materiais/).
 
 ## Medições e Cotas
 URL: https://pimo.info/pt-pt/guias-utilizador/medicoes-e-cotas/
-Medições e Cotas.
+Ative cotas no viewport 3D do PIMO PRO com o atalho D, leia medidas em centímetros e valide dimensões antes de exportar.
 
 # Medições, régua e cotas no viewport
 
-As cotas ajudam a validar dimensões externas dos módulos antes da exportação.
+No PIMO PRO, as **cotas no viewport** mostram largura, altura e profundidade do módulo selecionado diretamente sobre o modelo 3D. Servem para validar o desenho enquanto trabalha. As medidas de fabrico (lista de corte e Desenho Técnico) usam **milímetros**; as etiquetas do atalho `D` aparecem em **centímetros**.
 
-## Passo a passo
+## Para que serve
 
-1. **Ativar cotas (D)**  
-   Prima `D` para mostrar etiquetas de largura, altura e profundidade.
+- Confirmar que o módulo tem o tamanho pedido pelo cliente.
+- Comparar dois módulos lado a lado sem abrir a lista de corte.
+- Detetar erros de escala antes de gerar o design 3D ou exportar.
 
-2. **Ler unidades**  
-   As etiquetas aparecem em centímetros.
+Não substituem o [Desenho Técnico (PDF)](/pt-pt/guias-utilizador/desenho-tecnico/), que documenta vistas e cotas de montagem em A4.
 
-3. **Trocar módulo**  
-   Ao selecionar outro módulo, as cotas atualizam automaticamente.
+## Onde está e como ativar
 
-4. **Medição entre pontos**  
-   No painel de medições internas, pode medir distâncias específicas no cenário.
+1. Selecione um módulo no viewport (`S` ou clique).
+2. Prima `D` para mostrar as etiquetas de dimensão.
+3. Leia L, A e P em centímetros.
+4. Selecione outro módulo: as cotas atualizam-se.
+5. Prima `D` de novo para ocultar.
 
-5. **Desativar**  
-   Prima `D` novamente para ocultar as etiquetas.
+No painel de medições internas pode medir distâncias pontuais no cenário quando precisar de um vão específico (por exemplo entre duas faces).
 
-## Nota
+## Unidades: não misture
 
-As dimensões internas dos painéis são tratadas no cálculo técnico e visíveis na lista de corte.
+| Contexto | Unidade |
+| --- | --- |
+| Cotas no viewport (`D`) | Centímetros |
+| Lista de corte / fabrico | Milímetros |
+| Desenho Técnico (PDF) | Milímetros (escala no cabeçalho) |
+
+Se o cliente fala em mm, converta mentalmente (60 cm = 600 mm) ou confira na lista de corte.
+
+## O que acontece a seguir
+
+Depois de validar cotas no ecrã:
+
+1. Ajuste o módulo se estiver errado (configuração ou menu de medidas).
+2. Gere o design 3D.
+3. Confirme a lista de corte.
+4. Exporte o Desenho Técnico se precisar de um PDF cotado para obra.
+
+## Dicas
+
+- Ative cotas só no módulo em foco para não poluir a vista.
+- Use `Home` para repor a câmara se as etiquetas ficarem difíceis de ler.
+- Para conjuntos com remates ou vários módulos, o Desenho Técnico mostra melhor a legenda de separação.
+
+## Erros comuns
+
+- Assumir que as cotas do ecrã já são o documento de obra (faltam vistas e formato A4).
+- Comparar cm do viewport com mm da cutlist sem converter.
+- Esconder cotas e esquecer de as voltar a ligar antes de uma revisão rápida com o cliente.
+- Medir só a largura exterior e esquecer a profundidade útil face a uma parede irregular.
+
+## Relação com o Desenho Técnico
+
+As cotas do atalho `D` são uma ajuda rápida no ecrã. O documento de obra é o Desenho Técnico em A4 horizontal, com várias vistas e escala no cabeçalho. Use os dois: ecrã para decidir, PDF para entregar.
+
+Guia relacionado: [Atalhos de teclado](/pt-pt/guias-utilizador/atalhos-teclado/). Produção: [Lista de corte](/pt-pt/guias-utilizador/lista-de-corte/).
 
 ---
 
 ## Mover e Posicionar
 URL: https://pimo.info/pt-pt/guias-utilizador/mover-e-posicionar/
-Mover e Posicionar.
+Mova, rode e alinhe módulos no workspace 3D do PIMO PRO com atalhos S, M e R, setas do teclado e o menu de contexto do rato.
 
 # Mover, rodar e posicionar módulos no workspace
 
-Antes do cálculo final, o workspace permite organizar módulos manualmente ou com apoio do auto-layout.
+Antes do cálculo final, organize os módulos no espaço 3D do PIMO PRO. Um layout limpo evita colisões, facilita cotas e deixa o Desenho Técnico mais legível.
+
+## O que faz este guia
+
+Explica como selecionar, mover e rodar módulos, alinhar frentes e corrigir o posicionamento automático. Complementa [Criar caixa](/pt-pt/guias-utilizador/criar-caixa/) (adicionar módulos) e [Atalhos](/pt-pt/guias-utilizador/atalhos-teclado/) (teclas).
 
 ## Passo a passo
 
-1. **Selecionar módulo (S)**  
-   Clique no módulo no viewport ou prima `S`.
+1. **Selecionar (`S`)**  
+   Clique no módulo ou prima `S` e escolha o móvel. A seleção mostra as propriedades no painel.
 
-2. **Mover (M)**  
-   Prima `M` para ativar translação nos eixos. O eixo X desloca lateralmente e o Z em profundidade.
+2. **Mover (`M`)**  
+   Prima `M` para ativar a translação. Desloque no plano: o eixo horizontal move lateralmente e o de profundidade afasta ou aproxima da câmara/parede conforme a vista.
 
-3. **Rodar (R)**  
-   Prima `R` para rodar em torno do eixo vertical.
+3. **Rodar (`R`)**  
+   Prima `R` para rodar em torno do eixo vertical. Útil em cantos e mudanças de parede.
 
 4. **Alinhar pela frente**  
-   No menu de contexto (botão direito), use o alinhamento da frente ao módulo vizinho.
+   No menu de contexto (botão direito), use o alinhamento da frente ao módulo vizinho quando quiser uma linha contínua de frentes.
 
-5. **Ajustar auto-posicionamento**  
-   Módulos novos entram lado a lado automaticamente. Pode corrigir manualmente quando necessário.
+5. **Ajuste fino**  
+   As setas do teclado movem a caixa selecionada em passos. `Ctrl + clique` permite seleção múltipla.
 
-## Dicas úteis
+6. **Auto-posicionamento**  
+   Módulos novos entram lado a lado quando não há outro selecionado. Corrija manualmente se o vão ou o canto pedirem outra composição.
 
-- `Home` repõe a câmara.
-- `Escape` cancela seleção.
-- Avisos de colisão aparecem no painel de layout.
+## Onde está no ecrã
+
+- Ferramentas de seleção/mover/rodar: viewport 3D e atalhos.
+- Alinhamentos e duplicar: **botão direito** sobre o módulo.
+- Câmara: `Home` repõe a vista; orbitar com o rato conforme os controlos do viewport.
+- Avisos de colisão ou layout: painéis de apoio do workspace quando existem.
+
+## O que acontece a seguir
+
+1. Confirme cotas com `D` ([Medições e cotas](/pt-pt/guias-utilizador/medicoes-e-cotas/)).
+2. Aplique materiais e frentes.
+3. Clique em **Gerar Design 3D**.
+4. Exporte cutlist, Desenho Técnico ou ZIP.
+
+Se mover módulos depois de gerar, volte a gerar antes de exportar para produção.
+
+## Dicas
+
+- Trabalhe módulo a módulo: selecione, mova, confirme, só depois passe ao seguinte.
+- Em cantos, rode primeiro (`R`) e só depois ajuste a distância à parede.
+- `Escape` cancela a seleção se estiver «preso» numa ferramenta.
+- `Ctrl + Z` desfaz um movimento errado.
+
+## Erros comuns
+
+- Mover sem ter o módulo certo selecionado.
+- Exportar após rearranjar o layout sem gerar de novo o design 3D.
+- Ignorar avisos de colisão e descobrir sobreposição só na obra.
+- Rodar em excesso e ficar com a frente do módulo virada para a parede sem perceber.
+
+## Checklist rápida antes de gerar
+
+Seleção certa, frentes alinhadas, sem sobreposição óbvia, cotas conferidas com `D`, câmara reposta com `Home` se precisar de uma vista limpa. Só então clique em **Gerar Design 3D**.
+
+Funcionalidade: [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/).
 
 ---
 
@@ -5663,33 +6041,60 @@ Aplicar etiquetas antes de mover peças da mesa de corte reduz trocas e ambiguid
 
 ## Portas e Gavetas
 URL: https://pimo.info/pt-pt/guias-utilizador/portas-e-gavetas/
-Portas e Gavetas.
+Configure portas e gavetas no PIMO PRO: tipos de frente, folgas, exclusão mútua e verificação de abertura antes da produção.
 
 # Configurar portas, gavetas e frentes
 
-O sistema aplica regras automáticas de folgas, ferragens e compatibilidade.
+No PIMO PRO, portas e gavetas definem a frente do módulo e disparam regras automáticas de folgas e ferragens. A regra mais importante: **no mesmo módulo, portas e gavetas não coexistem**. Ao ativar gavetas, a porta é removida.
 
-## Passo a passo
+## O que pode configurar
 
-1. **Escolher tipo de porta**  
-   Sem porta, simples ou dupla.
+- Tipo de porta: sem porta, simples ou dupla.
+- Número de gavetas (tipicamente 1 a 4): o sistema distribui alturas segundo as regras internas.
+- Materiais das frentes no painel Materiais.
+- Abertura da porta no viewport para ver o movimento.
 
-2. **Aplicar porta ao módulo**  
-   No painel da caixa selecionada, altere o tipo de porta.
+Ferragens (dobradiças, corrediças) seguem a configuração do módulo. Detalhe em [Ferragens](/pt-pt/funcionalidades/ferragens/).
 
-3. **Testar abertura**  
-   Clique na porta para animação e verificação de interferências.
+## Onde está no ecrã
 
-4. **Configurar gavetas**  
-   Defina quantidade (1-4); o sistema distribui alturas segundo regras internas.
+1. Abra o painel **Móveis** e adicione ou selecione o módulo ([Criar caixa](/pt-pt/guias-utilizador/criar-caixa/)).
+2. Na janela de configuração ou no painel da caixa selecionada, escolha o tipo de porta ou o número de gavetas.
+3. Confirme **Adicionar ao projeto** ou aplique a alteração ao módulo já existente.
+4. Clique na porta no viewport para testar a abertura, quando aplicável.
 
-5. **Validar regras automáticas**  
-   Ao ativar gavetas, as portas são removidas automaticamente.
+No Desenho Técnico, portas duplas e gavetas aparecem nas vistas geradas a partir do projeto. Exemplos: [Guia do Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/).
 
-## Atenções
+## Passo a passo recomendado
 
-- Portas e gavetas são mutuamente exclusivas no mesmo módulo.
-- Verifique aberturas antes de exportar para produção.
+1. Decida se o módulo é de **porta** ou de **gavetas** antes de detalhar o resto.
+2. Defina largura, altura e profundidade.
+3. Escolha o tipo de porta ou a quantidade de gavetas.
+4. Aplique material das frentes.
+5. Gere o design 3D e confira ferragens e lista de corte.
+6. Exporte o Desenho Técnico se a obra precisar de vistas cotadas da frente.
+
+## O que acontece a seguir
+
+Depois de configurar frentes:
+
+- o cálculo técnico inclui peças de porta ou de gaveta;
+- a exportação leva essas peças à cutlist e, quando aplicável, à furação;
+- no PDF de desenho técnico, as frentes entram nas vistas do módulo.
+
+## Dicas
+
+- Não force porta e gaveta no mesmo módulo: a app remove a porta ao ativar gavetas.
+- Em telemóvel, a janela de configuração abre como folha inferior; confirme sempre o botão de adicionar ou aplicar.
+- Para um bloco só com gavetas da Linha Branca, veja também o [armário com 3 gavetas](/pt-pt/linha-branca/armario-3-gavetas/).
+
+## Erros comuns
+
+- Configurar porta e depois adicionar gavetas sem notar que a porta desapareceu.
+- Esquecer de testar a abertura junto a um canto ou a outro módulo.
+- Exportar sem gerar o design 3D após mudar o número de gavetas.
+
+Funcionalidade: [Portas e gavetas](/pt-pt/funcionalidades/portas-e-gavetas/).
 
 ---
 
@@ -5991,37 +6396,163 @@ Módulos base da Linha Branca da Pimo Casa: armários inferiores, gavetas, garra
 
 ## Armário com 3 Gavetas
 URL: https://pimo.info/pt-pt/linha-branca/armario-3-gavetas/
-Armário com 3 gavetas da Linha Branca (30 a 60 cm): frentes MDF carvalho, gavetas em madeira e FAQ. Pimo Casa.
+Armário com 3 gavetas da Linha Branca Pimo Casa (30 a 60 cm): frentes MDF carvalho, medidas reais e como criar no PIMO PRO.
 
 # Armário com 3 Gavetas
 
  
-  Módulo base com três gavetas em madeira e frentes MDF carvalho. Larguras de
-  30, 40, 50 ou 60 cm.
+  Módulo base da Linha Branca (marca «Pimo Casa») com três gavetas em madeira e
+  frentes MDF laminado carvalho. Larguras de 30, 40, 50 ou 60 cm.
+ 
+
+## Para que serve este modelo
+
+Este armário inferior concentra **arrumação em gavetas** sob a bancada: loiça miúda, utensílios e stock de cozinha que deve deslizar sem ocupar uma porta de batente. Escolha-o quando o vão pede frentes horizontais alinhadas com outros módulos da Linha Branca, e não uma porta vertical.
+
+Diferença face ao [armário de cozinha inferior](/pt-pt/linha-branca/armario-cozinha-inferior/): aquele usa prateleiras e porta opcional; este traz **três gavetas** de série e **não** partilha porta no mesmo módulo (no PIMO PRO, portas e gavetas excluem-se).
+
+## Medidas reais
+
+- Larguras: **300, 400, 500 ou 600 mm** (só a largura varia).
+- Profundidade: **500 mm**.
+- Altura total: **870 mm** (corpo 770 mm + pés 100 mm).
+
+A caixa é AGL laminado branco de 19 mm. As frentes são MDF laminado carvalho (material alterável a pedido). Cada gaveta tem caixa em madeira com corrediças Hettich. Os pés reguláveis de 100 mm podem trocar-se por pés de 15 mm sem custo.
+
+## Como criar no PIMO PRO
+
+1. Abra o painel **Móveis** no workspace 3D.
+2. Escolha um módulo de gavetas compatível com a largura desejada (30 a 60 cm).
+3. Na configuração, defina **três gavetas** e confirme que não fica porta ativa no mesmo módulo.
+4. Ajuste material das frentes no painel Materiais se quiser outro acabamento.
+5. Adicione ao projeto, alinhe ao [armário inferior](/pt-pt/linha-branca/armario-cozinha-inferior/) ou à [garrafeira](/pt-pt/linha-branca/garrafeira-20/) vizinha.
+6. Gere o design 3D e exporte cutlist ou Desenho Técnico quando for para fabrico.
+
+Guia prático: [Portas e gavetas](/pt-pt/guias-utilizador/portas-e-gavetas/).
+
+## Uso no layout da cozinha
+
+Coloque o módulo sob a bancada, alinhado pela frente com os vizinhos. Em larguras menores (300 ou 400 mm), funciona bem junto à [garrafeira 20 cm](/pt-pt/linha-branca/garrafeira-20/) para preencher um vão estreito sem perder arrumação. Confirme a altura total de 870 mm com a bancada e os [pés reguláveis](/pt-pt/linha-branca/pes-regulaveis/).
+
+## O que acontece a seguir
+
+Depois de desenhado no PIMO PRO: peça orçamento, levante na fábrica (montagem não incluída) e integre no resto da linha. Em obra, nivele pelos pés e verifique o curso das corrediças antes de carregar as gavetas.
+
+## Erros comuns
+
+- Pedir porta e três gavetas no mesmo módulo: no PIMO PRO a porta sai ao ativar gavetas.
+- Misturar larguras sem alinhar a frente: use o alinhamento do menu de contexto.
+- Esquecer a troca de pés 100 mm → 15 mm quando a bancada já tem outro sistema de altura.
 
 ---
 
 ## Armário de Cozinha Inferior
 URL: https://pimo.info/pt-pt/linha-branca/armario-cozinha-inferior/
-Armário inferior da Linha Branca (30 a 60 cm): medidas, materiais, 2 prateleiras reguláveis e FAQ. Pimo Casa, desenhado no PIMO PRO.
+Armário inferior da Linha Branca Pimo Casa (30 a 60 cm): medidas reais, 2 prateleiras, porta opcional e criação no PIMO PRO.
 
 # Armário de Cozinha Inferior
 
  
-  Módulo base em larguras de 30, 40, 50 ou 60 cm. Caixa branca, prateleiras
-  reguláveis e porta MDF carvalho opcional.
+  Módulo base da Linha Branca (marca «Pimo Casa») em larguras de 30 a 60 cm.
+  Caixa branca, duas prateleiras reguláveis e porta MDF carvalho opcional.
+ 
+
+## Para que serve este modelo
+
+É o **bloco standard sob bancada**: arrumação em prateleiras com acesso por porta (quando a pede) ou frente aberta se preferir sem porta. Serve de âncora visual e dimensional para a restante Linha Branca.
+
+Compare com o [armário de 3 gavetas](/pt-pt/linha-branca/armario-3-gavetas/): aqui o interior é de **prateleiras**, não de gavetas. Use este quando quer volume contínuo e poucas frentes horizontais.
+
+## Medidas e composição
+
+- Larguras: **300, 400, 500 ou 600 mm**.
+- Profundidade: **500 mm**.
+- Altura total: **870 mm** (corpo 770 mm + pés 100 mm).
+- Caixa: AGL laminado branco **19 mm**.
+- Porta (opcional): MDF laminado carvalho, dobradiças Hettich; material das frentes alterável.
+- Interior: **2 prateleiras reguláveis**.
+- Pés: reguláveis 100 mm; troca para 15 mm sem custo ([pés reguláveis](/pt-pt/linha-branca/pes-regulaveis/)).
+
+Montagem não incluída; levantamento na fábrica.
+
+## Como criar no PIMO PRO
+
+1. No painel **Móveis**, escolha um módulo inferior na largura desejada.
+2. Na configuração, defina prateleiras (duas, alinhado a este modelo) e o tipo de porta: sem porta, simples ou conforme o projeto.
+3. Não ative gavetas neste módulo se quer manter a porta: no PIMO PRO são mutuamente exclusivas.
+4. Aplique material da carcaça e da frente.
+5. Adicione ao projeto e alinhe a frente com vizinhos (gavetas ou [garrafeira 20 cm](/pt-pt/linha-branca/garrafeira-20/)).
+6. Gere o design 3D; exporte lista de corte ou Desenho Técnico para fabrico.
+
+Passo a passo geral: [Criar caixa](/pt-pt/guias-utilizador/criar-caixa/).
+
+## Uso no layout
+
+Trabalho típico: fila de inferiores sob a bancada, com a mesma altura 870 mm. Alterne com o módulo de gavetas para variar o ritmo das frentes. Em vãos estreitos, combine com a garrafeira de 200 mm de largura. Nivele todos os módulos pelos pés antes de fixar a bancada.
+
+## O que acontece a seguir
+
+Desenhe no PIMO PRO, peça orçamento, confirme materiais e larguras, produza e levante na fábrica. Em instalação, regule os pés, alinhe frentes e teste a porta se existir.
+
+## Erros comuns
+
+- Misturar este módulo com três gavetas no mesmo corpo: são modelos diferentes.
+- Esquecer a porta opcional no pedido e receber só a caixa.
+- Ignorar a profundidade 500 mm face a eletrodomésticos ou canalizações.
 
 ---
 
 ## Garrafeira 20 cm
 URL: https://pimo.info/pt-pt/linha-branca/garrafeira-20/
-Garrafeira 20 cm da Linha Branca: 200 x 500 x 870 mm, frente aberta e 5 prateleiras reguláveis. Pimo Casa.
+Garrafeira 20 cm da Linha Branca Pimo Casa: 200×500×870 mm, frente aberta, cinco prateleiras e como desenhar no PIMO PRO.
 
 # Garrafeira 20 cm
 
  
-  Módulo estreito de 20 cm com frente aberta e cinco prateleiras reguláveis
-  para garrafas, azeites e condimentos.
+  Módulo estreito da Linha Branca (marca «Pimo Casa»): 20 cm de largura, frente
+  aberta e cinco prateleiras reguláveis para garrafas, azeites e condimentos.
+ 
+
+## Para que serve este modelo
+
+A garrafeira resolve **vãos estreitos** entre um eletrodoméstico e um armário, ou entre dois blocos da linha, sem inventar um módulo à medida. A frente é **aberta** (sem porta): o acesso é imediato e o visual permanece leve.
+
+Não substitui o [armário inferior](/pt-pt/linha-branca/armario-cozinha-inferior/) nem o de [3 gavetas](/pt-pt/linha-branca/armario-3-gavetas/): esses ocupam 30 a 60 cm e fecham com porta ou gavetas. A garrafeira fixa-se em **200 mm** de largura.
+
+## Medidas e composição
+
+- Medidas: **200 × 500 × 870 mm** (largura × profundidade × altura total).
+- Corpo: AGL laminado branco **19 mm**, frente aberta sem porta.
+- Interior: **5 prateleiras reguláveis**.
+- Pés: reguláveis 100 mm; troca para 15 mm sem custo.
+
+Altura e profundidade alinham com os outros módulos base da Linha Branca (870 mm / 500 mm), para a frente da cozinha ficar contínua.
+
+## Como criar no PIMO PRO
+
+1. Abra o painel **Móveis** e escolha um módulo estreito / garrafeira de 20 cm, se disponível no catálogo da sua sessão, ou um módulo na largura 200 mm equivalente.
+2. Confirme **sem porta** e o número de prateleiras (cinco neste modelo).
+3. Não configure gavetas neste corpo: o modelo é de prateleiras abertas.
+4. Adicione ao projeto entre dois módulos mais largos; alinhe a frente.
+5. Gere o design 3D e exporte quando for produzir.
+
+Se o catálogo não mostrar o nome «garrafeira», use a largura 200 mm e prateleiras conforme este especificado, e valide no Desenho Técnico. Guia: [Criar caixa](/pt-pt/guias-utilizador/criar-caixa/).
+
+## Uso no layout
+
+Coloque a garrafeira onde sobram cerca de 20 cm: ao lado do forno, do frigorífico ou entre dois armários 600 mm. As cinco prateleiras reguláveis servem garrafas em pé, azeites e frascos. Como não tem porta, deixe o vão de circulação livre à frente.
+
+Combine com pés iguais aos dos vizinhos ([pés reguláveis](/pt-pt/linha-branca/pes-regulaveis/)) para a linha superior da caixa coincidir.
+
+## O que acontece a seguir
+
+Desenhe, orçamente, produza e levante na fábrica (montagem não incluída). Em obra, nivele, fixe se o projeto o exigir e regule as prateleiras à altura das garrafas reais.
+
+## Erros comuns
+
+- Pedir porta na garrafeira: o modelo é frente aberta.
+- Tratar 20 cm como 30 cm: a largura é fixa em 200 mm.
+- Esquecer o alinhamento de altura 870 mm com os armários ao lado.
 
 ---
 
@@ -6034,6 +6565,14 @@ Pés reguláveis da Linha Branca: conjunto de 4, alturas 100 mm e 15 mm, troca s
  
   Conjunto de quatro pés para os módulos base da Linha Branca. Escolhes 100 mm
   (de série) ou 15 mm, ambos reguláveis, com troca sem custo.
+
+---
+
+## Novidades
+URL: https://pimo.info/pt-pt/novidades/
+Lista de novidades, melhorias e correções do PIMO PRO para quem desenha, vende ou fabrica no dia a dia.
+
+Atualizações do PIMO PRO: novidades, melhorias e correções úteis no dia a dia. As entradas mais recentes descrevem melhorias para quem desenha, vende ou fabrica.
 
 ---
 
@@ -6142,6 +6681,10 @@ Sistema de rastreio por etiquetas QR por peça. A **geração de etiquetas (UEE 
 ## A análise online do arquivo completo está sempre disponível?
 
 A análise documental online em PROJETOS pode estar disponível conforme a instalação. **Não substitui** o ZIP de produção. Se na sua instalação não aparecer, use o arquivo completo (ZIP) como de costume.
+
+## Onde vejo as novidades do PIMO PRO?
+
+Neste centro de ajuda, a lista pública está em [Novidades](/pt-pt/novidades/). Na aplicação, a Ajuda também destaca alterações recentes úteis no dia a dia.
 
 ---
 
@@ -6252,16 +6795,62 @@ O catálogo completo (nome, localização, ação e atalho) está em [Referênci
 
 ## Referência
 URL: https://pimo.info/pt-pt/referencia/
-Referência técnica do PIMO PRO: botões, controlos e ligações às funcionalidades.
+Referência do PIMO PRO: catálogo de botões e controlos da interface, atalhos e ligações às funcionalidades e ao fluxo de trabalho.
 
 # Referência
 
-Catálogos de referência do PIMO PRO para consulta rápida.
+A **referência** do PIMO Info é a prateleira de consulta rápida: nomes exactos dos controlos, onde ficam no ecrã e para que funcionalidade apontam. Use-a quando já sabe o que quer fazer e só precisa do rótulo certo ou do sítio do botão.
 
-- [Botões e controlos](/pt-pt/referencia/botoes/), toolbar, menus, painéis, atalhos
-- [Como funciona](/pt-pt/como-funciona/), fluxo projeto → exportação → PIMO-TRAK
-- [Primeiros passos](/pt-pt/primeiros-passos/), caminho prático do registo ao ZIP
-- [Funcionalidades](/pt-pt/funcionalidades/), serviços por área
+## Porquê esta secção
+
+Os guias ensinam o fluxo («como exportar»). As funcionalidades explicam o serviço («o que é o nesting»). A referência responde: «como se chama este botão e onde está?».
+
+Abra-a quando:
+
+- a equipa usa nomes diferentes para a mesma ação;
+- está a escrever um procedimento interno e precisa do texto da interface;
+- um atalho ou ícone não está óbvio no ecrã.
+
+## Porquê abrir cada ligação
+
+### [Botões e controlos](/pt-pt/referencia/botoes/)
+
+Catálogo principal: barras, painéis, exportação, atalhos e áreas da interface. Cada entrada liga às funcionalidades relacionadas. Comece aqui na dúvida de rótulo.
+
+### [Como funciona](/pt-pt/como-funciona/)
+
+Mapa do fluxo projeto → cálculo → exportação → rastreio. Útil para situar um botão dentro do processo completo.
+
+### [Primeiros passos](/pt-pt/primeiros-passos/)
+
+Caminho guiado do registo ao ZIP. Use se a referência ficou «seca» e precisa de contexto de onboarding.
+
+### [Funcionalidades](/pt-pt/funcionalidades/)
+
+Páginas por área (materiais, exportação, TRAK, etc.). Abra depois de identificar o botão, para perceber o comportamento completo.
+
+### [Atalhos de teclado](/pt-pt/guias-utilizador/atalhos-teclado/)
+
+Lista prática das teclas do viewport e do nesting, alinhada com o catálogo.
+
+## Como usar no dia a dia
+
+1. Procure pelo nome que vê no ecrã (ou por uma palavra: exportar, cotas, nesting).
+2. Confirme a localização descrita (barra superior, painel lateral, menu de contexto).
+3. Siga a ligação à funcionalidade ou ao guia.
+4. Volte ao catálogo se o procedimento mencionar outro controlo.
+
+## Dica
+
+Se treina novas pessoas na equipa, envie o link do catálogo de botões junto com o guia da tarefa. Reduz atrito entre «o que a documentação diz» e «o que a app mostra».
+
+## Exemplo de uso
+
+A equipa diz «o botão de gerar o pacote». Na referência encontra **Gerar arquivo completo** / **Salvar e Gerar Design**. No guia de [exportação](/pt-pt/guias-utilizador/exportacao/) vê o conteúdo do ZIP. Na funcionalidade correspondente confirma o comportamento. Três cliques, zero ambiguidades.
+
+## Manter a referência atualizada na cabeça
+
+Quando sair uma alteração visível na interface, cruze esta secção com [Novidades](/pt-pt/novidades/). Se o rótulo mudou, o catálogo de botões é a fonte do nome oficial no ecrã.
 
 ---
 

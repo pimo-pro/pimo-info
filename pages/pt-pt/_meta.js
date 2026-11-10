@@ -16,6 +16,7 @@ export default {
   "guias-utilizador": "Guias de utilizador",
   glossario: "Glossário",
   blog: "Blog",
+  novidades: "Novidades",
   "perguntas-frequentes": "Perguntas frequentes",
   contacto: {
     title: "Contacto",

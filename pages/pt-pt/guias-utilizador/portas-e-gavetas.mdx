@@ -1,38 +1,80 @@
 ---
 title: "Portas e Gavetas"
-description: "Portas e Gavetas."
+description: "Configure portas e gavetas no PIMO PRO: tipos de frente, folgas, exclusão mútua e verificação de abertura antes da produção."
 category: guia
 tags:
   - guia
+  - portas
+  - gavetas
 related:
-  - /pt-pt/guias-utilizador/
-  - /pt-pt/glossario/
-lastUpdated: 2026-10-01
+  - /pt-pt/funcionalidades/portas-e-gavetas/
+  - /pt-pt/guias-utilizador/criar-caixa/
+  - /pt-pt/funcionalidades/ferragens/
+  - /pt-pt/guias-utilizador/desenho-tecnico/
+lastUpdated: 2026-11-10
 status: implemented
 ---
 
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
+
 # Configurar portas, gavetas e frentes
 
-O sistema aplica regras automáticas de folgas, ferragens e compatibilidade.
+No PIMO PRO, portas e gavetas definem a frente do módulo e disparam regras automáticas de folgas e ferragens. A regra mais importante: **no mesmo módulo, portas e gavetas não coexistem**. Ao ativar gavetas, a porta é removida.
 
-## Passo a passo
+## O que pode configurar
 
-1. **Escolher tipo de porta**  
-   Sem porta, simples ou dupla.
+- Tipo de porta: sem porta, simples ou dupla.
+- Número de gavetas (tipicamente 1 a 4): o sistema distribui alturas segundo as regras internas.
+- Materiais das frentes no painel Materiais.
+- Abertura da porta no viewport para ver o movimento.
 
-2. **Aplicar porta ao módulo**  
-   No painel da caixa selecionada, altere o tipo de porta.
+Ferragens (dobradiças, corrediças) seguem a configuração do módulo. Detalhe em [Ferragens](/pt-pt/funcionalidades/ferragens/).
 
-3. **Testar abertura**  
-   Clique na porta para animação e verificação de interferências.
+## Onde está no ecrã
 
-4. **Configurar gavetas**  
-   Defina quantidade (1-4); o sistema distribui alturas segundo regras internas.
+1. Abra o painel **Móveis** e adicione ou selecione o módulo ([Criar caixa](/pt-pt/guias-utilizador/criar-caixa/)).
+2. Na janela de configuração ou no painel da caixa selecionada, escolha o tipo de porta ou o número de gavetas.
+3. Confirme **Adicionar ao projeto** ou aplique a alteração ao módulo já existente.
+4. Clique na porta no viewport para testar a abertura, quando aplicável.
 
-5. **Validar regras automáticas**  
-   Ao ativar gavetas, as portas são removidas automaticamente.
+No Desenho Técnico, portas duplas e gavetas aparecem nas vistas geradas a partir do projeto. Exemplos: [Guia do Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/).
 
-## Atenções
+## Passo a passo recomendado
 
-- Portas e gavetas são mutuamente exclusivas no mesmo módulo.
-- Verifique aberturas antes de exportar para produção.
+1. Decida se o módulo é de **porta** ou de **gavetas** antes de detalhar o resto.
+2. Defina largura, altura e profundidade.
+3. Escolha o tipo de porta ou a quantidade de gavetas.
+4. Aplique material das frentes.
+5. Gere o design 3D e confira ferragens e lista de corte.
+6. Exporte o Desenho Técnico se a obra precisar de vistas cotadas da frente.
+
+## O que acontece a seguir
+
+Depois de configurar frentes:
+
+- o cálculo técnico inclui peças de porta ou de gaveta;
+- a exportação leva essas peças à cutlist e, quando aplicável, à furação;
+- no PDF de desenho técnico, as frentes entram nas vistas do módulo.
+
+## Dicas
+
+- Não force porta e gaveta no mesmo módulo: a app remove a porta ao ativar gavetas.
+- Em telemóvel, a janela de configuração abre como folha inferior; confirme sempre o botão de adicionar ou aplicar.
+- Para um bloco só com gavetas da Linha Branca, veja também o [armário com 3 gavetas](/pt-pt/linha-branca/armario-3-gavetas/).
+
+## Erros comuns
+
+- Configurar porta e depois adicionar gavetas sem notar que a porta desapareceu.
+- Esquecer de testar a abertura junto a um canto ou a outro módulo.
+- Exportar sem gerar o design 3D após mudar o número de gavetas.
+
+Funcionalidade: [Portas e gavetas](/pt-pt/funcionalidades/portas-e-gavetas/).
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/funcionalidades/portas-e-gavetas/", label: "Funcionalidade portas e gavetas" },
+    { href: "/pt-pt/guias-utilizador/criar-caixa/", label: "Criar caixa" },
+    { href: "/pt-pt/funcionalidades/ferragens/", label: "Ferragens" },
+    { href: "/pt-pt/guias-utilizador/desenho-tecnico/", label: "Desenho Técnico" },
+  ]}
+/>

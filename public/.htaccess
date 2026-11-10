@@ -51,6 +51,13 @@ DirectoryIndex index.html default.php
   # Página dedicada pim0.com removida -> hub do ecossistema
   RewriteRule ^pt-pt/ecossistema/pim0-com/?$ /pt-pt/ecossistema/ [R=301,L]
 
+  # /blog/ (sem ficheiro) -> blog canónico pt-PT; não afecta /blog/rss.xml
+  RewriteRule ^blog/?$ /pt-pt/blog/ [R=301,L]
+
+  # Pedidos diretos a /404 ou /404.html: forçar estado 404 (ErrorDocument)
+  RewriteCond %{ENV:REDIRECT_STATUS} !=404
+  RewriteRule ^404(\.html)?/?$ - [R=404,L]
+
   # Se o recurso físico existe, servir diretamente
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d

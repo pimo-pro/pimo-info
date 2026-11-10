@@ -1,28 +1,81 @@
 ---
 title: Relatório final
-description: "Relatório final consolidado do projeto no PIMO PRO."
+description: "Relatório final consolidado do projeto no PIMO PRO: o que mostra, quando usar e como difere da análise documental em PROJETOS."
 category: funcionalidade
 tags:
   - relatorio
   - exportacao
   - projeto
 related:
+  - /pt-pt/funcionalidades/analise-projetos/
   - /pt-pt/guias-utilizador/exportacao/
   - /pt-pt/funcionalidades/pdf-tecnico/
   - /pt-pt/funcionalidades/orcamentos/
-lastUpdated: 2026-10-01
+lastUpdated: 2026-11-10
 ---
+
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
 
 # Relatório final
 
-A rota `/relatorio-final/:project` gera uma vista consolidada do projeto para revisão e entrega.
+O **relatório final** do PIMO PRO junta, num só sítio, a visão consolidada de um projeto já trabalhado: o que foi desenhado, o que conta para produção e o que precisa de revisão antes de entregar ao cliente ou à fábrica. Serve para fechar o ciclo do projeto, não para editar documentos industriais linha a linha.
 
-## Estado
+## O que faz
 
-**Disponível** na app autenticada.
+O relatório final apresenta o estado do projeto de forma legível para quem não está dentro do editor 3D. Em linguagem simples, ajuda a responder: o projeto está completo? As medidas e a composição fazem sentido? Há documentação suficiente para avançar?
+
+Use-o quando quiser:
+
+- rever o conjunto antes de enviar um orçamento ou um pacote de fabrico;
+- partilhar um resumo com a equipa comercial ou de montagem;
+- confirmar que o projeto guardado corresponde ao que exportou.
+
+## Onde está no ecrã
+
+Com sessão iniciada, abra o projeto a partir de **Meus Projetos** ou da lista de projetos da conta. O relatório final aparece no fluxo de consulta do projeto (não no menu de desenho 3D do workspace). Se não o vir na sua instalação, continue a usar a exportação habitual: PDF técnico, Desenho Técnico e arquivo completo.
+
+## Para que serve (e para que não serve)
+
+Serve para **rever e entregar**. Não substitui:
+
+- o **PDF técnico industrial**, com lista de corte, materiais e ferragens;
+- o **Desenho Técnico (PDF)**, com vistas e cotas;
+- a **análise documental** em PIMO PROJETOS, onde se consultam e, quando disponível, se editam documentos do arquivo.
+
+Papel distinto: o relatório final é a vista de fecho do projeto; a [análise de projetos](/pt-pt/funcionalidades/analise-projetos/) é a leitura documental online dos artefactos industriais.
+
+## O que acontece a seguir
+
+1. Guarde o projeto com o nome certo.
+2. Confirme materiais, portas ou gavetas e medidas no configurador 3D.
+3. Gere o design 3D se ainda não o fez.
+4. Exporte o que a fábrica precisa (ZIP, PDF técnico, Desenho Técnico, TCN ou Drill XML).
+5. Use o relatório final para validar a entrega com a equipa.
+
+## Dicas
+
+- Abra o relatório só depois de o projeto estar estável: alterações grandes no 3D pedem nova geração e nova exportação.
+- Se o cliente pede «só o desenho com medidas», prefira o Desenho Técnico; se pede «lista e custos», prefira o PDF técnico e o pedido de orçamento.
+- Mantenha o mesmo nome de projeto no relatório e nos ficheiros exportados para evitar confusão na obra.
+
+## Erros comuns
+
+- Confundir relatório final com análise online: a análise trabalha documentos do arquivo; o relatório fecha a vista do projeto.
+- Exportar sem gerar o design 3D: o relatório e os PDFs ficam desatualizados face ao que vê no ecrã.
+- Entregar só o relatório sem ZIP: a fábrica continua a precisar dos ficheiros de corte e máquina.
 
 ## Relacionado
 
+- [Análise de projetos](/pt-pt/funcionalidades/analise-projetos/)
 - [Exportação](/pt-pt/guias-utilizador/exportacao/)
-- [PDF técnico](/pt-pt/funcionalidades/pdf-tecnico/)
+- [PDF técnico industrial](/pt-pt/funcionalidades/pdf-tecnico/)
 - [Orçamentos](/pt-pt/funcionalidades/orcamentos/)
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/funcionalidades/analise-projetos/", label: "Análise de projetos" },
+    { href: "/pt-pt/guias-utilizador/exportacao/", label: "Guia de exportação" },
+    { href: "/pt-pt/funcionalidades/pdf-tecnico/", label: "PDF técnico industrial" },
+    { href: "/pt-pt/guias-utilizador/gerir-projetos/", label: "Gerir projetos" },
+  ]}
+/>

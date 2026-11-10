@@ -269,11 +269,20 @@ export default {
     const { title, frontMatter } = useConfig()
     const canonical = resolveCanonical(asPath)
     const pageTitle = title ? `${title} | PIMO Info` : "PIMO Info"
-    const description = frontMatter?.description || defaultDescription
+    const novidadesDescription =
+      "Lista de novidades, melhorias e correções do PIMO PRO para quem desenha, vende ou fabrica no dia a dia."
+    const description = asPath.includes("/novidades")
+      ? frontMatter?.description || novidadesDescription
+      : frontMatter?.description || defaultDescription
     const isFaq = asPath.includes("/perguntas-frequentes")
     const isPrimeirosPassos = asPath.includes("/primeiros-passos")
     const isHome = asPath === "/" || asPath.startsWith("/?")
     const isBlogPost = asPath.includes("/blog/posts/")
+    const isNotFound =
+      asPath === "/404" ||
+      asPath.startsWith("/404/") ||
+      asPath.startsWith("/404?") ||
+      asPath.includes("/404.html")
     const ogImage = frontMatter?.coverImage
       ? frontMatter.coverImage.startsWith("http")
         ? frontMatter.coverImage
@@ -370,7 +379,7 @@ export default {
         <title>{pageTitle}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={description} />
-        {isDraftPage ? (
+        {isDraftPage || isNotFound ? (
           <meta name="robots" content="noindex, nofollow" />
         ) : null}
         <meta name="theme-color" content="#F0EDE8" />

@@ -1,26 +1,86 @@
 ---
 title: Modo foto
-description: Modo foto no PIMO PRO, capturas e composição visual do projeto em 3D.
+description: "Modo foto no PIMO PRO: capture e descarregue vistas do projeto 3D para apresentar ao cliente, com sala e ambiente como apoio."
 category: funcionalidade
 tags:
   - foto
-  - render
+  - apresentacao
   - viewport
 related:
-  - /pt-pt/funcionalidades/configurador-3d/
   - /pt-pt/funcionalidades/sala-e-ambiente/
-lastUpdated: 2026-10-01
+  - /pt-pt/funcionalidades/configurador-3d/
+  - /pt-pt/referencia/botoes/
+lastUpdated: 2026-11-10
 ---
+
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
 
 # Modo foto
 
-O **modo foto** permite capturar e apresentar o projeto no viewport 3D com composição orientada a imagem (iluminação/ambiente da sala).
+O **modo foto** do PIMO PRO prepara o viewport 3D para capturas e apresentação. Em vez de trabalhar com painéis e ferragens, foca a composição visual do projeto: enquadramento, ambiente e descarregamento da imagem.
 
-## Estado
+## O que faz
 
-**Disponível / parcial**, a capacidade existe na app; a documentação detalhada de controlos segue o catálogo de [botões](/pt-pt/referencia/botoes/) e a UI ao vivo em [pimo.pro](https://pimo.pro).
+Ao ativar o modo foto (controlo **PHOTO** no topo), abre o painel dedicado. Aí pode:
+
+- preparar a vista do projeto para uma imagem limpa;
+- **descarregar** a captura;
+- usar opções de exportação visual disponíveis no painel (por exemplo exportar linhas, quando aparecerem na sua versão).
+
+O modo foto **não** gera lista de corte, TCN nem Desenho Técnico. É comunicação visual.
+
+## Onde está no ecrã
+
+1. No espaço de trabalho 3D, na **barra superior**, escolha **PHOTO**.
+2. Abre-se o **painel Photo Mode**.
+3. Ajuste a câmara (orbitar, aproximar) e, se quiser, a [sala e ambiente](/pt-pt/funcionalidades/sala-e-ambiente/).
+4. Use **Descarregar** no painel para obter a imagem.
+
+Os nomes exactos dos controlos estão no [catálogo de botões](/pt-pt/referencia/botoes/).
+
+## Para que serve
+
+- Enviar ao cliente uma vista do móvel no espaço.
+- Arquivar uma imagem do estado do projeto antes de uma alteração grande.
+- Preparar material comercial sem abrir ferramentas de fabrico.
+
+Se precisa de medidas oficiais, use cotas no ecrã ou o Desenho Técnico (PDF). Se precisa de produção, use a exportação.
+
+## O que acontece a seguir
+
+1. Posicione os módulos e, se fizer sentido, configure a sala.
+2. Ative o modo foto e enquadre a vista.
+3. Descarregue a captura.
+4. Saia do modo foto para voltar a editar ou a exportar ficheiros de produção.
+
+## Dicas
+
+- Combine modo foto com sala e boa iluminação do ambiente.
+- Evite overlays a mais (grelha, cotas) se a imagem for para o cliente final; ative-os só se quiser mostrar medidas na captura.
+- Guarde o projeto antes de uma sessão longa de capturas.
+
+## Erros comuns
+
+- Pensar que a foto substitui o PDF técnico ou o Desenho Técnico.
+- Descarregar sem verificar se a câmara está de frente para o conjunto certo.
+- Procurar o modo foto fora do workspace 3D (está na barra superior do editor).
+- Ativar o modo foto com a grelha e as cotas ligadas e enviar essa imagem ao cliente sem querer: oculte overlays primeiro (`G` e `D`).
+
+## Boas práticas de apresentação
+
+Prepare a sala, alinhe os módulos, escolha um ângulo a três quartos ou de frente, e só então descarregue. Guarde duas capturas (geral e detalhe) se o projeto for grande. Para documentação de obra, continue a usar a exportação formal.
 
 ## Relacionado
 
-- [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/)
 - [Sala e ambiente](/pt-pt/funcionalidades/sala-e-ambiente/)
+- [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/)
+- [Catálogo de botões](/pt-pt/referencia/botoes/)
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/funcionalidades/sala-e-ambiente/", label: "Sala e ambiente" },
+    { href: "/pt-pt/funcionalidades/configurador-3d/", label: "Configurador 3D" },
+    { href: "/pt-pt/guias-utilizador/exportacao/", label: "Exportação" },
+    { href: "/pt-pt/referencia/botoes/", label: "Botões e controlos" },
+  ]}
+/>

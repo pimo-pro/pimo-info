@@ -1,26 +1,87 @@
 ---
 title: Análise de projetos
-description: "Análise documental em PIMO PROJETOS (rota de análise do projeto)."
+description: "Análise documental em PIMO PROJETOS: consulte e, quando disponível, edite documentos do arquivo industrial sem substituir o ZIP."
 category: funcionalidade
 tags:
   - analise
   - projetos
   - documentos
 related:
+  - /pt-pt/funcionalidades/relatorio-final/
   - /pt-pt/sistemas-pimo/pimo-projetos/
   - /pt-pt/guias-utilizador/gerir-projetos/
-lastUpdated: 2026-10-01
+  - /pt-pt/guias-utilizador/exportacao/
+lastUpdated: 2026-11-10
 ---
+
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
 
 # Análise de projetos
 
-Em **PIMO PROJETOS**, as rotas `/PROJETOS/:project/analise` e `/PROJETOS/:project/analise/:docId` cobrem documentos de análise associados ao projeto.
+A **análise de projetos** vive em **PIMO PROJETOS**. Serve para abrir os documentos industriais associados a um projeto da conta, ler tabelas e, quando a instalação o permitir, corrigir informação documental online. É a ferramenta de trabalho sobre o **arquivo**, não a vista de fecho do relatório final.
 
-## Estado
+## O que faz
 
-**Disponível** em PIMO PROJETOS, quando a análise documental estiver ativa na sua instalação.
+Depois de gerar o arquivo completo (ou documentos individuais), a análise mostra o conteúdo documental do projeto: listas, secções e histórico das alterações feitas na análise. O objetivo é validar e, se necessário, ajustar o que vai para a comunicação industrial, sem voltar a montar o móvel no editor 3D.
+
+Em resumo:
+
+- consulta documentos do projeto numa vista tabular;
+- destaca células ou linhas alteradas quando edita;
+- guarda ou cancela o rascunho da edição documental;
+- **não** substitui o ZIP de produção nem os ficheiros de máquina.
+
+## Onde está no ecrã
+
+1. Entre na conta e abra **PIMO PROJETOS** (projetos industriais da conta).
+2. Escolha o projeto.
+3. Use **Análise arquivo completo** (também pode aparecer nas ações finais de **Salvar e Gerar Design**, conforme a instalação).
+4. No índice, escolha o documento a consultar.
+
+Se a análise não aparecer na sua instalação, use o arquivo completo (ZIP) e os PDFs exportados como de costume.
+
+## Diferença face ao relatório final
+
+| Necessidade | Onde ir |
+| --- | --- |
+| Vista consolidada para entregar ou rever o projeto | [Relatório final](/pt-pt/funcionalidades/relatorio-final/) |
+| Ler ou editar documentos do arquivo industrial | **Análise de projetos** (esta página) |
+| Gerar PDFs e ficheiros de máquina | [Exportação](/pt-pt/guias-utilizador/exportacao/) |
+
+O relatório final fecha o projeto para pessoas. A análise trabalha o conteúdo documental. São complementares.
+
+## O que acontece a seguir
+
+1. Guarde o projeto no configurador 3D.
+2. Gere o arquivo completo ou os documentos que precisa.
+3. Abra a análise e confira listas e totais.
+4. Se editar, grave só quando tiver a certeza; cancele para descartar o rascunho.
+5. Volte a descarregar o que a fábrica precisa. Alterações documentais na cutlist podem refletir-se em PDFs e etiquetas; **TCN e Drill XML não mudam** por essas edições.
+
+## Dicas
+
+- Trate a análise como revisão documental, não como segundo editor 3D.
+- Se só precisa de partilhar vistas cotadas, use o Desenho Técnico; se precisa de lista industrial, use o PDF técnico.
+- Confirme na sua instalação se a edição online está ativa antes de prometer correções ao cliente.
+
+## Erros comuns
+
+- Esperar que a análise reescreva ficheiros CNC: não o faz.
+- Usar a análise sem ter gerado o arquivo: não há documentos para abrir.
+- Confundir com o relatório final e achar que «já está tudo exportado».
 
 ## Relacionado
 
+- [Relatório final](/pt-pt/funcionalidades/relatorio-final/)
 - [PIMO PROJETOS](/pt-pt/sistemas-pimo/pimo-projetos/)
 - [Gerir projetos](/pt-pt/guias-utilizador/gerir-projetos/)
+- [Exportação](/pt-pt/guias-utilizador/exportacao/)
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/funcionalidades/relatorio-final/", label: "Relatório final" },
+    { href: "/pt-pt/sistemas-pimo/pimo-projetos/", label: "PIMO PROJETOS" },
+    { href: "/pt-pt/guias-utilizador/exportacao/", label: "Guia de exportação" },
+    { href: "/pt-pt/guias-utilizador/gerir-projetos/", label: "Gerir projetos" },
+  ]}
+/>

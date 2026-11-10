@@ -42,6 +42,7 @@ Locale: pt-PT
 - Guias: https://pimo.info/pt-pt/guias-utilizador/
 - Ecossistema: https://pimo.info/pt-pt/ecossistema/
 - FAQ: https://pimo.info/pt-pt/perguntas-frequentes/
+- Novidades: https://pimo.info/pt-pt/novidades/
 
 ## Export formats (implemented)
 - PDF Técnico (.pdf): Relatório industrial do projeto com vista 3D, lista de corte, materiais, ferragens e resumo de preço. Continua disponível à parte do Desenho Técnico (PDF). Se a geração falhar, a app mostra o aviso «Erro ao gerar PDF técnico.»
@@ -177,18 +178,17 @@ Locale: pt-PT
 - Configurador 3D: https://pimo.info/pt-pt/funcionalidades/configurador-3d/
 - Conta e acesso: https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/
 - Definições: https://pimo.info/pt-pt/funcionalidades/definicoes/
-- Desenho Técnico (PDF): https://pimo.info/pt-pt/funcionalidades/desenho-tecnico-pdf/
+- Desenho Técnico (PDF) com vistas e cotas: https://pimo.info/pt-pt/funcionalidades/desenho-tecnico-pdf/
 - Estações industriais: https://pimo.info/pt-pt/funcionalidades/estacoes-industriais/
-- Redirecionamento, Exportação TCN/Drill XML: https://pimo.info/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/
 - Exportação TCN/Drill XML: https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/
 - Ferragens: https://pimo.info/pt-pt/funcionalidades/ferragens/
 - Lista de Corte: https://pimo.info/pt-pt/funcionalidades/lista-de-corte/
-- Materiais: https://pimo.info/pt-pt/funcionalidades/materiais/
+- Materiais no PIMO PRO: https://pimo.info/pt-pt/funcionalidades/materiais/
 - Modo foto: https://pimo.info/pt-pt/funcionalidades/modo-foto/
 - Módulo Industrial: https://pimo.info/pt-pt/funcionalidades/modulo-industrial/
 - Nesting Fast/PRO: https://pimo.info/pt-pt/funcionalidades/nesting-fast-pro/
 - Orçamentos: https://pimo.info/pt-pt/funcionalidades/orcamentos/
-- PDF técnico: https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/
+- PDF técnico industrial: https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/
 - PIMO-TRAK: https://pimo.info/pt-pt/funcionalidades/pimo-trak/
 - Portas e Gavetas: https://pimo.info/pt-pt/funcionalidades/portas-e-gavetas/
 - Relatório final: https://pimo.info/pt-pt/funcionalidades/relatorio-final/
@@ -202,7 +202,7 @@ Locale: pt-PT
 - Exportação: https://pimo.info/pt-pt/guias-utilizador/exportacao/
 - Gerir Projetos: https://pimo.info/pt-pt/guias-utilizador/gerir-projetos/
 - Lista de Corte: https://pimo.info/pt-pt/guias-utilizador/lista-de-corte/
-- Materiais: https://pimo.info/pt-pt/guias-utilizador/materiais/
+- Guia: aplicar materiais no PIMO PRO: https://pimo.info/pt-pt/guias-utilizador/materiais/
 - Medições e Cotas: https://pimo.info/pt-pt/guias-utilizador/medicoes-e-cotas/
 - Mover e Posicionar: https://pimo.info/pt-pt/guias-utilizador/mover-e-posicionar/
 - Nesting / Layout de Corte: https://pimo.info/pt-pt/guias-utilizador/nesting-layout-corte/
@@ -217,6 +217,7 @@ Locale: pt-PT
 - Armário de Cozinha Inferior: https://pimo.info/pt-pt/linha-branca/armario-cozinha-inferior/
 - Garrafeira 20 cm: https://pimo.info/pt-pt/linha-branca/garrafeira-20/
 - Pés Reguláveis: https://pimo.info/pt-pt/linha-branca/pes-regulaveis/
+- Novidades: https://pimo.info/pt-pt/novidades/
 - Parceiro PIMO: https://pimo.info/pt-pt/parceiros/
 - Perguntas frequentes: https://pimo.info/pt-pt/perguntas-frequentes/
 - Preços e subscrições: https://pimo.info/pt-pt/precos/

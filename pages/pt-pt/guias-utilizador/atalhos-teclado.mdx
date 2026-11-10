@@ -1,31 +1,89 @@
 ---
 title: "Atalhos de Teclado"
-description: "Atalhos de Teclado."
+description: "Atalhos reais do viewport e do nesting no PIMO PRO: selecionar, mover, cotas, desfazer, zoom, histórico e menu de contexto."
 category: guia
 tags:
   - guia
+  - atalhos
 related:
+  - /pt-pt/guias-utilizador/mover-e-posicionar/
+  - /pt-pt/guias-utilizador/medicoes-e-cotas/
+  - /pt-pt/referencia/botoes/
   - /pt-pt/guias-utilizador/
-  - /pt-pt/glossario/
-lastUpdated: 2026-10-01
+lastUpdated: 2026-11-10
 status: implemented
 ---
 
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
+
 # Atalhos de teclado do viewport
 
-## Navegação e edição
+No PIMO PRO, os atalhos aceleram o trabalho no espaço 3D e no ecrã de nesting. Só funcionam bem quando o foco **não** está num campo de texto. Se um atalho não reagir, clique no viewport e tente de novo.
 
-- `S`, selecionar módulo.
-- `M`, mover módulo.
-- `R`, rodar módulo.
-- `D`, mostrar/ocultar cotas.
-- `G`, mostrar/ocultar grelha.
-- `Home`, repor câmara.
-- `Escape`, cancelar seleção.
-- `Ctrl + Z`, desfazer.
-- `Ctrl + Y`, refazer.
-- `Botão direito`, menu de contexto do módulo.
+Esta lista segue os atalhos reais da ajuda e do catálogo de controlos da aplicação. Não inventa combinações.
 
-## Dica
+## Viewport 3D: ferramentas principais
 
-Para operações por módulo, o menu de contexto é a via mais rápida para duplicar, alinhar, renomear, trocar material ou remover.
+| Tecla | Ação |
+| --- | --- |
+| `S` | Selecionar módulo. Clique no móvel para ver propriedades. |
+| `M` | Mover (translação). Arraste nos eixos horizontais do plano. |
+| `R` | Rodar em torno do eixo vertical. |
+| `D` | Mostrar ou ocultar cotas do módulo (largura, altura e profundidade em centímetros). |
+| `G` | Mostrar ou ocultar a grelha do chão. |
+| `Home` | Repor a câmara na vista isométrica padrão. |
+| `Escape` | Cancelar a seleção e voltar à ferramenta de seleção. |
+
+## Edição e histórico
+
+| Tecla | Ação |
+| --- | --- |
+| `Ctrl + Z` | Desfazer a última alteração. |
+| `Ctrl + Y` | Refazer. |
+| `Ctrl + Shift + Z` | Refazer (alternativa). |
+| `Delete` ou `Backspace` | Remover caixas ou remates selecionados. |
+| `H` | Abrir ou fechar o histórico de alterações (barra inferior), se o foco não estiver num campo editável. |
+| `Alt` | Mostrar ou ocultar a ajuda de atalhos no ecrã. |
+| `Ctrl + clique` | Adicionar ou remover um objeto da seleção múltipla. |
+| Setas | Mover a caixa selecionada no plano, em passos. |
+
+## Menu de contexto (botão direito)
+
+Com o rato sobre um módulo, o **botão direito** abre o menu de contexto. É a via mais rápida para duplicar, renomear, bloquear, alinhar, alterar material ou remover. Combine com `S` para garantir a seleção certa antes de abrir o menu.
+
+## Nesting
+
+No ecrã de nesting, os atalhos mudam de papel:
+
+| Tecla | Ação no nesting |
+| --- | --- |
+| `Escape` | Limpa seleção ou arrasto. |
+| `Delete` / `Backspace` | Remove a peça selecionada do layout. |
+| `R` | Roda a peça selecionada. |
+| `0` | Repõe zoom e pan. |
+| `+` ou `=` | Aproxima (zoom in). |
+| `-` | Afasta (zoom out). |
+
+## Como usar no dia a dia
+
+1. Clique no viewport para focar o espaço 3D.
+2. Prima `S`, escolha o módulo, depois `M` ou `R`.
+3. Valide medidas com `D` antes de exportar.
+4. Se errar, `Ctrl + Z`. Se precisar da lista de atalhos no ecrã, `Alt`.
+
+Para o fluxo completo de posicionamento, veja [Mover e posicionar](/pt-pt/guias-utilizador/mover-e-posicionar/). Para cotas, [Medições e cotas](/pt-pt/guias-utilizador/medicoes-e-cotas/). Nomes dos controlos: [Botões](/pt-pt/referencia/botoes/).
+
+## Erros comuns
+
+- Premir atalhos com o cursor dentro de um campo de nome ou dimensão.
+- Confundir `R` do viewport (rodar módulo) com `R` do nesting (rodar peça na chapa).
+- Apagar com `Delete` sem confirmar a seleção: use `Ctrl + Z` de imediato se remover o módulo errado.
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/guias-utilizador/mover-e-posicionar/", label: "Mover e posicionar" },
+    { href: "/pt-pt/guias-utilizador/medicoes-e-cotas/", label: "Medições e cotas" },
+    { href: "/pt-pt/referencia/botoes/#area-atalhos", label: "Botões: atalhos" },
+    { href: "/pt-pt/guias-utilizador/nesting-layout-corte/", label: "Nesting / layout de corte" },
+  ]}
+/>

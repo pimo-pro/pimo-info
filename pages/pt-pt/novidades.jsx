@@ -27,7 +27,7 @@ export default function NovidadesPage({ news }) {
 
   return (
     <main>
-      <h1>Novidades</h1>
+      <h1>Novidades do PIMO PRO</h1>
       <p className="pimo-lead">
         Atualizações do PIMO PRO: novidades, melhorias e correções úteis no dia a
         dia.

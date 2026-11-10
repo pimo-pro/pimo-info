@@ -150,8 +150,36 @@ function main() {
       lastUpdated: data.lastUpdated || "",
       status: data.status || "",
       draft: isDraft,
+      noindex:
+        data.noindex === true ||
+        data.noindex === "true" ||
+        data.status === "draft",
       text: stripMdxToText(body),
     })
+  }
+
+  // Páginas JSX com conteúdo vivo (sem frontmatter MDX), ex.: novidades
+  const extraPages = [
+    {
+      path: "/pt-pt/novidades/",
+      title: "Novidades",
+      description:
+        "Lista de novidades, melhorias e correções do PIMO PRO para quem desenha, vende ou fabrica no dia a dia.",
+      category: "hub",
+      tags: ["novidades"],
+      related: [
+        "/pt-pt/",
+        "/pt-pt/perguntas-frequentes/",
+        "/pt-pt/guias-utilizador/",
+      ],
+      lastUpdated: "2026-11-10",
+      draft: false,
+      text:
+        "Atualizações do PIMO PRO: novidades, melhorias e correções úteis no dia a dia. As entradas mais recentes descrevem melhorias para quem desenha, vende ou fabrica.",
+    },
+  ]
+  for (const extra of extraPages) {
+    if (!pages.some((p) => p.path === extra.path)) pages.push(extra)
   }
 
   pages.sort((a, b) => a.path.localeCompare(b.path))
@@ -234,6 +262,7 @@ function main() {
     `- Guias: ${site.url}/pt-pt/guias-utilizador/`,
     `- Ecossistema: ${site.url}/pt-pt/ecossistema/`,
     `- FAQ: ${site.url}/pt-pt/perguntas-frequentes/`,
+    `- Novidades: ${site.url}/pt-pt/novidades/`,
     "",
     "## Export formats (implemented)",
     ...exportFormats
@@ -268,7 +297,12 @@ function main() {
     "",
     "## Page index",
     ...publicPages
-      .filter((p) => p.path.startsWith("/pt-pt/") || p.path === "/")
+      .filter(
+        (p) =>
+          (p.path.startsWith("/pt-pt/") || p.path === "/") &&
+          p.category !== "redirect" &&
+          p.category !== "legacy"
+      )
       .map((p) => `- ${p.title}: ${site.url}${p.path}`),
     "",
   ]
@@ -326,7 +360,10 @@ function main() {
     "",
   ]
   for (const p of publicPages.filter(
-    (x) => x.path.startsWith("/pt-pt/") || x.path === "/"
+    (x) =>
+      (x.path.startsWith("/pt-pt/") || x.path === "/") &&
+      x.category !== "redirect" &&
+      x.category !== "legacy"
   )) {
     fullParts.push(`## ${p.title}`)
     fullParts.push(`URL: ${site.url}${p.path}`)
@@ -347,34 +384,31 @@ function main() {
     "/contact/",
     "/pt-pt/funcionalidades/exportacao-cnc-tcn-drill-xml/",
     "/pt-pt/blog/posts/bem-vindo/",
+    "/404/",
   ])
   const pageUrls = publicPages
-    .filter((p) => p.category !== "redirect" && p.category !== "legacy")
+    .filter(
+      (p) =>
+        p.category !== "redirect" &&
+        p.category !== "legacy" &&
+        !p.noindex
+    )
     .map((p) => (p.path === "/" ? "/" : p.path.endsWith("/") ? p.path : `${p.path}/`))
     .filter((u) => !excludePaths.has(u))
 
-  // Subdomínios oficiais (propriedade de domínio cobre-os; /sub/* não entra no sitemap)
-  const subdomainUrls = [
-    "https://pt.pimo.info/",
-    "https://pro.pimo.info/",
-    "https://es.pimo.info/",
-    "https://casa.pimo.info/",
-    "https://design.pimo.info/",
-  ]
+  // Subdomínios (pt/pro/es/casa/design) ficam de fora do sitemap de pimo.info
+  // por decisão do produto; não se adiciona noindex nem redirect aqui.
 
   const uniquePaths = [...new Set(["/", ...pageUrls])]
-  const locEntries = [
-    ...uniquePaths.map((u) => {
-      const loc = u === "/" ? `${site.url}/` : `${site.url}${u}`
-      const page = pageByPath.get(u)
-      const lastmod =
-        page?.lastUpdated && /^\d{4}-\d{2}-\d{2}$/.test(page.lastUpdated)
-          ? page.lastUpdated
-          : today
-      return { loc, lastmod }
-    }),
-    ...subdomainUrls.map((loc) => ({ loc, lastmod: today })),
-  ]
+  const locEntries = uniquePaths.map((u) => {
+    const loc = u === "/" ? `${site.url}/` : `${site.url}${u}`
+    const page = pageByPath.get(u)
+    const lastmod =
+      page?.lastUpdated && /^\d{4}-\d{2}-\d{2}$/.test(page.lastUpdated)
+        ? page.lastUpdated
+        : today
+    return { loc, lastmod }
+  })
 
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',

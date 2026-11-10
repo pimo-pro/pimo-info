@@ -1,39 +1,90 @@
 ---
 title: "Mover e Posicionar"
-description: "Mover e Posicionar."
+description: "Mova, rode e alinhe módulos no workspace 3D do PIMO PRO com atalhos S, M e R, setas do teclado e o menu de contexto do rato."
 category: guia
 tags:
   - guia
+  - layout
 related:
-  - /pt-pt/guias-utilizador/
-  - /pt-pt/glossario/
-lastUpdated: 2026-10-01
+  - /pt-pt/guias-utilizador/criar-caixa/
+  - /pt-pt/guias-utilizador/atalhos-teclado/
+  - /pt-pt/guias-utilizador/medicoes-e-cotas/
+  - /pt-pt/funcionalidades/configurador-3d/
+lastUpdated: 2026-11-10
 status: implemented
 ---
 
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
+
 # Mover, rodar e posicionar módulos no workspace
 
-Antes do cálculo final, o workspace permite organizar módulos manualmente ou com apoio do auto-layout.
+Antes do cálculo final, organize os módulos no espaço 3D do PIMO PRO. Um layout limpo evita colisões, facilita cotas e deixa o Desenho Técnico mais legível.
+
+## O que faz este guia
+
+Explica como selecionar, mover e rodar módulos, alinhar frentes e corrigir o posicionamento automático. Complementa [Criar caixa](/pt-pt/guias-utilizador/criar-caixa/) (adicionar módulos) e [Atalhos](/pt-pt/guias-utilizador/atalhos-teclado/) (teclas).
 
 ## Passo a passo
 
-1. **Selecionar módulo (S)**  
-   Clique no módulo no viewport ou prima `S`.
+1. **Selecionar (`S`)**  
+   Clique no módulo ou prima `S` e escolha o móvel. A seleção mostra as propriedades no painel.
 
-2. **Mover (M)**  
-   Prima `M` para ativar translação nos eixos. O eixo X desloca lateralmente e o Z em profundidade.
+2. **Mover (`M`)**  
+   Prima `M` para ativar a translação. Desloque no plano: o eixo horizontal move lateralmente e o de profundidade afasta ou aproxima da câmara/parede conforme a vista.
 
-3. **Rodar (R)**  
-   Prima `R` para rodar em torno do eixo vertical.
+3. **Rodar (`R`)**  
+   Prima `R` para rodar em torno do eixo vertical. Útil em cantos e mudanças de parede.
 
 4. **Alinhar pela frente**  
-   No menu de contexto (botão direito), use o alinhamento da frente ao módulo vizinho.
+   No menu de contexto (botão direito), use o alinhamento da frente ao módulo vizinho quando quiser uma linha contínua de frentes.
 
-5. **Ajustar auto-posicionamento**  
-   Módulos novos entram lado a lado automaticamente. Pode corrigir manualmente quando necessário.
+5. **Ajuste fino**  
+   As setas do teclado movem a caixa selecionada em passos. `Ctrl + clique` permite seleção múltipla.
 
-## Dicas úteis
+6. **Auto-posicionamento**  
+   Módulos novos entram lado a lado quando não há outro selecionado. Corrija manualmente se o vão ou o canto pedirem outra composição.
 
-- `Home` repõe a câmara.
-- `Escape` cancela seleção.
-- Avisos de colisão aparecem no painel de layout.
+## Onde está no ecrã
+
+- Ferramentas de seleção/mover/rodar: viewport 3D e atalhos.
+- Alinhamentos e duplicar: **botão direito** sobre o módulo.
+- Câmara: `Home` repõe a vista; orbitar com o rato conforme os controlos do viewport.
+- Avisos de colisão ou layout: painéis de apoio do workspace quando existem.
+
+## O que acontece a seguir
+
+1. Confirme cotas com `D` ([Medições e cotas](/pt-pt/guias-utilizador/medicoes-e-cotas/)).
+2. Aplique materiais e frentes.
+3. Clique em **Gerar Design 3D**.
+4. Exporte cutlist, Desenho Técnico ou ZIP.
+
+Se mover módulos depois de gerar, volte a gerar antes de exportar para produção.
+
+## Dicas
+
+- Trabalhe módulo a módulo: selecione, mova, confirme, só depois passe ao seguinte.
+- Em cantos, rode primeiro (`R`) e só depois ajuste a distância à parede.
+- `Escape` cancela a seleção se estiver «preso» numa ferramenta.
+- `Ctrl + Z` desfaz um movimento errado.
+
+## Erros comuns
+
+- Mover sem ter o módulo certo selecionado.
+- Exportar após rearranjar o layout sem gerar de novo o design 3D.
+- Ignorar avisos de colisão e descobrir sobreposição só na obra.
+- Rodar em excesso e ficar com a frente do módulo virada para a parede sem perceber.
+
+## Checklist rápida antes de gerar
+
+Seleção certa, frentes alinhadas, sem sobreposição óbvia, cotas conferidas com `D`, câmara reposta com `Home` se precisar de uma vista limpa. Só então clique em **Gerar Design 3D**.
+
+Funcionalidade: [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/).
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/guias-utilizador/criar-caixa/", label: "Criar caixa" },
+    { href: "/pt-pt/guias-utilizador/atalhos-teclado/", label: "Atalhos de teclado" },
+    { href: "/pt-pt/guias-utilizador/medicoes-e-cotas/", label: "Medições e cotas" },
+    { href: "/pt-pt/funcionalidades/configurador-3d/", label: "Configurador 3D" },
+  ]}
+/>

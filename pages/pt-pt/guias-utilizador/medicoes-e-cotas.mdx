@@ -1,37 +1,86 @@
 ---
 title: "Medições e Cotas"
-description: "Medições e Cotas."
+description: "Ative cotas no viewport 3D do PIMO PRO com o atalho D, leia medidas em centímetros e valide dimensões antes de exportar."
 category: guia
 tags:
   - guia
+  - cotas
 related:
-  - /pt-pt/guias-utilizador/
+  - /pt-pt/guias-utilizador/desenho-tecnico/
+  - /pt-pt/guias-utilizador/lista-de-corte/
+  - /pt-pt/guias-utilizador/atalhos-teclado/
   - /pt-pt/glossario/
-lastUpdated: 2026-10-01
+lastUpdated: 2026-11-10
 status: implemented
 ---
 
+import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
+
 # Medições, régua e cotas no viewport
 
-As cotas ajudam a validar dimensões externas dos módulos antes da exportação.
+No PIMO PRO, as **cotas no viewport** mostram largura, altura e profundidade do módulo selecionado diretamente sobre o modelo 3D. Servem para validar o desenho enquanto trabalha. As medidas de fabrico (lista de corte e Desenho Técnico) usam **milímetros**; as etiquetas do atalho `D` aparecem em **centímetros**.
 
-## Passo a passo
+## Para que serve
 
-1. **Ativar cotas (D)**  
-   Prima `D` para mostrar etiquetas de largura, altura e profundidade.
+- Confirmar que o módulo tem o tamanho pedido pelo cliente.
+- Comparar dois módulos lado a lado sem abrir a lista de corte.
+- Detetar erros de escala antes de gerar o design 3D ou exportar.
 
-2. **Ler unidades**  
-   As etiquetas aparecem em centímetros.
+Não substituem o [Desenho Técnico (PDF)](/pt-pt/guias-utilizador/desenho-tecnico/), que documenta vistas e cotas de montagem em A4.
 
-3. **Trocar módulo**  
-   Ao selecionar outro módulo, as cotas atualizam automaticamente.
+## Onde está e como ativar
 
-4. **Medição entre pontos**  
-   No painel de medições internas, pode medir distâncias específicas no cenário.
+1. Selecione um módulo no viewport (`S` ou clique).
+2. Prima `D` para mostrar as etiquetas de dimensão.
+3. Leia L, A e P em centímetros.
+4. Selecione outro módulo: as cotas atualizam-se.
+5. Prima `D` de novo para ocultar.
 
-5. **Desativar**  
-   Prima `D` novamente para ocultar as etiquetas.
+No painel de medições internas pode medir distâncias pontuais no cenário quando precisar de um vão específico (por exemplo entre duas faces).
 
-## Nota
+## Unidades: não misture
 
-As dimensões internas dos painéis são tratadas no cálculo técnico e visíveis na lista de corte.
+| Contexto | Unidade |
+| --- | --- |
+| Cotas no viewport (`D`) | Centímetros |
+| Lista de corte / fabrico | Milímetros |
+| Desenho Técnico (PDF) | Milímetros (escala no cabeçalho) |
+
+Se o cliente fala em mm, converta mentalmente (60 cm = 600 mm) ou confira na lista de corte.
+
+## O que acontece a seguir
+
+Depois de validar cotas no ecrã:
+
+1. Ajuste o módulo se estiver errado (configuração ou menu de medidas).
+2. Gere o design 3D.
+3. Confirme a lista de corte.
+4. Exporte o Desenho Técnico se precisar de um PDF cotado para obra.
+
+## Dicas
+
+- Ative cotas só no módulo em foco para não poluir a vista.
+- Use `Home` para repor a câmara se as etiquetas ficarem difíceis de ler.
+- Para conjuntos com remates ou vários módulos, o Desenho Técnico mostra melhor a legenda de separação.
+
+## Erros comuns
+
+- Assumir que as cotas do ecrã já são o documento de obra (faltam vistas e formato A4).
+- Comparar cm do viewport com mm da cutlist sem converter.
+- Esconder cotas e esquecer de as voltar a ligar antes de uma revisão rápida com o cliente.
+- Medir só a largura exterior e esquecer a profundidade útil face a uma parede irregular.
+
+## Relação com o Desenho Técnico
+
+As cotas do atalho `D` são uma ajuda rápida no ecrã. O documento de obra é o Desenho Técnico em A4 horizontal, com várias vistas e escala no cabeçalho. Use os dois: ecrã para decidir, PDF para entregar.
+
+Guia relacionado: [Atalhos de teclado](/pt-pt/guias-utilizador/atalhos-teclado/). Produção: [Lista de corte](/pt-pt/guias-utilizador/lista-de-corte/).
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/guias-utilizador/desenho-tecnico/", label: "Guia do Desenho Técnico" },
+    { href: "/pt-pt/guias-utilizador/lista-de-corte/", label: "Lista de corte" },
+    { href: "/pt-pt/guias-utilizador/atalhos-teclado/", label: "Atalhos de teclado" },
+    { href: "/pt-pt/glossario/", label: "Glossário" },
+  ]}
+/>
