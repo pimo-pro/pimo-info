@@ -1,4 +1,6 @@
-import { getNewsData } from "../../lib/news"
+import { useEffect, useState } from "react"
+import { getNewsData } from "../lib/news"
+import { localNewsEntries } from "../data/local-news"
 
 const TYPE_LABEL = {
   feature: "Funcionalidade",
@@ -13,26 +15,33 @@ function formatDate(value) {
   return new Date(parsed).toLocaleString("pt-PT")
 }
 
-export async function getStaticProps() {
-  const news = await getNewsData()
+function initialNews() {
+  const entries = (localNewsEntries || []).slice()
   return {
-    props: {
-      news,
-    },
+    source: entries.length ? "local" : "fallback",
+    entries,
   }
 }
 
-export default function NovidadesPage({ news }) {
+export function NovidadesFeed() {
+  const [news, setNews] = useState(initialNews)
+
+  useEffect(() => {
+    let cancelled = false
+    getNewsData()
+      .then((payload) => {
+        if (!cancelled && payload?.entries?.length) setNews(payload)
+      })
+      .catch(() => {})
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
   const isFallback = news?.source === "fallback"
 
   return (
-    <main>
-      <h1>Novidades do PIMO PRO</h1>
-      <p className="pimo-lead">
-        Atualizações do PIMO PRO: novidades, melhorias e correções úteis no dia a
-        dia.
-      </p>
-
+    <>
       {isFallback ? (
         <div className="pimo-warning-box">
           <strong>Lista temporária</strong>
@@ -49,8 +58,8 @@ export default function NovidadesPage({ news }) {
       </p>
 
       <ul className="pimo-news-list">
-        {news.entries.map((entry) => (
-          <li key={`${entry.version}-${entry.publishedAt}`}>
+        {(news.entries || []).map((entry) => (
+          <li key={`${entry.version}-${entry.publishedAt}-${entry.title}`}>
             <p className="pimo-news-meta">
               <strong>{entry.version}</strong>
               <span>{TYPE_LABEL[entry.type] || "Atualização"}</span>
@@ -63,6 +72,6 @@ export default function NovidadesPage({ news }) {
           </li>
         ))}
       </ul>
-    </main>
+    </>
   )
 }

@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-11-10T11:40:14.586Z
+Generated: 2026-11-10T11:43:25.145Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -6572,7 +6572,10 @@ Pés reguláveis da Linha Branca: conjunto de 4, alturas 100 mm e 15 mm, troca s
 URL: https://pimo.info/pt-pt/novidades/
 Lista de novidades, melhorias e correções do PIMO PRO para quem desenha, vende ou fabrica no dia a dia.
 
-Atualizações do PIMO PRO: novidades, melhorias e correções úteis no dia a dia. As entradas mais recentes descrevem melhorias para quem desenha, vende ou fabrica.
+# Novidades do PIMO PRO
+
+ 
+  Atualizações do PIMO PRO: novidades, melhorias e correções úteis no dia a dia.
 
 ---
 

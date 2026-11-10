@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T11:40:14.584Z",
+  "generatedAt": "2026-11-10T11:43:25.144Z",
   "items": [
     {
       "path": "/",
@@ -1917,9 +1917,11 @@
     },
     {
       "path": "/pt-pt/novidades/",
+      "file": "pages/pt-pt/novidades.mdx",
       "title": "Novidades",
       "description": "Lista de novidades, melhorias e correções do PIMO PRO para quem desenha, vende ou fabrica no dia a dia.",
-      "category": "hub",
+      "author": "",
+      "category": "noticias",
       "tags": [
         "novidades"
       ],
@@ -1929,7 +1931,9 @@
         "/pt-pt/guias-utilizador/"
       ],
       "lastUpdated": "2026-11-10",
-      "draft": false
+      "status": "implemented",
+      "draft": false,
+      "noindex": false
     },
     {
       "path": "/pt-pt/parceiros/",

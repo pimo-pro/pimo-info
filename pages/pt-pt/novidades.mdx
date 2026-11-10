@@ -1,0 +1,33 @@
+---
+title: "Novidades"
+description: "Lista de novidades, melhorias e correções do PIMO PRO para quem desenha, vende ou fabrica no dia a dia."
+category: noticias
+tags:
+  - novidades
+related:
+  - /pt-pt/
+  - /pt-pt/perguntas-frequentes/
+  - /pt-pt/guias-utilizador/
+lastUpdated: 2026-11-10
+status: implemented
+---
+
+import { NovidadesFeed } from "../../components/NovidadesFeed.jsx"
+import { RelatedLinks } from "../../components/RelatedLinks.jsx"
+
+# Novidades do PIMO PRO
+
+<div className="pimo-lead">
+  Atualizações do PIMO PRO: novidades, melhorias e correções úteis no dia a dia.
+</div>
+
+<NovidadesFeed />
+
+<RelatedLinks
+  items={[
+    { href: "/pt-pt/", label: "Centro de ajuda" },
+    { href: "/pt-pt/guias-utilizador/", label: "Guias de utilizador" },
+    { href: "/pt-pt/perguntas-frequentes/", label: "Perguntas frequentes" },
+    { href: "/pt-pt/referencia/botoes/", label: "Catálogo de botões" },
+  ]}
+/>
