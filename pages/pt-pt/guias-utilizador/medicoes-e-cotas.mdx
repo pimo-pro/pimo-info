@@ -1,12 +1,13 @@
 ---
 title: "Medições e Cotas"
-description: "Ative cotas no viewport 3D do PIMO PRO com o atalho D, leia medidas em centímetros e valide dimensões antes de exportar."
+description: "Cotas no viewport do PIMO PRO: atalho D, Medidas do Conjunto com escala estável, e ligação ao Desenho Técnico em PDF."
 category: guia
 tags:
   - guia
   - cotas
 related:
   - /pt-pt/guias-utilizador/desenho-tecnico/
+  - /pt-pt/funcionalidades/desenho-tecnico-pdf/
   - /pt-pt/guias-utilizador/lista-de-corte/
   - /pt-pt/guias-utilizador/atalhos-teclado/
   - /pt-pt/glossario/
@@ -18,7 +19,7 @@ import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
 
 # Medições, régua e cotas no viewport
 
-No PIMO PRO, as **cotas no viewport** mostram largura, altura e profundidade do módulo selecionado diretamente sobre o modelo 3D. Servem para validar o desenho enquanto trabalha. As medidas de fabrico (lista de corte e Desenho Técnico) usam **milímetros**; as etiquetas do atalho `D` aparecem em **centímetros**.
+No PIMO PRO, as **cotas no viewport** mostram medidas sobre o modelo 3D enquanto trabalha. As medidas de fabrico (lista de corte e Desenho Técnico) usam **milímetros**; as etiquetas do atalho `D` aparecem em **centímetros**.
 
 ## Para que serve
 
@@ -31,10 +32,14 @@ Não substituem o [Desenho Técnico (PDF)](/pt-pt/guias-utilizador/desenho-tecni
 ## Onde está e como ativar
 
 1. Selecione um módulo no viewport (`S` ou clique).
-2. Prima `D` para mostrar as etiquetas de dimensão.
+2. Prima `D` para mostrar as etiquetas de dimensão do módulo.
 3. Leia L, A e P em centímetros.
 4. Selecione outro módulo: as cotas atualizam-se.
 5. Prima `D` de novo para ocultar.
+
+### Medidas do Conjunto
+
+Na barra superior do espaço 3D, **Medidas do Conjunto** liga cotas do conjunto no ecrã. O tamanho das etiquetas fica **legível e estável** ao aproximar ou afastar a câmara (escala corrigida). Pode usar em conjunto com a vista de linhas do botão **Desenho Técnico**, sem alterar o projeto.
 
 No painel de medições internas pode medir distâncias pontuais no cenário quando precisar de um vão específico (por exemplo entre duas faces).
 
@@ -72,13 +77,14 @@ Depois de validar cotas no ecrã:
 
 ## Relação com o Desenho Técnico
 
-As cotas do atalho `D` são uma ajuda rápida no ecrã. O documento de obra é o Desenho Técnico em A4 horizontal, com várias vistas e escala no cabeçalho. Use os dois: ecrã para decidir, PDF para entregar.
+As cotas do atalho `D` e as **Medidas do Conjunto** são ajuda no ecrã. O documento de obra é o Desenho Técnico em A4 horizontal, com arestas, várias vistas e escala no cabeçalho. Use o ecrã para decidir e o PDF para entregar.
 
 Guia relacionado: [Atalhos de teclado](/pt-pt/guias-utilizador/atalhos-teclado/). Produção: [Lista de corte](/pt-pt/guias-utilizador/lista-de-corte/).
 
 <RelatedLinks
   items={[
     { href: "/pt-pt/guias-utilizador/desenho-tecnico/", label: "Guia do Desenho Técnico" },
+    { href: "/pt-pt/funcionalidades/desenho-tecnico-pdf/", label: "Desenho Técnico (PDF)" },
     { href: "/pt-pt/guias-utilizador/lista-de-corte/", label: "Lista de corte" },
     { href: "/pt-pt/guias-utilizador/atalhos-teclado/", label: "Atalhos de teclado" },
     { href: "/pt-pt/glossario/", label: "Glossário" },

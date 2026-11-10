@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T15:49:25.369Z",
+  "generatedAt": "2026-11-10T17:25:48.175Z",
   "items": [
     {
       "path": "/",
@@ -1037,7 +1037,7 @@
       "path": "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
       "file": "pages/pt-pt/funcionalidades/desenho-tecnico-pdf.mdx",
       "title": "Desenho Técnico (PDF) com vistas e cotas",
-      "description": "Exporte o Desenho Técnico em A4 horizontal no PIMO PRO: vistas, cotas de montagem e partilha clara, distinto do PDF técnico industrial.",
+      "description": "No PIMO PRO: vista de linhas no viewer, PDF A4 com arestas e cotas técnicas, e Exportar linhas no modo foto. Distinto do PDF técnico industrial.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -1049,10 +1049,12 @@
         "/pt-pt/funcionalidades/pdf-tecnico/",
         "/pt-pt/guias-utilizador/desenho-tecnico/",
         "/pt-pt/guias-utilizador/exportacao/",
+        "/pt-pt/guias-utilizador/medicoes-e-cotas/",
+        "/pt-pt/funcionalidades/modo-foto/",
         "/pt-pt/referencia/botoes/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-11-03",
+      "lastUpdated": "2026-11-10",
       "status": "implemented",
       "draft": false,
       "noindex": false
@@ -1187,7 +1189,7 @@
       "path": "/pt-pt/funcionalidades/modo-foto/",
       "file": "pages/pt-pt/funcionalidades/modo-foto.mdx",
       "title": "Modo foto",
-      "description": "Modo foto no PIMO PRO: capture e descarregue vistas do projeto 3D para apresentar ao cliente, com sala e ambiente como apoio.",
+      "description": "Modo foto no PIMO PRO: captura PNG do projeto 3D e Exportar linhas com contornos técnicos de painéis, portas e frentes.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -1198,6 +1200,8 @@
       "related": [
         "/pt-pt/funcionalidades/sala-e-ambiente/",
         "/pt-pt/funcionalidades/configurador-3d/",
+        "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
+        "/pt-pt/guias-utilizador/desenho-tecnico/",
         "/pt-pt/referencia/botoes/"
       ],
       "lastUpdated": "2026-11-10",
@@ -1488,7 +1492,7 @@
       "path": "/pt-pt/guias-utilizador/desenho-tecnico/",
       "file": "pages/pt-pt/guias-utilizador/desenho-tecnico.mdx",
       "title": "Guia do Desenho Técnico",
-      "description": "Como ler e gerar o Desenho Técnico (PDF) no PIMO PRO: vistas, cotas, remates, símbolos e exemplos de tipologias.",
+      "description": "Desenho Técnico no PIMO PRO: vista de linhas no viewer, PDF A4 com arestas e cotas, Exportar linhas no modo foto, tipologias e remates.",
       "author": "",
       "category": "guia",
       "tags": [
@@ -1501,11 +1505,12 @@
         "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
         "/pt-pt/guias-utilizador/exportacao/",
         "/pt-pt/funcionalidades/pdf-tecnico/",
+        "/pt-pt/funcionalidades/modo-foto/",
         "/pt-pt/funcionalidades/remates/",
         "/pt-pt/guias-utilizador/medicoes-e-cotas/",
         "/pt-pt/glossario/"
       ],
-      "lastUpdated": "2026-11-03",
+      "lastUpdated": "2026-11-10",
       "status": "implemented",
       "draft": false,
       "noindex": false
@@ -1607,7 +1612,7 @@
       "path": "/pt-pt/guias-utilizador/medicoes-e-cotas/",
       "file": "pages/pt-pt/guias-utilizador/medicoes-e-cotas.mdx",
       "title": "Medições e Cotas",
-      "description": "Ative cotas no viewport 3D do PIMO PRO com o atalho D, leia medidas em centímetros e valide dimensões antes de exportar.",
+      "description": "Cotas no viewport do PIMO PRO: atalho D, Medidas do Conjunto com escala estável, e ligação ao Desenho Técnico em PDF.",
       "author": "",
       "category": "guia",
       "tags": [
@@ -1616,6 +1621,7 @@
       ],
       "related": [
         "/pt-pt/guias-utilizador/desenho-tecnico/",
+        "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
         "/pt-pt/guias-utilizador/lista-de-corte/",
         "/pt-pt/guias-utilizador/atalhos-teclado/",
         "/pt-pt/glossario/"

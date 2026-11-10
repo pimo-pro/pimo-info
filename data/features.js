@@ -87,7 +87,7 @@ export const features = [
     id: "desenho-tecnico-pdf",
     name: "Desenho Técnico (PDF)",
     summary:
-      "PDF A4 horizontal com vistas e cotas do móvel, na janela Salvar e Gerar Design. Guia completo na Ajuda e em Exportação. Não substitui o PDF Técnico industrial.",
+      "Vista de linhas no viewer, PDF A4 com arestas e cotas técnicas, e guia na Ajuda. Não substitui o PDF Técnico industrial.",
     status: "implemented",
     canonicalPath: "/pt-pt/funcionalidades/desenho-tecnico-pdf/",
     guidePath: "/pt-pt/guias-utilizador/desenho-tecnico/",
@@ -162,7 +162,8 @@ export const features = [
   {
     id: "modo-foto",
     name: "Modo foto",
-    summary: "Capturas e apresentação visual do projeto no viewport 3D.",
+    summary:
+      "Capturas do projeto 3D e Exportar linhas (PNG) com contornos técnicos de painéis, portas e frentes.",
     status: "implemented",
     canonicalPath: "/pt-pt/funcionalidades/modo-foto/",
     tags: ["apresentacao"],

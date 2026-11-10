@@ -39,7 +39,7 @@ export const exportFormats = [
     menuLabel: "Desenho Técnico (PDF)",
     extensions: [".pdf"],
     description:
-      "Documento A4 horizontal com vistas e cotas do móvel. Guia completo na Ajuda e em Exportação. Não substitui o PDF Técnico da lista industrial.",
+      "Documento A4 horizontal com arestas de painéis, portas, gavetas e remates, e cotas técnicas. Guia na Ajuda. Não substitui o PDF Técnico industrial.",
     status: "implemented",
     relatedPaths: [
       "/pt-pt/funcionalidades/desenho-tecnico-pdf/",

@@ -46,7 +46,7 @@ Locale: pt-PT
 
 ## Export formats (implemented)
 - PDF Técnico (.pdf): Relatório industrial do projeto com vista 3D, lista de corte, materiais, ferragens e resumo de preço. Continua disponível à parte do Desenho Técnico (PDF). Se a geração falhar, a app mostra o aviso «Erro ao gerar PDF técnico.»
-- Desenho Técnico (PDF) (.pdf): Documento A4 horizontal com vistas e cotas do móvel. Guia completo na Ajuda e em Exportação. Não substitui o PDF Técnico da lista industrial.
+- Desenho Técnico (PDF) (.pdf): Documento A4 horizontal com arestas de painéis, portas, gavetas e remates, e cotas técnicas. Guia na Ajuda. Não substitui o PDF Técnico industrial.
 - Cutlist (PDF) (.pdf): Lista de corte industrial em milímetros: peças, espessuras, materiais e quantidades.
 - PDF Unificado (.pdf): Documento único que combina informação técnica e cutlist para entrega documental.
 - Etiquetas (UEE v5) (.pdf): PDF de etiquetas com QR por peça (motor UEE v5), tipicamente um ficheiro por espessura.
@@ -68,7 +68,7 @@ Locale: pt-PT
 - TCN: Formato de ficheiro industrial `.tcn` para centros CNC. No menu de exportação aparece como «Arquivos CNC»; o ficheiro gerado é TCN.
 - Drill XML: Representação XML do plano de furação por painel (posição, diâmetro, profundidade), gerada no fluxo de Arquivos CNC.
 - PDF Técnico: Relatório industrial do projeto (vista 3D, lista de corte, materiais, ferragens, preço). Continua disponível à parte do Desenho Técnico (PDF). Não substitui TCN nem Drill XML. Se a geração falhar, surge o aviso «Erro ao gerar PDF técnico.»
-- Desenho Técnico (PDF): Documento A4 horizontal com vistas e cotas do móvel, gerado em Salvar e Gerar Design. Guia completo na Ajuda (Desenho Técnico e Exportação) com tipologias, remates e símbolos. Não substitui o PDF Técnico da lista industrial. Entra por omissão no arquivo completo (ZIP).
+- Desenho Técnico (PDF): Documento A4 horizontal com vistas, arestas de painéis, portas, gavetas e remates, e cotas técnicas. No viewer há o botão Desenho Técnico (vista de linhas sem alterar o projeto). Guia na Ajuda. Não substitui o PDF Técnico industrial. Entra por omissão no ZIP.
 - PIMO TRAK: Sistema de ordens de trabalho e rastreamento da produção, incluindo etiquetas QR UEE v5. Estado parcial no código: work orders e etiquetas existem; algumas páginas agregadas ainda podem estar incompletas.
 - PIMO PROJETOS: Área da app para listar e abrir projetos industriais da conta, com showroom e análise online.
 - PIMO NESTING: Sistema próprio de nesting (Nesting V3): layout manual/automático de peças em chapas com exportação PDF, TCN e etiquetas. Distinto do nesting Fast/PRO do pipeline de exportação do configurador.
@@ -89,7 +89,7 @@ Locale: pt-PT
 - Nesting Fast/PRO [implemented] https://pimo.info/pt-pt/funcionalidades/nesting-fast-pro/, Layout de corte em chapa: Fast (estimativa) e PRO (otimização).
 - Exportação TCN / Drill XML [implemented] https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/, Ficheiros industriais `.tcn` e Drill XML via menu Arquivos CNC.
 - PDF Técnico [implemented] https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/, Relatório industrial do projeto (lista, materiais, ferragens). Continua disponível à parte do Desenho Técnico (PDF).
-- Desenho Técnico (PDF) [implemented] https://pimo.info/pt-pt/funcionalidades/desenho-tecnico-pdf/, PDF A4 horizontal com vistas e cotas do móvel, na janela Salvar e Gerar Design. Guia completo na Ajuda e em Exportação. Não substitui o PDF Técnico industrial.
+- Desenho Técnico (PDF) [implemented] https://pimo.info/pt-pt/funcionalidades/desenho-tecnico-pdf/, Vista de linhas no viewer, PDF A4 com arestas e cotas técnicas, e guia na Ajuda. Não substitui o PDF Técnico industrial.
 - PIMO-TRAK [mixed] https://pimo.info/pt-pt/funcionalidades/pimo-trak/, Etiquetas QR (implementado) e rastreio industrial por peça (camada industrial).
 - Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/, Pedido de orçamento a partir do Início ou da exportação: envia contacto, projeto, módulos e notas; a equipa confirma os preços na resposta.
 - Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/, Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.
@@ -97,7 +97,7 @@ Locale: pt-PT
 - Definições [implemented] https://pimo.info/pt-pt/funcionalidades/definicoes/, Preferências do utilizador e do projeto no PIMO PRO.
 - Ferragens [implemented] https://pimo.info/pt-pt/funcionalidades/ferragens/, Dobradiças, corrediças e conectores gerados a partir da configuração dos módulos.
 - Sala e ambiente [implemented] https://pimo.info/pt-pt/funcionalidades/sala-e-ambiente/, Ambiente 3D de sala (paredes, luz) para contextualizar o mobiliário.
-- Modo foto [implemented] https://pimo.info/pt-pt/funcionalidades/modo-foto/, Capturas e apresentação visual do projeto no viewport 3D.
+- Modo foto [implemented] https://pimo.info/pt-pt/funcionalidades/modo-foto/, Capturas do projeto 3D e Exportar linhas (PNG) com contornos técnicos de painéis, portas e frentes.
 - Remates [implemented] https://pimo.info/pt-pt/funcionalidades/remates/, Acabamentos associados aos módulos, incluindo o tipo Remate Completo.
 
 ## PIMO systems
@@ -107,10 +107,10 @@ Locale: pt-PT
 - PIMO INDUSTRIAL [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/, Camada industrial completa da app: hub de estações, operações (CNC, nesting, drill, orlar, montagem, embalagem), operador/supervisor e integrações de fabrico.
 - PIMO DRILL [em-desenvolvimento] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/, Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.
 
-## UI buttons (300)
+## UI buttons (301)
 - Cabeçalho: 14 controlos
 - Navegação lateral: 9 controlos
-- Barra superior: 35 controlos
+- Barra superior: 36 controlos
 - Ferramentas 3D: 4 controlos
 - Painéis laterais: 44 controlos
 - Menu de contexto: 91 controlos

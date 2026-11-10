@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-11-10T15:49:25.370Z
+Generated: 2026-11-10T17:25:48.176Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -49,7 +49,7 @@ Locale: pt-PT
 
 ## Export formats (implemented)
 - PDF Técnico (.pdf): Relatório industrial do projeto com vista 3D, lista de corte, materiais, ferragens e resumo de preço. Continua disponível à parte do Desenho Técnico (PDF). Se a geração falhar, a app mostra o aviso «Erro ao gerar PDF técnico.»
-- Desenho Técnico (PDF) (.pdf): Documento A4 horizontal com vistas e cotas do móvel. Guia completo na Ajuda e em Exportação. Não substitui o PDF Técnico da lista industrial.
+- Desenho Técnico (PDF) (.pdf): Documento A4 horizontal com arestas de painéis, portas, gavetas e remates, e cotas técnicas. Guia na Ajuda. Não substitui o PDF Técnico industrial.
 - Cutlist (PDF) (.pdf): Lista de corte industrial em milímetros: peças, espessuras, materiais e quantidades.
 - PDF Unificado (.pdf): Documento único que combina informação técnica e cutlist para entrega documental.
 - Etiquetas (UEE v5) (.pdf): PDF de etiquetas com QR por peça (motor UEE v5), tipicamente um ficheiro por espessura.
@@ -71,7 +71,7 @@ Locale: pt-PT
 - TCN: Formato de ficheiro industrial `.tcn` para centros CNC. No menu de exportação aparece como «Arquivos CNC»; o ficheiro gerado é TCN.
 - Drill XML: Representação XML do plano de furação por painel (posição, diâmetro, profundidade), gerada no fluxo de Arquivos CNC.
 - PDF Técnico: Relatório industrial do projeto (vista 3D, lista de corte, materiais, ferragens, preço). Continua disponível à parte do Desenho Técnico (PDF). Não substitui TCN nem Drill XML. Se a geração falhar, surge o aviso «Erro ao gerar PDF técnico.»
-- Desenho Técnico (PDF): Documento A4 horizontal com vistas e cotas do móvel, gerado em Salvar e Gerar Design. Guia completo na Ajuda (Desenho Técnico e Exportação) com tipologias, remates e símbolos. Não substitui o PDF Técnico da lista industrial. Entra por omissão no arquivo completo (ZIP).
+- Desenho Técnico (PDF): Documento A4 horizontal com vistas, arestas de painéis, portas, gavetas e remates, e cotas técnicas. No viewer há o botão Desenho Técnico (vista de linhas sem alterar o projeto). Guia na Ajuda. Não substitui o PDF Técnico industrial. Entra por omissão no ZIP.
 - PIMO TRAK: Sistema de ordens de trabalho e rastreamento da produção, incluindo etiquetas QR UEE v5. Estado parcial no código: work orders e etiquetas existem; algumas páginas agregadas ainda podem estar incompletas.
 - PIMO PROJETOS: Área da app para listar e abrir projetos industriais da conta, com showroom e análise online.
 - PIMO NESTING: Sistema próprio de nesting (Nesting V3): layout manual/automático de peças em chapas com exportação PDF, TCN e etiquetas. Distinto do nesting Fast/PRO do pipeline de exportação do configurador.
@@ -92,7 +92,7 @@ Locale: pt-PT
 - Nesting Fast/PRO [implemented] https://pimo.info/pt-pt/funcionalidades/nesting-fast-pro/, Layout de corte em chapa: Fast (estimativa) e PRO (otimização).
 - Exportação TCN / Drill XML [implemented] https://pimo.info/pt-pt/funcionalidades/exportacao-tcn-drill-xml/, Ficheiros industriais `.tcn` e Drill XML via menu Arquivos CNC.
 - PDF Técnico [implemented] https://pimo.info/pt-pt/funcionalidades/pdf-tecnico/, Relatório industrial do projeto (lista, materiais, ferragens). Continua disponível à parte do Desenho Técnico (PDF).
-- Desenho Técnico (PDF) [implemented] https://pimo.info/pt-pt/funcionalidades/desenho-tecnico-pdf/, PDF A4 horizontal com vistas e cotas do móvel, na janela Salvar e Gerar Design. Guia completo na Ajuda e em Exportação. Não substitui o PDF Técnico industrial.
+- Desenho Técnico (PDF) [implemented] https://pimo.info/pt-pt/funcionalidades/desenho-tecnico-pdf/, Vista de linhas no viewer, PDF A4 com arestas e cotas técnicas, e guia na Ajuda. Não substitui o PDF Técnico industrial.
 - PIMO-TRAK [mixed] https://pimo.info/pt-pt/funcionalidades/pimo-trak/, Etiquetas QR (implementado) e rastreio industrial por peça (camada industrial).
 - Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/, Pedido de orçamento a partir do Início ou da exportação: envia contacto, projeto, módulos e notas; a equipa confirma os preços na resposta.
 - Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/, Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.
@@ -100,7 +100,7 @@ Locale: pt-PT
 - Definições [implemented] https://pimo.info/pt-pt/funcionalidades/definicoes/, Preferências do utilizador e do projeto no PIMO PRO.
 - Ferragens [implemented] https://pimo.info/pt-pt/funcionalidades/ferragens/, Dobradiças, corrediças e conectores gerados a partir da configuração dos módulos.
 - Sala e ambiente [implemented] https://pimo.info/pt-pt/funcionalidades/sala-e-ambiente/, Ambiente 3D de sala (paredes, luz) para contextualizar o mobiliário.
-- Modo foto [implemented] https://pimo.info/pt-pt/funcionalidades/modo-foto/, Capturas e apresentação visual do projeto no viewport 3D.
+- Modo foto [implemented] https://pimo.info/pt-pt/funcionalidades/modo-foto/, Capturas do projeto 3D e Exportar linhas (PNG) com contornos técnicos de painéis, portas e frentes.
 - Remates [implemented] https://pimo.info/pt-pt/funcionalidades/remates/, Acabamentos associados aos módulos, incluindo o tipo Remate Completo.
 
 ## PIMO systems
@@ -110,10 +110,10 @@ Locale: pt-PT
 - PIMO INDUSTRIAL [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/, Camada industrial completa da app: hub de estações, operações (CNC, nesting, drill, orlar, montagem, embalagem), operador/supervisor e integrações de fabrico.
 - PIMO DRILL [em-desenvolvimento] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/, Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.
 
-## UI buttons (300)
+## UI buttons (301)
 - Cabeçalho: 14 controlos
 - Navegação lateral: 9 controlos
-- Barra superior: 35 controlos
+- Barra superior: 36 controlos
 - Ferramentas 3D: 4 controlos
 - Painéis laterais: 44 controlos
 - Menu de contexto: 91 controlos
@@ -573,6 +573,14 @@ effects: O ecrã e o projeto atualizam-se conforme a ação.
 shortcut: -
 features: modulo-industrial
 
+## Button: Desenho Técnico
+area: barra-superior
+location: Na barra superior do espaço de trabalho 3D, a seguir a Design Industrial
+action: Alterna a vista de linhas técnicas do mobiliário no mesmo viewer.
+effects: Mostra ou oculta contornos técnicos no ecrã sem alterar o projeto. Útil para rever arestas antes de exportar o PDF.
+shortcut: -
+features: desenho-tecnico-pdf, configurador-3d
+
 ## Button: ENVIAR
 area: barra-superior
 location: No topo, ações de projeto
@@ -616,10 +624,10 @@ features: configurador-3d
 ## Button: Medidas do Conjunto
 area: barra-superior
 location: Na barra superior do espaço de trabalho 3D
-action: Alterna o overlay de medidas do conjunto.
-effects: O ecrã e o projeto atualizam-se conforme a ação.
+action: Alterna as cotas de medidas do conjunto no ecrã.
+effects: As cotas ficam legíveis e estáveis ao aproximar ou afastar a câmara (escala corrigida). Não altera o projeto.
 shortcut: -
-features: configurador-3d
+features: configurador-3d, desenho-tecnico-pdf
 
 ## Button: Mostrar arestas dos painéis
 area: barra-superior
@@ -2127,11 +2135,11 @@ features: configurador-3d
 
 ## Button: Exportar linhas
 area: paineis-laterais
-location: Painel Photo Mode
-action: Exporta linhas do Photo Mode.
-effects: O ficheiro ou relatório fica pronto para descarregar ou enviar.
+location: Painel Photo Mode (modo foto)
+action: Exporta uma imagem PNG com contornos técnicos do mobiliário.
+effects: Mostra arestas de painéis, prateleiras, portas e frentes (não só a caixa envolvente vazia). Útil para apresentação técnica rápida.
 shortcut: -
-features: configurador-3d
+features: modo-foto, desenho-tecnico-pdf, configurador-3d
 
 ## Button: Gavetas
 area: paineis-laterais
@@ -4750,32 +4758,43 @@ O detalhe de cada opção aparece na própria interface do PIMO PRO.
 
 ## Desenho Técnico (PDF) com vistas e cotas
 URL: https://pimo.info/pt-pt/funcionalidades/desenho-tecnico-pdf/
-Exporte o Desenho Técnico em A4 horizontal no PIMO PRO: vistas, cotas de montagem e partilha clara, distinto do PDF técnico industrial.
+No PIMO PRO: vista de linhas no viewer, PDF A4 com arestas e cotas técnicas, e Exportar linhas no modo foto. Distinto do PDF técnico industrial.
 
 # Desenho Técnico (PDF)
 
-No PIMO PRO pode gerar um **Desenho Técnico (PDF)** a partir da janela **Salvar e Gerar Design**. O documento sai em A4 horizontal, com vistas e cotas do móvel, para ler e partilhar o desenho com clareza.
+No PIMO PRO o **Desenho Técnico** cobre três usos no dia a dia: uma **vista de linhas** no espaço 3D, o **PDF A4** com vistas e cotas, e a imagem **Exportar linhas** no modo foto. Nenhum destes passos altera o projeto; só mudam a forma de ver ou de exportar.
 
-## O que faz
+## Vista de linhas no viewer
 
-- Mostra vistas do móvel com cotas.
-- Formato A4 horizontal, fácil de imprimir ou enviar.
-- Serve para validar medidas e apresentar o projeto sem abrir a aplicação.
+Na barra de ferramentas do espaço 3D, a seguir a **Design Industrial**, o botão **Desenho Técnico** alterna uma vista de linhas do mobiliário no mesmo viewer. Serve para rever arestas e composição antes de gerar o PDF, sem mudar módulos nem materiais.
 
-## Onde está
+## PDF A4 com arestas e cotas
 
-1. No espaço de trabalho 3D, abra **Salvar e Gerar Design** (barra superior).
-2. Em **Gerar arquivo**, escolha **Desenho Técnico (PDF)**.
+1. Coloque os módulos e execute **Gerar Design 3D**.
+2. Abra **Salvar e Gerar Design** (barra superior).
+3. Em **Gerar arquivo**, escolha **Desenho Técnico (PDF)**.
 
-Também encontra o guia completo na **Ajuda** do PIMO PRO (secção **Desenho Técnico**) e a partir da secção **Exportação** da Ajuda. Neste site: [Guia do Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/).
+O documento sai em A4 horizontal e mostra:
+
+- arestas de painéis, portas, gavetas e remates;
+- cotas técnicas com setas e linhas auxiliares;
+- vistas ortográficas mais limpas (menos tracejado em painéis finos);
+- cotas gerais sempre presentes; cotas de componentes só quando as ativa;
+- cotas internas um pouco afastadas do contorno, para leitura mais clara.
+
+Com **portas**, a vista frontal e a isométrica deixam de mostrar prateleiras através das frentes. Na isométrica há menos arestas traseiras; arestas atrás de faces opacas são cortadas.
 
 ## Relação com o PDF Técnico
 
-O **Desenho Técnico (PDF)** **não** substitui o **PDF Técnico** da lista industrial. Os dois continuam disponíveis: um foca vistas e cotas; o outro reúne a documentação industrial (lista de corte, materiais, ferragens e resumo).
+O **Desenho Técnico (PDF)** **não** substitui o **PDF Técnico** da lista industrial. Os dois continuam disponíveis: um foca vistas e cotas; o outro reúne a documentação industrial.
 
-## No arquivo completo
+## No arquivo completo e no modo foto
 
 Ao usar **Gerar arquivo completo**, o ZIP inclui por omissão o Desenho Técnico (PDF), além do PDF Técnico industrial.
+
+No [modo foto](/pt-pt/funcionalidades/modo-foto/), **Exportar linhas** gera um PNG com contornos técnicos de painéis, prateleiras, portas e frentes (não só a caixa envolvente vazia).
+
+Guia completo: [Guia do Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/). Cotas no ecrã: [Medições e cotas](/pt-pt/guias-utilizador/medicoes-e-cotas/).
 
 ---
 
@@ -4916,7 +4935,7 @@ No painel Materiais do lado direito pode escolher presets de material. Essa esco
 
 ## Modo foto
 URL: https://pimo.info/pt-pt/funcionalidades/modo-foto/
-Modo foto no PIMO PRO: capture e descarregue vistas do projeto 3D para apresentar ao cliente, com sala e ambiente como apoio.
+Modo foto no PIMO PRO: captura PNG do projeto 3D e Exportar linhas com contornos técnicos de painéis, portas e frentes.
 
 # Modo foto
 
@@ -4927,10 +4946,12 @@ O **modo foto** do PIMO PRO prepara o viewport 3D para capturas e apresentação
 Ao ativar o modo foto (controlo **PHOTO** no topo), abre o painel dedicado. Aí pode:
 
 - preparar a vista do projeto para uma imagem limpa;
-- **descarregar** a captura;
-- usar opções de exportação visual disponíveis no painel (por exemplo exportar linhas, quando aparecerem na sua versão).
+- **descarregar** a captura fotográfica;
+- usar **Exportar linhas** para um PNG com contornos técnicos.
 
-O modo foto **não** gera lista de corte, TCN nem Desenho Técnico. É comunicação visual.
+**Exportar linhas** mostra arestas de painéis, prateleiras, portas e frentes, em vez de uma caixa envolvente vazia. Serve para uma revisão técnica rápida; o documento de obra continua a ser o [Desenho Técnico (PDF)](/pt-pt/funcionalidades/desenho-tecnico-pdf/).
+
+O modo foto **não** gera lista de corte nem TCN. É comunicação visual (foto ou linhas).
 
 ## Onde está no ecrã
 
@@ -5481,13 +5502,19 @@ Nomes exactos dos controlos: [Referência de botões](/pt-pt/referencia/botoes/)
 
 ## Guia do Desenho Técnico
 URL: https://pimo.info/pt-pt/guias-utilizador/desenho-tecnico/
-Como ler e gerar o Desenho Técnico (PDF) no PIMO PRO: vistas, cotas, remates, símbolos e exemplos de tipologias.
+Desenho Técnico no PIMO PRO: vista de linhas no viewer, PDF A4 com arestas e cotas, Exportar linhas no modo foto, tipologias e remates.
 
 # Guia do Desenho Técnico
 
-O **Desenho Técnico (PDF)** do PIMO PRO é o documento A4 horizontal com vistas do móvel, cotas de montagem, remates e identificação do projeto. Serve para ler medidas, partilhar com a obra e validar o desenho sem abrir a aplicação. As imagens e PDFs desta página são páginas reais geradas pelo PIMO PRO.
+O **Desenho Técnico** no PIMO PRO junta a vista de linhas no espaço 3D, o **PDF A4** com vistas e cotas, e a imagem **Exportar linhas** no modo foto. Serve para ler medidas, partilhar com a obra e validar o desenho. As imagens e PDFs desta página são exemplos gerados pelo PIMO PRO.
 
 Não substitui o **PDF Técnico** da lista industrial: um foca vistas e cotas; o outro reúne a documentação industrial.
+
+## Vista de linhas no espaço 3D
+
+Na barra de ferramentas do viewer, a seguir a **Design Industrial**, use o botão **Desenho Técnico** para alternar uma vista de linhas do mobiliário no mesmo ecrã. O projeto não é alterado: só muda a visualização, para rever arestas antes de exportar.
+
+Em paralelo, **Medidas do Conjunto** mostra cotas no ecrã com tamanho legível e estável ao aproximar ou afastar a câmara. Detalhe: [Medições e cotas](/pt-pt/guias-utilizador/medicoes-e-cotas/).
 
  
 
@@ -5510,12 +5537,16 @@ No **arquivo completo (ZIP)**, o Desenho Técnico entra por omissão, sem substi
 
 Detalhe da funcionalidade: [Desenho Técnico (PDF)](/pt-pt/funcionalidades/desenho-tecnico-pdf/).
 
-## Vistas, cotas e escala
+## Vistas, arestas, cotas e escala
 
 Cada módulo pode gerar vistas de frente, traseira, laterais, superior, interior e, quando faz sentido, isometria.
 
-- As **cotas** gerais e interiores (por exemplo vãos entre prateleiras) estão em **milímetros**.
-- A **escala** aparece no cabeçalho de cada página (por exemplo 1:6).
+- O PDF mostra **arestas** de painéis, portas, gavetas e remates, com cotas técnicas (setas e linhas auxiliares).
+- As **cotas gerais** mantêm-se; as **cotas de componentes** só aparecem quando as ativa.
+- As **cotas internas** ficam um pouco afastadas do contorno, para não colarem ao desenho.
+- As vistas ortográficas estão mais limpas, com menos tracejado em painéis finos.
+- Com **portas**, a vista frontal e a isométrica deixam de mostrar prateleiras através das frentes; a isométrica reduz arestas traseiras e corta arestas atrás de faces opacas.
+- As **cotas** estão em **milímetros**. A **escala** aparece no cabeçalho (por exemplo 1:6).
 - Paredes, sala, chão e tecto **não entram** no desenho técnico.
 
  
@@ -5529,7 +5560,11 @@ Cada módulo pode gerar vistas de frente, traseira, laterais, superior, interior
    
  
 
-Para cotas no ecrã 3D (atalho **D**), veja também [Medições e Cotas](/pt-pt/guias-utilizador/medicoes-e-cotas/).
+Para cotas rápidas no ecrã (atalho **D** e **Medidas do Conjunto**), veja [Medições e Cotas](/pt-pt/guias-utilizador/medicoes-e-cotas/).
+
+## Exportar linhas no modo foto
+
+No [modo foto](/pt-pt/funcionalidades/modo-foto/), **Exportar linhas** gera um PNG com contornos técnicos de painéis, prateleiras, portas e frentes, em vez de uma caixa envolvente vazia. É uma captura rápida para revisão visual; o documento de obra continua a ser o PDF.
 
 ## Tipologias com exemplos
 
@@ -5599,7 +5634,8 @@ Mais sobre remates no projeto: [Remates e acabamentos](/pt-pt/funcionalidades/re
 | --- | --- |
 | Cabeçalho PIMO | Identidade do documento, designer, responsável e data. |
 | Escala (ex. 1:6) | Proporção da vista impressa em A4 horizontal. |
-| Cotas em mm | Medidas de montagem e instalação (gerais e interiores). |
+| Cotas em mm | Medidas de montagem (gerais; componentes só se ativadas). |
+| Arestas e setas | Contornos de painéis, portas, gavetas e remates com cotas técnicas. |
 | Legenda de separação | Conjuntos fisicamente separados, com distância útil. |
 | Ambiente arquitectónico excluído | Paredes, sala, chão e tecto fora do desenho técnico. |
 | Paginação | Rodapé com nome do projeto e página N / total. |
@@ -5841,11 +5877,11 @@ Funcionalidade: [Materiais](/pt-pt/funcionalidades/materiais/).
 
 ## Medições e Cotas
 URL: https://pimo.info/pt-pt/guias-utilizador/medicoes-e-cotas/
-Ative cotas no viewport 3D do PIMO PRO com o atalho D, leia medidas em centímetros e valide dimensões antes de exportar.
+Cotas no viewport do PIMO PRO: atalho D, Medidas do Conjunto com escala estável, e ligação ao Desenho Técnico em PDF.
 
 # Medições, régua e cotas no viewport
 
-No PIMO PRO, as **cotas no viewport** mostram largura, altura e profundidade do módulo selecionado diretamente sobre o modelo 3D. Servem para validar o desenho enquanto trabalha. As medidas de fabrico (lista de corte e Desenho Técnico) usam **milímetros**; as etiquetas do atalho `D` aparecem em **centímetros**.
+No PIMO PRO, as **cotas no viewport** mostram medidas sobre o modelo 3D enquanto trabalha. As medidas de fabrico (lista de corte e Desenho Técnico) usam **milímetros**; as etiquetas do atalho `D` aparecem em **centímetros**.
 
 ## Para que serve
 
@@ -5858,10 +5894,14 @@ Não substituem o [Desenho Técnico (PDF)](/pt-pt/guias-utilizador/desenho-tecni
 ## Onde está e como ativar
 
 1. Selecione um módulo no viewport (`S` ou clique).
-2. Prima `D` para mostrar as etiquetas de dimensão.
+2. Prima `D` para mostrar as etiquetas de dimensão do módulo.
 3. Leia L, A e P em centímetros.
 4. Selecione outro módulo: as cotas atualizam-se.
 5. Prima `D` de novo para ocultar.
+
+### Medidas do Conjunto
+
+Na barra superior do espaço 3D, **Medidas do Conjunto** liga cotas do conjunto no ecrã. O tamanho das etiquetas fica **legível e estável** ao aproximar ou afastar a câmara (escala corrigida). Pode usar em conjunto com a vista de linhas do botão **Desenho Técnico**, sem alterar o projeto.
 
 No painel de medições internas pode medir distâncias pontuais no cenário quando precisar de um vão específico (por exemplo entre duas faces).
 
@@ -5899,7 +5939,7 @@ Depois de validar cotas no ecrã:
 
 ## Relação com o Desenho Técnico
 
-As cotas do atalho `D` são uma ajuda rápida no ecrã. O documento de obra é o Desenho Técnico em A4 horizontal, com várias vistas e escala no cabeçalho. Use os dois: ecrã para decidir, PDF para entregar.
+As cotas do atalho `D` e as **Medidas do Conjunto** são ajuda no ecrã. O documento de obra é o Desenho Técnico em A4 horizontal, com arestas, várias vistas e escala no cabeçalho. Use o ecrã para decidir e o PDF para entregar.
 
 Guia relacionado: [Atalhos de teclado](/pt-pt/guias-utilizador/atalhos-teclado/). Produção: [Lista de corte](/pt-pt/guias-utilizador/lista-de-corte/).
 
@@ -6667,7 +6707,7 @@ O pacote pode incluir cutlist PDF, **PDF Técnico** industrial, **Desenho Técni
 
 ## O que é o Desenho Técnico (PDF)?
 
-É um documento A4 horizontal com vistas e cotas do móvel, gerado em **Salvar e Gerar Design → Gerar arquivo → Desenho Técnico (PDF)**. Não substitui o PDF Técnico industrial. Na Ajuda do PIMO PRO (secções **Desenho Técnico** e **Exportação**) encontra o guia completo com tipologias, remates, cotas e símbolos. Guia: [Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/). Resumo: [Desenho Técnico (PDF)](/pt-pt/funcionalidades/desenho-tecnico-pdf/).
+É o documento A4 horizontal com vistas, arestas e cotas do móvel, gerado em **Salvar e Gerar Design → Gerar arquivo → Desenho Técnico (PDF)**. No espaço 3D há também o botão **Desenho Técnico** (vista de linhas) e, no modo foto, **Exportar linhas** (PNG com contornos). Não substitui o PDF Técnico industrial. Guia: [Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/). Resumo: [Desenho Técnico (PDF)](/pt-pt/funcionalidades/desenho-tecnico-pdf/).
 
 ## O que acontece se falhar a geração do PDF técnico?
 

@@ -1,7 +1,47 @@
 {
   "source": "remote",
-  "fetchedAt": "2026-11-10T15:49:25.661Z",
+  "fetchedAt": "2026-11-10T17:25:48.488Z",
   "entries": [
+    {
+      "version": "2026-11-10",
+      "title": "Medidas do Conjunto com cotas estáveis",
+      "description": "As cotas de Medidas do Conjunto no ecrã ficam legíveis e estáveis ao aproximar ou afastar a câmara. A escala das etiquetas foi corrigida",
+      "publishedAt": "2026-11-10T12:01:00.000Z",
+      "type": "fix",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "2026-11-10",
+      "title": "Botão Desenho Técnico no viewer",
+      "description": "Na barra de ferramentas do espaço 3D, a seguir a Design Industrial, o botão Desenho Técnico alterna uma vista de linhas do mobiliário no mesmo viewer, sem alterar o projeto",
+      "publishedAt": "2026-11-10T12:00:00.000Z",
+      "type": "feature",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "2026-11-08",
+      "title": "Portas: vistas sem prateleiras através das frentes",
+      "description": "Com portas, a vista frontal e a isométrica deixam de mostrar prateleiras através das frentes. A isométrica mostra menos arestas traseiras; arestas atrás de faces opacas são cortadas",
+      "publishedAt": "2026-11-08T12:01:00.000Z",
+      "type": "fix",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "2026-11-08",
+      "title": "PDF de Desenho Técnico com arestas e cotas mais claras",
+      "description": "O PDF mostra arestas de painéis, portas, gavetas e remates com cotas técnicas (setas e linhas auxiliares). Vistas ortográficas mais limpas, cotas gerais mantidas e cotas de componentes só quando ativadas; cotas internas um pouco afastadas do contorno",
+      "publishedAt": "2026-11-08T12:00:00.000Z",
+      "type": "update",
+      "author": "Equipa PIMO"
+    },
+    {
+      "version": "2026-11-05",
+      "title": "Exportar linhas com contornos técnicos",
+      "description": "No modo foto, Exportar linhas (PNG) mostra contornos técnicos de painéis, prateleiras, portas e frentes, em vez da caixa envolvente vazia",
+      "publishedAt": "2026-11-05T12:00:00.000Z",
+      "type": "update",
+      "author": "Equipa PIMO"
+    },
     {
       "version": "2026-11-03",
       "title": "Guia completo do Desenho Técnico na Ajuda",

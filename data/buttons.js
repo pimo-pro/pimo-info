@@ -679,6 +679,21 @@ export const buttons = [
     ]
   },
   {
+    "id": "utt-desenho-tecnico",
+    "label": "Desenho Técnico",
+    "iconName": "blueprint",
+    "icon": null,
+    "shortcut": null,
+    "area": "barra-superior",
+    "location": "Na barra superior do espaço de trabalho 3D, a seguir a Design Industrial",
+    "action": "Alterna a vista de linhas técnicas do mobiliário no mesmo viewer.",
+    "effects": "Mostra ou oculta contornos técnicos no ecrã sem alterar o projeto. Útil para rever arestas antes de exportar o PDF.",
+    "featureIds": [
+      "desenho-tecnico-pdf",
+      "configurador-3d"
+    ]
+  },
+  {
     "id": "toolbar-enviar",
     "label": "ENVIAR",
     "iconName": "send",
@@ -756,10 +771,11 @@ export const buttons = [
     "shortcut": null,
     "area": "barra-superior",
     "location": "Na barra superior do espaço de trabalho 3D",
-    "action": "Alterna o overlay de medidas do conjunto.",
-    "effects": "O ecrã e o projeto atualizam-se conforme a ação.",
+    "action": "Alterna as cotas de medidas do conjunto no ecrã.",
+    "effects": "As cotas ficam legíveis e estáveis ao aproximar ou afastar a câmara (escala corrigida). Não altera o projeto.",
     "featureIds": [
-      "configurador-3d"
+      "configurador-3d",
+      "desenho-tecnico-pdf"
     ]
   },
   {
@@ -3422,10 +3438,12 @@ export const buttons = [
     "icon": null,
     "shortcut": null,
     "area": "paineis-laterais",
-    "location": "Painel Photo Mode",
-    "action": "Exporta linhas do Photo Mode.",
-    "effects": "O ficheiro ou relatório fica pronto para descarregar ou enviar.",
+    "location": "Painel Photo Mode (modo foto)",
+    "action": "Exporta uma imagem PNG com contornos técnicos do mobiliário.",
+    "effects": "Mostra arestas de painéis, prateleiras, portas e frentes (não só a caixa envolvente vazia). Útil para apresentação técnica rápida.",
     "featureIds": [
+      "modo-foto",
+      "desenho-tecnico-pdf",
       "configurador-3d"
     ]
   },

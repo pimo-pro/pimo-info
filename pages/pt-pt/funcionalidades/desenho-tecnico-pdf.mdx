@@ -1,6 +1,6 @@
 ---
 title: "Desenho Técnico (PDF) com vistas e cotas"
-description: "Exporte o Desenho Técnico em A4 horizontal no PIMO PRO: vistas, cotas de montagem e partilha clara, distinto do PDF técnico industrial."
+description: "No PIMO PRO: vista de linhas no viewer, PDF A4 com arestas e cotas técnicas, e Exportar linhas no modo foto. Distinto do PDF técnico industrial."
 category: funcionalidade
 tags:
   - funcionalidade
@@ -10,9 +10,11 @@ related:
   - /pt-pt/funcionalidades/pdf-tecnico/
   - /pt-pt/guias-utilizador/desenho-tecnico/
   - /pt-pt/guias-utilizador/exportacao/
+  - /pt-pt/guias-utilizador/medicoes-e-cotas/
+  - /pt-pt/funcionalidades/modo-foto/
   - /pt-pt/referencia/botoes/
   - /pt-pt/glossario/
-lastUpdated: 2026-11-03
+lastUpdated: 2026-11-10
 status: implemented
 ---
 
@@ -21,28 +23,39 @@ import { FeatureButtons } from "../../../components/ButtonsCatalog"
 
 # Desenho Técnico (PDF)
 
-No PIMO PRO pode gerar um **Desenho Técnico (PDF)** a partir da janela **Salvar e Gerar Design**. O documento sai em A4 horizontal, com vistas e cotas do móvel, para ler e partilhar o desenho com clareza.
+No PIMO PRO o **Desenho Técnico** cobre três usos no dia a dia: uma **vista de linhas** no espaço 3D, o **PDF A4** com vistas e cotas, e a imagem **Exportar linhas** no modo foto. Nenhum destes passos altera o projeto; só mudam a forma de ver ou de exportar.
 
-## O que faz
+## Vista de linhas no viewer
 
-- Mostra vistas do móvel com cotas.
-- Formato A4 horizontal, fácil de imprimir ou enviar.
-- Serve para validar medidas e apresentar o projeto sem abrir a aplicação.
+Na barra de ferramentas do espaço 3D, a seguir a **Design Industrial**, o botão **Desenho Técnico** alterna uma vista de linhas do mobiliário no mesmo viewer. Serve para rever arestas e composição antes de gerar o PDF, sem mudar módulos nem materiais.
 
-## Onde está
+## PDF A4 com arestas e cotas
 
-1. No espaço de trabalho 3D, abra **Salvar e Gerar Design** (barra superior).
-2. Em **Gerar arquivo**, escolha **Desenho Técnico (PDF)**.
+1. Coloque os módulos e execute **Gerar Design 3D**.
+2. Abra **Salvar e Gerar Design** (barra superior).
+3. Em **Gerar arquivo**, escolha **Desenho Técnico (PDF)**.
 
-Também encontra o guia completo na **Ajuda** do PIMO PRO (secção **Desenho Técnico**) e a partir da secção **Exportação** da Ajuda. Neste site: [Guia do Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/).
+O documento sai em A4 horizontal e mostra:
+
+- arestas de painéis, portas, gavetas e remates;
+- cotas técnicas com setas e linhas auxiliares;
+- vistas ortográficas mais limpas (menos tracejado em painéis finos);
+- cotas gerais sempre presentes; cotas de componentes só quando as ativa;
+- cotas internas um pouco afastadas do contorno, para leitura mais clara.
+
+Com **portas**, a vista frontal e a isométrica deixam de mostrar prateleiras através das frentes. Na isométrica há menos arestas traseiras; arestas atrás de faces opacas são cortadas.
 
 ## Relação com o PDF Técnico
 
-O **Desenho Técnico (PDF)** **não** substitui o **PDF Técnico** da lista industrial. Os dois continuam disponíveis: um foca vistas e cotas; o outro reúne a documentação industrial (lista de corte, materiais, ferragens e resumo).
+O **Desenho Técnico (PDF)** **não** substitui o **PDF Técnico** da lista industrial. Os dois continuam disponíveis: um foca vistas e cotas; o outro reúne a documentação industrial.
 
-## No arquivo completo
+## No arquivo completo e no modo foto
 
 Ao usar **Gerar arquivo completo**, o ZIP inclui por omissão o Desenho Técnico (PDF), além do PDF Técnico industrial.
+
+No [modo foto](/pt-pt/funcionalidades/modo-foto/), **Exportar linhas** gera um PNG com contornos técnicos de painéis, prateleiras, portas e frentes (não só a caixa envolvente vazia).
+
+Guia completo: [Guia do Desenho Técnico](/pt-pt/guias-utilizador/desenho-tecnico/). Cotas no ecrã: [Medições e cotas](/pt-pt/guias-utilizador/medicoes-e-cotas/).
 
 <FeatureButtons featureId="desenho-tecnico-pdf" />
 
@@ -51,7 +64,8 @@ Ao usar **Gerar arquivo completo**, o ZIP inclui por omissão o Desenho Técnico
     { href: "/pt-pt/guias-utilizador/desenho-tecnico/", label: "Guia do Desenho Técnico" },
     { href: "/pt-pt/guias-utilizador/exportacao/", label: "Guia de exportação" },
     { href: "/pt-pt/funcionalidades/pdf-tecnico/", label: "PDF técnico" },
+    { href: "/pt-pt/funcionalidades/modo-foto/", label: "Modo foto" },
+    { href: "/pt-pt/guias-utilizador/medicoes-e-cotas/", label: "Medições e cotas" },
     { href: "/pt-pt/referencia/botoes/#area-exportacao", label: "Botões de exportação" },
-    { href: "/pt-pt/perguntas-frequentes/", label: "Perguntas frequentes" },
   ]}
 />
