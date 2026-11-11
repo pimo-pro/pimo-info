@@ -25,7 +25,9 @@ const items = [
   { id: "route-projects", kind: "route", codeRef: "App.tsx:/projects", name: "Lista de projetos", purpose: "Gestão de projetos", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto", notes: "Alinhado com Meus Projetos /meus-projetos (out 2026)" },
   { id: "route-project-detail", kind: "route", codeRef: "App.tsx:/projects/:id", name: "Detalhe de projeto", purpose: "Projeto individual", page: "/pt-pt/guias-utilizador/gerir-projetos/", status: "coberto", notes: "Botão Abrir no editor 3D (out 2026)" },
   { id: "route-projects-viewer", kind: "route", codeRef: "App.tsx:/projects/viewer", name: "Showroom / viewer", purpose: "Visualização showroom", page: "/pt-pt/funcionalidades/configurador-3d/", status: "coberto", notes: "Rota + PermissionRoute canOpenProjectsShowroom documentados" },
-  { id: "route-relatorio-final", kind: "route", codeRef: "App.tsx:/relatorio-final/:project", name: "Relatório final", purpose: "Relatório consolidado do projeto", page: "/pt-pt/funcionalidades/relatorio-final/", status: "coberto" },
+  { id: "route-relatorio-final", kind: "route", codeRef: "App.tsx:/relatorio-final/:project", name: "Relatório final", purpose: "Vista de fecho com 3D, Abrir projeto 3D, caixas/etiquetas, PDF e produção após ordem de trabalho", page: "/pt-pt/funcionalidades/relatorio-final/", status: "coberto", notes: "Sync 2026-11-11: vista geométrica 3D, PDF alinhado, imagens online, painéis de produção após ordem de trabalho" },
+
+
   { id: "route-projetos", kind: "route", codeRef: "App.tsx:/PROJETOS", name: "PIMO PROJETOS", purpose: "Navegação projeto → caixa → peça", page: "/pt-pt/sistemas-pimo/pimo-projetos/", status: "coberto" },
   { id: "route-projetos-analise", kind: "route", codeRef: "App.tsx:/PROJETOS/:project/analise", name: "Análise de projeto", purpose: "Documentos de análise", page: "/pt-pt/funcionalidades/analise-projetos/", status: "coberto" },
   { id: "route-nesting-v3", kind: "route", codeRef: "App.tsx:/nesting_v3", name: "Nesting v3", purpose: "Motor de nesting Fast/PRO", page: "/pt-pt/sistemas-pimo/pimo-nesting/", status: "coberto" },

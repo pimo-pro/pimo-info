@@ -1,5 +1,5 @@
 # PIMO Info, full knowledge dump
-Generated: 2026-11-10T17:25:48.176Z
+Generated: 2026-11-11T18:34:54.485Z
 
 # PIMO Info
 > Centro de ajuda e base de conhecimento do PIMO PRO: guias, funcionalidades, exportação industrial e glossário técnico.
@@ -71,6 +71,7 @@ Locale: pt-PT
 - TCN: Formato de ficheiro industrial `.tcn` para centros CNC. No menu de exportação aparece como «Arquivos CNC»; o ficheiro gerado é TCN.
 - Drill XML: Representação XML do plano de furação por painel (posição, diâmetro, profundidade), gerada no fluxo de Arquivos CNC.
 - PDF Técnico: Relatório industrial do projeto (vista 3D, lista de corte, materiais, ferragens, preço). Continua disponível à parte do Desenho Técnico (PDF). Não substitui TCN nem Drill XML. Se a geração falhar, surge o aviso «Erro ao gerar PDF técnico.»
+- Relatório final: Vista de fecho do projeto no PIMO PRO: geometria 3D, botão Abrir projeto 3D, lista de caixas com os mesmos identificadores das etiquetas, PDF profissional alinhado com a vista, imagens atualizadas quando está online, e painéis de produção só depois da ordem de trabalho. Não substitui a análise documental em PIMO PROJETOS nem o PDF Técnico industrial.
 - Desenho Técnico (PDF): Documento A4 horizontal com vistas, arestas de painéis, portas, gavetas e remates, e cotas técnicas. No viewer há o botão Desenho Técnico (vista de linhas sem alterar o projeto). Guia na Ajuda. Não substitui o PDF Técnico industrial. Entra por omissão no ZIP.
 - PIMO TRAK: Sistema de ordens de trabalho e rastreamento da produção, incluindo etiquetas QR UEE v5. Estado parcial no código: work orders e etiquetas existem; algumas páginas agregadas ainda podem estar incompletas.
 - PIMO PROJETOS: Área da app para listar e abrir projetos industriais da conta, com showroom e análise online.
@@ -95,6 +96,7 @@ Locale: pt-PT
 - Desenho Técnico (PDF) [implemented] https://pimo.info/pt-pt/funcionalidades/desenho-tecnico-pdf/, Vista de linhas no viewer, PDF A4 com arestas e cotas técnicas, e guia na Ajuda. Não substitui o PDF Técnico industrial.
 - PIMO-TRAK [mixed] https://pimo.info/pt-pt/funcionalidades/pimo-trak/, Etiquetas QR (implementado) e rastreio industrial por peça (camada industrial).
 - Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/, Pedido de orçamento a partir do Início ou da exportação: envia contacto, projeto, módulos e notas; a equipa confirma os preços na resposta.
+- Relatório final [implemented] https://pimo.info/pt-pt/funcionalidades/relatorio-final/, Vista de fecho do projeto com geometria 3D, botão Abrir projeto 3D, lista de caixas alinhada às etiquetas, PDF profissional e painéis de produção após a ordem de trabalho.
 - Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/, Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.
 - Conta e acesso [implemented] https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/, Registo, entrar na conta, sessão e Meus Projetos no PIMO PRO.
 - Definições [implemented] https://pimo.info/pt-pt/funcionalidades/definicoes/, Preferências do utilizador e do projeto no PIMO PRO.
@@ -110,7 +112,7 @@ Locale: pt-PT
 - PIMO INDUSTRIAL [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/, Camada industrial completa da app: hub de estações, operações (CNC, nesting, drill, orlar, montagem, embalagem), operador/supervisor e integrações de fabrico.
 - PIMO DRILL [em-desenvolvimento] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/, Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.
 
-## UI buttons (301)
+## UI buttons (302)
 - Cabeçalho: 14 controlos
 - Navegação lateral: 9 controlos
 - Barra superior: 36 controlos
@@ -124,6 +126,7 @@ Locale: pt-PT
 - PIMO DRILL: 8 controlos
 - PIMO-TRAK: 20 controlos
 - Showroom: 8 controlos
+- Relatório final: 1 controlos
 - Atalhos de teclado: 14 controlos
 
 ## Architecture modules
@@ -2645,6 +2648,14 @@ effects: Descarrega o Desenho Técnico. Não substitui o PDF Técnico da lista i
 shortcut: -
 features: desenho-tecnico-pdf, pdf-tecnico
 
+## Button: Abrir projeto 3D
+area: relatorio-final
+location: No Relatório final do projeto
+action: Abre o projeto no espaço de trabalho 3D a partir do relatório.
+effects: Sai da vista de fecho e entra no configurador 3D do mesmo projeto, para continuar a editar ou rever a geometria.
+shortcut: -
+features: relatorio-final, configurador-3d
+
 
 # Architecture modules
 
@@ -4575,7 +4586,7 @@ Serviços do PIMO PRO por área: design 3D, produção, conta, industrial e apre
      ACC  Conta e acesso  Registo e sessão   
      CFG  Definições  Preferências   
      ANL  Análise de projetos  Docs PROJETOS   
-     REL  Relatório final  Entrega de projeto   
+     REL  Relatório final  Vista 3D e entrega   
  
 
 ## Industrial e rastreio
@@ -5133,7 +5144,7 @@ Controla tipo de porta e quantidade de gavetas por módulo, aplicando regras int
 
 ## Relatório final
 URL: https://pimo.info/pt-pt/funcionalidades/relatorio-final/
-Relatório final consolidado do projeto no PIMO PRO: o que mostra, quando usar e como difere da análise documental em PROJETOS.
+Relatório final do PIMO PRO: vista geométrica 3D, lista de caixas alinhada com as etiquetas, PDF profissional e painéis de produção após a ordem de trabalho.
 
 # Relatório final
 
@@ -5143,11 +5154,21 @@ O **relatório final** do PIMO PRO junta, num só sítio, a visão consolidada d
 
 O relatório final apresenta o estado do projeto de forma legível para quem não está dentro do editor 3D. Em linguagem simples, ajuda a responder: o projeto está completo? As medidas e a composição fazem sentido? Há documentação suficiente para avançar?
 
+Nesta vista encontra:
+
+- **visualização geométrica 3D** do projeto, para rever a composição sem voltar ao editor;
+- o botão **Abrir projeto 3D**, para passar direto ao espaço de trabalho 3D;
+- a **lista de caixas** com os mesmos identificadores das etiquetas, para conferir peça a peça;
+- um **PDF profissional** alinhado com a vista que está a ver;
+- **imagens atualizadas** quando tem ligação à internet, para o relatório acompanhar o projeto;
+- **painéis de produção** só depois de emitir a ordem de trabalho (antes disso, a vista foca-se na revisão e na entrega).
+
 Use-o quando quiser:
 
 - rever o conjunto antes de enviar um orçamento ou um pacote de fabrico;
 - partilhar um resumo com a equipa comercial ou de montagem;
-- confirmar que o projeto guardado corresponde ao que exportou.
+- confirmar que o projeto guardado corresponde ao que exportou;
+- abrir o 3D a partir do relatório sem procurar o projeto noutra lista.
 
 ## Onde está no ecrã
 
@@ -5169,23 +5190,28 @@ Papel distinto: o relatório final é a vista de fecho do projeto; a [análise d
 2. Confirme materiais, portas ou gavetas e medidas no configurador 3D.
 3. Gere o design 3D se ainda não o fez.
 4. Exporte o que a fábrica precisa (ZIP, PDF técnico, Desenho Técnico, TCN ou Drill XML).
-5. Use o relatório final para validar a entrega com a equipa.
+5. Abra o relatório final para validar a entrega: use a vista 3D, confira a lista de caixas face às etiquetas e descarregue o PDF profissional.
+6. Se precisar de editar, use **Abrir projeto 3D**. Os painéis de produção só entram depois da ordem de trabalho.
 
 ## Dicas
 
 - Abra o relatório só depois de o projeto estar estável: alterações grandes no 3D pedem nova geração e nova exportação.
+- Quando está online, as imagens do relatório acompanham o projeto; em sessão sem rede, confira se a vista ainda corresponde ao que acabou de alterar.
 - Se o cliente pede «só o desenho com medidas», prefira o Desenho Técnico; se pede «lista e custos», prefira o PDF técnico e o pedido de orçamento.
 - Mantenha o mesmo nome de projeto no relatório e nos ficheiros exportados para evitar confusão na obra.
+- Os identificadores da lista de caixas devem coincidir com as etiquetas: use essa conferência antes de mandar cortar.
 
 ## Erros comuns
 
 - Confundir relatório final com análise online: a análise trabalha documentos do arquivo; o relatório fecha a vista do projeto.
 - Exportar sem gerar o design 3D: o relatório e os PDFs ficam desatualizados face ao que vê no ecrã.
 - Entregar só o relatório sem ZIP: a fábrica continua a precisar dos ficheiros de corte e máquina.
+- Procurar painéis de produção antes da ordem de trabalho: só aparecem depois de a ordem estar emitida.
 
 ## Relacionado
 
 - [Análise de projetos](/pt-pt/funcionalidades/analise-projetos/)
+- [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/)
 - [Exportação](/pt-pt/guias-utilizador/exportacao/)
 - [PDF técnico industrial](/pt-pt/funcionalidades/pdf-tecnico/)
 - [Orçamentos](/pt-pt/funcionalidades/orcamentos/)

@@ -73,6 +73,10 @@ export const buttonAreas = [
     "name": "Showroom"
   },
   {
+    "id": "relatorio-final",
+    "name": "Relatório final"
+  },
+  {
     "id": "atalhos",
     "name": "Atalhos de teclado"
   }
@@ -4357,6 +4361,21 @@ export const buttons = [
     "featureIds": [
       "desenho-tecnico-pdf",
       "pdf-tecnico"
+    ]
+  },
+  {
+    "id": "relatorio-abrir-projeto-3d",
+    "label": "Abrir projeto 3D",
+    "iconName": "projects",
+    "icon": null,
+    "shortcut": null,
+    "area": "relatorio-final",
+    "location": "No Relatório final do projeto",
+    "action": "Abre o projeto no espaço de trabalho 3D a partir do relatório.",
+    "effects": "Sai da vista de fecho e entra no configurador 3D do mesmo projeto, para continuar a editar ou rever a geometria.",
+    "featureIds": [
+      "relatorio-final",
+      "configurador-3d"
     ]
   }
 ]

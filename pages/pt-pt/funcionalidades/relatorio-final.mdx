@@ -1,6 +1,6 @@
 ---
 title: Relatório final
-description: "Relatório final consolidado do projeto no PIMO PRO: o que mostra, quando usar e como difere da análise documental em PROJETOS."
+description: "Relatório final do PIMO PRO: vista geométrica 3D, lista de caixas alinhada com as etiquetas, PDF profissional e painéis de produção após a ordem de trabalho."
 category: funcionalidade
 tags:
   - relatorio
@@ -10,11 +10,14 @@ related:
   - /pt-pt/funcionalidades/analise-projetos/
   - /pt-pt/guias-utilizador/exportacao/
   - /pt-pt/funcionalidades/pdf-tecnico/
+  - /pt-pt/funcionalidades/configurador-3d/
   - /pt-pt/funcionalidades/orcamentos/
-lastUpdated: 2026-11-10
+  - /pt-pt/referencia/botoes/
+lastUpdated: 2026-11-11
 ---
 
 import { RelatedLinks } from "../../../components/RelatedLinks.jsx"
+import { FeatureButtons } from "../../../components/ButtonsCatalog"
 
 # Relatório final
 
@@ -24,11 +27,21 @@ O **relatório final** do PIMO PRO junta, num só sítio, a visão consolidada d
 
 O relatório final apresenta o estado do projeto de forma legível para quem não está dentro do editor 3D. Em linguagem simples, ajuda a responder: o projeto está completo? As medidas e a composição fazem sentido? Há documentação suficiente para avançar?
 
+Nesta vista encontra:
+
+- **visualização geométrica 3D** do projeto, para rever a composição sem voltar ao editor;
+- o botão **Abrir projeto 3D**, para passar direto ao espaço de trabalho 3D;
+- a **lista de caixas** com os mesmos identificadores das etiquetas, para conferir peça a peça;
+- um **PDF profissional** alinhado com a vista que está a ver;
+- **imagens atualizadas** quando tem ligação à internet, para o relatório acompanhar o projeto;
+- **painéis de produção** só depois de emitir a ordem de trabalho (antes disso, a vista foca-se na revisão e na entrega).
+
 Use-o quando quiser:
 
 - rever o conjunto antes de enviar um orçamento ou um pacote de fabrico;
 - partilhar um resumo com a equipa comercial ou de montagem;
-- confirmar que o projeto guardado corresponde ao que exportou.
+- confirmar que o projeto guardado corresponde ao que exportou;
+- abrir o 3D a partir do relatório sem procurar o projeto noutra lista.
 
 ## Onde está no ecrã
 
@@ -50,32 +63,41 @@ Papel distinto: o relatório final é a vista de fecho do projeto; a [análise d
 2. Confirme materiais, portas ou gavetas e medidas no configurador 3D.
 3. Gere o design 3D se ainda não o fez.
 4. Exporte o que a fábrica precisa (ZIP, PDF técnico, Desenho Técnico, TCN ou Drill XML).
-5. Use o relatório final para validar a entrega com a equipa.
+5. Abra o relatório final para validar a entrega: use a vista 3D, confira a lista de caixas face às etiquetas e descarregue o PDF profissional.
+6. Se precisar de editar, use **Abrir projeto 3D**. Os painéis de produção só entram depois da ordem de trabalho.
 
 ## Dicas
 
 - Abra o relatório só depois de o projeto estar estável: alterações grandes no 3D pedem nova geração e nova exportação.
+- Quando está online, as imagens do relatório acompanham o projeto; em sessão sem rede, confira se a vista ainda corresponde ao que acabou de alterar.
 - Se o cliente pede «só o desenho com medidas», prefira o Desenho Técnico; se pede «lista e custos», prefira o PDF técnico e o pedido de orçamento.
 - Mantenha o mesmo nome de projeto no relatório e nos ficheiros exportados para evitar confusão na obra.
+- Os identificadores da lista de caixas devem coincidir com as etiquetas: use essa conferência antes de mandar cortar.
 
 ## Erros comuns
 
 - Confundir relatório final com análise online: a análise trabalha documentos do arquivo; o relatório fecha a vista do projeto.
 - Exportar sem gerar o design 3D: o relatório e os PDFs ficam desatualizados face ao que vê no ecrã.
 - Entregar só o relatório sem ZIP: a fábrica continua a precisar dos ficheiros de corte e máquina.
+- Procurar painéis de produção antes da ordem de trabalho: só aparecem depois de a ordem estar emitida.
 
 ## Relacionado
 
 - [Análise de projetos](/pt-pt/funcionalidades/analise-projetos/)
+- [Configurador 3D](/pt-pt/funcionalidades/configurador-3d/)
 - [Exportação](/pt-pt/guias-utilizador/exportacao/)
 - [PDF técnico industrial](/pt-pt/funcionalidades/pdf-tecnico/)
 - [Orçamentos](/pt-pt/funcionalidades/orcamentos/)
 
+<FeatureButtons featureId="relatorio-final" />
+
 <RelatedLinks
   items={[
     { href: "/pt-pt/funcionalidades/analise-projetos/", label: "Análise de projetos" },
+    { href: "/pt-pt/funcionalidades/configurador-3d/", label: "Configurador 3D" },
     { href: "/pt-pt/guias-utilizador/exportacao/", label: "Guia de exportação" },
     { href: "/pt-pt/funcionalidades/pdf-tecnico/", label: "PDF técnico industrial" },
     { href: "/pt-pt/guias-utilizador/gerir-projetos/", label: "Gerir projetos" },
+    { href: "/pt-pt/referencia/botoes/", label: "Catálogo de botões" },
   ]}
 />

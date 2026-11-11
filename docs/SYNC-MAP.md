@@ -167,8 +167,29 @@ Manter `status` alinhado com o criativo (`em-desenvolvimento` / `parcial` / `dis
 | Preferências | `/pt-pt/funcionalidades/definicoes/` |
 | Showroom / viewer / editor 3D | `/pt-pt/funcionalidades/configurador-3d/` (secção showroom; botão Abrir no editor 3D) |
 | Sistema relacionado | `/pt-pt/sistemas-pimo/pimo-projetos/` se a mudança for do módulo PROJETOS |
-| Relatório | `/pt-pt/funcionalidades/relatorio-final/` |
+| Relatório | ver [`sistemas/relatorio-final`](#sistemasrelatorio-final) |
 | Cobertura | `route-meus-projetos`, `route-projects`, `route-project-detail`, `route-projects-viewer`, `route-dashboard` |
+
+---
+
+### `sistemas/relatorio-final`
+
+Vista de fecho do projeto (Relatório final). Só o que o utilizador vê na app.
+
+| O quê | Onde no pimo.info |
+|---|---|
+| SSOT feature | `data/features.js` (`id: relatorio-final`) |
+| Página canónica | `/pt-pt/funcionalidades/relatorio-final/` → `pages/pt-pt/funcionalidades/relatorio-final.mdx` |
+| Botões | `data/buttons.js` (área `relatorio-final`, ex.: Abrir projeto 3D) |
+| Contraste documental | `/pt-pt/funcionalidades/analise-projetos/` |
+| Configurador / abrir 3D | `/pt-pt/funcionalidades/configurador-3d/` |
+| Novidades | `data/local-news.js` → `/pt-pt/novidades/` |
+| Glossário | `data/glossary.js` (termo Relatório final) |
+| Cobertura | `route-relatorio-final` em `scripts/generate-coverage.cjs` |
+
+**Adicionado / alterado:** atualizar a página existente (vista 3D, Abrir projeto 3D, lista de caixas/etiquetas, PDF, imagens online, painéis de produção após ordem de trabalho); regenerar artefactos.  
+**Removido:** marcar na página se um bloco deixar de existir; atualizar botões e cobertura.  
+**Ignorar:** detalhe interno de sincronização, painéis só de gestão, caminhos de código.
 
 ---
 

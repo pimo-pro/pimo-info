@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T17:25:48.175Z",
+  "generatedAt": "2026-11-11T18:34:54.484Z",
   "items": [
     {
       "path": "/",
@@ -1335,7 +1335,7 @@
       "path": "/pt-pt/funcionalidades/relatorio-final/",
       "file": "pages/pt-pt/funcionalidades/relatorio-final.mdx",
       "title": "Relatório final",
-      "description": "Relatório final consolidado do projeto no PIMO PRO: o que mostra, quando usar e como difere da análise documental em PROJETOS.",
+      "description": "Relatório final do PIMO PRO: vista geométrica 3D, lista de caixas alinhada com as etiquetas, PDF profissional e painéis de produção após a ordem de trabalho.",
       "author": "",
       "category": "funcionalidade",
       "tags": [
@@ -1347,9 +1347,11 @@
         "/pt-pt/funcionalidades/analise-projetos/",
         "/pt-pt/guias-utilizador/exportacao/",
         "/pt-pt/funcionalidades/pdf-tecnico/",
-        "/pt-pt/funcionalidades/orcamentos/"
+        "/pt-pt/funcionalidades/configurador-3d/",
+        "/pt-pt/funcionalidades/orcamentos/",
+        "/pt-pt/referencia/botoes/"
       ],
-      "lastUpdated": "2026-11-10",
+      "lastUpdated": "2026-11-11",
       "status": "",
       "draft": false,
       "noindex": false

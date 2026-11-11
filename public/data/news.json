@@ -1,7 +1,15 @@
 {
   "source": "remote",
-  "fetchedAt": "2026-11-10T17:25:48.488Z",
+  "fetchedAt": "2026-11-11T18:34:54.800Z",
   "entries": [
+    {
+      "version": "2026-11-11",
+      "title": "Relatório final com vista 3D e PDF profissional",
+      "description": "O Relatório final passa a ter visualização geométrica 3D do projeto, botão Abrir projeto 3D, lista de caixas com os mesmos identificadores das etiquetas, PDF profissional alinhado com a vista, imagens atualizadas quando está online, e painéis de produção só depois de emitida a ordem de trabalho",
+      "publishedAt": "2026-11-11T12:00:00.000Z",
+      "type": "feature",
+      "author": "Equipa PIMO"
+    },
     {
       "version": "2026-11-10",
       "title": "Medidas do Conjunto com cotas estáveis",
@@ -2343,14 +2351,6 @@
       "title": "Correção: prateleiras apenas em compartimentos LAT+DIV abaixo do SEP",
       "description": "Correção: prateleiras apenas em compartimentos LAT+DIV abaixo do SEP",
       "publishedAt": "2026-07-16T09:46:20.135Z",
-      "type": "fix",
-      "author": "pimo-pro"
-    },
-    {
-      "version": "v6.0716.1022",
-      "title": "Correção: grelha industrial 32mm e prateleiras espelhadas com DIV",
-      "description": "Correção: grelha industrial 32mm e prateleiras espelhadas com DIV",
-      "publishedAt": "2026-07-16T09:22:37.603Z",
       "type": "fix",
       "author": "pimo-pro"
     }

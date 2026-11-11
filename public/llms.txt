@@ -68,6 +68,7 @@ Locale: pt-PT
 - TCN: Formato de ficheiro industrial `.tcn` para centros CNC. No menu de exportação aparece como «Arquivos CNC»; o ficheiro gerado é TCN.
 - Drill XML: Representação XML do plano de furação por painel (posição, diâmetro, profundidade), gerada no fluxo de Arquivos CNC.
 - PDF Técnico: Relatório industrial do projeto (vista 3D, lista de corte, materiais, ferragens, preço). Continua disponível à parte do Desenho Técnico (PDF). Não substitui TCN nem Drill XML. Se a geração falhar, surge o aviso «Erro ao gerar PDF técnico.»
+- Relatório final: Vista de fecho do projeto no PIMO PRO: geometria 3D, botão Abrir projeto 3D, lista de caixas com os mesmos identificadores das etiquetas, PDF profissional alinhado com a vista, imagens atualizadas quando está online, e painéis de produção só depois da ordem de trabalho. Não substitui a análise documental em PIMO PROJETOS nem o PDF Técnico industrial.
 - Desenho Técnico (PDF): Documento A4 horizontal com vistas, arestas de painéis, portas, gavetas e remates, e cotas técnicas. No viewer há o botão Desenho Técnico (vista de linhas sem alterar o projeto). Guia na Ajuda. Não substitui o PDF Técnico industrial. Entra por omissão no ZIP.
 - PIMO TRAK: Sistema de ordens de trabalho e rastreamento da produção, incluindo etiquetas QR UEE v5. Estado parcial no código: work orders e etiquetas existem; algumas páginas agregadas ainda podem estar incompletas.
 - PIMO PROJETOS: Área da app para listar e abrir projetos industriais da conta, com showroom e análise online.
@@ -92,6 +93,7 @@ Locale: pt-PT
 - Desenho Técnico (PDF) [implemented] https://pimo.info/pt-pt/funcionalidades/desenho-tecnico-pdf/, Vista de linhas no viewer, PDF A4 com arestas e cotas técnicas, e guia na Ajuda. Não substitui o PDF Técnico industrial.
 - PIMO-TRAK [mixed] https://pimo.info/pt-pt/funcionalidades/pimo-trak/, Etiquetas QR (implementado) e rastreio industrial por peça (camada industrial).
 - Orçamentos [implemented] https://pimo.info/pt-pt/funcionalidades/orcamentos/, Pedido de orçamento a partir do Início ou da exportação: envia contacto, projeto, módulos e notas; a equipa confirma os preços na resposta.
+- Relatório final [implemented] https://pimo.info/pt-pt/funcionalidades/relatorio-final/, Vista de fecho do projeto com geometria 3D, botão Abrir projeto 3D, lista de caixas alinhada às etiquetas, PDF profissional e painéis de produção após a ordem de trabalho.
 - Módulo Industrial [mixed] https://pimo.info/pt-pt/funcionalidades/modulo-industrial/, Camada industrial (estações, work-orders, documentação). Evolui por fases; ver docs técnicos.
 - Conta e acesso [implemented] https://pimo.info/pt-pt/funcionalidades/conta-e-acesso/, Registo, entrar na conta, sessão e Meus Projetos no PIMO PRO.
 - Definições [implemented] https://pimo.info/pt-pt/funcionalidades/definicoes/, Preferências do utilizador e do projeto no PIMO PRO.
@@ -107,7 +109,7 @@ Locale: pt-PT
 - PIMO INDUSTRIAL [parcial] https://pimo.info/pt-pt/sistemas-pimo/pimo-industrial/, Camada industrial completa da app: hub de estações, operações (CNC, nesting, drill, orlar, montagem, embalagem), operador/supervisor e integrações de fabrico.
 - PIMO DRILL [em-desenvolvimento] https://pimo.info/pt-pt/sistemas-pimo/pimo-drill/, Sistema próprio de furação (UI 2D/3D) acessível na app para desenhar e trabalhar planos de furação; liga-se ao fluxo TCN / Drill XML.
 
-## UI buttons (301)
+## UI buttons (302)
 - Cabeçalho: 14 controlos
 - Navegação lateral: 9 controlos
 - Barra superior: 36 controlos
@@ -121,6 +123,7 @@ Locale: pt-PT
 - PIMO DRILL: 8 controlos
 - PIMO-TRAK: 20 controlos
 - Showroom: 8 controlos
+- Relatório final: 1 controlos
 - Atalhos de teclado: 14 controlos
 
 ## Architecture modules

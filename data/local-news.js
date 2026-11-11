@@ -6,6 +6,15 @@
 /** @type {{ version: string, title: string, description: string, publishedAt: string, type: string, author?: string }[]} */
 export const localNewsEntries = [
   {
+    version: "2026-11-11",
+    title: "Relatório final com vista 3D e PDF profissional",
+    description:
+      "O Relatório final passa a ter visualização geométrica 3D do projeto, botão Abrir projeto 3D, lista de caixas com os mesmos identificadores das etiquetas, PDF profissional alinhado com a vista, imagens atualizadas quando está online, e painéis de produção só depois de emitida a ordem de trabalho.",
+    publishedAt: "2026-11-11T12:00:00.000Z",
+    type: "feature",
+    author: "Equipa PIMO",
+  },
+  {
     version: "2026-11-10",
     title: "Botão Desenho Técnico no viewer",
     description:
@@ -14,6 +23,7 @@ export const localNewsEntries = [
     type: "feature",
     author: "Equipa PIMO",
   },
+
   {
     version: "2026-11-10",
     title: "Medidas do Conjunto com cotas estáveis",

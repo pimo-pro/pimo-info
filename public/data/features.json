@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T17:25:48.172Z",
+  "generatedAt": "2026-11-11T18:34:54.482Z",
   "items": [
     {
       "id": "configurador-3d",
@@ -120,6 +120,18 @@
       "tags": [
         "custos",
         "pedido"
+      ]
+    },
+    {
+      "id": "relatorio-final",
+      "name": "Relatório final",
+      "summary": "Vista de fecho do projeto com geometria 3D, botão Abrir projeto 3D, lista de caixas alinhada às etiquetas, PDF profissional e painéis de produção após a ordem de trabalho.",
+      "status": "implemented",
+      "canonicalPath": "/pt-pt/funcionalidades/relatorio-final/",
+      "tags": [
+        "relatorio",
+        "entrega",
+        "projeto"
       ]
     },
     {

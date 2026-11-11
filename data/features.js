@@ -114,6 +114,16 @@ export const features = [
     tags: ["custos", "pedido"],
   },
   {
+    id: "relatorio-final",
+    name: "Relatório final",
+    summary:
+      "Vista de fecho do projeto com geometria 3D, botão Abrir projeto 3D, lista de caixas alinhada às etiquetas, PDF profissional e painéis de produção após a ordem de trabalho.",
+    status: "implemented",
+    canonicalPath: "/pt-pt/funcionalidades/relatorio-final/",
+    tags: ["relatorio", "entrega", "projeto"],
+  },
+
+  {
     id: "modulo-industrial",
     name: "Módulo Industrial",
     summary:

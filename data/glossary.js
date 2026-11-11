@@ -129,6 +129,20 @@ export const glossaryTerms = [
     relatedPaths: ["/pt-pt/funcionalidades/pdf-tecnico/", "/pt-pt/guias-utilizador/exportacao/"],
   },
   {
+    id: "relatorio-final",
+    term: "Relatório final",
+    aliases: ["relatório final", "vista de fecho"],
+    definition:
+      "Vista de fecho do projeto no PIMO PRO: geometria 3D, botão Abrir projeto 3D, lista de caixas com os mesmos identificadores das etiquetas, PDF profissional alinhado com a vista, imagens atualizadas quando está online, e painéis de produção só depois da ordem de trabalho. Não substitui a análise documental em PIMO PROJETOS nem o PDF Técnico industrial.",
+    status: "implemented",
+    relatedPaths: [
+      "/pt-pt/funcionalidades/relatorio-final/",
+      "/pt-pt/funcionalidades/analise-projetos/",
+      "/pt-pt/funcionalidades/pdf-tecnico/",
+    ],
+  },
+
+  {
     id: "desenho-tecnico-pdf",
     term: "Desenho Técnico (PDF)",
     aliases: ["desenho técnico", "PDF A4 cotas", "vistas e cotas"],

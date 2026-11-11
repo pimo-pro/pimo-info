@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T17:25:48.546Z",
+  "generatedAt": "2026-11-11T18:34:54.862Z",
   "totals": {
     "items": 66,
     "byStatus": {
@@ -108,9 +108,10 @@
       "id": "route-relatorio-final",
       "kind": "route",
       "name": "Relatório final",
-      "purpose": "Relatório consolidado do projeto",
+      "purpose": "Vista de fecho com 3D, Abrir projeto 3D, caixas/etiquetas, PDF e produção após ordem de trabalho",
       "page": "/pt-pt/funcionalidades/relatorio-final/",
       "status": "coberto",
+      "notes": "Sync 2026-11-11: vista geométrica 3D, PDF alinhado, imagens online, painéis de produção após ordem de trabalho",
       "pageExists": true
     },
     {

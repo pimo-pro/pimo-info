@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T17:25:48.173Z",
+  "generatedAt": "2026-11-11T18:34:54.482Z",
   "areas": [
     {
       "id": "header",
@@ -54,11 +54,15 @@
       "name": "Showroom"
     },
     {
+      "id": "relatorio-final",
+      "name": "Relatório final"
+    },
+    {
       "id": "atalhos",
       "name": "Atalhos de teclado"
     }
   ],
-  "count": 301,
+  "count": 302,
   "items": [
     {
       "id": "kbd-history-h",
@@ -4337,6 +4341,21 @@
       "featureIds": [
         "desenho-tecnico-pdf",
         "pdf-tecnico"
+      ]
+    },
+    {
+      "id": "relatorio-abrir-projeto-3d",
+      "label": "Abrir projeto 3D",
+      "iconName": "projects",
+      "icon": null,
+      "shortcut": null,
+      "area": "relatorio-final",
+      "location": "No Relatório final do projeto",
+      "action": "Abre o projeto no espaço de trabalho 3D a partir do relatório.",
+      "effects": "Sai da vista de fecho e entra no configurador 3D do mesmo projeto, para continuar a editar ou rever a geometria.",
+      "featureIds": [
+        "relatorio-final",
+        "configurador-3d"
       ]
     }
   ]
