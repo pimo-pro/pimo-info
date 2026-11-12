@@ -34,7 +34,7 @@ jobs:
       # sync entries that tried to delete missing _next/data paths (FTP 550).
       # No clean-slate: keep the live site available during upload.
       - name: Pause before FTP
-        run: sleep 30
+        run: sleep 90
 
       - name: Upload /out via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -44,7 +44,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          state-name: .ftp-deploy-sync-state-v64.json
+          state-name: .ftp-deploy-sync-state-v65.json
           timeout: 600000
           dangerous-clean-slate: false
           security: loose
