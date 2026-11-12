@@ -44,7 +44,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          state-name: .ftp-deploy-sync-state-v65.json
+          state-name: .ftp-deploy-sync-state-v66.json
           timeout: 600000
           dangerous-clean-slate: false
           security: loose
