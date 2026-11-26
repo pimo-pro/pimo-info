@@ -36,6 +36,18 @@ final class Auth
         $st->execute([self::ipHash()]);
     }
 
+    public static function isHttps(): bool
+    {
+        if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
+            return true;
+        }
+        if (($_SERVER['SERVER_PORT'] ?? null) === '443') {
+            return true;
+        }
+        $fwd = strtolower((string) ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? ''));
+        return $fwd === 'https';
+    }
+
     public static function sign(array $payload): string
     {
         $secret = Config::load()['app_secret'];
@@ -71,38 +83,62 @@ final class Auth
         return $data;
     }
 
-    public static function setSession(array $payload): void
+    /** Grava cookie HttpOnly e devolve o token (também enviado no JSON para o header). */
+    public static function setSession(array $payload): string
     {
         $payload['exp'] = time() + 60 * 60 * 12;
         $payload['iat'] = time();
         $token = self::sign($payload);
-        $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
-            || (($_SERVER['SERVER_PORT'] ?? null) === '443');
-        setcookie(self::COOKIE, $token, [
-            'expires' => $payload['exp'],
-            'path' => '/orcamentos/',
-            'secure' => $secure,
-            'httponly' => true,
-            'samesite' => 'Strict',
-        ]);
+        $secure = self::isHttps();
+        if (!headers_sent()) {
+            setcookie(self::COOKIE, $token, [
+                'expires' => $payload['exp'],
+                'path' => '/orcamentos/',
+                'secure' => $secure,
+                'httponly' => true,
+                // Lax: sobrevive a abertura do link a partir de email/WhatsApp;
+                // Strict bloqueava o cookie na primeira navegação em alguns fluxos.
+                'samesite' => 'Lax',
+            ]);
+        }
+        return $token;
     }
 
     public static function clearSession(): void
     {
-        $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
-            || (($_SERVER['SERVER_PORT'] ?? null) === '443');
-        setcookie(self::COOKIE, '', [
-            'expires' => time() - 3600,
-            'path' => '/orcamentos/',
-            'secure' => $secure,
-            'httponly' => true,
-            'samesite' => 'Strict',
-        ]);
+        $secure = self::isHttps();
+        if (!headers_sent()) {
+            setcookie(self::COOKIE, '', [
+                'expires' => time() - 3600,
+                'path' => '/orcamentos/',
+                'secure' => $secure,
+                'httponly' => true,
+                'samesite' => 'Lax',
+            ]);
+        }
+    }
+
+    /** Token da sessão: cookie, header X-Pimo-Orc-Session ou Authorization Bearer. */
+    public static function rawToken(): string
+    {
+        $token = (string) ($_COOKIE[self::COOKIE] ?? '');
+        if ($token !== '') {
+            return $token;
+        }
+        $hdr = (string) ($_SERVER['HTTP_X_PIMO_ORC_SESSION'] ?? '');
+        if ($hdr !== '') {
+            return $hdr;
+        }
+        $auth = (string) ($_SERVER['HTTP_AUTHORIZATION'] ?? $_SERVER['REDIRECT_HTTP_AUTHORIZATION'] ?? '');
+        if (preg_match('/^Bearer\s+(\S+)/i', $auth, $m)) {
+            return $m[1];
+        }
+        return '';
     }
 
     public static function session(): ?array
     {
-        $token = $_COOKIE[self::COOKIE] ?? '';
+        $token = self::rawToken();
         if ($token === '') {
             return null;
         }

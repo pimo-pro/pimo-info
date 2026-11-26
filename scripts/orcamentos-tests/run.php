@@ -36,7 +36,7 @@ $pdo = Database::pdo();
 Migrate::up($pdo);
 
 // Limpar tabelas de teste
-foreach (['approved_prices', 'project_versions', 'access_links', 'uploads', 'login_attempts', 'projects', 'settings', 'admin_codes'] as $t) {
+foreach (['approved_prices', 'project_versions', 'access_links', 'uploads', 'login_attempts', 'projects', 'settings', 'admin_codes', 'admin_users'] as $t) {
     try {
         $pdo->exec("DELETE FROM `$t`");
     } catch (Throwable $e) {
@@ -279,6 +279,42 @@ Settings::bumpAdminSessionEpoch($pdo);
 assert_true(AdminCodes::matchActive($pdo, $botPlain) === 'khaled bot', 'alterar principal não revoga adicionais');
 assert_true(AdminCodes::revoke($pdo, $createdCode['id']), 'revogar código adicional');
 assert_true(AdminCodes::matchActive($pdo, $botPlain) === null, 'código revogado deixa de entrar');
+
+// Admin users (email + palavra-passe)
+require_once $api . '/lib/AdminUsers.php';
+$adminEmail = 'khaled-teste@example.com';
+$adminPass = 'SenhaAdminTeste99';
+AdminUsers::upsert($pdo, $adminEmail, $adminPass);
+assert_true(AdminUsers::verify($pdo, $adminEmail, $adminPass) !== null, 'admin email+password válido');
+assert_true(AdminUsers::verify($pdo, $adminEmail, 'erradaXXXXXXXX') === null, 'admin password incorrecta falha');
+$emails = AdminUsers::listEmails($pdo);
+assert_true(count($emails) >= 1, 'lista admin users');
+assert_true(!isset($emails[0]['password_hash']), 'lista admin users sem hash');
+
+// Sessão: token no header (fallback ao cookie)
+$sessTok = Auth::setSession([
+    'role' => 'filipe',
+    'label' => 'teste',
+    'project_id' => $pid,
+    'factory_key' => null,
+]);
+assert_true(is_string($sessTok) && str_contains($sessTok, '.'), 'setSession devolve token');
+$_SERVER['HTTP_X_PIMO_ORC_SESSION'] = $sessTok;
+unset($_COOKIE['pimo_orc_sess']);
+$headerSess = Auth::session();
+assert_true(($headerSess['role'] ?? '') === 'filipe', 'sessão via header X-Pimo-Orc-Session');
+assert_true(($headerSess['project_id'] ?? '') === $pid, 'header session mantém project_id');
+unset($_SERVER['HTTP_X_PIMO_ORC_SESSION']);
+
+// CLI set-admin-user.php
+$cliUser = $api . '/cli/set-admin-user.php';
+assert_true(is_file($cliUser), 'script CLI set-admin-user existe');
+$tmpPass = sys_get_temp_dir() . '/orc-admin-pass-test.txt';
+file_put_contents($tmpPass, 'SenhaCliAdmin99x');
+exec('php ' . escapeshellarg($cliUser) . ' ' . escapeshellarg('cli-admin@example.com') . ' ' . escapeshellarg($tmpPass), $cliOut2, $cliCode2);
+assert_true($cliCode2 === 0 && trim(implode("\n", $cliOut2)) === 'ok', 'CLI set-admin-user imprime ok');
+assert_true(AdminUsers::verify($pdo, 'cli-admin@example.com', 'SenhaCliAdmin99x') !== null, 'CLI grava user utilizável');
+@unlink($tmpPass);
 
 // CLI add-admin-code.php
 $cliScript = $api . '/cli/add-admin-code.php';

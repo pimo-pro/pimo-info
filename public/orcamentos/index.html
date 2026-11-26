@@ -275,11 +275,23 @@ tr.a-definir td, .a-definir-cell {
     </div>
     <h1 id="gate-title">Acesso ao orçamento</h1>
     <p id="gate-help">Introduza o código que lhe foi enviado. Esta área não é pública.</p>
-    <label for="gate-code">Código</label>
-    <input id="gate-code" type="password" autocomplete="current-password" placeholder="Código de acesso">
-    <div style="margin-top:14px">
-      <button type="button" id="gate-submit" class="btn" style="width:100%">Entrar</button>
+    <div id="gate-code-block">
+      <label for="gate-code">Código</label>
+      <input id="gate-code" type="password" autocomplete="current-password" placeholder="Código de acesso">
+      <div style="margin-top:14px">
+        <button type="button" id="gate-submit" class="btn" style="width:100%">Entrar</button>
+      </div>
     </div>
+    <div id="gate-email-block" class="hidden" style="margin-top:8px">
+      <label for="gate-email">Email</label>
+      <input id="gate-email" type="email" autocomplete="username" placeholder="email@exemplo.com">
+      <label for="gate-password" style="margin-top:10px;display:block">Palavra-passe</label>
+      <input id="gate-password" type="password" autocomplete="current-password" placeholder="Palavra-passe">
+      <div style="margin-top:14px">
+        <button type="button" id="gate-email-submit" class="btn" style="width:100%">Entrar com email</button>
+      </div>
+    </div>
+    <p id="gate-switch" class="cap" style="margin-top:14px"></p>
     <div class="err" id="gate-err"></div>
   </div>
 
@@ -346,6 +358,7 @@ tr.a-definir td, .a-definir-cell {
     projectId: null,
     project: null,
     data: null,
+    projectError: null,
     versions: [],
     links: [],
     printHide: {}
@@ -415,15 +428,33 @@ tr.a-definir td, .a-definir-cell {
     return st;
   }
 
+  var SESS_KEY = "pimo_orc_sess";
+
+  function saveSessionToken(tok) {
+    try {
+      if (tok) sessionStorage.setItem(SESS_KEY, tok);
+      else sessionStorage.removeItem(SESS_KEY);
+    } catch (e) { /* private mode */ }
+  }
+
+  function readSessionToken() {
+    try { return sessionStorage.getItem(SESS_KEY) || ""; } catch (e) { return ""; }
+  }
+
   function api(path, opts) {
     opts = opts || {};
     var headers = opts.headers || {};
     if (!(opts.body instanceof FormData)) {
       headers["Content-Type"] = headers["Content-Type"] || "application/json";
     }
+    var tok = readSessionToken();
+    if (tok) {
+      headers["X-Pimo-Orc-Session"] = tok;
+      headers["Authorization"] = "Bearer " + tok;
+    }
     return fetch(BASE + "/" + path, {
       method: opts.method || "GET",
-      credentials: "same-origin",
+      credentials: "include",
       headers: headers,
       body: opts.body ? (opts.body instanceof FormData ? opts.body : JSON.stringify(opts.body)) : undefined
     }).then(function (r) {
@@ -434,8 +465,23 @@ tr.a-definir td, .a-definir-cell {
           throw err;
         }
         return j;
+      }, function () {
+        var err = new Error("Resposta inválida do servidor.");
+        err.status = r.status;
+        throw err;
       });
     });
+  }
+
+  function applyLoginResponse(j) {
+    if (j.session_token) saveSessionToken(j.session_token);
+    state.me = {
+      authenticated: true,
+      role: j.role,
+      label: j.label || j.role,
+      project_id: j.project_id || null,
+      factory_key: j.factory_key || null
+    };
   }
 
   function assetUrl(ref) {
@@ -447,15 +493,46 @@ tr.a-definir td, .a-definir-cell {
     return null;
   }
 
+  var gateMode = "code"; // code | email
+
   function showGate() {
     document.getElementById("view-gate").classList.remove("hidden");
     document.getElementById("view-app").classList.add("hidden");
     var isAdmin = !state.token;
     document.getElementById("gate-title").textContent = isAdmin ? t("adminAccess") : t("access");
-    document.getElementById("gate-help").textContent = isAdmin ? t("adminHelp") : t("enterCode");
+    document.getElementById("gate-help").textContent = isAdmin
+      ? (gateMode === "email"
+        ? "Entre com o email e a palavra-passe de administrador."
+        : t("adminHelp"))
+      : t("enterCode");
+    var codeBlock = document.getElementById("gate-code-block");
+    var emailBlock = document.getElementById("gate-email-block");
+    var sw = document.getElementById("gate-switch");
+    if (isAdmin) {
+      codeBlock.classList.toggle("hidden", gateMode === "email");
+      emailBlock.classList.toggle("hidden", gateMode !== "email");
+      sw.innerHTML = gateMode === "email"
+        ? "<a href=\"#\" id=\"gate-to-code\">Entrar com código</a>"
+        : "<a href=\"#\" id=\"gate-to-email\">Entrar com email</a>";
+      var link = document.getElementById(gateMode === "email" ? "gate-to-code" : "gate-to-email");
+      if (link) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          gateMode = gateMode === "email" ? "code" : "email";
+          document.getElementById("gate-err").textContent = "";
+          showGate();
+        });
+      }
+    } else {
+      gateMode = "code";
+      codeBlock.classList.remove("hidden");
+      emailBlock.classList.add("hidden");
+      sw.innerHTML = "";
+    }
   }
 
-  function showApp() {
+  function showApp(opts) {
+    opts = opts || {};
     document.getElementById("view-gate").classList.add("hidden");
     document.getElementById("view-app").classList.remove("hidden");
     var role = state.me.role;
@@ -467,7 +544,8 @@ tr.a-definir td, .a-definir-cell {
       client: "Vista de cliente"
     };
     document.getElementById("role-chip").textContent = labels[role] || role;
-    render();
+    // Evitar render vazio antes do projecto carregar (interrompia o then do login).
+    if (opts.render !== false) render();
   }
 
   function boot() {
@@ -491,25 +569,56 @@ tr.a-definir td, .a-definir-cell {
   });
 
   function doLogin() {
-    var code = document.getElementById("gate-code").value.trim();
     var err = document.getElementById("gate-err");
     err.textContent = "";
+    if (!state.token && gateMode === "email") {
+      doEmailLogin();
+      return;
+    }
+    var code = document.getElementById("gate-code").value.trim();
     if (!code) { err.textContent = "Indique o código."; return; }
     var body = state.token
       ? { code: code, token: state.token, mode: "link" }
       : { code: code, mode: "admin" };
     api("login.php", { method: "POST", body: body }).then(function (j) {
-      state.me = j;
-      showApp();
+      applyLoginResponse(j);
+      showApp({ render: false });
       return loadWorkspace();
     }).catch(function (e) {
       err.textContent = e.message || "Falha no acesso.";
     });
   }
 
+  function doEmailLogin() {
+    var err = document.getElementById("gate-err");
+    err.textContent = "";
+    var email = document.getElementById("gate-email").value.trim();
+    var password = document.getElementById("gate-password").value;
+    if (!email || !password) {
+      err.textContent = "Indique o email e a palavra-passe.";
+      return;
+    }
+    api("login.php", {
+      method: "POST",
+      body: { mode: "email", email: email, password: password }
+    }).then(function (j) {
+      applyLoginResponse(j);
+      showApp({ render: false });
+      return loadWorkspace();
+    }).catch(function (e) {
+      err.textContent = e.message || "Falha no acesso.";
+    });
+  }
+
+  document.getElementById("gate-email-submit").addEventListener("click", doEmailLogin);
+  document.getElementById("gate-password").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") doEmailLogin();
+  });
+
   document.getElementById("btn-logout").addEventListener("click", function () {
     api("logout.php", { method: "POST", body: {} }).finally(function () {
-      state.me = null; state.project = null; state.data = null;
+      saveSessionToken("");
+      state.me = null; state.project = null; state.data = null; state.projectError = null;
       showGate();
     });
   });
@@ -529,7 +638,7 @@ tr.a-definir td, .a-definir-cell {
   }
 
   function loadWorkspace() {
-    var role = state.me.role;
+    var role = state.me && state.me.role;
     var slug = pathSlug();
     if (role === "admin") {
       return api("projects.php").then(function (j) {
@@ -538,20 +647,25 @@ tr.a-definir td, .a-definir-cell {
           if (slug) {
             var match = state.projects.find(function (p) { return p.slug === slug; });
             if (match) return openProject(match.id, { syncUrl: true, replace: true });
-            toast("Projecto não encontrado: " + slug);
+            state.projectError = "Projecto não encontrado para o link «" + slug + "».";
             state.projectId = null;
             state.project = null;
             state.data = null;
-            goRoot(true);
+            toast(state.projectError);
             render();
             return;
           }
           // /orcamentos/ — lista com links próprios (não abrir automaticamente)
+          state.projectError = null;
           state.projectId = null;
           state.project = null;
           state.data = null;
           render();
         });
+      }).catch(function (e) {
+        state.projectError = e.message || "Falha ao listar projectos.";
+        toast(state.projectError);
+        render();
       });
     }
     if (state.me.project_id) {
@@ -565,26 +679,48 @@ tr.a-definir td, .a-definir-cell {
   function openProject(id, opts) {
     opts = opts || {};
     state.projectId = id;
-    return api("project.php?id=" + encodeURIComponent(id)).then(function (j) {
-      state.project = j.project;
-      state.data = j.project.data;
-      if (opts.syncUrl !== false) syncUrlForProject(j.project, !!opts.replace);
-      render();
-      if (state.me.role === "admin") {
-        return Promise.all([
-          api("access.php?project_id=" + encodeURIComponent(id)).then(function (a) { state.links = a.links || []; }),
-          api("versions.php?project_id=" + encodeURIComponent(id)).then(function (v) { state.versions = v.versions || []; })
-        ]).then(function () { render(); });
-      }
-      if (state.me.role === "khaled") {
-        return api("versions.php?project_id=" + encodeURIComponent(id)).then(function (v) {
-          state.versions = v.versions || [];
-          render();
+    state.projectError = null;
+    function loadOnce() {
+      return api("project.php?id=" + encodeURIComponent(id)).then(function (j) {
+        state.project = j.project;
+        state.data = j.project.data;
+        state.projectError = null;
+        if (opts.syncUrl !== false) syncUrlForProject(j.project, !!opts.replace);
+        render();
+        if (state.me.role === "admin") {
+          return Promise.all([
+            api("access.php?project_id=" + encodeURIComponent(id)).then(function (a) { state.links = a.links || []; }),
+            api("versions.php?project_id=" + encodeURIComponent(id)).then(function (v) { state.versions = v.versions || []; })
+          ]).then(function () { render(); });
+        }
+        if (state.me.role === "khaled") {
+          return api("versions.php?project_id=" + encodeURIComponent(id)).then(function (v) {
+            state.versions = v.versions || [];
+            render();
+          });
+        }
+      });
+    }
+    return loadOnce().catch(function (e) {
+      // Uma tentativa extra: cookie/header podem atrasar-se logo após o login
+      if (e && e.status === 401 && !opts._retried) {
+        return new Promise(function (resolve) { setTimeout(resolve, 120); }).then(function () {
+          return openProject(id, Object.assign({}, opts, { _retried: true }));
         });
       }
-    }).catch(function (e) {
-      toast(e.message);
+      state.projectError = e.message || "Falha ao carregar o projecto (project.php).";
+      state.project = null;
+      state.data = null;
+      toast(state.projectError);
+      render();
     });
+  }
+
+  function renderProjectError() {
+    if (!state.projectError) return "";
+    return "<div class=\"panel\"><h3>Erro ao carregar o projecto</h3>" +
+      "<p class=\"err\" style=\"display:block\">" + esc(state.projectError) + "</p>" +
+      "<p class=\"note\">Verifique a ligação ou volte à <a href=\"" + esc(APP_ROOT) + "\">lista de projectos</a>.</p></div>";
   }
 
   window.addEventListener("popstate", function () {
@@ -753,6 +889,11 @@ tr.a-definir td, .a-definir-cell {
   function renderMain() {
     var el = document.getElementById("main-panel");
     var role = state.me.role;
+    if (state.projectError && !state.project) {
+      el.innerHTML = (role === "admin" ? renderAdminCodePanel() : "") + renderProjectError();
+      if (role === "admin") bindAdminCode();
+      return;
+    }
     if (role === "admin") {
       el.innerHTML = renderAdmin() + (state.project ? renderReport(true) : "");
       bindAdmin();
@@ -774,8 +915,8 @@ tr.a-definir td, .a-definir-cell {
       return;
     }
     // khaled / filipe
-    el.innerHTML = renderEditorBar() + renderReport(true);
-    bindEditor();
+    el.innerHTML = renderEditorBar() + renderReport(!!state.project);
+    if (state.project) bindEditor();
   }
 
   function renderAdminCodePanel() {
@@ -790,7 +931,24 @@ tr.a-definir td, .a-definir-cell {
     html += "<button type=\"button\" class=\"btn\" id=\"adm-code-save\">Guardar novo código</button>";
     html += "<p class=\"err\" id=\"adm-code-err\"></p>";
     html += "</div>";
+    html += renderAdminUserPanel();
     html += renderExtraAdminCodesPanel();
+    return html;
+  }
+
+  function renderAdminUserPanel() {
+    var html = "<div class=\"panel no-print\" id=\"admin-user-panel\">";
+    html += "<h3>Definir email e palavra-passe</h3>";
+    html += "<p class=\"note\">Conta de administrador para entrar em /orcamentos/ com email (além do código). A palavra-passe não é mostrada de novo.</p>";
+    html += "<div class=\"row\">";
+    html += "<label>Email<input type=\"email\" id=\"adm-user-email\" autocomplete=\"username\" placeholder=\"email@exemplo.com\"></label>";
+    html += "<label>Palavra-passe<input type=\"password\" id=\"adm-user-pass\" autocomplete=\"new-password\" minlength=\"10\"></label>";
+    html += "<label>Confirmar<input type=\"password\" id=\"adm-user-pass2\" autocomplete=\"new-password\" minlength=\"10\"></label>";
+    html += "</div>";
+    html += "<button type=\"button\" class=\"btn\" id=\"adm-user-save\">Guardar conta</button>";
+    html += "<p class=\"err\" id=\"adm-user-err\"></p>";
+    html += "<p class=\"cap\" id=\"adm-user-list\"></p>";
+    html += "</div>";
     return html;
   }
 
@@ -978,7 +1136,10 @@ tr.a-definir td, .a-definir-cell {
   }
 
   function renderEditorBar() {
-    if (!state.project) return "<p class=\"note\">Sem projecto.</p>";
+    if (!state.project) {
+      if (state.projectError) return renderProjectError();
+      return "<div class=\"panel\"><p class=\"note\">Sem projecto.</p></div>";
+    }
     var html = "<div class=\"panel no-print\"><h3>Edição</h3>";
     html += "<p class=\"note\">Edite linhas no relatório (custos, painéis, ferragens e artigos). A impressão inclui todas as secções.</p>";
     html += "<button type=\"button\" class=\"btn\" id=\"ed-save\">" + t("save") + "</button>";
@@ -1043,7 +1204,10 @@ tr.a-definir td, .a-definir-cell {
 
   function renderReport(editable) {
     var d = state.data;
-    if (!d) return "<div class=\"report\"><p class=\"note\">Sem dados.</p></div>";
+    if (!d) {
+      if (state.projectError) return renderProjectError();
+      return "<div class=\"report\"><p class=\"note\">Sem dados.</p></div>";
+    }
     var role = state.me.role;
     if (role === "client") return renderClientView();
     var company = d.company || {};
@@ -1965,6 +2129,59 @@ tr.a-definir td, .a-definir-cell {
       });
     }
     bindExtraAdminCodes();
+    bindAdminUser();
+  }
+
+  function bindAdminUser() {
+    var btn = document.getElementById("adm-user-save");
+    if (btn) {
+      btn.addEventListener("click", function () {
+        var err = document.getElementById("adm-user-err");
+        err.textContent = "";
+        var email = document.getElementById("adm-user-email").value.trim();
+        var pass = document.getElementById("adm-user-pass").value;
+        var pass2 = document.getElementById("adm-user-pass2").value;
+        if (!email || !pass || !pass2) {
+          err.textContent = "Preencha email e palavra-passe.";
+          return;
+        }
+        if (pass.length < 10) {
+          err.textContent = "A palavra-passe deve ter pelo menos 10 caracteres.";
+          return;
+        }
+        if (pass !== pass2) {
+          err.textContent = "A confirmação da palavra-passe não coincide.";
+          return;
+        }
+        api("admin-user.php", {
+          method: "POST",
+          body: { email: email, password: pass, confirm_password: pass2 }
+        }).then(function () {
+          document.getElementById("adm-user-pass").value = "";
+          document.getElementById("adm-user-pass2").value = "";
+          toast("Conta de email actualizada");
+          return refreshAdminUserList();
+        }).catch(function (e) {
+          err.textContent = e.message || "Falha ao guardar.";
+        });
+      });
+    }
+    refreshAdminUserList();
+  }
+
+  function refreshAdminUserList() {
+    var el = document.getElementById("adm-user-list");
+    if (!el) return Promise.resolve();
+    return api("admin-user.php").then(function (j) {
+      var users = j.users || [];
+      if (!users.length) {
+        el.textContent = "Ainda sem contas de email.";
+        return;
+      }
+      el.textContent = "Contas: " + users.map(function (u) { return u.email; }).join(", ");
+    }).catch(function () {
+      el.textContent = "";
+    });
   }
 
   function bindExtraAdminCodes() {

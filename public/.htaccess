@@ -36,7 +36,13 @@ DirectoryIndex index.html default.php
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^(.*)$ /sub/%1/$1 [L]
 
-  # Normaliza URLs index.html para a forma canónica com slash final
+  # Orçamentos SPA: /orcamentos/<slug>/ → index.html (antes de normalizar index.html)
+  # Evita o ErrorDocument 404 → /404/ quando o slug não é uma pasta real.
+  RewriteCond %{REQUEST_URI} !^/orcamentos/api(/|$) [NC]
+  RewriteRule ^orcamentos/([a-z0-9][a-z0-9-]*)/?$ /orcamentos/index.html [L,QSA,NC]
+
+  # Normaliza URLs index.html só quando o cliente pediu index.html (não em rewrites internos)
+  RewriteCond %{THE_REQUEST} \s/+(.*?)index\.html[\s?] [NC]
   RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L,NE]
 
   # Redirect canónico: slug antigo de exportação -> TCN/Drill XML
@@ -59,16 +65,14 @@ DirectoryIndex index.html default.php
   RewriteCond %{ENV:REDIRECT_STATUS} !=404
   RewriteRule ^404(\.html)?/?$ - [R=404,L]
 
-  # Orçamentos: /orcamentos/<slug>/ → SPA (partilha ?v=token via QSA)
-  RewriteCond %{REQUEST_URI} !^/orcamentos/api(/|$) [NC]
-  RewriteRule ^orcamentos/([a-z0-9][a-z0-9-]*)/?$ /orcamentos/index.html [L,QSA,NC]
-
   # Se o recurso físico existe, servir diretamente
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
   # Resolver URLs limpas para diretórios exportados (ex.: /pt-pt/primeiros-passos/)
+  # Não aplicar a /orcamentos/ (slugs são virtuais; tratados acima).
+  RewriteCond %{REQUEST_URI} !^/orcamentos/ [NC]
   RewriteCond %{REQUEST_URI} !/$
   RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
   RewriteRule ^(.+?)/?$ /$1/ [R=301,L]
