@@ -197,6 +197,8 @@ $cliOk = Filter::forRole($normApproved, ['role' => 'client']);
 assert_true(($cliOk['pricing']['approved'] ?? false) === true, 'cliente: preço aprovado');
 assert_true((float) $cliOk['pricing']['selling_price_per_unit_eur'] === 1250.0, 'cliente vê preço s/ IVA');
 assert_true(isset($cliOk['pricing']['selling_price_incl_iva_per_unit_eur']), 'cliente vê preço c/ IVA');
+assert_true(!array_key_exists('iva_rate', $cliOk['pricing']), 'cliente sem iva_rate no pricing');
+assert_true(!array_key_exists('iva_rate', $cliV2['pricing']), 'cliente sem iva_rate mesmo sem preço');
 assert_true(($cliOk['pricing']['approved_factory_key'] ?? '') === 'fab-a', 'cliente vê fábrica aprovada');
 assert_true(!isset($cliOk['items']), 'cliente aprovado sem items');
 

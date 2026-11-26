@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive">
   <title>Pimo Casa · Orçamentos</title>
-  <base href="/orcamentos/">
   <link rel="icon" href="/orcamentos/logo.png" type="image/png">
   <style>
 :root {
@@ -364,9 +363,14 @@ tr.a-definir td, .a-definir-cell {
     printHide: {}
   };
 
-  // Absolute so /orcamentos/<slug>/ still hits the API
-  var BASE = "/orcamentos/api";
+  // Absolute API root — never resolve relative to /orcamentos/<slug>/ or <base>
+  var API_ROOT = "/orcamentos/api";
   var APP_ROOT = "/orcamentos/";
+
+  function apiUrl(path) {
+    path = String(path || "").replace(/^\/+/, "");
+    return location.origin + API_ROOT + "/" + path;
+  }
 
   function pathSlug() {
     var m = String(location.pathname || "").match(/^\/orcamentos\/([a-z0-9][a-z0-9-]*)\/?$/i);
@@ -443,7 +447,7 @@ tr.a-definir td, .a-definir-cell {
 
   function api(path, opts) {
     opts = opts || {};
-    var headers = opts.headers || {};
+    var headers = Object.assign({}, opts.headers || {});
     if (!(opts.body instanceof FormData)) {
       headers["Content-Type"] = headers["Content-Type"] || "application/json";
     }
@@ -452,7 +456,7 @@ tr.a-definir td, .a-definir-cell {
       headers["X-Pimo-Orc-Session"] = tok;
       headers["Authorization"] = "Bearer " + tok;
     }
-    return fetch(BASE + "/" + path, {
+    return fetch(apiUrl(path), {
       method: opts.method || "GET",
       credentials: "include",
       headers: headers,
@@ -487,7 +491,7 @@ tr.a-definir td, .a-definir-cell {
   function assetUrl(ref) {
     if (!ref) return null;
     if (String(ref).indexOf("upload:") === 0) {
-      return BASE + "/file.php?id=" + encodeURIComponent(String(ref).slice(7));
+      return apiUrl("file.php?id=" + encodeURIComponent(String(ref).slice(7)));
     }
     if (String(ref).indexOf("http") === 0) return ref;
     return null;
@@ -1182,7 +1186,7 @@ tr.a-definir td, .a-definir-cell {
     html += "<h2 class=\"sec\">Preço</h2>";
     if (pricing.approved && pricing.selling_price_per_unit_eur != null) {
       html += "<p class=\"price-tag\">" + esc(money(pricing.selling_price_per_unit_eur)) + " / unidade <span class=\"cap\">(s/ IVA)</span></p>";
-      html += "<p class=\"price-tag\" style=\"font-size:1.1rem\">" + esc(money(pricing.selling_price_incl_iva_per_unit_eur)) + " / unidade <span class=\"cap\">(c/ IVA " + esc(String(Math.round((pricing.iva_rate || 0.23) * 100))) + "%)</span></p>";
+      html += "<p class=\"price-tag\" style=\"font-size:1.1rem\">" + esc(money(pricing.selling_price_incl_iva_per_unit_eur)) + " / unidade <span class=\"cap\">(c/ IVA)</span></p>";
       if (pricing.selling_price_x6_eur != null) {
         html += "<p class=\"note\">Total projecto: " + esc(money(pricing.selling_price_x6_eur)) + " s/ IVA · " + esc(money(pricing.selling_price_incl_iva_x6_eur)) + " c/ IVA</p>";
       }
@@ -2250,6 +2254,7 @@ tr.a-definir td, .a-definir-cell {
   }
 
   function bindEditorExtras() {
+    if (!state.data) return;
     var units = (state.data.box_costs && state.data.box_costs.units) || (state.data.project && state.data.project.units) || 1;
     document.querySelectorAll(".ed-archive").forEach(function (btn) {
       btn.addEventListener("click", function () {
@@ -2323,7 +2328,7 @@ tr.a-definir td, .a-definir-cell {
 
   function bindAdmin() {
     bindAdminCode();
-    bindADefinirSave();
+    if (state.data) bindADefinirSave();
     var st = document.getElementById("adm-save-status");
     if (st) st.addEventListener("click", function () {
       var status = document.getElementById("adm-status").value;
@@ -2375,10 +2380,8 @@ tr.a-definir td, .a-definir-cell {
         var akey = inp.getAttribute("data-asset-key");
         if (cat) fd.append("category", cat);
         if (akey) fd.append("asset_key", akey);
-        fetch(BASE + "/upload.php", { method: "POST", credentials: "same-origin", body: fd })
-          .then(function (r) { return r.json(); })
-          .then(function (j) {
-            if (!j.ok) throw new Error(j.error || "Falha");
+        api("upload.php", { method: "POST", body: fd })
+          .then(function () {
             toast("Imagem enviada");
             return openProject(state.projectId);
           })
@@ -2399,10 +2402,8 @@ tr.a-definir td, .a-definir-cell {
         fd.append("kind", key);
         fd.append("category", "tecnico");
         fd.append("asset_key", key);
-        fetch(BASE + "/upload.php", { method: "POST", credentials: "same-origin", body: fd })
-          .then(function (r) { return r.json(); })
-          .then(function (j) {
-            if (!j.ok) throw new Error(j.error || "Falha");
+        api("upload.php", { method: "POST", body: fd })
+          .then(function () {
             toast("Imagem da caixa enviada");
             fileInp.value = "";
             return openProject(state.projectId);
