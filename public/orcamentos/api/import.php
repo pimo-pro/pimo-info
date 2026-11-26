@@ -50,6 +50,19 @@ if ($projectId !== '') {
     ) {
         $data['client_choice'] = $existing['data']['client_choice'];
     }
+    // Logo: se o projecto já tem upload:{id} e o JSON traz um caminho, manter o upload
+    $existingLogo = $existing['data']['assets']['logo'] ?? null;
+    $incomingLogo = $data['assets']['logo'] ?? null;
+    if (
+        is_string($existingLogo)
+        && str_starts_with($existingLogo, 'upload:')
+        && (is_string($incomingLogo) && !str_starts_with($incomingLogo, 'upload:'))
+    ) {
+        if (!isset($data['assets']) || !is_array($data['assets'])) {
+            $data['assets'] = [];
+        }
+        $data['assets']['logo'] = $existingLogo;
+    }
     $proj = ProjectService::save(
         $pdo,
         $projectId,
