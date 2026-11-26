@@ -266,7 +266,13 @@ final class Filter
 
     private static function stripInternal(array $data): array
     {
-        unset($data['order_of_magnitude'], $data['suppliers_pt_quote'], $data['source_documents']);
+        unset(
+            $data['order_of_magnitude'],
+            $data['suppliers_pt_quote'],
+            $data['source_documents'],
+            // Nota de IVA ao nível do documento: mesma regra internal_only dos itens
+            $data['iva_note']
+        );
 
         foreach ($data['items'] ?? [] as $i => $it) {
             if (!is_array($it)) {

@@ -59,6 +59,7 @@ assert_true(!isset($client['items'][0]['url']), 'cliente: item sem url');
 assert_true(!isset($client['items'][0]['supplier']), 'cliente: item sem supplier');
 assert_true(!isset($client['gaps']), 'cliente sem gaps');
 assert_true(!isset($client['order_of_magnitude']), 'cliente sem order_of_magnitude');
+assert_true(!isset($client['iva_note']), 'cliente sem iva_note raiz');
 assert_true(isset($client['pricing']), 'cliente tem bloco pricing');
 
 // Filtro fábrica
@@ -66,6 +67,8 @@ $factory = Filter::forRole($proj['data'], ['role' => 'factory', 'factory_key' =>
 $fj = json_encode($factory);
 assert_true(!isset($factory['items'][0]['unit_price_eur']), 'fábrica: sem unit_price_eur');
 assert_true(!isset($factory['items'][0]['url']), 'fábrica: sem url');
+assert_true(!isset($factory['items'][0]['iva_note']), 'fábrica: item sem iva_note');
+assert_true(!isset($factory['iva_note']), 'fábrica sem iva_note raiz');
 assert_true(!isset($factory['gaps']), 'fábrica sem gaps');
 assert_true(!isset($factory['pricing_placeholders']), 'fábrica sem pricing_placeholders');
 assert_true(!str_contains($fj, 'example.com/produto-demo'), 'fábrica sem links de compra');
@@ -74,14 +77,16 @@ assert_true(!str_contains($fj, 'example.com/produto-demo'), 'fábrica sem links 
 $khaled = Filter::forRole($proj['data'], ['role' => 'khaled']);
 assert_true(isset($khaled['gaps']) && count($khaled['gaps']) > 0, 'khaled vê gaps');
 assert_true(isset($khaled['items'][0]['unit_price_eur']), 'khaled vê preços');
+assert_true(isset($khaled['iva_note']), 'khaled vê iva_note raiz');
 
-// Filipe com margem escondida
+// Filipe com margem escondida (editor_visible: mantém iva_note)
 $data2 = $proj['data'];
 $data2['editor_settings']['hide_margin_from_filipe'] = true;
 $data2['pricing_placeholders']['margin_percent'] = 20;
 $filipe = Filter::forRole($data2, ['role' => 'filipe']);
 assert_true(!isset($filipe['pricing_placeholders']['margin_percent']), 'filipe sem margem quando escondida');
 assert_true(isset($filipe['gaps']), 'filipe (vista Khaled) vê gaps');
+assert_true(isset($filipe['iva_note']), 'filipe (editor) vê iva_note raiz');
 
 // Import normalize: price_status e image null
 $norm = Filter::normalizeImport(['project' => ['name' => 'x', 'id' => 'y'], 'items' => [['id' => '1']]]);
