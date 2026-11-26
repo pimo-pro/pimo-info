@@ -125,10 +125,21 @@ assert_true(
 // Access links
 $link = AccessService::create($pdo, $pid, 'factory', 'fab-a', 'Fábrica A');
 assert_true(isset($link['code']) && isset($link['token']), 'gerar link fábrica');
+$projSlug = ProjectService::get($pdo, $pid)['slug'] ?? '';
+assert_true($projSlug !== '', 'projecto tem slug');
+assert_true(
+    str_starts_with($link['path'], '/orcamentos/' . $projSlug . '/?v='),
+    'link de partilha inclui slug do projecto'
+);
+assert_true(str_contains($link['path'], 'v=' . $link['token']), 'link de partilha inclui token');
 $found = AccessService::findByToken($pdo, $link['token']);
 assert_true($found && password_verify($link['code'], $found['code_hash']), 'código da fábrica válido');
 AccessService::revoke($pdo, $link['id']);
 assert_true(AccessService::findByToken($pdo, $link['token']) === null, 'revogar link');
+
+// API por slug
+$bySlug = ProjectService::getBySlug($pdo, $projSlug);
+assert_true($bySlug && $bySlug['id'] === $pid, 'getBySlug resolve o projecto');
 
 // Cliente choice + factory quote roundtrip
 $data3 = ProjectService::get($pdo, $pid)['data'];

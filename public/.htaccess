@@ -59,6 +59,10 @@ DirectoryIndex index.html default.php
   RewriteCond %{ENV:REDIRECT_STATUS} !=404
   RewriteRule ^404(\.html)?/?$ - [R=404,L]
 
+  # Orçamentos: /orcamentos/<slug>/ → SPA (partilha ?v=token via QSA)
+  RewriteCond %{REQUEST_URI} !^/orcamentos/api(/|$) [NC]
+  RewriteRule ^orcamentos/([a-z0-9][a-z0-9-]*)/?$ /orcamentos/index.html [L,QSA,NC]
+
   # Se o recurso físico existe, servir diretamente
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d

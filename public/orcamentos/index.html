@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive">
   <title>Pimo Casa · Orçamentos</title>
-  <link rel="icon" href="logo.png" type="image/png">
+  <base href="/orcamentos/">
+  <link rel="icon" href="/orcamentos/logo.png" type="image/png">
   <style>
 :root {
   --ink: #141414;
@@ -266,7 +267,7 @@ tr.a-definir td, .a-definir-cell {
 <div id="app-shell">
   <div id="view-gate" class="gate">
     <div class="brand">
-      <img src="logo.png" alt="Pimo Casa">
+      <img src="/orcamentos/logo.png" alt="Pimo Casa">
       <div>
         <div class="b" style="font-weight:700;color:#0f172a">PIMO CASA</div>
         <div class="s" style="font-size:0.82rem;color:#475569">Orçamentos</div>
@@ -350,7 +351,41 @@ tr.a-definir td, .a-definir-cell {
     printHide: {}
   };
 
-  var BASE = "api";
+  // Absolute so /orcamentos/<slug>/ still hits the API
+  var BASE = "/orcamentos/api";
+  var APP_ROOT = "/orcamentos/";
+
+  function pathSlug() {
+    var m = String(location.pathname || "").match(/^\/orcamentos\/([a-z0-9][a-z0-9-]*)\/?$/i);
+    if (!m) return "";
+    var s = m[1].toLowerCase();
+    if (s === "api") return "";
+    return s;
+  }
+
+  function projectPublicPath(slug, withToken) {
+    if (!slug) return APP_ROOT + (withToken && state.token ? ("?v=" + encodeURIComponent(state.token)) : "");
+    var p = APP_ROOT + encodeURIComponent(slug) + "/";
+    if (withToken && state.token) p += "?v=" + encodeURIComponent(state.token);
+    return p;
+  }
+
+  function syncUrlForProject(proj, replace) {
+    if (!proj || !proj.slug) return;
+    var next = projectPublicPath(proj.slug, !!state.token);
+    var wantPath = APP_ROOT + encodeURIComponent(proj.slug) + "/";
+    var here = location.pathname.replace(/\/?$/, "/");
+    var tokenOk = !state.token || /[?&]v=/.test(location.search);
+    if (here === wantPath && tokenOk) return;
+    if (replace) history.replaceState({ slug: proj.slug }, "", next);
+    else history.pushState({ slug: proj.slug }, "", next);
+  }
+
+  function goRoot(replace) {
+    var next = APP_ROOT + (state.token ? ("?v=" + encodeURIComponent(state.token)) : "");
+    if (replace) history.replaceState({}, "", next);
+    else history.pushState({}, "", next);
+  }
 
   function toast(msg) {
     var el = document.getElementById("toast");
@@ -495,29 +530,45 @@ tr.a-definir td, .a-definir-cell {
 
   function loadWorkspace() {
     var role = state.me.role;
+    var slug = pathSlug();
     if (role === "admin") {
       return api("projects.php").then(function (j) {
         state.projects = j.projects || [];
-        if (!state.projectId && state.projects.length) state.projectId = state.projects[0].id;
         return loadAdminCodes().then(function () {
-          if (state.projectId) return openProject(state.projectId);
+          if (slug) {
+            var match = state.projects.find(function (p) { return p.slug === slug; });
+            if (match) return openProject(match.id, { syncUrl: true, replace: true });
+            toast("Projecto não encontrado: " + slug);
+            state.projectId = null;
+            state.project = null;
+            state.data = null;
+            goRoot(true);
+            render();
+            return;
+          }
+          // /orcamentos/ — lista com links próprios (não abrir automaticamente)
+          state.projectId = null;
+          state.project = null;
+          state.data = null;
           render();
         });
       });
     }
     if (state.me.project_id) {
       state.projectId = state.me.project_id;
-      return openProject(state.projectId);
+      return openProject(state.projectId, { syncUrl: true, replace: true });
     }
     render();
     return Promise.resolve();
   }
 
-  function openProject(id) {
+  function openProject(id, opts) {
+    opts = opts || {};
     state.projectId = id;
     return api("project.php?id=" + encodeURIComponent(id)).then(function (j) {
       state.project = j.project;
       state.data = j.project.data;
+      if (opts.syncUrl !== false) syncUrlForProject(j.project, !!opts.replace);
       render();
       if (state.me.role === "admin") {
         return Promise.all([
@@ -535,6 +586,15 @@ tr.a-definir td, .a-definir-cell {
       toast(e.message);
     });
   }
+
+  window.addEventListener("popstate", function () {
+    if (!state.me) return;
+    if (state.me.role === "admin") {
+      loadWorkspace();
+      return;
+    }
+    if (state.me.project_id) openProject(state.me.project_id, { syncUrl: false });
+  });
 
   function statusLabel(s) {
     var map = {
@@ -564,14 +624,40 @@ tr.a-definir td, .a-definir-cell {
     html += "<button type=\"button\" class=\"btn\" id=\"btn-new\">" + t("newProject") + "</button>";
     html += "<button type=\"button\" class=\"btn secondary\" id=\"btn-import\">" + t("importJson") + "</button>";
     html += "</div><input type=\"file\" id=\"import-file\" accept=\"application/json,.json\" class=\"hidden\">";
+    if (!state.projectId) {
+      html += "<p class=\"note\">Escolha um projecto pelo link próprio, ou crie/importe um novo.</p>";
+    } else {
+      html += "<p class=\"cap\" style=\"margin-bottom:8px\"><a href=\"" + esc(APP_ROOT) + "\" id=\"btn-all-projects\">← Todos os projectos</a></p>";
+    }
     (state.projects || []).forEach(function (p) {
-      html += "<div class=\"proj" + (p.id === state.projectId ? " active" : "") + "\" data-id=\"" + esc(p.id) + "\">";
+      var href = projectPublicPath(p.slug, false);
+      html += "<div class=\"proj" + (p.id === state.projectId ? " active" : "") + "\" data-id=\"" + esc(p.id) + "\" data-slug=\"" + esc(p.slug || "") + "\">";
       html += "<div class=\"t\">" + esc(p.title) + "</div>";
-      html += "<div class=\"m\">" + esc(statusLabel(p.status)) + " · " + esc(p.updated_at || "") + "</div></div>";
+      html += "<div class=\"m\">" + esc(statusLabel(p.status)) + " · " + esc(p.updated_at || "") + "</div>";
+      html += "<div class=\"m\" style=\"word-break:break-all\"><a class=\"proj-link\" href=\"" + esc(href) + "\">/orcamentos/" + esc(p.slug || "") + "/</a></div></div>";
     });
+    if (!(state.projects || []).length) {
+      html += "<p class=\"note\">Ainda sem projectos. Crie ou importe um para obter o link por slug.</p>";
+    }
     el.innerHTML = html;
+    var allBtn = document.getElementById("btn-all-projects");
+    if (allBtn) {
+      allBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        state.projectId = null;
+        state.project = null;
+        state.data = null;
+        goRoot(false);
+        render();
+      });
+    }
     el.querySelectorAll(".proj").forEach(function (n) {
-      n.addEventListener("click", function () { openProject(n.getAttribute("data-id")); });
+      n.addEventListener("click", function (e) {
+        if (e.target && e.target.classList && e.target.classList.contains("proj-link")) {
+          e.preventDefault();
+        }
+        openProject(n.getAttribute("data-id"), { syncUrl: true });
+      });
     });
     var btnNew = document.getElementById("btn-new");
     if (btnNew) btnNew.addEventListener("click", createEmpty);
@@ -592,7 +678,9 @@ tr.a-definir td, .a-definir-cell {
             api("import.php", { method: "POST", body: payload }).then(function (j) {
               toast(j.updated ? "Importado (nova versão)" : "Importado");
               state.projectId = j.project.id;
-              return loadWorkspace();
+              return openProject(j.project.id, { syncUrl: true, replace: false }).then(function () {
+                return api("projects.php").then(function (pj) { state.projects = pj.projects || []; render(); });
+              });
             }).catch(function (e) { toast(e.message); });
           } catch (err) {
             toast("JSON inválido");
@@ -655,7 +743,10 @@ tr.a-definir td, .a-definir-cell {
     };
     api("projects.php", { method: "POST", body: { data: data } }).then(function (j) {
       state.projectId = j.project.id;
-      return loadWorkspace();
+      return api("projects.php").then(function (pj) {
+        state.projects = pj.projects || [];
+        return openProject(j.project.id, { syncUrl: true });
+      });
     }).catch(function (e) { toast(e.message); });
   }
 
@@ -663,8 +754,14 @@ tr.a-definir td, .a-definir-cell {
     var el = document.getElementById("main-panel");
     var role = state.me.role;
     if (role === "admin") {
-      el.innerHTML = renderAdmin() + renderReport(true);
+      el.innerHTML = renderAdmin() + (state.project ? renderReport(true) : "");
       bindAdmin();
+      el.querySelectorAll(".home-open").forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          openProject(a.getAttribute("data-id"), { syncUrl: true });
+        });
+      });
       return;
     }
     if (role === "factory") {
@@ -723,14 +820,34 @@ tr.a-definir td, .a-definir-cell {
     return html;
   }
 
+  function renderAdminHome() {
+    var html = "<div class=\"panel\"><h3>Projectos</h3>";
+    html += "<p class=\"note\">Cada projecto tem o seu próprio link. Abra-o directamente — /orcamentos/ deixa de aparecer vazio.</p>";
+    if (!(state.projects || []).length) {
+      html += "<p class=\"note\">Ainda sem projectos. Use «Novo projecto» ou «Importar JSON» na barra lateral.</p></div>";
+      return html;
+    }
+    html += "<table class=\"t\"><thead><tr><th>Nome</th><th>Estado</th><th>Link</th></tr></thead><tbody>";
+    (state.projects || []).forEach(function (p) {
+      var href = projectPublicPath(p.slug, false);
+      var abs = location.origin + href;
+      html += "<tr><td><a href=\"" + esc(href) + "\" class=\"home-open\" data-id=\"" + esc(p.id) + "\">" + esc(p.title) + "</a></td>";
+      html += "<td>" + esc(statusLabel(p.status)) + "</td>";
+      html += "<td style=\"font-size:0.75rem;word-break:break-all\"><a href=\"" + esc(href) + "\" class=\"home-open\" data-id=\"" + esc(p.id) + "\">" + esc(abs) + "</a></td></tr>";
+    });
+    html += "</tbody></table></div>";
+    return html;
+  }
+
   function renderAdmin() {
     var html = renderAdminCodePanel();
     if (!state.project) {
-      return html + "<div class=\"panel\"><p class=\"note\">Crie ou importe um projecto para começar.</p></div>";
+      return html + renderAdminHome();
     }
     var d = state.data || {};
     html += "<div class=\"panel no-print\">";
     html += "<h3>Painel · " + esc(state.project.title) + "</h3>";
+    html += "<p class=\"cap\">Link do projecto: <a href=\"" + esc(projectPublicPath(state.project.slug, false)) + "\">" + esc(location.origin + projectPublicPath(state.project.slug, false)) + "</a></p>";
     html += "<div class=\"row\">";
     html += "<label>Estado<select id=\"adm-status\">";
     ["rascunho","enviado_fabricas","precos_fabricas","enviado_cliente","aceite"].forEach(function (s) {
@@ -1085,7 +1202,7 @@ tr.a-definir td, .a-definir-cell {
   }
 
   function hdrHtml(d) {
-    var logoSrc = "logo.png";
+    var logoSrc = "/orcamentos/logo.png";
     if (d && d.assets && d.assets.logo) {
       var u = assetUrl(d.assets.logo);
       if (u) logoSrc = u;
@@ -2000,14 +2117,27 @@ tr.a-definir td, .a-definir-cell {
     var dup = document.getElementById("adm-dup");
     if (dup) dup.addEventListener("click", function () {
       api("duplicate.php", { method: "POST", body: { id: state.projectId } })
-        .then(function (j) { state.projectId = j.project.id; toast("Duplicado"); return loadWorkspace(); })
+        .then(function (j) {
+          toast("Duplicado");
+          return api("projects.php").then(function (pj) {
+            state.projects = pj.projects || [];
+            return openProject(j.project.id, { syncUrl: true });
+          });
+        })
         .catch(function (e) { toast(e.message); });
     });
     var arch = document.getElementById("adm-arch");
     if (arch) arch.addEventListener("click", function () {
       if (!confirm("Arquivar este projecto?")) return;
       api("project.php", { method: "DELETE", body: { id: state.projectId } })
-        .then(function () { state.projectId = null; toast("Arquivado"); return loadWorkspace(); })
+        .then(function () {
+          state.projectId = null;
+          state.project = null;
+          state.data = null;
+          toast("Arquivado");
+          goRoot(true);
+          return loadWorkspace();
+        })
         .catch(function (e) { toast(e.message); });
     });
     var bak = document.getElementById("adm-backup");

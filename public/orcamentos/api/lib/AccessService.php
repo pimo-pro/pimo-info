@@ -44,8 +44,19 @@ final class AccessService
             'token' => $token,
             'code' => $code,
             'label' => $label,
-            'path' => '/orcamentos/?v=' . rawurlencode($token),
+            'path' => self::sharePath($pdo, $projectId, $token),
         ];
+    }
+
+    /** Ligação de partilha: preferir /orcamentos/<slug>/?v=…; fallback /orcamentos/?v=… */
+    public static function sharePath(PDO $pdo, string $projectId, string $token): string
+    {
+        $proj = ProjectService::get($pdo, $projectId);
+        $slug = is_array($proj) ? (string) ($proj['slug'] ?? '') : '';
+        if ($slug !== '' && preg_match('/^[a-z0-9][a-z0-9-]*$/', $slug)) {
+            return '/orcamentos/' . rawurlencode($slug) . '/?v=' . rawurlencode($token);
+        }
+        return '/orcamentos/?v=' . rawurlencode($token);
     }
 
     public static function revoke(PDO $pdo, string $accessId): void
@@ -75,7 +86,7 @@ final class AccessService
             'token' => $token,
             'code' => $code,
             'label' => $row['label'],
-            'path' => '/orcamentos/?v=' . rawurlencode($token),
+            'path' => self::sharePath($pdo, (string) $row['project_id'], $token),
         ];
     }
 

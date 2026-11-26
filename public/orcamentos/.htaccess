@@ -13,6 +13,11 @@ DirectoryIndex index.html
   # Bloquear listagens e ficheiros sensíveis
   RewriteRule ^api/lib/ - [F,L]
   RewriteRule ^api/bootstrap\.php$ - [F,L]
+
+  # /orcamentos/<slug>/ → SPA (preserva ?v=token)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^([a-z0-9][a-z0-9-]*)/?$ index.html [L,QSA,NC]
 </IfModule>
 
 # PHP: não expor listagens
