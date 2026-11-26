@@ -1,6 +1,6 @@
 # Esquema JSON dos orçamentos Pimo Casa
 
-Formatos suportados: `schema_version: "1.0"` e `"2.0"`. O painel importa ambos.
+Formatos suportados: `schema_version` `"1.0"`, `"2.0"` e `"3.0"`. O painel importa os três.
 Os exemplos são **fictícios**. Nunca incluir dados reais de clientes, preços ou ligações neste repositório.
 
 ## Visibilidade
@@ -14,98 +14,117 @@ Os exemplos são **fictícios**. Nunca incluir dados reais de clientes, preços 
 
 Regras fixas:
 
-- **fábrica** e **cliente** nunca recebem custos, margens, `url`, `supplier`, `order_of_magnitude`, `gaps`, nem `box_costs.lines` / `totals` / rubricas a_definir.
-- **fábrica** recebe peças (`boxes[].parts`), quantidades, painéis e ferragens **sem preços**.
-- **gaps** só nas vistas do Khaled (painel, completa, Khaled+Filipe).
-- **cliente** só vê preço final quando **todas** as rubricas `a_definir` estão preenchidas.
+- **Campos desconhecidos** no JSON são tratados como `internal_only` por defeito.
+- **fábrica** e **cliente** nunca recebem custos, margens, `url`, `supplier`, `order_of_magnitude`, `gaps`, `box_costs.lines` / `totals` / `checks_a_confirmar` / rubricas a_definir.
+- **fábrica** recebe peças (`boxes[].parts`), remates, portas no desenho, `parts_total`, `sheets_real`, quantidades e desenho técnico — **sem preços**.
+- **gaps** e **`box_costs.checks_a_confirmar`** só nas vistas internas (painel, completa, Khaled+Filipe), nunca fábrica/cliente.
+- **cliente** só vê preço final quando **todas** as rubricas `a_definir` estão preenchidas; vê renders de projecto, nunca custos internos.
 - `image` pode ser `null`.
 
-## Novidades 2.0
+## Schema 2.0 (resumo)
 
-### `box_costs` (internal_only, excepto quantidades/peças para fábrica)
+`box_costs` (linhas, painéis, ferragens, totais, `a_definir_keys`), campos extra em `pricing_placeholders` e `boxes[]` (`feet`, `parts`, …). Ver histórico do repositório / exemplo.
+
+## Schema 3.0
+
+### `remates[]`
 
 ```json
-"box_costs": {
-  "source": "pimo.pro",
-  "units": 6,
-  "iva_rate": 0.23,
-  "lines": [
-    {
-      "key": "carcaca",
-      "label": "Carcaça",
-      "per_unit_eur": 120.0,
-      "project_eur": 720.0,
-      "pimo_note": null,
-      "flag": "ok",
-      "render": "normal",
-      "visibility": "internal_only"
-    },
-    {
-      "key": "montagem",
-      "label": "Montagem",
-      "per_unit_eur": null,
-      "project_eur": null,
-      "flag": "a_definir",
-      "render": "red",
-      "reference_pimo_oficial_per_unit_eur": 66.2,
-      "visibility": "internal_only"
-    }
-  ],
-  "panels": [
-    {
-      "material": "MDF 19",
-      "thickness_mm": 19,
-      "qty_per_unit": 12,
-      "qty_project": 72,
-      "unit_price_eur": 8.5,
-      "per_unit_eur": 102.0,
-      "project_eur": 612.0
-    }
-  ],
-  "hardware": [
-    {
-      "type": "Parafuso 4x30",
-      "qty_per_unit": 80,
-      "qty_project": 480,
-      "unit_price_eur": 0.02,
-      "notes": null,
-      "per_unit_eur": 1.6,
-      "project_eur": 9.6,
-      "pimo_note": null
-    }
-  ],
-  "totals": {
-    "subtotal_ex_iva": { "per_unit": 400.0, "project": 2400.0 },
-    "iva": { "per_unit": 92.0, "project": 552.0 },
-    "total_incl_iva": { "per_unit": 492.0, "project": 2952.0 },
-    "note_pt": "Totais sem rubricas a definir."
-  },
-  "a_definir_keys": ["margem", "portes", "montagem", "mao_de_obra", "design", "adm"],
-  "render_rule": "a_definir em vermelho; não entram no total enquanto vazias",
-  "adm_scope": "project"
+"remates": [
+  {"key": "lateral", "label": "Laterais", "l": 2350, "w": 650, "qty": 2, "material": "MDF 19", "parts": []},
+  {"key": "tampo", "label": "Tampo", "l": 1938, "w": 650, "qty": 1, "material": "MDF 19"},
+  {"key": "rodape", "label": "Rodapé", "l": 1930, "w": 100, "qty": 1, "material": "MDF 19"}
+]
+```
+
+### `doors_in_design[]`
+
+```json
+"doors_in_design": [
+  {"qty": 2, "w": 598, "h": 868},
+  {"qty": 1, "w": 598, "h": 598}
+]
+```
+
+### `parts_total` / `sheets_real`
+
+```json
+"parts_total": {
+  "pieces_per_unit": 42,
+  "pieces_project": 252,
+  "m2_19mm": 18.5,
+  "m2_10mm": 2.1,
+  "weight_kg": 86.4
+},
+"sheets_real": {
+  "per_unit": {"10mm": 1, "19mm": 5},
+  "waste_percent": 12,
+  "project": {"10mm": 6, "19mm": 30},
+  "notes_pt": "Projecto 30+6 chapas."
 }
 ```
 
-`flag`: `ok` \| `zero` \| `a_definir`. `render`: `normal` \| `red`.
-`cost_lines` pode usar os mesmos `flag` / `render` / `reference_pimo_oficial_per_unit_eur`.
+### `boxes[]` (campos 3.0)
 
-### `pricing_placeholders` (campos 2.0)
+`x_mm`, `y_mm`, `y_estimated` (boolean), `back` (false = sem costa). Em `parts[]`: `weight_kg`, `edge` (orla), `label`.
 
-Além dos de 1.0: `design_per_unit_eur`, `design_x6_eur`, `adm_project_eur`, `adm_reference_x6_eur`, `fabrication_per_unit_eur`, `fabrication_x6_eur`, `installation_reference_per_unit_eur`.
+### `box_costs.checks_a_confirmar[]` (internal_only)
 
-### `boxes[]` (campos 2.0)
+Lista de verificações. Só vistas Khaled / Khaled+Filipe, a laranja, título **A confirmar**.
 
-`feet`, `feet_height_mm`, `feet_setback_mm`, `y_mm`, `qty_per_unit`, `qty_project`, `pimo_id`, `position_pt`, `parts[{name,l,w,t,qty,material}]`.
+```json
+"checks_a_confirmar": [
+  {"text": "Altura B3 vs desenho", "expected": 720, "actual": 700},
+  "Confirmar avanço dos pés no local"
+]
+```
 
-### `assets` (imagens)
+### Imagens com categoria
 
-Além de `logo`, `layout`, `reference`: `elevation_front`, `plan_cut`, `iso_3d`, e `boxes: { "B1": "...", ... }` para uma imagem por caixa.
+```json
+"assets": {
+  "logo": null,
+  "projeto": {
+    "projeto_fechado": "upload:…",
+    "projeto_perspetiva": "upload:…",
+    "projeto_aberto": "upload:…"
+  },
+  "tecnico": {
+    "iso_fechado": "upload:…",
+    "iso_aberto": "upload:…",
+    "alcado_portas": "upload:…",
+    "alcado_interior": "upload:…",
+    "corte_planta": "upload:…",
+    "boxes": { "B1": "upload:…", "B2": "upload:…" }
+  },
+  "images": [
+    {"key": "projeto_fechado", "category": "projeto", "file": "upload:…", "label": "Projecto fechado"}
+  ]
+}
+```
+
+| Categoria | Chaves típicas | Quem vê |
+|---|---|---|
+| `projeto` | `projeto_fechado`, `projeto_perspetiva`, `projeto_aberto` | Todas as vistas (incl. cliente) |
+| `tecnico` | `iso_*`, `alcado_*`, `corte_planta`, `box_caixa_*` | Internas + fábrica |
+
+#### Upload
+
+`POST /orcamentos/api/upload.php` (multipart):
+
+| Campo | Descrição |
+|---|---|
+| `file` | Imagem |
+| `project_id` | ID do projecto |
+| `category` | `projeto` ou `tecnico` |
+| `asset_key` | ex. `projeto_fechado`, `iso_fechado`, `box_caixa_B1` |
+| `kind` | Compatível: chave do asset ou `logo`/`layout`/`reference` |
 
 ## Importação
 
 - Sem `project_id`: cria projecto novo (`POST api/import.php`).
-- Com `project_id` (envelope `{ "project_id": "...", "data": { ... } }` ou o JSON com `project_id` no corpo do pedido): **actualiza** o projecto existente e cria uma **nova versão** no histórico (não duplica).
+- Com `project_id` (`{ "project_id": "...", "data": { ... } }`): actualiza e cria **nova versão**.
 
 ## Exemplo
 
-Ver `exemplo-ficticio.json` (schema 2.0, dados fictícios).
+Ver `exemplo-ficticio.json` (schema 3.0, dados fictícios).

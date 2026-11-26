@@ -34,6 +34,52 @@ final class Filter
         'with_3_',
     ];
 
+    /** Imagens de projecto (renders): todas as vistas, incl. cliente. */
+    public const ASSET_PROJETO_KEYS = [
+        'projeto_fechado',
+        'projeto_perspetiva',
+        'projeto_aberto',
+    ];
+
+    /** Desenho técnico: vistas internas e fábrica (não cliente). */
+    public const ASSET_TECNICO_KEYS = [
+        'iso_fechado',
+        'iso_aberto',
+        'alcado_portas',
+        'alcado_interior',
+        'corte_planta',
+    ];
+
+    /** Raízes visíveis à fábrica; o resto é internal_only por defeito. */
+    private const FACTORY_ROOT_ALLOW = [
+        'schema_version',
+        'currency',
+        'disclaimer_pt',
+        'company',
+        'project',
+        'assets',
+        'boxes',
+        'material_options',
+        'categories',
+        'items',
+        'ventilation_and_clearances',
+        'points_to_confirm',
+        'factory_quotes',
+        'cost_lines',
+        'sets',
+        'box_costs',
+        'remates',
+        'doors_in_design',
+        'parts_total',
+        'sheets_real',
+        'generated_at',
+        'timezone',
+        'prices_checked_at',
+        'iva_rate_portugal',
+        '_view',
+        '_factory_key',
+    ];
+
     public static function forRole(array $data, array $session): array
     {
         $role = $session['role'] ?? '';
@@ -50,6 +96,7 @@ final class Filter
 
     private static function full(array $data): array
     {
+        $data['assets'] = self::assetsForAudience($data['assets'] ?? [], 'internal');
         return $data;
     }
 
@@ -72,7 +119,8 @@ final class Filter
         if (!empty($settings['hide_factory_prices_from_filipe'])) {
             unset($data['factory_quotes']);
         }
-        // gaps: visíveis ao Khaled+Filipe (vistas do Khaled)
+        $data['assets'] = self::assetsForAudience($data['assets'] ?? [], 'internal');
+        // gaps + checks_a_confirmar: visíveis ao Khaled+Filipe
         return $data;
     }
 
@@ -139,6 +187,22 @@ final class Filter
         // caixas: peças e medidas, sem custos
         $out['boxes'] = self::factoryBoxes($data['boxes'] ?? []);
 
+        // remates / portas / peças / chapas: quantidades e medidas, sem preços
+        $out['remates'] = self::factoryRemates($data['remates'] ?? []);
+        $out['doors_in_design'] = self::factoryDoors($data['doors_in_design'] ?? []);
+        $out['parts_total'] = self::factoryPartsTotal($data['parts_total'] ?? null);
+        $out['sheets_real'] = self::factorySheetsReal($data['sheets_real'] ?? null);
+
+        // assets: projecto + técnico (sem só-internos desconhecidos)
+        $out['assets'] = self::assetsForAudience($data['assets'] ?? [], 'factory');
+
+        // Campos raiz desconhecidos = internal_only
+        foreach (array_keys($out) as $k) {
+            if (!in_array($k, self::FACTORY_ROOT_ALLOW, true)) {
+                unset($out[$k]);
+            }
+        }
+
         $out['_view'] = 'factory';
         $out['_factory_key'] = $factoryKey;
         return $out;
@@ -152,7 +216,7 @@ final class Filter
             'disclaimer_pt' => $data['disclaimer_pt'] ?? '',
             'company' => $data['company'] ?? [],
             'project' => self::clientProject($data['project'] ?? []),
-            'assets' => self::clientAssets($data['assets'] ?? []),
+            'assets' => self::assetsForAudience($data['assets'] ?? [], 'client'),
             'boxes' => self::clientBoxes($data['boxes'] ?? []),
             'material_options' => self::clientMaterials($data['material_options'] ?? []),
             'categories' => $data['categories'] ?? [],
@@ -163,24 +227,151 @@ final class Filter
             'pricing' => self::clientPricing($data),
             '_view' => 'client',
         ];
-        // Nunca enviar box_costs nem custos internos ao cliente
+        // Nunca enviar box_costs, remates técnicos, checks nem custos internos
         return $out;
     }
 
-    private static function clientAssets(array $assets): array
+    /**
+     * Filtra assets por audiência.
+     * category projeto → todas as vistas; tecnico → internas + fábrica; desconhecido → internal_only.
+     */
+    public static function assetsForAudience(array $assets, string $audience): array
     {
         $out = [
             'logo' => $assets['logo'] ?? null,
-            'layout' => $assets['layout'] ?? null,
-            'reference' => $assets['reference'] ?? null,
-            'elevation_front' => $assets['elevation_front'] ?? null,
-            'plan_cut' => $assets['plan_cut'] ?? null,
-            'iso_3d' => $assets['iso_3d'] ?? null,
         ];
-        if (isset($assets['boxes']) && is_array($assets['boxes'])) {
-            $out['boxes'] = $assets['boxes'];
+        // Compat v1/v2: layout/reference visíveis ao cliente
+        if ($audience === 'client' || $audience === 'factory' || $audience === 'internal') {
+            $out['layout'] = $assets['layout'] ?? null;
+            $out['reference'] = $assets['reference'] ?? null;
+        }
+        if ($audience === 'factory' || $audience === 'internal') {
+            $out['elevation_front'] = $assets['elevation_front'] ?? null;
+            $out['plan_cut'] = $assets['plan_cut'] ?? null;
+            $out['iso_3d'] = $assets['iso_3d'] ?? null;
+            if (isset($assets['boxes']) && is_array($assets['boxes'])) {
+                $out['boxes'] = $assets['boxes'];
+            }
+        }
+
+        $images = [];
+        foreach (self::normalizeAssetImages($assets) as $img) {
+            $cat = $img['category'];
+            if ($audience === 'client' && $cat !== 'projeto') {
+                continue;
+            }
+            if ($audience === 'factory' && !in_array($cat, ['projeto', 'tecnico'], true)) {
+                continue;
+            }
+            // internal: projecto + tecnico (+ legacy já acima)
+            if ($audience === 'internal' && !in_array($cat, ['projeto', 'tecnico'], true)) {
+                continue;
+            }
+            $images[] = [
+                'key' => $img['key'],
+                'category' => $cat,
+                'file' => $img['file'],
+                'label' => $img['label'] ?? $img['key'],
+            ];
+        }
+        $out['images'] = $images;
+
+        // Mapa por categoria para a UI
+        $byCat = ['projeto' => [], 'tecnico' => []];
+        foreach ($images as $img) {
+            $byCat[$img['category']][$img['key']] = $img['file'];
+        }
+        $out['projeto'] = $byCat['projeto'];
+        if ($audience !== 'client') {
+            $out['tecnico'] = $byCat['tecnico'];
         }
         return $out;
+    }
+
+    /** Normaliza assets legados e `images[]` / mapas projeto|tecnico para lista uniforme. */
+    public static function normalizeAssetImages(array $assets): array
+    {
+        $out = [];
+        $seen = [];
+
+        $add = static function (string $key, string $category, mixed $file, ?string $label = null) use (&$out, &$seen): void {
+            if ($file === null || $file === '') {
+                return;
+            }
+            if (isset($seen[$key])) {
+                return;
+            }
+            $seen[$key] = true;
+            $out[] = [
+                'key' => $key,
+                'category' => $category,
+                'file' => $file,
+                'label' => $label ?? $key,
+            ];
+        };
+
+        if (isset($assets['images']) && is_array($assets['images'])) {
+            foreach ($assets['images'] as $img) {
+                if (!is_array($img) || empty($img['file'])) {
+                    continue;
+                }
+                $key = (string) ($img['key'] ?? '');
+                if ($key === '') {
+                    continue;
+                }
+                $cat = (string) ($img['category'] ?? self::categoryForAssetKey($key));
+                if (!in_array($cat, ['projeto', 'tecnico'], true)) {
+                    $cat = 'internal';
+                }
+                $add($key, $cat, $img['file'], isset($img['label']) ? (string) $img['label'] : null);
+            }
+        }
+
+        foreach (['projeto', 'tecnico'] as $cat) {
+            if (!isset($assets[$cat]) || !is_array($assets[$cat])) {
+                continue;
+            }
+            foreach ($assets[$cat] as $key => $file) {
+                if ($key === 'boxes' && is_array($file)) {
+                    foreach ($file as $boxCode => $boxFile) {
+                        $add('box_caixa_' . $boxCode, 'tecnico', $boxFile, 'Caixa ' . $boxCode);
+                    }
+                    continue;
+                }
+                $add((string) $key, $cat, $file);
+            }
+        }
+
+        foreach (self::ASSET_PROJETO_KEYS as $k) {
+            if (array_key_exists($k, $assets)) {
+                $add($k, 'projeto', $assets[$k]);
+            }
+        }
+        foreach (self::ASSET_TECNICO_KEYS as $k) {
+            if (array_key_exists($k, $assets)) {
+                $add($k, 'tecnico', $assets[$k]);
+            }
+        }
+        // box_caixa_* no raiz
+        foreach ($assets as $k => $v) {
+            if (is_string($k) && str_starts_with($k, 'box_caixa_')) {
+                $add($k, 'tecnico', $v);
+            }
+        }
+
+        return $out;
+    }
+
+    public static function categoryForAssetKey(string $key): string
+    {
+        if (in_array($key, self::ASSET_PROJETO_KEYS, true)) {
+            return 'projeto';
+        }
+        if (in_array($key, self::ASSET_TECNICO_KEYS, true) || str_starts_with($key, 'box_caixa_')) {
+            return 'tecnico';
+        }
+        // Desconhecido = internal_only
+        return 'internal';
     }
 
     /** Chaves a_definir ainda sem valor (linhas ou placeholders). */
@@ -373,6 +564,7 @@ final class Filter
                 'notes' => $h['notes'] ?? null,
             ];
         }
+        // Sem lines/totals/checks_a_confirmar (internal_only)
         return [
             'units' => $bc['units'] ?? null,
             'panels' => $panels,
@@ -399,6 +591,9 @@ final class Filter
                     't' => $part['t'] ?? null,
                     'qty' => $part['qty'] ?? null,
                     'material' => $part['material'] ?? null,
+                    'weight_kg' => $part['weight_kg'] ?? null,
+                    'edge' => $part['edge'] ?? null,
+                    'label' => $part['label'] ?? null,
                 ];
             }
             $out[] = [
@@ -410,7 +605,10 @@ final class Filter
                 'feet' => $b['feet'] ?? null,
                 'feet_height_mm' => $b['feet_height_mm'] ?? null,
                 'feet_setback_mm' => $b['feet_setback_mm'] ?? null,
+                'x_mm' => $b['x_mm'] ?? null,
                 'y_mm' => $b['y_mm'] ?? null,
+                'y_estimated' => $b['y_estimated'] ?? null,
+                'back' => $b['back'] ?? null,
                 'qty_per_unit' => $b['qty_per_unit'] ?? null,
                 'qty_project' => $b['qty_project'] ?? null,
                 'position_pt' => $b['position_pt'] ?? null,
@@ -418,6 +616,98 @@ final class Filter
             ];
         }
         return $out;
+    }
+
+    private static function factoryRemates(array $remates): array
+    {
+        $out = [];
+        foreach ($remates as $r) {
+            if (!is_array($r)) {
+                continue;
+            }
+            $parts = [];
+            foreach ($r['parts'] ?? [] as $part) {
+                if (!is_array($part)) {
+                    continue;
+                }
+                $parts[] = [
+                    'name' => $part['name'] ?? '',
+                    'l' => $part['l'] ?? null,
+                    'w' => $part['w'] ?? null,
+                    't' => $part['t'] ?? null,
+                    'qty' => $part['qty'] ?? null,
+                    'material' => $part['material'] ?? null,
+                ];
+            }
+            $row = [
+                'key' => $r['key'] ?? null,
+                'label' => $r['label'] ?? '',
+                'l' => $r['l'] ?? null,
+                'w' => $r['w'] ?? null,
+                't' => $r['t'] ?? null,
+                'qty' => $r['qty'] ?? null,
+                'qty_per_unit' => $r['qty_per_unit'] ?? null,
+                'qty_project' => $r['qty_project'] ?? null,
+                'material' => $r['material'] ?? null,
+                'notes_pt' => $r['notes_pt'] ?? null,
+                'parts' => $parts,
+            ];
+            // Remover campos monetários se existirem
+            foreach (array_keys($row) as $k) {
+                if (is_string($k) && (str_contains($k, 'price') || str_contains($k, 'cost') || str_ends_with($k, '_eur'))) {
+                    unset($row[$k]);
+                }
+            }
+            $out[] = $row;
+        }
+        return $out;
+    }
+
+    private static function factoryDoors(array $doors): array
+    {
+        $out = [];
+        foreach ($doors as $d) {
+            if (!is_array($d)) {
+                continue;
+            }
+            $out[] = [
+                'qty' => $d['qty'] ?? null,
+                'w' => $d['w'] ?? null,
+                'h' => $d['h'] ?? null,
+                'label' => $d['label'] ?? null,
+                'notes_pt' => $d['notes_pt'] ?? null,
+            ];
+        }
+        return $out;
+    }
+
+    private static function factoryPartsTotal(mixed $pt): ?array
+    {
+        if (!is_array($pt)) {
+            return null;
+        }
+        return [
+            'pieces_per_unit' => $pt['pieces_per_unit'] ?? null,
+            'pieces_project' => $pt['pieces_project'] ?? ($pt['pieces_x6'] ?? null),
+            'm2_19mm' => $pt['m2_19mm'] ?? null,
+            'm2_10mm' => $pt['m2_10mm'] ?? null,
+            'weight_kg' => $pt['weight_kg'] ?? null,
+            'weight_kg_per_unit' => $pt['weight_kg_per_unit'] ?? null,
+            'weight_kg_project' => $pt['weight_kg_project'] ?? null,
+        ];
+    }
+
+    private static function factorySheetsReal(mixed $sr): ?array
+    {
+        if (!is_array($sr)) {
+            return null;
+        }
+        return [
+            'per_unit' => $sr['per_unit'] ?? null,
+            'waste_percent' => $sr['waste_percent'] ?? null,
+            'project' => $sr['project'] ?? null,
+            'notes_pt' => $sr['notes_pt'] ?? null,
+        ];
     }
 
     private static function stripInternal(array $data): array
@@ -486,12 +776,18 @@ final class Filter
         return $out;
     }
 
-    /** Normaliza JSON importado (schema 1.0 ou 2.0). */
+    /** Normaliza JSON importado (schema 1.0, 2.0 ou 3.0). */
     public static function normalizeImport(array $data): array
     {
         $ver = (string) ($data['schema_version'] ?? '');
         if ($ver === '' && isset($data['project'])) {
-            $data['schema_version'] = isset($data['box_costs']) ? '2.0' : '1.0';
+            if (isset($data['remates']) || isset($data['doors_in_design']) || isset($data['parts_total']) || isset($data['sheets_real'])) {
+                $data['schema_version'] = '3.0';
+            } elseif (isset($data['box_costs'])) {
+                $data['schema_version'] = '2.0';
+            } else {
+                $data['schema_version'] = '1.0';
+            }
         }
         if (!isset($data['factory_quotes']) || !is_array($data['factory_quotes'])) {
             $data['factory_quotes'] = [];
@@ -568,6 +864,21 @@ final class Filter
             if (!isset($data['box_costs']['a_definir_keys']) || !is_array($data['box_costs']['a_definir_keys'])) {
                 $data['box_costs']['a_definir_keys'] = ['margem', 'portes', 'montagem', 'mao_de_obra', 'design', 'adm'];
             }
+            if (!isset($data['box_costs']['checks_a_confirmar']) || !is_array($data['box_costs']['checks_a_confirmar'])) {
+                $data['box_costs']['checks_a_confirmar'] = [];
+            }
+        }
+        if (!isset($data['remates']) || !is_array($data['remates'])) {
+            $data['remates'] = [];
+        }
+        if (!isset($data['doors_in_design']) || !is_array($data['doors_in_design'])) {
+            $data['doors_in_design'] = [];
+        }
+        if (!isset($data['parts_total']) || !is_array($data['parts_total'])) {
+            $data['parts_total'] = null;
+        }
+        if (!isset($data['sheets_real']) || !is_array($data['sheets_real'])) {
+            $data['sheets_real'] = null;
         }
         if (!isset($data['assets']) || !is_array($data['assets'])) {
             $data['assets'] = [];
@@ -576,6 +887,15 @@ final class Filter
             if (!array_key_exists($ak, $data['assets'])) {
                 $data['assets'][$ak] = null;
             }
+        }
+        if (!isset($data['assets']['projeto']) || !is_array($data['assets']['projeto'])) {
+            $data['assets']['projeto'] = [];
+        }
+        if (!isset($data['assets']['tecnico']) || !is_array($data['assets']['tecnico'])) {
+            $data['assets']['tecnico'] = [];
+        }
+        if (!isset($data['assets']['images']) || !is_array($data['assets']['images'])) {
+            $data['assets']['images'] = [];
         }
         foreach ($data['items'] as $i => $it) {
             if (!is_array($it)) {

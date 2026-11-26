@@ -147,7 +147,7 @@ assert_true($e1 === $e0 + 1, 'epoch de sessão admin incrementa');
 
 // Schema 2.0: box_costs e filtros
 $v2 = json_decode(file_get_contents($example), true);
-assert_true(($v2['schema_version'] ?? '') === '2.0', 'exemplo fictício em 2.0');
+assert_true(in_array(($v2['schema_version'] ?? ''), ['2.0', '3.0'], true), 'exemplo fictício em 2.0+');
 assert_true(isset($v2['box_costs']['lines']), 'exemplo tem box_costs.lines');
 $normV2 = Filter::normalizeImport($v2);
 $facV2 = Filter::forRole($normV2, ['role' => 'factory', 'factory_key' => 'fab-a']);
@@ -173,6 +173,49 @@ $updated = ProjectService::save($pdo, $created['id'], $normV2, 'admin', 'teste',
 $after = count(ProjectService::versions($pdo, $created['id']));
 assert_true($after === $before + 1, 'importação em projecto existente cria versão');
 assert_true(($updated['data']['project']['notes'] ?? '') === 'versão importada de teste', 'dados actualizados no import');
+
+// Schema 3.0: remates, sheets, checks, assets por categoria
+$v3 = json_decode(file_get_contents($example), true);
+assert_true(($v3['schema_version'] ?? '') === '3.0', 'exemplo fictício em 3.0');
+$normV3 = Filter::normalizeImport($v3);
+$facV3 = Filter::forRole($normV3, ['role' => 'factory', 'factory_key' => 'fab-a']);
+assert_true(isset($facV3['remates'][0]['label']), 'fábrica vê remates');
+assert_true(isset($facV3['doors_in_design'][0]['w']), 'fábrica vê portas no desenho');
+assert_true(isset($facV3['parts_total']['pieces_per_unit']), 'fábrica vê parts_total');
+assert_true(isset($facV3['sheets_real']['per_unit']), 'fábrica vê sheets_real');
+assert_true(!isset($facV3['box_costs']['checks_a_confirmar']), 'fábrica sem checks_a_confirmar');
+assert_true(!isset($facV3['box_costs']['lines']), 'fábrica sem box_costs.lines (v3)');
+$cliV3 = Filter::forRole($normV3, ['role' => 'client']);
+assert_true(!isset($cliV3['remates']), 'cliente sem remates');
+assert_true(!isset($cliV3['box_costs']), 'cliente sem box_costs (v3)');
+// assets: projecto ao cliente; tecnico não
+$normV3['assets']['projeto']['projeto_fechado'] = 'upload:demo-proj';
+$normV3['assets']['tecnico']['iso_fechado'] = 'upload:demo-tec';
+$normV3['assets']['images'] = [
+    ['key' => 'projeto_fechado', 'category' => 'projeto', 'file' => 'upload:demo-proj'],
+    ['key' => 'iso_fechado', 'category' => 'tecnico', 'file' => 'upload:demo-tec'],
+    ['key' => 'segredo', 'category' => 'internal', 'file' => 'upload:demo-int'],
+];
+$cliA = Filter::forRole($normV3, ['role' => 'client']);
+$cliKeys = array_column($cliA['assets']['images'] ?? [], 'key');
+assert_true(in_array('projeto_fechado', $cliKeys, true), 'cliente vê render projecto');
+assert_true(!in_array('iso_fechado', $cliKeys, true), 'cliente não vê desenho técnico');
+$facA = Filter::forRole($normV3, ['role' => 'factory', 'factory_key' => 'fab-a']);
+$facKeys = array_column($facA['assets']['images'] ?? [], 'key');
+assert_true(in_array('iso_fechado', $facKeys, true), 'fábrica vê desenho técnico');
+assert_true(in_array('projeto_fechado', $facKeys, true), 'fábrica vê render projecto');
+assert_true(!in_array('segredo', $facKeys, true), 'fábrica sem asset category desconhecida');
+$admA = Filter::forRole($normV3, ['role' => 'admin']);
+assert_true(!empty($admA['box_costs']['checks_a_confirmar']), 'admin vê checks_a_confirmar');
+$filA = Filter::forRole($normV3, ['role' => 'filipe']);
+assert_true(!empty($filA['box_costs']['checks_a_confirmar']), 'filipe vê checks_a_confirmar');
+assert_true(Filter::categoryForAssetKey('projeto_aberto') === 'projeto', 'categoria projecto');
+assert_true(Filter::categoryForAssetKey('box_caixa_B1') === 'tecnico', 'categoria tecnico caixa');
+assert_true(Filter::categoryForAssetKey('xyz_desconhecido') === 'internal', 'chave desconhecida = internal');
+// campo raiz desconhecido oculto à fábrica
+$normV3['campo_secreto_xyz'] = ['custo' => 99];
+$facUnk = Filter::forRole($normV3, ['role' => 'factory', 'factory_key' => 'fab-a']);
+assert_true(!isset($facUnk['campo_secreto_xyz']), 'fábrica: campo desconhecido internal_only');
 
 // Códigos de administrador adicionais
 $botPlain = 'CodigoBotTeste99';
