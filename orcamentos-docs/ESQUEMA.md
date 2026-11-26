@@ -1,82 +1,111 @@
 # Esquema JSON dos orçamentos Pimo Casa
 
-Formato `schema_version: "1.0"`. O painel importa este JSON directamente.
-Os exemplos abaixo são **fictícios**. Nunca incluir dados reais de clientes, preços ou ligações de compra neste repositório.
+Formatos suportados: `schema_version: "1.0"` e `"2.0"`. O painel importa ambos.
+Os exemplos são **fictícios**. Nunca incluir dados reais de clientes, preços ou ligações neste repositório.
 
 ## Visibilidade
 
-Cada campo sensível declara quem o pode ver:
-
 | Marca | Quem vê |
 |---|---|
-| `internal_only` | Painel e vista Khaled (completa) |
-| `editor_visible` | Khaled e Khaled+Filipe (o Khaled pode esconder secções ao Filipe) |
+| `internal_only` | Painel e vista Khaled (completa); também Khaled+Filipe (editor), salvo secções escondidas |
+| `editor_visible` | Khaled e Khaled+Filipe |
 | `factory_visible` | Fábrica (mais design e medidas) |
 | `client_visible` | Cliente final |
 
-O bloco raiz `visibility_rules` resume as listas. Cada artigo em `items` pode repetir marcas por campo em `visibility`. O **servidor** remove do JSON tudo o que o papel não pode ver.
+Regras fixas:
 
-Regras fixas de papel:
-
-- **fábrica** e **cliente** nunca recebem custos, margens, preços de outras fábricas, `url`, `supplier`, `order_of_magnitude`, nem `gaps`.
+- **fábrica** e **cliente** nunca recebem custos, margens, `url`, `supplier`, `order_of_magnitude`, `gaps`, nem `box_costs.lines` / `totals` / rubricas a_definir.
+- **fábrica** recebe peças (`boxes[].parts`), quantidades, painéis e ferragens **sem preços**.
 - **gaps** só nas vistas do Khaled (painel, completa, Khaled+Filipe).
-- `price_status` `sob_consulta`, `a_orcamentar` e `esgotado` aparece como texto; `unit_price_eur` pode ser `null`.
+- **cliente** só vê preço final quando **todas** as rubricas `a_definir` estão preenchidas.
 - `image` pode ser `null`.
 
-## Blocos raiz
+## Novidades 2.0
 
-| Bloco | Função |
-|---|---|
-| `company` | Marca, signatário e contactos |
-| `project` | Identificação, unidades, cliente (nome), medidas, hipóteses |
-| `assets` | Caminhos de logótipo, planta e imagem de referência (ou IDs de upload) |
-| `boxes` | Caixas L×A×P, pés, posição |
-| `box_alternative` | Alternativa de caixa única (opcional) |
-| `material_options` | Gamas económico / standard / premium |
-| `categories` | Secções do catálogo |
-| `items` | Artigos (ferragens, equipamentos, etc.) |
-| `sets` | Composição dos conjuntos e totais de compra |
-| `cost_lines` | Rubricas de custo (compra) |
-| `pricing_placeholders` | Margem, montagem, transporte, preço final (podem ser `null`) |
-| `ventilation_and_clearances` | Folgas e notas de instalação |
-| `points_to_confirm` | Lista a confirmar em obra |
-| `gaps` | Lacunas (só Khaled) |
-| `factory_quotes` | Respostas das fábricas (preenchido na ferramenta) |
-| `client_choice` | Escolha do cliente (preenchido na ferramenta) |
-| `editor_settings` | Ex.: esconder margem ao Filipe |
-
-## Artigo (`items[]`)
-
-Campos principais: `id`, `category`, `kind`, `name`, `brand`, `model`, `ref`, `supplier`, `url`, `image` (ou `null`), `unit_price_eur` (ou `null`), `price_status` (`publicado` \| `sob_consulta` \| `a_orcamentar` \| `esgotado`), `qty_per_unit`, `option_group`, `fits`, `fits_notes`, `dimensions_mm`, `notes_pt`, `visibility`.
-
-## Fábricas e cliente (runtime)
+### `box_costs` (internal_only, excepto quantidades/peças para fábrica)
 
 ```json
-"factory_quotes": {
-  "fab-exemplo": {
-    "factory_name": "Carpintaria Exemplo Lda.",
-    "boxes": { "B1": { "price_eur": 120.0, "material": "carvalho" } },
-    "installation_per_unit_eur": null,
-    "shipping_per_unit_eur": null,
-    "lead_time_days": 45,
-    "payment_terms_pt": "30% sinal, 70% na entrega",
-    "notes_pt": "",
-    "updated_at": "2026-11-26T12:00:00+00:00"
-  }
-},
-"client_choice": {
-  "material_option_id": "mat-standard",
-  "set_code": "recomendado",
-  "with_installation": true,
-  "with_equipment": true,
-  "submitted_at": null
-},
-"editor_settings": {
-  "hide_margin_from_filipe": false,
-  "hide_factory_prices_from_filipe": false
+"box_costs": {
+  "source": "pimo.pro",
+  "units": 6,
+  "iva_rate": 0.23,
+  "lines": [
+    {
+      "key": "carcaca",
+      "label": "Carcaça",
+      "per_unit_eur": 120.0,
+      "project_eur": 720.0,
+      "pimo_note": null,
+      "flag": "ok",
+      "render": "normal",
+      "visibility": "internal_only"
+    },
+    {
+      "key": "montagem",
+      "label": "Montagem",
+      "per_unit_eur": null,
+      "project_eur": null,
+      "flag": "a_definir",
+      "render": "red",
+      "reference_pimo_oficial_per_unit_eur": 66.2,
+      "visibility": "internal_only"
+    }
+  ],
+  "panels": [
+    {
+      "material": "MDF 19",
+      "thickness_mm": 19,
+      "qty_per_unit": 12,
+      "qty_project": 72,
+      "unit_price_eur": 8.5,
+      "per_unit_eur": 102.0,
+      "project_eur": 612.0
+    }
+  ],
+  "hardware": [
+    {
+      "type": "Parafuso 4x30",
+      "qty_per_unit": 80,
+      "qty_project": 480,
+      "unit_price_eur": 0.02,
+      "notes": null,
+      "per_unit_eur": 1.6,
+      "project_eur": 9.6,
+      "pimo_note": null
+    }
+  ],
+  "totals": {
+    "subtotal_ex_iva": { "per_unit": 400.0, "project": 2400.0 },
+    "iva": { "per_unit": 92.0, "project": 552.0 },
+    "total_incl_iva": { "per_unit": 492.0, "project": 2952.0 },
+    "note_pt": "Totais sem rubricas a definir."
+  },
+  "a_definir_keys": ["margem", "portes", "montagem", "mao_de_obra", "design", "adm"],
+  "render_rule": "a_definir em vermelho; não entram no total enquanto vazias",
+  "adm_scope": "project"
 }
 ```
 
-## Exemplo completo fictício
+`flag`: `ok` \| `zero` \| `a_definir`. `render`: `normal` \| `red`.
+`cost_lines` pode usar os mesmos `flag` / `render` / `reference_pimo_oficial_per_unit_eur`.
 
-Ver `exemplo-ficticio.json` nesta pasta. Use-o no painel (Importar JSON) e nos testes.
+### `pricing_placeholders` (campos 2.0)
+
+Além dos de 1.0: `design_per_unit_eur`, `design_x6_eur`, `adm_project_eur`, `adm_reference_x6_eur`, `fabrication_per_unit_eur`, `fabrication_x6_eur`, `installation_reference_per_unit_eur`.
+
+### `boxes[]` (campos 2.0)
+
+`feet`, `feet_height_mm`, `feet_setback_mm`, `y_mm`, `qty_per_unit`, `qty_project`, `pimo_id`, `position_pt`, `parts[{name,l,w,t,qty,material}]`.
+
+### `assets` (imagens)
+
+Além de `logo`, `layout`, `reference`: `elevation_front`, `plan_cut`, `iso_3d`, e `boxes: { "B1": "...", ... }` para uma imagem por caixa.
+
+## Importação
+
+- Sem `project_id`: cria projecto novo (`POST api/import.php`).
+- Com `project_id` (envelope `{ "project_id": "...", "data": { ... } }` ou o JSON com `project_id` no corpo do pedido): **actualiza** o projecto existente e cria uma **nova versão** no histórico (não duplica).
+
+## Exemplo
+
+Ver `exemplo-ficticio.json` (schema 2.0, dados fictícios).
