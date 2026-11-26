@@ -546,7 +546,6 @@ final class Filter
                 'selling_price_incl_iva_per_unit_eur' => null,
                 'selling_price_incl_iva_x6_eur' => null,
                 'currency' => $data['currency'] ?? 'EUR',
-                'iva_rate' => 0.23,
                 'approved' => false,
                 'approved_factory_key' => $factoryKey,
             ];
@@ -564,7 +563,6 @@ final class Filter
             'selling_price_incl_iva_per_unit_eur' => round($per * (1 + $iva), 2),
             'selling_price_incl_iva_x6_eur' => round(((float) $x6) * (1 + $iva), 2),
             'currency' => $data['currency'] ?? 'EUR',
-            'iva_rate' => $iva,
             'approved' => true,
             'approved_factory_key' => $factoryKey,
         ];
