@@ -93,6 +93,16 @@ CREATE TABLE IF NOT EXISTS settings (
   updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 SQL,
+            '003_admin_codes' => <<<'SQL'
+CREATE TABLE IF NOT EXISTS admin_codes (
+  id CHAR(36) NOT NULL PRIMARY KEY,
+  label VARCHAR(120) NOT NULL,
+  code_hash VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  revoked_at TIMESTAMP NULL DEFAULT NULL,
+  KEY idx_admin_codes_revoked (revoked_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+SQL,
         ];
 
         foreach ($migrations as $id => $sql) {

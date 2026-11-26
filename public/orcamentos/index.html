@@ -467,14 +467,24 @@ tr.a-definir td, .a-definir-cell {
     window.print();
   });
 
+  function loadAdminCodes() {
+    return api("admin-codes.php").then(function (j) {
+      state.adminCodes = j.codes || [];
+    }).catch(function () {
+      state.adminCodes = state.adminCodes || [];
+    });
+  }
+
   function loadWorkspace() {
     var role = state.me.role;
     if (role === "admin") {
       return api("projects.php").then(function (j) {
         state.projects = j.projects || [];
         if (!state.projectId && state.projects.length) state.projectId = state.projects[0].id;
-        if (state.projectId) return openProject(state.projectId);
-        render();
+        return loadAdminCodes().then(function () {
+          if (state.projectId) return openProject(state.projectId);
+          render();
+        });
       });
     }
     if (state.me.project_id) {
@@ -657,7 +667,7 @@ tr.a-definir td, .a-definir-cell {
   function renderAdminCodePanel() {
     var html = "<div class=\"panel no-print\" id=\"admin-code-panel\">";
     html += "<h3>Alterar código de administrador</h3>";
-    html += "<p class=\"note\">O novo código substitui o anterior. As outras sessões de administrador terminam.</p>";
+    html += "<p class=\"note\">O novo código substitui o anterior. As outras sessões de administrador terminam. Os códigos adicionais mantêm-se.</p>";
     html += "<div class=\"row\">";
     html += "<label>Código actual<input type=\"password\" id=\"adm-code-current\" autocomplete=\"current-password\" minlength=\"1\"></label>";
     html += "<label>Novo código<input type=\"password\" id=\"adm-code-new\" autocomplete=\"new-password\" minlength=\"10\"></label>";
@@ -666,6 +676,33 @@ tr.a-definir td, .a-definir-cell {
     html += "<button type=\"button\" class=\"btn\" id=\"adm-code-save\">Guardar novo código</button>";
     html += "<p class=\"err\" id=\"adm-code-err\"></p>";
     html += "</div>";
+    html += renderExtraAdminCodesPanel();
+    return html;
+  }
+
+  function renderExtraAdminCodesPanel() {
+    var html = "<div class=\"panel no-print\" id=\"admin-codes-extra\">";
+    html += "<h3>Códigos de administrador adicionais</h3>";
+    html += "<p class=\"note\">Cada código tem uma etiqueta. O código principal continua a funcionar à parte.</p>";
+    html += "<div class=\"row\">";
+    html += "<label>Etiqueta<input type=\"text\" id=\"adm-extra-label\" maxlength=\"120\" placeholder=\"ex. khaled bot\"></label>";
+    html += "<label>Código<input type=\"password\" id=\"adm-extra-code\" autocomplete=\"new-password\" minlength=\"10\"></label>";
+    html += "<button type=\"button\" class=\"btn\" id=\"adm-extra-create\">Criar código</button>";
+    html += "</div>";
+    html += "<p class=\"err\" id=\"adm-extra-err\"></p>";
+    html += "<table class=\"t\"><thead><tr><th>Etiqueta</th><th>Criado</th><th>Estado</th><th></th></tr></thead><tbody>";
+    (state.adminCodes || []).forEach(function (c) {
+      html += "<tr><td>" + esc(c.label) + "</td><td>" + esc(c.created_at || "") + "</td>";
+      html += "<td>" + esc(c.status || "") + "</td><td>";
+      if (c.status === "activo") {
+        html += "<button type=\"button\" class=\"btn danger adm-extra-rev\" data-id=\"" + esc(c.id) + "\">Revogar</button>";
+      }
+      html += "</td></tr>";
+    });
+    if (!(state.adminCodes || []).length) {
+      html += "<tr><td colspan=\"4\" class=\"note\">Ainda sem códigos adicionais.</td></tr>";
+    }
+    html += "</tbody></table></div>";
     return html;
   }
 
@@ -1386,35 +1423,80 @@ tr.a-definir td, .a-definir-cell {
 
   function bindAdminCode() {
     var btn = document.getElementById("adm-code-save");
-    if (!btn) return;
-    btn.addEventListener("click", function () {
-      var err = document.getElementById("adm-code-err");
-      err.textContent = "";
-      var current = document.getElementById("adm-code-current").value;
-      var neu = document.getElementById("adm-code-new").value;
-      var conf = document.getElementById("adm-code-confirm").value;
-      if (!current || !neu || !conf) {
-        err.textContent = "Preencha todos os campos.";
-        return;
-      }
-      if (neu.length < 10) {
-        err.textContent = "O novo código deve ter pelo menos 10 caracteres.";
-        return;
-      }
-      if (neu !== conf) {
-        err.textContent = "A confirmação do novo código não coincide.";
-        return;
-      }
-      api("admin-code.php", {
-        method: "POST",
-        body: { current_code: current, new_code: neu, confirm_code: conf }
-      }).then(function () {
-        document.getElementById("adm-code-current").value = "";
-        document.getElementById("adm-code-new").value = "";
-        document.getElementById("adm-code-confirm").value = "";
-        toast("Código de administrador actualizado");
-      }).catch(function (e) {
-        err.textContent = e.message || "Falha ao actualizar.";
+    if (btn) {
+      btn.addEventListener("click", function () {
+        var err = document.getElementById("adm-code-err");
+        err.textContent = "";
+        var current = document.getElementById("adm-code-current").value;
+        var neu = document.getElementById("adm-code-new").value;
+        var conf = document.getElementById("adm-code-confirm").value;
+        if (!current || !neu || !conf) {
+          err.textContent = "Preencha todos os campos.";
+          return;
+        }
+        if (neu.length < 10) {
+          err.textContent = "O novo código deve ter pelo menos 10 caracteres.";
+          return;
+        }
+        if (neu !== conf) {
+          err.textContent = "A confirmação do novo código não coincide.";
+          return;
+        }
+        api("admin-code.php", {
+          method: "POST",
+          body: { current_code: current, new_code: neu, confirm_code: conf }
+        }).then(function () {
+          document.getElementById("adm-code-current").value = "";
+          document.getElementById("adm-code-new").value = "";
+          document.getElementById("adm-code-confirm").value = "";
+          toast("Código de administrador actualizado");
+        }).catch(function (e) {
+          err.textContent = e.message || "Falha ao actualizar.";
+        });
+      });
+    }
+    bindExtraAdminCodes();
+  }
+
+  function bindExtraAdminCodes() {
+    var create = document.getElementById("adm-extra-create");
+    if (create) {
+      create.addEventListener("click", function () {
+        var err = document.getElementById("adm-extra-err");
+        err.textContent = "";
+        var label = document.getElementById("adm-extra-label").value.trim();
+        var code = document.getElementById("adm-extra-code").value;
+        if (!label || !code) {
+          err.textContent = "Indique etiqueta e código.";
+          return;
+        }
+        if (code.length < 10) {
+          err.textContent = "O código deve ter pelo menos 10 caracteres.";
+          return;
+        }
+        api("admin-codes.php", {
+          method: "POST",
+          body: { action: "create", label: label, code: code }
+        }).then(function () {
+          document.getElementById("adm-extra-label").value = "";
+          document.getElementById("adm-extra-code").value = "";
+          toast("Código adicional criado");
+          return loadAdminCodes().then(function () { render(); });
+        }).catch(function (e) {
+          err.textContent = e.message || "Falha ao criar.";
+        });
+      });
+    }
+    document.querySelectorAll(".adm-extra-rev").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        if (!confirm("Revogar este código adicional?")) return;
+        api("admin-codes.php", {
+          method: "POST",
+          body: { action: "revoke", id: btn.getAttribute("data-id") }
+        }).then(function () {
+          toast("Código revogado");
+          return loadAdminCodes().then(function () { render(); });
+        }).catch(function (e) { toast(e.message); });
       });
     });
   }

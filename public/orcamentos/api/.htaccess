@@ -6,4 +6,5 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteRule ^lib/ - [F,L]
+  RewriteRule ^cli/ - [F,L]
 </IfModule>
