@@ -49,7 +49,7 @@ a:hover { text-decoration: underline; }
   padding: 28px 24px 22px;
 }
 .gate .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
-.gate .brand img { width: 40px; height: 40px; border-radius: 6px; }
+.gate .brand img { height: 40px; width: auto; max-width: 120px; background: transparent; border-radius: 0; object-fit: contain; }
 .gate h1 { font-size: 1.15rem; margin: 0 0 6px; color: var(--slate); }
 .gate p { margin: 0 0 14px; color: var(--muted); font-size: 0.92rem; }
 .gate label { display: block; font-size: 0.85rem; color: var(--muted); margin: 0 0 4px; font-weight: 600; }
@@ -120,10 +120,22 @@ a:hover { text-decoration: underline; }
   margin: 0 auto 24px;
   box-shadow: 0 1px 0 rgba(15,23,42,0.04);
 }
-.hdr { display: flex; align-items: center; gap: 10px; }
-.hdr img { width: 42px; height: 42px; border-radius: 6px; }
+.hdr { display: flex; align-items: center; gap: 12px; background: transparent; }
+.hdr img.logo {
+  height: 48px; width: auto; max-width: 160px;
+  background: transparent !important; border: 0; border-radius: 0;
+  object-fit: contain; object-position: left center; display: block;
+}
 .hdr .b { font-weight: 700; font-size: 1.15rem; color: var(--slate); line-height: 1.2; }
 .hdr .s { font-size: 0.85rem; color: var(--muted); }
+input.ed, textarea.ed, select.ed {
+  width: 100%; border: 1px solid var(--ui-border); padding: 4px 6px;
+  font: inherit; font-size: 0.75rem; background: #fff; border-radius: var(--radius);
+}
+tr.a-definir input.ed { color: #b91c1c; border-color: #fecaca; background: #fff; }
+.ed-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 14px; }
+.sheet-summary { font-size: 0.85rem; color: var(--muted); margin: 0 0 10px; line-height: 1.4; }
+.grand-totals { margin-top: 18px; padding-top: 8px; border-top: 2px solid var(--line); }
 .rule { border-top: 1px solid var(--line); margin: 10px 0 0; }
 h1.doc { font-size: 1.25rem; color: var(--slate); margin: 14px 0 12px; line-height: 1.3; }
 h2.sec { font-size: 1.05rem; color: var(--slate); margin: 22px 0 8px; page-break-after: avoid; }
@@ -222,6 +234,8 @@ tr.a-definir td, .a-definir-cell {
     border: 0; box-shadow: none; max-width: none; margin: 0; padding: 0;
   }
   .pagebreak { break-before: page; page-break-before: always; }
+  .sec-hide-print { display: none !important; }
+  .hdr img.logo { height: 40px; max-width: 140px; background: transparent !important; }
   .footer-print {
     display: block;
     position: running(footer);
@@ -779,7 +793,6 @@ tr.a-definir td, .a-definir-cell {
     html += renderComparePanel(d);
     html += renderPricingEditor(d);
     html += renderHistory();
-    html += renderPrintOptions();
     return html;
   }
 
@@ -812,14 +825,22 @@ tr.a-definir td, .a-definir-cell {
 
   function renderPricingEditor(d) {
     var ph = d.pricing_placeholders || {};
-    var html = "<div class=\"panel no-print\"><h3>Margem, montagem, transporte e preço final</h3>";
+    var quotes = d.factory_quotes || {};
+    var html = "<div class=\"panel no-print\"><h3>Margem, montagem, transporte e preço final ao cliente</h3>";
     html += "<div class=\"row\">";
     html += field("ph-margin-pct", "Margem %", ph.margin_percent);
     html += field("ph-margin-amt", "Margem €", ph.margin_amount_eur);
     html += field("ph-install", "Montagem / un. €", ph.installation_per_unit_eur);
     html += field("ph-ship", "Transporte / un. €", ph.shipping_per_unit_eur);
     html += field("ph-sell", "Preço final / un. €", ph.selling_price_per_unit_eur);
+    html += "<label>Fábrica escolhida<select id=\"ph-factory\">";
+    html += "<option value=\"\">—</option>";
+    Object.keys(quotes).forEach(function (k) {
+      html += "<option value=\"" + esc(k) + "\"" + (ph.approved_factory_key === k ? " selected" : "") + ">" + esc(quotes[k].factory_name || k) + "</option>";
+    });
+    html += "</select></label>";
     html += "</div>";
+    html += "<p class=\"cap\">O cliente só vê o preço final (após rubricas a definir preenchidas) e a fábrica escolhida.</p>";
     html += "<div class=\"row\"><label><input type=\"checkbox\" id=\"hide-margin\"" + ((d.editor_settings || {}).hide_margin_from_filipe ? " checked" : "") + "> Esconder margem na vista de edição</label>";
     html += "<button type=\"button\" class=\"btn\" id=\"adm-save-pricing\">Gravar preços</button></div></div>";
     return html;
@@ -840,28 +861,11 @@ tr.a-definir td, .a-definir-cell {
     return html;
   }
 
-  function renderPrintOptions() {
-    var secs = [
-      ["capa","Capa"],["resumo","Resumo"],["design","Design e planta"],["caixas","Caixas"],
-      ["dobradicas","Dobradiças"],["puxadores","Puxadores"],["portas","Sistemas de portas"],
-      ["equipamentos","Equipamentos"],["ventilacao","Ventilação"],["montagem","Montagem e transporte"],
-      ["totais","Tabela de preços"],["condicoes","Condições"],["assinatura","Assinatura"],["gaps","Lacunas"]
-    ];
-    var html = "<div class=\"panel no-print print-opts\"><h3>Secções a imprimir</h3>";
-    secs.forEach(function (s) {
-      var checked = state.printHide[s[0]] ? "" : " checked";
-      html += "<label><input type=\"checkbox\" data-sec=\"" + s[0] + "\" class=\"print-sec\"" + checked + "> " + esc(s[1]) + "</label>";
-    });
-    html += "</div>";
-    return html;
-  }
-
   function renderEditorBar() {
     if (!state.project) return "<p class=\"note\">Sem projecto.</p>";
     var html = "<div class=\"panel no-print\"><h3>Edição</h3>";
-    html += "<p class=\"note\">Altere preços, ligações e materiais no relatório e grave.</p>";
+    html += "<p class=\"note\">Edite linhas no relatório (custos, painéis, ferragens e artigos). A impressão inclui todas as secções.</p>";
     html += "<button type=\"button\" class=\"btn\" id=\"ed-save\">" + t("save") + "</button>";
-    html += renderPrintOptions();
     html += "</div>";
     return html;
   }
@@ -923,12 +927,7 @@ tr.a-definir td, .a-definir-cell {
     if (pricing.a_definir_pending) return t("noPrice");
     var base = pricing.selling_price_per_unit_eur;
     if (base == null) return t("noPrice");
-    var total = Number(base) || 0;
-    if (choice.with_installation && pricing.installation_per_unit_eur != null) total += Number(pricing.installation_per_unit_eur) || 0;
-    var mats = d.material_options || [];
-    var mat = mats.find(function (m) { return m.id === choice.material_option_id; });
-    if (mat && mat.unit_price_eur != null) total = Number(mat.unit_price_eur) || total;
-    return money(total);
+    return money(Number(base) || 0);
   }
 
   function renderReport(editable) {
@@ -938,18 +937,18 @@ tr.a-definir td, .a-definir-cell {
     var company = d.company || {};
     var project = d.project || {};
     var units = project.units || 1;
-    var hide = state.printHide;
 
     function sec(id, inner) {
-      var cls = hide[id] ? " sec-hide-print" : "";
-      return "<section class=\"doc-sec" + cls + "\" data-sec=\"" + id + "\">" + inner + "</section>";
+      return "<section class=\"doc-sec\" data-sec=\"" + id + "\">" + inner + "</section>";
     }
 
     var html = "<article class=\"report\" id=\"report\">";
+    var canEdit = editable && (role === "admin" || role === "khaled" || role === "filipe");
+    var isInternal = role === "admin" || role === "khaled" || role === "filipe";
 
     // 1 Capa
     html += sec("capa",
-      hdrHtml() +
+      hdrHtml(d) +
       "<h1 class=\"doc\">" + esc(project.name || state.project.title || "Orçamento") + "</h1>" +
       infoTable([
         ["Projecto", project.name],
@@ -977,43 +976,54 @@ tr.a-definir td, .a-definir-cell {
     );
 
     // 4 Caixas (+ box_costs nas vistas internas)
-    var canEditADef = role === "admin" || role === "khaled" || role === "filipe";
-    var isInternal = canEditADef;
     html += sec("caixas",
       "<h2 class=\"sec\">3. Caixas do móvel</h2>" +
       techAssetsHtml(d.assets || {}, d.boxes || [], role) +
       boxesTable(d.boxes || [], role) +
-      (role === "factory" || isInternal ? factoryPartsHtml(d) : "") +
+      (role === "factory" ? factoryPartsHtml(d) : "") +
       rematesHtml(d, role) +
       doorsInDesignHtml(d, role) +
       partsSheetsHtml(d, role) +
-      (isInternal ? boxCostsHtml(d, canEditADef) : "") +
+      (isInternal ? boxCostsHtml(d, canEdit) : "") +
       (isInternal ? checksAConfirmarHtml(d) : "")
     );
 
-    // Categories / items
+    // Categories / items (mostrar secções vazias se editável)
     var cats = d.categories || [];
     var byCat = {};
-    (d.items || []).forEach(function (it) {
+    (d.items || []).forEach(function (it, idx) {
+      if (it.archived) return;
+      it._idx = idx;
       var c = it.category || "outros";
       (byCat[c] = byCat[c] || []).push(it);
     });
     var catSec = {
-      dobradicas: ["dobradicas", "4. Dobradiças e puxadores · dobradiças"],
+      dobradicas: ["dobradicas", "4. Dobradiças"],
       puxadores: ["puxadores", "4b. Puxadores"],
-      sistemas_portas: ["portas", "5. Sistemas de portas"],
+      sistemas_portas: ["portas", "5. Portas / sistema de abertura"],
       eletrodomesticos: ["equipamentos", "6. Equipamentos"],
       ventilacao: ["ventilacao", "7. Ventilação e distâncias"],
       outros: ["equipamentos", "6b. Outros"]
     };
+    var seenCat = {};
     cats.forEach(function (c) {
       var items = byCat[c.id] || [];
-      if (!items.length) return;
-      var meta = catSec[c.id] || ["equipamentos", c.name];
+      if (!items.length && !canEdit) return;
+      seenCat[c.id] = true;
+      var meta = catSec[c.id] || [c.id, c.name];
       html += sec(meta[0],
         "<h2 class=\"sec\">" + esc(meta[1] || c.name) + "</h2>" +
-        itemsTable(items, role, editable)
+        itemsTable(items, role, canEdit, c.id)
       );
+    });
+    Object.keys(catSec).forEach(function (cid) {
+      if (seenCat[cid] || !canEdit) return;
+      if (!(byCat[cid] || []).length) {
+        html += sec(catSec[cid][0],
+          "<h2 class=\"sec\">" + esc(catSec[cid][1]) + "</h2>" +
+          itemsTable([], role, canEdit, cid)
+        );
+      }
     });
 
     // Montagem
@@ -1024,8 +1034,8 @@ tr.a-definir td, .a-definir-cell {
 
     // Totais
     html += sec("totais",
-      "<h2 class=\"sec\">9. Tabela de preços e opções</h2>" +
-      totaisBlock(d, role)
+      "<h2 class=\"sec\">9. Resumo de totais</h2>" +
+      (isInternal ? grandTotalsHtml(d) : totaisBlock(d, role))
     );
 
     // Condições
@@ -1060,8 +1070,22 @@ tr.a-definir td, .a-definir-cell {
     return html;
   }
 
-  function hdrHtml() {
-    return "<div class=\"hdr\"><img src=\"logo.png\" alt=\"Pimo Casa\"><div><div class=\"b\">PIMO CASA</div><div class=\"s\">Ferragens, sistemas de portas e equipamentos</div></div></div><div class=\"rule\"></div>";
+  function hdrHtml(d) {
+    var logoSrc = "logo.png";
+    if (d && d.assets && d.assets.logo) {
+      var u = assetUrl(d.assets.logo);
+      if (u) logoSrc = u;
+    }
+    return "<div class=\"hdr\"><img class=\"logo\" src=\"" + esc(logoSrc) + "\" alt=\"Pimo Casa\"><div><div class=\"b\">PIMO CASA</div><div class=\"s\">Ferragens, sistemas de portas e equipamentos</div></div></div><div class=\"rule\"></div>";
+  }
+
+  function edInp(path, val, opts) {
+    opts = opts || {};
+    var type = opts.type || "text";
+    var ph = opts.placeholder || "";
+    var cls = "ed" + (opts.cls ? " " + opts.cls : "");
+    var v = val == null ? "" : val;
+    return "<input class=\"" + cls + "\" type=\"" + type + "\" data-ed=\"" + esc(path) + "\" value=\"" + esc(v) + "\" placeholder=\"" + esc(ph) + "\">";
   }
 
   function infoTable(rows) {
@@ -1089,10 +1113,12 @@ tr.a-definir td, .a-definir-cell {
     var labels = {
       projeto_fechado: "Projecto fechado",
       projeto_perspetiva: "Perspectiva",
-      projeto_aberto: "Projecto aberto",
-      layout: "Planta / layout",
-      reference: "Referência"
+      projeto_aberto: "Projecto aberto"
     };
+    if (role !== "client") {
+      labels.layout = "Planta / layout";
+      labels.reference = "Referência";
+    }
     var proj = assets.projeto || {};
     Object.keys(labels).forEach(function (k) {
       var file = proj[k] || assets[k];
@@ -1310,82 +1336,116 @@ tr.a-definir td, .a-definir-cell {
     return n + " unidades";
   }
 
+  function sheetsSummaryHtml(bc, units) {
+    var panels = (bc.panels || []).filter(function (p) { return !p.archived; });
+    if (!panels.length) return "";
+    var parts = panels.map(function (p) {
+      var name = p.material || "Painel";
+      var th = p.thickness_mm != null ? (p.thickness_mm + " mm") : "";
+      var q1 = p.qty_per_unit != null ? p.qty_per_unit : "";
+      var qx = p.qty_project != null ? p.qty_project : (q1 !== "" ? Number(q1) * units : "");
+      return esc(name) + (th ? " " + esc(th) : "") + " ×" + esc(q1) + "/un. · ×" + esc(qx) + " projecto";
+    });
+    return "<p class=\"sheet-summary\"><strong>Chapas / painéis:</strong> " + parts.join("; ") + "</p>";
+  }
+
   function boxCostsHtml(d, canEdit) {
-    var bc = d.box_costs;
-    if (!bc || !bc.lines || !bc.lines.length) return "";
+    var bc = d.box_costs || { lines: [], panels: [], hardware: [], units: (d.project && d.project.units) || 1, iva_rate: 0.23 };
     var units = bc.units || (d.project && d.project.units) || 1;
     var html = "<h3 class=\"sub\">Custos das caixas</h3>";
-    html += "<table class=\"t\"><thead><tr><th>Rubrica</th><th class=\"n\">1 unidade</th><th class=\"n\">" + esc(unitsLabel(d)) + "</th></tr></thead><tbody>";
-    bc.lines.forEach(function (line) {
-      var isADef = line.flag === "a_definir" || line.render === "red";
+    html += sheetsSummaryHtml(bc, units);
+
+    html += "<table class=\"t\"><thead><tr><th>Rubrica</th><th>Descrição</th><th class=\"n\">1 unidade €</th><th class=\"n\">" + esc(unitsLabel(d)) + " €</th>";
+    if (canEdit) html += "<th></th>";
+    html += "</tr></thead><tbody>";
+    (bc.lines || []).forEach(function (line, i) {
+      if (line.archived) return;
+      var isADef = (line.flag === "a_definir" || line.render === "red") && line.per_unit_eur == null && line.project_eur == null;
       var cls = isADef ? " class=\"a-definir\"" : "";
-      html += "<tr" + cls + "><td>" + esc(line.label || line.key);
-      if (line.key === "adm") html += " <span class=\"cap\">(projecto completo)</span>";
-      html += "</td>";
-      if (isADef && (line.per_unit_eur == null && line.project_eur == null)) {
-        var ref = line.reference_pimo_oficial_per_unit_eur;
-        var cell = "a definir";
-        if (ref != null) cell += " <span class=\"cap\">(ref. " + esc(money(ref)) + "/un.)</span>";
-        if (canEdit) {
-          html += "<td class=\"n a-definir-cell\"><input class=\"a-definir-input\" data-adef-key=\"" + esc(line.key) + "\" data-adef-scope=\"per_unit\" placeholder=\"€ / un.\"></td>";
-          if (line.key === "adm") {
-            html += "<td class=\"n a-definir-cell\"><input class=\"a-definir-input\" data-adef-key=\"adm\" data-adef-scope=\"project\" placeholder=\"€ projecto\"></td>";
-          } else {
-            html += "<td class=\"n a-definir-cell\">" + cell + "</td>";
-          }
-        } else {
-          html += "<td class=\"n\">" + cell + "</td><td class=\"n\">" + cell + "</td>";
+      html += "<tr" + cls + " data-line-i=\"" + i + "\">";
+      if (canEdit) {
+        html += "<td>" + edInp("box_costs.lines." + i + ".label", line.label || line.key);
+        if (line.key === "adm") html += "<div class=\"cap\">(projecto completo)</div>";
+        if (isADef) {
+          var ref = line.reference_pimo_oficial_per_unit_eur;
+          html += "<div class=\"cap\">a definir" + (ref != null ? " · ref. " + money(ref) + "/un." : "") + "</div>";
         }
+        html += "</td>";
+        html += "<td>" + edInp("box_costs.lines." + i + ".pimo_note", line.pimo_note || line.notes_pt || "", { placeholder: "nota" }) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.lines." + i + ".per_unit_eur", line.per_unit_eur, { type: "text", placeholder: "€ / un.", cls: line.key === "adm" ? "" : "a-definir-input" }) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.lines." + i + ".project_eur", line.project_eur, { type: "text", placeholder: "€ projecto" }) + "</td>";
+        html += "<td class=\"no-print\"><button type=\"button\" class=\"btn danger ed-archive\" data-path=\"box_costs.lines\" data-i=\"" + i + "\">Remover</button></td>";
       } else {
-        var pu = line.per_unit_eur;
-        var pr = line.project_eur;
-        if (line.key === "adm" && pu == null && pr != null) {
-          html += "<td class=\"n\">-</td><td class=\"n\">" + esc(money(pr));
-          if (canEdit) html += " <input class=\"a-definir-input\" data-adef-key=\"adm\" data-adef-scope=\"project\" value=\"" + esc(pr) + "\">";
-          html += "</td>";
-        } else {
-          html += "<td class=\"n\">" + esc(pu == null ? "-" : money(pu));
-          if (canEdit && isADef) html += " <input class=\"a-definir-input\" data-adef-key=\"" + esc(line.key) + "\" data-adef-scope=\"per_unit\" value=\"" + esc(pu) + "\">";
-          html += "</td><td class=\"n\">" + esc(pr == null ? (pu != null ? money(pu * units) : "-") : money(pr)) + "</td>";
-        }
+        html += "<td>" + esc(line.label || line.key) + (isADef ? " <span class=\"cap\">a definir</span>" : "") + "</td>";
+        html += "<td>" + esc(line.pimo_note || "") + "</td>";
+        html += "<td class=\"n\">" + esc(line.per_unit_eur == null ? (isADef ? "a definir" : "-") : money(line.per_unit_eur)) + "</td>";
+        html += "<td class=\"n\">" + esc(line.project_eur == null ? (isADef ? "a definir" : "-") : money(line.project_eur)) + "</td>";
       }
       html += "</tr>";
     });
     html += "</tbody></table>";
     if (canEdit) {
-      html += "<div class=\"row no-print\" style=\"margin:8px 0 12px\"><button type=\"button\" class=\"btn\" id=\"btn-save-adef\">Gravar rubricas a definir</button></div>";
+      html += "<div class=\"ed-actions no-print\"><button type=\"button\" class=\"btn secondary\" id=\"btn-add-cost-line\">Adicionar linha de custo</button></div>";
     }
 
-    if (bc.panels && bc.panels.length) {
-      html += "<h3 class=\"sub\">Painéis</h3><table class=\"t\"><thead><tr><th>Material</th><th>Esp. mm</th><th class=\"n\">Qtd / un.</th><th class=\"n\">Qtd projecto</th><th class=\"n\">1 unidade</th><th class=\"n\">" + esc(unitsLabel(d)) + "</th></tr></thead><tbody>";
-      bc.panels.forEach(function (p) {
-        html += "<tr><td>" + esc(p.material) + "</td><td>" + esc(p.thickness_mm) + "</td>";
+    html += "<h3 class=\"sub\">Painéis</h3>";
+    html += "<table class=\"t\"><thead><tr><th>Material</th><th>Esp. mm</th><th class=\"n\">Qtd / un.</th><th class=\"n\">Qtd projecto</th><th class=\"n\">Preço un. €</th><th class=\"n\">Total / un. €</th><th class=\"n\">Total projecto €</th>";
+    if (canEdit) html += "<th></th>";
+    html += "</tr></thead><tbody>";
+    (bc.panels || []).forEach(function (p, i) {
+      if (p.archived) return;
+      var totU = p.per_unit_eur != null ? p.per_unit_eur : (p.unit_price_eur != null && p.qty_per_unit != null ? Number(p.unit_price_eur) * Number(p.qty_per_unit) : null);
+      html += "<tr>";
+      if (canEdit) {
+        html += "<td>" + edInp("box_costs.panels." + i + ".material", p.material) + "</td>";
+        html += "<td>" + edInp("box_costs.panels." + i + ".thickness_mm", p.thickness_mm) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.panels." + i + ".qty_per_unit", p.qty_per_unit) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.panels." + i + ".qty_project", p.qty_project) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.panels." + i + ".unit_price_eur", p.unit_price_eur) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.panels." + i + ".per_unit_eur", totU) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.panels." + i + ".project_eur", p.project_eur) + "</td>";
+        html += "<td class=\"no-print\"><button type=\"button\" class=\"btn danger ed-archive\" data-path=\"box_costs.panels\" data-i=\"" + i + "\">Remover</button></td>";
+      } else {
+        html += "<td>" + esc(p.material) + "</td><td>" + esc(p.thickness_mm) + "</td>";
         html += "<td class=\"n\">" + esc(p.qty_per_unit) + "</td><td class=\"n\">" + esc(p.qty_project) + "</td>";
-        html += "<td class=\"n\">" + esc(money(p.per_unit_eur)) + "</td><td class=\"n\">" + esc(money(p.project_eur)) + "</td></tr>";
-      });
-      html += "</tbody></table>";
-    }
-    if (bc.hardware && bc.hardware.length) {
-      html += "<h3 class=\"sub\">Ferragens de caixa</h3><table class=\"t\"><thead><tr><th>Tipo</th><th class=\"n\">Qtd / un.</th><th class=\"n\">Qtd projecto</th><th class=\"n\">1 unidade</th><th class=\"n\">" + esc(unitsLabel(d)) + "</th></tr></thead><tbody>";
-      bc.hardware.forEach(function (h) {
-        html += "<tr><td>" + esc(h.type) + (h.notes ? "<div class=\"cap\">" + esc(h.notes) + "</div>" : "") + "</td>";
-        html += "<td class=\"n\">" + esc(h.qty_per_unit) + "</td><td class=\"n\">" + esc(h.qty_project) + "</td>";
-        html += "<td class=\"n\">" + esc(money(h.per_unit_eur)) + "</td><td class=\"n\">" + esc(money(h.project_eur)) + "</td></tr>";
-      });
-      html += "</tbody></table>";
-    }
-
-    var totals = computeBoxTotals(d);
-    html += "<h3 class=\"sub\">Totais (caixas)</h3>";
-    if (totals.pending.length) {
-      html += "<p class=\"totals-note-warn\">Total sem rubricas a definir (" + esc(totals.pending.join(", ")) + ").</p>";
-    }
-    html += "<table class=\"t\"><thead><tr><th></th><th class=\"n\">1 unidade</th><th class=\"n\">" + esc(unitsLabel(d)) + "</th></tr></thead><tbody>";
-    html += "<tr><td>Subtotal s/ IVA</td><td class=\"n\">" + esc(money(totals.sub_u)) + "</td><td class=\"n\">" + esc(money(totals.sub_p)) + "</td></tr>";
-    html += "<tr><td>IVA " + esc(String(Math.round((bc.iva_rate || 0.23) * 100))) + "%</td><td class=\"n\">" + esc(money(totals.iva_u)) + "</td><td class=\"n\">" + esc(money(totals.iva_p)) + "</td></tr>";
-    html += "<tr class=\"tot\"><td>Total c/ IVA</td><td class=\"n\">" + esc(money(totals.tot_u)) + "</td><td class=\"n\">" + esc(money(totals.tot_p)) + "</td></tr>";
+        html += "<td class=\"n\">" + esc(money(p.unit_price_eur)) + "</td><td class=\"n\">" + esc(money(totU)) + "</td><td class=\"n\">" + esc(money(p.project_eur)) + "</td>";
+      }
+      html += "</tr>";
+    });
     html += "</tbody></table>";
-    if (bc.totals && bc.totals.note_pt) html += "<p class=\"cap\">" + esc(bc.totals.note_pt) + "</p>";
+    if (canEdit) html += "<div class=\"ed-actions no-print\"><button type=\"button\" class=\"btn secondary\" id=\"btn-add-panel\">Adicionar painel</button></div>";
+
+    html += "<h3 class=\"sub\">Ferragens de caixa</h3>";
+    html += "<table class=\"t\"><thead><tr><th>Tipo</th><th>Notas</th><th class=\"n\">Qtd / un.</th><th class=\"n\">Qtd projecto</th><th class=\"n\">Preço un. €</th><th class=\"n\">Total / un. €</th><th class=\"n\">Total projecto €</th>";
+    if (canEdit) html += "<th></th>";
+    html += "</tr></thead><tbody>";
+    (bc.hardware || []).forEach(function (h, i) {
+      if (h.archived) return;
+      var totU = h.per_unit_eur != null ? h.per_unit_eur : (h.unit_price_eur != null && h.qty_per_unit != null ? Number(h.unit_price_eur) * Number(h.qty_per_unit) : null);
+      html += "<tr>";
+      if (canEdit) {
+        html += "<td>" + edInp("box_costs.hardware." + i + ".type", h.type) + "</td>";
+        html += "<td>" + edInp("box_costs.hardware." + i + ".notes", h.notes || h.pimo_note || "") + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.hardware." + i + ".qty_per_unit", h.qty_per_unit) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.hardware." + i + ".qty_project", h.qty_project) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.hardware." + i + ".unit_price_eur", h.unit_price_eur) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.hardware." + i + ".per_unit_eur", totU) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.hardware." + i + ".project_eur", h.project_eur) + "</td>";
+        html += "<td class=\"no-print\"><button type=\"button\" class=\"btn danger ed-archive\" data-path=\"box_costs.hardware\" data-i=\"" + i + "\">Remover</button></td>";
+      } else {
+        html += "<td>" + esc(h.type) + "</td><td>" + esc(h.notes || "") + "</td>";
+        html += "<td class=\"n\">" + esc(h.qty_per_unit) + "</td><td class=\"n\">" + esc(h.qty_project) + "</td>";
+        html += "<td class=\"n\">" + esc(money(h.unit_price_eur)) + "</td><td class=\"n\">" + esc(money(totU)) + "</td><td class=\"n\">" + esc(money(h.project_eur)) + "</td>";
+      }
+      html += "</tr>";
+    });
+    html += "</tbody></table>";
+    if (canEdit) {
+      html += "<div class=\"ed-actions no-print\">";
+      html += "<button type=\"button\" class=\"btn secondary\" id=\"btn-add-hw\">Adicionar ferragem</button>";
+      html += "<button type=\"button\" class=\"btn\" id=\"btn-save-adef\">Gravar alterações</button>";
+      html += "</div>";
+    }
     return html;
   }
 
@@ -1397,6 +1457,7 @@ tr.a-definir td, .a-definir-cell {
     var pending = [];
     var sub_u = 0, sub_p = 0;
     (bc.lines || []).forEach(function (line) {
+      if (line.archived) return;
       var isADef = line.flag === "a_definir" || (aKeys.indexOf(line.key) >= 0);
       var pu = line.per_unit_eur;
       var pr = line.project_eur;
@@ -1405,20 +1466,36 @@ tr.a-definir td, .a-definir-cell {
         return;
       }
       if (line.key === "adm") {
-        if (pr != null) { sub_p += Number(pr) || 0; }
-        else if (pu != null) { sub_p += Number(pu) || 0; }
+        if (pr != null) sub_p += Number(pr) || 0;
+        else if (pu != null) sub_p += Number(pu) || 0;
         return;
       }
       if (pu != null) sub_u += Number(pu) || 0;
       if (pr != null) sub_p += Number(pr) || 0;
       else if (pu != null) sub_p += (Number(pu) || 0) * units;
     });
-    // Se só há linhas ok, preferir totals do JSON quando não há pending e totals existem
-    if (!pending.length && bc.totals && bc.totals.subtotal_ex_iva && (bc.lines || []).every(function (l) {
-      return l.flag !== "a_definir" || l.per_unit_eur != null || l.project_eur != null;
-    })) {
-      // keep computed from filled lines (includes newly filled a_definir)
-    }
+    (bc.panels || []).forEach(function (p) {
+      if (p.archived) return;
+      var pu = p.per_unit_eur != null ? Number(p.per_unit_eur) : (p.unit_price_eur != null && p.qty_per_unit != null ? Number(p.unit_price_eur) * Number(p.qty_per_unit) : 0);
+      var pr = p.project_eur != null ? Number(p.project_eur) : pu * units;
+      sub_u += pu || 0;
+      sub_p += pr || 0;
+    });
+    (bc.hardware || []).forEach(function (h) {
+      if (h.archived) return;
+      var pu = h.per_unit_eur != null ? Number(h.per_unit_eur) : (h.unit_price_eur != null && h.qty_per_unit != null ? Number(h.unit_price_eur) * Number(h.qty_per_unit) : 0);
+      var pr = h.project_eur != null ? Number(h.project_eur) : pu * units;
+      sub_u += pu || 0;
+      sub_p += pr || 0;
+    });
+    (d.items || []).forEach(function (it) {
+      if (it.archived) return;
+      var q = it.qty_per_unit != null ? Number(it.qty_per_unit) : 0;
+      var price = it.unit_price_eur != null ? Number(it.unit_price_eur) : 0;
+      var pu = q * price;
+      sub_u += pu;
+      sub_p += pu * units;
+    });
     return {
       pending: pending,
       sub_u: sub_u,
@@ -1426,124 +1503,184 @@ tr.a-definir td, .a-definir-cell {
       iva_u: sub_u * rate,
       iva_p: sub_p * rate,
       tot_u: sub_u * (1 + rate),
-      tot_p: sub_p * (1 + rate)
+      tot_p: sub_p * (1 + rate),
+      rate: rate,
+      units: units
     };
   }
 
-  function applyADefinirToData(d) {
-    d.box_costs = d.box_costs || { lines: [], units: (d.project && d.project.units) || 1, iva_rate: 0.23 };
+  function grandTotalsHtml(d) {
+    var tot = computeBoxTotals(d);
+    var html = "<div class=\"grand-totals\">";
+    if (tot.pending.length) {
+      html += "<p class=\"totals-note-warn\">Total sem rubricas a definir (" + esc(tot.pending.join(", ")) + ").</p>";
+    }
+    html += "<table class=\"t\"><thead><tr><th></th><th class=\"n\">1 unidade</th><th class=\"n\">" + esc(tot.units + " unidades") + "</th></tr></thead><tbody>";
+    html += "<tr><td>Subtotal s/ IVA</td><td class=\"n\">" + esc(money(tot.sub_u)) + "</td><td class=\"n\">" + esc(money(tot.sub_p)) + "</td></tr>";
+    html += "<tr><td>IVA " + esc(String(Math.round(tot.rate * 100))) + "%</td><td class=\"n\">" + esc(money(tot.iva_u)) + "</td><td class=\"n\">" + esc(money(tot.iva_p)) + "</td></tr>";
+    html += "<tr class=\"tot\"><td>Total c/ IVA</td><td class=\"n\">" + esc(money(tot.tot_u)) + "</td><td class=\"n\">" + esc(money(tot.tot_p)) + "</td></tr>";
+    html += "</tbody></table></div>";
+    return html;
+  }
+
+  function parseNum(raw) {
+    if (raw == null) return null;
+    var s = String(raw).trim();
+    if (s === "") return null;
+    var n = Number(s.replace(",", "."));
+    return isNaN(n) ? null : n;
+  }
+
+  function setByPath(obj, path, value) {
+    var parts = path.split(".");
+    var cur = obj;
+    for (var i = 0; i < parts.length - 1; i++) {
+      var p = parts[i];
+      var next = parts[i + 1];
+      var idx = /^\d+$/.test(p) ? Number(p) : p;
+      if (cur[idx] == null) cur[idx] = /^\d+$/.test(next) ? [] : {};
+      cur = cur[idx];
+    }
+    var last = parts[parts.length - 1];
+    var key = /^\d+$/.test(last) ? Number(last) : last;
+    if (/_eur$|_mm$|qty_|per_unit|project_eur|unit_price|thickness/.test(String(key)) || key === "qty_per_unit" || key === "qty_project") {
+      cur[key] = parseNum(value);
+    } else {
+      cur[key] = value;
+    }
+  }
+
+  function collectEditorToData(d) {
+    d.box_costs = d.box_costs || { lines: [], panels: [], hardware: [], units: (d.project && d.project.units) || 1, iva_rate: 0.23 };
     d.pricing_placeholders = d.pricing_placeholders || {};
+    d.items = d.items || [];
     var units = d.box_costs.units || (d.project && d.project.units) || 1;
-    var mapPh = {
-      margem: function (pu, pr) {
-        d.pricing_placeholders.margin_amount_eur = pu;
-      },
-      portes: function (pu) {
-        d.pricing_placeholders.shipping_per_unit_eur = pu;
-        d.pricing_placeholders.shipping_x6_eur = pu != null ? pu * units : null;
-      },
-      montagem: function (pu) {
-        d.pricing_placeholders.installation_per_unit_eur = pu;
-        d.pricing_placeholders.installation_x6_eur = pu != null ? pu * units : null;
-      },
-      mao_de_obra: function (pu) {
-        d.pricing_placeholders.fabrication_per_unit_eur = pu;
-        d.pricing_placeholders.fabrication_x6_eur = pu != null ? pu * units : null;
-      },
-      design: function (pu) {
-        d.pricing_placeholders.design_per_unit_eur = pu;
-        d.pricing_placeholders.design_x6_eur = pu != null ? pu * units : null;
-      },
-      adm: function (pu, pr) {
-        d.pricing_placeholders.adm_project_eur = pr != null ? pr : pu;
-      }
-    };
-    document.querySelectorAll(".a-definir-input").forEach(function (inp) {
-      var key = inp.getAttribute("data-adef-key");
-      var scope = inp.getAttribute("data-adef-scope");
-      var raw = inp.value.trim();
-      var val = raw === "" ? null : Number(raw.replace(",", "."));
-      if (val != null && isNaN(val)) val = null;
-      var line = (d.box_costs.lines || []).find(function (l) { return l.key === key; });
-      if (!line) {
-        line = { key: key, label: key, flag: "a_definir", render: "red", visibility: "internal_only" };
-        d.box_costs.lines.push(line);
-      }
-      if (scope === "project" || key === "adm") {
-        if (val != null) {
-          line.project_eur = val;
-          line.per_unit_eur = null;
-          line.flag = "ok";
-          line.render = "normal";
+    document.querySelectorAll("[data-ed]").forEach(function (inp) {
+      setByPath(d, inp.getAttribute("data-ed"), inp.value);
+    });
+    (d.box_costs.lines || []).forEach(function (line) {
+      if (line.archived) return;
+      var aKeys = d.box_costs.a_definir_keys || [];
+      var isKey = aKeys.indexOf(line.key) >= 0;
+      if (line.per_unit_eur == null && line.project_eur == null && (isKey || line.flag === "a_definir")) {
+        line.flag = "a_definir";
+        line.render = "red";
+      } else if (line.per_unit_eur != null || line.project_eur != null) {
+        if (line.key !== "adm" && line.per_unit_eur != null && line.project_eur == null) {
+          line.project_eur = Number(line.per_unit_eur) * units;
         }
-      } else if (val != null) {
-        line.per_unit_eur = val;
-        line.project_eur = val * units;
         line.flag = "ok";
         line.render = "normal";
       }
-      if (mapPh[key]) mapPh[key](line.per_unit_eur, line.project_eur);
+      if (line.key === "margem") d.pricing_placeholders.margin_amount_eur = line.per_unit_eur;
+      if (line.key === "portes") {
+        d.pricing_placeholders.shipping_per_unit_eur = line.per_unit_eur;
+        d.pricing_placeholders.shipping_x6_eur = line.project_eur;
+      }
+      if (line.key === "montagem") {
+        d.pricing_placeholders.installation_per_unit_eur = line.per_unit_eur;
+        d.pricing_placeholders.installation_x6_eur = line.project_eur;
+      }
+      if (line.key === "mao_de_obra") {
+        d.pricing_placeholders.fabrication_per_unit_eur = line.per_unit_eur;
+        d.pricing_placeholders.fabrication_x6_eur = line.project_eur;
+      }
+      if (line.key === "design") {
+        d.pricing_placeholders.design_per_unit_eur = line.per_unit_eur;
+        d.pricing_placeholders.design_x6_eur = line.project_eur;
+      }
+      if (line.key === "adm") d.pricing_placeholders.adm_project_eur = line.project_eur != null ? line.project_eur : line.per_unit_eur;
+    });
+    (d.box_costs.panels || []).forEach(function (p) {
+      if (p.archived) return;
+      if (p.unit_price_eur != null && p.qty_per_unit != null && p.per_unit_eur == null) {
+        p.per_unit_eur = Number(p.unit_price_eur) * Number(p.qty_per_unit);
+      }
+      if (p.per_unit_eur != null && p.project_eur == null) p.project_eur = Number(p.per_unit_eur) * units;
+      if (p.qty_per_unit != null && p.qty_project == null) p.qty_project = Number(p.qty_per_unit) * units;
+    });
+    (d.box_costs.hardware || []).forEach(function (h) {
+      if (h.archived) return;
+      if (h.unit_price_eur != null && h.qty_per_unit != null && h.per_unit_eur == null) {
+        h.per_unit_eur = Number(h.unit_price_eur) * Number(h.qty_per_unit);
+      }
+      if (h.per_unit_eur != null && h.project_eur == null) h.project_eur = Number(h.per_unit_eur) * units;
+      if (h.qty_per_unit != null && h.qty_project == null) h.qty_project = Number(h.qty_per_unit) * units;
+    });
+    (d.items || []).forEach(function (it) {
+      if (it.archived) return;
+      if (it.qty_per_unit != null && it.qty_project == null) it.qty_project = Number(it.qty_per_unit) * units;
     });
     var tot = computeBoxTotals(d);
     d.box_costs.totals = d.box_costs.totals || {};
     d.box_costs.totals.subtotal_ex_iva = { per_unit: tot.sub_u, project: tot.sub_p };
     d.box_costs.totals.iva = { per_unit: tot.iva_u, project: tot.iva_p };
     d.box_costs.totals.total_incl_iva = { per_unit: tot.tot_u, project: tot.tot_p };
-    if (!tot.pending.length) {
-      d.pricing_placeholders.selling_price_per_unit_eur = tot.tot_u;
-      d.pricing_placeholders.selling_price_x6_eur = tot.tot_p;
-    }
     return d;
   }
 
-  function itemsTable(items, role, editable) {
+  function applyADefinirToData(d) {
+    return collectEditorToData(d);
+  }
+
+  function itemsTable(items, role, editable, categoryId) {
     var showCost = role === "admin" || role === "khaled" || role === "filipe";
+    var factory = role === "factory";
     var html = "<table class=\"t\"><thead><tr>";
-    html += "<th>Artigo</th><th>Modelo</th>";
-    if (showCost) html += "<th>Fornecedor</th><th class=\"n\">Preço un.</th>";
-    html += "<th class=\"n\">Qtd</th><th>Estado</th></tr></thead><tbody>";
+    html += "<th>Nome</th><th>Descrição / ref.</th>";
+    if (showCost) html += "<th>Fornecedor</th><th>URL</th><th class=\"n\">Preço un. €</th>";
+    else if (!factory) html += "<th>Estado</th>";
+    html += "<th class=\"n\">Qtd / un.</th><th class=\"n\">Qtd projecto</th>";
+    if (editable) html += "<th></th>";
+    html += "</tr></thead><tbody>";
     items.forEach(function (it) {
+      var i = it._idx;
       html += "<tr>";
-      html += "<td><strong>" + esc(it.name) + "</strong>";
-      if (it.image) {
-        var u = assetUrl(it.image);
-        if (u) html += "<br><img src=\"" + esc(u) + "\" alt=\"\" style=\"max-width:72px;max-height:72px;margin-top:4px\">";
-      } else if (it.brand) {
-        html += "<div class=\"cap\">" + esc(it.brand) + "</div>";
-      }
-      html += "</td>";
-      html += "<td>" + esc(it.model || it.ref || "") + "</td>";
-      if (showCost) {
-        html += "<td>" + esc(it.supplier || "");
-        if (it.url) html += "<div class=\"cap\"><a href=\"" + esc(it.url) + "\" target=\"_blank\" rel=\"noopener\">Comprar</a></div>";
+      if (editable) {
+        html += "<td>" + edInp("items." + i + ".name", it.name) + "</td>";
+        html += "<td>" + edInp("items." + i + ".model", it.model || it.ref || "", { placeholder: "modelo / ref." });
+        html += edInp("items." + i + ".notes_pt", it.notes_pt || it.description_pt || "", { placeholder: "descrição" });
         html += "</td>";
-        var cell;
-        if (it.unit_price_eur == null) cell = priceStatusLabel(it.price_status) || "-";
-        else cell = money(it.unit_price_eur);
-        html += "<td class=\"n\">" + esc(cell) + "</td>";
+        html += "<td>" + edInp("items." + i + ".supplier", it.supplier || "") + "</td>";
+        html += "<td>" + edInp("items." + i + ".url", it.url || "", { placeholder: "https://" }) + "</td>";
+        html += "<td class=\"n\">" + edInp("items." + i + ".unit_price_eur", it.unit_price_eur) + "</td>";
+        html += "<td class=\"n\">" + edInp("items." + i + ".qty_per_unit", it.qty_per_unit) + "</td>";
+        html += "<td class=\"n\">" + edInp("items." + i + ".qty_project", it.qty_project) + "</td>";
+        html += "<td class=\"no-print\"><button type=\"button\" class=\"btn danger ed-archive\" data-path=\"items\" data-i=\"" + i + "\">Remover</button></td>";
+      } else if (factory) {
+        html += "<td><strong>" + esc(it.name) + "</strong></td>";
+        html += "<td>" + esc(it.model || it.ref || "") + (it.notes_pt ? "<div class=\"cap\">" + esc(it.notes_pt) + "</div>" : "") + "</td>";
+        html += "<td class=\"n\">" + esc(it.qty_per_unit == null ? "" : it.qty_per_unit) + "</td>";
+        html += "<td class=\"n\">" + esc(it.qty_project == null ? "" : it.qty_project) + "</td>";
+      } else {
+        html += "<td><strong>" + esc(it.name) + "</strong></td>";
+        html += "<td>" + esc(it.model || it.ref || "") + "</td>";
+        if (showCost) {
+          html += "<td>" + esc(it.supplier || "") + "</td>";
+          html += "<td>" + (it.url ? "<a href=\"" + esc(it.url) + "\" target=\"_blank\" rel=\"noopener\">ligação</a>" : "") + "</td>";
+          html += "<td class=\"n\">" + esc(it.unit_price_eur == null ? (priceStatusLabel(it.price_status) || "-") : money(it.unit_price_eur)) + "</td>";
+        } else {
+          html += "<td>" + esc(priceStatusLabel(it.price_status) || "") + "</td>";
+        }
+        html += "<td class=\"n\">" + esc(it.qty_per_unit == null ? "" : it.qty_per_unit) + "</td>";
+        html += "<td class=\"n\">" + esc(it.qty_project == null ? "" : it.qty_project) + "</td>";
       }
-      html += "<td class=\"n\">" + esc(it.qty_per_unit == null ? "" : it.qty_per_unit) + "</td>";
-      html += "<td>" + esc(priceStatusLabel(it.price_status) || (it.option_group || "")) + "</td>";
       html += "</tr>";
-      if (it.notes_pt || it.fits_notes) {
-        html += "<tr><td colspan=\"" + (showCost ? 6 : 4) + "\" class=\"note\">" + esc(it.notes_pt || it.fits_notes) + "</td></tr>";
-      }
     });
     html += "</tbody></table>";
+    if (editable) {
+      html += "<div class=\"ed-actions no-print\"><button type=\"button\" class=\"btn secondary ed-add-item\" data-cat=\"" + esc(categoryId || "outros") + "\">Adicionar linha</button></div>";
+    }
     return html;
   }
 
   function montagemBlock(d, role) {
     var ph = d.pricing_placeholders || d.pricing || {};
-    if (role === "factory" || role === "client") {
-      var html = "<p>";
-      if (role === "client") {
-        html += "Montagem: " + (ph.installation_per_unit_eur != null ? money(ph.installation_per_unit_eur) : "a confirmar") + "<br>";
-        html += "Transporte: " + (ph.shipping_per_unit_eur != null ? money(ph.shipping_per_unit_eur) : "a confirmar");
-      } else {
-        html += "Indique montagem e transporte no formulário de cotação.";
-      }
-      return html + "</p>";
+    if (role === "client") {
+      return "<p class=\"note\">O preço final inclui as condições acordadas.</p>";
+    }
+    if (role === "factory") {
+      return "<p>Indique montagem e transporte no formulário de cotação (sem ver preços internos).</p>";
     }
     return infoTable([
       ["Montagem / un.", money(ph.installation_per_unit_eur, "a preencher")],
@@ -1558,7 +1695,9 @@ tr.a-definir td, .a-definir-cell {
     }
     if (role === "client") {
       var p = d.pricing || {};
-      return "<p class=\"price-tag\">" + (p.selling_price_per_unit_eur != null ? money(p.selling_price_per_unit_eur) + " / unidade" : t("noPrice")) + "</p>";
+      var tag = p.selling_price_per_unit_eur != null ? money(p.selling_price_per_unit_eur) + " / unidade" : t("noPrice");
+      if (p.approved_factory_key) tag += "<div class=\"cap\">Fábrica escolhida: " + esc(p.approved_factory_key) + "</div>";
+      return "<p class=\"price-tag\">" + tag + "</p>";
     }
     var ph = d.pricing_placeholders || {};
     var html = infoTable([
@@ -1657,18 +1796,96 @@ tr.a-definir td, .a-definir-cell {
     });
   }
 
+  function saveEditorData(note) {
+    collectEditorToData(state.data);
+    return api("project.php", {
+      method: "POST",
+      body: { id: state.projectId, data: state.data, note: note || "edição" }
+    }).then(function () {
+      toast("Gravado");
+      return openProject(state.projectId);
+    });
+  }
+
   function bindADefinirSave() {
     var btn = document.getElementById("btn-save-adef");
-    if (!btn) return;
-    btn.addEventListener("click", function () {
-      applyADefinirToData(state.data);
-      api("project.php", {
-        method: "POST",
-        body: { id: state.projectId, data: state.data, note: "rubricas a definir" }
-      }).then(function () {
-        toast("Rubricas gravadas");
-        return openProject(state.projectId);
-      }).catch(function (e) { toast(e.message); });
+    if (btn) {
+      btn.addEventListener("click", function () {
+        saveEditorData("edição custos / linhas").catch(function (e) { toast(e.message); });
+      });
+    }
+    bindEditorExtras();
+  }
+
+  function bindEditorExtras() {
+    var units = (state.data.box_costs && state.data.box_costs.units) || (state.data.project && state.data.project.units) || 1;
+    document.querySelectorAll(".ed-archive").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        if (!confirm("Remover (arquivar) esta linha?")) return;
+        collectEditorToData(state.data);
+        var path = btn.getAttribute("data-path");
+        var i = Number(btn.getAttribute("data-i"));
+        var arr = path === "items" ? state.data.items : path.split(".").reduce(function (o, k) { return o[k]; }, state.data);
+        if (arr && arr[i]) arr[i].archived = true;
+        saveEditorData("remover linha").catch(function (e) { toast(e.message); });
+      });
+    });
+    var addLine = document.getElementById("btn-add-cost-line");
+    if (addLine) addLine.addEventListener("click", function () {
+      collectEditorToData(state.data);
+      state.data.box_costs = state.data.box_costs || { lines: [] };
+      state.data.box_costs.lines = state.data.box_costs.lines || [];
+      state.data.box_costs.lines.push({
+        key: "extra_" + Date.now(),
+        label: "Nova rubrica",
+        per_unit_eur: null,
+        project_eur: null,
+        flag: "ok",
+        render: "normal",
+        visibility: "internal_only"
+      });
+      saveEditorData("adicionar linha de custo").catch(function (e) { toast(e.message); });
+    });
+    var addPanel = document.getElementById("btn-add-panel");
+    if (addPanel) addPanel.addEventListener("click", function () {
+      collectEditorToData(state.data);
+      state.data.box_costs.panels = state.data.box_costs.panels || [];
+      state.data.box_costs.panels.push({ material: "Novo painel", thickness_mm: 19, qty_per_unit: 1, qty_project: units, unit_price_eur: null, per_unit_eur: null, project_eur: null });
+      saveEditorData("adicionar painel").catch(function (e) { toast(e.message); });
+    });
+    var addHw = document.getElementById("btn-add-hw");
+    if (addHw) addHw.addEventListener("click", function () {
+      collectEditorToData(state.data);
+      state.data.box_costs.hardware = state.data.box_costs.hardware || [];
+      state.data.box_costs.hardware.push({ type: "Nova ferragem", qty_per_unit: 1, qty_project: units, unit_price_eur: null, per_unit_eur: null, project_eur: null, notes: "" });
+      saveEditorData("adicionar ferragem").catch(function (e) { toast(e.message); });
+    });
+    document.querySelectorAll(".ed-add-item").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        collectEditorToData(state.data);
+        var cat = btn.getAttribute("data-cat") || "outros";
+        state.data.items = state.data.items || [];
+        state.data.items.push({
+          id: "item-" + Date.now(),
+          category: cat,
+          kind: cat,
+          name: "Novo artigo",
+          model: "",
+          notes_pt: "",
+          supplier: "",
+          url: null,
+          unit_price_eur: null,
+          qty_per_unit: 1,
+          qty_project: units,
+          price_status: null
+        });
+        var cats = state.data.categories || [];
+        if (!cats.some(function (c) { return c.id === cat; })) {
+          cats.push({ id: cat, name: cat });
+          state.data.categories = cats;
+        }
+        saveEditorData("adicionar artigo").catch(function (e) { toast(e.message); });
+      });
     });
   }
 
@@ -1827,6 +2044,8 @@ tr.a-definir td, .a-definir-cell {
     d.pricing_placeholders.installation_per_unit_eur = num("ph-install");
     d.pricing_placeholders.shipping_per_unit_eur = num("ph-ship");
     d.pricing_placeholders.selling_price_per_unit_eur = num("ph-sell");
+    var facSel = document.getElementById("ph-factory");
+    d.pricing_placeholders.approved_factory_key = facSel && facSel.value ? facSel.value : null;
     var units = (d.project && d.project.units) || 1;
     if (d.pricing_placeholders.selling_price_per_unit_eur != null) {
       d.pricing_placeholders.selling_price_x6_eur = d.pricing_placeholders.selling_price_per_unit_eur * units;
@@ -1848,12 +2067,8 @@ tr.a-definir td, .a-definir-cell {
     bindADefinirSave();
     var b = document.getElementById("ed-save");
     if (b) b.addEventListener("click", function () {
-      applyADefinirToData(state.data);
-      api("project.php", { method: "POST", body: { id: state.projectId, data: state.data, note: "edição" } })
-        .then(function () { toast("Gravado"); return openProject(state.projectId); })
-        .catch(function (e) { toast(e.message); });
+      saveEditorData("edição").catch(function (e) { toast(e.message); });
     });
-    bindPrintOpts();
   }
 
   function bindFactory() {
@@ -1917,14 +2132,7 @@ tr.a-definir td, .a-definir-cell {
   }
 
   function bindPrintOpts() {
-    document.querySelectorAll(".print-sec").forEach(function (cb) {
-      cb.addEventListener("change", function () {
-        state.printHide[cb.getAttribute("data-sec")] = !cb.checked;
-        document.querySelectorAll('.doc-sec[data-sec="' + cb.getAttribute("data-sec") + '"]').forEach(function (sec) {
-          sec.classList.toggle("sec-hide-print", !cb.checked);
-        });
-      });
-    });
+    /* impressão inclui todas as secções */
   }
 
   // Polling leve para vistas partilhadas

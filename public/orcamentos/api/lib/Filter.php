@@ -461,14 +461,12 @@ final class Filter
             if (!is_array($o)) {
                 continue;
             }
+            // Cliente: opções de material sem preços
             $out[] = [
                 'id' => $o['id'] ?? '',
                 'code' => $o['code'] ?? '',
                 'name' => $o['name'] ?? '',
                 'description_pt' => $o['description_pt'] ?? '',
-                // Preço de venda da gama, se o Khaled já preencheu (não é custo de compra)
-                'unit_price_eur' => $o['unit_price_eur'] ?? null,
-                'price_status' => $o['price_status'] ?? null,
             ];
         }
         return $out;
@@ -515,25 +513,46 @@ final class Filter
     {
         $ph = $data['pricing_placeholders'] ?? [];
         $pending = self::aDefinirPending($data);
-        // Só preço final quando todas as rubricas a_definir estiverem preenchidas
-        if ($pending !== []) {
+        $factoryKey = self::approvedFactoryKey($data);
+        // Só o preço final aprovado/escolhido pelo Khaled; sem detalhe de custos
+        if ($pending !== [] || ($ph['selling_price_per_unit_eur'] ?? null) === null) {
             return [
                 'selling_price_per_unit_eur' => null,
                 'selling_price_x6_eur' => null,
-                'installation_per_unit_eur' => null,
-                'shipping_per_unit_eur' => null,
                 'currency' => $data['currency'] ?? 'EUR',
-                'a_definir_pending' => true,
+                'a_definir_pending' => $pending !== [],
+                'approved_factory_key' => $factoryKey,
             ];
         }
         return [
             'selling_price_per_unit_eur' => $ph['selling_price_per_unit_eur'] ?? null,
             'selling_price_x6_eur' => $ph['selling_price_x6_eur'] ?? null,
-            'installation_per_unit_eur' => $ph['installation_per_unit_eur'] ?? null,
-            'shipping_per_unit_eur' => $ph['shipping_per_unit_eur'] ?? null,
             'currency' => $data['currency'] ?? 'EUR',
             'a_definir_pending' => false,
+            'approved_factory_key' => $factoryKey,
         ];
+    }
+
+    /** Fábrica mais usada nas aprovações (ou a definida em pricing_placeholders). */
+    private static function approvedFactoryKey(array $data): ?string
+    {
+        $ph = $data['pricing_placeholders'] ?? [];
+        if (!empty($ph['approved_factory_key'])) {
+            return (string) $ph['approved_factory_key'];
+        }
+        $counts = [];
+        foreach ($data['approved_prices'] ?? [] as $row) {
+            if (!is_array($row) || empty($row['factory_key'])) {
+                continue;
+            }
+            $k = (string) $row['factory_key'];
+            $counts[$k] = ($counts[$k] ?? 0) + 1;
+        }
+        if ($counts === []) {
+            return null;
+        }
+        arsort($counts);
+        return (string) array_key_first($counts);
     }
 
     private static function factoryBoxCosts(array $bc): array

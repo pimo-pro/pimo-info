@@ -25,6 +25,18 @@ Regras fixas:
 
 `box_costs` (linhas, painéis, ferragens, totais, `a_definir_keys`), campos extra em `pricing_placeholders` e `boxes[]` (`feet`, `parts`, …). Ver histórico do repositório / exemplo.
 
+## Edição no painel (admin / Khaled+Filipe)
+
+Nas vistas internas, as linhas de `box_costs.lines`, `panels`, `hardware` e `items[]` são editáveis
+(nome, descrição, referência, fornecedor, URL, quantidades, preços). «Adicionar linha» cria
+registos novos; «Remover» marca `archived: true` (compatível com versões anteriores).
+O resumo de totais (1 unidade e projecto, s/ IVA, IVA, c/ IVA) recalcula-se ao gravar.
+Linhas `a_definir` mantêm-se a vermelho até terem valor. A impressão inclui todas as secções.
+
+Vista **fábrica**: só medidas, quantidades, materiais e referências — sem preços, custos, URL ou fornecedor.
+Vista **cliente**: só renders (`category: projeto`) e o **preço final** (`pricing_placeholders.selling_price_*`)
+quando as rubricas a_definir estão preenchidas; `approved_factory_key` indica a fábrica escolhida.
+
 ## Schema 3.0
 
 ### `remates[]`

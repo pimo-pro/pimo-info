@@ -160,6 +160,8 @@ $cliV2 = Filter::forRole($normV2, ['role' => 'client']);
 assert_true(!isset($cliV2['box_costs']), 'cliente sem box_costs');
 assert_true(!empty($cliV2['pricing']['a_definir_pending']), 'cliente: preço bloqueado com a_definir');
 assert_true($cliV2['pricing']['selling_price_per_unit_eur'] === null, 'cliente sem preço final enquanto a_definir');
+assert_true(!array_key_exists('installation_per_unit_eur', $cliV2['pricing']), 'cliente sem detalhe de montagem');
+assert_true(!isset(($cliV2['material_options'][0] ?? [])['unit_price_eur']), 'cliente sem preço de material');
 $pending = Filter::aDefinirPending($normV2);
 assert_true(in_array('montagem', $pending, true), 'montagem a definir');
 $filipeV2 = Filter::forRole($normV2, ['role' => 'filipe']);
