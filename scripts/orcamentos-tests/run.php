@@ -56,28 +56,39 @@ assert_true($pid !== '', 'criar projecto');
 $vers = ProjectService::versions($pdo, $pid);
 assert_true(count($vers) >= 1, 'versão na criação');
 
-// Filtro cliente: sem custos
+// Filtro cliente: vista mínima (logo, nome, renders, preço aprovado)
 $client = Filter::forRole($proj['data'], ['role' => 'client']);
 $clientJson = json_encode($client);
-assert_true(!str_contains($clientJson, 'unit_price_eur') || !preg_match('/"unit_price_eur"\s*:\s*[0-9]/', $clientJson), 'cliente sem preços de compra numéricos nos items');
-assert_true(!isset($client['items'][0]['unit_price_eur']), 'cliente: item sem unit_price_eur');
-assert_true(!isset($client['items'][0]['url']), 'cliente: item sem url');
-assert_true(!isset($client['items'][0]['supplier']), 'cliente: item sem supplier');
+assert_true(!isset($client['items']), 'cliente sem items');
+assert_true(!isset($client['boxes']), 'cliente sem boxes');
+assert_true(!isset($client['categories']), 'cliente sem categories');
+assert_true(!isset($client['material_options']), 'cliente sem material_options');
+assert_true(!isset($client['client_choice']), 'cliente sem client_choice');
+assert_true(!isset($client['points_to_confirm']), 'cliente sem points_to_confirm');
 assert_true(!isset($client['gaps']), 'cliente sem gaps');
 assert_true(!isset($client['order_of_magnitude']), 'cliente sem order_of_magnitude');
 assert_true(!isset($client['iva_note']), 'cliente sem iva_note raiz');
+assert_true(!isset($client['cost_lines']), 'cliente sem cost_lines');
 assert_true(isset($client['pricing']), 'cliente tem bloco pricing');
+assert_true(($client['pricing']['approved'] ?? true) === false, 'cliente: preço ainda não aprovado');
+assert_true(!preg_match('/"unit_price_eur"\s*:\s*[0-9]/', $clientJson), 'cliente sem preços de compra');
 
-// Filtro fábrica
+// Filtro fábrica: especificações sem preços / IVA / totais
 $factory = Filter::forRole($proj['data'], ['role' => 'factory', 'factory_key' => 'fab-a']);
 $fj = json_encode($factory);
 assert_true(!isset($factory['items'][0]['unit_price_eur']), 'fábrica: sem unit_price_eur');
 assert_true(!isset($factory['items'][0]['url']), 'fábrica: sem url');
+assert_true(!isset($factory['items'][0]['price_status']), 'fábrica: item sem price_status');
 assert_true(!isset($factory['items'][0]['iva_note']), 'fábrica: item sem iva_note');
 assert_true(!isset($factory['iva_note']), 'fábrica sem iva_note raiz');
+assert_true(!isset($factory['iva_rate_portugal']), 'fábrica sem iva_rate_portugal');
+assert_true(!isset($factory['prices_checked_at']), 'fábrica sem prices_checked_at');
+assert_true(!isset($factory['cost_lines']), 'fábrica sem cost_lines');
+assert_true(!isset($factory['parts_total']), 'fábrica sem parts_total');
 assert_true(!isset($factory['gaps']), 'fábrica sem gaps');
 assert_true(!isset($factory['pricing_placeholders']), 'fábrica sem pricing_placeholders');
 assert_true(!str_contains($fj, 'example.com/produto-demo'), 'fábrica sem links de compra');
+assert_true(!preg_match('/"(unit_price_eur|per_unit_eur|project_eur|iva_included)"\s*:\s*[0-9]/', $fj), 'fábrica sem campos monetários numéricos');
 
 // Khaled vê gaps e custos
 $khaled = Filter::forRole($proj['data'], ['role' => 'khaled']);
@@ -158,14 +169,25 @@ assert_true(!isset($facV2['box_costs']['panels'][0]['unit_price_eur']), 'fábric
 assert_true(isset($facV2['boxes'][0]['parts'][0]['name']), 'fábrica vê peças');
 $cliV2 = Filter::forRole($normV2, ['role' => 'client']);
 assert_true(!isset($cliV2['box_costs']), 'cliente sem box_costs');
-assert_true(!empty($cliV2['pricing']['a_definir_pending']), 'cliente: preço bloqueado com a_definir');
-assert_true($cliV2['pricing']['selling_price_per_unit_eur'] === null, 'cliente sem preço final enquanto a_definir');
+assert_true(($cliV2['pricing']['approved'] ?? true) === false, 'cliente: sem preço aprovado por defeito');
+assert_true($cliV2['pricing']['selling_price_per_unit_eur'] === null, 'cliente sem preço final sem aprovação');
 assert_true(!array_key_exists('installation_per_unit_eur', $cliV2['pricing']), 'cliente sem detalhe de montagem');
-assert_true(!isset(($cliV2['material_options'][0] ?? [])['unit_price_eur']), 'cliente sem preço de material');
+assert_true(!isset($cliV2['material_options']), 'cliente sem material_options');
+assert_true(!isset($cliV2['boxes']), 'cliente v2 sem boxes');
 $pending = Filter::aDefinirPending($normV2);
 assert_true(in_array('montagem', $pending, true), 'montagem a definir');
 $filipeV2 = Filter::forRole($normV2, ['role' => 'filipe']);
 assert_true(isset($filipeV2['box_costs']['lines']), 'filipe vê box_costs');
+// Cliente com preço final aprovado + fábrica
+$normApproved = $normV2;
+$normApproved['pricing_placeholders']['selling_price_per_unit_eur'] = 1250;
+$normApproved['pricing_placeholders']['approved_factory_key'] = 'fab-a';
+$cliOk = Filter::forRole($normApproved, ['role' => 'client']);
+assert_true(($cliOk['pricing']['approved'] ?? false) === true, 'cliente: preço aprovado');
+assert_true((float) $cliOk['pricing']['selling_price_per_unit_eur'] === 1250.0, 'cliente vê preço s/ IVA');
+assert_true(isset($cliOk['pricing']['selling_price_incl_iva_per_unit_eur']), 'cliente vê preço c/ IVA');
+assert_true(($cliOk['pricing']['approved_factory_key'] ?? '') === 'fab-a', 'cliente vê fábrica aprovada');
+assert_true(!isset($cliOk['items']), 'cliente aprovado sem items');
 
 // Importar v2 sobre projecto existente = nova versão
 $created = ProjectService::create($pdo, $normV2, 'admin', 'teste');
@@ -183,13 +205,17 @@ $normV3 = Filter::normalizeImport($v3);
 $facV3 = Filter::forRole($normV3, ['role' => 'factory', 'factory_key' => 'fab-a']);
 assert_true(isset($facV3['remates'][0]['label']), 'fábrica vê remates');
 assert_true(isset($facV3['doors_in_design'][0]['w']), 'fábrica vê portas no desenho');
-assert_true(isset($facV3['parts_total']['pieces_per_unit']), 'fábrica vê parts_total');
-assert_true(isset($facV3['sheets_real']['per_unit']), 'fábrica vê sheets_real');
+assert_true(!isset($facV3['parts_total']), 'fábrica sem parts_total (só specs/qtds)');
+assert_true(isset($facV3['sheets_real']['per_unit']), 'fábrica vê sheets_real (qtds)');
+assert_true(!isset($facV3['sheets_real']['waste_percent']), 'fábrica sheets_real sem waste_percent');
 assert_true(!isset($facV3['box_costs']['checks_a_confirmar']), 'fábrica sem checks_a_confirmar');
 assert_true(!isset($facV3['box_costs']['lines']), 'fábrica sem box_costs.lines (v3)');
+assert_true(!isset($facV3['box_costs']['panels'][0]['unit_price_eur']), 'fábrica painéis sem preço (v3)');
+assert_true(!isset($facV3['iva_included']), 'fábrica sem iva_included');
 $cliV3 = Filter::forRole($normV3, ['role' => 'client']);
 assert_true(!isset($cliV3['remates']), 'cliente sem remates');
 assert_true(!isset($cliV3['box_costs']), 'cliente sem box_costs (v3)');
+assert_true(!isset($cliV3['ventilation']), 'cliente sem ventilation');
 // assets: projecto ao cliente; tecnico não
 $normV3['assets']['projeto']['projeto_fechado'] = 'upload:demo-proj';
 $normV3['assets']['tecnico']['iso_fechado'] = 'upload:demo-tec';
