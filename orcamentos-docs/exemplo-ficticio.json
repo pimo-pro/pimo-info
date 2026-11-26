@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0",
+  "schema_version": "3.0",
   "generated_at": "2026-11-26",
   "timezone": "Europe/Lisbon",
   "currency": "EUR",
@@ -90,14 +90,27 @@
     "elevation_front": null,
     "plan_cut": null,
     "iso_3d": null,
-    "boxes": {
-      "B1": null,
-      "B2": null,
-      "B3": null,
-      "B4": null,
-      "B5": null
+    "projeto": {
+      "projeto_fechado": null,
+      "projeto_perspetiva": null,
+      "projeto_aberto": null
     },
-    "notes_pt": "Imagens a carregar pelo painel (logótipo, alçado, planta, iso e por caixa)."
+    "tecnico": {
+      "iso_fechado": null,
+      "iso_aberto": null,
+      "alcado_portas": null,
+      "alcado_interior": null,
+      "corte_planta": null,
+      "boxes": {
+        "B1": null,
+        "B2": null,
+        "B3": null,
+        "B4": null,
+        "B5": null
+      }
+    },
+    "images": [],
+    "notes_pt": "Imagens a carregar pelo painel (renders projecto e desenho técnico)."
   },
   "boxes": [
     {
@@ -122,7 +135,10 @@
           "w": 600,
           "t": 19,
           "qty": 2,
-          "material": "MDF 19"
+          "material": "MDF 19",
+          "weight_kg": 6.94,
+          "edge": "ABS 1mm",
+          "label": "Lateral"
         },
         {
           "name": "Prateleira",
@@ -130,9 +146,13 @@
           "w": 580,
           "t": 19,
           "qty": 1,
-          "material": "MDF 19"
+          "material": "MDF 19",
+          "weight_kg": 4.34,
+          "edge": "ABS 1mm",
+          "label": "Prateleira"
         }
-      ]
+      ],
+      "x_mm": 0
     },
     {
       "code": "B2",
@@ -141,7 +161,7 @@
       "h": 1430,
       "d": 600,
       "feet": false,
-      "y_mm": 870,
+      "y_mm": 100,
       "qty_per_unit": 1,
       "position_pt": "Sobre o B1.",
       "feet_height_mm": null,
@@ -155,7 +175,10 @@
           "w": 600,
           "t": 19,
           "qty": 2,
-          "material": "MDF 19"
+          "material": "MDF 19",
+          "weight_kg": 11.41,
+          "edge": "ABS 1mm",
+          "label": "Lateral"
         },
         {
           "name": "Prateleira",
@@ -163,9 +186,14 @@
           "w": 580,
           "t": 19,
           "qty": 1,
-          "material": "MDF 19"
+          "material": "MDF 19",
+          "weight_kg": 4.34,
+          "edge": "ABS 1mm",
+          "label": "Prateleira"
         }
-      ]
+      ],
+      "x_mm": 400,
+      "y_estimated": true
     },
     {
       "code": "B3",
@@ -188,7 +216,10 @@
           "w": 600,
           "t": 19,
           "qty": 2,
-          "material": "MDF 19"
+          "material": "MDF 19",
+          "weight_kg": 6.94,
+          "edge": "ABS 1mm",
+          "label": "Lateral"
         },
         {
           "name": "Prateleira",
@@ -196,9 +227,14 @@
           "w": 580,
           "t": 19,
           "qty": 1,
-          "material": "MDF 19"
+          "material": "MDF 19",
+          "weight_kg": 4.34,
+          "edge": "ABS 1mm",
+          "label": "Prateleira"
         }
-      ]
+      ],
+      "x_mm": 800,
+      "back": false
     },
     {
       "code": "B4",
@@ -221,7 +257,10 @@
           "w": 600,
           "t": 19,
           "qty": 2,
-          "material": "MDF 19"
+          "material": "MDF 19",
+          "weight_kg": 6.94,
+          "edge": "ABS 1mm",
+          "label": "Lateral"
         },
         {
           "name": "Prateleira",
@@ -229,9 +268,13 @@
           "w": 580,
           "t": 19,
           "qty": 1,
-          "material": "MDF 19"
+          "material": "MDF 19",
+          "weight_kg": 4.34,
+          "edge": "ABS 1mm",
+          "label": "Prateleira"
         }
-      ]
+      ],
+      "x_mm": 1200
     },
     {
       "code": "B5",
@@ -254,7 +297,10 @@
           "w": 350,
           "t": 19,
           "qty": 2,
-          "material": "MDF 19"
+          "material": "MDF 19",
+          "weight_kg": 4.19,
+          "edge": "ABS 1mm",
+          "label": "Lateral"
         },
         {
           "name": "Prateleira",
@@ -262,9 +308,13 @@
           "w": 330,
           "t": 19,
           "qty": 1,
-          "material": "MDF 19"
+          "material": "MDF 19",
+          "weight_kg": 5.1,
+          "edge": "ABS 1mm",
+          "label": "Prateleira"
         }
-      ]
+      ],
+      "x_mm": 1600
     }
   ],
   "box_alternative": {
@@ -878,6 +928,108 @@
       "adm"
     ],
     "render_rule": "Linhas a_definir a vermelho; não entram no total enquanto vazias.",
-    "adm_scope": "project"
+    "adm_scope": "project",
+    "checks_a_confirmar": [
+      {
+        "text": "Altura B2 vs desenho",
+        "expected": 720,
+        "actual": 700
+      },
+      {
+        "text": "Avanço dos pés",
+        "values": [
+          "50 mm desenho",
+          "a confirmar in situ"
+        ]
+      },
+      "Confirmar espessura do tampo com o cliente"
+    ]
+  },
+  "remates": [
+    {
+      "key": "laterais",
+      "label": "Laterais",
+      "l": 2350,
+      "w": 650,
+      "qty": 2,
+      "material": "MDF 19",
+      "parts": []
+    },
+    {
+      "key": "verticais_a",
+      "label": "Verticais",
+      "l": 2200,
+      "w": 690,
+      "qty": 1,
+      "material": "MDF 19"
+    },
+    {
+      "key": "verticais_b",
+      "label": "Verticais",
+      "l": 2200,
+      "w": 650,
+      "qty": 1,
+      "material": "MDF 19"
+    },
+    {
+      "key": "tampo",
+      "label": "Tampo",
+      "l": 1938,
+      "w": 650,
+      "qty": 1,
+      "material": "MDF 19"
+    },
+    {
+      "key": "faixa",
+      "label": "Faixa",
+      "l": 1938,
+      "w": 50,
+      "qty": 1,
+      "material": "MDF 19"
+    },
+    {
+      "key": "rodape",
+      "label": "Rodapé",
+      "l": 1930,
+      "w": 100,
+      "qty": 1,
+      "material": "MDF 19"
+    }
+  ],
+  "doors_in_design": [
+    {
+      "qty": 2,
+      "w": 598,
+      "h": 868,
+      "label": "Portas altas"
+    },
+    {
+      "qty": 1,
+      "w": 598,
+      "h": 598,
+      "label": "Porta baixa"
+    }
+  ],
+  "parts_total": {
+    "pieces_per_unit": 48,
+    "pieces_project": 96,
+    "pieces_x6": 96,
+    "m2_19mm": 12.4,
+    "m2_10mm": 1.8,
+    "weight_kg": 72.5,
+    "weight_kg_per_unit": 72.5,
+    "weight_kg_project": 145.0
+  },
+  "sheets_real": {
+    "per_unit": {
+      "10mm": 1,
+      "19mm": 5
+    },
+    "waste_percent": 11,
+    "project": {
+      "10mm": 2,
+      "19mm": 10
+    },
+    "notes_pt": "Projecto 10+2 chapas (fictício)."
   }
 }

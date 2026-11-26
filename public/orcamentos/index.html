@@ -208,6 +208,10 @@ tr.a-definir td, .a-definir-cell {
 .asset-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 8px 0 14px; }
 .asset-grid figure { margin: 0; }
 .asset-grid figcaption { font-size: 0.72rem; color: var(--soft); margin-top: 4px; }
+.checks-confirm { margin: 12px 0; padding: 10px 12px; background: #fff7ed; border: 1px solid #fed7aa; }
+.checks-confirm h3 { color: #9a3412; margin: 0 0 8px; font-size: 0.95rem; }
+.checks-confirm li, .checks-confirm td { color: #9a3412; }
+.checks-confirm table td { background: #fff7ed; }
 
 @media print {
   body { background: #fff; }
@@ -732,7 +736,22 @@ tr.a-definir td, .a-definir-cell {
       html += "<label>" + k + "<input type=\"file\" accept=\"image/*\" data-kind=\"" + k + "\" class=\"adm-upload\"></label>";
     });
     html += "</div>";
-    html += "<p class=\"cap\">Logótipo, planta das caixas e imagem de referência. Guardados fora da pasta pública.</p></div>";
+    html += "<h3 class=\"sub\">Renders (categoria projecto · todas as vistas)</h3><div class=\"row\">";
+    ["projeto_fechado","projeto_perspetiva","projeto_aberto"].forEach(function (k) {
+      html += "<label>" + k + "<input type=\"file\" accept=\"image/*\" data-kind=\"" + k + "\" data-category=\"projeto\" data-asset-key=\"" + k + "\" class=\"adm-upload\"></label>";
+    });
+    html += "</div>";
+    html += "<h3 class=\"sub\">Desenho técnico (categoria tecnico · internas + fábrica)</h3><div class=\"row\">";
+    ["iso_fechado","iso_aberto","alcado_portas","alcado_interior","corte_planta"].forEach(function (k) {
+      html += "<label>" + k + "<input type=\"file\" accept=\"image/*\" data-kind=\"" + k + "\" data-category=\"tecnico\" data-asset-key=\"" + k + "\" class=\"adm-upload\"></label>";
+    });
+    html += "</div>";
+    html += "<div class=\"row\">";
+    html += "<label>Caixa (box_caixa_*)<input type=\"text\" id=\"adm-box-asset-code\" placeholder=\"B1\" style=\"max-width:80px\"></label>";
+    html += "<label>Ficheiro<input type=\"file\" accept=\"image/*\" id=\"adm-box-asset-file\"></label>";
+    html += "<button type=\"button\" class=\"btn secondary\" id=\"adm-box-asset-up\">Enviar caixa</button>";
+    html += "</div>";
+    html += "<p class=\"cap\">Envio: upload.php com category=projeto|tecnico e asset_key. Guardados fora da pasta pública.</p></div>";
 
     html += "<div class=\"panel no-print\"><h3>" + t("links") + "</h3>";
     html += "<div class=\"row\">";
@@ -951,22 +970,25 @@ tr.a-definir td, .a-definir-cell {
       listHtml(project.assumptions)
     );
 
-    // 3 Design
+    // 3 Design / renders
     html += sec("design",
       "<div class=\"pagebreak\"></div><h2 class=\"sec\">2. Design e planta</h2>" +
-      designAssetsHtml(d.assets || {})
+      designAssetsHtml(d.assets || {}, role)
     );
 
     // 4 Caixas (+ box_costs nas vistas internas)
     var canEditADef = role === "admin" || role === "khaled" || role === "filipe";
+    var isInternal = canEditADef;
     html += sec("caixas",
       "<h2 class=\"sec\">3. Caixas do móvel</h2>" +
-      boxImagesHtml(d.assets || {}, d.boxes || []) +
+      techAssetsHtml(d.assets || {}, d.boxes || [], role) +
       boxesTable(d.boxes || [], role) +
-      (role === "factory" ? factoryPartsHtml(d) : "") +
-      ((role === "admin" || role === "khaled" || role === "filipe")
-        ? boxCostsHtml(d, canEditADef)
-        : "")
+      (role === "factory" || isInternal ? factoryPartsHtml(d) : "") +
+      rematesHtml(d, role) +
+      doorsInDesignHtml(d, role) +
+      partsSheetsHtml(d, role) +
+      (isInternal ? boxCostsHtml(d, canEditADef) : "") +
+      (isInternal ? checksAConfirmarHtml(d) : "")
     );
 
     // Categories / items
@@ -1062,54 +1084,186 @@ tr.a-definir td, .a-definir-cell {
     return [o.w, o.h, o.d].filter(function (x) { return x != null; }).join(" x ") + " mm";
   }
 
-  function designAssetsHtml(assets) {
-    var items = [
-      ["layout", "Planta / layout"],
-      ["elevation_front", "Alçado frontal"],
-      ["plan_cut", "Corte / planta"],
-      ["iso_3d", "Iso 3D"],
-      ["reference", "Referência"]
-    ];
+  function designAssetsHtml(assets, role) {
     var figs = [];
-    items.forEach(function (it) {
-      var u = assetUrl(assets[it[0]]);
+    var labels = {
+      projeto_fechado: "Projecto fechado",
+      projeto_perspetiva: "Perspectiva",
+      projeto_aberto: "Projecto aberto",
+      layout: "Planta / layout",
+      reference: "Referência"
+    };
+    var proj = assets.projeto || {};
+    Object.keys(labels).forEach(function (k) {
+      var file = proj[k] || assets[k];
+      var u = assetUrl(file);
       if (!u) return;
-      figs.push("<figure><img class=\"asset-img\" src=\"" + esc(u) + "\" alt=\"" + esc(it[1]) + "\"><figcaption>" + esc(it[1]) + "</figcaption></figure>");
+      figs.push("<figure><img class=\"asset-img\" src=\"" + esc(u) + "\" alt=\"" + esc(labels[k]) + "\"><figcaption>" + esc(labels[k]) + "</figcaption></figure>");
+    });
+    (assets.images || []).forEach(function (img) {
+      if (!img || img.category !== "projeto") return;
+      if (labels[img.key]) return;
+      var u = assetUrl(img.file);
+      if (!u) return;
+      figs.push("<figure><img class=\"asset-img\" src=\"" + esc(u) + "\" alt=\"" + esc(img.label || img.key) + "\"><figcaption>" + esc(img.label || img.key) + "</figcaption></figure>");
     });
     if (!figs.length) return "<p class=\"note\">Imagens de design ainda não carregadas.</p>";
     return "<div class=\"asset-grid\">" + figs.join("") + "</div>";
   }
 
-  function boxImagesHtml(assets, boxes) {
-    var map = assets.boxes || {};
+  function techAssetsHtml(assets, boxes, role) {
+    if (role === "client") return "";
     var figs = [];
+    var labels = {
+      iso_fechado: "Iso fechado",
+      iso_aberto: "Iso aberto",
+      alcado_portas: "Alçado portas",
+      alcado_interior: "Alçado interior",
+      corte_planta: "Corte / planta",
+      elevation_front: "Alçado frontal",
+      plan_cut: "Corte / planta (legado)",
+      iso_3d: "Iso 3D (legado)"
+    };
+    var tec = assets.tecnico || {};
+    Object.keys(labels).forEach(function (k) {
+      var file = tec[k] || assets[k];
+      var u = assetUrl(file);
+      if (!u) return;
+      figs.push("<figure><img class=\"asset-img\" src=\"" + esc(u) + "\" alt=\"" + esc(labels[k]) + "\"><figcaption>" + esc(labels[k]) + "</figcaption></figure>");
+    });
+    var boxMap = (tec.boxes) || (assets.boxes) || {};
     (boxes || []).forEach(function (b) {
       var key = b.code;
-      var u = assetUrl(map[key] || assets["box_" + key] || null);
+      var u = assetUrl(boxMap[key] || tec["box_caixa_" + key] || assets["box_caixa_" + key] || null);
       if (!u) return;
       figs.push("<figure><img class=\"asset-img\" src=\"" + esc(u) + "\" alt=\"" + esc(key) + "\"><figcaption>" + esc(key + " · " + (b.name || "")) + "</figcaption></figure>");
     });
+    (assets.images || []).forEach(function (img) {
+      if (!img || img.category !== "tecnico") return;
+      if (labels[img.key] || String(img.key).indexOf("box_caixa_") === 0) return;
+      var u = assetUrl(img.file);
+      if (!u) return;
+      figs.push("<figure><img class=\"asset-img\" src=\"" + esc(u) + "\" alt=\"" + esc(img.label || img.key) + "\"><figcaption>" + esc(img.label || img.key) + "</figcaption></figure>");
+    });
     if (!figs.length) return "";
-    return "<h3 class=\"sub\">Imagens das caixas</h3><div class=\"asset-grid\">" + figs.join("") + "</div>";
+    return "<h3 class=\"sub\">Desenho técnico</h3><div class=\"asset-grid\">" + figs.join("") + "</div>";
   }
 
   function boxesTable(boxes, role) {
     var detailed = role !== "client";
     var html = "<table class=\"t\"><thead><tr><th>Ref.</th><th>Função</th><th>L x A x P (mm)</th>";
-    if (detailed) html += "<th>Pés</th><th>Qtd</th><th>Posição</th>";
+    if (detailed) html += "<th>Pés</th><th>X/Y</th><th>Qtd</th><th>Posição</th>";
     html += "</tr></thead><tbody>";
     boxes.forEach(function (b) {
       html += "<tr><td>" + esc(b.code) + "</td><td>" + esc(b.name) + "</td>";
-      html += "<td>" + esc([b.w, b.h, b.d].join(" x ")) + "</td>";
+      html += "<td>" + esc([b.w, b.h, b.d].join(" x "));
+      if (detailed && b.back === false) html += " <span class=\"cap\">(sem costa)</span>";
+      html += "</td>";
       if (detailed) {
         var feet = b.feet ? ("Com pés" + (b.feet_height_mm != null ? " (" + b.feet_height_mm + " mm)" : "")) : "Sem pés";
         html += "<td>" + esc(feet) + "</td>";
+        var xy = [];
+        if (b.x_mm != null) xy.push("x=" + b.x_mm);
+        if (b.y_mm != null) xy.push("y=" + b.y_mm + (b.y_estimated ? "≈" : ""));
+        html += "<td>" + esc(xy.join(" · ") || "-") + "</td>";
         html += "<td class=\"n\">" + esc(b.qty_per_unit != null ? b.qty_per_unit : 1) + "</td>";
         html += "<td>" + esc(b.position_pt || "") + "</td>";
       }
       html += "</tr>";
     });
     html += "</tbody></table>";
+    return html;
+  }
+
+  function rematesHtml(d, role) {
+    if (role === "client") return "";
+    var remates = d.remates || [];
+    if (!remates.length) return "";
+    var html = "<h3 class=\"sub\">Remates e rodapé</h3>";
+    html += "<table class=\"t\"><thead><tr><th>Peça</th><th>L x W (mm)</th><th class=\"n\">Qtd</th><th>Material</th></tr></thead><tbody>";
+    remates.forEach(function (r) {
+      html += "<tr><td>" + esc(r.label || r.key || "") + "</td>";
+      html += "<td>" + esc([r.l, r.w].filter(function (x) { return x != null; }).join(" x "));
+      if (r.t != null) html += " × " + esc(r.t) + " mm";
+      html += "</td>";
+      html += "<td class=\"n\">" + esc(r.qty != null ? r.qty : (r.qty_per_unit != null ? r.qty_per_unit : "")) + "</td>";
+      html += "<td>" + esc(r.material || "") + "</td></tr>";
+    });
+    html += "</tbody></table>";
+    return html;
+  }
+
+  function doorsInDesignHtml(d, role) {
+    if (role === "client") return "";
+    var doors = d.doors_in_design || [];
+    if (!doors.length) return "";
+    var html = "<h3 class=\"sub\">Portas no desenho</h3>";
+    html += "<table class=\"t\"><thead><tr><th>Qtd</th><th>L x A (mm)</th><th>Nota</th></tr></thead><tbody>";
+    doors.forEach(function (door) {
+      html += "<tr><td class=\"n\">" + esc(door.qty) + "</td>";
+      html += "<td>" + esc([door.w, door.h].join(" x ")) + "</td>";
+      html += "<td>" + esc(door.label || door.notes_pt || "") + "</td></tr>";
+    });
+    html += "</tbody></table>";
+    return html;
+  }
+
+  function partsSheetsHtml(d, role) {
+    if (role === "client") return "";
+    var pt = d.parts_total;
+    var sr = d.sheets_real;
+    if (!pt && !sr) return "";
+    var html = "<h3 class=\"sub\">Resumo de peças e chapas</h3>";
+    if (pt) {
+      html += "<table class=\"t\"><tbody>";
+      if (pt.pieces_per_unit != null) html += "<tr><td>Peças / unidade</td><td class=\"n\">" + esc(pt.pieces_per_unit) + "</td></tr>";
+      if (pt.pieces_project != null || pt.pieces_x6 != null) html += "<tr><td>Peças projecto</td><td class=\"n\">" + esc(pt.pieces_project != null ? pt.pieces_project : pt.pieces_x6) + "</td></tr>";
+      if (pt.m2_19mm != null) html += "<tr><td>m² (19 mm)</td><td class=\"n\">" + esc(pt.m2_19mm) + "</td></tr>";
+      if (pt.m2_10mm != null) html += "<tr><td>m² (10 mm)</td><td class=\"n\">" + esc(pt.m2_10mm) + "</td></tr>";
+      if (pt.weight_kg != null || pt.weight_kg_per_unit != null) html += "<tr><td>Peso</td><td class=\"n\">" + esc(pt.weight_kg != null ? pt.weight_kg : pt.weight_kg_per_unit) + " kg</td></tr>";
+      html += "</tbody></table>";
+    }
+    if (sr) {
+      html += "<table class=\"t\"><thead><tr><th>Chapas</th><th>Valor</th></tr></thead><tbody>";
+      if (sr.per_unit) {
+        var pu = sr.per_unit;
+        var puTxt = typeof pu === "object"
+          ? Object.keys(pu).map(function (k) { return pu[k] + "×" + k; }).join(", ")
+          : String(pu);
+        html += "<tr><td>Por unidade</td><td>" + esc(puTxt) + "</td></tr>";
+      }
+      if (sr.waste_percent != null) html += "<tr><td>Desperdício</td><td class=\"n\">" + esc(sr.waste_percent) + " %</td></tr>";
+      if (sr.project) {
+        var pr = sr.project;
+        var prTxt = typeof pr === "object"
+          ? Object.keys(pr).map(function (k) { return pr[k] + "×" + k; }).join(", ")
+          : String(pr);
+        html += "<tr><td>Projecto</td><td>" + esc(prTxt) + "</td></tr>";
+      }
+      if (sr.notes_pt) html += "<tr><td colspan=\"2\" class=\"cap\">" + esc(sr.notes_pt) + "</td></tr>";
+      html += "</tbody></table>";
+    }
+    return html;
+  }
+
+  function checksAConfirmarHtml(d) {
+    var checks = (d.box_costs && d.box_costs.checks_a_confirmar) || [];
+    if (!checks.length) return "";
+    var html = "<div class=\"checks-confirm\"><h3>A confirmar</h3><ul>";
+    checks.forEach(function (c) {
+      if (typeof c === "string") {
+        html += "<li>" + esc(c) + "</li>";
+        return;
+      }
+      var txt = c.text || c.label || c.check || "";
+      if (c.expected != null || c.actual != null || c.values) {
+        txt += " — ";
+        if (c.values) txt += (Array.isArray(c.values) ? c.values.join(" vs ") : String(c.values));
+        else txt += String(c.expected) + " vs " + String(c.actual);
+      }
+      html += "<li>" + esc(txt) + "</li>";
+    });
+    html += "</ul></div>";
     return html;
   }
 
@@ -1122,10 +1276,12 @@ tr.a-definir td, .a-definir-cell {
       boxes.forEach(function (b) {
         if (!b.parts || !b.parts.length) return;
         html += "<p class=\"note\"><strong>" + esc(b.code + " · " + b.name) + "</strong></p>";
-        html += "<table class=\"t\"><thead><tr><th>Peça</th><th>L</th><th>W</th><th>T</th><th class=\"n\">Qtd</th><th>Material</th></tr></thead><tbody>";
+        html += "<table class=\"t\"><thead><tr><th>Peça</th><th>L</th><th>W</th><th>T</th><th class=\"n\">Qtd</th><th>Material</th><th>Orla</th><th>Peso</th><th>Etiqueta</th></tr></thead><tbody>";
         b.parts.forEach(function (p) {
           html += "<tr><td>" + esc(p.name) + "</td><td>" + esc(p.l) + "</td><td>" + esc(p.w) + "</td><td>" + esc(p.t) + "</td>";
-          html += "<td class=\"n\">" + esc(p.qty) + "</td><td>" + esc(p.material || "") + "</td></tr>";
+          html += "<td class=\"n\">" + esc(p.qty) + "</td><td>" + esc(p.material || "") + "</td>";
+          html += "<td>" + esc(p.edge || "") + "</td><td class=\"n\">" + esc(p.weight_kg != null ? p.weight_kg : "") + "</td>";
+          html += "<td>" + esc(p.label || "") + "</td></tr>";
         });
         html += "</tbody></table>";
       });
@@ -1552,7 +1708,11 @@ tr.a-definir td, .a-definir-cell {
         var fd = new FormData();
         fd.append("file", f);
         fd.append("project_id", state.projectId);
-        fd.append("kind", inp.getAttribute("data-kind"));
+        fd.append("kind", inp.getAttribute("data-kind") || "image");
+        var cat = inp.getAttribute("data-category");
+        var akey = inp.getAttribute("data-asset-key");
+        if (cat) fd.append("category", cat);
+        if (akey) fd.append("asset_key", akey);
         fetch(BASE + "/upload.php", { method: "POST", credentials: "same-origin", body: fd })
           .then(function (r) { return r.json(); })
           .then(function (j) {
@@ -1563,6 +1723,31 @@ tr.a-definir td, .a-definir-cell {
           .catch(function (e) { toast(e.message); });
       });
     });
+    var boxUp = document.getElementById("adm-box-asset-up");
+    if (boxUp) {
+      boxUp.addEventListener("click", function () {
+        var code = (document.getElementById("adm-box-asset-code").value || "").trim();
+        var fileInp = document.getElementById("adm-box-asset-file");
+        var f = fileInp && fileInp.files && fileInp.files[0];
+        if (!code || !f) { toast("Indique a caixa e o ficheiro"); return; }
+        var key = code.indexOf("box_caixa_") === 0 ? code : ("box_caixa_" + code);
+        var fd = new FormData();
+        fd.append("file", f);
+        fd.append("project_id", state.projectId);
+        fd.append("kind", key);
+        fd.append("category", "tecnico");
+        fd.append("asset_key", key);
+        fetch(BASE + "/upload.php", { method: "POST", credentials: "same-origin", body: fd })
+          .then(function (r) { return r.json(); })
+          .then(function (j) {
+            if (!j.ok) throw new Error(j.error || "Falha");
+            toast("Imagem da caixa enviada");
+            fileInp.value = "";
+            return openProject(state.projectId);
+          })
+          .catch(function (e) { toast(e.message); });
+      });
+    }
     var lc = document.getElementById("link-create");
     if (lc) lc.addEventListener("click", function () {
       var role = document.getElementById("link-role").value;
