@@ -129,6 +129,16 @@ final class Filter
             }
         }
 
+        // box_costs: só quantidades e peças; sem linhas de custo, totais ou preços
+        if (isset($data['box_costs']) && is_array($data['box_costs'])) {
+            $out['box_costs'] = self::factoryBoxCosts($data['box_costs']);
+        } else {
+            unset($out['box_costs']);
+        }
+
+        // caixas: peças e medidas, sem custos
+        $out['boxes'] = self::factoryBoxes($data['boxes'] ?? []);
+
         $out['_view'] = 'factory';
         $out['_factory_key'] = $factoryKey;
         return $out;
@@ -142,11 +152,7 @@ final class Filter
             'disclaimer_pt' => $data['disclaimer_pt'] ?? '',
             'company' => $data['company'] ?? [],
             'project' => self::clientProject($data['project'] ?? []),
-            'assets' => [
-                'logo' => $data['assets']['logo'] ?? null,
-                'layout' => $data['assets']['layout'] ?? null,
-                'reference' => $data['assets']['reference'] ?? null,
-            ],
+            'assets' => self::clientAssets($data['assets'] ?? []),
             'boxes' => self::clientBoxes($data['boxes'] ?? []),
             'material_options' => self::clientMaterials($data['material_options'] ?? []),
             'categories' => $data['categories'] ?? [],
@@ -157,7 +163,71 @@ final class Filter
             'pricing' => self::clientPricing($data),
             '_view' => 'client',
         ];
+        // Nunca enviar box_costs nem custos internos ao cliente
         return $out;
+    }
+
+    private static function clientAssets(array $assets): array
+    {
+        $out = [
+            'logo' => $assets['logo'] ?? null,
+            'layout' => $assets['layout'] ?? null,
+            'reference' => $assets['reference'] ?? null,
+            'elevation_front' => $assets['elevation_front'] ?? null,
+            'plan_cut' => $assets['plan_cut'] ?? null,
+            'iso_3d' => $assets['iso_3d'] ?? null,
+        ];
+        if (isset($assets['boxes']) && is_array($assets['boxes'])) {
+            $out['boxes'] = $assets['boxes'];
+        }
+        return $out;
+    }
+
+    /** Chaves a_definir ainda sem valor (linhas ou placeholders). */
+    public static function aDefinirPending(array $data): array
+    {
+        $keys = $data['box_costs']['a_definir_keys'] ?? ['margem', 'portes', 'montagem', 'mao_de_obra', 'design', 'adm'];
+        if (!is_array($keys)) {
+            $keys = [];
+        }
+        $linesByKey = [];
+        foreach ($data['box_costs']['lines'] ?? [] as $line) {
+            if (is_array($line) && isset($line['key'])) {
+                $linesByKey[(string) $line['key']] = $line;
+            }
+        }
+        $ph = $data['pricing_placeholders'] ?? [];
+        $phMap = [
+            'margem' => ['margin_amount_eur', 'margin_percent'],
+            'portes' => ['shipping_per_unit_eur', 'shipping_x6_eur'],
+            'montagem' => ['installation_per_unit_eur', 'installation_x6_eur'],
+            'mao_de_obra' => ['fabrication_per_unit_eur', 'fabrication_x6_eur'],
+            'design' => ['design_per_unit_eur', 'design_x6_eur'],
+            'adm' => ['adm_project_eur', 'adm_reference_x6_eur'],
+        ];
+        $pending = [];
+        foreach ($keys as $key) {
+            $key = (string) $key;
+            $filled = false;
+            $line = $linesByKey[$key] ?? null;
+            if (is_array($line)) {
+                if (($line['per_unit_eur'] ?? null) !== null || ($line['project_eur'] ?? null) !== null) {
+                    $filled = true;
+                }
+            }
+            if (!$filled && isset($phMap[$key])) {
+                foreach ($phMap[$key] as $pk) {
+                    if (($ph[$pk] ?? null) !== null && $ph[$pk] !== '') {
+                        $filled = true;
+                        break;
+                    }
+                }
+            }
+            if (!$filled) {
+                $pending[] = $key;
+            }
+        }
+        return $pending;
     }
 
     private static function clientProject(array $p): array
@@ -255,13 +325,99 @@ final class Filter
     private static function clientPricing(array $data): array
     {
         $ph = $data['pricing_placeholders'] ?? [];
+        $pending = self::aDefinirPending($data);
+        // Só preço final quando todas as rubricas a_definir estiverem preenchidas
+        if ($pending !== []) {
+            return [
+                'selling_price_per_unit_eur' => null,
+                'selling_price_x6_eur' => null,
+                'installation_per_unit_eur' => null,
+                'shipping_per_unit_eur' => null,
+                'currency' => $data['currency'] ?? 'EUR',
+                'a_definir_pending' => true,
+            ];
+        }
         return [
             'selling_price_per_unit_eur' => $ph['selling_price_per_unit_eur'] ?? null,
             'selling_price_x6_eur' => $ph['selling_price_x6_eur'] ?? null,
             'installation_per_unit_eur' => $ph['installation_per_unit_eur'] ?? null,
             'shipping_per_unit_eur' => $ph['shipping_per_unit_eur'] ?? null,
             'currency' => $data['currency'] ?? 'EUR',
+            'a_definir_pending' => false,
         ];
+    }
+
+    private static function factoryBoxCosts(array $bc): array
+    {
+        $panels = [];
+        foreach ($bc['panels'] ?? [] as $p) {
+            if (!is_array($p)) {
+                continue;
+            }
+            $panels[] = [
+                'material' => $p['material'] ?? null,
+                'thickness_mm' => $p['thickness_mm'] ?? null,
+                'qty_per_unit' => $p['qty_per_unit'] ?? null,
+                'qty_project' => $p['qty_project'] ?? null,
+            ];
+        }
+        $hardware = [];
+        foreach ($bc['hardware'] ?? [] as $h) {
+            if (!is_array($h)) {
+                continue;
+            }
+            $hardware[] = [
+                'type' => $h['type'] ?? null,
+                'qty_per_unit' => $h['qty_per_unit'] ?? null,
+                'qty_project' => $h['qty_project'] ?? null,
+                'notes' => $h['notes'] ?? null,
+            ];
+        }
+        return [
+            'units' => $bc['units'] ?? null,
+            'panels' => $panels,
+            'hardware' => $hardware,
+        ];
+    }
+
+    private static function factoryBoxes(array $boxes): array
+    {
+        $out = [];
+        foreach ($boxes as $b) {
+            if (!is_array($b)) {
+                continue;
+            }
+            $parts = [];
+            foreach ($b['parts'] ?? [] as $part) {
+                if (!is_array($part)) {
+                    continue;
+                }
+                $parts[] = [
+                    'name' => $part['name'] ?? '',
+                    'l' => $part['l'] ?? null,
+                    'w' => $part['w'] ?? null,
+                    't' => $part['t'] ?? null,
+                    'qty' => $part['qty'] ?? null,
+                    'material' => $part['material'] ?? null,
+                ];
+            }
+            $out[] = [
+                'code' => $b['code'] ?? '',
+                'name' => $b['name'] ?? '',
+                'w' => $b['w'] ?? null,
+                'h' => $b['h'] ?? null,
+                'd' => $b['d'] ?? null,
+                'feet' => $b['feet'] ?? null,
+                'feet_height_mm' => $b['feet_height_mm'] ?? null,
+                'feet_setback_mm' => $b['feet_setback_mm'] ?? null,
+                'y_mm' => $b['y_mm'] ?? null,
+                'qty_per_unit' => $b['qty_per_unit'] ?? null,
+                'qty_project' => $b['qty_project'] ?? null,
+                'position_pt' => $b['position_pt'] ?? null,
+                'parts' => $parts,
+            ];
+        }
+        return $out;
     }
 
     private static function stripInternal(array $data): array
@@ -330,11 +486,12 @@ final class Filter
         return $out;
     }
 
-    /** Normaliza JSON importado (formato Mille Étangs / schema 1.0). */
+    /** Normaliza JSON importado (schema 1.0 ou 2.0). */
     public static function normalizeImport(array $data): array
     {
-        if (($data['schema_version'] ?? '') === '' && isset($data['project'])) {
-            $data['schema_version'] = '1.0';
+        $ver = (string) ($data['schema_version'] ?? '');
+        if ($ver === '' && isset($data['project'])) {
+            $data['schema_version'] = isset($data['box_costs']) ? '2.0' : '1.0';
         }
         if (!isset($data['factory_quotes']) || !is_array($data['factory_quotes'])) {
             $data['factory_quotes'] = [];
@@ -354,19 +511,29 @@ final class Filter
                 'hide_factory_prices_from_filipe' => false,
             ];
         }
+        $phDefaults = [
+            'margin_percent' => null,
+            'margin_amount_eur' => null,
+            'installation_per_unit_eur' => null,
+            'installation_x6_eur' => null,
+            'installation_reference_per_unit_eur' => null,
+            'shipping_per_unit_eur' => null,
+            'shipping_x6_eur' => null,
+            'shipping_to' => null,
+            'selling_price_per_unit_eur' => null,
+            'selling_price_x6_eur' => null,
+            'design_per_unit_eur' => null,
+            'design_x6_eur' => null,
+            'adm_project_eur' => null,
+            'adm_reference_x6_eur' => null,
+            'fabrication_per_unit_eur' => null,
+            'fabrication_x6_eur' => null,
+            'notes_pt' => '',
+        ];
         if (!isset($data['pricing_placeholders']) || !is_array($data['pricing_placeholders'])) {
-            $data['pricing_placeholders'] = [
-                'margin_percent' => null,
-                'margin_amount_eur' => null,
-                'installation_per_unit_eur' => null,
-                'installation_x6_eur' => null,
-                'shipping_per_unit_eur' => null,
-                'shipping_x6_eur' => null,
-                'shipping_to' => null,
-                'selling_price_per_unit_eur' => null,
-                'selling_price_x6_eur' => null,
-                'notes_pt' => '',
-            ];
+            $data['pricing_placeholders'] = $phDefaults;
+        } else {
+            $data['pricing_placeholders'] = array_merge($phDefaults, $data['pricing_placeholders']);
         }
         if (!isset($data['gaps']) || !is_array($data['gaps'])) {
             $data['gaps'] = [];
@@ -377,13 +544,42 @@ final class Filter
         if (!isset($data['boxes']) || !is_array($data['boxes'])) {
             $data['boxes'] = [];
         }
-        // Aceitar price_status com ou sem cedilha
+        foreach ($data['boxes'] as $i => $b) {
+            if (!is_array($b)) {
+                continue;
+            }
+            if (!isset($b['parts']) || !is_array($b['parts'])) {
+                $data['boxes'][$i]['parts'] = [];
+            }
+            if (!array_key_exists('qty_per_unit', $b)) {
+                $data['boxes'][$i]['qty_per_unit'] = 1;
+            }
+        }
+        if (isset($data['box_costs']) && is_array($data['box_costs'])) {
+            if (!isset($data['box_costs']['lines']) || !is_array($data['box_costs']['lines'])) {
+                $data['box_costs']['lines'] = [];
+            }
+            if (!isset($data['box_costs']['panels']) || !is_array($data['box_costs']['panels'])) {
+                $data['box_costs']['panels'] = [];
+            }
+            if (!isset($data['box_costs']['hardware']) || !is_array($data['box_costs']['hardware'])) {
+                $data['box_costs']['hardware'] = [];
+            }
+            if (!isset($data['box_costs']['a_definir_keys']) || !is_array($data['box_costs']['a_definir_keys'])) {
+                $data['box_costs']['a_definir_keys'] = ['margem', 'portes', 'montagem', 'mao_de_obra', 'design', 'adm'];
+            }
+        }
+        if (!isset($data['assets']) || !is_array($data['assets'])) {
+            $data['assets'] = [];
+        }
+        foreach (['logo', 'layout', 'reference', 'elevation_front', 'plan_cut', 'iso_3d'] as $ak) {
+            if (!array_key_exists($ak, $data['assets'])) {
+                $data['assets'][$ak] = null;
+            }
+        }
         foreach ($data['items'] as $i => $it) {
             if (!is_array($it)) {
                 continue;
-            }
-            if (($it['price_status'] ?? '') === 'a_orçamentar') {
-                // manter original; UI trata ambos
             }
             if (!array_key_exists('image', $it)) {
                 $data['items'][$i]['image'] = null;

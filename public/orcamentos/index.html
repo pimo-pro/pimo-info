@@ -189,6 +189,25 @@ table.t tr.tot td { font-weight: 700; color: #000; background: #fff; border-top:
   opacity: 0; transform: translateY(8px); transition: .2s ease; pointer-events: none;
 }
 .toast.show { opacity: 1; transform: none; }
+tr.a-definir td, .a-definir-cell {
+  color: #b91c1c !important;
+  background: #fef2f2 !important;
+  font-weight: 600;
+}
+.a-definir-input {
+  width: 100%;
+  max-width: 110px;
+  border: 1px solid #fecaca;
+  background: #fff;
+  color: #b91c1c;
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 4px 6px;
+}
+.totals-note-warn { color: #b91c1c; font-size: 0.85rem; margin: 6px 0 10px; }
+.asset-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 8px 0 14px; }
+.asset-grid figure { margin: 0; }
+.asset-grid figcaption { font-size: 0.72rem; color: var(--soft); margin-top: 4px; }
 
 @media print {
   body { background: #fff; }
@@ -539,8 +558,11 @@ table.t tr.tot td { font-weight: 700; color: #000; background: #fff; border-top:
         reader.onload = function () {
           try {
             var data = JSON.parse(String(reader.result || ""));
-            api("import.php", { method: "POST", body: data }).then(function (j) {
-              toast("Importado");
+            var payload = state.projectId
+              ? { project_id: state.projectId, data: data }
+              : data;
+            api("import.php", { method: "POST", body: payload }).then(function (j) {
+              toast(j.updated ? "Importado (nova versão)" : "Importado");
               state.projectId = j.project.id;
               return loadWorkspace();
             }).catch(function (e) { toast(e.message); });
@@ -842,13 +864,11 @@ table.t tr.tot td { font-weight: 700; color: #000; background: #fff; border-top:
 
   function clientPriceLabel(d, choice) {
     var pricing = d.pricing || {};
+    if (pricing.a_definir_pending) return t("noPrice");
     var base = pricing.selling_price_per_unit_eur;
     if (base == null) return t("noPrice");
     var total = Number(base) || 0;
     if (choice.with_installation && pricing.installation_per_unit_eur != null) total += Number(pricing.installation_per_unit_eur) || 0;
-    if (choice.with_equipment === false) {
-      // sem equipamentos: mostrar só base (mobiliário); simplificado
-    }
     var mats = d.material_options || [];
     var mat = mats.find(function (m) { return m.id === choice.material_option_id; });
     if (mat && mat.unit_price_eur != null) total = Number(mat.unit_price_eur) || total;
@@ -895,17 +915,21 @@ table.t tr.tot td { font-weight: 700; color: #000; background: #fff; border-top:
     );
 
     // 3 Design
-    var layout = assetUrl(d.assets && d.assets.layout);
-    var ref = assetUrl(d.assets && d.assets.reference);
     html += sec("design",
       "<div class=\"pagebreak\"></div><h2 class=\"sec\">2. Design e planta</h2>" +
-      (layout ? "<img class=\"asset-img\" src=\"" + esc(layout) + "\" alt=\"Planta das caixas\">" : "<p class=\"note\">Planta ainda não carregada.</p>") +
-      (ref ? "<img class=\"asset-img\" src=\"" + esc(ref) + "\" alt=\"Referência\">" : "")
+      designAssetsHtml(d.assets || {})
     );
 
-    // 4 Caixas
+    // 4 Caixas (+ box_costs nas vistas internas)
+    var canEditADef = role === "admin" || role === "khaled" || role === "filipe";
     html += sec("caixas",
-      "<h2 class=\"sec\">3. Caixas do móvel</h2>" + boxesTable(d.boxes || [], role)
+      "<h2 class=\"sec\">3. Caixas do móvel</h2>" +
+      boxImagesHtml(d.assets || {}, d.boxes || []) +
+      boxesTable(d.boxes || [], role) +
+      (role === "factory" ? factoryPartsHtml(d) : "") +
+      ((role === "admin" || role === "khaled" || role === "filipe")
+        ? boxCostsHtml(d, canEditADef)
+        : "")
     );
 
     // Categories / items
@@ -1001,22 +1025,282 @@ table.t tr.tot td { font-weight: 700; color: #000; background: #fff; border-top:
     return [o.w, o.h, o.d].filter(function (x) { return x != null; }).join(" x ") + " mm";
   }
 
+  function designAssetsHtml(assets) {
+    var items = [
+      ["layout", "Planta / layout"],
+      ["elevation_front", "Alçado frontal"],
+      ["plan_cut", "Corte / planta"],
+      ["iso_3d", "Iso 3D"],
+      ["reference", "Referência"]
+    ];
+    var figs = [];
+    items.forEach(function (it) {
+      var u = assetUrl(assets[it[0]]);
+      if (!u) return;
+      figs.push("<figure><img class=\"asset-img\" src=\"" + esc(u) + "\" alt=\"" + esc(it[1]) + "\"><figcaption>" + esc(it[1]) + "</figcaption></figure>");
+    });
+    if (!figs.length) return "<p class=\"note\">Imagens de design ainda não carregadas.</p>";
+    return "<div class=\"asset-grid\">" + figs.join("") + "</div>";
+  }
+
+  function boxImagesHtml(assets, boxes) {
+    var map = assets.boxes || {};
+    var figs = [];
+    (boxes || []).forEach(function (b) {
+      var key = b.code;
+      var u = assetUrl(map[key] || assets["box_" + key] || null);
+      if (!u) return;
+      figs.push("<figure><img class=\"asset-img\" src=\"" + esc(u) + "\" alt=\"" + esc(key) + "\"><figcaption>" + esc(key + " · " + (b.name || "")) + "</figcaption></figure>");
+    });
+    if (!figs.length) return "";
+    return "<h3 class=\"sub\">Imagens das caixas</h3><div class=\"asset-grid\">" + figs.join("") + "</div>";
+  }
+
   function boxesTable(boxes, role) {
     var detailed = role !== "client";
     var html = "<table class=\"t\"><thead><tr><th>Ref.</th><th>Função</th><th>L x A x P (mm)</th>";
-    if (detailed) html += "<th>Pés</th><th>Posição</th>";
+    if (detailed) html += "<th>Pés</th><th>Qtd</th><th>Posição</th>";
     html += "</tr></thead><tbody>";
     boxes.forEach(function (b) {
       html += "<tr><td>" + esc(b.code) + "</td><td>" + esc(b.name) + "</td>";
       html += "<td>" + esc([b.w, b.h, b.d].join(" x ")) + "</td>";
       if (detailed) {
-        html += "<td>" + (b.feet ? "Com pés" : "Sem pés") + "</td>";
+        var feet = b.feet ? ("Com pés" + (b.feet_height_mm != null ? " (" + b.feet_height_mm + " mm)" : "")) : "Sem pés";
+        html += "<td>" + esc(feet) + "</td>";
+        html += "<td class=\"n\">" + esc(b.qty_per_unit != null ? b.qty_per_unit : 1) + "</td>";
         html += "<td>" + esc(b.position_pt || "") + "</td>";
       }
       html += "</tr>";
     });
     html += "</tbody></table>";
     return html;
+  }
+
+  function factoryPartsHtml(d) {
+    var html = "";
+    var boxes = d.boxes || [];
+    var hasParts = boxes.some(function (b) { return b.parts && b.parts.length; });
+    if (hasParts) {
+      html += "<h3 class=\"sub\">Peças das caixas</h3>";
+      boxes.forEach(function (b) {
+        if (!b.parts || !b.parts.length) return;
+        html += "<p class=\"note\"><strong>" + esc(b.code + " · " + b.name) + "</strong></p>";
+        html += "<table class=\"t\"><thead><tr><th>Peça</th><th>L</th><th>W</th><th>T</th><th class=\"n\">Qtd</th><th>Material</th></tr></thead><tbody>";
+        b.parts.forEach(function (p) {
+          html += "<tr><td>" + esc(p.name) + "</td><td>" + esc(p.l) + "</td><td>" + esc(p.w) + "</td><td>" + esc(p.t) + "</td>";
+          html += "<td class=\"n\">" + esc(p.qty) + "</td><td>" + esc(p.material || "") + "</td></tr>";
+        });
+        html += "</tbody></table>";
+      });
+    }
+    var bc = d.box_costs || {};
+    if (bc.panels && bc.panels.length) {
+      html += "<h3 class=\"sub\">Painéis (quantidades)</h3><table class=\"t\"><thead><tr><th>Material</th><th>Esp. mm</th><th class=\"n\">1 unidade</th><th class=\"n\">Projecto</th></tr></thead><tbody>";
+      bc.panels.forEach(function (p) {
+        html += "<tr><td>" + esc(p.material) + "</td><td>" + esc(p.thickness_mm) + "</td>";
+        html += "<td class=\"n\">" + esc(p.qty_per_unit) + "</td><td class=\"n\">" + esc(p.qty_project) + "</td></tr>";
+      });
+      html += "</tbody></table>";
+    }
+    if (bc.hardware && bc.hardware.length) {
+      html += "<h3 class=\"sub\">Ferragens (quantidades)</h3><table class=\"t\"><thead><tr><th>Tipo</th><th class=\"n\">1 unidade</th><th class=\"n\">Projecto</th><th>Notas</th></tr></thead><tbody>";
+      bc.hardware.forEach(function (h) {
+        html += "<tr><td>" + esc(h.type) + "</td><td class=\"n\">" + esc(h.qty_per_unit) + "</td><td class=\"n\">" + esc(h.qty_project) + "</td><td>" + esc(h.notes || "") + "</td></tr>";
+      });
+      html += "</tbody></table>";
+    }
+    return html;
+  }
+
+  function unitsLabel(d) {
+    var n = (d.box_costs && d.box_costs.units) || (d.project && d.project.units) || 1;
+    return n + " unidades";
+  }
+
+  function boxCostsHtml(d, canEdit) {
+    var bc = d.box_costs;
+    if (!bc || !bc.lines || !bc.lines.length) return "";
+    var units = bc.units || (d.project && d.project.units) || 1;
+    var html = "<h3 class=\"sub\">Custos das caixas</h3>";
+    html += "<table class=\"t\"><thead><tr><th>Rubrica</th><th class=\"n\">1 unidade</th><th class=\"n\">" + esc(unitsLabel(d)) + "</th></tr></thead><tbody>";
+    bc.lines.forEach(function (line) {
+      var isADef = line.flag === "a_definir" || line.render === "red";
+      var cls = isADef ? " class=\"a-definir\"" : "";
+      html += "<tr" + cls + "><td>" + esc(line.label || line.key);
+      if (line.key === "adm") html += " <span class=\"cap\">(projecto completo)</span>";
+      html += "</td>";
+      if (isADef && (line.per_unit_eur == null && line.project_eur == null)) {
+        var ref = line.reference_pimo_oficial_per_unit_eur;
+        var cell = "a definir";
+        if (ref != null) cell += " <span class=\"cap\">(ref. " + esc(money(ref)) + "/un.)</span>";
+        if (canEdit) {
+          html += "<td class=\"n a-definir-cell\"><input class=\"a-definir-input\" data-adef-key=\"" + esc(line.key) + "\" data-adef-scope=\"per_unit\" placeholder=\"€ / un.\"></td>";
+          if (line.key === "adm") {
+            html += "<td class=\"n a-definir-cell\"><input class=\"a-definir-input\" data-adef-key=\"adm\" data-adef-scope=\"project\" placeholder=\"€ projecto\"></td>";
+          } else {
+            html += "<td class=\"n a-definir-cell\">" + cell + "</td>";
+          }
+        } else {
+          html += "<td class=\"n\">" + cell + "</td><td class=\"n\">" + cell + "</td>";
+        }
+      } else {
+        var pu = line.per_unit_eur;
+        var pr = line.project_eur;
+        if (line.key === "adm" && pu == null && pr != null) {
+          html += "<td class=\"n\">-</td><td class=\"n\">" + esc(money(pr));
+          if (canEdit) html += " <input class=\"a-definir-input\" data-adef-key=\"adm\" data-adef-scope=\"project\" value=\"" + esc(pr) + "\">";
+          html += "</td>";
+        } else {
+          html += "<td class=\"n\">" + esc(pu == null ? "-" : money(pu));
+          if (canEdit && isADef) html += " <input class=\"a-definir-input\" data-adef-key=\"" + esc(line.key) + "\" data-adef-scope=\"per_unit\" value=\"" + esc(pu) + "\">";
+          html += "</td><td class=\"n\">" + esc(pr == null ? (pu != null ? money(pu * units) : "-") : money(pr)) + "</td>";
+        }
+      }
+      html += "</tr>";
+    });
+    html += "</tbody></table>";
+    if (canEdit) {
+      html += "<div class=\"row no-print\" style=\"margin:8px 0 12px\"><button type=\"button\" class=\"btn\" id=\"btn-save-adef\">Gravar rubricas a definir</button></div>";
+    }
+
+    if (bc.panels && bc.panels.length) {
+      html += "<h3 class=\"sub\">Painéis</h3><table class=\"t\"><thead><tr><th>Material</th><th>Esp. mm</th><th class=\"n\">Qtd / un.</th><th class=\"n\">Qtd projecto</th><th class=\"n\">1 unidade</th><th class=\"n\">" + esc(unitsLabel(d)) + "</th></tr></thead><tbody>";
+      bc.panels.forEach(function (p) {
+        html += "<tr><td>" + esc(p.material) + "</td><td>" + esc(p.thickness_mm) + "</td>";
+        html += "<td class=\"n\">" + esc(p.qty_per_unit) + "</td><td class=\"n\">" + esc(p.qty_project) + "</td>";
+        html += "<td class=\"n\">" + esc(money(p.per_unit_eur)) + "</td><td class=\"n\">" + esc(money(p.project_eur)) + "</td></tr>";
+      });
+      html += "</tbody></table>";
+    }
+    if (bc.hardware && bc.hardware.length) {
+      html += "<h3 class=\"sub\">Ferragens de caixa</h3><table class=\"t\"><thead><tr><th>Tipo</th><th class=\"n\">Qtd / un.</th><th class=\"n\">Qtd projecto</th><th class=\"n\">1 unidade</th><th class=\"n\">" + esc(unitsLabel(d)) + "</th></tr></thead><tbody>";
+      bc.hardware.forEach(function (h) {
+        html += "<tr><td>" + esc(h.type) + (h.notes ? "<div class=\"cap\">" + esc(h.notes) + "</div>" : "") + "</td>";
+        html += "<td class=\"n\">" + esc(h.qty_per_unit) + "</td><td class=\"n\">" + esc(h.qty_project) + "</td>";
+        html += "<td class=\"n\">" + esc(money(h.per_unit_eur)) + "</td><td class=\"n\">" + esc(money(h.project_eur)) + "</td></tr>";
+      });
+      html += "</tbody></table>";
+    }
+
+    var totals = computeBoxTotals(d);
+    html += "<h3 class=\"sub\">Totais (caixas)</h3>";
+    if (totals.pending.length) {
+      html += "<p class=\"totals-note-warn\">Total sem rubricas a definir (" + esc(totals.pending.join(", ")) + ").</p>";
+    }
+    html += "<table class=\"t\"><thead><tr><th></th><th class=\"n\">1 unidade</th><th class=\"n\">" + esc(unitsLabel(d)) + "</th></tr></thead><tbody>";
+    html += "<tr><td>Subtotal s/ IVA</td><td class=\"n\">" + esc(money(totals.sub_u)) + "</td><td class=\"n\">" + esc(money(totals.sub_p)) + "</td></tr>";
+    html += "<tr><td>IVA " + esc(String(Math.round((bc.iva_rate || 0.23) * 100))) + "%</td><td class=\"n\">" + esc(money(totals.iva_u)) + "</td><td class=\"n\">" + esc(money(totals.iva_p)) + "</td></tr>";
+    html += "<tr class=\"tot\"><td>Total c/ IVA</td><td class=\"n\">" + esc(money(totals.tot_u)) + "</td><td class=\"n\">" + esc(money(totals.tot_p)) + "</td></tr>";
+    html += "</tbody></table>";
+    if (bc.totals && bc.totals.note_pt) html += "<p class=\"cap\">" + esc(bc.totals.note_pt) + "</p>";
+    return html;
+  }
+
+  function computeBoxTotals(d) {
+    var bc = d.box_costs || {};
+    var rate = bc.iva_rate != null ? Number(bc.iva_rate) : 0.23;
+    var units = bc.units || (d.project && d.project.units) || 1;
+    var aKeys = bc.a_definir_keys || [];
+    var pending = [];
+    var sub_u = 0, sub_p = 0;
+    (bc.lines || []).forEach(function (line) {
+      var isADef = line.flag === "a_definir" || (aKeys.indexOf(line.key) >= 0);
+      var pu = line.per_unit_eur;
+      var pr = line.project_eur;
+      if (isADef && pu == null && pr == null) {
+        pending.push(line.label || line.key);
+        return;
+      }
+      if (line.key === "adm") {
+        if (pr != null) { sub_p += Number(pr) || 0; }
+        else if (pu != null) { sub_p += Number(pu) || 0; }
+        return;
+      }
+      if (pu != null) sub_u += Number(pu) || 0;
+      if (pr != null) sub_p += Number(pr) || 0;
+      else if (pu != null) sub_p += (Number(pu) || 0) * units;
+    });
+    // Se só há linhas ok, preferir totals do JSON quando não há pending e totals existem
+    if (!pending.length && bc.totals && bc.totals.subtotal_ex_iva && (bc.lines || []).every(function (l) {
+      return l.flag !== "a_definir" || l.per_unit_eur != null || l.project_eur != null;
+    })) {
+      // keep computed from filled lines (includes newly filled a_definir)
+    }
+    return {
+      pending: pending,
+      sub_u: sub_u,
+      sub_p: sub_p,
+      iva_u: sub_u * rate,
+      iva_p: sub_p * rate,
+      tot_u: sub_u * (1 + rate),
+      tot_p: sub_p * (1 + rate)
+    };
+  }
+
+  function applyADefinirToData(d) {
+    d.box_costs = d.box_costs || { lines: [], units: (d.project && d.project.units) || 1, iva_rate: 0.23 };
+    d.pricing_placeholders = d.pricing_placeholders || {};
+    var units = d.box_costs.units || (d.project && d.project.units) || 1;
+    var mapPh = {
+      margem: function (pu, pr) {
+        d.pricing_placeholders.margin_amount_eur = pu;
+      },
+      portes: function (pu) {
+        d.pricing_placeholders.shipping_per_unit_eur = pu;
+        d.pricing_placeholders.shipping_x6_eur = pu != null ? pu * units : null;
+      },
+      montagem: function (pu) {
+        d.pricing_placeholders.installation_per_unit_eur = pu;
+        d.pricing_placeholders.installation_x6_eur = pu != null ? pu * units : null;
+      },
+      mao_de_obra: function (pu) {
+        d.pricing_placeholders.fabrication_per_unit_eur = pu;
+        d.pricing_placeholders.fabrication_x6_eur = pu != null ? pu * units : null;
+      },
+      design: function (pu) {
+        d.pricing_placeholders.design_per_unit_eur = pu;
+        d.pricing_placeholders.design_x6_eur = pu != null ? pu * units : null;
+      },
+      adm: function (pu, pr) {
+        d.pricing_placeholders.adm_project_eur = pr != null ? pr : pu;
+      }
+    };
+    document.querySelectorAll(".a-definir-input").forEach(function (inp) {
+      var key = inp.getAttribute("data-adef-key");
+      var scope = inp.getAttribute("data-adef-scope");
+      var raw = inp.value.trim();
+      var val = raw === "" ? null : Number(raw.replace(",", "."));
+      if (val != null && isNaN(val)) val = null;
+      var line = (d.box_costs.lines || []).find(function (l) { return l.key === key; });
+      if (!line) {
+        line = { key: key, label: key, flag: "a_definir", render: "red", visibility: "internal_only" };
+        d.box_costs.lines.push(line);
+      }
+      if (scope === "project" || key === "adm") {
+        if (val != null) {
+          line.project_eur = val;
+          line.per_unit_eur = null;
+          line.flag = "ok";
+          line.render = "normal";
+        }
+      } else if (val != null) {
+        line.per_unit_eur = val;
+        line.project_eur = val * units;
+        line.flag = "ok";
+        line.render = "normal";
+      }
+      if (mapPh[key]) mapPh[key](line.per_unit_eur, line.project_eur);
+    });
+    var tot = computeBoxTotals(d);
+    d.box_costs.totals = d.box_costs.totals || {};
+    d.box_costs.totals.subtotal_ex_iva = { per_unit: tot.sub_u, project: tot.sub_p };
+    d.box_costs.totals.iva = { per_unit: tot.iva_u, project: tot.iva_p };
+    d.box_costs.totals.total_incl_iva = { per_unit: tot.tot_u, project: tot.tot_p };
+    if (!tot.pending.length) {
+      d.pricing_placeholders.selling_price_per_unit_eur = tot.tot_u;
+      d.pricing_placeholders.selling_price_x6_eur = tot.tot_p;
+    }
+    return d;
   }
 
   function itemsTable(items, role, editable) {
@@ -1135,8 +1419,24 @@ table.t tr.tot td { font-weight: 700; color: #000; background: #fff; border-top:
     });
   }
 
+  function bindADefinirSave() {
+    var btn = document.getElementById("btn-save-adef");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      applyADefinirToData(state.data);
+      api("project.php", {
+        method: "POST",
+        body: { id: state.projectId, data: state.data, note: "rubricas a definir" }
+      }).then(function () {
+        toast("Rubricas gravadas");
+        return openProject(state.projectId);
+      }).catch(function (e) { toast(e.message); });
+    });
+  }
+
   function bindAdmin() {
     bindAdminCode();
+    bindADefinirSave();
     var st = document.getElementById("adm-save-status");
     if (st) st.addEventListener("click", function () {
       var status = document.getElementById("adm-status").value;
@@ -1278,8 +1578,10 @@ table.t tr.tot td { font-weight: 700; color: #000; background: #fff; border-top:
   }
 
   function bindEditor() {
+    bindADefinirSave();
     var b = document.getElementById("ed-save");
     if (b) b.addEventListener("click", function () {
+      applyADefinirToData(state.data);
       api("project.php", { method: "POST", body: { id: state.projectId, data: state.data, note: "edição" } })
         .then(function () { toast("Gravado"); return openProject(state.projectId); })
         .catch(function (e) { toast(e.message); });

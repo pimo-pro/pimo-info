@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "generated_at": "2026-11-26",
   "timezone": "Europe/Lisbon",
   "currency": "EUR",
@@ -70,7 +70,11 @@
     "language": "pt",
     "status": "rascunho",
     "location": "Portugal",
-    "overall_mm": { "w": 1800, "h": 2300, "d": 600 },
+    "overall_mm": {
+      "w": 1800,
+      "h": 2300,
+      "d": 600
+    },
     "overall_note": "1800 x 2300 x 600 mm, indicativas.",
     "free_gap_above_bases_mm": 560,
     "notes": "Duas unidades iguais de demonstração.",
@@ -83,7 +87,17 @@
     "logo": null,
     "layout": null,
     "reference": null,
-    "notes_pt": "Imagens a carregar pelo painel (logótipo, planta e referência)."
+    "elevation_front": null,
+    "plan_cut": null,
+    "iso_3d": null,
+    "boxes": {
+      "B1": null,
+      "B2": null,
+      "B3": null,
+      "B4": null,
+      "B5": null
+    },
+    "notes_pt": "Imagens a carregar pelo painel (logótipo, alçado, planta, iso e por caixa)."
   },
   "boxes": [
     {
@@ -96,7 +110,29 @@
       "y_mm": 0,
       "qty_per_unit": 1,
       "position_pt": "Pavimento, lado do roupeiro.",
-      "notes_pt": "Folga de ventilação atrás do minibar."
+      "notes_pt": "Folga de ventilação atrás do minibar.",
+      "feet_height_mm": 100,
+      "feet_setback_mm": 50,
+      "qty_project": 2,
+      "pimo_id": "demo-b1",
+      "parts": [
+        {
+          "name": "Lateral",
+          "l": 870,
+          "w": 600,
+          "t": 19,
+          "qty": 2,
+          "material": "MDF 19"
+        },
+        {
+          "name": "Prateleira",
+          "l": 562,
+          "w": 580,
+          "t": 19,
+          "qty": 1,
+          "material": "MDF 19"
+        }
+      ]
     },
     {
       "code": "B2",
@@ -107,7 +143,29 @@
       "feet": false,
       "y_mm": 870,
       "qty_per_unit": 1,
-      "position_pt": "Sobre o B1."
+      "position_pt": "Sobre o B1.",
+      "feet_height_mm": null,
+      "feet_setback_mm": null,
+      "qty_project": 2,
+      "pimo_id": "demo-b2",
+      "parts": [
+        {
+          "name": "Lateral",
+          "l": 1430,
+          "w": 600,
+          "t": 19,
+          "qty": 2,
+          "material": "MDF 19"
+        },
+        {
+          "name": "Prateleira",
+          "l": 562,
+          "w": 580,
+          "t": 19,
+          "qty": 1,
+          "material": "MDF 19"
+        }
+      ]
     },
     {
       "code": "B3",
@@ -118,7 +176,29 @@
       "feet": true,
       "y_mm": 0,
       "qty_per_unit": 1,
-      "position_pt": "Pavimento, centro."
+      "position_pt": "Pavimento, centro.",
+      "feet_height_mm": 100,
+      "feet_setback_mm": 50,
+      "qty_project": 2,
+      "pimo_id": "demo-b3",
+      "parts": [
+        {
+          "name": "Lateral",
+          "l": 870,
+          "w": 600,
+          "t": 19,
+          "qty": 2,
+          "material": "MDF 19"
+        },
+        {
+          "name": "Prateleira",
+          "l": 562,
+          "w": 580,
+          "t": 19,
+          "qty": 1,
+          "material": "MDF 19"
+        }
+      ]
     },
     {
       "code": "B4",
@@ -129,7 +209,29 @@
       "feet": true,
       "y_mm": 0,
       "qty_per_unit": 1,
-      "position_pt": "Pavimento, direita."
+      "position_pt": "Pavimento, direita.",
+      "feet_height_mm": 100,
+      "feet_setback_mm": 50,
+      "qty_project": 2,
+      "pimo_id": "demo-b4",
+      "parts": [
+        {
+          "name": "Lateral",
+          "l": 870,
+          "w": 600,
+          "t": 19,
+          "qty": 2,
+          "material": "MDF 19"
+        },
+        {
+          "name": "Prateleira",
+          "l": 562,
+          "w": 580,
+          "t": 19,
+          "qty": 1,
+          "material": "MDF 19"
+        }
+      ]
     },
     {
       "code": "B5",
@@ -140,12 +242,38 @@
       "feet": false,
       "y_mm": 1430,
       "qty_per_unit": 1,
-      "position_pt": "Encostado à costa, sobre o vão da bancada."
+      "position_pt": "Encostado à costa, sobre o vão da bancada.",
+      "feet_height_mm": null,
+      "feet_setback_mm": null,
+      "qty_project": 2,
+      "pimo_id": "demo-b5",
+      "parts": [
+        {
+          "name": "Lateral",
+          "l": 900,
+          "w": 350,
+          "t": 19,
+          "qty": 2,
+          "material": "MDF 19"
+        },
+        {
+          "name": "Prateleira",
+          "l": 1162,
+          "w": 330,
+          "t": 19,
+          "qty": 1,
+          "material": "MDF 19"
+        }
+      ]
     }
   ],
   "box_alternative": {
     "name": "Caixa única de roupeiro com nicho",
-    "mm": { "w": 600, "h": 2300, "d": 600 },
+    "mm": {
+      "w": 600,
+      "h": 2300,
+      "d": 600
+    },
     "adopted": false,
     "notes_pt": "Alternativa não adotada neste exemplo."
   },
@@ -176,12 +304,36 @@
     }
   ],
   "categories": [
-    { "id": "dobradicas", "name": "Dobradiças e faixas de ferro", "order": 1 },
-    { "id": "puxadores", "name": "Puxadores", "order": 2 },
-    { "id": "sistemas_portas", "name": "Sistemas de portas", "order": 3 },
-    { "id": "eletrodomesticos", "name": "Equipamentos", "order": 4 },
-    { "id": "ventilacao", "name": "Ventilação e acessórios", "order": 5 },
-    { "id": "outros", "name": "Outros (fechos e mobiliário)", "order": 6 }
+    {
+      "id": "dobradicas",
+      "name": "Dobradiças e faixas de ferro",
+      "order": 1
+    },
+    {
+      "id": "puxadores",
+      "name": "Puxadores",
+      "order": 2
+    },
+    {
+      "id": "sistemas_portas",
+      "name": "Sistemas de portas",
+      "order": 3
+    },
+    {
+      "id": "eletrodomesticos",
+      "name": "Equipamentos",
+      "order": 4
+    },
+    {
+      "id": "ventilacao",
+      "name": "Ventilação e acessórios",
+      "order": 5
+    },
+    {
+      "id": "outros",
+      "name": "Outros (fechos e mobiliário)",
+      "order": 6
+    }
   ],
   "items": [
     {
@@ -263,7 +415,9 @@
       "notes_pt": "Artigo fictício.",
       "other_prices": null,
       "official_url": null,
-      "specs": { "finish": "preto mate" },
+      "specs": {
+        "finish": "preto mate"
+      },
       "visibility": {
         "name": "client_visible",
         "brand": "client_visible",
@@ -309,7 +463,9 @@
       "notes_pt": "Artigo fictício.",
       "other_prices": null,
       "official_url": null,
-      "specs": { "power": "700 W" },
+      "specs": {
+        "power": "700 W"
+      },
       "visibility": {
         "name": "client_visible",
         "brand": "client_visible",
@@ -412,21 +568,27 @@
   "sets": {
     "equipamentos": {
       "economico": {
-        "items": { "microondas": "ed-demo-micro" },
+        "items": {
+          "microondas": "ed-demo-micro"
+        },
         "per_unit_without_extractor_eur": 79.99,
         "per_unit_with_extractor_eur": 79.99,
         "x6_without_extractor_eur": 159.98,
         "x6_with_extractor_eur": 159.98
       },
       "recomendado": {
-        "items": { "microondas": "ed-demo-micro" },
+        "items": {
+          "microondas": "ed-demo-micro"
+        },
         "per_unit_without_extractor_eur": 79.99,
         "per_unit_with_extractor_eur": 79.99,
         "x6_without_extractor_eur": 159.98,
         "x6_with_extractor_eur": 159.98
       },
       "premium": {
-        "items": { "minibar": "ed-demo-minibar-consulta" },
+        "items": {
+          "minibar": "ed-demo-minibar-consulta"
+        },
         "note": "Minibar ainda sob consulta.",
         "per_unit_without_minibar_without_extractor_eur": 0,
         "per_unit_without_minibar_with_extractor_eur": 0,
@@ -438,19 +600,26 @@
     "ferragens": {
       "economico": {
         "description": "Faixas económicas",
-        "items": ["dob-demo-faixa"],
+        "items": [
+          "dob-demo-faixa"
+        ],
         "per_unit_eur": 112.5,
         "x6_eur": 225.0
       },
       "recomendado": {
         "description": "Faixas + puxadores",
-        "items": ["dob-demo-faixa", "pux-demo-vertical"],
+        "items": [
+          "dob-demo-faixa",
+          "pux-demo-vertical"
+        ],
         "per_unit_eur": 196.5,
         "x6_eur": 393.0
       },
       "premium": {
         "description": "Puxadores premium (dobradiças sob consulta)",
-        "items": ["pux-demo-vertical"],
+        "items": [
+          "pux-demo-vertical"
+        ],
         "pulls_per_unit_eur": 84.0,
         "pulls_x6_eur": 168.0,
         "hinges_price_status": "sob_consulta"
@@ -470,7 +639,11 @@
       "shipping": null,
       "price_status": "a_orcamentar",
       "notes_pt": "A orçamentar pela fábrica.",
-      "visibility": "factory_visible"
+      "visibility": "factory_visible",
+      "flag": "a_definir",
+      "render": "red",
+      "per_unit_eur": null,
+      "project_eur": null
     },
     {
       "label": "Ferragens recomendadas",
@@ -484,7 +657,11 @@
       "shipping": null,
       "price_status": "publicado",
       "notes_pt": "Total fictício.",
-      "visibility": "internal_only"
+      "visibility": "internal_only",
+      "flag": "ok",
+      "render": "normal",
+      "per_unit_eur": 196.5,
+      "project_eur": 393.0
     }
   ],
   "order_of_magnitude": [
@@ -506,7 +683,14 @@
     "shipping_to": "Portugal",
     "selling_price_per_unit_eur": null,
     "selling_price_x6_eur": null,
-    "notes_pt": "Campos para preencher na ferramenta. Enquanto vazios, não há preço final ao cliente."
+    "notes_pt": "Campos para preencher na ferramenta. Enquanto vazios, não há preço final ao cliente.",
+    "design_per_unit_eur": null,
+    "design_x6_eur": null,
+    "adm_project_eur": null,
+    "adm_reference_x6_eur": 203.0,
+    "fabrication_per_unit_eur": null,
+    "fabrication_x6_eur": null,
+    "installation_reference_per_unit_eur": 66.2
   },
   "ventilation_and_clearances": {
     "minibar": "Deixar folga atrás e grelha se necessário.",
@@ -543,5 +727,157 @@
   "editor_settings": {
     "hide_margin_from_filipe": false,
     "hide_factory_prices_from_filipe": false
+  },
+  "box_costs": {
+    "source": "exemplo-ficticio",
+    "units": 2,
+    "iva_rate": 0.23,
+    "lines": [
+      {
+        "key": "carcaca",
+        "label": "Carcaça / painéis",
+        "per_unit_eur": 180.0,
+        "project_eur": 360.0,
+        "pimo_note": null,
+        "flag": "ok",
+        "render": "normal",
+        "visibility": "internal_only"
+      },
+      {
+        "key": "ferragens_caixa",
+        "label": "Ferragens de caixa",
+        "per_unit_eur": 12.5,
+        "project_eur": 25.0,
+        "pimo_note": null,
+        "flag": "ok",
+        "render": "normal",
+        "visibility": "internal_only"
+      },
+      {
+        "key": "margem",
+        "label": "Margem",
+        "per_unit_eur": null,
+        "project_eur": null,
+        "pimo_note": null,
+        "flag": "a_definir",
+        "render": "red",
+        "visibility": "internal_only"
+      },
+      {
+        "key": "portes",
+        "label": "Portes",
+        "per_unit_eur": null,
+        "project_eur": null,
+        "flag": "a_definir",
+        "render": "red",
+        "visibility": "internal_only"
+      },
+      {
+        "key": "montagem",
+        "label": "Montagem",
+        "per_unit_eur": null,
+        "project_eur": null,
+        "flag": "a_definir",
+        "render": "red",
+        "reference_pimo_oficial_per_unit_eur": 66.2,
+        "visibility": "internal_only"
+      },
+      {
+        "key": "mao_de_obra",
+        "label": "Mão de obra / custo de fabrico",
+        "per_unit_eur": null,
+        "project_eur": null,
+        "flag": "a_definir",
+        "render": "red",
+        "visibility": "internal_only"
+      },
+      {
+        "key": "design",
+        "label": "Design",
+        "per_unit_eur": null,
+        "project_eur": null,
+        "flag": "a_definir",
+        "render": "red",
+        "visibility": "internal_only"
+      },
+      {
+        "key": "adm",
+        "label": "ADM",
+        "per_unit_eur": null,
+        "project_eur": null,
+        "flag": "a_definir",
+        "render": "red",
+        "reference_pimo_oficial_per_unit_eur": null,
+        "visibility": "internal_only",
+        "pimo_note": "Rubrica do projecto completo (todas as unidades)."
+      }
+    ],
+    "panels": [
+      {
+        "material": "MDF 19 branco",
+        "thickness_mm": 19,
+        "qty_per_unit": 14,
+        "qty_project": 28,
+        "unit_price_eur": 7.5,
+        "per_unit_eur": 105.0,
+        "project_eur": 210.0
+      },
+      {
+        "material": "MDF 10 costas",
+        "thickness_mm": 10,
+        "qty_per_unit": 3,
+        "qty_project": 6,
+        "unit_price_eur": 4.0,
+        "per_unit_eur": 12.0,
+        "project_eur": 24.0
+      }
+    ],
+    "hardware": [
+      {
+        "type": "Parafuso 4x30",
+        "qty_per_unit": 60,
+        "qty_project": 120,
+        "unit_price_eur": 0.03,
+        "notes": null,
+        "per_unit_eur": 1.8,
+        "project_eur": 3.6,
+        "pimo_note": null
+      },
+      {
+        "type": "Cavilha 8x30",
+        "qty_per_unit": 24,
+        "qty_project": 48,
+        "unit_price_eur": 0.05,
+        "notes": null,
+        "per_unit_eur": 1.2,
+        "project_eur": 2.4,
+        "pimo_note": null
+      }
+    ],
+    "totals": {
+      "subtotal_ex_iva": {
+        "per_unit": 192.5,
+        "project": 385.0
+      },
+      "iva": {
+        "per_unit": 44.27,
+        "project": 88.55
+      },
+      "total_incl_iva": {
+        "per_unit": 236.78,
+        "project": 473.55
+      },
+      "note_pt": "Totais sem rubricas a definir (margem, portes, montagem, mão de obra, design, ADM)."
+    },
+    "a_definir_keys": [
+      "margem",
+      "portes",
+      "montagem",
+      "mao_de_obra",
+      "design",
+      "adm"
+    ],
+    "render_rule": "Linhas a_definir a vermelho; não entram no total enquanto vazias.",
+    "adm_scope": "project"
   }
 }

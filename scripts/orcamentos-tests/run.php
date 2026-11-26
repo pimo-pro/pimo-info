@@ -140,6 +140,35 @@ $e0 = Settings::adminSessionEpoch($pdo);
 $e1 = Settings::bumpAdminSessionEpoch($pdo);
 assert_true($e1 === $e0 + 1, 'epoch de sessão admin incrementa');
 
+// Schema 2.0: box_costs e filtros
+$v2 = json_decode(file_get_contents($example), true);
+assert_true(($v2['schema_version'] ?? '') === '2.0', 'exemplo fictício em 2.0');
+assert_true(isset($v2['box_costs']['lines']), 'exemplo tem box_costs.lines');
+$normV2 = Filter::normalizeImport($v2);
+$facV2 = Filter::forRole($normV2, ['role' => 'factory', 'factory_key' => 'fab-a']);
+assert_true(!isset($facV2['box_costs']['lines']), 'fábrica sem box_costs.lines');
+assert_true(!isset($facV2['box_costs']['totals']), 'fábrica sem box_costs.totals');
+assert_true(isset($facV2['box_costs']['panels'][0]['qty_per_unit']), 'fábrica vê qty painéis');
+assert_true(!isset($facV2['box_costs']['panels'][0]['unit_price_eur']), 'fábrica sem preço painéis');
+assert_true(isset($facV2['boxes'][0]['parts'][0]['name']), 'fábrica vê peças');
+$cliV2 = Filter::forRole($normV2, ['role' => 'client']);
+assert_true(!isset($cliV2['box_costs']), 'cliente sem box_costs');
+assert_true(!empty($cliV2['pricing']['a_definir_pending']), 'cliente: preço bloqueado com a_definir');
+assert_true($cliV2['pricing']['selling_price_per_unit_eur'] === null, 'cliente sem preço final enquanto a_definir');
+$pending = Filter::aDefinirPending($normV2);
+assert_true(in_array('montagem', $pending, true), 'montagem a definir');
+$filipeV2 = Filter::forRole($normV2, ['role' => 'filipe']);
+assert_true(isset($filipeV2['box_costs']['lines']), 'filipe vê box_costs');
+
+// Importar v2 sobre projecto existente = nova versão
+$created = ProjectService::create($pdo, $normV2, 'admin', 'teste');
+$before = count(ProjectService::versions($pdo, $created['id']));
+$normV2['project']['notes'] = 'versão importada de teste';
+$updated = ProjectService::save($pdo, $created['id'], $normV2, 'admin', 'teste', 'importação JSON');
+$after = count(ProjectService::versions($pdo, $created['id']));
+assert_true($after === $before + 1, 'importação em projecto existente cria versão');
+assert_true(($updated['data']['project']['notes'] ?? '') === 'versão importada de teste', 'dados actualizados no import');
+
 echo "\n";
 if ($fail > 0) {
     echo "Falharam $fail testes.\n";
