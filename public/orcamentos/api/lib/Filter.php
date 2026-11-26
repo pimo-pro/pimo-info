@@ -240,12 +240,10 @@ final class Filter
         $out = [
             'logo' => $assets['logo'] ?? null,
         ];
-        // Compat v1/v2: layout/reference visíveis ao cliente
-        if ($audience === 'client' || $audience === 'factory' || $audience === 'internal') {
+        // layout/reference legados: só internas e fábrica (nunca cliente — podem ser desenhos técnicos)
+        if ($audience === 'factory' || $audience === 'internal') {
             $out['layout'] = $assets['layout'] ?? null;
             $out['reference'] = $assets['reference'] ?? null;
-        }
-        if ($audience === 'factory' || $audience === 'internal') {
             $out['elevation_front'] = $assets['elevation_front'] ?? null;
             $out['plan_cut'] = $assets['plan_cut'] ?? null;
             $out['iso_3d'] = $assets['iso_3d'] ?? null;
