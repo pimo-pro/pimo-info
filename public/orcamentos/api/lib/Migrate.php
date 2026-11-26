@@ -86,6 +86,13 @@ CREATE TABLE IF NOT EXISTS approved_prices (
   CONSTRAINT fk_ap_project FOREIGN KEY (project_id) REFERENCES projects(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 SQL,
+            '002_settings' => <<<'SQL'
+CREATE TABLE IF NOT EXISTS settings (
+  setting_key VARCHAR(64) NOT NULL PRIMARY KEY,
+  setting_value TEXT NOT NULL,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+SQL,
         ];
 
         foreach ($migrations as $id => $sql) {

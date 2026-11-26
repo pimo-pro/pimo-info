@@ -18,11 +18,10 @@ if ($code === '') {
 Auth::checkRateLimit($pdo);
 Auth::recordAttempt($pdo);
 
-$cfg = Config::load();
-
 // Painel de controlo (administrador)
 if ($mode === 'admin' || ($token === '' && $mode !== 'link')) {
-    if (!password_verify($code, $cfg['admin_code_hash'])) {
+    $hash = Settings::adminCodeHash($pdo);
+    if (!password_verify($code, $hash)) {
         Response::error('Código incorrecto.', 401);
     }
     Auth::setSession([
@@ -30,6 +29,7 @@ if ($mode === 'admin' || ($token === '' && $mode !== 'link')) {
         'label' => 'Administrador',
         'project_id' => null,
         'factory_key' => null,
+        'admin_epoch' => Settings::adminSessionEpoch($pdo),
     ]);
     Response::json(['ok' => true, 'role' => 'admin', 'label' => 'Administrador']);
 }

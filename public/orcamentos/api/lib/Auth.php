@@ -74,6 +74,7 @@ final class Auth
     public static function setSession(array $payload): void
     {
         $payload['exp'] = time() + 60 * 60 * 12;
+        $payload['iat'] = time();
         $token = self::sign($payload);
         $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
             || (($_SERVER['SERVER_PORT'] ?? null) === '443');
@@ -105,7 +106,22 @@ final class Auth
         if ($token === '') {
             return null;
         }
-        return self::verify($token);
+        $data = self::verify($token);
+        if (!$data) {
+            return null;
+        }
+        // Sessões admin antigas ficam inválidas após alteração do código
+        if (($data['role'] ?? '') === 'admin') {
+            try {
+                $epoch = Settings::adminSessionEpoch(Database::pdo());
+            } catch (Throwable $e) {
+                return null;
+            }
+            if ((int) ($data['admin_epoch'] ?? -1) !== $epoch) {
+                return null;
+            }
+        }
+        return $data;
     }
 
     public static function requireSession(): array

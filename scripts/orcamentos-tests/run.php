@@ -13,6 +13,7 @@ require $api . '/lib/Response.php';
 require $api . '/lib/Config.php';
 require $api . '/lib/Database.php';
 require $api . '/lib/Migrate.php';
+require $api . '/lib/Settings.php';
 require $api . '/lib/Auth.php';
 require $api . '/lib/Filter.php';
 require $api . '/lib/ProjectService.php';
@@ -34,7 +35,7 @@ $pdo = Database::pdo();
 Migrate::up($pdo);
 
 // Limpar tabelas de teste
-foreach (['approved_prices', 'project_versions', 'access_links', 'uploads', 'login_attempts', 'projects'] as $t) {
+foreach (['approved_prices', 'project_versions', 'access_links', 'uploads', 'login_attempts', 'projects', 'settings'] as $t) {
     $pdo->exec("DELETE FROM `$t`");
 }
 
@@ -128,6 +129,16 @@ assert_true($other['factory_quotes'] === [] || !isset($other['factory_quotes']['
 
 $adminView = Filter::forRole(ProjectService::get($pdo, $pid)['data'], ['role' => 'admin']);
 assert_true(isset($adminView['factory_quotes']['fab-a']['boxes']['B1']['price_eur']), 'admin compara preços');
+
+// Código de administrador: config por omissão, depois BD
+$cfgHash = Config::load()['admin_code_hash'];
+assert_true(Settings::adminCodeHash($pdo) === $cfgHash, 'admin hash cai no config sem BD');
+$newPlain = 'NovoCodigoTeste99';
+Settings::set($pdo, 'admin_code_hash', password_hash($newPlain, PASSWORD_BCRYPT));
+assert_true(password_verify($newPlain, Settings::adminCodeHash($pdo)), 'admin hash na BD tem prioridade');
+$e0 = Settings::adminSessionEpoch($pdo);
+$e1 = Settings::bumpAdminSessionEpoch($pdo);
+assert_true($e1 === $e0 + 1, 'epoch de sessão admin incrementa');
 
 echo "\n";
 if ($fail > 0) {
