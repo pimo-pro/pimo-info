@@ -141,3 +141,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Orçamentos: config e uploads fora do public (nunca publicar)
+/orcamentos-config.php
+/orcamentos-uploads/

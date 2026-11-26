@@ -1,0 +1,9 @@
+# Bloquear acesso directo a ficheiros internos (lib e bootstrap).
+<FilesMatch "^(bootstrap|config)\.php$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^lib/ - [F,L]
+</IfModule>

@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /orcamentos/
 
 Sitemap: https://pimo.info/sitemap.xml
 # LLM / agent knowledge entrypoints

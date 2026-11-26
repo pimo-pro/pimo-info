@@ -1,0 +1,547 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-26",
+  "timezone": "Europe/Lisbon",
+  "currency": "EUR",
+  "prices_checked_at": "2026-11-26",
+  "iva_rate_portugal": 0.23,
+  "iva_note": "Exemplo fictício. Preços inventados só para testes.",
+  "disclaimer_pt": "Documento de exemplo. Sem valor de fatura. Dados fictícios.",
+  "visibility_rules": {
+    "description_pt": "A mesma página mostra e esconde campos conforme a interface.",
+    "internal_only": [
+      "unit_price_eur",
+      "price_ex_iva_eur",
+      "list_price_incl_iva_eur",
+      "url",
+      "supplier",
+      "other_prices",
+      "cost",
+      "cost_per_unit_eur",
+      "cost_x6_eur",
+      "margin",
+      "order_of_magnitude"
+    ],
+    "client_visible": [
+      "name",
+      "brand",
+      "model",
+      "image",
+      "option_group",
+      "assets.layout",
+      "assets.reference",
+      "assets.logo",
+      "final_price_when_set"
+    ],
+    "factory_visible": [
+      "name",
+      "brand",
+      "model",
+      "ref",
+      "dimensions_mm",
+      "qty_per_unit",
+      "boxes",
+      "fits_notes",
+      "notes_pt",
+      "image",
+      "assets.layout",
+      "assets.reference"
+    ],
+    "editor_visible": "Todos os campos, incluindo margem, instalação, transporte e ligações."
+  },
+  "company": {
+    "brand": "Pimo Casa",
+    "signer": "Khaled al Ahdab",
+    "email": "info@pimo.pt",
+    "phone": "+351 913 822 833",
+    "web": "www.pimo.pt"
+  },
+  "project": {
+    "id": "exemplo-kitchenette-demo",
+    "pimo_pro_id": "pimo-demo-0000",
+    "pimo_pro_name": "Demo Kitchenette (2 unidades)",
+    "name": "Projeto Demo - Kitchenette / Roupeiro (2 unidades)",
+    "client": {
+      "name": "Hotel Exemplo",
+      "country": "Portugal",
+      "note": "Cliente fictício para testes."
+    },
+    "units": 2,
+    "language": "pt",
+    "status": "rascunho",
+    "location": "Portugal",
+    "overall_mm": { "w": 1800, "h": 2300, "d": 600 },
+    "overall_note": "1800 x 2300 x 600 mm, indicativas.",
+    "free_gap_above_bases_mm": 560,
+    "notes": "Duas unidades iguais de demonstração.",
+    "assumptions": [
+      "Medidas fictícias só para validar a ferramenta.",
+      "Sem medições de obra reais."
+    ]
+  },
+  "assets": {
+    "logo": null,
+    "layout": null,
+    "reference": null,
+    "notes_pt": "Imagens a carregar pelo painel (logótipo, planta e referência)."
+  },
+  "boxes": [
+    {
+      "code": "B1",
+      "name": "Minibar",
+      "w": 600,
+      "h": 870,
+      "d": 600,
+      "feet": true,
+      "y_mm": 0,
+      "qty_per_unit": 1,
+      "position_pt": "Pavimento, lado do roupeiro.",
+      "notes_pt": "Folga de ventilação atrás do minibar."
+    },
+    {
+      "code": "B2",
+      "name": "Roupeiro",
+      "w": 600,
+      "h": 1430,
+      "d": 600,
+      "feet": false,
+      "y_mm": 870,
+      "qty_per_unit": 1,
+      "position_pt": "Sobre o B1."
+    },
+    {
+      "code": "B3",
+      "name": "Base lava-loiça",
+      "w": 600,
+      "h": 870,
+      "d": 600,
+      "feet": true,
+      "y_mm": 0,
+      "qty_per_unit": 1,
+      "position_pt": "Pavimento, centro."
+    },
+    {
+      "code": "B4",
+      "name": "Base da placa",
+      "w": 600,
+      "h": 870,
+      "d": 600,
+      "feet": true,
+      "y_mm": 0,
+      "qty_per_unit": 1,
+      "position_pt": "Pavimento, direita."
+    },
+    {
+      "code": "B5",
+      "name": "Superior aberto",
+      "w": 1200,
+      "h": 900,
+      "d": 350,
+      "feet": false,
+      "y_mm": 1430,
+      "qty_per_unit": 1,
+      "position_pt": "Encostado à costa, sobre o vão da bancada."
+    }
+  ],
+  "box_alternative": {
+    "name": "Caixa única de roupeiro com nicho",
+    "mm": { "w": 600, "h": 2300, "d": 600 },
+    "adopted": false,
+    "notes_pt": "Alternativa não adotada neste exemplo."
+  },
+  "material_options": [
+    {
+      "id": "mat-economico",
+      "code": "economico",
+      "name": "Opção económica",
+      "description_pt": "Acabamento simples. Preço a orçamentar.",
+      "unit_price_eur": null,
+      "price_status": "a_orcamentar"
+    },
+    {
+      "id": "mat-standard",
+      "code": "standard",
+      "name": "Opção standard",
+      "description_pt": "Acabamento intermédio. Preço a orçamentar.",
+      "unit_price_eur": null,
+      "price_status": "a_orcamentar"
+    },
+    {
+      "id": "mat-premium",
+      "code": "premium",
+      "name": "Opção premium",
+      "description_pt": "Acabamento superior. Preço a orçamentar.",
+      "unit_price_eur": null,
+      "price_status": "a_orcamentar"
+    }
+  ],
+  "categories": [
+    { "id": "dobradicas", "name": "Dobradiças e faixas de ferro", "order": 1 },
+    { "id": "puxadores", "name": "Puxadores", "order": 2 },
+    { "id": "sistemas_portas", "name": "Sistemas de portas", "order": 3 },
+    { "id": "eletrodomesticos", "name": "Equipamentos", "order": 4 },
+    { "id": "ventilacao", "name": "Ventilação e acessórios", "order": 5 },
+    { "id": "outros", "name": "Outros (fechos e mobiliário)", "order": 6 }
+  ],
+  "items": [
+    {
+      "id": "dob-demo-faixa",
+      "category": "dobradicas",
+      "kind": "faixa_ferro",
+      "name": "Faixa de ferro decorativa 400 mm (exemplo)",
+      "brand": "Marca Demo",
+      "model": "DEMO-400",
+      "ref": "D400",
+      "supplier": "Fornecedor Demo",
+      "country": "PT",
+      "url": "https://example.com/produto-demo-faixa",
+      "image": null,
+      "unit_price_eur": 12.5,
+      "price_ex_iva_eur": null,
+      "list_price_incl_iva_eur": 12.5,
+      "price_status": "publicado",
+      "iva_included": true,
+      "iva_note": null,
+      "qty_per_unit": 9,
+      "qty_note": "3 portas x 3 faixas.",
+      "option_group": "economico",
+      "optional": false,
+      "in_set": true,
+      "fits": true,
+      "fits_notes": "Uso decorativo em portas de bolso.",
+      "dimensions_mm": "400 x 45 x 5",
+      "stock": null,
+      "notes_pt": "Artigo fictício para testes.",
+      "other_prices": null,
+      "official_url": null,
+      "specs": null,
+      "visibility": {
+        "name": "client_visible",
+        "brand": "client_visible",
+        "model": "client_visible",
+        "image": "client_visible",
+        "option_group": "client_visible",
+        "notes_pt": "factory_visible",
+        "fits_notes": "factory_visible",
+        "dimensions_mm": "factory_visible",
+        "unit_price_eur": "internal_only",
+        "price_ex_iva_eur": "internal_only",
+        "list_price_incl_iva_eur": "internal_only",
+        "url": "internal_only",
+        "supplier": "internal_only",
+        "other_prices": "internal_only",
+        "price_status": "editor_visible"
+      }
+    },
+    {
+      "id": "pux-demo-vertical",
+      "category": "puxadores",
+      "kind": "puxador_vertical",
+      "name": "Puxador vertical longo 800 mm (exemplo)",
+      "brand": "Marca Demo",
+      "model": "DEMO-P800",
+      "ref": "P800",
+      "supplier": "Fornecedor Demo",
+      "country": "PT",
+      "url": "https://example.com/produto-demo-puxador",
+      "image": null,
+      "unit_price_eur": 28.0,
+      "price_ex_iva_eur": null,
+      "list_price_incl_iva_eur": 28.0,
+      "price_status": "publicado",
+      "iva_included": true,
+      "iva_note": null,
+      "qty_per_unit": 3,
+      "qty_note": "1 por porta.",
+      "option_group": "recomendado",
+      "optional": false,
+      "in_set": true,
+      "fits": true,
+      "fits_notes": "Compatível com portas de 2300 mm.",
+      "dimensions_mm": "800 mm",
+      "stock": "em stock",
+      "notes_pt": "Artigo fictício.",
+      "other_prices": null,
+      "official_url": null,
+      "specs": { "finish": "preto mate" },
+      "visibility": {
+        "name": "client_visible",
+        "brand": "client_visible",
+        "model": "client_visible",
+        "image": "client_visible",
+        "option_group": "client_visible",
+        "notes_pt": "factory_visible",
+        "fits_notes": "factory_visible",
+        "dimensions_mm": "factory_visible",
+        "unit_price_eur": "internal_only",
+        "url": "internal_only",
+        "supplier": "internal_only",
+        "price_status": "editor_visible"
+      }
+    },
+    {
+      "id": "ed-demo-micro",
+      "category": "eletrodomesticos",
+      "kind": "microondas",
+      "name": "Micro-ondas 20 L (exemplo)",
+      "brand": "DemoBrand",
+      "model": "MW-20",
+      "ref": "MW20",
+      "supplier": "Loja Demo",
+      "country": "PT",
+      "url": "https://example.com/produto-demo-micro",
+      "image": null,
+      "unit_price_eur": 79.99,
+      "price_ex_iva_eur": null,
+      "list_price_incl_iva_eur": 79.99,
+      "price_status": "publicado",
+      "iva_included": true,
+      "iva_note": null,
+      "qty_per_unit": 1,
+      "qty_note": null,
+      "option_group": "recomendado",
+      "optional": false,
+      "in_set": true,
+      "fits": true,
+      "fits_notes": "Cabe na prateleira B5 de 350 mm.",
+      "dimensions_mm": "440 x 260 x 330",
+      "stock": null,
+      "notes_pt": "Artigo fictício.",
+      "other_prices": null,
+      "official_url": null,
+      "specs": { "power": "700 W" },
+      "visibility": {
+        "name": "client_visible",
+        "brand": "client_visible",
+        "model": "client_visible",
+        "image": "client_visible",
+        "option_group": "client_visible",
+        "notes_pt": "factory_visible",
+        "fits_notes": "factory_visible",
+        "dimensions_mm": "factory_visible",
+        "unit_price_eur": "internal_only",
+        "url": "internal_only",
+        "supplier": "internal_only",
+        "price_status": "editor_visible"
+      }
+    },
+    {
+      "id": "ed-demo-minibar-consulta",
+      "category": "eletrodomesticos",
+      "kind": "minibar",
+      "name": "Minibar absorção 40 L (exemplo sob consulta)",
+      "brand": "DemoCool",
+      "model": "ABS-40",
+      "ref": "ABS40",
+      "supplier": "Fornecedor Demo",
+      "country": "PT",
+      "url": null,
+      "image": null,
+      "unit_price_eur": null,
+      "price_ex_iva_eur": null,
+      "list_price_incl_iva_eur": null,
+      "price_status": "sob_consulta",
+      "iva_included": true,
+      "iva_note": null,
+      "qty_per_unit": 1,
+      "qty_note": null,
+      "option_group": "premium",
+      "optional": false,
+      "in_set": false,
+      "fits": true,
+      "fits_notes": "Confirmar profundidade com ventilação.",
+      "dimensions_mm": null,
+      "stock": null,
+      "notes_pt": "Preço a confirmar com o fornecedor.",
+      "other_prices": null,
+      "official_url": null,
+      "specs": null,
+      "visibility": {
+        "name": "client_visible",
+        "brand": "client_visible",
+        "model": "client_visible",
+        "image": "client_visible",
+        "option_group": "client_visible",
+        "notes_pt": "factory_visible",
+        "unit_price_eur": "internal_only",
+        "url": "internal_only",
+        "supplier": "internal_only",
+        "price_status": "editor_visible"
+      }
+    },
+    {
+      "id": "mob-demo-carcaca",
+      "category": "outros",
+      "kind": "mobiliario",
+      "name": "Mobiliário (carcaça e portas) por unidade",
+      "brand": null,
+      "model": null,
+      "ref": null,
+      "supplier": null,
+      "country": null,
+      "url": null,
+      "image": null,
+      "unit_price_eur": null,
+      "price_ex_iva_eur": null,
+      "list_price_incl_iva_eur": null,
+      "price_status": "a_orcamentar",
+      "iva_included": true,
+      "iva_note": null,
+      "qty_per_unit": 1,
+      "qty_note": null,
+      "option_group": null,
+      "optional": false,
+      "in_set": false,
+      "fits": true,
+      "fits_notes": "Orçamentado pela fábrica.",
+      "dimensions_mm": "1800 x 2300 x 600",
+      "stock": null,
+      "notes_pt": "A orçamentar pelo fabricante.",
+      "other_prices": null,
+      "official_url": null,
+      "specs": null,
+      "visibility": {
+        "name": "client_visible",
+        "notes_pt": "factory_visible",
+        "dimensions_mm": "factory_visible",
+        "unit_price_eur": "internal_only",
+        "price_status": "editor_visible"
+      }
+    }
+  ],
+  "sets": {
+    "equipamentos": {
+      "economico": {
+        "items": { "microondas": "ed-demo-micro" },
+        "per_unit_without_extractor_eur": 79.99,
+        "per_unit_with_extractor_eur": 79.99,
+        "x6_without_extractor_eur": 159.98,
+        "x6_with_extractor_eur": 159.98
+      },
+      "recomendado": {
+        "items": { "microondas": "ed-demo-micro" },
+        "per_unit_without_extractor_eur": 79.99,
+        "per_unit_with_extractor_eur": 79.99,
+        "x6_without_extractor_eur": 159.98,
+        "x6_with_extractor_eur": 159.98
+      },
+      "premium": {
+        "items": { "minibar": "ed-demo-minibar-consulta" },
+        "note": "Minibar ainda sob consulta.",
+        "per_unit_without_minibar_without_extractor_eur": 0,
+        "per_unit_without_minibar_with_extractor_eur": 0,
+        "x6_without_minibar_without_extractor_eur": 0,
+        "x6_without_minibar_with_extractor_eur": 0
+      },
+      "exclusions_from_totals": []
+    },
+    "ferragens": {
+      "economico": {
+        "description": "Faixas económicas",
+        "items": ["dob-demo-faixa"],
+        "per_unit_eur": 112.5,
+        "x6_eur": 225.0
+      },
+      "recomendado": {
+        "description": "Faixas + puxadores",
+        "items": ["dob-demo-faixa", "pux-demo-vertical"],
+        "per_unit_eur": 196.5,
+        "x6_eur": 393.0
+      },
+      "premium": {
+        "description": "Puxadores premium (dobradiças sob consulta)",
+        "items": ["pux-demo-vertical"],
+        "pulls_per_unit_eur": 84.0,
+        "pulls_x6_eur": 168.0,
+        "hinges_price_status": "sob_consulta"
+      }
+    }
+  },
+  "cost_lines": [
+    {
+      "label": "Mobiliário (caixas / carcaça, incluindo portas)",
+      "kind": "mobiliario",
+      "option_group": null,
+      "cost": null,
+      "cost_per_unit_eur": null,
+      "cost_x6_eur": null,
+      "margin": null,
+      "installation": null,
+      "shipping": null,
+      "price_status": "a_orcamentar",
+      "notes_pt": "A orçamentar pela fábrica.",
+      "visibility": "factory_visible"
+    },
+    {
+      "label": "Ferragens recomendadas",
+      "kind": "ferragens",
+      "option_group": "recomendado",
+      "cost": "compra",
+      "cost_per_unit_eur": 196.5,
+      "cost_x6_eur": 393.0,
+      "margin": null,
+      "installation": null,
+      "shipping": null,
+      "price_status": "publicado",
+      "notes_pt": "Total fictício.",
+      "visibility": "internal_only"
+    }
+  ],
+  "order_of_magnitude": [
+    {
+      "label": "Recomendado, equipamentos + ferragens (sem mobiliário)",
+      "per_unit_eur": 276.49,
+      "x6_eur": 552.98,
+      "visibility": "internal_only",
+      "notes_pt": "Soma rápida fictícia."
+    }
+  ],
+  "pricing_placeholders": {
+    "margin_percent": null,
+    "margin_amount_eur": null,
+    "installation_per_unit_eur": null,
+    "installation_x6_eur": null,
+    "shipping_per_unit_eur": null,
+    "shipping_x6_eur": null,
+    "shipping_to": "Portugal",
+    "selling_price_per_unit_eur": null,
+    "selling_price_x6_eur": null,
+    "notes_pt": "Campos para preencher na ferramenta. Enquanto vazios, não há preço final ao cliente."
+  },
+  "ventilation_and_clearances": {
+    "minibar": "Deixar folga atrás e grelha se necessário.",
+    "hob": "Circuito dedicado se a potência o exigir.",
+    "microwave": "Folga no nicho B5.",
+    "extractor": "Recirculação ou conduta ao exterior.",
+    "doors": "Confirmar folga de abertura."
+  },
+  "suppliers_pt_quote": [
+    {
+      "name": "Fornecedor Demo PT",
+      "contact": "orcamentos@example.com",
+      "notes_pt": "Apenas exemplo fictício."
+    }
+  ],
+  "points_to_confirm": [
+    "Confirmar medidas de obra em cada quarto.",
+    "Confirmar circuito eléctrico da placa.",
+    "Confirmar acabamento da madeira."
+  ],
+  "gaps": [
+    "Preço do mobiliário ainda não definido.",
+    "Minibar premium sob consulta.",
+    "Margem, montagem e transporte por preencher."
+  ],
+  "factory_quotes": {},
+  "client_choice": {
+    "material_option_id": null,
+    "set_code": "recomendado",
+    "with_installation": true,
+    "with_equipment": true,
+    "submitted_at": null
+  },
+  "editor_settings": {
+    "hide_margin_from_filipe": false,
+    "hide_factory_prices_from_filipe": false
+  }
+}
