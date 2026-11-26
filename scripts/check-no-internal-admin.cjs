@@ -89,6 +89,8 @@ function walk(abs, out = []) {
     for (const name of fs.readdirSync(abs)) {
       // Bundles Next/webpack têm falsos positivos (API, password, etc.)
       if (name === "node_modules" || name === ".git" || name === "_next") continue
+      // Ferramenta privada de orçamentos (fora do site público Nextra)
+      if (name === "orcamentos") continue
       walk(path.join(abs, name), out)
     }
   } else if (EXT.has(path.extname(abs)) || path.basename(abs) === "llms.txt") {

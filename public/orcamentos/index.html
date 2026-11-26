@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Pimo Casa · Orçamentos</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <style>
+:root {
+  --ink: #141414;
+  --slate: #0f172a;
+  --muted: #475569;
+  --soft: #64748b;
+  --line: #e3e8f0;
+  --line2: #e2e8f0;
+  --head: #1f293b;
+  --zebra: #f5f5f5;
+  --link: #1d4ed8;
+  --bg: #ffffff;
+  --panel: #f8fafc;
+  --warn: #b45309;
+  --ok: #166534;
+  --bad: #9f1239;
+  --ui: #0f172a;
+  --ui-border: #cbd5e1;
+  --radius: 2px;
+  --font: Helvetica, "Liberation Sans", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: #eef2f7;
+  font-size: 15px;
+  line-height: 1.45;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hidden { display: none !important; }
+#app-shell { min-height: 100vh; }
+.gate {
+  max-width: 420px;
+  margin: 8vh auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 28px 24px 22px;
+}
+.gate .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.gate .brand img { width: 40px; height: 40px; border-radius: 6px; }
+.gate h1 { font-size: 1.15rem; margin: 0 0 6px; color: var(--slate); }
+.gate p { margin: 0 0 14px; color: var(--muted); font-size: 0.92rem; }
+.gate label { display: block; font-size: 0.85rem; color: var(--muted); margin: 0 0 4px; font-weight: 600; }
+.gate input, .toolbar input, .toolbar select, .panel input, .panel select, .panel textarea {
+  width: 100%;
+  border: 1px solid var(--ui-border);
+  padding: 8px 10px;
+  font: inherit;
+  border-radius: var(--radius);
+  background: #fff;
+}
+.gate button, .btn {
+  appearance: none;
+  border: 1px solid var(--head);
+  background: var(--head);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+.btn.secondary { background: #fff; color: var(--slate); border-color: var(--ui-border); }
+.btn.danger { background: #fff; color: var(--bad); border-color: #fecaca; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.err { color: var(--bad); font-size: 0.88rem; margin-top: 10px; min-height: 1.2em; }
+.toolbar {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+  padding: 8px 12px;
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+}
+.toolbar .spacer { flex: 1; }
+.toolbar .chip {
+  font-size: 0.78rem; color: var(--muted);
+  border: 1px solid var(--line); padding: 4px 8px; border-radius: 999px;
+}
+.layout { display: grid; grid-template-columns: 280px 1fr; gap: 0; max-width: 1400px; margin: 0 auto; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .side { border-right: 0; border-bottom: 1px solid var(--line); }
+}
+.side {
+  background: #fff;
+  border-right: 1px solid var(--line);
+  padding: 14px 12px 40px;
+  min-height: calc(100vh - 52px);
+}
+.side h2 { font-size: 0.95rem; margin: 0 0 10px; }
+.side .proj {
+  border: 1px solid var(--line);
+  padding: 10px;
+  margin: 0 0 8px;
+  cursor: pointer;
+  background: #fff;
+}
+.side .proj:hover, .side .proj.active { border-color: var(--head); background: var(--panel); }
+.side .proj .t { font-weight: 700; font-size: 0.9rem; color: var(--slate); }
+.side .proj .m { font-size: 0.75rem; color: var(--soft); margin-top: 4px; }
+.main { padding: 12px; }
+.report {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 28px 32px 40px;
+  max-width: 900px;
+  margin: 0 auto 24px;
+  box-shadow: 0 1px 0 rgba(15,23,42,0.04);
+}
+.hdr { display: flex; align-items: center; gap: 10px; }
+.hdr img { width: 42px; height: 42px; border-radius: 6px; }
+.hdr .b { font-weight: 700; font-size: 1.15rem; color: var(--slate); line-height: 1.2; }
+.hdr .s { font-size: 0.85rem; color: var(--muted); }
+.rule { border-top: 1px solid var(--line); margin: 10px 0 0; }
+h1.doc { font-size: 1.25rem; color: var(--slate); margin: 14px 0 12px; line-height: 1.3; }
+h2.sec { font-size: 1.05rem; color: var(--slate); margin: 22px 0 8px; page-break-after: avoid; }
+h3.sub { font-size: 0.95rem; color: var(--slate); margin: 14px 0 6px; page-break-after: avoid; }
+p { margin: 0 0 8px; }
+.muted { color: var(--soft); }
+.note { font-size: 0.82rem; color: var(--muted); line-height: 1.35; margin: 0 0 10px; }
+.cap { font-size: 0.75rem; color: var(--soft); margin: 2px 0 10px; }
+table.info { width: 100%; border-collapse: collapse; margin: 0 0 10px; }
+table.info td { padding: 3px 0 8px; vertical-align: top; font-size: 0.92rem; }
+table.info td.k { font-weight: 700; color: var(--muted); width: 140px; }
+table.t { width: 100%; border-collapse: collapse; margin: 0 0 10px; table-layout: fixed; }
+table.t th {
+  background: var(--head); color: #fff; font-weight: 700;
+  font-size: 0.72rem; text-align: left; padding: 7px 6px; vertical-align: bottom;
+}
+table.t td {
+  font-size: 0.78rem; color: #334155; padding: 6px;
+  vertical-align: top; line-height: 1.3; overflow-wrap: break-word;
+  border-bottom: 1px solid var(--line2);
+}
+table.t tr:nth-child(even) td { background: var(--zebra); }
+table.t td.n, table.t th.n { text-align: right; white-space: nowrap; }
+table.t tr.tot td { font-weight: 700; color: #000; background: #fff; border-top: 1px solid #cbd5e1; }
+.box {
+  border: 1px solid var(--line2);
+  border-left: 3px solid var(--head);
+  padding: 8px 12px;
+  margin: 8px 0 12px;
+  background: var(--panel);
+}
+.box.warn { border-left-color: var(--warn); background: #fffbeb; }
+.sig { margin-top: 22px; font-size: 0.92rem; line-height: 1.5; color: var(--slate); }
+.sig strong { display: block; margin-top: 8px; }
+.footer-print {
+  display: none;
+}
+.asset-img { width: 100%; max-height: 360px; object-fit: contain; background: #fafbfc; border: 1px solid #eef2f7; display: block; margin: 6px 0 12px; }
+.status-pill {
+  display: inline-block; font-size: 0.72rem; padding: 2px 7px;
+  border: 1px solid var(--line); color: var(--muted); border-radius: 999px;
+}
+.panel {
+  background: #fff; border: 1px solid var(--line); padding: 14px; margin: 0 0 12px;
+}
+.panel h3 { margin: 0 0 8px; font-size: 0.95rem; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
+.row > * { flex: 1 1 140px; }
+.compare td.pick { cursor: pointer; }
+.compare td.pick:hover { outline: 2px solid var(--link); }
+.compare td.picked { background: #ecfdf5 !important; }
+.print-opts label { display: inline-flex; gap: 6px; align-items: center; margin: 0 10px 6px 0; font-size: 0.82rem; color: var(--muted); }
+.price-tag { font-size: 1.4rem; font-weight: 700; color: var(--slate); }
+.client-opts { display: grid; gap: 8px; margin: 12px 0; }
+.client-opts label {
+  border: 1px solid var(--line); padding: 10px 12px; display: flex; gap: 10px; align-items: flex-start; cursor: pointer;
+}
+.client-opts label.active { border-color: var(--head); background: var(--panel); }
+.factory-form textarea { min-height: 70px; }
+.toast {
+  position: fixed; right: 14px; bottom: 14px; background: var(--slate); color: #fff;
+  padding: 10px 14px; border-radius: var(--radius); font-size: 0.85rem; z-index: 50;
+  opacity: 0; transform: translateY(8px); transition: .2s ease; pointer-events: none;
+}
+.toast.show { opacity: 1; transform: none; }
+
+@media print {
+  body { background: #fff; }
+  .toolbar, .side, .no-print, .toast { display: none !important; }
+  .layout { display: block; }
+  .main { padding: 0; }
+  .report {
+    border: 0; box-shadow: none; max-width: none; margin: 0; padding: 0;
+  }
+  .pagebreak { break-before: page; page-break-before: always; }
+  .footer-print {
+    display: block;
+    position: running(footer);
+  }
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+    @bottom-left {
+      content: "PIMO CASA";
+      font: 8pt Helvetica, Arial, sans-serif;
+      color: #646464;
+      border-top: 0.75pt solid #e3e8f0;
+      padding-top: 5pt;
+    }
+    @bottom-right {
+      content: counter(page) " / " counter(pages);
+      font: 8pt Helvetica, Arial, sans-serif;
+      color: #646464;
+      border-top: 0.75pt solid #e3e8f0;
+      padding-top: 5pt;
+    }
+  }
+  .sec-hide-print { display: none !important; }
+}
+  </style>
+</head>
+<body>
+<div id="app-shell">
+  <div id="view-gate" class="gate">
+    <div class="brand">
+      <img src="logo.png" alt="Pimo Casa">
+      <div>
+        <div class="b" style="font-weight:700;color:#0f172a">PIMO CASA</div>
+        <div class="s" style="font-size:0.82rem;color:#475569">Orçamentos</div>
+      </div>
+    </div>
+    <h1 id="gate-title">Acesso ao orçamento</h1>
+    <p id="gate-help">Introduza o código que lhe foi enviado. Esta área não é pública.</p>
+    <label for="gate-code">Código</label>
+    <input id="gate-code" type="password" autocomplete="current-password" placeholder="Código de acesso">
+    <div style="margin-top:14px">
+      <button type="button" id="gate-submit" class="btn" style="width:100%">Entrar</button>
+    </div>
+    <div class="err" id="gate-err"></div>
+  </div>
+
+  <div id="view-app" class="hidden">
+    <div class="toolbar no-print">
+      <strong style="color:#0f172a">Pimo Casa</strong>
+      <span class="chip" id="role-chip"></span>
+      <span class="spacer"></span>
+      <button type="button" class="btn secondary" id="btn-refresh">Actualizar</button>
+      <button type="button" class="btn secondary" id="btn-print">Imprimir / PDF</button>
+      <button type="button" class="btn secondary" id="btn-logout">Sair</button>
+    </div>
+    <div class="layout">
+      <aside class="side no-print" id="side-panel"></aside>
+      <main class="main" id="main-panel"></main>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var I18N = {
+    pt: {
+      access: "Acesso ao orçamento",
+      adminAccess: "Painel de controlo",
+      enterCode: "Introduza o código que lhe foi enviado. Esta área não é pública.",
+      adminHelp: "Acesso reservado. Introduza o código de administração.",
+      code: "Código",
+      enter: "Entrar",
+      projects: "Projectos",
+      newProject: "Novo projecto",
+      importJson: "Importar JSON",
+      duplicate: "Duplicar",
+      archive: "Arquivar",
+      links: "Ligações e códigos",
+      history: "Histórico",
+      backup: "Cópia de segurança",
+      save: "Gravar",
+      sendChoice: "Enviar escolha",
+      finalPrice: "Preço final",
+      withInstall: "Com montagem",
+      withEquip: "Com equipamentos",
+      material: "Gama de material",
+      sobConsulta: "sob consulta",
+      aOrcamentar: "a orçamentar",
+      esgotado: "esgotado",
+      noPrice: "Preço de venda ainda não definido.",
+      disclaimer: "Documento elaborado pela Pimo Casa. Preços de terceiros sujeitos a alteração e a confirmação no acto da encomenda. Sem valor de fatura.",
+      regards: "Com os melhores cumprimentos,"
+    },
+    en: {},
+    fr: {}
+  };
+  var lang = "pt";
+  function t(key) { return (I18N[lang] && I18N[lang][key]) || I18N.pt[key] || key; }
+
+  var state = {
+    me: null,
+    token: new URLSearchParams(location.search).get("v") || "",
+    projects: [],
+    projectId: null,
+    project: null,
+    data: null,
+    versions: [],
+    links: [],
+    printHide: {}
+  };
+
+  var BASE = "api";
+
+  function toast(msg) {
+    var el = document.getElementById("toast");
+    el.textContent = msg;
+    el.classList.add("show");
+    setTimeout(function () { el.classList.remove("show"); }, 2400);
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function money(v, empty) {
+    if (v == null || v === "") return empty || "-";
+    var n = Number(v);
+    if (isNaN(n)) return String(v);
+    return n.toLocaleString("pt-PT", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+  }
+
+  function priceStatusLabel(st) {
+    if (!st) return "";
+    if (st === "sob_consulta") return t("sobConsulta");
+    if (st === "a_orcamentar" || st === "a_orçamentar") return t("aOrcamentar");
+    if (st === "esgotado") return t("esgotado");
+    return st;
+  }
+
+  function api(path, opts) {
+    opts = opts || {};
+    var headers = opts.headers || {};
+    if (!(opts.body instanceof FormData)) {
+      headers["Content-Type"] = headers["Content-Type"] || "application/json";
+    }
+    return fetch(BASE + "/" + path, {
+      method: opts.method || "GET",
+      credentials: "same-origin",
+      headers: headers,
+      body: opts.body ? (opts.body instanceof FormData ? opts.body : JSON.stringify(opts.body)) : undefined
+    }).then(function (r) {
+      return r.json().then(function (j) {
+        if (!r.ok || j.ok === false) {
+          var err = new Error((j && j.error) || "Pedido falhou");
+          err.status = r.status;
+          throw err;
+        }
+        return j;
+      });
+    });
+  }
+
+  function assetUrl(ref) {
+    if (!ref) return null;
+    if (String(ref).indexOf("upload:") === 0) {
+      return BASE + "/file.php?id=" + encodeURIComponent(String(ref).slice(7));
+    }
+    if (String(ref).indexOf("http") === 0) return ref;
+    return null;
+  }
+
+  function showGate() {
+    document.getElementById("view-gate").classList.remove("hidden");
+    document.getElementById("view-app").classList.add("hidden");
+    var isAdmin = !state.token;
+    document.getElementById("gate-title").textContent = isAdmin ? t("adminAccess") : t("access");
+    document.getElementById("gate-help").textContent = isAdmin ? t("adminHelp") : t("enterCode");
+  }
+
+  function showApp() {
+    document.getElementById("view-gate").classList.add("hidden");
+    document.getElementById("view-app").classList.remove("hidden");
+    var role = state.me.role;
+    var labels = {
+      admin: "Painel de controlo",
+      khaled: "Vista completa",
+      filipe: "Vista de edição",
+      factory: "Vista de fábrica",
+      client: "Vista de cliente"
+    };
+    document.getElementById("role-chip").textContent = labels[role] || role;
+    render();
+  }
+
+  function boot() {
+    api("me.php").then(function (j) {
+      if (j.authenticated) {
+        state.me = j;
+        showApp();
+        return loadWorkspace();
+      }
+      showGate();
+    }).catch(function () {
+      showGate();
+      document.getElementById("gate-err").textContent =
+        "O serviço ainda não está configurado neste servidor.";
+    });
+  }
+
+  document.getElementById("gate-submit").addEventListener("click", doLogin);
+  document.getElementById("gate-code").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") doLogin();
+  });
+
+  function doLogin() {
+    var code = document.getElementById("gate-code").value.trim();
+    var err = document.getElementById("gate-err");
+    err.textContent = "";
+    if (!code) { err.textContent = "Indique o código."; return; }
+    var body = state.token
+      ? { code: code, token: state.token, mode: "link" }
+      : { code: code, mode: "admin" };
+    api("login.php", { method: "POST", body: body }).then(function (j) {
+      state.me = j;
+      showApp();
+      return loadWorkspace();
+    }).catch(function (e) {
+      err.textContent = e.message || "Falha no acesso.";
+    });
+  }
+
+  document.getElementById("btn-logout").addEventListener("click", function () {
+    api("logout.php", { method: "POST", body: {} }).finally(function () {
+      state.me = null; state.project = null; state.data = null;
+      showGate();
+    });
+  });
+  document.getElementById("btn-refresh").addEventListener("click", function () {
+    loadWorkspace().then(function () { toast("Actualizado"); });
+  });
+  document.getElementById("btn-print").addEventListener("click", function () {
+    window.print();
+  });
+
+  function loadWorkspace() {
+    var role = state.me.role;
+    if (role === "admin") {
+      return api("projects.php").then(function (j) {
+        state.projects = j.projects || [];
+        if (!state.projectId && state.projects.length) state.projectId = state.projects[0].id;
+        if (state.projectId) return openProject(state.projectId);
+        render();
+      });
+    }
+    if (state.me.project_id) {
+      state.projectId = state.me.project_id;
+      return openProject(state.projectId);
+    }
+    render();
+    return Promise.resolve();
+  }
+
+  function openProject(id) {
+    state.projectId = id;
+    return api("project.php?id=" + encodeURIComponent(id)).then(function (j) {
+      state.project = j.project;
+      state.data = j.project.data;
+      render();
+      if (state.me.role === "admin") {
+        return Promise.all([
+          api("access.php?project_id=" + encodeURIComponent(id)).then(function (a) { state.links = a.links || []; }),
+          api("versions.php?project_id=" + encodeURIComponent(id)).then(function (v) { state.versions = v.versions || []; })
+        ]).then(function () { render(); });
+      }
+      if (state.me.role === "khaled") {
+        return api("versions.php?project_id=" + encodeURIComponent(id)).then(function (v) {
+          state.versions = v.versions || [];
+          render();
+        });
+      }
+    }).catch(function (e) {
+      toast(e.message);
+    });
+  }
+
+  function statusLabel(s) {
+    var map = {
+      rascunho: "Rascunho",
+      enviado_fabricas: "Enviado às fábricas",
+      precos_fabricas: "Preços das fábricas recebidos",
+      enviado_cliente: "Enviado ao cliente",
+      aceite: "Aceite"
+    };
+    return map[s] || s || "Rascunho";
+  }
+
+  function render() {
+    renderSide();
+    renderMain();
+  }
+
+  function renderSide() {
+    var el = document.getElementById("side-panel");
+    var role = state.me.role;
+    if (role !== "admin") {
+      el.innerHTML = "<h2>Orçamento</h2><p class=\"note\">" + esc((state.project && state.project.title) || "") + "</p>";
+      return;
+    }
+    var html = "<h2>" + t("projects") + "</h2>";
+    html += "<div class=\"row\" style=\"margin-bottom:12px\">";
+    html += "<button type=\"button\" class=\"btn\" id=\"btn-new\">" + t("newProject") + "</button>";
+    html += "<button type=\"button\" class=\"btn secondary\" id=\"btn-import\">" + t("importJson") + "</button>";
+    html += "</div><input type=\"file\" id=\"import-file\" accept=\"application/json,.json\" class=\"hidden\">";
+    (state.projects || []).forEach(function (p) {
+      html += "<div class=\"proj" + (p.id === state.projectId ? " active" : "") + "\" data-id=\"" + esc(p.id) + "\">";
+      html += "<div class=\"t\">" + esc(p.title) + "</div>";
+      html += "<div class=\"m\">" + esc(statusLabel(p.status)) + " · " + esc(p.updated_at || "") + "</div></div>";
+    });
+    el.innerHTML = html;
+    el.querySelectorAll(".proj").forEach(function (n) {
+      n.addEventListener("click", function () { openProject(n.getAttribute("data-id")); });
+    });
+    var btnNew = document.getElementById("btn-new");
+    if (btnNew) btnNew.addEventListener("click", createEmpty);
+    var btnImp = document.getElementById("btn-import");
+    var fileImp = document.getElementById("import-file");
+    if (btnImp && fileImp) {
+      btnImp.addEventListener("click", function () { fileImp.click(); });
+      fileImp.addEventListener("change", function () {
+        var f = fileImp.files && fileImp.files[0];
+        if (!f) return;
+        var reader = new FileReader();
+        reader.onload = function () {
+          try {
+            var data = JSON.parse(String(reader.result || ""));
+            api("import.php", { method: "POST", body: data }).then(function (j) {
+              toast("Importado");
+              state.projectId = j.project.id;
+              return loadWorkspace();
+            }).catch(function (e) { toast(e.message); });
+          } catch (err) {
+            toast("JSON inválido");
+          }
+        };
+        reader.readAsText(f);
+        fileImp.value = "";
+      });
+    }
+  }
+
+  function createEmpty() {
+    var data = {
+      schema_version: "1.0",
+      currency: "EUR",
+      company: {
+        brand: "Pimo Casa",
+        signer: "Khaled al Ahdab",
+        email: "info@pimo.pt",
+        phone: "+351 913 822 833",
+        web: "www.pimo.pt"
+      },
+      project: {
+        id: "novo-" + Date.now(),
+        name: "Novo orçamento",
+        client: { name: "", country: "" },
+        units: 1,
+        status: "rascunho",
+        overall_mm: { w: null, h: null, d: null },
+        notes: ""
+      },
+      assets: { logo: null, layout: null, reference: null },
+      boxes: [],
+      material_options: [],
+      categories: [],
+      items: [],
+      sets: {},
+      cost_lines: [],
+      pricing_placeholders: {
+        margin_percent: null,
+        margin_amount_eur: null,
+        installation_per_unit_eur: null,
+        shipping_per_unit_eur: null,
+        selling_price_per_unit_eur: null,
+        selling_price_x6_eur: null
+      },
+      gaps: [],
+      factory_quotes: {},
+      client_choice: {
+        material_option_id: null,
+        set_code: "recomendado",
+        with_installation: true,
+        with_equipment: true,
+        submitted_at: null
+      },
+      editor_settings: {
+        hide_margin_from_filipe: false,
+        hide_factory_prices_from_filipe: false
+      }
+    };
+    api("projects.php", { method: "POST", body: { data: data } }).then(function (j) {
+      state.projectId = j.project.id;
+      return loadWorkspace();
+    }).catch(function (e) { toast(e.message); });
+  }
+
+  function renderMain() {
+    var el = document.getElementById("main-panel");
+    var role = state.me.role;
+    if (role === "admin") {
+      el.innerHTML = renderAdmin() + renderReport(true);
+      bindAdmin();
+      return;
+    }
+    if (role === "factory") {
+      el.innerHTML = renderFactoryForm() + renderReport(false);
+      bindFactory();
+      return;
+    }
+    if (role === "client") {
+      el.innerHTML = renderClientChooser() + renderReport(false);
+      bindClient();
+      return;
+    }
+    // khaled / filipe
+    el.innerHTML = renderEditorBar() + renderReport(true);
+    bindEditor();
+  }
+
+  function renderAdmin() {
+    if (!state.project) {
+      return "<div class=\"panel\"><p class=\"note\">Crie ou importe um projecto para começar.</p></div>";
+    }
+    var d = state.data || {};
+    var html = "";
+    html += "<div class=\"panel no-print\">";
+    html += "<h3>Painel · " + esc(state.project.title) + "</h3>";
+    html += "<div class=\"row\">";
+    html += "<label>Estado<select id=\"adm-status\">";
+    ["rascunho","enviado_fabricas","precos_fabricas","enviado_cliente","aceite"].forEach(function (s) {
+      html += "<option value=\"" + s + "\"" + (state.project.status === s ? " selected" : "") + ">" + esc(statusLabel(s)) + "</option>";
+    });
+    html += "</select></label>";
+    html += "<button type=\"button\" class=\"btn\" id=\"adm-save-status\">Actualizar estado</button>";
+    html += "<button type=\"button\" class=\"btn secondary\" id=\"adm-dup\">" + t("duplicate") + "</button>";
+    html += "<button type=\"button\" class=\"btn danger\" id=\"adm-arch\">" + t("archive") + "</button>";
+    html += "<button type=\"button\" class=\"btn secondary\" id=\"adm-backup\">" + t("backup") + "</button>";
+    html += "</div></div>";
+
+    html += "<div class=\"panel no-print\"><h3>Imagens do projecto</h3>";
+    html += "<div class=\"row\">";
+    ["logo","layout","reference"].forEach(function (k) {
+      html += "<label>" + k + "<input type=\"file\" accept=\"image/*\" data-kind=\"" + k + "\" class=\"adm-upload\"></label>";
+    });
+    html += "</div>";
+    html += "<p class=\"cap\">Logótipo, planta das caixas e imagem de referência. Guardados fora da pasta pública.</p></div>";
+
+    html += "<div class=\"panel no-print\"><h3>" + t("links") + "</h3>";
+    html += "<div class=\"row\">";
+    html += "<select id=\"link-role\"><option value=\"khaled\">Vista completa</option><option value=\"filipe\">Vista de edição</option><option value=\"factory\">Fábrica</option><option value=\"client\">Cliente</option></select>";
+    html += "<input id=\"link-factory\" placeholder=\"Chave da fábrica (ex. fab-a)\">";
+    html += "<input id=\"link-label\" placeholder=\"Etiqueta\">";
+    html += "<button type=\"button\" class=\"btn\" id=\"link-create\">Gerar</button>";
+    html += "</div>";
+    html += "<table class=\"t\"><thead><tr><th>Papel</th><th>Etiqueta</th><th>Token</th><th>Estado</th><th></th></tr></thead><tbody>";
+    (state.links || []).forEach(function (l) {
+      html += "<tr><td>" + esc(l.role) + (l.factory_key ? " · " + esc(l.factory_key) : "") + "</td>";
+      html += "<td>" + esc(l.label) + "</td>";
+      html += "<td style=\"font-size:0.65rem;word-break:break-all\">" + esc(l.token) + "</td>";
+      html += "<td>" + (l.revoked == 1 ? "revogado" : "activo") + "</td>";
+      html += "<td>";
+      if (l.revoked != 1) {
+        html += "<button type=\"button\" class=\"btn secondary link-rot\" data-id=\"" + esc(l.id) + "\">Trocar</button> ";
+        html += "<button type=\"button\" class=\"btn danger link-rev\" data-id=\"" + esc(l.id) + "\">Revogar</button>";
+      }
+      html += "</td></tr>";
+    });
+    html += "</tbody></table>";
+    html += "<div id=\"link-once\" class=\"box warn hidden\"></div></div>";
+
+    html += renderComparePanel(d);
+    html += renderPricingEditor(d);
+    html += renderHistory();
+    html += renderPrintOptions();
+    return html;
+  }
+
+  function renderComparePanel(d) {
+    var quotes = d.factory_quotes || {};
+    var keys = Object.keys(quotes);
+    if (!keys.length) {
+      return "<div class=\"panel no-print\"><h3>Comparação de fábricas</h3><p class=\"note\">Ainda sem cotações.</p></div>";
+    }
+    var boxes = d.boxes || [];
+    var html = "<div class=\"panel no-print\"><h3>Comparação de fábricas</h3>";
+    html += "<table class=\"t compare\"><thead><tr><th>Caixa</th>";
+    keys.forEach(function (k) { html += "<th>" + esc(quotes[k].factory_name || k) + "</th>"; });
+    html += "<th>Aprovado</th></tr></thead><tbody>";
+    boxes.forEach(function (b) {
+      var code = b.code;
+      html += "<tr><td>" + esc(code + " · " + (b.name || "")) + "</td>";
+      keys.forEach(function (k) {
+        var price = quotes[k].boxes && quotes[k].boxes[code] ? quotes[k].boxes[code].price_eur : null;
+        var approved = d.approved_prices && d.approved_prices[code];
+        var cls = approved && approved.factory_key === k ? " pick picked" : " pick";
+        html += "<td class=\"" + cls.trim() + "\" data-item=\"" + esc(code) + "\" data-factory=\"" + esc(k) + "\" data-price=\"" + esc(price == null ? "" : price) + "\">" + esc(money(price, "-")) + "</td>";
+      });
+      var ap = d.approved_prices && d.approved_prices[code];
+      html += "<td>" + (ap ? esc(ap.factory_key) + " · " + esc(money(ap.price_eur)) : "-") + "</td></tr>";
+    });
+    html += "</tbody></table></div>";
+    return html;
+  }
+
+  function renderPricingEditor(d) {
+    var ph = d.pricing_placeholders || {};
+    var html = "<div class=\"panel no-print\"><h3>Margem, montagem, transporte e preço final</h3>";
+    html += "<div class=\"row\">";
+    html += field("ph-margin-pct", "Margem %", ph.margin_percent);
+    html += field("ph-margin-amt", "Margem €", ph.margin_amount_eur);
+    html += field("ph-install", "Montagem / un. €", ph.installation_per_unit_eur);
+    html += field("ph-ship", "Transporte / un. €", ph.shipping_per_unit_eur);
+    html += field("ph-sell", "Preço final / un. €", ph.selling_price_per_unit_eur);
+    html += "</div>";
+    html += "<div class=\"row\"><label><input type=\"checkbox\" id=\"hide-margin\"" + ((d.editor_settings || {}).hide_margin_from_filipe ? " checked" : "") + "> Esconder margem na vista de edição</label>";
+    html += "<button type=\"button\" class=\"btn\" id=\"adm-save-pricing\">Gravar preços</button></div></div>";
+    return html;
+  }
+
+  function field(id, label, val) {
+    return "<label>" + esc(label) + "<input id=\"" + id + "\" value=\"" + esc(val == null ? "" : val) + "\"></label>";
+  }
+
+  function renderHistory() {
+    var html = "<div class=\"panel no-print\"><h3>" + t("history") + "</h3>";
+    html += "<table class=\"t\"><thead><tr><th>#</th><th>Quando</th><th>Quem</th><th>Nota</th><th></th></tr></thead><tbody>";
+    (state.versions || []).forEach(function (v) {
+      html += "<tr><td>" + esc(v.version_no) + "</td><td>" + esc(v.created_at) + "</td><td>" + esc(v.actor_label || v.actor_role) + "</td><td>" + esc(v.note) + "</td>";
+      html += "<td><button type=\"button\" class=\"btn secondary ver-rest\" data-v=\"" + esc(v.version_no) + "\">Restaurar</button></td></tr>";
+    });
+    html += "</tbody></table></div>";
+    return html;
+  }
+
+  function renderPrintOptions() {
+    var secs = [
+      ["capa","Capa"],["resumo","Resumo"],["design","Design e planta"],["caixas","Caixas"],
+      ["dobradicas","Dobradiças"],["puxadores","Puxadores"],["portas","Sistemas de portas"],
+      ["equipamentos","Equipamentos"],["ventilacao","Ventilação"],["montagem","Montagem e transporte"],
+      ["totais","Tabela de preços"],["condicoes","Condições"],["assinatura","Assinatura"],["gaps","Lacunas"]
+    ];
+    var html = "<div class=\"panel no-print print-opts\"><h3>Secções a imprimir</h3>";
+    secs.forEach(function (s) {
+      var checked = state.printHide[s[0]] ? "" : " checked";
+      html += "<label><input type=\"checkbox\" data-sec=\"" + s[0] + "\" class=\"print-sec\"" + checked + "> " + esc(s[1]) + "</label>";
+    });
+    html += "</div>";
+    return html;
+  }
+
+  function renderEditorBar() {
+    if (!state.project) return "<p class=\"note\">Sem projecto.</p>";
+    var html = "<div class=\"panel no-print\"><h3>Edição</h3>";
+    html += "<p class=\"note\">Altere preços, ligações e materiais no relatório e grave.</p>";
+    html += "<button type=\"button\" class=\"btn\" id=\"ed-save\">" + t("save") + "</button>";
+    html += renderPrintOptions();
+    html += "</div>";
+    return html;
+  }
+
+  function renderFactoryForm() {
+    var d = state.data || {};
+    var fk = state.me.factory_key || "";
+    var q = (d.factory_quotes && d.factory_quotes[fk]) || { boxes: {}, factory_name: "" };
+    var html = "<div class=\"panel no-print factory-form\"><h3>A sua cotação</h3>";
+    html += "<div class=\"row\"><label>Nome da fábrica<input id=\"fq-name\" value=\"" + esc(q.factory_name || "") + "\"></label>";
+    html += "<label>Prazo (dias)<input id=\"fq-lead\" value=\"" + esc(q.lead_time_days == null ? "" : q.lead_time_days) + "\"></label>";
+    html += "<label>Montagem / un. €<input id=\"fq-install\" value=\"" + esc(q.installation_per_unit_eur == null ? "" : q.installation_per_unit_eur) + "\"></label>";
+    html += "<label>Transporte / un. €<input id=\"fq-ship\" value=\"" + esc(q.shipping_per_unit_eur == null ? "" : q.shipping_per_unit_eur) + "\"></label></div>";
+    html += "<label>Condições de pagamento<input id=\"fq-pay\" value=\"" + esc(q.payment_terms_pt || "") + "\"></label>";
+    html += "<table class=\"t\"><thead><tr><th>Caixa</th><th>Medidas</th><th>Material</th><th class=\"n\">Preço / un. €</th></tr></thead><tbody>";
+    (d.boxes || []).forEach(function (b) {
+      var row = (q.boxes && q.boxes[b.code]) || {};
+      html += "<tr><td>" + esc(b.code + " · " + b.name) + "</td>";
+      html += "<td>" + esc([b.w, b.h, b.d].filter(function(x){return x!=null;}).join(" x ") + " mm") + "</td>";
+      html += "<td><input data-box=\"" + esc(b.code) + "\" class=\"fq-mat\" value=\"" + esc(row.material || "") + "\"></td>";
+      html += "<td><input data-box=\"" + esc(b.code) + "\" class=\"fq-price\" value=\"" + esc(row.price_eur == null ? "" : row.price_eur) + "\"></td></tr>";
+    });
+    html += "</tbody></table>";
+    html += "<label>Notas<textarea id=\"fq-notes\">" + esc(q.notes_pt || "") + "</textarea></label>";
+    html += "<div style=\"margin-top:10px\"><button type=\"button\" class=\"btn\" id=\"fq-save\">" + t("save") + "</button></div></div>";
+    return html;
+  }
+
+  function renderClientChooser() {
+    var d = state.data || {};
+    var choice = d.client_choice || {};
+    var pricing = d.pricing || {};
+    var html = "<div class=\"panel no-print\"><h3>A sua escolha</h3>";
+    html += "<div class=\"client-opts\" id=\"client-mats\">";
+    (d.material_options || []).forEach(function (m) {
+      var active = choice.material_option_id === m.id ? " active" : "";
+      html += "<label class=\"" + active.trim() + "\"><input type=\"radio\" name=\"mat\" value=\"" + esc(m.id) + "\"" + (choice.material_option_id === m.id ? " checked" : "") + ">";
+      html += "<span><strong>" + esc(m.name) + "</strong><br><span class=\"muted\">" + esc(m.description_pt || "") + "</span>";
+      if (m.unit_price_eur != null) html += "<br>" + esc(money(m.unit_price_eur));
+      else if (m.price_status) html += "<br><span class=\"status-pill\">" + esc(priceStatusLabel(m.price_status)) + "</span>";
+      html += "</span></label>";
+    });
+    html += "</div>";
+    html += "<div class=\"row\">";
+    html += "<label><input type=\"checkbox\" id=\"cl-install\"" + (choice.with_installation !== false ? " checked" : "") + "> " + t("withInstall") + "</label>";
+    html += "<label><input type=\"checkbox\" id=\"cl-equip\"" + (choice.with_equipment !== false ? " checked" : "") + "> " + t("withEquip") + "</label>";
+    html += "<label>Conjunto<select id=\"cl-set\">";
+    ["economico","recomendado","premium"].forEach(function (c) {
+      html += "<option value=\"" + c + "\"" + (choice.set_code === c ? " selected" : "") + ">" + c + "</option>";
+    });
+    html += "</select></label></div>";
+    html += "<div class=\"price-tag\" id=\"cl-price\">" + clientPriceLabel(d, choice) + "</div>";
+    html += "<button type=\"button\" class=\"btn\" id=\"cl-send\">" + t("sendChoice") + "</button></div>";
+    return html;
+  }
+
+  function clientPriceLabel(d, choice) {
+    var pricing = d.pricing || {};
+    var base = pricing.selling_price_per_unit_eur;
+    if (base == null) return t("noPrice");
+    var total = Number(base) || 0;
+    if (choice.with_installation && pricing.installation_per_unit_eur != null) total += Number(pricing.installation_per_unit_eur) || 0;
+    if (choice.with_equipment === false) {
+      // sem equipamentos: mostrar só base (mobiliário); simplificado
+    }
+    var mats = d.material_options || [];
+    var mat = mats.find(function (m) { return m.id === choice.material_option_id; });
+    if (mat && mat.unit_price_eur != null) total = Number(mat.unit_price_eur) || total;
+    return money(total);
+  }
+
+  function renderReport(editable) {
+    var d = state.data;
+    if (!d) return "<div class=\"report\"><p class=\"note\">Sem dados.</p></div>";
+    var role = state.me.role;
+    var company = d.company || {};
+    var project = d.project || {};
+    var units = project.units || 1;
+    var hide = state.printHide;
+
+    function sec(id, inner) {
+      var cls = hide[id] ? " sec-hide-print" : "";
+      return "<section class=\"doc-sec" + cls + "\" data-sec=\"" + id + "\">" + inner + "</section>";
+    }
+
+    var html = "<article class=\"report\" id=\"report\">";
+
+    // 1 Capa
+    html += sec("capa",
+      hdrHtml() +
+      "<h1 class=\"doc\">" + esc(project.name || state.project.title || "Orçamento") + "</h1>" +
+      infoTable([
+        ["Projecto", project.name],
+        ["Cliente", (project.client && project.client.name) || ""],
+        ["Local", project.location || (project.client && project.client.country) || ""],
+        ["Unidades", units + " unidades"],
+        ["Empresa", company.brand || "Pimo Casa"],
+        ["Data", (d.prices_checked_at || d.generated_at || "")],
+        ["Medidas gerais", overallTxt(project)],
+        ["N.º", (state.project && state.project.slug) || project.id || ""]
+      ])
+    );
+
+    // 2 Resumo
+    html += sec("resumo",
+      "<h2 class=\"sec\">1. Resumo do projecto</h2>" +
+      "<p>" + esc(project.notes || "") + "</p>" +
+      listHtml(project.assumptions)
+    );
+
+    // 3 Design
+    var layout = assetUrl(d.assets && d.assets.layout);
+    var ref = assetUrl(d.assets && d.assets.reference);
+    html += sec("design",
+      "<div class=\"pagebreak\"></div><h2 class=\"sec\">2. Design e planta</h2>" +
+      (layout ? "<img class=\"asset-img\" src=\"" + esc(layout) + "\" alt=\"Planta das caixas\">" : "<p class=\"note\">Planta ainda não carregada.</p>") +
+      (ref ? "<img class=\"asset-img\" src=\"" + esc(ref) + "\" alt=\"Referência\">" : "")
+    );
+
+    // 4 Caixas
+    html += sec("caixas",
+      "<h2 class=\"sec\">3. Caixas do móvel</h2>" + boxesTable(d.boxes || [], role)
+    );
+
+    // Categories / items
+    var cats = d.categories || [];
+    var byCat = {};
+    (d.items || []).forEach(function (it) {
+      var c = it.category || "outros";
+      (byCat[c] = byCat[c] || []).push(it);
+    });
+    var catSec = {
+      dobradicas: ["dobradicas", "4. Dobradiças e puxadores · dobradiças"],
+      puxadores: ["puxadores", "4b. Puxadores"],
+      sistemas_portas: ["portas", "5. Sistemas de portas"],
+      eletrodomesticos: ["equipamentos", "6. Equipamentos"],
+      ventilacao: ["ventilacao", "7. Ventilação e distâncias"],
+      outros: ["equipamentos", "6b. Outros"]
+    };
+    cats.forEach(function (c) {
+      var items = byCat[c.id] || [];
+      if (!items.length) return;
+      var meta = catSec[c.id] || ["equipamentos", c.name];
+      html += sec(meta[0],
+        "<h2 class=\"sec\">" + esc(meta[1] || c.name) + "</h2>" +
+        itemsTable(items, role, editable)
+      );
+    });
+
+    // Montagem
+    html += sec("montagem",
+      "<div class=\"pagebreak\"></div><h2 class=\"sec\">8. Montagem e transporte</h2>" +
+      montagemBlock(d, role)
+    );
+
+    // Totais
+    html += sec("totais",
+      "<h2 class=\"sec\">9. Tabela de preços e opções</h2>" +
+      totaisBlock(d, role)
+    );
+
+    // Condições
+    html += sec("condicoes",
+      "<h2 class=\"sec\">10. Condições</h2>" +
+      "<p class=\"note\">Prazo, pagamento e validade a confirmar no fecho da encomenda.</p>" +
+      ((d.points_to_confirm && d.points_to_confirm.length)
+        ? ("<h3 class=\"sub\">Pontos a confirmar</h3>" + listHtml(d.points_to_confirm))
+        : "")
+    );
+
+    // Gaps only Khaled views
+    if (d.gaps && d.gaps.length && (role === "admin" || role === "khaled" || role === "filipe")) {
+      html += sec("gaps",
+        "<h2 class=\"sec\">Lacunas</h2>" + listHtml(d.gaps)
+      );
+    }
+
+    // Assinatura
+    html += sec("assinatura",
+      "<p class=\"cap\">" + esc(d.disclaimer_pt || t("disclaimer")) + "</p>" +
+      "<div class=\"sig\">" + esc(t("regards")) +
+      "<strong>" + esc(company.signer || "Khaled al Ahdab") + "</strong>" +
+      esc(company.brand || "Pimo Casa") + "<br>" +
+      esc(company.email || "info@pimo.pt") + "<br>" +
+      esc(company.phone || "+351 913 822 833") + "<br>" +
+      esc(company.web || "www.pimo.pt") +
+      "</div>"
+    );
+
+    html += "</article>";
+    return html;
+  }
+
+  function hdrHtml() {
+    return "<div class=\"hdr\"><img src=\"logo.png\" alt=\"Pimo Casa\"><div><div class=\"b\">PIMO CASA</div><div class=\"s\">Ferragens, sistemas de portas e equipamentos</div></div></div><div class=\"rule\"></div>";
+  }
+
+  function infoTable(rows) {
+    var html = "<table class=\"info\">";
+    rows.forEach(function (r) {
+      if (!r[1]) return;
+      html += "<tr><td class=\"k\">" + esc(r[0]) + "</td><td>" + esc(r[1]) + "</td></tr>";
+    });
+    return html + "</table>";
+  }
+
+  function listHtml(arr) {
+    if (!arr || !arr.length) return "";
+    return "<ul>" + arr.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>";
+  }
+
+  function overallTxt(project) {
+    var o = project.overall_mm;
+    if (!o) return project.overall_note || "";
+    return [o.w, o.h, o.d].filter(function (x) { return x != null; }).join(" x ") + " mm";
+  }
+
+  function boxesTable(boxes, role) {
+    var detailed = role !== "client";
+    var html = "<table class=\"t\"><thead><tr><th>Ref.</th><th>Função</th><th>L x A x P (mm)</th>";
+    if (detailed) html += "<th>Pés</th><th>Posição</th>";
+    html += "</tr></thead><tbody>";
+    boxes.forEach(function (b) {
+      html += "<tr><td>" + esc(b.code) + "</td><td>" + esc(b.name) + "</td>";
+      html += "<td>" + esc([b.w, b.h, b.d].join(" x ")) + "</td>";
+      if (detailed) {
+        html += "<td>" + (b.feet ? "Com pés" : "Sem pés") + "</td>";
+        html += "<td>" + esc(b.position_pt || "") + "</td>";
+      }
+      html += "</tr>";
+    });
+    html += "</tbody></table>";
+    return html;
+  }
+
+  function itemsTable(items, role, editable) {
+    var showCost = role === "admin" || role === "khaled" || role === "filipe";
+    var html = "<table class=\"t\"><thead><tr>";
+    html += "<th>Artigo</th><th>Modelo</th>";
+    if (showCost) html += "<th>Fornecedor</th><th class=\"n\">Preço un.</th>";
+    html += "<th class=\"n\">Qtd</th><th>Estado</th></tr></thead><tbody>";
+    items.forEach(function (it) {
+      html += "<tr>";
+      html += "<td><strong>" + esc(it.name) + "</strong>";
+      if (it.image) {
+        var u = assetUrl(it.image);
+        if (u) html += "<br><img src=\"" + esc(u) + "\" alt=\"\" style=\"max-width:72px;max-height:72px;margin-top:4px\">";
+      } else if (it.brand) {
+        html += "<div class=\"cap\">" + esc(it.brand) + "</div>";
+      }
+      html += "</td>";
+      html += "<td>" + esc(it.model || it.ref || "") + "</td>";
+      if (showCost) {
+        html += "<td>" + esc(it.supplier || "");
+        if (it.url) html += "<div class=\"cap\"><a href=\"" + esc(it.url) + "\" target=\"_blank\" rel=\"noopener\">Comprar</a></div>";
+        html += "</td>";
+        var cell;
+        if (it.unit_price_eur == null) cell = priceStatusLabel(it.price_status) || "-";
+        else cell = money(it.unit_price_eur);
+        html += "<td class=\"n\">" + esc(cell) + "</td>";
+      }
+      html += "<td class=\"n\">" + esc(it.qty_per_unit == null ? "" : it.qty_per_unit) + "</td>";
+      html += "<td>" + esc(priceStatusLabel(it.price_status) || (it.option_group || "")) + "</td>";
+      html += "</tr>";
+      if (it.notes_pt || it.fits_notes) {
+        html += "<tr><td colspan=\"" + (showCost ? 6 : 4) + "\" class=\"note\">" + esc(it.notes_pt || it.fits_notes) + "</td></tr>";
+      }
+    });
+    html += "</tbody></table>";
+    return html;
+  }
+
+  function montagemBlock(d, role) {
+    var ph = d.pricing_placeholders || d.pricing || {};
+    if (role === "factory" || role === "client") {
+      var html = "<p>";
+      if (role === "client") {
+        html += "Montagem: " + (ph.installation_per_unit_eur != null ? money(ph.installation_per_unit_eur) : "a confirmar") + "<br>";
+        html += "Transporte: " + (ph.shipping_per_unit_eur != null ? money(ph.shipping_per_unit_eur) : "a confirmar");
+      } else {
+        html += "Indique montagem e transporte no formulário de cotação.";
+      }
+      return html + "</p>";
+    }
+    return infoTable([
+      ["Montagem / un.", money(ph.installation_per_unit_eur, "a preencher")],
+      ["Transporte / un.", money(ph.shipping_per_unit_eur, "a preencher")],
+      ["Destino", ph.shipping_to || ""]
+    ]);
+  }
+
+  function totaisBlock(d, role) {
+    if (role === "factory") {
+      return "<p class=\"note\">Os totais de compra da Pimo Casa não são mostrados nesta vista. Envie a sua cotação pelo formulário.</p>";
+    }
+    if (role === "client") {
+      var p = d.pricing || {};
+      return "<p class=\"price-tag\">" + (p.selling_price_per_unit_eur != null ? money(p.selling_price_per_unit_eur) + " / unidade" : t("noPrice")) + "</p>";
+    }
+    var ph = d.pricing_placeholders || {};
+    var html = infoTable([
+      ["Margem %", ph.margin_percent == null ? "a preencher" : ph.margin_percent],
+      ["Margem €", money(ph.margin_amount_eur, "a preencher")],
+      ["Preço final / un.", money(ph.selling_price_per_unit_eur, "a preencher")],
+      ["Preço final total", money(ph.selling_price_x6_eur, "a preencher")]
+    ]);
+    if (d.order_of_magnitude && d.order_of_magnitude.length) {
+      html += "<h3 class=\"sub\">Ordem de grandeza (compra)</h3><table class=\"t\"><thead><tr><th>Conjunto</th><th class=\"n\">/ un.</th><th class=\"n\">Total</th></tr></thead><tbody>";
+      d.order_of_magnitude.forEach(function (o) {
+        html += "<tr><td>" + esc(o.label) + "</td><td class=\"n\">" + esc(money(o.per_unit_eur)) + "</td><td class=\"n\">" + esc(money(o.x6_eur)) + "</td></tr>";
+      });
+      html += "</tbody></table>";
+    }
+    return html;
+  }
+
+  function bindAdmin() {
+    var st = document.getElementById("adm-save-status");
+    if (st) st.addEventListener("click", function () {
+      var status = document.getElementById("adm-status").value;
+      api("project.php", { method: "POST", body: { id: state.projectId, data: state.data, status: status, note: "estado" } })
+        .then(function () { toast("Estado actualizado"); return loadWorkspace(); })
+        .catch(function (e) { toast(e.message); });
+    });
+    var dup = document.getElementById("adm-dup");
+    if (dup) dup.addEventListener("click", function () {
+      api("duplicate.php", { method: "POST", body: { id: state.projectId } })
+        .then(function (j) { state.projectId = j.project.id; toast("Duplicado"); return loadWorkspace(); })
+        .catch(function (e) { toast(e.message); });
+    });
+    var arch = document.getElementById("adm-arch");
+    if (arch) arch.addEventListener("click", function () {
+      if (!confirm("Arquivar este projecto?")) return;
+      api("project.php", { method: "DELETE", body: { id: state.projectId } })
+        .then(function () { state.projectId = null; toast("Arquivado"); return loadWorkspace(); })
+        .catch(function (e) { toast(e.message); });
+    });
+    var bak = document.getElementById("adm-backup");
+    if (bak) bak.addEventListener("click", function () {
+      api("backup.php", { method: "POST", body: {} }).then(function (j) {
+        toast(j.created ? "Cópia criada" : "Cópia do dia já existia");
+      }).catch(function (e) { toast(e.message); });
+    });
+    document.querySelectorAll(".adm-upload").forEach(function (inp) {
+      inp.addEventListener("change", function () {
+        var f = inp.files && inp.files[0];
+        if (!f) return;
+        var fd = new FormData();
+        fd.append("file", f);
+        fd.append("project_id", state.projectId);
+        fd.append("kind", inp.getAttribute("data-kind"));
+        fetch(BASE + "/upload.php", { method: "POST", credentials: "same-origin", body: fd })
+          .then(function (r) { return r.json(); })
+          .then(function (j) {
+            if (!j.ok) throw new Error(j.error || "Falha");
+            toast("Imagem enviada");
+            return openProject(state.projectId);
+          })
+          .catch(function (e) { toast(e.message); });
+      });
+    });
+    var lc = document.getElementById("link-create");
+    if (lc) lc.addEventListener("click", function () {
+      var role = document.getElementById("link-role").value;
+      var body = {
+        action: "create",
+        project_id: state.projectId,
+        role: role,
+        label: document.getElementById("link-label").value,
+        factory_key: role === "factory" ? document.getElementById("link-factory").value : null
+      };
+      api("access.php", { method: "POST", body: body }).then(function (j) {
+        var box = document.getElementById("link-once");
+        box.classList.remove("hidden");
+        box.innerHTML = "<p><strong>Guarde agora (mostrado uma vez):</strong></p>" +
+          "<p>Ligação: <code>" + esc(location.origin + j.link.path) + "</code></p>" +
+          "<p>Código: <code>" + esc(j.link.code) + "</code></p>";
+        return openProject(state.projectId);
+      }).catch(function (e) { toast(e.message); });
+    });
+    document.querySelectorAll(".link-rev").forEach(function (b) {
+      b.addEventListener("click", function () {
+        api("access.php", { method: "POST", body: { action: "revoke", id: b.getAttribute("data-id") } })
+          .then(function () { return openProject(state.projectId); });
+      });
+    });
+    document.querySelectorAll(".link-rot").forEach(function (b) {
+      b.addEventListener("click", function () {
+        api("access.php", { method: "POST", body: { action: "rotate", id: b.getAttribute("data-id") } })
+          .then(function (j) {
+            var box = document.getElementById("link-once");
+            box.classList.remove("hidden");
+            box.innerHTML = "<p><strong>Novo acesso:</strong></p>" +
+              "<p>Ligação: <code>" + esc(location.origin + j.link.path) + "</code></p>" +
+              "<p>Código: <code>" + esc(j.link.code) + "</code></p>";
+            return openProject(state.projectId);
+          });
+      });
+    });
+    document.querySelectorAll(".compare td.pick").forEach(function (td) {
+      td.addEventListener("click", function () {
+        api("approve-price.php", {
+          method: "POST",
+          body: {
+            project_id: state.projectId,
+            item_key: td.getAttribute("data-item"),
+            factory_key: td.getAttribute("data-factory"),
+            price_eur: td.getAttribute("data-price")
+          }
+        }).then(function () { toast("Preço aprovado"); return openProject(state.projectId); })
+          .catch(function (e) { toast(e.message); });
+      });
+    });
+    var sp = document.getElementById("adm-save-pricing");
+    if (sp) sp.addEventListener("click", savePricing);
+    document.querySelectorAll(".ver-rest").forEach(function (b) {
+      b.addEventListener("click", function () {
+        if (!confirm("Restaurar esta versão?")) return;
+        api("restore.php", {
+          method: "POST",
+          body: { project_id: state.projectId, version_no: Number(b.getAttribute("data-v")) }
+        }).then(function () { toast("Versão restaurada"); return openProject(state.projectId); })
+          .catch(function (e) { toast(e.message); });
+      });
+    });
+    bindPrintOpts();
+  }
+
+  function savePricing() {
+    var d = state.data;
+    d.pricing_placeholders = d.pricing_placeholders || {};
+    function num(id) {
+      var v = document.getElementById(id).value.trim();
+      return v === "" ? null : Number(v.replace(",", "."));
+    }
+    d.pricing_placeholders.margin_percent = num("ph-margin-pct");
+    d.pricing_placeholders.margin_amount_eur = num("ph-margin-amt");
+    d.pricing_placeholders.installation_per_unit_eur = num("ph-install");
+    d.pricing_placeholders.shipping_per_unit_eur = num("ph-ship");
+    d.pricing_placeholders.selling_price_per_unit_eur = num("ph-sell");
+    var units = (d.project && d.project.units) || 1;
+    if (d.pricing_placeholders.selling_price_per_unit_eur != null) {
+      d.pricing_placeholders.selling_price_x6_eur = d.pricing_placeholders.selling_price_per_unit_eur * units;
+    }
+    if (d.pricing_placeholders.installation_per_unit_eur != null) {
+      d.pricing_placeholders.installation_x6_eur = d.pricing_placeholders.installation_per_unit_eur * units;
+    }
+    if (d.pricing_placeholders.shipping_per_unit_eur != null) {
+      d.pricing_placeholders.shipping_x6_eur = d.pricing_placeholders.shipping_per_unit_eur * units;
+    }
+    d.editor_settings = d.editor_settings || {};
+    d.editor_settings.hide_margin_from_filipe = !!(document.getElementById("hide-margin") && document.getElementById("hide-margin").checked);
+    api("project.php", { method: "POST", body: { id: state.projectId, data: d, note: "preços" } })
+      .then(function () { toast("Preços gravados"); return openProject(state.projectId); })
+      .catch(function (e) { toast(e.message); });
+  }
+
+  function bindEditor() {
+    var b = document.getElementById("ed-save");
+    if (b) b.addEventListener("click", function () {
+      api("project.php", { method: "POST", body: { id: state.projectId, data: state.data, note: "edição" } })
+        .then(function () { toast("Gravado"); return openProject(state.projectId); })
+        .catch(function (e) { toast(e.message); });
+    });
+    bindPrintOpts();
+  }
+
+  function bindFactory() {
+    var b = document.getElementById("fq-save");
+    if (!b) return;
+    b.addEventListener("click", function () {
+      var boxes = {};
+      document.querySelectorAll(".fq-price").forEach(function (inp) {
+        var code = inp.getAttribute("data-box");
+        boxes[code] = boxes[code] || {};
+        var v = inp.value.trim();
+        boxes[code].price_eur = v === "" ? null : Number(v.replace(",", "."));
+      });
+      document.querySelectorAll(".fq-mat").forEach(function (inp) {
+        var code = inp.getAttribute("data-box");
+        boxes[code] = boxes[code] || {};
+        boxes[code].material = inp.value.trim();
+      });
+      function num(id) {
+        var v = document.getElementById(id).value.trim();
+        return v === "" ? null : Number(v.replace(",", "."));
+      }
+      var quote = {
+        factory_name: document.getElementById("fq-name").value.trim(),
+        boxes: boxes,
+        installation_per_unit_eur: num("fq-install"),
+        shipping_per_unit_eur: num("fq-ship"),
+        lead_time_days: num("fq-lead"),
+        payment_terms_pt: document.getElementById("fq-pay").value.trim(),
+        notes_pt: document.getElementById("fq-notes").value.trim()
+      };
+      api("project.php", { method: "POST", body: { id: state.projectId, quote: quote } })
+        .then(function () { toast("Cotação enviada"); return openProject(state.projectId); })
+        .catch(function (e) { toast(e.message); });
+    });
+  }
+
+  function bindClient() {
+    function currentChoice() {
+      var mat = document.querySelector("input[name=mat]:checked");
+      return {
+        material_option_id: mat ? mat.value : null,
+        set_code: document.getElementById("cl-set").value,
+        with_installation: document.getElementById("cl-install").checked,
+        with_equipment: document.getElementById("cl-equip").checked
+      };
+    }
+    function refreshPrice() {
+      var el = document.getElementById("cl-price");
+      if (el) el.textContent = clientPriceLabel(state.data, currentChoice());
+    }
+    document.querySelectorAll("#client-mats input, #cl-install, #cl-equip, #cl-set").forEach(function (n) {
+      n.addEventListener("change", refreshPrice);
+    });
+    var send = document.getElementById("cl-send");
+    if (send) send.addEventListener("click", function () {
+      api("client-choice.php", { method: "POST", body: currentChoice() })
+        .then(function () { toast("Escolha enviada"); return openProject(state.projectId); })
+        .catch(function (e) { toast(e.message); });
+    });
+  }
+
+  function bindPrintOpts() {
+    document.querySelectorAll(".print-sec").forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        state.printHide[cb.getAttribute("data-sec")] = !cb.checked;
+        document.querySelectorAll('.doc-sec[data-sec="' + cb.getAttribute("data-sec") + '"]').forEach(function (sec) {
+          sec.classList.toggle("sec-hide-print", !cb.checked);
+        });
+      });
+    });
+  }
+
+  // Polling leve para vistas partilhadas
+  setInterval(function () {
+    if (!state.me || !state.projectId) return;
+    if (state.me.role !== "khaled" && state.me.role !== "filipe") return;
+    if (document.hidden) return;
+    api("project.php?id=" + encodeURIComponent(state.projectId)).then(function (j) {
+      if (!state.project || j.project.updated_at !== state.project.updated_at) {
+        state.project = j.project;
+        state.data = j.project.data;
+        render();
+      }
+    }).catch(function () {});
+  }, 20000);
+
+  boot();
+})();
+</script>
+</body>
+</html>

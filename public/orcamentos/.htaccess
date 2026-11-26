@@ -1,0 +1,21 @@
+Options -Indexes
+DirectoryIndex index.html
+
+# Impedir indexação
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow, noarchive"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /orcamentos/
+
+  # Bloquear listagens e ficheiros sensíveis
+  RewriteRule ^api/lib/ - [F,L]
+  RewriteRule ^api/bootstrap\.php$ - [F,L]
+</IfModule>
+
+# PHP: não expor listagens
+<FilesMatch "\.(json|md|sql|log)$">
+  Require all denied
+</FilesMatch>
