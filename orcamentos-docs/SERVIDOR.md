@@ -25,3 +25,17 @@ Pasta de imagens (também fora de `public_html`):
 As tabelas MySQL são criadas automaticamente na primeira chamada.
 
 Importar o projecto real: no painel, use **Importar JSON** com o ficheiro local (não está no repositório).
+
+## URLs por projecto
+
+Cada projecto tem um link estável com base no `slug` (gerado na criação):
+
+`https://pimo.info/orcamentos/<slug>/`
+
+Ex.: `https://pimo.info/orcamentos/mille-etangs-kitchenette/`
+
+- `/orcamentos/` (admin) lista os projectos com o respectivo link — nunca fica vazio.
+- Com slug no caminho, o admin abre directamente esse projecto após o login.
+- Ligações de partilha: `/orcamentos/<slug>/?v=<token>` (o formato antigo `/orcamentos/?v=<token>` continua válido).
+- O `.htaccess` em `public/orcamentos/` faz rewrite de `/orcamentos/<slug>/` para a SPA (`index.html`), com `noindex`.
+- Novos projectos recebem o slug automaticamente.

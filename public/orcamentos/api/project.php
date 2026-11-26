@@ -7,16 +7,22 @@ $s = Auth::requireSession();
 $role = $s['role'] ?? '';
 
 if ($method === 'GET') {
-    $id = (string) ($_GET['id'] ?? ($s['project_id'] ?? ''));
-    if ($id === '') {
-        Response::error('Projecto em falta.');
+    $id = (string) ($_GET['id'] ?? '');
+    $slug = (string) ($_GET['slug'] ?? '');
+    $proj = null;
+    if ($id !== '') {
+        $proj = ProjectService::get($pdo, $id);
+    } elseif ($slug !== '') {
+        $proj = ProjectService::getBySlug($pdo, $slug);
+    } elseif (!empty($s['project_id'])) {
+        $proj = ProjectService::get($pdo, (string) $s['project_id']);
     }
-    if ($role !== 'admin' && ($s['project_id'] ?? '') !== $id) {
-        Response::error('Acesso negado.', 403);
-    }
-    $proj = ProjectService::get($pdo, $id);
     if (!$proj || !empty($proj['archived'])) {
         Response::error('Projecto não encontrado.', 404);
+    }
+    $id = (string) $proj['id'];
+    if ($role !== 'admin' && ($s['project_id'] ?? '') !== $id) {
+        Response::error('Acesso negado.', 403);
     }
     $filtered = Filter::forRole($proj['data'], $s);
     Response::json([
