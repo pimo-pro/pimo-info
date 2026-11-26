@@ -103,6 +103,13 @@ CREATE TABLE IF NOT EXISTS admin_codes (
   KEY idx_admin_codes_revoked (revoked_at)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 SQL,
+            '004_admin_users' => <<<'SQL'
+CREATE TABLE IF NOT EXISTS admin_users (
+  email VARCHAR(190) NOT NULL PRIMARY KEY,
+  password_hash VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+SQL,
         ];
 
         foreach ($migrations as $id => $sql) {

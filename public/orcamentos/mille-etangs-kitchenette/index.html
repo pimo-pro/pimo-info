@@ -1,0 +1,2601 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Pimo Casa · Orçamentos</title>
+  <base href="/orcamentos/">
+  <link rel="icon" href="/orcamentos/logo.png" type="image/png">
+  <style>
+:root {
+  --ink: #141414;
+  --slate: #0f172a;
+  --muted: #475569;
+  --soft: #64748b;
+  --line: #e3e8f0;
+  --line2: #e2e8f0;
+  --head: #1f293b;
+  --zebra: #f5f5f5;
+  --link: #1d4ed8;
+  --bg: #ffffff;
+  --panel: #f8fafc;
+  --warn: #b45309;
+  --ok: #166534;
+  --bad: #9f1239;
+  --ui: #0f172a;
+  --ui-border: #cbd5e1;
+  --radius: 2px;
+  --font: Helvetica, "Liberation Sans", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: #eef2f7;
+  font-size: 15px;
+  line-height: 1.45;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hidden { display: none !important; }
+#app-shell { min-height: 100vh; }
+.gate {
+  max-width: 420px;
+  margin: 8vh auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 28px 24px 22px;
+}
+.gate .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.gate .brand img { height: 40px; width: auto; max-width: 120px; background: transparent; border-radius: 0; object-fit: contain; }
+.gate h1 { font-size: 1.15rem; margin: 0 0 6px; color: var(--slate); }
+.gate p { margin: 0 0 14px; color: var(--muted); font-size: 0.92rem; }
+.gate label { display: block; font-size: 0.85rem; color: var(--muted); margin: 0 0 4px; font-weight: 600; }
+.gate input, .toolbar input, .toolbar select, .panel input, .panel select, .panel textarea {
+  width: 100%;
+  border: 1px solid var(--ui-border);
+  padding: 8px 10px;
+  font: inherit;
+  border-radius: var(--radius);
+  background: #fff;
+}
+.gate button, .btn {
+  appearance: none;
+  border: 1px solid var(--head);
+  background: var(--head);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+.btn.secondary { background: #fff; color: var(--slate); border-color: var(--ui-border); }
+.btn.danger { background: #fff; color: var(--bad); border-color: #fecaca; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.err { color: var(--bad); font-size: 0.88rem; margin-top: 10px; min-height: 1.2em; }
+.toolbar {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+  padding: 8px 12px;
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+}
+.toolbar .spacer { flex: 1; }
+.toolbar .chip {
+  font-size: 0.78rem; color: var(--muted);
+  border: 1px solid var(--line); padding: 4px 8px; border-radius: 999px;
+}
+.layout { display: grid; grid-template-columns: 280px 1fr; gap: 0; max-width: 1400px; margin: 0 auto; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .side { border-right: 0; border-bottom: 1px solid var(--line); }
+}
+.side {
+  background: #fff;
+  border-right: 1px solid var(--line);
+  padding: 14px 12px 40px;
+  min-height: calc(100vh - 52px);
+}
+.side h2 { font-size: 0.95rem; margin: 0 0 10px; }
+.side .proj {
+  border: 1px solid var(--line);
+  padding: 10px;
+  margin: 0 0 8px;
+  cursor: pointer;
+  background: #fff;
+}
+.side .proj:hover, .side .proj.active { border-color: var(--head); background: var(--panel); }
+.side .proj .t { font-weight: 700; font-size: 0.9rem; color: var(--slate); }
+.side .proj .m { font-size: 0.75rem; color: var(--soft); margin-top: 4px; }
+.main { padding: 12px; }
+.report {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 28px 32px 40px;
+  max-width: 900px;
+  margin: 0 auto 24px;
+  box-shadow: 0 1px 0 rgba(15,23,42,0.04);
+}
+.hdr { display: flex; align-items: center; gap: 12px; background: transparent; }
+.hdr img.logo {
+  height: 48px; width: auto; max-width: 160px;
+  background: transparent !important; border: 0; border-radius: 0;
+  object-fit: contain; object-position: left center; display: block;
+}
+.hdr .b { font-weight: 700; font-size: 1.15rem; color: var(--slate); line-height: 1.2; }
+.hdr .s { font-size: 0.85rem; color: var(--muted); }
+input.ed, textarea.ed, select.ed {
+  width: 100%; border: 1px solid var(--ui-border); padding: 4px 6px;
+  font: inherit; font-size: 0.75rem; background: #fff; border-radius: var(--radius);
+}
+tr.a-definir input.ed { color: #b91c1c; border-color: #fecaca; background: #fff; }
+.ed-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 14px; }
+.sheet-summary { font-size: 0.85rem; color: var(--muted); margin: 0 0 10px; line-height: 1.4; }
+.grand-totals { margin-top: 18px; padding-top: 8px; border-top: 2px solid var(--line); }
+.rule { border-top: 1px solid var(--line); margin: 10px 0 0; }
+h1.doc { font-size: 1.25rem; color: var(--slate); margin: 14px 0 12px; line-height: 1.3; }
+h2.sec { font-size: 1.05rem; color: var(--slate); margin: 22px 0 8px; page-break-after: avoid; }
+h3.sub { font-size: 0.95rem; color: var(--slate); margin: 14px 0 6px; page-break-after: avoid; }
+p { margin: 0 0 8px; }
+.muted { color: var(--soft); }
+.note { font-size: 0.82rem; color: var(--muted); line-height: 1.35; margin: 0 0 10px; }
+.cap { font-size: 0.75rem; color: var(--soft); margin: 2px 0 10px; }
+table.info { width: 100%; border-collapse: collapse; margin: 0 0 10px; }
+table.info td { padding: 3px 0 8px; vertical-align: top; font-size: 0.92rem; }
+table.info td.k { font-weight: 700; color: var(--muted); width: 140px; }
+table.t { width: 100%; border-collapse: collapse; margin: 0 0 10px; table-layout: fixed; }
+table.t th {
+  background: var(--head); color: #fff; font-weight: 700;
+  font-size: 0.72rem; text-align: left; padding: 7px 6px; vertical-align: bottom;
+}
+table.t td {
+  font-size: 0.78rem; color: #334155; padding: 6px;
+  vertical-align: top; line-height: 1.3; overflow-wrap: break-word;
+  border-bottom: 1px solid var(--line2);
+}
+table.t tr:nth-child(even) td { background: var(--zebra); }
+table.t td.n, table.t th.n { text-align: right; white-space: nowrap; }
+table.t tr.tot td { font-weight: 700; color: #000; background: #fff; border-top: 1px solid #cbd5e1; }
+.box {
+  border: 1px solid var(--line2);
+  border-left: 3px solid var(--head);
+  padding: 8px 12px;
+  margin: 8px 0 12px;
+  background: var(--panel);
+}
+.box.warn { border-left-color: var(--warn); background: #fffbeb; }
+.sig { margin-top: 22px; font-size: 0.92rem; line-height: 1.5; color: var(--slate); }
+.sig strong { display: block; margin-top: 8px; }
+.footer-print {
+  display: none;
+}
+.asset-img { width: 100%; max-height: 360px; object-fit: contain; background: #fafbfc; border: 1px solid #eef2f7; display: block; margin: 6px 0 12px; }
+.status-pill {
+  display: inline-block; font-size: 0.72rem; padding: 2px 7px;
+  border: 1px solid var(--line); color: var(--muted); border-radius: 999px;
+}
+.panel {
+  background: #fff; border: 1px solid var(--line); padding: 14px; margin: 0 0 12px;
+}
+.panel h3 { margin: 0 0 8px; font-size: 0.95rem; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
+.row > * { flex: 1 1 140px; }
+.compare td.pick { cursor: pointer; }
+.compare td.pick:hover { outline: 2px solid var(--link); }
+.compare td.picked { background: #ecfdf5 !important; }
+.print-opts label { display: inline-flex; gap: 6px; align-items: center; margin: 0 10px 6px 0; font-size: 0.82rem; color: var(--muted); }
+.price-tag { font-size: 1.4rem; font-weight: 700; color: var(--slate); }
+.client-opts { display: grid; gap: 8px; margin: 12px 0; }
+.client-opts label {
+  border: 1px solid var(--line); padding: 10px 12px; display: flex; gap: 10px; align-items: flex-start; cursor: pointer;
+}
+.client-opts label.active { border-color: var(--head); background: var(--panel); }
+.factory-form textarea { min-height: 70px; }
+.toast {
+  position: fixed; right: 14px; bottom: 14px; background: var(--slate); color: #fff;
+  padding: 10px 14px; border-radius: var(--radius); font-size: 0.85rem; z-index: 50;
+  opacity: 0; transform: translateY(8px); transition: .2s ease; pointer-events: none;
+}
+.toast.show { opacity: 1; transform: none; }
+tr.a-definir td, .a-definir-cell {
+  color: #b91c1c !important;
+  background: #fef2f2 !important;
+  font-weight: 600;
+}
+.a-definir-input {
+  width: 100%;
+  max-width: 110px;
+  border: 1px solid #fecaca;
+  background: #fff;
+  color: #b91c1c;
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 4px 6px;
+}
+.totals-note-warn { color: #b91c1c; font-size: 0.85rem; margin: 6px 0 10px; }
+.asset-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 8px 0 14px; }
+.asset-grid figure { margin: 0; }
+.asset-grid figcaption { font-size: 0.72rem; color: var(--soft); margin-top: 4px; }
+.checks-confirm { margin: 12px 0; padding: 10px 12px; background: #fff7ed; border: 1px solid #fed7aa; }
+.checks-confirm h3 { color: #9a3412; margin: 0 0 8px; font-size: 0.95rem; }
+.checks-confirm li, .checks-confirm td { color: #9a3412; }
+.checks-confirm table td { background: #fff7ed; }
+
+@media print {
+  body { background: #fff; }
+  .toolbar, .side, .no-print, .toast { display: none !important; }
+  .layout { display: block; }
+  .main { padding: 0; }
+  .report {
+    border: 0; box-shadow: none; max-width: none; margin: 0; padding: 0;
+  }
+  .pagebreak { break-before: page; page-break-before: always; }
+  .sec-hide-print { display: none !important; }
+  .hdr img.logo { height: 40px; max-width: 140px; background: transparent !important; }
+  .footer-print {
+    display: block;
+    position: running(footer);
+  }
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+    @bottom-left {
+      content: "PIMO CASA";
+      font: 8pt Helvetica, Arial, sans-serif;
+      color: #646464;
+      border-top: 0.75pt solid #e3e8f0;
+      padding-top: 5pt;
+    }
+    @bottom-right {
+      content: counter(page) " / " counter(pages);
+      font: 8pt Helvetica, Arial, sans-serif;
+      color: #646464;
+      border-top: 0.75pt solid #e3e8f0;
+      padding-top: 5pt;
+    }
+  }
+  .sec-hide-print { display: none !important; }
+}
+  </style>
+</head>
+<body>
+<div id="app-shell">
+  <div id="view-gate" class="gate">
+    <div class="brand">
+      <img src="/orcamentos/logo.png" alt="Pimo Casa">
+      <div>
+        <div class="b" style="font-weight:700;color:#0f172a">PIMO CASA</div>
+        <div class="s" style="font-size:0.82rem;color:#475569">Orçamentos</div>
+      </div>
+    </div>
+    <h1 id="gate-title">Acesso ao orçamento</h1>
+    <p id="gate-help">Introduza o código que lhe foi enviado. Esta área não é pública.</p>
+    <div id="gate-code-block">
+      <label for="gate-code">Código</label>
+      <input id="gate-code" type="password" autocomplete="current-password" placeholder="Código de acesso">
+      <div style="margin-top:14px">
+        <button type="button" id="gate-submit" class="btn" style="width:100%">Entrar</button>
+      </div>
+    </div>
+    <div id="gate-email-block" class="hidden" style="margin-top:8px">
+      <label for="gate-email">Email</label>
+      <input id="gate-email" type="email" autocomplete="username" placeholder="email@exemplo.com">
+      <label for="gate-password" style="margin-top:10px;display:block">Palavra-passe</label>
+      <input id="gate-password" type="password" autocomplete="current-password" placeholder="Palavra-passe">
+      <div style="margin-top:14px">
+        <button type="button" id="gate-email-submit" class="btn" style="width:100%">Entrar com email</button>
+      </div>
+    </div>
+    <p id="gate-switch" class="cap" style="margin-top:14px"></p>
+    <div class="err" id="gate-err"></div>
+  </div>
+
+  <div id="view-app" class="hidden">
+    <div class="toolbar no-print">
+      <strong style="color:#0f172a">Pimo Casa</strong>
+      <span class="chip" id="role-chip"></span>
+      <span class="spacer"></span>
+      <button type="button" class="btn secondary" id="btn-refresh">Actualizar</button>
+      <button type="button" class="btn secondary" id="btn-print">Imprimir / PDF</button>
+      <button type="button" class="btn secondary" id="btn-logout">Sair</button>
+    </div>
+    <div class="layout">
+      <aside class="side no-print" id="side-panel"></aside>
+      <main class="main" id="main-panel"></main>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var I18N = {
+    pt: {
+      access: "Acesso ao orçamento",
+      adminAccess: "Painel de controlo",
+      enterCode: "Introduza o código que lhe foi enviado. Esta área não é pública.",
+      adminHelp: "Acesso reservado. Introduza o código de administração.",
+      code: "Código",
+      enter: "Entrar",
+      projects: "Projectos",
+      newProject: "Novo projecto",
+      importJson: "Importar JSON",
+      duplicate: "Duplicar",
+      archive: "Arquivar",
+      links: "Ligações e códigos",
+      history: "Histórico",
+      backup: "Cópia de segurança",
+      save: "Gravar",
+      sendChoice: "Enviar escolha",
+      finalPrice: "Preço final",
+      withInstall: "Com montagem",
+      withEquip: "Com equipamentos",
+      material: "Gama de material",
+      sobConsulta: "sob consulta",
+      aOrcamentar: "a orçamentar",
+      esgotado: "esgotado",
+      noPrice: "Preço de venda ainda não definido.",
+      disclaimer: "Documento elaborado pela Pimo Casa. Preços de terceiros sujeitos a alteração e a confirmação no acto da encomenda. Sem valor de fatura.",
+      regards: "Com os melhores cumprimentos,"
+    },
+    en: {},
+    fr: {}
+  };
+  var lang = "pt";
+  function t(key) { return (I18N[lang] && I18N[lang][key]) || I18N.pt[key] || key; }
+
+  var state = {
+    me: null,
+    token: new URLSearchParams(location.search).get("v") || "",
+    projects: [],
+    projectId: null,
+    project: null,
+    data: null,
+    projectError: null,
+    versions: [],
+    links: [],
+    printHide: {}
+  };
+
+  // Absolute so /orcamentos/<slug>/ still hits the API
+  var BASE = "/orcamentos/api";
+  var APP_ROOT = "/orcamentos/";
+
+  function pathSlug() {
+    var m = String(location.pathname || "").match(/^\/orcamentos\/([a-z0-9][a-z0-9-]*)\/?$/i);
+    if (!m) return "";
+    var s = m[1].toLowerCase();
+    if (s === "api") return "";
+    return s;
+  }
+
+  function projectPublicPath(slug, withToken) {
+    if (!slug) return APP_ROOT + (withToken && state.token ? ("?v=" + encodeURIComponent(state.token)) : "");
+    var p = APP_ROOT + encodeURIComponent(slug) + "/";
+    if (withToken && state.token) p += "?v=" + encodeURIComponent(state.token);
+    return p;
+  }
+
+  function syncUrlForProject(proj, replace) {
+    if (!proj || !proj.slug) return;
+    var next = projectPublicPath(proj.slug, !!state.token);
+    var wantPath = APP_ROOT + encodeURIComponent(proj.slug) + "/";
+    var here = location.pathname.replace(/\/?$/, "/");
+    var tokenOk = !state.token || /[?&]v=/.test(location.search);
+    if (here === wantPath && tokenOk) return;
+    if (replace) history.replaceState({ slug: proj.slug }, "", next);
+    else history.pushState({ slug: proj.slug }, "", next);
+  }
+
+  function goRoot(replace) {
+    var next = APP_ROOT + (state.token ? ("?v=" + encodeURIComponent(state.token)) : "");
+    if (replace) history.replaceState({}, "", next);
+    else history.pushState({}, "", next);
+  }
+
+  function toast(msg) {
+    var el = document.getElementById("toast");
+    el.textContent = msg;
+    el.classList.add("show");
+    setTimeout(function () { el.classList.remove("show"); }, 2400);
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function money(v, empty) {
+    if (v == null || v === "") return empty || "-";
+    var n = Number(v);
+    if (isNaN(n)) return String(v);
+    return n.toLocaleString("pt-PT", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+  }
+
+  function priceStatusLabel(st) {
+    if (!st) return "";
+    if (st === "sob_consulta") return t("sobConsulta");
+    if (st === "a_orcamentar" || st === "a_orçamentar") return t("aOrcamentar");
+    if (st === "esgotado") return t("esgotado");
+    return st;
+  }
+
+  var SESS_KEY = "pimo_orc_sess";
+
+  function saveSessionToken(tok) {
+    try {
+      if (tok) sessionStorage.setItem(SESS_KEY, tok);
+      else sessionStorage.removeItem(SESS_KEY);
+    } catch (e) { /* private mode */ }
+  }
+
+  function readSessionToken() {
+    try { return sessionStorage.getItem(SESS_KEY) || ""; } catch (e) { return ""; }
+  }
+
+  function api(path, opts) {
+    opts = opts || {};
+    var headers = opts.headers || {};
+    if (!(opts.body instanceof FormData)) {
+      headers["Content-Type"] = headers["Content-Type"] || "application/json";
+    }
+    var tok = readSessionToken();
+    if (tok) {
+      headers["X-Pimo-Orc-Session"] = tok;
+      headers["Authorization"] = "Bearer " + tok;
+    }
+    return fetch(BASE + "/" + path, {
+      method: opts.method || "GET",
+      credentials: "include",
+      headers: headers,
+      body: opts.body ? (opts.body instanceof FormData ? opts.body : JSON.stringify(opts.body)) : undefined
+    }).then(function (r) {
+      return r.json().then(function (j) {
+        if (!r.ok || j.ok === false) {
+          var err = new Error((j && j.error) || "Pedido falhou");
+          err.status = r.status;
+          throw err;
+        }
+        return j;
+      }, function () {
+        var err = new Error("Resposta inválida do servidor.");
+        err.status = r.status;
+        throw err;
+      });
+    });
+  }
+
+  function applyLoginResponse(j) {
+    if (j.session_token) saveSessionToken(j.session_token);
+    state.me = {
+      authenticated: true,
+      role: j.role,
+      label: j.label || j.role,
+      project_id: j.project_id || null,
+      factory_key: j.factory_key || null
+    };
+  }
+
+  function assetUrl(ref) {
+    if (!ref) return null;
+    if (String(ref).indexOf("upload:") === 0) {
+      return BASE + "/file.php?id=" + encodeURIComponent(String(ref).slice(7));
+    }
+    if (String(ref).indexOf("http") === 0) return ref;
+    return null;
+  }
+
+  var gateMode = "code"; // code | email
+
+  function showGate() {
+    document.getElementById("view-gate").classList.remove("hidden");
+    document.getElementById("view-app").classList.add("hidden");
+    var isAdmin = !state.token;
+    document.getElementById("gate-title").textContent = isAdmin ? t("adminAccess") : t("access");
+    document.getElementById("gate-help").textContent = isAdmin
+      ? (gateMode === "email"
+        ? "Entre com o email e a palavra-passe de administrador."
+        : t("adminHelp"))
+      : t("enterCode");
+    var codeBlock = document.getElementById("gate-code-block");
+    var emailBlock = document.getElementById("gate-email-block");
+    var sw = document.getElementById("gate-switch");
+    if (isAdmin) {
+      codeBlock.classList.toggle("hidden", gateMode === "email");
+      emailBlock.classList.toggle("hidden", gateMode !== "email");
+      sw.innerHTML = gateMode === "email"
+        ? "<a href=\"#\" id=\"gate-to-code\">Entrar com código</a>"
+        : "<a href=\"#\" id=\"gate-to-email\">Entrar com email</a>";
+      var link = document.getElementById(gateMode === "email" ? "gate-to-code" : "gate-to-email");
+      if (link) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          gateMode = gateMode === "email" ? "code" : "email";
+          document.getElementById("gate-err").textContent = "";
+          showGate();
+        });
+      }
+    } else {
+      gateMode = "code";
+      codeBlock.classList.remove("hidden");
+      emailBlock.classList.add("hidden");
+      sw.innerHTML = "";
+    }
+  }
+
+  function showApp(opts) {
+    opts = opts || {};
+    document.getElementById("view-gate").classList.add("hidden");
+    document.getElementById("view-app").classList.remove("hidden");
+    var role = state.me.role;
+    var labels = {
+      admin: "Painel de controlo",
+      khaled: "Vista completa",
+      filipe: "Vista de edição",
+      factory: "Vista de fábrica",
+      client: "Vista de cliente"
+    };
+    document.getElementById("role-chip").textContent = labels[role] || role;
+    // Evitar render vazio antes do projecto carregar (interrompia o then do login).
+    if (opts.render !== false) render();
+  }
+
+  function boot() {
+    api("me.php").then(function (j) {
+      if (j.authenticated) {
+        state.me = j;
+        showApp();
+        return loadWorkspace();
+      }
+      showGate();
+    }).catch(function () {
+      showGate();
+      document.getElementById("gate-err").textContent =
+        "O serviço ainda não está configurado neste servidor.";
+    });
+  }
+
+  document.getElementById("gate-submit").addEventListener("click", doLogin);
+  document.getElementById("gate-code").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") doLogin();
+  });
+
+  function doLogin() {
+    var err = document.getElementById("gate-err");
+    err.textContent = "";
+    if (!state.token && gateMode === "email") {
+      doEmailLogin();
+      return;
+    }
+    var code = document.getElementById("gate-code").value.trim();
+    if (!code) { err.textContent = "Indique o código."; return; }
+    var body = state.token
+      ? { code: code, token: state.token, mode: "link" }
+      : { code: code, mode: "admin" };
+    api("login.php", { method: "POST", body: body }).then(function (j) {
+      applyLoginResponse(j);
+      showApp({ render: false });
+      return loadWorkspace();
+    }).catch(function (e) {
+      err.textContent = e.message || "Falha no acesso.";
+    });
+  }
+
+  function doEmailLogin() {
+    var err = document.getElementById("gate-err");
+    err.textContent = "";
+    var email = document.getElementById("gate-email").value.trim();
+    var password = document.getElementById("gate-password").value;
+    if (!email || !password) {
+      err.textContent = "Indique o email e a palavra-passe.";
+      return;
+    }
+    api("login.php", {
+      method: "POST",
+      body: { mode: "email", email: email, password: password }
+    }).then(function (j) {
+      applyLoginResponse(j);
+      showApp({ render: false });
+      return loadWorkspace();
+    }).catch(function (e) {
+      err.textContent = e.message || "Falha no acesso.";
+    });
+  }
+
+  document.getElementById("gate-email-submit").addEventListener("click", doEmailLogin);
+  document.getElementById("gate-password").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") doEmailLogin();
+  });
+
+  document.getElementById("btn-logout").addEventListener("click", function () {
+    api("logout.php", { method: "POST", body: {} }).finally(function () {
+      saveSessionToken("");
+      state.me = null; state.project = null; state.data = null; state.projectError = null;
+      showGate();
+    });
+  });
+  document.getElementById("btn-refresh").addEventListener("click", function () {
+    loadWorkspace().then(function () { toast("Actualizado"); });
+  });
+  document.getElementById("btn-print").addEventListener("click", function () {
+    window.print();
+  });
+
+  function loadAdminCodes() {
+    return api("admin-codes.php").then(function (j) {
+      state.adminCodes = j.codes || [];
+    }).catch(function () {
+      state.adminCodes = state.adminCodes || [];
+    });
+  }
+
+  function loadWorkspace() {
+    var role = state.me && state.me.role;
+    var slug = pathSlug();
+    if (role === "admin") {
+      return api("projects.php").then(function (j) {
+        state.projects = j.projects || [];
+        return loadAdminCodes().then(function () {
+          if (slug) {
+            var match = state.projects.find(function (p) { return p.slug === slug; });
+            if (match) return openProject(match.id, { syncUrl: true, replace: true });
+            state.projectError = "Projecto não encontrado para o link «" + slug + "».";
+            state.projectId = null;
+            state.project = null;
+            state.data = null;
+            toast(state.projectError);
+            render();
+            return;
+          }
+          // /orcamentos/ — lista com links próprios (não abrir automaticamente)
+          state.projectError = null;
+          state.projectId = null;
+          state.project = null;
+          state.data = null;
+          render();
+        });
+      }).catch(function (e) {
+        state.projectError = e.message || "Falha ao listar projectos.";
+        toast(state.projectError);
+        render();
+      });
+    }
+    if (state.me.project_id) {
+      state.projectId = state.me.project_id;
+      return openProject(state.projectId, { syncUrl: true, replace: true });
+    }
+    render();
+    return Promise.resolve();
+  }
+
+  function openProject(id, opts) {
+    opts = opts || {};
+    state.projectId = id;
+    state.projectError = null;
+    function loadOnce() {
+      return api("project.php?id=" + encodeURIComponent(id)).then(function (j) {
+        state.project = j.project;
+        state.data = j.project.data;
+        state.projectError = null;
+        if (opts.syncUrl !== false) syncUrlForProject(j.project, !!opts.replace);
+        render();
+        if (state.me.role === "admin") {
+          return Promise.all([
+            api("access.php?project_id=" + encodeURIComponent(id)).then(function (a) { state.links = a.links || []; }),
+            api("versions.php?project_id=" + encodeURIComponent(id)).then(function (v) { state.versions = v.versions || []; })
+          ]).then(function () { render(); });
+        }
+        if (state.me.role === "khaled") {
+          return api("versions.php?project_id=" + encodeURIComponent(id)).then(function (v) {
+            state.versions = v.versions || [];
+            render();
+          });
+        }
+      });
+    }
+    return loadOnce().catch(function (e) {
+      // Uma tentativa extra: cookie/header podem atrasar-se logo após o login
+      if (e && e.status === 401 && !opts._retried) {
+        return new Promise(function (resolve) { setTimeout(resolve, 120); }).then(function () {
+          return openProject(id, Object.assign({}, opts, { _retried: true }));
+        });
+      }
+      state.projectError = e.message || "Falha ao carregar o projecto (project.php).";
+      state.project = null;
+      state.data = null;
+      toast(state.projectError);
+      render();
+    });
+  }
+
+  function renderProjectError() {
+    if (!state.projectError) return "";
+    return "<div class=\"panel\"><h3>Erro ao carregar o projecto</h3>" +
+      "<p class=\"err\" style=\"display:block\">" + esc(state.projectError) + "</p>" +
+      "<p class=\"note\">Verifique a ligação ou volte à <a href=\"" + esc(APP_ROOT) + "\">lista de projectos</a>.</p></div>";
+  }
+
+  window.addEventListener("popstate", function () {
+    if (!state.me) return;
+    if (state.me.role === "admin") {
+      loadWorkspace();
+      return;
+    }
+    if (state.me.project_id) openProject(state.me.project_id, { syncUrl: false });
+  });
+
+  function statusLabel(s) {
+    var map = {
+      rascunho: "Rascunho",
+      enviado_fabricas: "Enviado às fábricas",
+      precos_fabricas: "Preços das fábricas recebidos",
+      enviado_cliente: "Enviado ao cliente",
+      aceite: "Aceite"
+    };
+    return map[s] || s || "Rascunho";
+  }
+
+  function render() {
+    renderSide();
+    renderMain();
+  }
+
+  function renderSide() {
+    var el = document.getElementById("side-panel");
+    var role = state.me.role;
+    if (role !== "admin") {
+      el.innerHTML = "<h2>Orçamento</h2><p class=\"note\">" + esc((state.project && state.project.title) || "") + "</p>";
+      return;
+    }
+    var html = "<h2>" + t("projects") + "</h2>";
+    html += "<div class=\"row\" style=\"margin-bottom:12px\">";
+    html += "<button type=\"button\" class=\"btn\" id=\"btn-new\">" + t("newProject") + "</button>";
+    html += "<button type=\"button\" class=\"btn secondary\" id=\"btn-import\">" + t("importJson") + "</button>";
+    html += "</div><input type=\"file\" id=\"import-file\" accept=\"application/json,.json\" class=\"hidden\">";
+    if (!state.projectId) {
+      html += "<p class=\"note\">Escolha um projecto pelo link próprio, ou crie/importe um novo.</p>";
+    } else {
+      html += "<p class=\"cap\" style=\"margin-bottom:8px\"><a href=\"" + esc(APP_ROOT) + "\" id=\"btn-all-projects\">← Todos os projectos</a></p>";
+    }
+    (state.projects || []).forEach(function (p) {
+      var href = projectPublicPath(p.slug, false);
+      html += "<div class=\"proj" + (p.id === state.projectId ? " active" : "") + "\" data-id=\"" + esc(p.id) + "\" data-slug=\"" + esc(p.slug || "") + "\">";
+      html += "<div class=\"t\">" + esc(p.title) + "</div>";
+      html += "<div class=\"m\">" + esc(statusLabel(p.status)) + " · " + esc(p.updated_at || "") + "</div>";
+      html += "<div class=\"m\" style=\"word-break:break-all\"><a class=\"proj-link\" href=\"" + esc(href) + "\">/orcamentos/" + esc(p.slug || "") + "/</a></div></div>";
+    });
+    if (!(state.projects || []).length) {
+      html += "<p class=\"note\">Ainda sem projectos. Crie ou importe um para obter o link por slug.</p>";
+    }
+    el.innerHTML = html;
+    var allBtn = document.getElementById("btn-all-projects");
+    if (allBtn) {
+      allBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        state.projectId = null;
+        state.project = null;
+        state.data = null;
+        goRoot(false);
+        render();
+      });
+    }
+    el.querySelectorAll(".proj").forEach(function (n) {
+      n.addEventListener("click", function (e) {
+        if (e.target && e.target.classList && e.target.classList.contains("proj-link")) {
+          e.preventDefault();
+        }
+        openProject(n.getAttribute("data-id"), { syncUrl: true });
+      });
+    });
+    var btnNew = document.getElementById("btn-new");
+    if (btnNew) btnNew.addEventListener("click", createEmpty);
+    var btnImp = document.getElementById("btn-import");
+    var fileImp = document.getElementById("import-file");
+    if (btnImp && fileImp) {
+      btnImp.addEventListener("click", function () { fileImp.click(); });
+      fileImp.addEventListener("change", function () {
+        var f = fileImp.files && fileImp.files[0];
+        if (!f) return;
+        var reader = new FileReader();
+        reader.onload = function () {
+          try {
+            var data = JSON.parse(String(reader.result || ""));
+            var payload = state.projectId
+              ? { project_id: state.projectId, data: data }
+              : data;
+            api("import.php", { method: "POST", body: payload }).then(function (j) {
+              toast(j.updated ? "Importado (nova versão)" : "Importado");
+              state.projectId = j.project.id;
+              return openProject(j.project.id, { syncUrl: true, replace: false }).then(function () {
+                return api("projects.php").then(function (pj) { state.projects = pj.projects || []; render(); });
+              });
+            }).catch(function (e) { toast(e.message); });
+          } catch (err) {
+            toast("JSON inválido");
+          }
+        };
+        reader.readAsText(f);
+        fileImp.value = "";
+      });
+    }
+  }
+
+  function createEmpty() {
+    var data = {
+      schema_version: "1.0",
+      currency: "EUR",
+      company: {
+        brand: "Pimo Casa",
+        signer: "Khaled al Ahdab",
+        email: "info@pimo.pt",
+        phone: "+351 913 822 833",
+        web: "www.pimo.pt"
+      },
+      project: {
+        id: "novo-" + Date.now(),
+        name: "Novo orçamento",
+        client: { name: "", country: "" },
+        units: 1,
+        status: "rascunho",
+        overall_mm: { w: null, h: null, d: null },
+        notes: ""
+      },
+      assets: { logo: null, layout: null, reference: null },
+      boxes: [],
+      material_options: [],
+      categories: [],
+      items: [],
+      sets: {},
+      cost_lines: [],
+      pricing_placeholders: {
+        margin_percent: null,
+        margin_amount_eur: null,
+        installation_per_unit_eur: null,
+        shipping_per_unit_eur: null,
+        selling_price_per_unit_eur: null,
+        selling_price_x6_eur: null
+      },
+      gaps: [],
+      factory_quotes: {},
+      client_choice: {
+        material_option_id: null,
+        set_code: "recomendado",
+        with_installation: true,
+        with_equipment: true,
+        submitted_at: null
+      },
+      editor_settings: {
+        hide_margin_from_filipe: false,
+        hide_factory_prices_from_filipe: false
+      }
+    };
+    api("projects.php", { method: "POST", body: { data: data } }).then(function (j) {
+      state.projectId = j.project.id;
+      return api("projects.php").then(function (pj) {
+        state.projects = pj.projects || [];
+        return openProject(j.project.id, { syncUrl: true });
+      });
+    }).catch(function (e) { toast(e.message); });
+  }
+
+  function renderMain() {
+    var el = document.getElementById("main-panel");
+    var role = state.me.role;
+    if (state.projectError && !state.project) {
+      el.innerHTML = (role === "admin" ? renderAdminCodePanel() : "") + renderProjectError();
+      if (role === "admin") bindAdminCode();
+      return;
+    }
+    if (role === "admin") {
+      el.innerHTML = renderAdmin() + (state.project ? renderReport(true) : "");
+      bindAdmin();
+      el.querySelectorAll(".home-open").forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          openProject(a.getAttribute("data-id"), { syncUrl: true });
+        });
+      });
+      return;
+    }
+    if (role === "factory") {
+      el.innerHTML = renderFactoryForm() + renderReport(false);
+      bindFactory();
+      return;
+    }
+    if (role === "client") {
+      el.innerHTML = renderClientView();
+      return;
+    }
+    // khaled / filipe
+    el.innerHTML = renderEditorBar() + renderReport(!!state.project);
+    if (state.project) bindEditor();
+  }
+
+  function renderAdminCodePanel() {
+    var html = "<div class=\"panel no-print\" id=\"admin-code-panel\">";
+    html += "<h3>Alterar código de administrador</h3>";
+    html += "<p class=\"note\">O novo código substitui o anterior. As outras sessões de administrador terminam. Os códigos adicionais mantêm-se.</p>";
+    html += "<div class=\"row\">";
+    html += "<label>Código actual<input type=\"password\" id=\"adm-code-current\" autocomplete=\"current-password\" minlength=\"1\"></label>";
+    html += "<label>Novo código<input type=\"password\" id=\"adm-code-new\" autocomplete=\"new-password\" minlength=\"10\"></label>";
+    html += "<label>Confirmar novo código<input type=\"password\" id=\"adm-code-confirm\" autocomplete=\"new-password\" minlength=\"10\"></label>";
+    html += "</div>";
+    html += "<button type=\"button\" class=\"btn\" id=\"adm-code-save\">Guardar novo código</button>";
+    html += "<p class=\"err\" id=\"adm-code-err\"></p>";
+    html += "</div>";
+    html += renderAdminUserPanel();
+    html += renderExtraAdminCodesPanel();
+    return html;
+  }
+
+  function renderAdminUserPanel() {
+    var html = "<div class=\"panel no-print\" id=\"admin-user-panel\">";
+    html += "<h3>Definir email e palavra-passe</h3>";
+    html += "<p class=\"note\">Conta de administrador para entrar em /orcamentos/ com email (além do código). A palavra-passe não é mostrada de novo.</p>";
+    html += "<div class=\"row\">";
+    html += "<label>Email<input type=\"email\" id=\"adm-user-email\" autocomplete=\"username\" placeholder=\"email@exemplo.com\"></label>";
+    html += "<label>Palavra-passe<input type=\"password\" id=\"adm-user-pass\" autocomplete=\"new-password\" minlength=\"10\"></label>";
+    html += "<label>Confirmar<input type=\"password\" id=\"adm-user-pass2\" autocomplete=\"new-password\" minlength=\"10\"></label>";
+    html += "</div>";
+    html += "<button type=\"button\" class=\"btn\" id=\"adm-user-save\">Guardar conta</button>";
+    html += "<p class=\"err\" id=\"adm-user-err\"></p>";
+    html += "<p class=\"cap\" id=\"adm-user-list\"></p>";
+    html += "</div>";
+    return html;
+  }
+
+  function renderExtraAdminCodesPanel() {
+    var html = "<div class=\"panel no-print\" id=\"admin-codes-extra\">";
+    html += "<h3>Códigos de administrador adicionais</h3>";
+    html += "<p class=\"note\">Cada código tem uma etiqueta. O código principal continua a funcionar à parte.</p>";
+    html += "<div class=\"row\">";
+    html += "<label>Etiqueta<input type=\"text\" id=\"adm-extra-label\" maxlength=\"120\" placeholder=\"ex. khaled bot\"></label>";
+    html += "<label>Código<input type=\"password\" id=\"adm-extra-code\" autocomplete=\"new-password\" minlength=\"10\"></label>";
+    html += "<button type=\"button\" class=\"btn\" id=\"adm-extra-create\">Criar código</button>";
+    html += "</div>";
+    html += "<p class=\"err\" id=\"adm-extra-err\"></p>";
+    html += "<table class=\"t\"><thead><tr><th>Etiqueta</th><th>Criado</th><th>Estado</th><th></th></tr></thead><tbody>";
+    (state.adminCodes || []).forEach(function (c) {
+      html += "<tr><td>" + esc(c.label) + "</td><td>" + esc(c.created_at || "") + "</td>";
+      html += "<td>" + esc(c.status || "") + "</td><td>";
+      if (c.status === "activo") {
+        html += "<button type=\"button\" class=\"btn danger adm-extra-rev\" data-id=\"" + esc(c.id) + "\">Revogar</button>";
+      }
+      html += "</td></tr>";
+    });
+    if (!(state.adminCodes || []).length) {
+      html += "<tr><td colspan=\"4\" class=\"note\">Ainda sem códigos adicionais.</td></tr>";
+    }
+    html += "</tbody></table></div>";
+    return html;
+  }
+
+  function renderAdminHome() {
+    var html = "<div class=\"panel\"><h3>Projectos</h3>";
+    html += "<p class=\"note\">Cada projecto tem o seu próprio link. Abra-o directamente — /orcamentos/ deixa de aparecer vazio.</p>";
+    if (!(state.projects || []).length) {
+      html += "<p class=\"note\">Ainda sem projectos. Use «Novo projecto» ou «Importar JSON» na barra lateral.</p></div>";
+      return html;
+    }
+    html += "<table class=\"t\"><thead><tr><th>Nome</th><th>Estado</th><th>Link</th></tr></thead><tbody>";
+    (state.projects || []).forEach(function (p) {
+      var href = projectPublicPath(p.slug, false);
+      var abs = location.origin + href;
+      html += "<tr><td><a href=\"" + esc(href) + "\" class=\"home-open\" data-id=\"" + esc(p.id) + "\">" + esc(p.title) + "</a></td>";
+      html += "<td>" + esc(statusLabel(p.status)) + "</td>";
+      html += "<td style=\"font-size:0.75rem;word-break:break-all\"><a href=\"" + esc(href) + "\" class=\"home-open\" data-id=\"" + esc(p.id) + "\">" + esc(abs) + "</a></td></tr>";
+    });
+    html += "</tbody></table></div>";
+    return html;
+  }
+
+  function renderAdmin() {
+    var html = renderAdminCodePanel();
+    if (!state.project) {
+      return html + renderAdminHome();
+    }
+    var d = state.data || {};
+    html += "<div class=\"panel no-print\">";
+    html += "<h3>Painel · " + esc(state.project.title) + "</h3>";
+    html += "<p class=\"cap\">Link do projecto: <a href=\"" + esc(projectPublicPath(state.project.slug, false)) + "\">" + esc(location.origin + projectPublicPath(state.project.slug, false)) + "</a></p>";
+    html += "<div class=\"row\">";
+    html += "<label>Estado<select id=\"adm-status\">";
+    ["rascunho","enviado_fabricas","precos_fabricas","enviado_cliente","aceite"].forEach(function (s) {
+      html += "<option value=\"" + s + "\"" + (state.project.status === s ? " selected" : "") + ">" + esc(statusLabel(s)) + "</option>";
+    });
+    html += "</select></label>";
+    html += "<button type=\"button\" class=\"btn\" id=\"adm-save-status\">Actualizar estado</button>";
+    html += "<button type=\"button\" class=\"btn secondary\" id=\"adm-dup\">" + t("duplicate") + "</button>";
+    html += "<button type=\"button\" class=\"btn danger\" id=\"adm-arch\">" + t("archive") + "</button>";
+    html += "<button type=\"button\" class=\"btn secondary\" id=\"adm-backup\">" + t("backup") + "</button>";
+    html += "</div></div>";
+
+    html += "<div class=\"panel no-print\"><h3>Imagens do projecto</h3>";
+    html += "<div class=\"row\">";
+    ["logo","layout","reference"].forEach(function (k) {
+      html += "<label>" + k + "<input type=\"file\" accept=\"image/*\" data-kind=\"" + k + "\" class=\"adm-upload\"></label>";
+    });
+    html += "</div>";
+    html += "<h3 class=\"sub\">Renders (categoria projecto · todas as vistas)</h3><div class=\"row\">";
+    ["projeto_fechado","projeto_perspetiva","projeto_aberto"].forEach(function (k) {
+      html += "<label>" + k + "<input type=\"file\" accept=\"image/*\" data-kind=\"" + k + "\" data-category=\"projeto\" data-asset-key=\"" + k + "\" class=\"adm-upload\"></label>";
+    });
+    html += "</div>";
+    html += "<h3 class=\"sub\">Desenho técnico (categoria tecnico · internas + fábrica)</h3><div class=\"row\">";
+    ["iso_fechado","iso_aberto","alcado_portas","alcado_interior","corte_planta"].forEach(function (k) {
+      html += "<label>" + k + "<input type=\"file\" accept=\"image/*\" data-kind=\"" + k + "\" data-category=\"tecnico\" data-asset-key=\"" + k + "\" class=\"adm-upload\"></label>";
+    });
+    html += "</div>";
+    html += "<div class=\"row\">";
+    html += "<label>Caixa (box_caixa_*)<input type=\"text\" id=\"adm-box-asset-code\" placeholder=\"B1\" style=\"max-width:80px\"></label>";
+    html += "<label>Ficheiro<input type=\"file\" accept=\"image/*\" id=\"adm-box-asset-file\"></label>";
+    html += "<button type=\"button\" class=\"btn secondary\" id=\"adm-box-asset-up\">Enviar caixa</button>";
+    html += "</div>";
+    html += "<p class=\"cap\">Envio: upload.php com category=projeto|tecnico e asset_key. Guardados fora da pasta pública.</p></div>";
+
+    html += "<div class=\"panel no-print\"><h3>" + t("links") + "</h3>";
+    html += "<div class=\"row\">";
+    html += "<select id=\"link-role\"><option value=\"khaled\">Vista completa</option><option value=\"filipe\">Vista de edição</option><option value=\"factory\">Fábrica</option><option value=\"client\">Cliente</option></select>";
+    html += "<input id=\"link-factory\" placeholder=\"Chave da fábrica (ex. fab-a)\">";
+    html += "<input id=\"link-label\" placeholder=\"Etiqueta\">";
+    html += "<button type=\"button\" class=\"btn\" id=\"link-create\">Gerar</button>";
+    html += "</div>";
+    html += "<table class=\"t\"><thead><tr><th>Papel</th><th>Etiqueta</th><th>Token</th><th>Estado</th><th></th></tr></thead><tbody>";
+    (state.links || []).forEach(function (l) {
+      html += "<tr><td>" + esc(l.role) + (l.factory_key ? " · " + esc(l.factory_key) : "") + "</td>";
+      html += "<td>" + esc(l.label) + "</td>";
+      html += "<td style=\"font-size:0.65rem;word-break:break-all\">" + esc(l.token) + "</td>";
+      html += "<td>" + (l.revoked == 1 ? "revogado" : "activo") + "</td>";
+      html += "<td>";
+      if (l.revoked != 1) {
+        html += "<button type=\"button\" class=\"btn secondary link-rot\" data-id=\"" + esc(l.id) + "\">Trocar</button> ";
+        html += "<button type=\"button\" class=\"btn danger link-rev\" data-id=\"" + esc(l.id) + "\">Revogar</button>";
+      }
+      html += "</td></tr>";
+    });
+    html += "</tbody></table>";
+    html += "<div id=\"link-once\" class=\"box warn hidden\"></div></div>";
+
+    html += renderComparePanel(d);
+    html += renderPricingEditor(d);
+    html += renderHistory();
+    return html;
+  }
+
+  function renderComparePanel(d) {
+    var quotes = d.factory_quotes || {};
+    var keys = Object.keys(quotes);
+    if (!keys.length) {
+      return "<div class=\"panel no-print\"><h3>Comparação de fábricas</h3><p class=\"note\">Ainda sem cotações.</p></div>";
+    }
+    var boxes = d.boxes || [];
+    var html = "<div class=\"panel no-print\"><h3>Comparação de fábricas</h3>";
+    html += "<table class=\"t compare\"><thead><tr><th>Caixa</th>";
+    keys.forEach(function (k) { html += "<th>" + esc(quotes[k].factory_name || k) + "</th>"; });
+    html += "<th>Aprovado</th></tr></thead><tbody>";
+    boxes.forEach(function (b) {
+      var code = b.code;
+      html += "<tr><td>" + esc(code + " · " + (b.name || "")) + "</td>";
+      keys.forEach(function (k) {
+        var price = quotes[k].boxes && quotes[k].boxes[code] ? quotes[k].boxes[code].price_eur : null;
+        var approved = d.approved_prices && d.approved_prices[code];
+        var cls = approved && approved.factory_key === k ? " pick picked" : " pick";
+        html += "<td class=\"" + cls.trim() + "\" data-item=\"" + esc(code) + "\" data-factory=\"" + esc(k) + "\" data-price=\"" + esc(price == null ? "" : price) + "\">" + esc(money(price, "-")) + "</td>";
+      });
+      var ap = d.approved_prices && d.approved_prices[code];
+      html += "<td>" + (ap ? esc(ap.factory_key) + " · " + esc(money(ap.price_eur)) : "-") + "</td></tr>";
+    });
+    html += "</tbody></table></div>";
+    return html;
+  }
+
+  function renderPricingEditor(d) {
+    var ph = d.pricing_placeholders || {};
+    var quotes = d.factory_quotes || {};
+    var html = "<div class=\"panel no-print\"><h3>Margem, montagem, transporte e preço final ao cliente</h3>";
+    html += "<div class=\"row\">";
+    html += field("ph-margin-pct", "Margem %", ph.margin_percent);
+    html += field("ph-margin-amt", "Margem €", ph.margin_amount_eur);
+    html += field("ph-install", "Montagem / un. €", ph.installation_per_unit_eur);
+    html += field("ph-ship", "Transporte / un. €", ph.shipping_per_unit_eur);
+    html += field("ph-sell", "Preço final aprovado / un. € (s/ IVA)", ph.selling_price_per_unit_eur);
+    html += "<label>Fábrica aprovada para o cliente<select id=\"ph-factory\">";
+    html += "<option value=\"\">—</option>";
+    Object.keys(quotes).forEach(function (k) {
+      html += "<option value=\"" + esc(k) + "\"" + (ph.approved_factory_key === k ? " selected" : "") + ">" + esc(quotes[k].factory_name || k) + "</option>";
+    });
+    html += "</select></label>";
+    html += "</div>";
+    html += "<p class=\"cap\">O cliente só vê o preço final aprovado (s/ IVA e c/ IVA) e a fábrica escolhida. Sem preço + fábrica = «Preço em preparação».</p>";
+    html += "<div class=\"row\"><label><input type=\"checkbox\" id=\"hide-margin\"" + ((d.editor_settings || {}).hide_margin_from_filipe ? " checked" : "") + "> Esconder margem na vista de edição</label>";
+    html += "<button type=\"button\" class=\"btn\" id=\"adm-save-pricing\">Gravar preços</button></div></div>";
+    return html;
+  }
+
+  function field(id, label, val) {
+    return "<label>" + esc(label) + "<input id=\"" + id + "\" value=\"" + esc(val == null ? "" : val) + "\"></label>";
+  }
+
+  function renderHistory() {
+    var html = "<div class=\"panel no-print\"><h3>" + t("history") + "</h3>";
+    html += "<table class=\"t\"><thead><tr><th>#</th><th>Quando</th><th>Quem</th><th>Nota</th><th></th></tr></thead><tbody>";
+    (state.versions || []).forEach(function (v) {
+      html += "<tr><td>" + esc(v.version_no) + "</td><td>" + esc(v.created_at) + "</td><td>" + esc(v.actor_label || v.actor_role) + "</td><td>" + esc(v.note) + "</td>";
+      html += "<td><button type=\"button\" class=\"btn secondary ver-rest\" data-v=\"" + esc(v.version_no) + "\">Restaurar</button></td></tr>";
+    });
+    html += "</tbody></table></div>";
+    return html;
+  }
+
+  function renderEditorBar() {
+    if (!state.project) {
+      if (state.projectError) return renderProjectError();
+      return "<div class=\"panel\"><p class=\"note\">Sem projecto.</p></div>";
+    }
+    var html = "<div class=\"panel no-print\"><h3>Edição</h3>";
+    html += "<p class=\"note\">Edite linhas no relatório (custos, painéis, ferragens e artigos). A impressão inclui todas as secções.</p>";
+    html += "<button type=\"button\" class=\"btn\" id=\"ed-save\">" + t("save") + "</button>";
+    html += "</div>";
+    return html;
+  }
+
+  function renderFactoryForm() {
+    var d = state.data || {};
+    var fk = state.me.factory_key || "";
+    var q = (d.factory_quotes && d.factory_quotes[fk]) || { boxes: {}, factory_name: "" };
+    var html = "<div class=\"panel no-print factory-form\"><h3>A sua cotação</h3>";
+    html += "<div class=\"row\"><label>Nome da fábrica<input id=\"fq-name\" value=\"" + esc(q.factory_name || "") + "\"></label>";
+    html += "<label>Prazo (dias)<input id=\"fq-lead\" value=\"" + esc(q.lead_time_days == null ? "" : q.lead_time_days) + "\"></label>";
+    html += "<label>Montagem / un. €<input id=\"fq-install\" value=\"" + esc(q.installation_per_unit_eur == null ? "" : q.installation_per_unit_eur) + "\"></label>";
+    html += "<label>Transporte / un. €<input id=\"fq-ship\" value=\"" + esc(q.shipping_per_unit_eur == null ? "" : q.shipping_per_unit_eur) + "\"></label></div>";
+    html += "<label>Condições de pagamento<input id=\"fq-pay\" value=\"" + esc(q.payment_terms_pt || "") + "\"></label>";
+    html += "<table class=\"t\"><thead><tr><th>Caixa</th><th>Medidas</th><th>Material</th><th class=\"n\">Preço / un. €</th></tr></thead><tbody>";
+    (d.boxes || []).forEach(function (b) {
+      var row = (q.boxes && q.boxes[b.code]) || {};
+      html += "<tr><td>" + esc(b.code + " · " + b.name) + "</td>";
+      html += "<td>" + esc([b.w, b.h, b.d].filter(function(x){return x!=null;}).join(" x ") + " mm") + "</td>";
+      html += "<td><input data-box=\"" + esc(b.code) + "\" class=\"fq-mat\" value=\"" + esc(row.material || "") + "\"></td>";
+      html += "<td><input data-box=\"" + esc(b.code) + "\" class=\"fq-price\" value=\"" + esc(row.price_eur == null ? "" : row.price_eur) + "\"></td></tr>";
+    });
+    html += "</tbody></table>";
+    html += "<label>Notas<textarea id=\"fq-notes\">" + esc(q.notes_pt || "") + "</textarea></label>";
+    html += "<div style=\"margin-top:10px\"><button type=\"button\" class=\"btn\" id=\"fq-save\">" + t("save") + "</button></div></div>";
+    return html;
+  }
+
+  function renderClientView() {
+    var d = state.data || {};
+    var project = d.project || {};
+    var pricing = d.pricing || {};
+    var html = "<article class=\"report\" id=\"report\">";
+    html += hdrHtml(d);
+    html += "<h1 class=\"doc\">" + esc(project.name || (state.project && state.project.title) || "Orçamento") + "</h1>";
+    html += designAssetsHtml(d.assets || {}, "client");
+    html += "<h2 class=\"sec\">Preço</h2>";
+    if (pricing.approved && pricing.selling_price_per_unit_eur != null) {
+      html += "<p class=\"price-tag\">" + esc(money(pricing.selling_price_per_unit_eur)) + " / unidade <span class=\"cap\">(s/ IVA)</span></p>";
+      html += "<p class=\"price-tag\" style=\"font-size:1.1rem\">" + esc(money(pricing.selling_price_incl_iva_per_unit_eur)) + " / unidade <span class=\"cap\">(c/ IVA " + esc(String(Math.round((pricing.iva_rate || 0.23) * 100))) + "%)</span></p>";
+      if (pricing.selling_price_x6_eur != null) {
+        html += "<p class=\"note\">Total projecto: " + esc(money(pricing.selling_price_x6_eur)) + " s/ IVA · " + esc(money(pricing.selling_price_incl_iva_x6_eur)) + " c/ IVA</p>";
+      }
+      if (pricing.approved_factory_key) {
+        html += "<p class=\"cap\">Fábrica: " + esc(pricing.approved_factory_key) + "</p>";
+      }
+    } else {
+      html += "<p class=\"price-tag\">Preço em preparação</p>";
+    }
+    html += "</article>";
+    return html;
+  }
+
+  function clientPriceLabel(d, choice) {
+    var pricing = d.pricing || {};
+    if (!pricing.approved || pricing.selling_price_per_unit_eur == null) return "Preço em preparação";
+    return money(Number(pricing.selling_price_per_unit_eur) || 0);
+  }
+
+  function renderReport(editable) {
+    var d = state.data;
+    if (!d) {
+      if (state.projectError) return renderProjectError();
+      return "<div class=\"report\"><p class=\"note\">Sem dados.</p></div>";
+    }
+    var role = state.me.role;
+    if (role === "client") return renderClientView();
+    var company = d.company || {};
+    var project = d.project || {};
+    var units = project.units || 1;
+
+    function sec(id, inner) {
+      return "<section class=\"doc-sec\" data-sec=\"" + id + "\">" + inner + "</section>";
+    }
+
+    var html = "<article class=\"report\" id=\"report\">";
+    var canEdit = editable && (role === "admin" || role === "khaled" || role === "filipe");
+    var isInternal = role === "admin" || role === "khaled" || role === "filipe";
+    var isFactory = role === "factory";
+
+    // 1 Capa
+    var coverRows = [
+      ["Projecto", project.name],
+      ["Unidades", units ? units + " unidades" : ""],
+      ["Empresa", company.brand || "Pimo Casa"],
+      ["Medidas gerais", overallTxt(project)],
+      ["N.º", (state.project && state.project.slug) || project.id || ""]
+    ];
+    if (!isFactory) {
+      coverRows.splice(1, 0,
+        ["Cliente", (project.client && project.client.name) || ""],
+        ["Local", project.location || (project.client && project.client.country) || ""]
+      );
+      coverRows.splice(5, 0, ["Data", (d.prices_checked_at || d.generated_at || "")]);
+    }
+    html += sec("capa",
+      hdrHtml(d) +
+      "<h1 class=\"doc\">" + esc(project.name || state.project.title || "Orçamento") + "</h1>" +
+      infoTable(coverRows)
+    );
+
+    // 2 Resumo
+    html += sec("resumo",
+      "<h2 class=\"sec\">1. Resumo do projecto</h2>" +
+      "<p>" + esc(project.notes || "") + "</p>" +
+      listHtml(project.assumptions)
+    );
+
+    // 3 Design / renders
+    html += sec("design",
+      "<div class=\"pagebreak\"></div><h2 class=\"sec\">2. Design e planta</h2>" +
+      designAssetsHtml(d.assets || {}, role)
+    );
+
+    // 4 Caixas (+ box_costs nas vistas internas)
+    html += sec("caixas",
+      "<h2 class=\"sec\">3. Caixas do móvel</h2>" +
+      techAssetsHtml(d.assets || {}, d.boxes || [], role) +
+      boxesTable(d.boxes || [], role) +
+      (role === "factory" ? factoryPartsHtml(d) : "") +
+      rematesHtml(d, role) +
+      doorsInDesignHtml(d, role) +
+      partsSheetsHtml(d, role) +
+      (isInternal ? boxCostsHtml(d, canEdit) : "") +
+      (isInternal ? checksAConfirmarHtml(d) : "")
+    );
+
+    // Categories / items (mostrar secções vazias se editável)
+    var cats = d.categories || [];
+    var byCat = {};
+    (d.items || []).forEach(function (it, idx) {
+      if (it.archived) return;
+      it._idx = idx;
+      var c = it.category || "outros";
+      (byCat[c] = byCat[c] || []).push(it);
+    });
+    var catSec = {
+      dobradicas: ["dobradicas", "4. Dobradiças"],
+      puxadores: ["puxadores", "4b. Puxadores"],
+      sistemas_portas: ["portas", "5. Portas / sistema de abertura"],
+      eletrodomesticos: ["equipamentos", "6. Equipamentos"],
+      ventilacao: ["ventilacao", "7. Ventilação e distâncias"],
+      outros: ["equipamentos", "6b. Outros"]
+    };
+    var seenCat = {};
+    cats.forEach(function (c) {
+      var items = byCat[c.id] || [];
+      if (!items.length && !canEdit) return;
+      seenCat[c.id] = true;
+      var meta = catSec[c.id] || [c.id, c.name];
+      html += sec(meta[0],
+        "<h2 class=\"sec\">" + esc(meta[1] || c.name) + "</h2>" +
+        itemsTable(items, role, canEdit, c.id)
+      );
+    });
+    Object.keys(catSec).forEach(function (cid) {
+      if (seenCat[cid] || !canEdit) return;
+      if (!(byCat[cid] || []).length) {
+        html += sec(catSec[cid][0],
+          "<h2 class=\"sec\">" + esc(catSec[cid][1]) + "</h2>" +
+          itemsTable([], role, canEdit, cid)
+        );
+      }
+    });
+
+    // Montagem (não na fábrica — sem preços)
+    if (!isFactory) {
+      html += sec("montagem",
+        "<div class=\"pagebreak\"></div><h2 class=\"sec\">8. Montagem e transporte</h2>" +
+        montagemBlock(d, role)
+      );
+    }
+
+    // Totais (internas: resumo vivo; fábrica: sem totais)
+    if (isInternal) {
+      html += sec("totais",
+        "<h2 class=\"sec\">9. Resumo de totais</h2>" +
+        grandTotalsHtml(d)
+      );
+    } else if (!isFactory) {
+      html += sec("totais",
+        "<h2 class=\"sec\">9. Resumo de totais</h2>" +
+        totaisBlock(d, role)
+      );
+    }
+
+    // Condições / pontos a confirmar — só internas (fábrica: só especificações)
+    if (!isFactory) {
+      html += sec("condicoes",
+        "<h2 class=\"sec\">10. Condições</h2>" +
+        "<p class=\"note\">Prazo, pagamento e validade a confirmar no fecho da encomenda.</p>" +
+        ((d.points_to_confirm && d.points_to_confirm.length)
+          ? ("<h3 class=\"sub\">Pontos a confirmar</h3>" + listHtml(d.points_to_confirm))
+          : "")
+      );
+    }
+
+    // Gaps only Khaled views
+    if (d.gaps && d.gaps.length && isInternal) {
+      html += sec("gaps",
+        "<h2 class=\"sec\">Lacunas</h2>" + listHtml(d.gaps)
+      );
+    }
+
+    // Assinatura (internas); fábrica fica só com especificações + imagens
+    if (!isFactory) {
+      html += sec("assinatura",
+        "<p class=\"cap\">" + esc(d.disclaimer_pt || t("disclaimer")) + "</p>" +
+        "<div class=\"sig\">" + esc(t("regards")) +
+        "<strong>" + esc(company.signer || "Khaled al Ahdab") + "</strong>" +
+        esc(company.brand || "Pimo Casa") + "<br>" +
+        esc(company.email || "info@pimo.pt") + "<br>" +
+        esc(company.phone || "+351 913 822 833") + "<br>" +
+        esc(company.web || "www.pimo.pt") +
+        "</div>"
+      );
+    }
+
+    html += "</article>";
+    return html;
+  }
+
+  function hdrHtml(d) {
+    var logoSrc = "/orcamentos/logo.png";
+    if (d && d.assets && d.assets.logo) {
+      var u = assetUrl(d.assets.logo);
+      if (u) logoSrc = u;
+    }
+    return "<div class=\"hdr\"><img class=\"logo\" src=\"" + esc(logoSrc) + "\" alt=\"Pimo Casa\"><div><div class=\"b\">PIMO CASA</div><div class=\"s\">Ferragens, sistemas de portas e equipamentos</div></div></div><div class=\"rule\"></div>";
+  }
+
+  function edInp(path, val, opts) {
+    opts = opts || {};
+    var type = opts.type || "text";
+    var ph = opts.placeholder || "";
+    var cls = "ed" + (opts.cls ? " " + opts.cls : "");
+    var v = val == null ? "" : val;
+    return "<input class=\"" + cls + "\" type=\"" + type + "\" data-ed=\"" + esc(path) + "\" value=\"" + esc(v) + "\" placeholder=\"" + esc(ph) + "\">";
+  }
+
+  function infoTable(rows) {
+    var html = "<table class=\"info\">";
+    rows.forEach(function (r) {
+      if (!r[1]) return;
+      html += "<tr><td class=\"k\">" + esc(r[0]) + "</td><td>" + esc(r[1]) + "</td></tr>";
+    });
+    return html + "</table>";
+  }
+
+  function listHtml(arr) {
+    if (!arr || !arr.length) return "";
+    return "<ul>" + arr.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>";
+  }
+
+  function overallTxt(project) {
+    var o = project.overall_mm;
+    if (!o) return project.overall_note || "";
+    return [o.w, o.h, o.d].filter(function (x) { return x != null; }).join(" x ") + " mm";
+  }
+
+  function designAssetsHtml(assets, role) {
+    var figs = [];
+    var labels = {
+      projeto_fechado: "Projecto fechado",
+      projeto_perspetiva: "Perspectiva",
+      projeto_aberto: "Projecto aberto"
+    };
+    if (role !== "client") {
+      labels.layout = "Planta / layout";
+      labels.reference = "Referência";
+    }
+    var proj = assets.projeto || {};
+    Object.keys(labels).forEach(function (k) {
+      var file = proj[k] || assets[k];
+      var u = assetUrl(file);
+      if (!u) return;
+      figs.push("<figure><img class=\"asset-img\" src=\"" + esc(u) + "\" alt=\"" + esc(labels[k]) + "\"><figcaption>" + esc(labels[k]) + "</figcaption></figure>");
+    });
+    (assets.images || []).forEach(function (img) {
+      if (!img || img.category !== "projeto") return;
+      if (labels[img.key]) return;
+      var u = assetUrl(img.file);
+      if (!u) return;
+      figs.push("<figure><img class=\"asset-img\" src=\"" + esc(u) + "\" alt=\"" + esc(img.label || img.key) + "\"><figcaption>" + esc(img.label || img.key) + "</figcaption></figure>");
+    });
+    if (!figs.length) return "<p class=\"note\">Imagens de design ainda não carregadas.</p>";
+    return "<div class=\"asset-grid\">" + figs.join("") + "</div>";
+  }
+
+  function techAssetsHtml(assets, boxes, role) {
+    if (role === "client") return "";
+    var figs = [];
+    var labels = {
+      iso_fechado: "Iso fechado",
+      iso_aberto: "Iso aberto",
+      alcado_portas: "Alçado portas",
+      alcado_interior: "Alçado interior",
+      corte_planta: "Corte / planta",
+      elevation_front: "Alçado frontal",
+      plan_cut: "Corte / planta (legado)",
+      iso_3d: "Iso 3D (legado)"
+    };
+    var tec = assets.tecnico || {};
+    Object.keys(labels).forEach(function (k) {
+      var file = tec[k] || assets[k];
+      var u = assetUrl(file);
+      if (!u) return;
+      figs.push("<figure><img class=\"asset-img\" src=\"" + esc(u) + "\" alt=\"" + esc(labels[k]) + "\"><figcaption>" + esc(labels[k]) + "</figcaption></figure>");
+    });
+    var boxMap = (tec.boxes) || (assets.boxes) || {};
+    (boxes || []).forEach(function (b) {
+      var key = b.code;
+      var u = assetUrl(boxMap[key] || tec["box_caixa_" + key] || assets["box_caixa_" + key] || null);
+      if (!u) return;
+      figs.push("<figure><img class=\"asset-img\" src=\"" + esc(u) + "\" alt=\"" + esc(key) + "\"><figcaption>" + esc(key + " · " + (b.name || "")) + "</figcaption></figure>");
+    });
+    (assets.images || []).forEach(function (img) {
+      if (!img || img.category !== "tecnico") return;
+      if (labels[img.key] || String(img.key).indexOf("box_caixa_") === 0) return;
+      var u = assetUrl(img.file);
+      if (!u) return;
+      figs.push("<figure><img class=\"asset-img\" src=\"" + esc(u) + "\" alt=\"" + esc(img.label || img.key) + "\"><figcaption>" + esc(img.label || img.key) + "</figcaption></figure>");
+    });
+    if (!figs.length) return "";
+    return "<h3 class=\"sub\">Desenho técnico</h3><div class=\"asset-grid\">" + figs.join("") + "</div>";
+  }
+
+  function boxesTable(boxes, role) {
+    var detailed = role !== "client";
+    var html = "<table class=\"t\"><thead><tr><th>Ref.</th><th>Função</th><th>L x A x P (mm)</th>";
+    if (detailed) html += "<th>Pés</th><th>X/Y</th><th>Qtd</th><th>Posição</th>";
+    html += "</tr></thead><tbody>";
+    boxes.forEach(function (b) {
+      html += "<tr><td>" + esc(b.code) + "</td><td>" + esc(b.name) + "</td>";
+      html += "<td>" + esc([b.w, b.h, b.d].join(" x "));
+      if (detailed && b.back === false) html += " <span class=\"cap\">(sem costa)</span>";
+      html += "</td>";
+      if (detailed) {
+        var feet = b.feet ? ("Com pés" + (b.feet_height_mm != null ? " (" + b.feet_height_mm + " mm)" : "")) : "Sem pés";
+        html += "<td>" + esc(feet) + "</td>";
+        var xy = [];
+        if (b.x_mm != null) xy.push("x=" + b.x_mm);
+        if (b.y_mm != null) xy.push("y=" + b.y_mm + (b.y_estimated ? "≈" : ""));
+        html += "<td>" + esc(xy.join(" · ") || "-") + "</td>";
+        html += "<td class=\"n\">" + esc(b.qty_per_unit != null ? b.qty_per_unit : 1) + "</td>";
+        html += "<td>" + esc(b.position_pt || "") + "</td>";
+      }
+      html += "</tr>";
+    });
+    html += "</tbody></table>";
+    return html;
+  }
+
+  function rematesHtml(d, role) {
+    if (role === "client") return "";
+    var remates = d.remates || [];
+    if (!remates.length) return "";
+    var html = "<h3 class=\"sub\">Remates e rodapé</h3>";
+    html += "<table class=\"t\"><thead><tr><th>Peça</th><th>L x W (mm)</th><th class=\"n\">Qtd</th><th>Material</th></tr></thead><tbody>";
+    remates.forEach(function (r) {
+      html += "<tr><td>" + esc(r.label || r.key || "") + "</td>";
+      html += "<td>" + esc([r.l, r.w].filter(function (x) { return x != null; }).join(" x "));
+      if (r.t != null) html += " × " + esc(r.t) + " mm";
+      html += "</td>";
+      html += "<td class=\"n\">" + esc(r.qty != null ? r.qty : (r.qty_per_unit != null ? r.qty_per_unit : "")) + "</td>";
+      html += "<td>" + esc(r.material || "") + "</td></tr>";
+    });
+    html += "</tbody></table>";
+    return html;
+  }
+
+  function doorsInDesignHtml(d, role) {
+    if (role === "client") return "";
+    var doors = d.doors_in_design || [];
+    if (!doors.length) return "";
+    var html = "<h3 class=\"sub\">Portas no desenho</h3>";
+    html += "<table class=\"t\"><thead><tr><th>Qtd</th><th>L x A (mm)</th><th>Nota</th></tr></thead><tbody>";
+    doors.forEach(function (door) {
+      html += "<tr><td class=\"n\">" + esc(door.qty) + "</td>";
+      html += "<td>" + esc([door.w, door.h].join(" x ")) + "</td>";
+      html += "<td>" + esc(door.label || door.notes_pt || "") + "</td></tr>";
+    });
+    html += "</tbody></table>";
+    return html;
+  }
+
+  function partsSheetsHtml(d, role) {
+    if (role === "client") return "";
+    var pt = d.parts_total;
+    var sr = d.sheets_real;
+    if (!pt && !sr) return "";
+    var html = "<h3 class=\"sub\">Resumo de peças e chapas</h3>";
+    if (pt) {
+      html += "<table class=\"t\"><tbody>";
+      if (pt.pieces_per_unit != null) html += "<tr><td>Peças / unidade</td><td class=\"n\">" + esc(pt.pieces_per_unit) + "</td></tr>";
+      if (pt.pieces_project != null || pt.pieces_x6 != null) html += "<tr><td>Peças projecto</td><td class=\"n\">" + esc(pt.pieces_project != null ? pt.pieces_project : pt.pieces_x6) + "</td></tr>";
+      if (pt.m2_19mm != null) html += "<tr><td>m² (19 mm)</td><td class=\"n\">" + esc(pt.m2_19mm) + "</td></tr>";
+      if (pt.m2_10mm != null) html += "<tr><td>m² (10 mm)</td><td class=\"n\">" + esc(pt.m2_10mm) + "</td></tr>";
+      if (pt.weight_kg != null || pt.weight_kg_per_unit != null) html += "<tr><td>Peso</td><td class=\"n\">" + esc(pt.weight_kg != null ? pt.weight_kg : pt.weight_kg_per_unit) + " kg</td></tr>";
+      html += "</tbody></table>";
+    }
+    if (sr) {
+      html += "<table class=\"t\"><thead><tr><th>Chapas</th><th>Valor</th></tr></thead><tbody>";
+      if (sr.per_unit) {
+        var pu = sr.per_unit;
+        var puTxt = typeof pu === "object"
+          ? Object.keys(pu).map(function (k) { return pu[k] + "×" + k; }).join(", ")
+          : String(pu);
+        html += "<tr><td>Por unidade</td><td>" + esc(puTxt) + "</td></tr>";
+      }
+      if (sr.waste_percent != null) html += "<tr><td>Desperdício</td><td class=\"n\">" + esc(sr.waste_percent) + " %</td></tr>";
+      if (sr.project) {
+        var pr = sr.project;
+        var prTxt = typeof pr === "object"
+          ? Object.keys(pr).map(function (k) { return pr[k] + "×" + k; }).join(", ")
+          : String(pr);
+        html += "<tr><td>Projecto</td><td>" + esc(prTxt) + "</td></tr>";
+      }
+      if (sr.notes_pt) html += "<tr><td colspan=\"2\" class=\"cap\">" + esc(sr.notes_pt) + "</td></tr>";
+      html += "</tbody></table>";
+    }
+    return html;
+  }
+
+  function checksAConfirmarHtml(d) {
+    var checks = (d.box_costs && d.box_costs.checks_a_confirmar) || [];
+    if (!checks.length) return "";
+    var html = "<div class=\"checks-confirm\"><h3>A confirmar</h3><ul>";
+    checks.forEach(function (c) {
+      if (typeof c === "string") {
+        html += "<li>" + esc(c) + "</li>";
+        return;
+      }
+      var txt = c.text || c.label || c.check || "";
+      if (c.expected != null || c.actual != null || c.values) {
+        txt += " — ";
+        if (c.values) txt += (Array.isArray(c.values) ? c.values.join(" vs ") : String(c.values));
+        else txt += String(c.expected) + " vs " + String(c.actual);
+      }
+      html += "<li>" + esc(txt) + "</li>";
+    });
+    html += "</ul></div>";
+    return html;
+  }
+
+  function factoryPartsHtml(d) {
+    var html = "";
+    var boxes = d.boxes || [];
+    var hasParts = boxes.some(function (b) { return b.parts && b.parts.length; });
+    if (hasParts) {
+      html += "<h3 class=\"sub\">Peças das caixas</h3>";
+      boxes.forEach(function (b) {
+        if (!b.parts || !b.parts.length) return;
+        html += "<p class=\"note\"><strong>" + esc(b.code + " · " + b.name) + "</strong></p>";
+        html += "<table class=\"t\"><thead><tr><th>Peça</th><th>L</th><th>W</th><th>T</th><th class=\"n\">Qtd</th><th>Material</th><th>Orla</th><th>Peso</th><th>Etiqueta</th></tr></thead><tbody>";
+        b.parts.forEach(function (p) {
+          html += "<tr><td>" + esc(p.name) + "</td><td>" + esc(p.l) + "</td><td>" + esc(p.w) + "</td><td>" + esc(p.t) + "</td>";
+          html += "<td class=\"n\">" + esc(p.qty) + "</td><td>" + esc(p.material || "") + "</td>";
+          html += "<td>" + esc(p.edge || "") + "</td><td class=\"n\">" + esc(p.weight_kg != null ? p.weight_kg : "") + "</td>";
+          html += "<td>" + esc(p.label || "") + "</td></tr>";
+        });
+        html += "</tbody></table>";
+      });
+    }
+    var bc = d.box_costs || {};
+    if (bc.panels && bc.panels.length) {
+      html += "<h3 class=\"sub\">Painéis (quantidades)</h3><table class=\"t\"><thead><tr><th>Material</th><th>Esp. mm</th><th class=\"n\">1 unidade</th><th class=\"n\">Projecto</th></tr></thead><tbody>";
+      bc.panels.forEach(function (p) {
+        html += "<tr><td>" + esc(p.material) + "</td><td>" + esc(p.thickness_mm) + "</td>";
+        html += "<td class=\"n\">" + esc(p.qty_per_unit) + "</td><td class=\"n\">" + esc(p.qty_project) + "</td></tr>";
+      });
+      html += "</tbody></table>";
+    }
+    if (bc.hardware && bc.hardware.length) {
+      html += "<h3 class=\"sub\">Ferragens (quantidades)</h3><table class=\"t\"><thead><tr><th>Tipo</th><th class=\"n\">1 unidade</th><th class=\"n\">Projecto</th><th>Notas</th></tr></thead><tbody>";
+      bc.hardware.forEach(function (h) {
+        html += "<tr><td>" + esc(h.type) + "</td><td class=\"n\">" + esc(h.qty_per_unit) + "</td><td class=\"n\">" + esc(h.qty_project) + "</td><td>" + esc(h.notes || "") + "</td></tr>";
+      });
+      html += "</tbody></table>";
+    }
+    return html;
+  }
+
+  function unitsLabel(d) {
+    var n = (d.box_costs && d.box_costs.units) || (d.project && d.project.units) || 1;
+    return n + " unidades";
+  }
+
+  function sheetsSummaryHtml(bc, units) {
+    var panels = (bc.panels || []).filter(function (p) { return !p.archived; });
+    if (!panels.length) return "";
+    var parts = panels.map(function (p) {
+      var name = p.material || "Painel";
+      var th = p.thickness_mm != null ? (p.thickness_mm + " mm") : "";
+      var q1 = p.qty_per_unit != null ? p.qty_per_unit : "";
+      var qx = p.qty_project != null ? p.qty_project : (q1 !== "" ? Number(q1) * units : "");
+      return esc(name) + (th ? " " + esc(th) : "") + " ×" + esc(q1) + "/un. · ×" + esc(qx) + " projecto";
+    });
+    return "<p class=\"sheet-summary\"><strong>Chapas / painéis:</strong> " + parts.join("; ") + "</p>";
+  }
+
+  function boxCostsHtml(d, canEdit) {
+    var bc = d.box_costs || { lines: [], panels: [], hardware: [], units: (d.project && d.project.units) || 1, iva_rate: 0.23 };
+    var units = bc.units || (d.project && d.project.units) || 1;
+    var html = "<h3 class=\"sub\">Custos das caixas</h3>";
+    html += sheetsSummaryHtml(bc, units);
+
+    html += "<table class=\"t\"><thead><tr><th>Rubrica</th><th>Descrição</th><th class=\"n\">1 unidade €</th><th class=\"n\">" + esc(unitsLabel(d)) + " €</th>";
+    if (canEdit) html += "<th></th>";
+    html += "</tr></thead><tbody>";
+    (bc.lines || []).forEach(function (line, i) {
+      if (line.archived) return;
+      var isADef = (line.flag === "a_definir" || line.render === "red") && line.per_unit_eur == null && line.project_eur == null;
+      var cls = isADef ? " class=\"a-definir\"" : "";
+      html += "<tr" + cls + " data-line-i=\"" + i + "\">";
+      if (canEdit) {
+        html += "<td>" + edInp("box_costs.lines." + i + ".label", line.label || line.key);
+        if (line.key === "adm") html += "<div class=\"cap\">(projecto completo)</div>";
+        if (isADef) {
+          var ref = line.reference_pimo_oficial_per_unit_eur;
+          html += "<div class=\"cap\">a definir" + (ref != null ? " · ref. " + money(ref) + "/un." : "") + "</div>";
+        }
+        html += "</td>";
+        html += "<td>" + edInp("box_costs.lines." + i + ".pimo_note", line.pimo_note || line.notes_pt || "", { placeholder: "nota" }) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.lines." + i + ".per_unit_eur", line.per_unit_eur, { type: "text", placeholder: "€ / un.", cls: line.key === "adm" ? "" : "a-definir-input" }) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.lines." + i + ".project_eur", line.project_eur, { type: "text", placeholder: "€ projecto" }) + "</td>";
+        html += "<td class=\"no-print\"><button type=\"button\" class=\"btn danger ed-archive\" data-path=\"box_costs.lines\" data-i=\"" + i + "\">Remover</button></td>";
+      } else {
+        html += "<td>" + esc(line.label || line.key) + (isADef ? " <span class=\"cap\">a definir</span>" : "") + "</td>";
+        html += "<td>" + esc(line.pimo_note || "") + "</td>";
+        html += "<td class=\"n\">" + esc(line.per_unit_eur == null ? (isADef ? "a definir" : "-") : money(line.per_unit_eur)) + "</td>";
+        html += "<td class=\"n\">" + esc(line.project_eur == null ? (isADef ? "a definir" : "-") : money(line.project_eur)) + "</td>";
+      }
+      html += "</tr>";
+    });
+    html += "</tbody></table>";
+    if (canEdit) {
+      html += "<div class=\"ed-actions no-print\"><button type=\"button\" class=\"btn secondary\" id=\"btn-add-cost-line\">Adicionar linha de custo</button></div>";
+    }
+
+    html += "<h3 class=\"sub\">Painéis</h3>";
+    html += "<table class=\"t\"><thead><tr><th>Material</th><th>Esp. mm</th><th class=\"n\">Qtd / un.</th><th class=\"n\">Qtd projecto</th><th class=\"n\">Preço un. €</th><th class=\"n\">Total / un. €</th><th class=\"n\">Total projecto €</th>";
+    if (canEdit) html += "<th></th>";
+    html += "</tr></thead><tbody>";
+    (bc.panels || []).forEach(function (p, i) {
+      if (p.archived) return;
+      var totU = p.per_unit_eur != null ? p.per_unit_eur : (p.unit_price_eur != null && p.qty_per_unit != null ? Number(p.unit_price_eur) * Number(p.qty_per_unit) : null);
+      html += "<tr>";
+      if (canEdit) {
+        html += "<td>" + edInp("box_costs.panels." + i + ".material", p.material) + "</td>";
+        html += "<td>" + edInp("box_costs.panels." + i + ".thickness_mm", p.thickness_mm) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.panels." + i + ".qty_per_unit", p.qty_per_unit) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.panels." + i + ".qty_project", p.qty_project) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.panels." + i + ".unit_price_eur", p.unit_price_eur) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.panels." + i + ".per_unit_eur", totU) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.panels." + i + ".project_eur", p.project_eur) + "</td>";
+        html += "<td class=\"no-print\"><button type=\"button\" class=\"btn danger ed-archive\" data-path=\"box_costs.panels\" data-i=\"" + i + "\">Remover</button></td>";
+      } else {
+        html += "<td>" + esc(p.material) + "</td><td>" + esc(p.thickness_mm) + "</td>";
+        html += "<td class=\"n\">" + esc(p.qty_per_unit) + "</td><td class=\"n\">" + esc(p.qty_project) + "</td>";
+        html += "<td class=\"n\">" + esc(money(p.unit_price_eur)) + "</td><td class=\"n\">" + esc(money(totU)) + "</td><td class=\"n\">" + esc(money(p.project_eur)) + "</td>";
+      }
+      html += "</tr>";
+    });
+    html += "</tbody></table>";
+    if (canEdit) html += "<div class=\"ed-actions no-print\"><button type=\"button\" class=\"btn secondary\" id=\"btn-add-panel\">Adicionar painel</button></div>";
+
+    html += "<h3 class=\"sub\">Ferragens de caixa</h3>";
+    html += "<table class=\"t\"><thead><tr><th>Tipo</th><th>Notas</th><th class=\"n\">Qtd / un.</th><th class=\"n\">Qtd projecto</th><th class=\"n\">Preço un. €</th><th class=\"n\">Total / un. €</th><th class=\"n\">Total projecto €</th>";
+    if (canEdit) html += "<th></th>";
+    html += "</tr></thead><tbody>";
+    (bc.hardware || []).forEach(function (h, i) {
+      if (h.archived) return;
+      var totU = h.per_unit_eur != null ? h.per_unit_eur : (h.unit_price_eur != null && h.qty_per_unit != null ? Number(h.unit_price_eur) * Number(h.qty_per_unit) : null);
+      html += "<tr>";
+      if (canEdit) {
+        html += "<td>" + edInp("box_costs.hardware." + i + ".type", h.type) + "</td>";
+        html += "<td>" + edInp("box_costs.hardware." + i + ".notes", h.notes || h.pimo_note || "") + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.hardware." + i + ".qty_per_unit", h.qty_per_unit) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.hardware." + i + ".qty_project", h.qty_project) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.hardware." + i + ".unit_price_eur", h.unit_price_eur) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.hardware." + i + ".per_unit_eur", totU) + "</td>";
+        html += "<td class=\"n\">" + edInp("box_costs.hardware." + i + ".project_eur", h.project_eur) + "</td>";
+        html += "<td class=\"no-print\"><button type=\"button\" class=\"btn danger ed-archive\" data-path=\"box_costs.hardware\" data-i=\"" + i + "\">Remover</button></td>";
+      } else {
+        html += "<td>" + esc(h.type) + "</td><td>" + esc(h.notes || "") + "</td>";
+        html += "<td class=\"n\">" + esc(h.qty_per_unit) + "</td><td class=\"n\">" + esc(h.qty_project) + "</td>";
+        html += "<td class=\"n\">" + esc(money(h.unit_price_eur)) + "</td><td class=\"n\">" + esc(money(totU)) + "</td><td class=\"n\">" + esc(money(h.project_eur)) + "</td>";
+      }
+      html += "</tr>";
+    });
+    html += "</tbody></table>";
+    if (canEdit) {
+      html += "<div class=\"ed-actions no-print\">";
+      html += "<button type=\"button\" class=\"btn secondary\" id=\"btn-add-hw\">Adicionar ferragem</button>";
+      html += "<button type=\"button\" class=\"btn\" id=\"btn-save-adef\">Gravar alterações</button>";
+      html += "</div>";
+    }
+    return html;
+  }
+
+  function computeBoxTotals(d) {
+    var bc = d.box_costs || {};
+    var rate = bc.iva_rate != null ? Number(bc.iva_rate) : 0.23;
+    var units = bc.units || (d.project && d.project.units) || 1;
+    var aKeys = bc.a_definir_keys || [];
+    var pending = [];
+    var sub_u = 0, sub_p = 0;
+    (bc.lines || []).forEach(function (line) {
+      if (line.archived) return;
+      var isADef = line.flag === "a_definir" || (aKeys.indexOf(line.key) >= 0);
+      var pu = line.per_unit_eur;
+      var pr = line.project_eur;
+      if (isADef && pu == null && pr == null) {
+        pending.push(line.label || line.key);
+        return;
+      }
+      if (line.key === "adm") {
+        if (pr != null) sub_p += Number(pr) || 0;
+        else if (pu != null) sub_p += Number(pu) || 0;
+        return;
+      }
+      if (pu != null) sub_u += Number(pu) || 0;
+      if (pr != null) sub_p += Number(pr) || 0;
+      else if (pu != null) sub_p += (Number(pu) || 0) * units;
+    });
+    (bc.panels || []).forEach(function (p) {
+      if (p.archived) return;
+      var pu = p.per_unit_eur != null ? Number(p.per_unit_eur) : (p.unit_price_eur != null && p.qty_per_unit != null ? Number(p.unit_price_eur) * Number(p.qty_per_unit) : 0);
+      var pr = p.project_eur != null ? Number(p.project_eur) : pu * units;
+      sub_u += pu || 0;
+      sub_p += pr || 0;
+    });
+    (bc.hardware || []).forEach(function (h) {
+      if (h.archived) return;
+      var pu = h.per_unit_eur != null ? Number(h.per_unit_eur) : (h.unit_price_eur != null && h.qty_per_unit != null ? Number(h.unit_price_eur) * Number(h.qty_per_unit) : 0);
+      var pr = h.project_eur != null ? Number(h.project_eur) : pu * units;
+      sub_u += pu || 0;
+      sub_p += pr || 0;
+    });
+    (d.items || []).forEach(function (it) {
+      if (it.archived) return;
+      var q = it.qty_per_unit != null ? Number(it.qty_per_unit) : 0;
+      var price = it.unit_price_eur != null ? Number(it.unit_price_eur) : 0;
+      var pu = q * price;
+      sub_u += pu;
+      sub_p += pu * units;
+    });
+    return {
+      pending: pending,
+      sub_u: sub_u,
+      sub_p: sub_p,
+      iva_u: sub_u * rate,
+      iva_p: sub_p * rate,
+      tot_u: sub_u * (1 + rate),
+      tot_p: sub_p * (1 + rate),
+      rate: rate,
+      units: units
+    };
+  }
+
+  function grandTotalsInner(d) {
+    var tot = computeBoxTotals(d);
+    var html = "";
+    if (tot.pending.length) {
+      html += "<p class=\"totals-note-warn\">Total sem rubricas a definir (" + esc(tot.pending.join(", ")) + ").</p>";
+    } else {
+      html += "<p class=\"cap\">Actualizado ao vivo com as edições.</p>";
+    }
+    html += "<table class=\"t\"><thead><tr><th></th><th class=\"n\">1 unidade</th><th class=\"n\">" + esc(tot.units + " unidades") + "</th></tr></thead><tbody>";
+    html += "<tr><td>Subtotal s/ IVA</td><td class=\"n\" id=\"tot-sub-u\">" + esc(money(tot.sub_u)) + "</td><td class=\"n\" id=\"tot-sub-p\">" + esc(money(tot.sub_p)) + "</td></tr>";
+    html += "<tr><td>IVA " + esc(String(Math.round(tot.rate * 100))) + "%</td><td class=\"n\" id=\"tot-iva-u\">" + esc(money(tot.iva_u)) + "</td><td class=\"n\" id=\"tot-iva-p\">" + esc(money(tot.iva_p)) + "</td></tr>";
+    html += "<tr class=\"tot\"><td>Total c/ IVA</td><td class=\"n\" id=\"tot-all-u\">" + esc(money(tot.tot_u)) + "</td><td class=\"n\" id=\"tot-all-p\">" + esc(money(tot.tot_p)) + "</td></tr>";
+    html += "</tbody></table>";
+    return html;
+  }
+
+  function grandTotalsHtml(d) {
+    return "<div class=\"grand-totals\" id=\"grand-totals-live\">" + grandTotalsInner(d) + "</div>";
+  }
+
+  function edVal(path) {
+    var inp = document.querySelector('[data-ed="' + path + '"]');
+    return inp ? parseNum(inp.value) : null;
+  }
+
+  function edSet(path, val) {
+    var inp = document.querySelector('[data-ed="' + path + '"]');
+    if (!inp || val == null || isNaN(val)) return;
+    inp.value = String(Math.round(val * 100) / 100);
+  }
+
+  function syncDerivedRowTotals() {
+    var units = (state.data && state.data.box_costs && state.data.box_costs.units)
+      || (state.data && state.data.project && state.data.project.units) || 1;
+    function syncSection(prefix) {
+      var i = 0;
+      while (document.querySelector('[data-ed="' + prefix + i + '.qty_per_unit"]')
+        || document.querySelector('[data-ed="' + prefix + i + '.unit_price_eur"]')) {
+        var qty = edVal(prefix + i + ".qty_per_unit");
+        var price = edVal(prefix + i + ".unit_price_eur");
+        if (qty != null && price != null) {
+          var pu = qty * price;
+          edSet(prefix + i + ".per_unit_eur", pu);
+          edSet(prefix + i + ".project_eur", pu * units);
+          if (edVal(prefix + i + ".qty_project") == null) {
+            edSet(prefix + i + ".qty_project", qty * units);
+          }
+        }
+        i++;
+      }
+    }
+    syncSection("box_costs.panels.");
+    syncSection("box_costs.hardware.");
+    var li = 0;
+    while (document.querySelector('[data-ed="box_costs.lines.' + li + '.per_unit_eur"]')) {
+      var puL = edVal("box_costs.lines." + li + ".per_unit_eur");
+      var keyInp = document.querySelector('[data-ed="box_costs.lines.' + li + '.label"]');
+      var isAdm = keyInp && /administra|adm/i.test(keyInp.value || "");
+      if (puL != null && !isAdm && edVal("box_costs.lines." + li + ".project_eur") == null) {
+        edSet("box_costs.lines." + li + ".project_eur", puL * units);
+      }
+      li++;
+    }
+    var ii = 0;
+    while (document.querySelector('[data-ed="items.' + ii + '.qty_per_unit"]')) {
+      var q = edVal("items." + ii + ".qty_per_unit");
+      if (q != null && edVal("items." + ii + ".qty_project") == null) {
+        edSet("items." + ii + ".qty_project", q * units);
+      }
+      ii++;
+    }
+  }
+
+  function refreshLiveTotals() {
+    var el = document.getElementById("grand-totals-live");
+    if (!el || !state.data) return;
+    syncDerivedRowTotals();
+    var snap = JSON.parse(JSON.stringify(state.data));
+    collectEditorToData(snap);
+    el.innerHTML = grandTotalsInner(snap);
+  }
+
+  function bindLiveTotals() {
+    var report = document.getElementById("report");
+    if (!report || report.getAttribute("data-live-bound") === "1") return;
+    report.setAttribute("data-live-bound", "1");
+    function onEdit(e) {
+      var t = e.target;
+      if (!t || !t.getAttribute) return;
+      if (t.getAttribute("data-ed") || t.classList.contains("ed") || t.classList.contains("a-definir-input")) {
+        refreshLiveTotals();
+      }
+    }
+    report.addEventListener("input", onEdit);
+    report.addEventListener("change", onEdit);
+  }
+
+  function parseNum(raw) {
+    if (raw == null) return null;
+    var s = String(raw).trim();
+    if (s === "") return null;
+    var n = Number(s.replace(",", "."));
+    return isNaN(n) ? null : n;
+  }
+
+  function setByPath(obj, path, value) {
+    var parts = path.split(".");
+    var cur = obj;
+    for (var i = 0; i < parts.length - 1; i++) {
+      var p = parts[i];
+      var next = parts[i + 1];
+      var idx = /^\d+$/.test(p) ? Number(p) : p;
+      if (cur[idx] == null) cur[idx] = /^\d+$/.test(next) ? [] : {};
+      cur = cur[idx];
+    }
+    var last = parts[parts.length - 1];
+    var key = /^\d+$/.test(last) ? Number(last) : last;
+    if (/_eur$|_mm$|qty_|per_unit|project_eur|unit_price|thickness/.test(String(key)) || key === "qty_per_unit" || key === "qty_project") {
+      cur[key] = parseNum(value);
+    } else {
+      cur[key] = value;
+    }
+  }
+
+  function collectEditorToData(d) {
+    d.box_costs = d.box_costs || { lines: [], panels: [], hardware: [], units: (d.project && d.project.units) || 1, iva_rate: 0.23 };
+    d.pricing_placeholders = d.pricing_placeholders || {};
+    d.items = d.items || [];
+    var units = d.box_costs.units || (d.project && d.project.units) || 1;
+    document.querySelectorAll("[data-ed]").forEach(function (inp) {
+      setByPath(d, inp.getAttribute("data-ed"), inp.value);
+    });
+    (d.box_costs.lines || []).forEach(function (line) {
+      if (line.archived) return;
+      var aKeys = d.box_costs.a_definir_keys || [];
+      var isKey = aKeys.indexOf(line.key) >= 0;
+      if (line.per_unit_eur == null && line.project_eur == null && (isKey || line.flag === "a_definir")) {
+        line.flag = "a_definir";
+        line.render = "red";
+      } else if (line.per_unit_eur != null || line.project_eur != null) {
+        if (line.key !== "adm" && line.per_unit_eur != null && line.project_eur == null) {
+          line.project_eur = Number(line.per_unit_eur) * units;
+        }
+        line.flag = "ok";
+        line.render = "normal";
+      }
+      if (line.key === "margem") d.pricing_placeholders.margin_amount_eur = line.per_unit_eur;
+      if (line.key === "portes") {
+        d.pricing_placeholders.shipping_per_unit_eur = line.per_unit_eur;
+        d.pricing_placeholders.shipping_x6_eur = line.project_eur;
+      }
+      if (line.key === "montagem") {
+        d.pricing_placeholders.installation_per_unit_eur = line.per_unit_eur;
+        d.pricing_placeholders.installation_x6_eur = line.project_eur;
+      }
+      if (line.key === "mao_de_obra") {
+        d.pricing_placeholders.fabrication_per_unit_eur = line.per_unit_eur;
+        d.pricing_placeholders.fabrication_x6_eur = line.project_eur;
+      }
+      if (line.key === "design") {
+        d.pricing_placeholders.design_per_unit_eur = line.per_unit_eur;
+        d.pricing_placeholders.design_x6_eur = line.project_eur;
+      }
+      if (line.key === "adm") d.pricing_placeholders.adm_project_eur = line.project_eur != null ? line.project_eur : line.per_unit_eur;
+    });
+    (d.box_costs.panels || []).forEach(function (p) {
+      if (p.archived) return;
+      if (p.unit_price_eur != null && p.qty_per_unit != null && p.per_unit_eur == null) {
+        p.per_unit_eur = Number(p.unit_price_eur) * Number(p.qty_per_unit);
+      }
+      if (p.per_unit_eur != null && p.project_eur == null) p.project_eur = Number(p.per_unit_eur) * units;
+      if (p.qty_per_unit != null && p.qty_project == null) p.qty_project = Number(p.qty_per_unit) * units;
+    });
+    (d.box_costs.hardware || []).forEach(function (h) {
+      if (h.archived) return;
+      if (h.unit_price_eur != null && h.qty_per_unit != null && h.per_unit_eur == null) {
+        h.per_unit_eur = Number(h.unit_price_eur) * Number(h.qty_per_unit);
+      }
+      if (h.per_unit_eur != null && h.project_eur == null) h.project_eur = Number(h.per_unit_eur) * units;
+      if (h.qty_per_unit != null && h.qty_project == null) h.qty_project = Number(h.qty_per_unit) * units;
+    });
+    (d.items || []).forEach(function (it) {
+      if (it.archived) return;
+      if (it.qty_per_unit != null && it.qty_project == null) it.qty_project = Number(it.qty_per_unit) * units;
+    });
+    var tot = computeBoxTotals(d);
+    d.box_costs.totals = d.box_costs.totals || {};
+    d.box_costs.totals.subtotal_ex_iva = { per_unit: tot.sub_u, project: tot.sub_p };
+    d.box_costs.totals.iva = { per_unit: tot.iva_u, project: tot.iva_p };
+    d.box_costs.totals.total_incl_iva = { per_unit: tot.tot_u, project: tot.tot_p };
+    return d;
+  }
+
+  function applyADefinirToData(d) {
+    return collectEditorToData(d);
+  }
+
+  function itemsTable(items, role, editable, categoryId) {
+    var showCost = role === "admin" || role === "khaled" || role === "filipe";
+    var factory = role === "factory";
+    var html = "<table class=\"t\"><thead><tr>";
+    html += "<th>Nome</th><th>Descrição / ref.</th>";
+    if (showCost) html += "<th>Fornecedor</th><th>URL</th><th class=\"n\">Preço un. €</th>";
+    else if (!factory) html += "<th>Estado</th>";
+    html += "<th class=\"n\">Qtd / un.</th><th class=\"n\">Qtd projecto</th>";
+    if (editable) html += "<th></th>";
+    html += "</tr></thead><tbody>";
+    items.forEach(function (it) {
+      var i = it._idx;
+      html += "<tr>";
+      if (editable) {
+        html += "<td>" + edInp("items." + i + ".name", it.name) + "</td>";
+        html += "<td>" + edInp("items." + i + ".model", it.model || it.ref || "", { placeholder: "modelo / ref." });
+        html += edInp("items." + i + ".notes_pt", it.notes_pt || it.description_pt || "", { placeholder: "descrição" });
+        html += "</td>";
+        html += "<td>" + edInp("items." + i + ".supplier", it.supplier || "") + "</td>";
+        html += "<td>" + edInp("items." + i + ".url", it.url || "", { placeholder: "https://" }) + "</td>";
+        html += "<td class=\"n\">" + edInp("items." + i + ".unit_price_eur", it.unit_price_eur) + "</td>";
+        html += "<td class=\"n\">" + edInp("items." + i + ".qty_per_unit", it.qty_per_unit) + "</td>";
+        html += "<td class=\"n\">" + edInp("items." + i + ".qty_project", it.qty_project) + "</td>";
+        html += "<td class=\"no-print\"><button type=\"button\" class=\"btn danger ed-archive\" data-path=\"items\" data-i=\"" + i + "\">Remover</button></td>";
+      } else if (factory) {
+        html += "<td><strong>" + esc(it.name) + "</strong></td>";
+        html += "<td>" + esc(it.model || it.ref || "") + (it.notes_pt ? "<div class=\"cap\">" + esc(it.notes_pt) + "</div>" : "") + "</td>";
+        html += "<td class=\"n\">" + esc(it.qty_per_unit == null ? "" : it.qty_per_unit) + "</td>";
+        html += "<td class=\"n\">" + esc(it.qty_project == null ? "" : it.qty_project) + "</td>";
+      } else {
+        html += "<td><strong>" + esc(it.name) + "</strong></td>";
+        html += "<td>" + esc(it.model || it.ref || "") + "</td>";
+        if (showCost) {
+          html += "<td>" + esc(it.supplier || "") + "</td>";
+          html += "<td>" + (it.url ? "<a href=\"" + esc(it.url) + "\" target=\"_blank\" rel=\"noopener\">ligação</a>" : "") + "</td>";
+          html += "<td class=\"n\">" + esc(it.unit_price_eur == null ? (priceStatusLabel(it.price_status) || "-") : money(it.unit_price_eur)) + "</td>";
+        } else {
+          html += "<td>" + esc(priceStatusLabel(it.price_status) || "") + "</td>";
+        }
+        html += "<td class=\"n\">" + esc(it.qty_per_unit == null ? "" : it.qty_per_unit) + "</td>";
+        html += "<td class=\"n\">" + esc(it.qty_project == null ? "" : it.qty_project) + "</td>";
+      }
+      html += "</tr>";
+    });
+    html += "</tbody></table>";
+    if (editable) {
+      html += "<div class=\"ed-actions no-print\"><button type=\"button\" class=\"btn secondary ed-add-item\" data-cat=\"" + esc(categoryId || "outros") + "\">Adicionar linha</button></div>";
+    }
+    return html;
+  }
+
+  function montagemBlock(d, role) {
+    var ph = d.pricing_placeholders || d.pricing || {};
+    if (role === "client") {
+      return "<p class=\"note\">O preço final inclui as condições acordadas.</p>";
+    }
+    if (role === "factory") {
+      return "<p>Indique montagem e transporte no formulário de cotação (sem ver preços internos).</p>";
+    }
+    return infoTable([
+      ["Montagem / un.", money(ph.installation_per_unit_eur, "a preencher")],
+      ["Transporte / un.", money(ph.shipping_per_unit_eur, "a preencher")],
+      ["Destino", ph.shipping_to || ""]
+    ]);
+  }
+
+  function totaisBlock(d, role) {
+    if (role === "factory") {
+      return "<p class=\"note\">Os totais de compra da Pimo Casa não são mostrados nesta vista. Envie a sua cotação pelo formulário.</p>";
+    }
+    if (role === "client") {
+      var p = d.pricing || {};
+      var tag = p.selling_price_per_unit_eur != null ? money(p.selling_price_per_unit_eur) + " / unidade" : t("noPrice");
+      if (p.approved_factory_key) tag += "<div class=\"cap\">Fábrica escolhida: " + esc(p.approved_factory_key) + "</div>";
+      return "<p class=\"price-tag\">" + tag + "</p>";
+    }
+    var ph = d.pricing_placeholders || {};
+    var html = infoTable([
+      ["Margem %", ph.margin_percent == null ? "a preencher" : ph.margin_percent],
+      ["Margem €", money(ph.margin_amount_eur, "a preencher")],
+      ["Preço final / un.", money(ph.selling_price_per_unit_eur, "a preencher")],
+      ["Preço final total", money(ph.selling_price_x6_eur, "a preencher")]
+    ]);
+    if (d.order_of_magnitude && d.order_of_magnitude.length) {
+      html += "<h3 class=\"sub\">Ordem de grandeza (compra)</h3><table class=\"t\"><thead><tr><th>Conjunto</th><th class=\"n\">/ un.</th><th class=\"n\">Total</th></tr></thead><tbody>";
+      d.order_of_magnitude.forEach(function (o) {
+        html += "<tr><td>" + esc(o.label) + "</td><td class=\"n\">" + esc(money(o.per_unit_eur)) + "</td><td class=\"n\">" + esc(money(o.x6_eur)) + "</td></tr>";
+      });
+      html += "</tbody></table>";
+    }
+    return html;
+  }
+
+  function bindAdminCode() {
+    var btn = document.getElementById("adm-code-save");
+    if (btn) {
+      btn.addEventListener("click", function () {
+        var err = document.getElementById("adm-code-err");
+        err.textContent = "";
+        var current = document.getElementById("adm-code-current").value;
+        var neu = document.getElementById("adm-code-new").value;
+        var conf = document.getElementById("adm-code-confirm").value;
+        if (!current || !neu || !conf) {
+          err.textContent = "Preencha todos os campos.";
+          return;
+        }
+        if (neu.length < 10) {
+          err.textContent = "O novo código deve ter pelo menos 10 caracteres.";
+          return;
+        }
+        if (neu !== conf) {
+          err.textContent = "A confirmação do novo código não coincide.";
+          return;
+        }
+        api("admin-code.php", {
+          method: "POST",
+          body: { current_code: current, new_code: neu, confirm_code: conf }
+        }).then(function () {
+          document.getElementById("adm-code-current").value = "";
+          document.getElementById("adm-code-new").value = "";
+          document.getElementById("adm-code-confirm").value = "";
+          toast("Código de administrador actualizado");
+        }).catch(function (e) {
+          err.textContent = e.message || "Falha ao actualizar.";
+        });
+      });
+    }
+    bindExtraAdminCodes();
+    bindAdminUser();
+  }
+
+  function bindAdminUser() {
+    var btn = document.getElementById("adm-user-save");
+    if (btn) {
+      btn.addEventListener("click", function () {
+        var err = document.getElementById("adm-user-err");
+        err.textContent = "";
+        var email = document.getElementById("adm-user-email").value.trim();
+        var pass = document.getElementById("adm-user-pass").value;
+        var pass2 = document.getElementById("adm-user-pass2").value;
+        if (!email || !pass || !pass2) {
+          err.textContent = "Preencha email e palavra-passe.";
+          return;
+        }
+        if (pass.length < 10) {
+          err.textContent = "A palavra-passe deve ter pelo menos 10 caracteres.";
+          return;
+        }
+        if (pass !== pass2) {
+          err.textContent = "A confirmação da palavra-passe não coincide.";
+          return;
+        }
+        api("admin-user.php", {
+          method: "POST",
+          body: { email: email, password: pass, confirm_password: pass2 }
+        }).then(function () {
+          document.getElementById("adm-user-pass").value = "";
+          document.getElementById("adm-user-pass2").value = "";
+          toast("Conta de email actualizada");
+          return refreshAdminUserList();
+        }).catch(function (e) {
+          err.textContent = e.message || "Falha ao guardar.";
+        });
+      });
+    }
+    refreshAdminUserList();
+  }
+
+  function refreshAdminUserList() {
+    var el = document.getElementById("adm-user-list");
+    if (!el) return Promise.resolve();
+    return api("admin-user.php").then(function (j) {
+      var users = j.users || [];
+      if (!users.length) {
+        el.textContent = "Ainda sem contas de email.";
+        return;
+      }
+      el.textContent = "Contas: " + users.map(function (u) { return u.email; }).join(", ");
+    }).catch(function () {
+      el.textContent = "";
+    });
+  }
+
+  function bindExtraAdminCodes() {
+    var create = document.getElementById("adm-extra-create");
+    if (create) {
+      create.addEventListener("click", function () {
+        var err = document.getElementById("adm-extra-err");
+        err.textContent = "";
+        var label = document.getElementById("adm-extra-label").value.trim();
+        var code = document.getElementById("adm-extra-code").value;
+        if (!label || !code) {
+          err.textContent = "Indique etiqueta e código.";
+          return;
+        }
+        if (code.length < 10) {
+          err.textContent = "O código deve ter pelo menos 10 caracteres.";
+          return;
+        }
+        api("admin-codes.php", {
+          method: "POST",
+          body: { action: "create", label: label, code: code }
+        }).then(function () {
+          document.getElementById("adm-extra-label").value = "";
+          document.getElementById("adm-extra-code").value = "";
+          toast("Código adicional criado");
+          return loadAdminCodes().then(function () { render(); });
+        }).catch(function (e) {
+          err.textContent = e.message || "Falha ao criar.";
+        });
+      });
+    }
+    document.querySelectorAll(".adm-extra-rev").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        if (!confirm("Revogar este código adicional?")) return;
+        api("admin-codes.php", {
+          method: "POST",
+          body: { action: "revoke", id: btn.getAttribute("data-id") }
+        }).then(function () {
+          toast("Código revogado");
+          return loadAdminCodes().then(function () { render(); });
+        }).catch(function (e) { toast(e.message); });
+      });
+    });
+  }
+
+  function saveEditorData(note) {
+    collectEditorToData(state.data);
+    return api("project.php", {
+      method: "POST",
+      body: { id: state.projectId, data: state.data, note: note || "edição" }
+    }).then(function () {
+      toast("Gravado");
+      return openProject(state.projectId);
+    });
+  }
+
+  function bindADefinirSave() {
+    var btn = document.getElementById("btn-save-adef");
+    if (btn) {
+      btn.addEventListener("click", function () {
+        saveEditorData("edição custos / linhas").catch(function (e) { toast(e.message); });
+      });
+    }
+    bindEditorExtras();
+    bindLiveTotals();
+  }
+
+  function bindEditorExtras() {
+    var units = (state.data.box_costs && state.data.box_costs.units) || (state.data.project && state.data.project.units) || 1;
+    document.querySelectorAll(".ed-archive").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        if (!confirm("Remover (arquivar) esta linha?")) return;
+        collectEditorToData(state.data);
+        var path = btn.getAttribute("data-path");
+        var i = Number(btn.getAttribute("data-i"));
+        var arr = path === "items" ? state.data.items : path.split(".").reduce(function (o, k) { return o[k]; }, state.data);
+        if (arr && arr[i]) arr[i].archived = true;
+        saveEditorData("remover linha").catch(function (e) { toast(e.message); });
+      });
+    });
+    var addLine = document.getElementById("btn-add-cost-line");
+    if (addLine) addLine.addEventListener("click", function () {
+      collectEditorToData(state.data);
+      state.data.box_costs = state.data.box_costs || { lines: [] };
+      state.data.box_costs.lines = state.data.box_costs.lines || [];
+      state.data.box_costs.lines.push({
+        key: "extra_" + Date.now(),
+        label: "Nova rubrica",
+        per_unit_eur: null,
+        project_eur: null,
+        flag: "ok",
+        render: "normal",
+        visibility: "internal_only"
+      });
+      saveEditorData("adicionar linha de custo").catch(function (e) { toast(e.message); });
+    });
+    var addPanel = document.getElementById("btn-add-panel");
+    if (addPanel) addPanel.addEventListener("click", function () {
+      collectEditorToData(state.data);
+      state.data.box_costs.panels = state.data.box_costs.panels || [];
+      state.data.box_costs.panels.push({ material: "Novo painel", thickness_mm: 19, qty_per_unit: 1, qty_project: units, unit_price_eur: null, per_unit_eur: null, project_eur: null });
+      saveEditorData("adicionar painel").catch(function (e) { toast(e.message); });
+    });
+    var addHw = document.getElementById("btn-add-hw");
+    if (addHw) addHw.addEventListener("click", function () {
+      collectEditorToData(state.data);
+      state.data.box_costs.hardware = state.data.box_costs.hardware || [];
+      state.data.box_costs.hardware.push({ type: "Nova ferragem", qty_per_unit: 1, qty_project: units, unit_price_eur: null, per_unit_eur: null, project_eur: null, notes: "" });
+      saveEditorData("adicionar ferragem").catch(function (e) { toast(e.message); });
+    });
+    document.querySelectorAll(".ed-add-item").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        collectEditorToData(state.data);
+        var cat = btn.getAttribute("data-cat") || "outros";
+        state.data.items = state.data.items || [];
+        state.data.items.push({
+          id: "item-" + Date.now(),
+          category: cat,
+          kind: cat,
+          name: "Novo artigo",
+          model: "",
+          notes_pt: "",
+          supplier: "",
+          url: null,
+          unit_price_eur: null,
+          qty_per_unit: 1,
+          qty_project: units,
+          price_status: null
+        });
+        var cats = state.data.categories || [];
+        if (!cats.some(function (c) { return c.id === cat; })) {
+          cats.push({ id: cat, name: cat });
+          state.data.categories = cats;
+        }
+        saveEditorData("adicionar artigo").catch(function (e) { toast(e.message); });
+      });
+    });
+  }
+
+  function bindAdmin() {
+    bindAdminCode();
+    bindADefinirSave();
+    var st = document.getElementById("adm-save-status");
+    if (st) st.addEventListener("click", function () {
+      var status = document.getElementById("adm-status").value;
+      api("project.php", { method: "POST", body: { id: state.projectId, data: state.data, status: status, note: "estado" } })
+        .then(function () { toast("Estado actualizado"); return loadWorkspace(); })
+        .catch(function (e) { toast(e.message); });
+    });
+    var dup = document.getElementById("adm-dup");
+    if (dup) dup.addEventListener("click", function () {
+      api("duplicate.php", { method: "POST", body: { id: state.projectId } })
+        .then(function (j) {
+          toast("Duplicado");
+          return api("projects.php").then(function (pj) {
+            state.projects = pj.projects || [];
+            return openProject(j.project.id, { syncUrl: true });
+          });
+        })
+        .catch(function (e) { toast(e.message); });
+    });
+    var arch = document.getElementById("adm-arch");
+    if (arch) arch.addEventListener("click", function () {
+      if (!confirm("Arquivar este projecto?")) return;
+      api("project.php", { method: "DELETE", body: { id: state.projectId } })
+        .then(function () {
+          state.projectId = null;
+          state.project = null;
+          state.data = null;
+          toast("Arquivado");
+          goRoot(true);
+          return loadWorkspace();
+        })
+        .catch(function (e) { toast(e.message); });
+    });
+    var bak = document.getElementById("adm-backup");
+    if (bak) bak.addEventListener("click", function () {
+      api("backup.php", { method: "POST", body: {} }).then(function (j) {
+        toast(j.created ? "Cópia criada" : "Cópia do dia já existia");
+      }).catch(function (e) { toast(e.message); });
+    });
+    document.querySelectorAll(".adm-upload").forEach(function (inp) {
+      inp.addEventListener("change", function () {
+        var f = inp.files && inp.files[0];
+        if (!f) return;
+        var fd = new FormData();
+        fd.append("file", f);
+        fd.append("project_id", state.projectId);
+        fd.append("kind", inp.getAttribute("data-kind") || "image");
+        var cat = inp.getAttribute("data-category");
+        var akey = inp.getAttribute("data-asset-key");
+        if (cat) fd.append("category", cat);
+        if (akey) fd.append("asset_key", akey);
+        fetch(BASE + "/upload.php", { method: "POST", credentials: "same-origin", body: fd })
+          .then(function (r) { return r.json(); })
+          .then(function (j) {
+            if (!j.ok) throw new Error(j.error || "Falha");
+            toast("Imagem enviada");
+            return openProject(state.projectId);
+          })
+          .catch(function (e) { toast(e.message); });
+      });
+    });
+    var boxUp = document.getElementById("adm-box-asset-up");
+    if (boxUp) {
+      boxUp.addEventListener("click", function () {
+        var code = (document.getElementById("adm-box-asset-code").value || "").trim();
+        var fileInp = document.getElementById("adm-box-asset-file");
+        var f = fileInp && fileInp.files && fileInp.files[0];
+        if (!code || !f) { toast("Indique a caixa e o ficheiro"); return; }
+        var key = code.indexOf("box_caixa_") === 0 ? code : ("box_caixa_" + code);
+        var fd = new FormData();
+        fd.append("file", f);
+        fd.append("project_id", state.projectId);
+        fd.append("kind", key);
+        fd.append("category", "tecnico");
+        fd.append("asset_key", key);
+        fetch(BASE + "/upload.php", { method: "POST", credentials: "same-origin", body: fd })
+          .then(function (r) { return r.json(); })
+          .then(function (j) {
+            if (!j.ok) throw new Error(j.error || "Falha");
+            toast("Imagem da caixa enviada");
+            fileInp.value = "";
+            return openProject(state.projectId);
+          })
+          .catch(function (e) { toast(e.message); });
+      });
+    }
+    var lc = document.getElementById("link-create");
+    if (lc) lc.addEventListener("click", function () {
+      var role = document.getElementById("link-role").value;
+      var body = {
+        action: "create",
+        project_id: state.projectId,
+        role: role,
+        label: document.getElementById("link-label").value,
+        factory_key: role === "factory" ? document.getElementById("link-factory").value : null
+      };
+      api("access.php", { method: "POST", body: body }).then(function (j) {
+        var box = document.getElementById("link-once");
+        box.classList.remove("hidden");
+        box.innerHTML = "<p><strong>Guarde agora (mostrado uma vez):</strong></p>" +
+          "<p>Ligação: <code>" + esc(location.origin + j.link.path) + "</code></p>" +
+          "<p>Código: <code>" + esc(j.link.code) + "</code></p>";
+        return openProject(state.projectId);
+      }).catch(function (e) { toast(e.message); });
+    });
+    document.querySelectorAll(".link-rev").forEach(function (b) {
+      b.addEventListener("click", function () {
+        api("access.php", { method: "POST", body: { action: "revoke", id: b.getAttribute("data-id") } })
+          .then(function () { return openProject(state.projectId); });
+      });
+    });
+    document.querySelectorAll(".link-rot").forEach(function (b) {
+      b.addEventListener("click", function () {
+        api("access.php", { method: "POST", body: { action: "rotate", id: b.getAttribute("data-id") } })
+          .then(function (j) {
+            var box = document.getElementById("link-once");
+            box.classList.remove("hidden");
+            box.innerHTML = "<p><strong>Novo acesso:</strong></p>" +
+              "<p>Ligação: <code>" + esc(location.origin + j.link.path) + "</code></p>" +
+              "<p>Código: <code>" + esc(j.link.code) + "</code></p>";
+            return openProject(state.projectId);
+          });
+      });
+    });
+    document.querySelectorAll(".compare td.pick").forEach(function (td) {
+      td.addEventListener("click", function () {
+        api("approve-price.php", {
+          method: "POST",
+          body: {
+            project_id: state.projectId,
+            item_key: td.getAttribute("data-item"),
+            factory_key: td.getAttribute("data-factory"),
+            price_eur: td.getAttribute("data-price")
+          }
+        }).then(function () { toast("Preço aprovado"); return openProject(state.projectId); })
+          .catch(function (e) { toast(e.message); });
+      });
+    });
+    var sp = document.getElementById("adm-save-pricing");
+    if (sp) sp.addEventListener("click", savePricing);
+    document.querySelectorAll(".ver-rest").forEach(function (b) {
+      b.addEventListener("click", function () {
+        if (!confirm("Restaurar esta versão?")) return;
+        api("restore.php", {
+          method: "POST",
+          body: { project_id: state.projectId, version_no: Number(b.getAttribute("data-v")) }
+        }).then(function () { toast("Versão restaurada"); return openProject(state.projectId); })
+          .catch(function (e) { toast(e.message); });
+      });
+    });
+    bindPrintOpts();
+  }
+
+  function savePricing() {
+    var d = state.data;
+    d.pricing_placeholders = d.pricing_placeholders || {};
+    function num(id) {
+      var v = document.getElementById(id).value.trim();
+      return v === "" ? null : Number(v.replace(",", "."));
+    }
+    d.pricing_placeholders.margin_percent = num("ph-margin-pct");
+    d.pricing_placeholders.margin_amount_eur = num("ph-margin-amt");
+    d.pricing_placeholders.installation_per_unit_eur = num("ph-install");
+    d.pricing_placeholders.shipping_per_unit_eur = num("ph-ship");
+    d.pricing_placeholders.selling_price_per_unit_eur = num("ph-sell");
+    var facSel = document.getElementById("ph-factory");
+    d.pricing_placeholders.approved_factory_key = facSel && facSel.value ? facSel.value : null;
+    var units = (d.project && d.project.units) || 1;
+    if (d.pricing_placeholders.selling_price_per_unit_eur != null) {
+      d.pricing_placeholders.selling_price_x6_eur = d.pricing_placeholders.selling_price_per_unit_eur * units;
+    }
+    if (d.pricing_placeholders.installation_per_unit_eur != null) {
+      d.pricing_placeholders.installation_x6_eur = d.pricing_placeholders.installation_per_unit_eur * units;
+    }
+    if (d.pricing_placeholders.shipping_per_unit_eur != null) {
+      d.pricing_placeholders.shipping_x6_eur = d.pricing_placeholders.shipping_per_unit_eur * units;
+    }
+    d.editor_settings = d.editor_settings || {};
+    d.editor_settings.hide_margin_from_filipe = !!(document.getElementById("hide-margin") && document.getElementById("hide-margin").checked);
+    api("project.php", { method: "POST", body: { id: state.projectId, data: d, note: "preços" } })
+      .then(function () { toast("Preços gravados"); return openProject(state.projectId); })
+      .catch(function (e) { toast(e.message); });
+  }
+
+  function bindEditor() {
+    bindADefinirSave();
+    var b = document.getElementById("ed-save");
+    if (b) b.addEventListener("click", function () {
+      saveEditorData("edição").catch(function (e) { toast(e.message); });
+    });
+  }
+
+  function bindFactory() {
+    var b = document.getElementById("fq-save");
+    if (!b) return;
+    b.addEventListener("click", function () {
+      var boxes = {};
+      document.querySelectorAll(".fq-price").forEach(function (inp) {
+        var code = inp.getAttribute("data-box");
+        boxes[code] = boxes[code] || {};
+        var v = inp.value.trim();
+        boxes[code].price_eur = v === "" ? null : Number(v.replace(",", "."));
+      });
+      document.querySelectorAll(".fq-mat").forEach(function (inp) {
+        var code = inp.getAttribute("data-box");
+        boxes[code] = boxes[code] || {};
+        boxes[code].material = inp.value.trim();
+      });
+      function num(id) {
+        var v = document.getElementById(id).value.trim();
+        return v === "" ? null : Number(v.replace(",", "."));
+      }
+      var quote = {
+        factory_name: document.getElementById("fq-name").value.trim(),
+        boxes: boxes,
+        installation_per_unit_eur: num("fq-install"),
+        shipping_per_unit_eur: num("fq-ship"),
+        lead_time_days: num("fq-lead"),
+        payment_terms_pt: document.getElementById("fq-pay").value.trim(),
+        notes_pt: document.getElementById("fq-notes").value.trim()
+      };
+      api("project.php", { method: "POST", body: { id: state.projectId, quote: quote } })
+        .then(function () { toast("Cotação enviada"); return openProject(state.projectId); })
+        .catch(function (e) { toast(e.message); });
+    });
+  }
+
+  function bindClient() {
+    function currentChoice() {
+      var mat = document.querySelector("input[name=mat]:checked");
+      return {
+        material_option_id: mat ? mat.value : null,
+        set_code: document.getElementById("cl-set").value,
+        with_installation: document.getElementById("cl-install").checked,
+        with_equipment: document.getElementById("cl-equip").checked
+      };
+    }
+    function refreshPrice() {
+      var el = document.getElementById("cl-price");
+      if (el) el.textContent = clientPriceLabel(state.data, currentChoice());
+    }
+    document.querySelectorAll("#client-mats input, #cl-install, #cl-equip, #cl-set").forEach(function (n) {
+      n.addEventListener("change", refreshPrice);
+    });
+    var send = document.getElementById("cl-send");
+    if (send) send.addEventListener("click", function () {
+      api("client-choice.php", { method: "POST", body: currentChoice() })
+        .then(function () { toast("Escolha enviada"); return openProject(state.projectId); })
+        .catch(function (e) { toast(e.message); });
+    });
+  }
+
+  function bindPrintOpts() {
+    /* impressão inclui todas as secções */
+  }
+
+  // Polling leve para vistas partilhadas
+  setInterval(function () {
+    if (!state.me || !state.projectId) return;
+    if (state.me.role !== "khaled" && state.me.role !== "filipe") return;
+    if (document.hidden) return;
+    api("project.php?id=" + encodeURIComponent(state.projectId)).then(function (j) {
+      if (!state.project || j.project.updated_at !== state.project.updated_at) {
+        state.project = j.project;
+        state.data = j.project.data;
+        render();
+      }
+    }).catch(function () {});
+  }, 20000);
+
+  boot();
+})();
+</script>
+</body>
+</html>

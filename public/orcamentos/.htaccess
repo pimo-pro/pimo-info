@@ -14,6 +14,9 @@ DirectoryIndex index.html
   RewriteRule ^api/lib/ - [F,L]
   RewriteRule ^api/bootstrap\.php$ - [F,L]
 
+  # Slash canónico: /orcamentos/<slug> → /orcamentos/<slug>/
+  RewriteRule ^([a-z0-9][a-z0-9-]*)$ $1/ [R=301,L,NC]
+
   # /orcamentos/<slug>/ → SPA (preserva ?v=token)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
