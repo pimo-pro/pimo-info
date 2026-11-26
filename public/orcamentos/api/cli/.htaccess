@@ -1,0 +1,2 @@
+# Negar qualquer acesso HTTP a esta pasta (scripts só por CLI).
+Require all denied

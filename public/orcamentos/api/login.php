@@ -18,20 +18,28 @@ if ($code === '') {
 Auth::checkRateLimit($pdo);
 Auth::recordAttempt($pdo);
 
-// Painel de controlo (administrador)
+// Painel de controlo (administrador): código principal OU códigos adicionais activos
 if ($mode === 'admin' || ($token === '' && $mode !== 'link')) {
-    $hash = Settings::adminCodeHash($pdo);
-    if (!password_verify($code, $hash)) {
+    $label = 'Administrador';
+    $ok = password_verify($code, Settings::adminCodeHash($pdo));
+    if (!$ok) {
+        $extraLabel = AdminCodes::matchActive($pdo, $code);
+        if ($extraLabel !== null) {
+            $ok = true;
+            $label = $extraLabel;
+        }
+    }
+    if (!$ok) {
         Response::error('Código incorrecto.', 401);
     }
     Auth::setSession([
         'role' => 'admin',
-        'label' => 'Administrador',
+        'label' => $label,
         'project_id' => null,
         'factory_key' => null,
         'admin_epoch' => Settings::adminSessionEpoch($pdo),
     ]);
-    Response::json(['ok' => true, 'role' => 'admin', 'label' => 'Administrador']);
+    Response::json(['ok' => true, 'role' => 'admin', 'label' => $label]);
 }
 
 if ($token === '') {

@@ -14,6 +14,7 @@ require $api . '/lib/Config.php';
 require $api . '/lib/Database.php';
 require $api . '/lib/Migrate.php';
 require $api . '/lib/Settings.php';
+require $api . '/lib/AdminCodes.php';
 require $api . '/lib/Auth.php';
 require $api . '/lib/Filter.php';
 require $api . '/lib/ProjectService.php';
@@ -35,8 +36,12 @@ $pdo = Database::pdo();
 Migrate::up($pdo);
 
 // Limpar tabelas de teste
-foreach (['approved_prices', 'project_versions', 'access_links', 'uploads', 'login_attempts', 'projects', 'settings'] as $t) {
-    $pdo->exec("DELETE FROM `$t`");
+foreach (['approved_prices', 'project_versions', 'access_links', 'uploads', 'login_attempts', 'projects', 'settings', 'admin_codes'] as $t) {
+    try {
+        $pdo->exec("DELETE FROM `$t`");
+    } catch (Throwable $e) {
+        // tabela pode ainda não existir em migrações antigas
+    }
 }
 
 $raw = json_decode(file_get_contents($example), true);
@@ -168,6 +173,36 @@ $updated = ProjectService::save($pdo, $created['id'], $normV2, 'admin', 'teste',
 $after = count(ProjectService::versions($pdo, $created['id']));
 assert_true($after === $before + 1, 'importação em projecto existente cria versão');
 assert_true(($updated['data']['project']['notes'] ?? '') === 'versão importada de teste', 'dados actualizados no import');
+
+// Códigos de administrador adicionais
+$botPlain = 'CodigoBotTeste99';
+$createdCode = AdminCodes::create($pdo, 'khaled bot', $botPlain);
+assert_true(($createdCode['label'] ?? '') === 'khaled bot', 'criar código adicional com etiqueta');
+assert_true(AdminCodes::matchActive($pdo, $botPlain) === 'khaled bot', 'login aceita código adicional');
+assert_true(AdminCodes::matchActive($pdo, 'erradoXXXXXXXX') === null, 'código adicional incorrecto falha');
+$list = AdminCodes::list($pdo);
+assert_true(count($list) >= 1, 'lista códigos adicionais');
+assert_true(!isset($list[0]['code_hash']), 'lista nunca devolve hash');
+$jsonList = json_encode($list);
+assert_true(!str_contains($jsonList, $botPlain), 'lista nunca devolve código em claro');
+// Alterar código principal não revoga adicionais
+Settings::set($pdo, 'admin_code_hash', password_hash('OutroCodigoPrincipal99', PASSWORD_BCRYPT));
+Settings::bumpAdminSessionEpoch($pdo);
+assert_true(AdminCodes::matchActive($pdo, $botPlain) === 'khaled bot', 'alterar principal não revoga adicionais');
+assert_true(AdminCodes::revoke($pdo, $createdCode['id']), 'revogar código adicional');
+assert_true(AdminCodes::matchActive($pdo, $botPlain) === null, 'código revogado deixa de entrar');
+
+// CLI add-admin-code.php
+$cliScript = $api . '/cli/add-admin-code.php';
+assert_true(is_file($cliScript), 'script CLI existe');
+$tmpCode = sys_get_temp_dir() . '/orc-admin-code-test.txt';
+file_put_contents($tmpCode, "CliCodigoBotTeste88\n");
+$cmd = escapeshellarg(PHP_BINARY) . ' ' . escapeshellarg($cliScript) . ' '
+    . escapeshellarg('khaled bot') . ' ' . escapeshellarg($tmpCode) . ' 2>&1';
+$out = shell_exec($cmd);
+assert_true(trim((string) $out) === 'ok', 'CLI imprime ok');
+assert_true(AdminCodes::matchActive($pdo, 'CliCodigoBotTeste88') === 'khaled bot', 'CLI grava código utilizável');
+@unlink($tmpCode);
 
 echo "\n";
 if ($fail > 0) {

@@ -1,9 +1,11 @@
 <?php
 declare(strict_types=1);
 
-header('X-Content-Type-Options: nosniff');
-header('Referrer-Policy: no-referrer');
-header('X-Robots-Tag: noindex, nofollow, noarchive');
+if (PHP_SAPI !== 'cli') {
+    header('X-Content-Type-Options: nosniff');
+    header('Referrer-Policy: no-referrer');
+    header('X-Robots-Tag: noindex, nofollow, noarchive');
+}
 
 spl_autoload_register(static function (string $class): void {
     $path = __DIR__ . '/lib/' . $class . '.php';
