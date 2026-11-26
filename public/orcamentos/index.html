@@ -632,12 +632,27 @@ table.t tr.tot td { font-weight: 700; color: #000; background: #fff; border-top:
     bindEditor();
   }
 
+  function renderAdminCodePanel() {
+    var html = "<div class=\"panel no-print\" id=\"admin-code-panel\">";
+    html += "<h3>Alterar código de administrador</h3>";
+    html += "<p class=\"note\">O novo código substitui o anterior. As outras sessões de administrador terminam.</p>";
+    html += "<div class=\"row\">";
+    html += "<label>Código actual<input type=\"password\" id=\"adm-code-current\" autocomplete=\"current-password\" minlength=\"1\"></label>";
+    html += "<label>Novo código<input type=\"password\" id=\"adm-code-new\" autocomplete=\"new-password\" minlength=\"10\"></label>";
+    html += "<label>Confirmar novo código<input type=\"password\" id=\"adm-code-confirm\" autocomplete=\"new-password\" minlength=\"10\"></label>";
+    html += "</div>";
+    html += "<button type=\"button\" class=\"btn\" id=\"adm-code-save\">Guardar novo código</button>";
+    html += "<p class=\"err\" id=\"adm-code-err\"></p>";
+    html += "</div>";
+    return html;
+  }
+
   function renderAdmin() {
+    var html = renderAdminCodePanel();
     if (!state.project) {
-      return "<div class=\"panel\"><p class=\"note\">Crie ou importe um projecto para começar.</p></div>";
+      return html + "<div class=\"panel\"><p class=\"note\">Crie ou importe um projecto para começar.</p></div>";
     }
     var d = state.data || {};
-    var html = "";
     html += "<div class=\"panel no-print\">";
     html += "<h3>Painel · " + esc(state.project.title) + "</h3>";
     html += "<div class=\"row\">";
@@ -1085,7 +1100,43 @@ table.t tr.tot td { font-weight: 700; color: #000; background: #fff; border-top:
     return html;
   }
 
+  function bindAdminCode() {
+    var btn = document.getElementById("adm-code-save");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var err = document.getElementById("adm-code-err");
+      err.textContent = "";
+      var current = document.getElementById("adm-code-current").value;
+      var neu = document.getElementById("adm-code-new").value;
+      var conf = document.getElementById("adm-code-confirm").value;
+      if (!current || !neu || !conf) {
+        err.textContent = "Preencha todos os campos.";
+        return;
+      }
+      if (neu.length < 10) {
+        err.textContent = "O novo código deve ter pelo menos 10 caracteres.";
+        return;
+      }
+      if (neu !== conf) {
+        err.textContent = "A confirmação do novo código não coincide.";
+        return;
+      }
+      api("admin-code.php", {
+        method: "POST",
+        body: { current_code: current, new_code: neu, confirm_code: conf }
+      }).then(function () {
+        document.getElementById("adm-code-current").value = "";
+        document.getElementById("adm-code-new").value = "";
+        document.getElementById("adm-code-confirm").value = "";
+        toast("Código de administrador actualizado");
+      }).catch(function (e) {
+        err.textContent = e.message || "Falha ao actualizar.";
+      });
+    });
+  }
+
   function bindAdmin() {
+    bindAdminCode();
     var st = document.getElementById("adm-save-status");
     if (st) st.addEventListener("click", function () {
       var status = document.getElementById("adm-status").value;
