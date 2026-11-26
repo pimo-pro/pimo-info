@@ -16,9 +16,9 @@ Regras fixas:
 
 - **Campos desconhecidos** no JSON são tratados como `internal_only` por defeito.
 - **fábrica** e **cliente** nunca recebem custos, margens, `url`, `supplier`, `order_of_magnitude`, `gaps`, `box_costs.lines` / `totals` / `checks_a_confirmar` / rubricas a_definir.
-- **fábrica** recebe peças (`boxes[].parts`), remates, portas no desenho, `parts_total`, `sheets_real`, quantidades e desenho técnico — **sem preços**.
+- **fábrica** recebe só especificações: caixas/peças, remates, portas no desenho, painéis/ferragens (qtds e espessura), `sheets_real` (qtds), artigos sem preço, imagens projeto+técnico. **Sem** `parts_total`, `cost_lines`, `iva_*`, `prices_checked_at`, `price_status` nem quaisquer campos de preço/custo/total.
 - **gaps** e **`box_costs.checks_a_confirmar`** só nas vistas internas (painel, completa, Khaled+Filipe), nunca fábrica/cliente.
-- **cliente** só vê preço final quando **todas** as rubricas `a_definir` estão preenchidas; vê renders de projecto, nunca custos internos.
+- **cliente** (vista mínima): logo, nome do projecto, renders `category: projeto` e o **preço final aprovado** (`pricing_placeholders.selling_price_per_unit_eur` + `approved_factory_key`). Sem preço+fábrica → «Preço em preparação». Sem boxes/items/categorias/material_options/client_choice/points_to_confirm.
 - `image` pode ser `null`.
 
 ## Schema 2.0 (resumo)
@@ -30,12 +30,13 @@ Regras fixas:
 Nas vistas internas, as linhas de `box_costs.lines`, `panels`, `hardware` e `items[]` são editáveis
 (nome, descrição, referência, fornecedor, URL, quantidades, preços). «Adicionar linha» cria
 registos novos; «Remover» marca `archived: true` (compatível com versões anteriores).
-O resumo de totais (1 unidade e projecto, s/ IVA, IVA, c/ IVA) recalcula-se ao gravar.
+O resumo de totais (1 unidade e projecto, s/ IVA, IVA, c/ IVA) e os subtotais das linhas
+recalculam-se **ao vivo** em cada edição de quantidade/preço (incluindo linhas novas e arquivadas).
 Linhas `a_definir` mantêm-se a vermelho até terem valor. A impressão inclui todas as secções.
 
-Vista **fábrica**: só medidas, quantidades, materiais e referências — sem preços, custos, URL ou fornecedor.
-Vista **cliente**: só renders (`category: projeto`) e o **preço final** (`pricing_placeholders.selling_price_*`)
-quando as rubricas a_definir estão preenchidas; `approved_factory_key` indica a fábrica escolhida.
+Vista **fábrica**: só especificações (medidas, quantidades, materiais, referências) + imagens projeto/técnico — sem preços, IVA, custos, totais, URL ou fornecedor.
+Vista **cliente**: logo, nome, renders (`category: projeto`) e o **preço final aprovado**
+(`selling_price_*` s/ e c/ IVA) quando o painel define preço + `approved_factory_key`; senão «Preço em preparação».
 
 ## Schema 3.0
 

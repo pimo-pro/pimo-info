@@ -50,32 +50,20 @@ final class Filter
         'corte_planta',
     ];
 
-    /** Raízes visíveis à fábrica; o resto é internal_only por defeito. */
+    /** Raízes visíveis à fábrica (só especificações); o resto = internal_only. */
     private const FACTORY_ROOT_ALLOW = [
         'schema_version',
-        'currency',
-        'disclaimer_pt',
         'company',
         'project',
         'assets',
         'boxes',
-        'material_options',
         'categories',
         'items',
-        'ventilation_and_clearances',
-        'points_to_confirm',
         'factory_quotes',
-        'cost_lines',
-        'sets',
         'box_costs',
         'remates',
         'doors_in_design',
-        'parts_total',
         'sheets_real',
-        'generated_at',
-        'timezone',
-        'prices_checked_at',
-        'iva_rate_portugal',
         '_view',
         '_factory_key',
     ];
@@ -126,109 +114,145 @@ final class Filter
 
     private static function forFactory(array $data, string $factoryKey): array
     {
-        $out = self::stripInternal($data);
-        unset(
-            $out['gaps'],
-            $out['order_of_magnitude'],
-            $out['pricing_placeholders'],
-            $out['suppliers_pt_quote'],
-            $out['source_documents'],
-            $out['client_choice'],
-            $out['editor_settings'],
-            $out['approved_prices']
-        );
-
-        // Só a própria cotação da fábrica
+        // Payload mínimo: só especificações (sem preços, IVA, custos, totais)
         $quotes = $data['factory_quotes'] ?? [];
         $mine = [];
         if ($factoryKey !== '' && isset($quotes[$factoryKey])) {
-            $mine[$factoryKey] = $quotes[$factoryKey];
-        }
-        $out['factory_quotes'] = $mine;
-
-        // cost_lines: só as factory_visible, sem valores de custo Pimo
-        $lines = [];
-        foreach ($data['cost_lines'] ?? [] as $line) {
-            if (!is_array($line)) {
-                continue;
-            }
-            $vis = $line['visibility'] ?? 'internal_only';
-            if ($vis === 'factory_visible' || ($line['kind'] ?? '') === 'mobiliario' || ($line['kind'] ?? '') === 'mobiliário') {
-                $lines[] = [
-                    'label' => $line['label'] ?? '',
-                    'kind' => $line['kind'] ?? '',
-                    'price_status' => $line['price_status'] ?? null,
-                    'notes_pt' => $line['notes_pt'] ?? null,
-                    'visibility' => 'factory_visible',
-                ];
-            }
-        }
-        $out['cost_lines'] = $lines;
-
-        // sets: remover totais monetários
-        if (isset($out['sets'])) {
-            $out['sets'] = self::stripSetPrices($out['sets']);
+            $mine[$factoryKey] = self::factoryOwnQuote($quotes[$factoryKey]);
         }
 
-        // material_options: sem preços (fábrica orça)
-        foreach ($out['material_options'] ?? [] as $i => $opt) {
-            if (is_array($opt)) {
-                $out['material_options'][$i]['unit_price_eur'] = null;
-            }
-        }
+        $out = [
+            'schema_version' => $data['schema_version'] ?? '1.0',
+            'company' => [
+                'brand' => $data['company']['brand'] ?? 'Pimo Casa',
+            ],
+            'project' => self::factoryProject($data['project'] ?? []),
+            'assets' => self::assetsForAudience($data['assets'] ?? [], 'factory'),
+            'boxes' => self::factoryBoxes($data['boxes'] ?? []),
+            'categories' => self::factoryCategories($data['categories'] ?? []),
+            'items' => self::factoryItems($data['items'] ?? []),
+            'factory_quotes' => $mine,
+            'remates' => self::factoryRemates($data['remates'] ?? []),
+            'doors_in_design' => self::factoryDoors($data['doors_in_design'] ?? []),
+            'sheets_real' => self::factorySheetsReal($data['sheets_real'] ?? null),
+            '_view' => 'factory',
+            '_factory_key' => $factoryKey,
+        ];
 
-        // box_costs: só quantidades e peças; sem linhas de custo, totais ou preços
         if (isset($data['box_costs']) && is_array($data['box_costs'])) {
             $out['box_costs'] = self::factoryBoxCosts($data['box_costs']);
-        } else {
-            unset($out['box_costs']);
         }
 
-        // caixas: peças e medidas, sem custos
-        $out['boxes'] = self::factoryBoxes($data['boxes'] ?? []);
-
-        // remates / portas / peças / chapas: quantidades e medidas, sem preços
-        $out['remates'] = self::factoryRemates($data['remates'] ?? []);
-        $out['doors_in_design'] = self::factoryDoors($data['doors_in_design'] ?? []);
-        $out['parts_total'] = self::factoryPartsTotal($data['parts_total'] ?? null);
-        $out['sheets_real'] = self::factorySheetsReal($data['sheets_real'] ?? null);
-
-        // assets: projecto + técnico (sem só-internos desconhecidos)
-        $out['assets'] = self::assetsForAudience($data['assets'] ?? [], 'factory');
-
-        // Campos raiz desconhecidos = internal_only
         foreach (array_keys($out) as $k) {
             if (!in_array($k, self::FACTORY_ROOT_ALLOW, true)) {
                 unset($out[$k]);
             }
         }
 
-        $out['_view'] = 'factory';
-        $out['_factory_key'] = $factoryKey;
         return $out;
     }
 
     private static function forClient(array $data): array
     {
-        $out = [
+        // Vista mínima: logo, nome do projecto, renders e preço final aprovado
+        return [
             'schema_version' => $data['schema_version'] ?? '1.0',
             'currency' => $data['currency'] ?? 'EUR',
-            'disclaimer_pt' => $data['disclaimer_pt'] ?? '',
-            'company' => $data['company'] ?? [],
-            'project' => self::clientProject($data['project'] ?? []),
+            'company' => [
+                'brand' => $data['company']['brand'] ?? 'Pimo Casa',
+            ],
+            'project' => [
+                'name' => $data['project']['name'] ?? '',
+                'units' => $data['project']['units'] ?? null,
+            ],
             'assets' => self::assetsForAudience($data['assets'] ?? [], 'client'),
-            'boxes' => self::clientBoxes($data['boxes'] ?? []),
-            'material_options' => self::clientMaterials($data['material_options'] ?? []),
-            'categories' => $data['categories'] ?? [],
-            'items' => self::clientItems($data['items'] ?? []),
-            'ventilation_and_clearances' => $data['ventilation_and_clearances'] ?? new stdClass(),
-            'points_to_confirm' => $data['points_to_confirm'] ?? [],
-            'client_choice' => $data['client_choice'] ?? null,
             'pricing' => self::clientPricing($data),
             '_view' => 'client',
         ];
-        // Nunca enviar box_costs, remates técnicos, checks nem custos internos
+    }
+
+    private static function factoryProject(array $p): array
+    {
+        return [
+            'id' => $p['id'] ?? null,
+            'name' => $p['name'] ?? '',
+            'units' => $p['units'] ?? null,
+            'location' => $p['location'] ?? null,
+            'overall_mm' => $p['overall_mm'] ?? null,
+            'overall_note' => $p['overall_note'] ?? null,
+            'notes' => $p['notes'] ?? null,
+        ];
+    }
+
+    private static function factoryCategories(array $cats): array
+    {
+        $out = [];
+        foreach ($cats as $c) {
+            if (!is_array($c)) {
+                continue;
+            }
+            $out[] = [
+                'id' => $c['id'] ?? '',
+                'name' => $c['name'] ?? '',
+            ];
+        }
         return $out;
+    }
+
+    private static function factoryItems(array $items): array
+    {
+        $out = [];
+        foreach ($items as $it) {
+            if (!is_array($it) || !empty($it['archived'])) {
+                continue;
+            }
+            $out[] = [
+                'id' => $it['id'] ?? '',
+                'category' => $it['category'] ?? '',
+                'kind' => $it['kind'] ?? '',
+                'name' => $it['name'] ?? '',
+                'brand' => $it['brand'] ?? null,
+                'model' => $it['model'] ?? null,
+                'ref' => $it['ref'] ?? null,
+                'image' => $it['image'] ?? null,
+                'qty_per_unit' => $it['qty_per_unit'] ?? null,
+                'qty_project' => $it['qty_project'] ?? null,
+                'notes_pt' => $it['notes_pt'] ?? null,
+                'fits_notes' => $it['fits_notes'] ?? null,
+                'dimensions_mm' => $it['dimensions_mm'] ?? null,
+                'specs' => self::factorySpecs($it['specs'] ?? null),
+            ];
+        }
+        return $out;
+    }
+
+    private static function factorySpecs(mixed $specs): mixed
+    {
+        if (!is_array($specs)) {
+            return $specs;
+        }
+        $out = [];
+        foreach ($specs as $sk => $sv) {
+            if (is_string($sk) && (str_contains($sk, 'price') || str_contains($sk, 'cost') || str_contains($sk, '_eur') || str_contains($sk, 'iva') || str_contains($sk, 'margin'))) {
+                continue;
+            }
+            $out[$sk] = $sv;
+        }
+        return $out;
+    }
+
+    private static function factoryOwnQuote(array $quote): array
+    {
+        // A fábrica pode editar a própria cotação; não recebe preços internos da Pimo
+        return [
+            'factory_name' => $quote['factory_name'] ?? '',
+            'boxes' => $quote['boxes'] ?? new stdClass(),
+            'installation_per_unit_eur' => $quote['installation_per_unit_eur'] ?? null,
+            'shipping_per_unit_eur' => $quote['shipping_per_unit_eur'] ?? null,
+            'lead_time_days' => $quote['lead_time_days'] ?? null,
+            'payment_terms_pt' => $quote['payment_terms_pt'] ?? null,
+            'notes_pt' => $quote['notes_pt'] ?? null,
+        ];
     }
 
     /**
@@ -512,23 +536,36 @@ final class Filter
     private static function clientPricing(array $data): array
     {
         $ph = $data['pricing_placeholders'] ?? [];
-        $pending = self::aDefinirPending($data);
         $factoryKey = self::approvedFactoryKey($data);
-        // Só o preço final aprovado/escolhido pelo Khaled; sem detalhe de custos
-        if ($pending !== [] || ($ph['selling_price_per_unit_eur'] ?? null) === null) {
+        $price = $ph['selling_price_per_unit_eur'] ?? null;
+        $approved = $price !== null && $price !== '' && $factoryKey !== null && $factoryKey !== '';
+        if (!$approved) {
             return [
                 'selling_price_per_unit_eur' => null,
                 'selling_price_x6_eur' => null,
+                'selling_price_incl_iva_per_unit_eur' => null,
+                'selling_price_incl_iva_x6_eur' => null,
                 'currency' => $data['currency'] ?? 'EUR',
-                'a_definir_pending' => $pending !== [],
+                'iva_rate' => 0.23,
+                'approved' => false,
                 'approved_factory_key' => $factoryKey,
             ];
         }
+        $units = (int) ($data['project']['units'] ?? 1);
+        if ($units < 1) {
+            $units = 1;
+        }
+        $per = (float) $price;
+        $x6 = $ph['selling_price_x6_eur'] ?? ($per * $units);
+        $iva = 0.23;
         return [
-            'selling_price_per_unit_eur' => $ph['selling_price_per_unit_eur'] ?? null,
-            'selling_price_x6_eur' => $ph['selling_price_x6_eur'] ?? null,
+            'selling_price_per_unit_eur' => $per,
+            'selling_price_x6_eur' => (float) $x6,
+            'selling_price_incl_iva_per_unit_eur' => round($per * (1 + $iva), 2),
+            'selling_price_incl_iva_x6_eur' => round(((float) $x6) * (1 + $iva), 2),
             'currency' => $data['currency'] ?? 'EUR',
-            'a_definir_pending' => false,
+            'iva_rate' => $iva,
+            'approved' => true,
             'approved_factory_key' => $factoryKey,
         ];
     }
@@ -719,9 +756,9 @@ final class Filter
         if (!is_array($sr)) {
             return null;
         }
+        // Só quantidades de chapas (sem custos)
         return [
             'per_unit' => $sr['per_unit'] ?? null,
-            'waste_percent' => $sr['waste_percent'] ?? null,
             'project' => $sr['project'] ?? null,
             'notes_pt' => $sr['notes_pt'] ?? null,
         ];

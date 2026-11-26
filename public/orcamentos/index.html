@@ -673,8 +673,7 @@ tr.a-definir td, .a-definir-cell {
       return;
     }
     if (role === "client") {
-      el.innerHTML = renderClientChooser() + renderReport(false);
-      bindClient();
+      el.innerHTML = renderClientView();
       return;
     }
     // khaled / filipe
@@ -832,15 +831,15 @@ tr.a-definir td, .a-definir-cell {
     html += field("ph-margin-amt", "Margem €", ph.margin_amount_eur);
     html += field("ph-install", "Montagem / un. €", ph.installation_per_unit_eur);
     html += field("ph-ship", "Transporte / un. €", ph.shipping_per_unit_eur);
-    html += field("ph-sell", "Preço final / un. €", ph.selling_price_per_unit_eur);
-    html += "<label>Fábrica escolhida<select id=\"ph-factory\">";
+    html += field("ph-sell", "Preço final aprovado / un. € (s/ IVA)", ph.selling_price_per_unit_eur);
+    html += "<label>Fábrica aprovada para o cliente<select id=\"ph-factory\">";
     html += "<option value=\"\">—</option>";
     Object.keys(quotes).forEach(function (k) {
       html += "<option value=\"" + esc(k) + "\"" + (ph.approved_factory_key === k ? " selected" : "") + ">" + esc(quotes[k].factory_name || k) + "</option>";
     });
     html += "</select></label>";
     html += "</div>";
-    html += "<p class=\"cap\">O cliente só vê o preço final (após rubricas a definir preenchidas) e a fábrica escolhida.</p>";
+    html += "<p class=\"cap\">O cliente só vê o preço final aprovado (s/ IVA e c/ IVA) e a fábrica escolhida. Sem preço + fábrica = «Preço em preparação».</p>";
     html += "<div class=\"row\"><label><input type=\"checkbox\" id=\"hide-margin\"" + ((d.editor_settings || {}).hide_margin_from_filipe ? " checked" : "") + "> Esconder margem na vista de edição</label>";
     html += "<button type=\"button\" class=\"btn\" id=\"adm-save-pricing\">Gravar preços</button></div></div>";
     return html;
@@ -894,46 +893,42 @@ tr.a-definir td, .a-definir-cell {
     return html;
   }
 
-  function renderClientChooser() {
+  function renderClientView() {
     var d = state.data || {};
-    var choice = d.client_choice || {};
+    var project = d.project || {};
     var pricing = d.pricing || {};
-    var html = "<div class=\"panel no-print\"><h3>A sua escolha</h3>";
-    html += "<div class=\"client-opts\" id=\"client-mats\">";
-    (d.material_options || []).forEach(function (m) {
-      var active = choice.material_option_id === m.id ? " active" : "";
-      html += "<label class=\"" + active.trim() + "\"><input type=\"radio\" name=\"mat\" value=\"" + esc(m.id) + "\"" + (choice.material_option_id === m.id ? " checked" : "") + ">";
-      html += "<span><strong>" + esc(m.name) + "</strong><br><span class=\"muted\">" + esc(m.description_pt || "") + "</span>";
-      if (m.unit_price_eur != null) html += "<br>" + esc(money(m.unit_price_eur));
-      else if (m.price_status) html += "<br><span class=\"status-pill\">" + esc(priceStatusLabel(m.price_status)) + "</span>";
-      html += "</span></label>";
-    });
-    html += "</div>";
-    html += "<div class=\"row\">";
-    html += "<label><input type=\"checkbox\" id=\"cl-install\"" + (choice.with_installation !== false ? " checked" : "") + "> " + t("withInstall") + "</label>";
-    html += "<label><input type=\"checkbox\" id=\"cl-equip\"" + (choice.with_equipment !== false ? " checked" : "") + "> " + t("withEquip") + "</label>";
-    html += "<label>Conjunto<select id=\"cl-set\">";
-    ["economico","recomendado","premium"].forEach(function (c) {
-      html += "<option value=\"" + c + "\"" + (choice.set_code === c ? " selected" : "") + ">" + c + "</option>";
-    });
-    html += "</select></label></div>";
-    html += "<div class=\"price-tag\" id=\"cl-price\">" + clientPriceLabel(d, choice) + "</div>";
-    html += "<button type=\"button\" class=\"btn\" id=\"cl-send\">" + t("sendChoice") + "</button></div>";
+    var html = "<article class=\"report\" id=\"report\">";
+    html += hdrHtml(d);
+    html += "<h1 class=\"doc\">" + esc(project.name || (state.project && state.project.title) || "Orçamento") + "</h1>";
+    html += designAssetsHtml(d.assets || {}, "client");
+    html += "<h2 class=\"sec\">Preço</h2>";
+    if (pricing.approved && pricing.selling_price_per_unit_eur != null) {
+      html += "<p class=\"price-tag\">" + esc(money(pricing.selling_price_per_unit_eur)) + " / unidade <span class=\"cap\">(s/ IVA)</span></p>";
+      html += "<p class=\"price-tag\" style=\"font-size:1.1rem\">" + esc(money(pricing.selling_price_incl_iva_per_unit_eur)) + " / unidade <span class=\"cap\">(c/ IVA " + esc(String(Math.round((pricing.iva_rate || 0.23) * 100))) + "%)</span></p>";
+      if (pricing.selling_price_x6_eur != null) {
+        html += "<p class=\"note\">Total projecto: " + esc(money(pricing.selling_price_x6_eur)) + " s/ IVA · " + esc(money(pricing.selling_price_incl_iva_x6_eur)) + " c/ IVA</p>";
+      }
+      if (pricing.approved_factory_key) {
+        html += "<p class=\"cap\">Fábrica: " + esc(pricing.approved_factory_key) + "</p>";
+      }
+    } else {
+      html += "<p class=\"price-tag\">Preço em preparação</p>";
+    }
+    html += "</article>";
     return html;
   }
 
   function clientPriceLabel(d, choice) {
     var pricing = d.pricing || {};
-    if (pricing.a_definir_pending) return t("noPrice");
-    var base = pricing.selling_price_per_unit_eur;
-    if (base == null) return t("noPrice");
-    return money(Number(base) || 0);
+    if (!pricing.approved || pricing.selling_price_per_unit_eur == null) return "Preço em preparação";
+    return money(Number(pricing.selling_price_per_unit_eur) || 0);
   }
 
   function renderReport(editable) {
     var d = state.data;
     if (!d) return "<div class=\"report\"><p class=\"note\">Sem dados.</p></div>";
     var role = state.me.role;
+    if (role === "client") return renderClientView();
     var company = d.company || {};
     var project = d.project || {};
     var units = project.units || 1;
@@ -945,21 +940,27 @@ tr.a-definir td, .a-definir-cell {
     var html = "<article class=\"report\" id=\"report\">";
     var canEdit = editable && (role === "admin" || role === "khaled" || role === "filipe");
     var isInternal = role === "admin" || role === "khaled" || role === "filipe";
+    var isFactory = role === "factory";
 
     // 1 Capa
+    var coverRows = [
+      ["Projecto", project.name],
+      ["Unidades", units ? units + " unidades" : ""],
+      ["Empresa", company.brand || "Pimo Casa"],
+      ["Medidas gerais", overallTxt(project)],
+      ["N.º", (state.project && state.project.slug) || project.id || ""]
+    ];
+    if (!isFactory) {
+      coverRows.splice(1, 0,
+        ["Cliente", (project.client && project.client.name) || ""],
+        ["Local", project.location || (project.client && project.client.country) || ""]
+      );
+      coverRows.splice(5, 0, ["Data", (d.prices_checked_at || d.generated_at || "")]);
+    }
     html += sec("capa",
       hdrHtml(d) +
       "<h1 class=\"doc\">" + esc(project.name || state.project.title || "Orçamento") + "</h1>" +
-      infoTable([
-        ["Projecto", project.name],
-        ["Cliente", (project.client && project.client.name) || ""],
-        ["Local", project.location || (project.client && project.client.country) || ""],
-        ["Unidades", units + " unidades"],
-        ["Empresa", company.brand || "Pimo Casa"],
-        ["Data", (d.prices_checked_at || d.generated_at || "")],
-        ["Medidas gerais", overallTxt(project)],
-        ["N.º", (state.project && state.project.slug) || project.id || ""]
-      ])
+      infoTable(coverRows)
     );
 
     // 2 Resumo
@@ -1026,45 +1027,58 @@ tr.a-definir td, .a-definir-cell {
       }
     });
 
-    // Montagem
-    html += sec("montagem",
-      "<div class=\"pagebreak\"></div><h2 class=\"sec\">8. Montagem e transporte</h2>" +
-      montagemBlock(d, role)
-    );
+    // Montagem (não na fábrica — sem preços)
+    if (!isFactory) {
+      html += sec("montagem",
+        "<div class=\"pagebreak\"></div><h2 class=\"sec\">8. Montagem e transporte</h2>" +
+        montagemBlock(d, role)
+      );
+    }
 
-    // Totais
-    html += sec("totais",
-      "<h2 class=\"sec\">9. Resumo de totais</h2>" +
-      (isInternal ? grandTotalsHtml(d) : totaisBlock(d, role))
-    );
+    // Totais (internas: resumo vivo; fábrica: sem totais)
+    if (isInternal) {
+      html += sec("totais",
+        "<h2 class=\"sec\">9. Resumo de totais</h2>" +
+        grandTotalsHtml(d)
+      );
+    } else if (!isFactory) {
+      html += sec("totais",
+        "<h2 class=\"sec\">9. Resumo de totais</h2>" +
+        totaisBlock(d, role)
+      );
+    }
 
-    // Condições
-    html += sec("condicoes",
-      "<h2 class=\"sec\">10. Condições</h2>" +
-      "<p class=\"note\">Prazo, pagamento e validade a confirmar no fecho da encomenda.</p>" +
-      ((d.points_to_confirm && d.points_to_confirm.length)
-        ? ("<h3 class=\"sub\">Pontos a confirmar</h3>" + listHtml(d.points_to_confirm))
-        : "")
-    );
+    // Condições / pontos a confirmar — só internas (fábrica: só especificações)
+    if (!isFactory) {
+      html += sec("condicoes",
+        "<h2 class=\"sec\">10. Condições</h2>" +
+        "<p class=\"note\">Prazo, pagamento e validade a confirmar no fecho da encomenda.</p>" +
+        ((d.points_to_confirm && d.points_to_confirm.length)
+          ? ("<h3 class=\"sub\">Pontos a confirmar</h3>" + listHtml(d.points_to_confirm))
+          : "")
+      );
+    }
 
     // Gaps only Khaled views
-    if (d.gaps && d.gaps.length && (role === "admin" || role === "khaled" || role === "filipe")) {
+    if (d.gaps && d.gaps.length && isInternal) {
       html += sec("gaps",
         "<h2 class=\"sec\">Lacunas</h2>" + listHtml(d.gaps)
       );
     }
 
-    // Assinatura
-    html += sec("assinatura",
-      "<p class=\"cap\">" + esc(d.disclaimer_pt || t("disclaimer")) + "</p>" +
-      "<div class=\"sig\">" + esc(t("regards")) +
-      "<strong>" + esc(company.signer || "Khaled al Ahdab") + "</strong>" +
-      esc(company.brand || "Pimo Casa") + "<br>" +
-      esc(company.email || "info@pimo.pt") + "<br>" +
-      esc(company.phone || "+351 913 822 833") + "<br>" +
-      esc(company.web || "www.pimo.pt") +
-      "</div>"
-    );
+    // Assinatura (internas); fábrica fica só com especificações + imagens
+    if (!isFactory) {
+      html += sec("assinatura",
+        "<p class=\"cap\">" + esc(d.disclaimer_pt || t("disclaimer")) + "</p>" +
+        "<div class=\"sig\">" + esc(t("regards")) +
+        "<strong>" + esc(company.signer || "Khaled al Ahdab") + "</strong>" +
+        esc(company.brand || "Pimo Casa") + "<br>" +
+        esc(company.email || "info@pimo.pt") + "<br>" +
+        esc(company.phone || "+351 913 822 833") + "<br>" +
+        esc(company.web || "www.pimo.pt") +
+        "</div>"
+      );
+    }
 
     html += "</article>";
     return html;
@@ -1509,18 +1523,101 @@ tr.a-definir td, .a-definir-cell {
     };
   }
 
-  function grandTotalsHtml(d) {
+  function grandTotalsInner(d) {
     var tot = computeBoxTotals(d);
-    var html = "<div class=\"grand-totals\">";
+    var html = "";
     if (tot.pending.length) {
       html += "<p class=\"totals-note-warn\">Total sem rubricas a definir (" + esc(tot.pending.join(", ")) + ").</p>";
+    } else {
+      html += "<p class=\"cap\">Actualizado ao vivo com as edições.</p>";
     }
     html += "<table class=\"t\"><thead><tr><th></th><th class=\"n\">1 unidade</th><th class=\"n\">" + esc(tot.units + " unidades") + "</th></tr></thead><tbody>";
-    html += "<tr><td>Subtotal s/ IVA</td><td class=\"n\">" + esc(money(tot.sub_u)) + "</td><td class=\"n\">" + esc(money(tot.sub_p)) + "</td></tr>";
-    html += "<tr><td>IVA " + esc(String(Math.round(tot.rate * 100))) + "%</td><td class=\"n\">" + esc(money(tot.iva_u)) + "</td><td class=\"n\">" + esc(money(tot.iva_p)) + "</td></tr>";
-    html += "<tr class=\"tot\"><td>Total c/ IVA</td><td class=\"n\">" + esc(money(tot.tot_u)) + "</td><td class=\"n\">" + esc(money(tot.tot_p)) + "</td></tr>";
-    html += "</tbody></table></div>";
+    html += "<tr><td>Subtotal s/ IVA</td><td class=\"n\" id=\"tot-sub-u\">" + esc(money(tot.sub_u)) + "</td><td class=\"n\" id=\"tot-sub-p\">" + esc(money(tot.sub_p)) + "</td></tr>";
+    html += "<tr><td>IVA " + esc(String(Math.round(tot.rate * 100))) + "%</td><td class=\"n\" id=\"tot-iva-u\">" + esc(money(tot.iva_u)) + "</td><td class=\"n\" id=\"tot-iva-p\">" + esc(money(tot.iva_p)) + "</td></tr>";
+    html += "<tr class=\"tot\"><td>Total c/ IVA</td><td class=\"n\" id=\"tot-all-u\">" + esc(money(tot.tot_u)) + "</td><td class=\"n\" id=\"tot-all-p\">" + esc(money(tot.tot_p)) + "</td></tr>";
+    html += "</tbody></table>";
     return html;
+  }
+
+  function grandTotalsHtml(d) {
+    return "<div class=\"grand-totals\" id=\"grand-totals-live\">" + grandTotalsInner(d) + "</div>";
+  }
+
+  function edVal(path) {
+    var inp = document.querySelector('[data-ed="' + path + '"]');
+    return inp ? parseNum(inp.value) : null;
+  }
+
+  function edSet(path, val) {
+    var inp = document.querySelector('[data-ed="' + path + '"]');
+    if (!inp || val == null || isNaN(val)) return;
+    inp.value = String(Math.round(val * 100) / 100);
+  }
+
+  function syncDerivedRowTotals() {
+    var units = (state.data && state.data.box_costs && state.data.box_costs.units)
+      || (state.data && state.data.project && state.data.project.units) || 1;
+    function syncSection(prefix) {
+      var i = 0;
+      while (document.querySelector('[data-ed="' + prefix + i + '.qty_per_unit"]')
+        || document.querySelector('[data-ed="' + prefix + i + '.unit_price_eur"]')) {
+        var qty = edVal(prefix + i + ".qty_per_unit");
+        var price = edVal(prefix + i + ".unit_price_eur");
+        if (qty != null && price != null) {
+          var pu = qty * price;
+          edSet(prefix + i + ".per_unit_eur", pu);
+          edSet(prefix + i + ".project_eur", pu * units);
+          if (edVal(prefix + i + ".qty_project") == null) {
+            edSet(prefix + i + ".qty_project", qty * units);
+          }
+        }
+        i++;
+      }
+    }
+    syncSection("box_costs.panels.");
+    syncSection("box_costs.hardware.");
+    var li = 0;
+    while (document.querySelector('[data-ed="box_costs.lines.' + li + '.per_unit_eur"]')) {
+      var puL = edVal("box_costs.lines." + li + ".per_unit_eur");
+      var keyInp = document.querySelector('[data-ed="box_costs.lines.' + li + '.label"]');
+      var isAdm = keyInp && /administra|adm/i.test(keyInp.value || "");
+      if (puL != null && !isAdm && edVal("box_costs.lines." + li + ".project_eur") == null) {
+        edSet("box_costs.lines." + li + ".project_eur", puL * units);
+      }
+      li++;
+    }
+    var ii = 0;
+    while (document.querySelector('[data-ed="items.' + ii + '.qty_per_unit"]')) {
+      var q = edVal("items." + ii + ".qty_per_unit");
+      if (q != null && edVal("items." + ii + ".qty_project") == null) {
+        edSet("items." + ii + ".qty_project", q * units);
+      }
+      ii++;
+    }
+  }
+
+  function refreshLiveTotals() {
+    var el = document.getElementById("grand-totals-live");
+    if (!el || !state.data) return;
+    syncDerivedRowTotals();
+    var snap = JSON.parse(JSON.stringify(state.data));
+    collectEditorToData(snap);
+    el.innerHTML = grandTotalsInner(snap);
+  }
+
+  function bindLiveTotals() {
+    var report = document.getElementById("report");
+    if (!report || report.getAttribute("data-live-bound") === "1") return;
+    report.setAttribute("data-live-bound", "1");
+    function onEdit(e) {
+      var t = e.target;
+      if (!t || !t.getAttribute) return;
+      if (t.getAttribute("data-ed") || t.classList.contains("ed") || t.classList.contains("a-definir-input")) {
+        refreshLiveTotals();
+      }
+    }
+    report.addEventListener("input", onEdit);
+    report.addEventListener("change", onEdit);
   }
 
   function parseNum(raw) {
@@ -1815,6 +1912,7 @@ tr.a-definir td, .a-definir-cell {
       });
     }
     bindEditorExtras();
+    bindLiveTotals();
   }
 
   function bindEditorExtras() {
